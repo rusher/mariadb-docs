@@ -111,7 +111,7 @@ This hint is available from MariaDB 12.1.
 /* +NO_ROWID_FILTER([table_name [index_name [ ... ] ]] ) */
 ```
 
-Does not consider `ROWID` filter for the scope of the hint (all tables in the query block, specific table, and specific indexes). See [ROWID\_FILTER](expanded-new-style-optimizer-hints.md#rowid_filter) for details.
+Does not consider `ROWID` filter for the scope of the hint (all tables in the query block, specific table, and specific indexes). See [ROWID\_FILTER](expanded-optimizer-hints.md#rowid_filter) for details.
 
 ### NO\_SPLIT\_MATERIALIZED
 
@@ -145,7 +145,7 @@ This hint is available from MariaDB 12.1.
 /* +ROWID_FILTER( [table_name [index_name [ ...] ]]) */
 ```
 
-Like [NO\_RANGE\_OPTIMIZATION](expanded-new-style-optimizer-hints.md#no_range_optimization) or [MRR](expanded-new-style-optimizer-hints.md#mrr-and-no_mrr), this hint can be applied to:
+Like [NO\_RANGE\_OPTIMIZATION](expanded-optimizer-hints.md#no_range_optimization) or [MRR](expanded-optimizer-hints.md#mrr-and-no_mrr), this hint can be applied to:
 
 * Query blocks — `NO_ROWID_FILTER()`
 * Table — `NO_ROWID_FILTER(`_`table_name`_`)`
@@ -364,7 +364,7 @@ SUBQUERY([@query_block_name] INTOEXISTS)
 
 This controls non-semi-join subqueries. The parameter specifies which subquery to use. Use of this hint disables conversion of subquery into semi-join.
 
-For details, see the [Subquery Hints section](expanded-new-style-optimizer-hints.md#subquery-hints-1).
+For details, see the [Subquery Hints section](expanded-optimizer-hints.md#subquery-hints-1).
 
 ### **SEMIJOIN and NO\_SEMIJOIN**
 
@@ -512,6 +512,6 @@ SELECT id, a IN (SELECT /*+ SUBQUERY(MATERIALIZATION) */ a FROM t1) FROM t2;
 SELECT * FROM t2 WHERE t2.a IN (SELECT /*+ SUBQUERY(INTOEXISTS) */ a FROM t1);
 ```
 
-For semi-join and `SUBQUERY` hints, a leading `@`_`query_block_name`_ specifies the query block to which the hint applies. If the hint includes no leading `@`_`query_block_name`_, the hint applies to the query block in which it occurs. To assign a name to a query block, see [Naming Query Blocks](expanded-new-style-optimizer-hints.md#query-block-naming).
+For semi-join and `SUBQUERY` hints, a leading `@`_`query_block_name`_ specifies the query block to which the hint applies. If the hint includes no leading `@`_`query_block_name`_, the hint applies to the query block in which it occurs. To assign a name to a query block, see [Naming Query Blocks](expanded-optimizer-hints.md#query-block-naming).
 
 If a hint comment contains multiple subquery hints, the first is used. If there are other following hints of that type, they produce a warning. Following hints of other types are silently ignored.

@@ -1,3 +1,10 @@
+---
+description: >-
+  The MariaDB Enterprise Audit plugin logs detailed data access and
+  configuration changes, offering advanced filtering to meet security and
+  compliance requirements.
+---
+
 # MariaDB Enterprise Audit
 
 ## Overview

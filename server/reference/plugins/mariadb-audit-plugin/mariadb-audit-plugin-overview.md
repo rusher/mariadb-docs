@@ -1,8 +1,8 @@
 ---
 description: >-
-  Learn about the MariaDB Audit Plugin, which provides detailed logging of
-  server activity. It records connections, queries, and administrative commands
-  to help meet security compliance needs.
+  The MariaDB Audit Plugin records server activity, including connections,
+  queries, and table access, to help meet organizational auditing and compliance
+  regulations.
 ---
 
 # Audit Plugin Overview

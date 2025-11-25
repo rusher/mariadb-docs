@@ -977,7 +977,7 @@
         * [Full-Text Index Stopwords](ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/full-text-index-stopwords.md)
     * [Optimizer Hints](ha-and-performance/optimization-and-tuning/optimizer-hints/README.md)
       * [SELECT Modifier Hints](ha-and-performance/optimization-and-tuning/optimizer-hints/select-modifier-hints.md)
-      * [Expanded New-Style Optimizer Hints](ha-and-performance/optimization-and-tuning/optimizer-hints/expanded-new-style-optimizer-hints.md)
+      * [Expanded New-Style Optimizer Hints](ha-and-performance/optimization-and-tuning/optimizer-hints/expanded-optimizer-hints.md)
     * [Compression](ha-and-performance/optimization-and-tuning/optimization-and-tuning-compression/README.md)
       * [Compression Plugins](ha-and-performance/optimization-and-tuning/optimization-and-tuning-compression/compression-plugins.md)
       * [Storage-Engine Independent Column Compression](ha-and-performance/optimization-and-tuning/optimization-and-tuning-compression/storage-engine-independent-column-compression.md)

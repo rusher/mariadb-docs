@@ -1,3 +1,10 @@
+---
+description: >-
+  The PAM authentication plugin delegates password validation to the operating
+  system's PAM framework, enabling integration with LDAP, Kerberos, and other
+  services.
+---
+
 # Authentication Plugin - PAM
 
 ## Overview
