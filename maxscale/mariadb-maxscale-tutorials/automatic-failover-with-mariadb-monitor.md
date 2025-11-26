@@ -4,7 +4,7 @@
 the state of a MariaDB replication cluster. The monitor can perform cluster manipulation operations
 such as *failover*, *switchover* and *rejoin*. By default, these operations are launched manually,
 but they can be configured to also trigger automatically. All replication modifying operations
-assume GTID-based replication, and refuses to launch or may work incorrectly when using
+assume GTID-based replication, and refuse to launch or may work incorrectly when using
 file-and-position-based replication.  Also, the operations are mainly designed to work with simple
 topologies, for instance 1 primary and one to multiple replicas. More complicated setups (multilayered
 replication, multimaster rings etc.) may work, but should be tested separately to ensure the results
