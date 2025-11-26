@@ -195,7 +195,7 @@ In cases where you want to back up most databases on a server or tables on a dat
 
 If a backup is a partial backup, then mariadb-backup will record that detail in the `xtrabackup_info` file.
 
-In `innobackupex` mode, which can be enabled with the `--innobackupex` option, the `--databases` option can be used as described above, or it can be used to refer to a file, just as the [--databases-file](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup/mariadb-backup-options#databases-file) option can in the normal mode.
+In `innobackupex` mode, which can be enabled with the `--innobackupex` option, the `--databases` option can be used as described above, or it can be used to refer to a file, just as the [--databases-file option](mariadb-backup-options.md#databases-file) can in the normal mode.
 
 ### `--databases-exclude`
 
@@ -561,9 +561,9 @@ When using this option, `mariadb-backup` records its operation in a table on the
 mariadb-backup --backup --history=backup_all
 ```
 
-Information is written to  `PERCONA_SCHEMA.xtrabackup_history`.
+Information is written to `PERCONA_SCHEMA.xtrabackup_history`.
 
-`mariadb-backup`  also records this in the [xtrabackup\_info](files-created-by-mariadb-backup.md#xtrabackup_info) file.
+`mariadb-backup` also records this in the [xtrabackup\_info](files-created-by-mariadb-backup.md#xtrabackup_info) file.
 {% endtab %}
 {% endtabs %}
 
@@ -1615,7 +1615,7 @@ To extract all files from the xbstream archive into a directory use the `mbstrea
 mbstream  -x < backup.xb
 ```
 
-If a backup is streamed, then `mariadb-backup`  records the format in the `xtrabackup_info` file.
+If a backup is streamed, then `mariadb-backup` records the format in the `xtrabackup_info` file.
 
 ### `--tables`
 
@@ -1634,9 +1634,9 @@ mariadb-backup --backup \
      --tables-exclude=nodes_tmp
 ```
 
-In the example, _`nodes_*`_ matches tables named _`nodes`_, _`nodes_`_, _`nodes__`_, and so forth, because `*` means _zero or more occurrences of the previous character_ (`_`).&#x20;
+In the example, _`nodes_*`_ matches tables named _`nodes`_, _`nodes_`_, _`nodes__`_, and so forth, because `*` means _zero or more occurrences of the previous character_ (`_`).
 
-If instead you want to back up all tables whose names start with _`nodes`_, the regular expression is `^nodes.`, and to exclude tables starting with _`nodes_tmp`_, the expression is _`^nodes_tmp.`_.  (Notice the trailing period (`.`); it means _zero or more occurrences of characters following `nodes`_.) The command looks like this:
+If instead you want to back up all tables whose names start with _`nodes`_, the regular expression is `^nodes.`, and to exclude tables starting with _`nodes_tmp`_, the expression is _`^nodes_tmp.`_. (Notice the trailing period (`.`); it means _zero or more occurrences of characters following `nodes`_.) The command looks like this:
 
 ```bash
 mariadb-backup --backup \
