@@ -1,3 +1,9 @@
+---
+description: >-
+  The metadata_locks table lists currently held and requested metadata locks,
+  which protect database object definitions from concurrent modification.
+---
+
 # Performance Schema metadata\_locks Table
 
 {% hint style="info" %}
