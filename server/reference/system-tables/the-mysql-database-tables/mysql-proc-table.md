@@ -1,3 +1,9 @@
+---
+description: >-
+  The mysql.proc table stores the definitions, body, and metadata for stored
+  procedures and functions created on the server.
+---
+
 # mysql.proc Table
 
 The `mysql.proc` table contains information about [stored procedures](../../../server-usage/stored-routines/stored-procedures/) and [stored functions](../../../server-usage/stored-routines/stored-functions/). It contains similar information to that stored in the [INFORMATION SCHEMA.ROUTINES](../information-schema/information-schema-tables/information-schema-routines-table.md) table.

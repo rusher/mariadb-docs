@@ -1,3 +1,10 @@
+---
+description: >-
+  The connection phase involves an initial handshake where the client and server
+  exchange capabilities, default settings, and authentication data to establish
+  a session.
+---
+
 # Connecting
 
 ## Overview
