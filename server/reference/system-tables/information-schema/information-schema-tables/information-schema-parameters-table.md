@@ -1,3 +1,9 @@
+---
+description: >-
+  The Information Schema PARAMETERS table stores information about parameters
+  for stored procedures and functions, including data types and modes.
+---
+
 # Information Schema PARAMETERS Table
 
 The [Information Schema](../) `PARAMETERS` table stores information about [stored procedures](../../../../server-usage/stored-routines/stored-procedures/) and [stored functions](../../../../server-usage/stored-routines/stored-functions/) parameters.

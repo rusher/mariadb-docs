@@ -1,3 +1,9 @@
+---
+description: >-
+  The Information Schema PROCESSLIST table contains detailed information about
+  running threads, including their current state and execution time.
+---
+
 # Information Schema PROCESSLIST Table
 
 The [Information Schema](../) `PROCESSLIST` table contains information about running threads.

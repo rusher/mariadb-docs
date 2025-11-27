@@ -1,3 +1,9 @@
+---
+description: >-
+  The Information Schema TRIGGERED_UPDATE_COLUMNS table identifies which columns
+  are modified by the SET clause of a specific trigger.
+---
+
 # Information Schema TRIGGERED\_UPDATE\_COLUMNS
 
 {% hint style="info" %}

@@ -1,3 +1,9 @@
+---
+description: >-
+  The Information Schema WSREP_BF_ABORTS table provides statistics on Galera
+  Cluster brute force aborts, detailing the victim and transaction IDs.
+---
+
 # Information Schema WSREP\_BF\_ABORTS
 
 {% hint style="info" %}
@@ -55,8 +61,6 @@ SELECT * FROM INFORMATION_SCHEMA.WSREP_BF_ABORT_HISTORY LIMIT 100;
 | 2025-05-14 09:48:31.789163 |        379119 |               90 |         2366384 |         NULL | exec                | local              | executing       +----------------------------+---------------+------------------+-----------------+--------------+---------------------+--------------------+------------------+----------------------------+-----------+--------------+-------------+----------+-----------------+----------------+--------------+----------------------------+----------+---------+------------+------------------+
 ...
 ```
-
-
 
 [^1]: Brute Force (BF) conflict resolution mechanism:
 
