@@ -6,7 +6,7 @@ MariaDB Enterprise Server 10.3.31-13 was released on 2021-09-14.
 
 ## Fixed Security Vulnerabilities
 
-| CVE (with [cve.org](https://cve.mitre.org/) lnk)                              | CVSS base sore |
+| CVE (with [cve.org](https://cve.mitre.org/) link)                             | CVSS base sore |
 | ----------------------------------------------------------------------------- | -------------- |
 | [CVE-2021-2389](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-2389) | 5.9            |
 | [CVE-2021-4666](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-4666) | 5.5            |
