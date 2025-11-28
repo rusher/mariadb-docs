@@ -2,7 +2,7 @@
 
 ## Release Notes for MariaDB Enterprise Server 10.3.20-4
 
-This fourth release of [MariaDB Enterprise Server](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb-enterprise-server/README.md) 10.3 is a maintenance release, including a variety of fixes.
+This fourth release of [MariaDB Enterprise Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/single-node-topologies/enterprise-server) 10.3 is a maintenance release, including a variety of fixes.
 
 MariaDB Enterprise Server 10.3.20-4 was released on 2019-11-18.
 
@@ -17,17 +17,17 @@ MariaDB Enterprise Server 10.3.20-4 was released on 2019-11-18.
 ### Notable Changes
 
 * New option `innodb_change_buffer_dump` added to Debug builds. This option dumps the contents of the [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) change buffer to the server error log at startup. This is useful when a slow shutdown cannot be performed successfully. ([MDEV-20864](https://jira.mariadb.org/browse/MDEV-20864))
-* Eliminated unnecessary logging of warnings to the error log regarding [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) maximum row size for DML statements which should be present only for DDL operations. (MENT-454)
+* Eliminated unnecessary logging of warnings to the error log regarding [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) maximum row size for DML statements, which should be present only for DDL operations. (MENT-454)
 
 ### Issues Fixed
 
 #### Can result in data loss
 
-* [mariadb-backup](../../10-3/broken-reference/) [--prepare](../../10-3/broken-reference/) [--export](../../10-3/broken-reference/) ... could overwrite binary logs if certain conditions were present. ([MDEV-20703](https://jira.mariadb.org/browse/MDEV-20703)) Conditions which must be present to trigger this bug:
+* [mariadb-backup --prepare --export](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup) ... could overwrite binary logs if certain conditions were present. ([MDEV-20703](https://jira.mariadb.org/browse/MDEV-20703)) Conditions that must be present to trigger this bug:
   * mariadb-backup is executed on the MariaDB Server host, and
   * Configuration files from the master are used, and
   * Configuration files enable binary logging
-* If unable to upgrade to MariaDB Enterprise Server 10.3.20-4, where this bug is fixed, a workaround is available: use the `--defaults` option to [mariadb-backup](../../10-3/broken-reference/) to avoid the bug-triggering conditions by specifying a different configuration file.
+* If unable to upgrade to MariaDB Enterprise Server 10.3.20-4, where this bug is fixed, a workaround is available: use the `--defaults` option to [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup) to avoid the bug-triggering conditions by specifying a different configuration file.
 
 #### Can result in a hang or crash
 
@@ -39,30 +39,30 @@ MariaDB Enterprise Server 10.3.20-4 was released on 2019-11-18.
 
 ## index from an [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) table can cause a hang. ([MDEV-19529](https://jira.mariadb.org/browse/MDEV-19529))\`
 
-* Change to a [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) table containing a \`#FULLTEXT
+* Change to an [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) table containing a \`#FULLTEXT
 
-## index can cause Server to become unresponsive. ([MDEV-20987](https://jira.mariadb.org/browse/MDEV-20987))\`
+## index can cause the Server to become unresponsive. ([MDEV-20987](https://jira.mariadb.org/browse/MDEV-20987))\`
 
 * Removal of a virtual column used by an index can result in a crash. (MENT-434)
-* [CREATE INDEX](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-index), [ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table) , or [OPTIMIZE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table) on an [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) table can cause Server to become unresponsive. ([MDEV-20852](https://jira.mariadb.org/browse/MDEV-20852))
-* `INSTANT ADD COLUMN` on an [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) table which includes a `FOREIGN KEY` definition can result in a crash. (MENT-435)
+* [CREATE INDEX](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-index), [ALTER TABLE,](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table) or [OPTIMIZE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table) on an [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) table can cause the Server to become unresponsive. ([MDEV-20852](https://jira.mariadb.org/browse/MDEV-20852))
+* `INSTANT ADD COLUMN` on an [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) table, which includes a `FOREIGN KEY` definition can result in a crash. (MENT-435)
 
 #### Can result in unexpected behavior
 
-* Unnecessary logging of warnings to the error log regarding [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) maximum row size for DML statements which should be present only for DDL operations. (MENT-454)
-* After server restart, a SELECT using a \`#FULLTEXT
+* Unnecessary logging of warnings to the error log regarding [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) maximum row size for DML statements, which should be present only for DDL operations. (MENT-454)
+* After server restart, a SELECT using a #FULLTEXT
 
 ## index on [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) tables can fail to return some data. ([MDEV-19073](https://jira.mariadb.org/browse/MDEV-19073))\`
 
-* [MariaDB Enterprise Backup](../../10-3/broken-reference/) and MariaDB Backup, when using `mbstream`, recreated `xtrabackup_info` in the same directory as the backup file. Repeated extract of the backup could fail. ([MDEV-18438](https://jira.mariadb.org/browse/MDEV-18438))
+* [MariaDB Enterprise Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-enterprise-backup) and MariaDB Backup, when using `mbstream`, recreated `xtrabackup_info` in the same directory as the backup file. Repeated extraction of the backup could fail. ([MDEV-18438](https://jira.mariadb.org/browse/MDEV-18438))
 * `mysqld_multi.sh` script could not be launched and returned a syntax error. (MENT-433)
 * Though not supported on Microsoft Windows, the server\_audit\_output\_type system variable for the Audit plugin accepted a SYSLOG value. ([MDEV-19851](https://jira.mariadb.org/browse/MDEV-19851))
-* `FOREIGN KEY` constraints have been ignored during DELETE when parent table is [System-Versioned](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/temporal-tables/system-versioned-tables). ([MDEV-16210](https://jira.mariadb.org/browse/MDEV-16210))
-* DELETE from child table with `FOREIGN KEY` was not possible when the table is [System-Versioned](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/temporal-tables/system-versioned-tables). ([MDEV-20812](https://jira.mariadb.org/browse/MDEV-20812))
+* `FOREIGN KEY` constraints have been ignored during DELETE when the parent table is [System-Versioned](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/temporal-tables/system-versioned-tables). ([MDEV-16210](https://jira.mariadb.org/browse/MDEV-16210))
+* DELETE from the child table with a `FOREIGN KEY` was not possible when the table is [System-Versioned](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/temporal-tables/system-versioned-tables). ([MDEV-20812](https://jira.mariadb.org/browse/MDEV-20812))
 
 #### Related to install and upgrade
 
-* Installing MariaDB Enterprise Server from repository failed on CentOS 7 due to package dependencies. (MENT-420)
+* Installing MariaDB Enterprise Server from the repository failed on CentOS 7 due to package dependencies. (MENT-420)
 
 ### Interface Changes
 
@@ -70,7 +70,7 @@ MariaDB Enterprise Server 10.3.20-4 was released on 2019-11-18.
 
 ### Platforms
 
-In alignment with the [enterprise lifecycle](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/~/changes/32/mariadb-enterprise-server-release-notes/enterprise-server-lifecycle), MariaDB Enterprise Server 10.3.20-4 is provided for:
+In alignment with the [enterprise lifecycle](../../enterprise-server-lifecycle.md), MariaDB Enterprise Server 10.3.20-4 is provided for:
 
 * CentOS 8
 * CentOS 7
@@ -90,7 +90,7 @@ In alignment with the [enterprise lifecycle](https://app.gitbook.com/o/diTpXxF5W
 Some components of MariaDB Enterprise Server might not support all platforms. For additional information, see "[MariaDB Corporation Engineering Policies](https://mariadb.com/engineering-policies)".
 
 {% hint style="info" %}
-#### Note
+**Note**
 
 CentOS 6, Debian 8, and Red Hat Enterprise Linux 6 are no longer supported as per the [MariaDB Engineering Policy](https://mariadb.com/engineering-policies). Older releases are available from the [MariaDB Downloads page](https://mariadb.com/downloads). Instructions for installation are included as a `README` file within the download.
 {% endhint %}
