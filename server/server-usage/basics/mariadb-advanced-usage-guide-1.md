@@ -1,3 +1,9 @@
+---
+description: >-
+  This guide covers the fundamentals of creating database structures, inserting
+  data, and retrieving information using the default MariaDB client.
+---
+
 # Basic Queries
 
 {% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/G9gr3KMrlccJhmFh3SNT/" %}

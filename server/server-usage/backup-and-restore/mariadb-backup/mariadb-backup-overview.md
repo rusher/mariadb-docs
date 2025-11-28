@@ -1,7 +1,7 @@
 ---
 description: >-
-  Introduction to the mariadb-backup tool. Learn how this utility performs
-  physical backups for InnoDB, Aria, and MyISAM tables.
+  An introduction to the mariadb-backup utility, detailing its features,
+  installation process, and support for hot online backups of InnoDB tables.
 ---
 
 # mariadb-backup Overview

@@ -1,3 +1,9 @@
+---
+description: >-
+  Learn to connect, create databases, and execute fundamental SQL commands like
+  INSERT, SELECT, and UPDATE.
+---
+
 # Basics Guide
 
 {% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/G9gr3KMrlccJhmFh3SNT/" %}

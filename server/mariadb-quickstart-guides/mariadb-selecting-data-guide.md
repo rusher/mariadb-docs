@@ -1,5 +1,7 @@
 ---
-description: SELECT Statement Guide
+description: >-
+  This guide explains the SELECT statement in detail, covering how to retrieve,
+  filter, limit, and sort data from your MariaDB database.
 ---
 
 # Getting Data Guide

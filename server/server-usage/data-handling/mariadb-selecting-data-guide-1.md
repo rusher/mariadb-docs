@@ -1,3 +1,9 @@
+---
+description: >-
+  This guide explains how to retrieve data from MariaDB using the SELECT
+  statement, progressing from basic syntax to more involved queries.
+---
+
 # Getting Data from MariaDB
 
 The simplest way to retrieve data from MariaDB is to use the [SELECT](../../reference/sql-statements/data-manipulation/selecting-data/select.md) statement. Since the [SELECT](../../reference/sql-statements/data-manipulation/selecting-data/select.md) statement is an essential SQL statement, it has many options available with it. It's not necessary to know or use them all—you could execute very basic [SELECT](../../reference/sql-statements/data-manipulation/selecting-data/select.md) statements if that satisfies your needs. However, as you use MariaDB more, you may need more powerful [SELECT](../../reference/sql-statements/data-manipulation/selecting-data/select.md) statements. In this article we will go through the basics of [SELECT](../../reference/sql-statements/data-manipulation/selecting-data/select.md) and will progress to more involved [SELECT](../../reference/sql-statements/data-manipulation/selecting-data/select.md) statements;we will move from the beginner level to the more intermediate and hopefully you will find some benefit from this article regardless of your skill level. For absolute beginners who are just starting with MariaDB, you may want to read the [MariaDB Basics article](../../mariadb-quickstart-guides/basics-guide.md).

@@ -1,5 +1,7 @@
 ---
-description: Basic Joins Guide
+description: >-
+  This guide introduces the different types of JOINs (INNER, LEFT, RIGHT, CROSS)
+  and demonstrates how to combine data from multiple tables.
 ---
 
 # Joining Tables with JOIN Clauses Guide

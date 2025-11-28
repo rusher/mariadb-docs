@@ -1,3 +1,9 @@
+---
+description: >-
+  This guide provides examples of frequent SQL patterns, such as finding maximum
+  values, calculating averages, and using auto-increment columns.
+---
+
 # Commonly Used Queries
 
 This page is intended to be a quick reference of commonly-used and/or useful queries in MariaDB.

@@ -1,3 +1,9 @@
+---
+description: >-
+  Discover these variants that allow partitioning based on multiple columns and
+  non-integer types, offering greater flexibility than standard RANGE/LIST.
+---
+
 # RANGE COLUMNS and LIST COLUMNS Partitioning Types
 
 `RANGE COLUMNS` and `LIST COLUMNS` are variants of, respectively, [RANGE](range-partitioning-type.md) and [LIST](list-partitioning-type.md). With these partitioning types, there is not a single partitioning expression; instead, a list of one or more columns is accepted. The following rules apply:

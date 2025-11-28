@@ -1,7 +1,7 @@
 ---
 description: >-
-  Reference guide for mariadb-backup command-line options. Explore parameters
-  for backup, prepare, copy-back, and restore operations.
+  A comprehensive reference for all command-line options available in
+  mariadb-backup, covering backup, prepare, and restore operations.
 ---
 
 # mariadb-backup Options

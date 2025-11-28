@@ -1,7 +1,7 @@
 ---
 description: >-
-  Perform complete server backups and restores. This guide covers creating a
-  full physical backup, preparing the data, and restoring it to the server.
+  Learn how to perform and restore full physical backups of MariaDB databases
+  using the mariadb-backup tool, ensuring consistent data recovery.
 ---
 
 # Full Backup and Restore with mariadb-backup

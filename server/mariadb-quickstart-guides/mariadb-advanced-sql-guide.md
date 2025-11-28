@@ -1,3 +1,9 @@
+---
+description: >-
+  Learn how to perform essential SQL operations such as creating tables,
+  inserting data, and using aggregate functions like MAX, MIN, and AVG.
+---
+
 # Essential Queries Guide
 
 The Essential Queries Guide offers a concise collection of commonly-used SQL queries. It's designed to help developers and database administrators quickly find syntax and examples for typical database operations, from table creation and data insertion to effective data retrieval and manipulation.

@@ -1,7 +1,7 @@
 ---
 description: >-
-  Save storage and time with incremental backups. Learn to back up only changed
-  data and combine these deltas with a full backup for restoration.
+  This guide explains how to create and apply incremental backups with
+  mariadb-backup, saving storage space and reducing backup time.
 ---
 
 # Incremental Backup and Restore with mariadb-backup
