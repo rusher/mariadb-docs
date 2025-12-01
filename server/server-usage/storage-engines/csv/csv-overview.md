@@ -2,8 +2,6 @@
 
 The CSV Storage Engine can read and append to files stored in CSV (comma-separated-values) format.
 
-However, since [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0), a better storage engine is able to read and write such files: [CONNECT](../connect/).
-
 ## The CSV storage engine and logging to tables
 
 The CSV storage engine is the default storage engine when using [logging of SQL queries](../../../server-management/server-monitoring-logs/writing-logs-into-tables.md) to tables.
