@@ -16,14 +16,14 @@ Starting with MariaDB Enterprise Server 10.5 and MariaDB Community Server 10.5, 
 
 ## Basic Configuration
 
-```
+```ini
 [mariadb]
 ...
 innodb_read_io_threads=8
 innodb_write_io_threads=8
 ```
 
-```
+```sql
 SET GLOBAL innodb_read_io_threads=8;
 SET GLOBAL innodb_write_io_threads=8;
 

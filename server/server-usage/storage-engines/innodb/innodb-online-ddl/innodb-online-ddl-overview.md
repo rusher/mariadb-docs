@@ -1,3 +1,9 @@
+---
+description: >-
+  Understand how InnoDB supports online DDL operations, allowing concurrent DML
+  while altering tables, and the different locking strategies available.
+---
+
 # InnoDB Online DDL Overview
 
 InnoDB tables support online DDL, which permits concurrent DML and uses optimizations to avoid unnecessary table copying.
