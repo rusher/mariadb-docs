@@ -1,3 +1,9 @@
+---
+description: >-
+  Learn about the specialized I/O threads in MariaDB Enterprise Server's InnoDB
+  engine that handle asynchronous read and write operations efficiently.
+---
+
 # MariaDB Enterprise Server InnoDB I/O Threads
 
 ## Overview

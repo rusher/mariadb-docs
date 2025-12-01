@@ -1,7 +1,8 @@
 ---
 description: >-
-  Understand how InnoDB supports online DDL operations, allowing concurrent DML
-  while altering tables, and the different locking strategies available.
+  An introduction to InnoDB's online DDL capabilities, detailing the ALGORITHM
+  and LOCK clauses for controlling performance and concurrency during schema
+  changes.
 ---
 
 # InnoDB Online DDL Overview
@@ -20,8 +21,8 @@ InnoDB supports multiple algorithms for performing DDL operations. This offers a
 * `DEFAULT` - This implies the default behavior for the specific operation.
 * `COPY`
 * `INPLACE`
-* `NOCOPY` - This was added in [MariaDB 10.3.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1037-release-notes).
-* `INSTANT` - This was added in [MariaDB 10.3.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1037-release-notes).
+* `NOCOPY`
+* `INSTANT`
 
 ## Specifying an Alter Algorithm
 

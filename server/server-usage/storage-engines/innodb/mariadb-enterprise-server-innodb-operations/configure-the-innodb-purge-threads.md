@@ -1,7 +1,7 @@
 ---
 description: >-
-  Instructions on how to configure the number of background purge threads in
-  MariaDB Enterprise Server to optimize garbage collection performance.
+  Learn how to adjust the number of background purge threads to efficiently
+  manage undo logs and prevent history list growth.
 ---
 
 # Configure the InnoDB Purge Threads

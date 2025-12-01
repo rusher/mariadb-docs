@@ -8,11 +8,11 @@ description: >-
 
 The InnoDB implementation has diverged substantially from the InnoDB in MySQL. Therefore, in these versions, the InnoDB version is no longer associated with a MySQL release version.
 
-The default InnoDB implementation is based on InnoDB from MySQL 5.7. See [Why MariaDB uses InnoDB instead of XtraDB from MariaDB 10.2](mariadb-enterprise-server-innodb-operations/innodb-unmaintained/using-innodb-instead-of-xtradb.md) for more information.
+The default InnoDB implementation is based on InnoDB from MySQL 5.7. See [Why MariaDB uses InnoDB instead of XtraDB from MariaDB 10.2](innodb-unmaintained/using-innodb-instead-of-xtradb.md) for more information.
 
 #### Note
 
-XtraDB is a performance enhanced fork of InnoDB. For compatibility reasons, the [system variables](innodb-system-variables.md) still retain their original `innodb` prefixes. If the documentation says that something applies to InnoDB, then it usually also applies to the XtraDB fork, unless explicitly stated otherwise. In these versions, it is still possible to use InnoDB instead of XtraDB. See [Using InnoDB instead of XtraDB](mariadb-enterprise-server-innodb-operations/innodb-unmaintained/using-innodb-instead-of-xtradb.md) for more information.
+XtraDB is a performance enhanced fork of InnoDB. For compatibility reasons, the [system variables](innodb-system-variables.md) still retain their original `innodb` prefixes. If the documentation says that something applies to InnoDB, then it usually also applies to the XtraDB fork, unless explicitly stated otherwise. In these versions, it is still possible to use InnoDB instead of XtraDB. See [Using InnoDB instead of XtraDB](innodb-unmaintained/using-innodb-instead-of-xtradb.md) for more information.
 
 ## Divergences
 
@@ -98,8 +98,8 @@ Some examples of divergences between MariaDB's InnoDB and MySQL's InnoDB are:
 
 ## See Also
 
-* [Why MariaDB uses InnoDB instead of XtraDB from MariaDB 10.2](mariadb-enterprise-server-innodb-operations/innodb-unmaintained/using-innodb-instead-of-xtradb.md)
-* [XtraDB Versions](mariadb-enterprise-server-innodb-operations/innodb-unmaintained/about-xtradb.md)
+* [Why MariaDB uses InnoDB instead of XtraDB from MariaDB 10.2](innodb-unmaintained/using-innodb-instead-of-xtradb.md)
+* [XtraDB Versions](innodb-unmaintained/about-xtradb.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
