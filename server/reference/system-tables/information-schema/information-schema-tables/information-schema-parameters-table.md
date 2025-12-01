@@ -16,6 +16,7 @@ It contains the following columns:
 | SPECIFIC\_SCHEMA           | Database name containing the stored routine parameter.                                                                                                             |
 | SPECIFIC\_NAME             | Stored routine name.                                                                                                                                               |
 | ORDINAL\_POSITION          | Ordinal position of the parameter, starting at 1. 0 for a function RETURNS clause.                                                                                 |
+| PARAMETER\_DEFAULT         | Displays default values for stored routine parameters.                                                                                                             |
 | PARAMETER\_MODE            | One of IN, OUT, INOUT or NULL for RETURNS.                                                                                                                         |
 | PARAMETER\_NAME            | Name of the parameter, or NULL for RETURNS.                                                                                                                        |
 | DATA\_TYPE                 | The column's [data type](../../../data-types/).                                                                                                                    |
