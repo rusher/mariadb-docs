@@ -1,20 +1,20 @@
 # Release Notes for MariaDB Enterprise Server 10.3.17-2
 
-This second release of [MariaDB Enterprise Server](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb-enterprise-server/README.md) 10.3 is a maintenance release, addressing security vulnerabilities and including a variety of fixes.
+This second release of [MariaDB Enterprise Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/single-node-topologies/enterprise-server) 10.3 is a maintenance release, addressing security vulnerabilities and including a variety of fixes.
 
 MariaDB Enterprise Server 10.3.17-2 was released on 2019-08-19.
 
 ## Fixed Security Vulnerabilities
 
-| CVE (with [cve.org](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-3/cve.org) link) | CVSS base score |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
-| [CVE-2019-2805](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-2805)                                                                                                 | 6.5             |
-| [CVE-2019-2740](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-2740)                                                                                                 | 6.5             |
-| [CVE-2019-2758](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-2758)                                                                                                 | 5.5             |
-| [CVE-2019-2739](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-2739)                                                                                                 | 5.1             |
-| [CVE-2019-2737](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-2737)                                                                                                 | 4.9             |
-| [CVE-2021-2007](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-2007)                                                                                                 | 3.7             |
-| [CVE-2020-2922](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-2922)                                                                                                 | 3.7             |
+| CVE (with [cve.org](https://cve.mitre.org/) link)                             | CVSS base score |
+| ----------------------------------------------------------------------------- | --------------- |
+| [CVE-2019-2805](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-2805) | 6.5             |
+| [CVE-2019-2740](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-2740) | 6.5             |
+| [CVE-2019-2758](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-2758) | 5.5             |
+| [CVE-2019-2739](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-2739) | 5.1             |
+| [CVE-2019-2737](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-2737) | 4.9             |
+| [CVE-2021-2007](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-2007) | 3.7             |
+| [CVE-2020-2922](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-2922) | 3.7             |
 
 ## Notable Changes
 
@@ -23,12 +23,12 @@ MariaDB Enterprise Server 10.3.17-2 was released on 2019-08-19.
 * Compatibility change: Change [innodb\_adaptive\_hash\_index](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_adaptive_hash_index) to `OFF` by default
 * Adjust spin loops to the x86 PAUSE instruction latency
 * Merge upstream changes from [MyRocks](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/myrocks) ([MDEV-19795](https://jira.mariadb.org/browse/MDEV-19795))
-* [DISKS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/other-plugins/disks-plugin) plugin now requires the [FILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#file) privilege to display information in the disks table in the information schema, the table will otherwise be empty ([MDEV-18328](https://jira.mariadb.org/browse/MDEV-18328))
+* [DISKS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/other-plugins/disks-plugin) plugin now requires the [FILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#file) privilege to display information in the disks table in the information schema; the table will otherwise be empty ([MDEV-18328](https://jira.mariadb.org/browse/MDEV-18328))
 
 ## Issues Fixed
 
-* [SERVER\_AUDIT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin) does not work with PS protocol
-* Removed [--rsync](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-3/broken-reference/README.md) legacy option from enterprise build of [MariaDB Backup](../../10-3/broken-reference/)
+* [SERVER\_AUDIT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin) does not work with the PS protocol
+* Removed [--rsync](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup/mariadb-backup-options#rsync) legacy option from enterprise build of [MariaDB Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup)
 * Changes to `mysql_install_db` script text
 * `DROP TABLE IF EXISTS` killed on master but was replicated ([MDEV-20348](https://jira.mariadb.org/browse/MDEV-20348))
 * Post-merge fixes for `rocksdb.group_min_max` test ([MDEV-20113](https://jira.mariadb.org/browse/MDEV-20113))
@@ -39,14 +39,14 @@ MariaDB Enterprise Server 10.3.17-2 was released on 2019-08-19.
 * [ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table) for InnoDB can result in a crash in some cases ([MDEV-15641](https://jira.mariadb.org/browse/MDEV-15641))
 * Failing tests in buildbot related to `FULLTEXT INDEX` ([MDEV-14154](https://jira.mariadb.org/browse/MDEV-14154))
 * Server startup bug with encrypted [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) table ([MDEV-19914](https://jira.mariadb.org/browse/MDEV-19914))
-* Possible crash when [Galera](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/galera/README.md) and foreign key is used, if the referenced record is deleted at the same time ([MDEV-19660](https://jira.mariadb.org/browse/MDEV-19660))
-* Recovery with [mariadb-backup](../../10-3/broken-reference/) crash related to InnoDB with custom innodb\_data\_file\_path ([MDEV-19978](https://jira.mariadb.org/browse/MDEV-19978))
+* Possible crash when [Galera](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/) and foreign key is used, if the referenced record is deleted at the same time ([MDEV-19660](https://jira.mariadb.org/browse/MDEV-19660))
+* Recovery with [mariadb backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup) crash related to InnoDB with custom innodb\_data\_file\_path ([MDEV-19978](https://jira.mariadb.org/browse/MDEV-19978))
 * Add page-id matching check in [innochecksum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/administrative-tools/innochecksum) tool ([MDEV-19871](https://jira.mariadb.org/browse/MDEV-19871))
-* `DROP TEMPORARY` table is logged despite no CREATE was logged in binary log ([MDEV-20091](https://jira.mariadb.org/browse/MDEV-20091))
+* `DROP TEMPORARY` table is logged despite no CREATE being logged in the binary log ([MDEV-20091](https://jira.mariadb.org/browse/MDEV-20091))
 * `mysql_upgrade_service` throws exception upgrading from 10.0 to 10.3 ([MDEV-19427](https://jira.mariadb.org/browse/MDEV-19427))
 * Loading the `AUDIT` plugin causes performance regression ([MDEV-18661](https://jira.mariadb.org/browse/MDEV-18661))
 * [REPLACE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/replace) on table with virtual\_field can cause crash ([MDEV-19771](https://jira.mariadb.org/browse/MDEV-19771))
-* Fix Aria [ER\_CRASHED\_ON\_USAGE](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-3/broken-reference/README.md) and Assertion ([MDEV-19595](https://jira.mariadb.org/browse/MDEV-19595))
+* Fix Aria ER\_CRASHED\_ON\_USAGE and Assertion ([MDEV-19595](https://jira.mariadb.org/browse/MDEV-19595))
 * Test change: `innodb.trx_id_future` fails on 10.3+ ([MDEV-20138](https://jira.mariadb.org/browse/MDEV-20138))
 * Possible foreign key corruption for `ALTER TABLE ... ADD COLUMN` with InnoDB ([MDEV-19630](https://jira.mariadb.org/browse/MDEV-19630))
 * Corruption after instant `ADD` or `DROP` when the index tree shrinks ([MDEV-19916](https://jira.mariadb.org/browse/MDEV-19916))
@@ -57,7 +57,7 @@ MariaDB Enterprise Server 10.3.17-2 was released on 2019-08-19.
 
 ## Interface Changes
 
-* [mariadb-backup](../../10-3/broken-reference/) --rsync option removed
+* [mariadb backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup) --rsync option removed
 * [mysqld](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd) [--innodb-encrypt-temporary-tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_encrypt_temporary_tables) option added
 * [mysqld](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd) [--rocksdb-cache-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/myrocks/myrocks-system-variables#rocksdb_cache_dump) option added
 * [mysqld](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd) [--rocksdb-cache-high-pri-pool-ratio](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/myrocks/myrocks-system-variables#rocksdb_cache_high_pri_pool_ratio) option added
@@ -83,7 +83,7 @@ MariaDB Enterprise Server 10.3.17-2 was released on 2019-08-19.
 
 ## Platforms
 
-In alignment with the [enterprise lifecycle](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/~/changes/32/mariadb-enterprise-server-release-notes/enterprise-server-lifecycle), MariaDB Enterprise Server 10.3.17-2 is provided for:
+In alignment with the [enterprise lifecycle](../../enterprise-server-lifecycle.md), MariaDB Enterprise Server 10.3.17-2 is provided for:
 
 * CentOS 7
 * CentOS 6
@@ -98,7 +98,7 @@ In alignment with the [enterprise lifecycle](https://app.gitbook.com/o/diTpXxF5W
 Some components of MariaDB Enterprise Server might not support all platforms. For additional information, see "[MariaDB Corporation Engineering Policies](https://mariadb.com/engineering-policies)".
 
 {% hint style="info" %}
-#### Note
+**Note**
 
 CentOS 6, Debian 8, and Red Hat Enterprise Linux 6 are no longer supported as per the [MariaDB Engineering Policy](https://mariadb.com/engineering-policies). Older releases are available from the [MariaDB Downloads page](https://mariadb.com/downloads). Instructions for installation are included as a `README` file within the download.
 {% endhint %}
