@@ -52,7 +52,7 @@ Execute expressions without returning a result set. This statement runs function
 {% endcolumn %}
 
 {% column %}
-The `CREATE PROCEDURE` statement defines a new stored procedure, specifying its name, parameters (`IN`, `OUT`, `INOUT`), and the SQL statements it executes.
+Define a new stored procedure, specifying its name, parameters (`IN`, `OUT`, `INOUT`), and the SQL statements it executes.
 {% endcolumn %}
 {% endcolumns %}
 
@@ -64,7 +64,7 @@ The `CREATE PROCEDURE` statement defines a new stored procedure, specifying its 
 {% endcolumn %}
 
 {% column %}
-The `ALTER PROCEDURE` statement modifies the characteristics of an existing stored procedure, such as its security context or comment, without changing its logic.
+Modify the characteristics of an existing stored procedure, such as its security context or comment, without changing its logic.
 {% endcolumn %}
 {% endcolumns %}
 
@@ -76,7 +76,7 @@ The `ALTER PROCEDURE` statement modifies the characteristics of an existing stor
 {% endcolumn %}
 
 {% column %}
-The `DROP PROCEDURE` statement permanently removes a stored procedure and its associated privileges from the database.
+Remove a stored procedure and its associated privileges from the database.
 {% endcolumn %}
 {% endcolumns %}
 
@@ -88,6 +88,6 @@ The `DROP PROCEDURE` statement permanently removes a stored procedure and its as
 {% endcolumn %}
 
 {% column %}
-The `DROP FUNCTION` statement removes a stored function from the database, deleting its definition and associated privileges.
+Remove a stored function from the database, deleting its definition and associated privileges.
 {% endcolumn %}
 {% endcolumns %}
