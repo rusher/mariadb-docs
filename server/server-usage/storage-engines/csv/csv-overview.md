@@ -1,3 +1,9 @@
+---
+description: >-
+  The CSV Storage Engine stores data in comma-separated values format text
+  files, making it easy to exchange data with other applications.
+---
+
 # CSV Overview
 
 The CSV Storage Engine can read and append to files stored in CSV (comma-separated-values) format.
