@@ -1792,6 +1792,7 @@
       * [MINUTE](reference/sql-functions/date-time-functions/minute.md)
       * [MONTH](reference/sql-functions/date-time-functions/month.md)
       * [MONTHNAME](reference/sql-functions/date-time-functions/monthname.md)
+      * [MONTHS\_BETWEEN](reference/sql-functions/date-time-functions/months_between.md)
       * [NOW](reference/sql-functions/date-time-functions/now.md)
       * [PERIOD\_ADD](reference/sql-functions/date-time-functions/period_add.md)
       * [PERIOD\_DIFF](reference/sql-functions/date-time-functions/period_diff.md)
