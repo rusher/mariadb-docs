@@ -19,7 +19,7 @@ Returns the maximum depth of the given JSON document, or `NULL` if the argument 
 
 * Scalar values or empty arrays or objects have a depth of 1.
 * Arrays with only scalar values and objects with only scalar values for all keys have depth of 1.
-* In other cases, the depth is greater than 2.
+* In all other cases, the depth can be 2 or greater.
 
 {% tabs %}
 {% tab title="12.2" %}
