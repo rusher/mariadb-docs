@@ -57,6 +57,7 @@ CHARACTER_MAXIMUM_LENGTH: 255
           COLLATION_NAME: utf8_general_ci
           DTD_IDENTIFIER: varchar(255)
             ROUTINE_TYPE: PROCEDURE
+       PARAMETER_DEFAULT: NULL
 ```
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
