@@ -18,8 +18,18 @@ JSON_DEPTH(json_doc)
 Returns the maximum depth of the given JSON document, or `NULL` if the argument is null. An error occurs if the argument is an invalid JSON document.
 
 * Scalar values or empty arrays or objects have a depth of 1.
-* Arrays or objects that are not empty but contain only elements or member values of depth 1 will have a depth of 2.
-* In other cases, the depth will be greater than 2.
+* Arrays or objects that are not empty but contain only elements or member values of depth 1 have a depth of 2.
+* In other cases, the depth is greater than 2.
+
+{% tabs %}
+{% tab title="12.2" %}
+There is no maximum depth level — it's unlimited.
+{% endtab %}
+
+{% tab title="< 12.2" %}
+The maximum depth is 32.
+{% endtab %}
+{% endtabs %}
 
 ## Examples
 
