@@ -3,23 +3,21 @@ name: GitBook Link Sanitizer
 on:
   pull_request:
     paths:
-      - '**.md' # Only trigger if markdown files are changed
+      - '**.md'
 
 permissions:
-  contents: write # Required for the bot to commit changes back to the branch
+  contents: write
 
 jobs:
   sanitize-links:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout the code from the PR branch
       - name: Checkout Code
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.head_ref }} # Crucial: Checkout the branch, not the detached merge commit
+          ref: ${{ github.head_ref }}
 
-      # 2. Find which .md files changed in this PR
       - name: Get changed files
         id: changed-files
         uses: tj-actions/changed-files@v44
@@ -27,8 +25,6 @@ jobs:
           files: |
             **.md
 
-      # 3. The Python "Scanner"
-      # We write the script on-the-fly using cat to keep this file self-contained.
       - name: Run Link Sanitizer
         if: steps.changed-files.outputs.any_changed == 'true'
         env:
@@ -38,17 +34,21 @@ jobs:
           import os
           
           # --- CONFIGURATION ---
-          # Add your mappings here. Format: "Bad URL": "Alias"
-          url_map = {
-              "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV": "<code class="expression">space.vars.server</code>",
-              # Add more here as needed
+          # 1. Define the HTML Template
+          # We use {} as a placeholder for the variable name
+          html_template = '<code class="expression">{}</code>'
+
+          # 2. Define the Mappings (URL -> Variable Name)
+          # No HTML here, just the variable path.
+          replacements = {
+              "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV": "space.vars.server",
+              "https://app.gitbook.com/s/AnotherIDExample": "space.vars.maxscale",
           }
           # ---------------------
 
           files = os.environ.get("ALL_CHANGED_FILES", "").split()
 
           for file_path in files:
-              # Skip if file was deleted
               if not os.path.exists(file_path):
                   continue
               
@@ -59,22 +59,22 @@ jobs:
               
               original_content = content
               
-              # Perform replacements
-              for raw_url, alias in url_map.items():
+              for raw_url, var_name in replacements.items():
                   if raw_url in content:
-                      print(f"  -> Found raw URL. Replacing with {alias}")
-                      content = content.replace(raw_url, alias)
+                      # DYNAMICALLY build the replacement string
+                      # e.g. <code class="expression">space.vars.server</code>
+                      new_string = html_template.format(var_name)
+                      
+                      print(f"  -> Found raw URL. Replacing with: {new_string}")
+                      content = content.replace(raw_url, new_string)
               
-              # If changes were made, write them back
               if content != original_content:
                   with open(file_path, 'w', encoding='utf-8') as f:
                       f.write(content)
           EOF
 
-          # Run the script we just created
           python sanitize_links.py
 
-      # 4. Commit and Push (if changes were made)
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
