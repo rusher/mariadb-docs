@@ -1,0 +1,82 @@
+name: GitBook Link Sanitizer
+
+on:
+  pull_request:
+    paths:
+      - '**.md' # Only trigger if markdown files are changed
+
+permissions:
+  contents: write # Required for the bot to commit changes back to the branch
+
+jobs:
+  sanitize-links:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout the code from the PR branch
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }} # Crucial: Checkout the branch, not the detached merge commit
+
+      # 2. Find which .md files changed in this PR
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v44
+        with:
+          files: |
+            **.md
+
+      # 3. The Python "Scanner"
+      # We write the script on-the-fly using cat to keep this file self-contained.
+      - name: Run Link Sanitizer
+        if: steps.changed-files.outputs.any_changed == 'true'
+        env:
+          ALL_CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
+        run: |
+          cat <<EOF > sanitize_links.py
+          import os
+          
+          # --- CONFIGURATION ---
+          # Add your mappings here. Format: "Bad URL": "Alias"
+          url_map = {
+              "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV": "{server}",
+              # Add more here as needed
+          }
+          # ---------------------
+
+          files = os.environ.get("ALL_CHANGED_FILES", "").split()
+
+          for file_path in files:
+              # Skip if file was deleted
+              if not os.path.exists(file_path):
+                  continue
+              
+              print(f"Scanning: {file_path}")
+              
+              with open(file_path, 'r', encoding='utf-8') as f:
+                  content = f.read()
+              
+              original_content = content
+              
+              # Perform replacements
+              for raw_url, alias in url_map.items():
+                  if raw_url in content:
+                      print(f"  -> Found raw URL. Replacing with {alias}")
+                      content = content.replace(raw_url, alias)
+              
+              # If changes were made, write them back
+              if content != original_content:
+                  with open(file_path, 'w', encoding='utf-8') as f:
+                      f.write(content)
+          EOF
+
+          # Run the script we just created
+          python sanitize_links.py
+
+      # 4. Commit and Push (if changes were made)
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "style: sanitize GitBook links (auto-fix)"
+          file_pattern: "*.md"
