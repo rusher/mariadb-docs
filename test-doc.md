@@ -1,6 +1,6 @@
 # Test Document
 
 Here is a link to the reference guide:
-{server}
+{{server}}
 
 Hopefully, the bot fixes this!
