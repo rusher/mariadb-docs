@@ -8,7 +8,7 @@ The cost shown is not a quote and does not guarantee the cost for your actual us
 
 ## Estimated Pricing
 
-The cost estimate may vary from your actual costs for several reasons, including:
+The cost estimate may vary from <code class="expression">space.vars.server</code> your actual costs for several reasons, including:
 
 * **Actual usage**: Your actual cost will be based on your actual use of the services, not the estimate.
 * **Region**: The prices for MariaDB Cloud services may vary between regions. Using a different region than the one selected may affect the results.
