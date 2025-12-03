@@ -8,7 +8,7 @@
 
 **Global Settings**
 
-#### [**admin\_audit**](../maxscale-management/deployment/maxscale-configuration-guide.md)
+#### [**admin\_audit**](../maxscale-management/deployment/maxscale-configuration-guide.md#admin\_audit)
 
 * Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
