@@ -6,29 +6,29 @@ MariaDB Enterprise Server 10.4.7-2 was released on 2019-08-19.
 
 ## Fixed Security Vulnerabilities
 
-| CVE (with [cve.org](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-4/cve.org) link) | CVSS base score |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
-| [CVE-2019-2805](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-2805)                                                                                                 | 6.5             |
-| [CVE-2019-2740](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-2740)                                                                                                 | 6.5             |
-| [CVE-2019-2758](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-2758)                                                                                                 | 5.5             |
-| [CVE-2019-2739](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-2739)                                                                                                 | 5.1             |
-| [CVE-2019-2737](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-2737)                                                                                                 | 4.9             |
-| [CVE-2021-2007](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-2007)                                                                                                 | 3.7             |
-| [CVE-2020-2922](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-2922)                                                                                                 | 3.7             |
+| CVE (with [cve.org](https://cve.mitre.org/) link)                             | CVSS base score |
+| ----------------------------------------------------------------------------- | --------------- |
+| [CVE-2019-2805](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-2805) | 6.5             |
+| [CVE-2019-2740](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-2740) | 6.5             |
+| [CVE-2019-2758](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-2758) | 5.5             |
+| [CVE-2019-2739](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-2739) | 5.1             |
+| [CVE-2019-2737](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-2737) | 4.9             |
+| [CVE-2021-2007](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-2007) | 3.7             |
+| [CVE-2020-2922](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-2922) | 3.7             |
 
 ## Notable Changes
 
 * Merge relevant [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) changes from MySQL 5.7.27
-* [Spider](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/spider) now maintains `sql_mode` between Spider Node and Data Nodes
+* [Spider](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/spider) now maintains the `sql_mode` between the Spider Node and Data Nodes
 * Adjust spin loops to the x86 PAUSE instruction latency
 * Compatibility change: Change [innodb\_log\_optimize\_ddl](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_log_optimize_ddl) to `OFF` by default
 * Compatibility change: Change [innodb\_adaptive\_hash\_index](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_log_optimize_ddl) to `OFF` by default
 * Merge upstream changes from [MyRocks](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/myrocks) ([MDEV-19795](https://jira.mariadb.org/browse/MDEV-19795))
-* [DISKS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/other-plugins/disks-plugin) plugin now requires the [FILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#file) privilege to display information in the disks table in the information schema, the table will otherwise be empty ([MDEV-18328](https://jira.mariadb.org/browse/MDEV-18328))
+* [DISKS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/other-plugins/disks-plugin) plugin now requires the [FILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#file) privilege to display information in the disks table in the information schema; the table will otherwise be empty ([MDEV-18328](https://jira.mariadb.org/browse/MDEV-18328))
 
 ## Issues Fixed
 
-* [SERVER\_AUDIT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables#server_audit) v2 does not work with PS protocol
+* [SERVER\_AUDIT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables#server_audit) v2 does not work with the PS protocol
 * Removed [--rsync](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-4/broken-reference/README.md) legacy option from enterprise build of MariaDB Backup
 * Changes to `mysql_install_db` script text
 * `DROP TABLE IF EXISTS` killed on master but was replicated ([MDEV-20348](https://jira.mariadb.org/browse/MDEV-20348))
@@ -40,8 +40,8 @@ MariaDB Enterprise Server 10.4.7-2 was released on 2019-08-19.
 * [ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table) for [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) can result in a crash in some cases ([MDEV-15641](https://jira.mariadb.org/browse/MDEV-15641))
 * Failing tests in buildbot related to `FULLTEXT INDEX` ([MDEV-14154](https://jira.mariadb.org/browse/MDEV-14154))
 * Server startup bug with encrypted [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) table ([MDEV-19914](https://jira.mariadb.org/browse/MDEV-19914))
-* Possible crash when [Galera](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/galera/README.md) and foreign key is used, if the referenced record is deleted at the same time ([MDEV-19660](https://jira.mariadb.org/browse/MDEV-19660))
-* Recovery with [mariadb-backup](../../10-4/broken-reference/) crash related to [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) with custom [innodb\_data\_file\_path](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_data_file_path) ([MDEV-19978](https://jira.mariadb.org/browse/MDEV-19978))
+* Possible crash when [Galera](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/) and foreign key are used, if the referenced record is deleted at the same time ([MDEV-19660](https://jira.mariadb.org/browse/MDEV-19660))
+* Recovery with [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup) crash related to [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) with custom [innodb\_data\_file\_path](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_data_file_path) ([MDEV-19978](https://jira.mariadb.org/browse/MDEV-19978))
 * Add page-id matching check in [innochecksum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/administrative-tools/innochecksum) tool ([MDEV-19871](https://jira.mariadb.org/browse/MDEV-19871))
 * `DROP TEMPORARY` table is logged despite no `CREATE` was logged in binary log ([MDEV-20091](https://jira.mariadb.org/browse/MDEV-20091))
 * `mysql_upgrade_service` throws exception upgrading from 10.0 to 10.3 ([MDEV-19427](https://jira.mariadb.org/browse/MDEV-19427))
@@ -53,16 +53,16 @@ MariaDB Enterprise Server 10.4.7-2 was released on 2019-08-19.
 * Corruption after instant `ADD` or `DROP` when the index tree shrinks ([MDEV-19916](https://jira.mariadb.org/browse/MDEV-19916))
 * Cannot load compressed BLOB with [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) ([MDEV-19974](https://jira.mariadb.org/browse/MDEV-19974))
 * Bug in versioned tables when deleting history ([MDEV-19814](https://jira.mariadb.org/browse/MDEV-19814))
-* Compressed columns cannot be restored from dump ([MDEV-17363](https://jira.mariadb.org/browse/MDEV-17363))
+* Compressed columns cannot be restored from a dump ([MDEV-17363](https://jira.mariadb.org/browse/MDEV-17363))
 * Bugs in [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) related to indexed virtual columns ([MDEV-16222](https://jira.mariadb.org/browse/MDEV-16222), [MDEV-17005](https://jira.mariadb.org/browse/MDEV-17005), [MDEV-19870](https://jira.mariadb.org/browse/MDEV-19870))
 * Encrypted temporary tables cannot be read with full\_crc32 ([MDEV-20340](https://jira.mariadb.org/browse/MDEV-20340))
 * Change of `COLLATE` with [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) unnecessarily requires `ALGORITHM=COPY` ([MDEV-17301](https://jira.mariadb.org/browse/MDEV-17301))
-* Changing an index comment unnecessarily rebuilds index ([MDEV-18266](https://jira.mariadb.org/browse/MDEV-18266))
+* Changing an index comment unnecessarily rebuilds the index ([MDEV-18266](https://jira.mariadb.org/browse/MDEV-18266))
 * Server hangs on shutdown during installation of [Spider](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/spider) ([MDEV-20179](https://jira.mariadb.org/browse/MDEV-20179))
 
 ## Interface Changes
 
-* [mariadb-backup](../../10-4/broken-reference/) --rsync option removed
+* [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup) [--rsync](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup/mariadb-backup-options#rsync) option removed
 * [mysqld](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd) [--innodb-encrypt-temporary-tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_encrypt_temporary_tables) option added
 * [mysqld](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd) [--rocksdb-cache-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/myrocks/myrocks-system-variables#rocksdb_cache_dump) option added
 * [mysqld](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd) [--rocksdb-cache-high-pri-pool-ratio](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/myrocks/myrocks-system-variables#rocksdb_cache_index_and_filter_with_high_priority) option added
@@ -89,7 +89,7 @@ MariaDB Enterprise Server 10.4.7-2 was released on 2019-08-19.
 
 ## Platforms
 
-In alignment with the [enterprise lifecycle](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/~/changes/32/mariadb-enterprise-server-release-notes/enterprise-server-lifecycle), MariaDB Enterprise Server 10.4.7-2 is provided for:
+In alignment with the [enterprise lifecycle](../../enterprise-server-lifecycle.md), MariaDB Enterprise Server 10.4.7-2 is provided for:
 
 * CentOS 7
 * CentOS 6
@@ -110,10 +110,10 @@ CentOS 6, Debian 8, and Red Hat Enterprise Linux 6 are no longer supported as pe
 ## Installation Instructions
 
 * [MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/single-node-topologies/enterprise-server)
-* [Enterprise Cluster Topology with MariaDB Enterprise Server ](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)[10](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology)[.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)
+* [Enterprise Cluster Topology with MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)
 * [Primary/Replica Topology with MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/primary-replica)
-* [Enterprise Spider Sharded Topology with MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/sharded-mariadb-enterprise-spider-topology)
-* [Enterprise Spider Federated Topology with MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology)
+* [Enterprise Spider Sharded Topology with MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/mariadb-enterprise-spider-topologies/sharded-mariadb-enterprise-spider-topology)
+* [Enterprise Spider Federated Topology with MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology)
 
 ## Upgrade Instructions
 
