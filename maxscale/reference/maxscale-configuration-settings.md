@@ -15,7 +15,7 @@
 * Dynamic: Yes
 * Default: false
 
-#### [**admin\_audit\_exclude\_methods**](../maxscale-management/deployment/maxscale-configuration-guide.md)
+#### [**admin\_audit\_exclude\_methods**](../maxscale-management/deployment/maxscale-configuration-guide.md#admin\_audit\_exclude\_methods)
 
 * Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
@@ -23,42 +23,42 @@
 * Values: `GET`, `PUT`, `POST`, `PATCH`, `DELETE`, `HEAD`, `OPTIONS`, `CONNECT`, `TRACE`
 * Default: No exclusions
 
-#### [**admin\_audit\_file**](../maxscale-management/deployment/maxscale-configuration-guide.md)
+#### [**admin\_audit\_file**](../maxscale-management/deployment/maxscale-configuration-guide.md#admin\_audit\_file)
 
 * Type: string
 * Mandatory: No
 * Dynamic: Yes
 * Default: `/var/log/maxscale/admin_audit.csv`
 
-#### [**admin\_auth**](../maxscale-management/deployment/maxscale-configuration-guide.md)
+#### [**admin\_auth**](../maxscale-management/deployment/maxscale-configuration-guide.md#admin\_auth)
 
 * Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
 * Default: `true`
 
-#### [**admin\_enabled**](../maxscale-management/deployment/maxscale-configuration-guide.md)
+#### [**admin\_enabled**](../maxscale-management/deployment/maxscale-configuration-guide.md#admin\_enabled)
 
 * Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
 * Default: `true`
 
-#### [**admin\_gui**](../maxscale-management/deployment/maxscale-configuration-guide.md)
+#### [**admin\_gui**](../maxscale-management/deployment/maxscale-configuration-guide.md#admin\_gui)
 
 * Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
 * Default: `true`
 
-#### [**admin\_host**](../maxscale-management/deployment/maxscale-configuration-guide.md)
+#### [**admin\_host**](../maxscale-management/deployment/maxscale-configuration-guide.md#admin\_host)
 
 * Type: string
 * Mandatory: No
 * Dynamic: No
 * Default: `"127.0.0.1"`
 
-#### [**admin\_jwt\_algorithm**](../maxscale-management/deployment/maxscale-configuration-guide.md)
+#### [**admin\_jwt\_algorithm**](../maxscale-management/deployment/maxscale-configuration-guide.md#admin\_jwt\_algorithm)
 
 * Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
@@ -66,7 +66,7 @@
 * Values: `auto`, `HS256`, `HS384`, `HS512`, `RS256`, `RS384`, `RS512`, `PS256`, `PS384`, `PS512`, `ES256`, `ES384`, `ES512`, `ED25519`, `ED448`
 * Default: `auto`
 
-#### [**admin\_jwt\_issuer**](../maxscale-management/deployment/maxscale-configuration-guide.md)
+#### [**admin\_jwt\_issuer**](../maxscale-management/deployment/maxscale-configuration-guide.md#admin\_jwt\_issuer)
 
 * Type: string
 * Mandatory: No
