@@ -40,7 +40,7 @@ jobs:
           # --- CONFIGURATION ---
           # Add your mappings here. Format: "Bad URL": "Alias"
           url_map = {
-              "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV": "{server}",
+              "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV": "<code class="expression">space.vars.server</code>",
               # Add more here as needed
           }
           # ---------------------
