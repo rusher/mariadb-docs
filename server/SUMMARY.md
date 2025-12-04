@@ -847,6 +847,7 @@
     * [mycli](clients-and-utilities/graphical-and-enhanced-clients/mycli.md)
     * [Navicat](clients-and-utilities/graphical-and-enhanced-clients/navicat.md)
     * [ocelotgui](clients-and-utilities/graphical-and-enhanced-clients/ocelotgui.md)
+    * [PgManage](clients-and-utilities/graphical-and-enhanced-clients/pgmanage.md)
     * [phpMyAdmin](clients-and-utilities/graphical-and-enhanced-clients/phpmyadmin.md)
     * [Querious](clients-and-utilities/graphical-and-enhanced-clients/querious.md)
     * [SB Data Generator](clients-and-utilities/graphical-and-enhanced-clients/sb-data-generator.md)
