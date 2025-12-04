@@ -1,3 +1,10 @@
+---
+description: >-
+  Instructions for upgrading to MariaDB Enterprise Server 11.4, which introduces
+  new data types like UUID and INET4, advanced JSON functions, and non-blocking
+  online schema changes.
+---
+
 # Upgrade to MariaDB Enterprise Server 11.4
 
 ## Overview <a href="#overview" id="overview"></a>

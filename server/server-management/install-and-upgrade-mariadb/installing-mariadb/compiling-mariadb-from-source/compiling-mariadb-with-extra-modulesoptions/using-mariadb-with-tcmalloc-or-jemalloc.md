@@ -1,3 +1,9 @@
+---
+description: >-
+  Instructions on building and configuring MariaDB to use alternative memory
+  allocators like TCMalloc or jemalloc for improved performance and profiling.
+---
+
 # Using MariaDB with TCMalloc or jemalloc
 
 Read the [Profiling Memory Usage](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/community/community/bug-tracking/profiling-memory-usage) page for more information on how to debug high memory consumption.

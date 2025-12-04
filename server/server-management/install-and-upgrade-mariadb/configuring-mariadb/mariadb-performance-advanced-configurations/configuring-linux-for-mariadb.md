@@ -1,3 +1,10 @@
+---
+description: >-
+  Guidance on tuning Linux kernel settings for MariaDB performance, including
+  I/O schedulers (using `none` or `mq-deadline`), open file limits, and core
+  file sizes.
+---
+
 # Configuring Linux for MariaDB
 
 ## Linux kernel settings

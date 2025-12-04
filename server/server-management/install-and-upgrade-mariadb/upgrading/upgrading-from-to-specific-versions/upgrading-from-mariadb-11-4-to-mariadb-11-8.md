@@ -1,3 +1,9 @@
+---
+description: >-
+  Upgrade guide for moving from MariaDB 11.4 to 11.8, covering new features like
+  vector search, optimizer improvements, and data type enhancements.
+---
+
 # Upgrading from MariaDB 11.4 to MariaDB 11.8
 
 This page includes details for upgrading from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114) to the subsequent long-term maintenance version, [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-8-series/what-is-mariadb-118).

@@ -1,3 +1,9 @@
+---
+description: >-
+  Instructions for setting up the build environment on macOS, including
+  installing dependencies via Homebrew and configuring CMake.
+---
+
 # Build Environment Setup for Mac
 
 ## Prelude
@@ -5,9 +11,11 @@
 Building MariaDB on macOS relies on the Apple-provided toolchain and Homebrew for dependencies.
 
 You can install the toolchain without XCode (suggested, unless you have XCode installed already) with:
+
 ```
 xcode-select --install
 ```
+
 Homebrew is a package manager for macOS which you can install from [https://brew.sh](https://brew.sh/)
 
 ## Install Dependencies
@@ -22,7 +30,7 @@ Second, clone MariaDB from the GitHub repository: see the [Getting the MariaDB S
 
 ## Setup the Environment
 
-CMake should find the dependencies automatically, but we may need to set several environment variables to explicitly point at locations of dependencies installed by Homebrew to avoid conflicts with system-native versions that aren't suitable for building MariaDB.  In the worst case scenario, use the following (but you can try building MariaDB first by skipping to the "Run CMake" section below to see if these are necessary in your setup):
+CMake should find the dependencies automatically, but we may need to set several environment variables to explicitly point at locations of dependencies installed by Homebrew to avoid conflicts with system-native versions that aren't suitable for building MariaDB. In the worst case scenario, use the following (but you can try building MariaDB first by skipping to the "Run CMake" section below to see if these are necessary in your setup):
 
 ```
 # Homebrew location
@@ -61,11 +69,11 @@ export LDFLAGS="$LDFLAGS -L$HOMEBREW_BASE_DIR/opt/llvm/lib/unwind -lunwind"
 export PATH="$HOMEBREW_BASE_DIR/opt/bison/bin:$PATH"
 ```
 
-The installation location of Homebrew depends on the processor type.  Apple Silicon macs will have Homebrew in `/opt/homebrew` while Intel macs will have Homebrew in `/usr/local`.
+The installation location of Homebrew depends on the processor type. Apple Silicon macs will have Homebrew in `/opt/homebrew` while Intel macs will have Homebrew in `/usr/local`.
 
 ## Run CMake
 
-By default, macOS uses a case-insensitive filesystem.  When building, we can't create a `build` subdirectory because `BUILD` already exists, and all the CMake output will end up mixed in with `BUILD`.  Instead, create a `mariadb-build` directory as that is unique.  `cd` into `mariadb-build` and, from there, run CMake with the following flags:
+By default, macOS uses a case-insensitive filesystem. When building, we can't create a `build` subdirectory because `BUILD` already exists, and all the CMake output will end up mixed in with `BUILD`. Instead, create a `mariadb-build` directory as that is unique. `cd` into `mariadb-build` and, from there, run CMake with the following flags:
 
 ```
 mkdir mariadb-build
@@ -97,6 +105,7 @@ cmake .. \
         -DWITHOUT_DYNAMIC_PLUGINS=0 \
         -DWITH_SSL=bundled
 ```
+
 (You can vary the values of these flags depending on what you need to do.)
 
 If `CMake` runs succesfully, you can then run the build itself:

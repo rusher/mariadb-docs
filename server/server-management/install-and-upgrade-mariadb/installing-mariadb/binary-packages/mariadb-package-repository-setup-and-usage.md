@@ -1,3 +1,7 @@
+---
+description: Instructions on configuring and using the MariaDB package repository.
+---
+
 # MariaDB Package Repository Setup and Usage
 
 ## Overview

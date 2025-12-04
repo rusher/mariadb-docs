@@ -1,3 +1,10 @@
+---
+description: >-
+  Comprehensive guide to installing MariaDB using `yum` or `dnf` on RHEL,
+  CentOS, and Fedora, covering repository configuration, GPG key import, and
+  package installation.
+---
+
 # Installing MariaDB with yum/dnf
 
 On RHEL, CentOS, Fedora, and other similar Linux RPM based distributions, these provide MariaDB packages. These are supported by those distributions. If you have a particular need for a later version than what is in the distribution, then MariaDB provides repositories for them.

@@ -1,3 +1,9 @@
+---
+description: >-
+  Step-by-step instructions for installing MariaDB on Debian, covering service
+  configuration and security settings.
+---
+
 # Installing MariaDB .deb Files
 
 ## Installing MariaDB with APT

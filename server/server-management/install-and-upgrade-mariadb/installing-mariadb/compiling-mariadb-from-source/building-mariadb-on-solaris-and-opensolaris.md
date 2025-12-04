@@ -1,3 +1,9 @@
+---
+description: >-
+  Notes and configuration tips for building MariaDB on Solaris and OpenSolaris
+  platforms, including buildbot setup.
+---
+
 # Building MariaDB on Solaris and OpenSolaris
 
 The following two articles should help you get your Solaris machine prepared to build MariaDB (just ignore the parts about installing buildbot):

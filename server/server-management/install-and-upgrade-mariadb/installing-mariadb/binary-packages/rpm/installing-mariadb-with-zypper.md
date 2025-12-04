@@ -1,7 +1,12 @@
+---
+description: >-
+  Detailed steps for installing MariaDB on SLES and OpenSUSE using the `zypper`
+  package manager, including repository configuration and package installation.
+---
+
 # Installing MariaDB with zypper
 
-On SLES, OpenSUSE, and other similar Linux distributions, it is highly recommended to install the relevant [RPM packages](./) from MariaDB's\
-repository using [zypper](https://en.wikipedia.org/wiki/ZYpp).
+On SLES, OpenSUSE, and other similar Linux distributions, it is highly recommended to install the relevant [RPM packages](./) from MariaDB's repository using [zypper](https://en.wikipedia.org/wiki/ZYpp).
 
 This page walks you through the simple installation steps using `zypper`.
 

@@ -1,3 +1,9 @@
+---
+description: >-
+  Information about the GPG keys used to sign MariaDB packages and repositories,
+  including how to import them for verification.
+---
+
 # GPG
 
 The MariaDB project signs their MariaDB packages for Debian, Ubuntu, Fedora, and Red Hat. This page documents information about the keys that we use and have used.
@@ -71,7 +77,7 @@ Information about the key we use on most platforms for MariaDB Enterprise Server
 
 * The short Key ID is: `0xE3C94F49`
 * The long Key ID is: `0xCE1A3DD5E3C94F49`
-* The full fingerprint of the key is: `4C47 0FFF EFC4 D3DC 5977 8655 CE1A 3DD5 E3C9 4F49` 
+* The full fingerprint of the key is: `4C47 0FFF EFC4 D3DC 5977 8655 CE1A 3DD5 E3C9 4F49`
 
 The key can be added on Debian-based systems using the following command:
 
@@ -121,11 +127,9 @@ sudo rpmkeys --import https://supplychain.mariadb.com/MariaDB-Enterprise-GPG-KEY
 {% endtab %}
 {% endtabs %}
 
-
-
 ## Configuring Repositories
 
-See the [this page](mariadb-package-repository-setup-and-usage.md) for details on using the `mariadb_repo_setup`  and `mariadb_es_repo_setup` scripts to configure repositories that use these keys.
+See the [this page](mariadb-package-repository-setup-and-usage.md) for details on using the `mariadb_repo_setup` and `mariadb_es_repo_setup` scripts to configure repositories that use these keys.
 
 See the [details](https://downloads.mariadb.org/mariadb/repositories/) on configuring MariaDB Foundation repositories that use these keys.
 

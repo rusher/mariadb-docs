@@ -1,3 +1,10 @@
+---
+description: >-
+  Provides an overview of the RPM packages available for MariaDB, listing the
+  various RPMs such as server, client, backup, and shared libraries, and
+  explaining their contents and dependencies.
+---
+
 # About the MariaDB RPM Files
 
 ## Available RPM Packages

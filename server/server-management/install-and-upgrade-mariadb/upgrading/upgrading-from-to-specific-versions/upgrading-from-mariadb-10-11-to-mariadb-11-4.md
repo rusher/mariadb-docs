@@ -1,3 +1,9 @@
+---
+description: >-
+  Guide for upgrading from the previous LTS version 10.11 to 11.4, highlighting
+  major optimizer changes, replication improvements, and SSL defaults.
+---
+
 # Upgrading from MariaDB 10.11 to MariaDB 11.4
 
 This page includes details for upgrading from [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/what-is-mariadb-1011) to the subsequent long-term maintenance version, [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114).

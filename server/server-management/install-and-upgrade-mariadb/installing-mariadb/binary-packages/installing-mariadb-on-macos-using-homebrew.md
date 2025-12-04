@@ -1,3 +1,9 @@
+---
+description: >-
+  How to install MariaDB Server on macOS using the Homebrew package manager,
+  including starting the service and securing the installation.
+---
+
 # Installing MariaDB on macOS (Homebrew)
 
 MariaDB Server is available for installation on macOS (formerly Mac OS X) via the [Homebrew](https://brew.sh/) package manager.

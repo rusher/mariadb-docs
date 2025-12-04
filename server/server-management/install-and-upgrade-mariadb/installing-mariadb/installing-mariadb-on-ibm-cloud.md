@@ -1,3 +1,9 @@
+---
+description: >-
+  Step-by-step instructions for deploying MariaDB on IBM Cloud Kubernetes
+  Service, including provisioning clusters and configuring storage.
+---
+
 # Installing MariaDB on IBM Cloud
 
 Get MariaDB on IBM Cloud.

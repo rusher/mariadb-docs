@@ -1,3 +1,9 @@
+---
+description: >-
+  General guide for compiling MariaDB from source on various platforms using
+  CMake and standard build tools.
+---
+
 # Generic Build Instructions
 
 The instructions on this page will help you compile [MariaDB](../../../../clients-and-utilities/mariadb-client/) from source.\
@@ -135,8 +141,7 @@ This configures the source for debugging and runs make. The server binary will b
 After installing MariaDB (using `sudo make install`), but prior to starting MariaDB for the first time, one should:
 
 1. Ensure the directory where you want MariaDB to store it's data is owned by the `mariadb` user (if the user doesn't exist, you'll need to create it)
-2.  Create a [MariaDB configuration config file](../../configuring-mariadb/configuring-mariadb-with-option-files.md) (`/.my.cnf` or `/etc/my.cnf`) with the configuration options you desire. A suggested minimum configuration file, to specify where you want your data to be stored, would be:\
-
+2.  Create a [MariaDB configuration config file](../../configuring-mariadb/configuring-mariadb-with-option-files.md) (`/.my.cnf` or `/etc/my.cnf`) with the configuration options you desire. A suggested minimum configuration file, to specify where you want your data to be stored, would be:\\
 
     ```ini
     [mariadbd]

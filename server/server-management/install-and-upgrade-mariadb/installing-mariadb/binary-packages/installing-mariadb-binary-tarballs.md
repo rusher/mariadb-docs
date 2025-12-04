@@ -1,3 +1,9 @@
+---
+description: >-
+  A guide to installing MariaDB from pre-compiled binary tarballs on Linux,
+  allowing for flexible installation paths and multiple versions.
+---
+
 # Installing MariaDB Binary Tarballs
 
 Binary tarballs (bintars) are compressed tar archives that contain pre-compiled executables, libraries, and other deployment dependencies. They can usually be installed on any modern Linux distribution.
