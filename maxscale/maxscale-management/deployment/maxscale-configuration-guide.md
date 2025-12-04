@@ -1,3 +1,10 @@
+---
+description: >-
+  Explore the complete reference for configuring MariaDB MaxScale, covering core
+  concepts, server objects, monitors services, listeners, and parameter
+  management for optimal database routing.
+---
+
 # MaxScale Configuration Guide
 
 ## Introduction
@@ -762,10 +769,7 @@ Configure the directory for the PID file for MariaDB MaxScale. This file contain
 
 MaxScale versions before 24.08.1 used the path `/var/run/maxscale/` for the PID files. This was a legacy path according to the Filesystem Hierarchy Standard and starting with MaxScale 24.08.1, the appropriate modern PID file path is used.
 
-The value of `piddir` should not be changed when MaxScale is installed from a DEB/RPM package and is run as a
-SystemD service. The SystemD service file in `/lib/systemd/systemd/maxscale.service` depends on the PID file
-being stored at `/run/maxscale/maxscale.pid`. However, if `piddir` must be modified to point to a non-default
-location, it must also be modified in the SystemD service file configuration to point to the new location.
+The value of `piddir` should not be changed when MaxScale is installed from a DEB/RPM package and is run as a SystemD service. The SystemD service file in `/lib/systemd/systemd/maxscale.service` depends on the PID file being stored at `/run/maxscale/maxscale.pid`. However, if `piddir` must be modified to point to a non-default location, it must also be modified in the SystemD service file configuration to point to the new location.
 
 #### `execdir`
 
@@ -1472,9 +1476,7 @@ The client secret that's used when doing OpenID Connect requests. When using ano
 * Dynamic: Yes
 * Default: false
 
-Disable TLS certificate validation when fetching OIDC certificates. This should
-only be enabled when testing with a local OpenID Connect provider with
-self-signed certificates.
+Disable TLS certificate validation when fetching OIDC certificates. This should only be enabled when testing with a local OpenID Connect provider with self-signed certificates.
 
 #### `admin_oidc_extra_options`
 
@@ -1483,12 +1485,9 @@ self-signed certificates.
 * Dynamic: No
 * Default: `""`
 
-Extra options that are added to the initial authorization request. These options
-are sometimes needed to pass extra information to the identity provider service.
+Extra options that are added to the initial authorization request. These options are sometimes needed to pass extra information to the identity provider service.
 
-For [Auth0](https://auth0.com/), the API that is used must be defined with this
-setting. For example, if the API name is `my-api` then
-`admin_oidc_extra_options=audience=my-api` should be used.
+For [Auth0](https://auth0.com/), the API that is used must be defined with this setting. For example, if the API name is `my-api` then `admin_oidc_extra_options=audience=my-api` should be used.
 
 #### `admin_verify_url`
 
