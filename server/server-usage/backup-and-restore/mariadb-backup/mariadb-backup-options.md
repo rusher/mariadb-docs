@@ -577,10 +577,7 @@ Defines the hostname for the MariaDB Server you want to backup.
 
 Using this option, you can define the hostname or IP address to use when connecting to a local MariaDB Server over TCP/IP. By default, `mariadb-backup` attempts to connect to `localhost`.
 
-Warning: No Remote Backups. This option does not allow you to back up a remote server. mariabackup must be run on the same server where the database files reside.
-The --host option is used only to establish the client connection for managing locks and retrieving metadata. The actual data files are always read from the local filesystem.
-Attempting to use this option to back up a remote host will result in a backup of the local machine's data, associated with the remote machine's binary log coordinates.
-
+Warning: No Remote Backups. This option does not allow you to back up a remote server. mariabackup must be run on the same server where the database files reside. The --host option is used only to establish the client connection for managing locks and retrieving metadata. The actual data files are always read from the local filesystem. Attempting to use this option to back up a remote host will result in a backup of the local machine's data, associated with the remote machine's binary log coordinates.
 
 ```bash
 mariadb-backup --backup \
@@ -1630,7 +1627,7 @@ Defines the tables you want to include in the backup.
 --tables=REGEX
 ```
 
-Using this option, you can define what tables you want `mariadb-backup` to back up from the database. The table values are defined using Regular Expressions. To define the tables you want to exclude from the backup, see the `--tables-exclude` option.
+Using this option, you can define what tables you want `mariadb-backup` to back up from the database. The table values are defined using Regular Expressions (regex[^2]). To define the tables you want to exclude from the backup, see the `--tables-exclude` option.
 
 ```bash
 mariadb-backup --backup \
@@ -1653,6 +1650,15 @@ mariadb-backup --backup \
 In that example, some of the tables included via the `--tables` option are excluded by `--tables-excludes`. That works because `--tables-exclude` takes precedence over `--tables`.
 
 You can specify multiple table name regex[^2] patterns as a comma-separated list, for both the `--tables` and the `--tables-exclude` options.
+
+The following command backs up all tables in the _`test1`_ and _`test2`_ databases, except the _`exclude_table`_ table in the _`test2`_ database, and stores the backup files under _`/path/to/backups/`_:
+
+```bash
+mariadb-backup --backup \
+     --tables=test1[.].*,test2[.].* \
+     --tables-exclude=^test2[.]exclude_table
+     --target-dir=/path/to/backups/
+```
 
 {% hint style="warning" %}
 The [`--databases`](mariadb-backup-options.md#databases) and [`--databases-exclude`](mariadb-backup-options.md#databases-exclude) options, if used, take precedence over `--tables` and `--tables-exclude`. That is, they can filter out tables, which are then not "visible" to the latter mentioned options.
