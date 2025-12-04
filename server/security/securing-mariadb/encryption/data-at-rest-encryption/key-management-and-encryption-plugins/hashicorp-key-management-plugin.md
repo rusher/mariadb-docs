@@ -15,6 +15,8 @@ The current version of this plugin implements the following features:
 * The plugin uses libcurl (https) as an interface to the HashiCorp Vault server;
 * JSON parsing is performed through the JSON service (through the include/mysql/service\_json.h);
 * HashiCorp Vault 1.2.4 was used for development and testing.
+* As of MariaDB 10.6.24, the plugin is configured to use cached keys for all communication errors, not just for timeouts. This ensures continuous operation when the Vault server is temporarily unreachable.
+* As of MariaDB 10.6.24, the default setting for cache usage on error is `ON`.
 
 Since we require support for key versioning, the key-value storage must be configured in Hashicorp Vault as a key-value storage that uses the interface of the second version. For example, you can create it as follows:
 
@@ -70,53 +72,54 @@ The plugin supports the following parameters, which must be set in advance and c
 #### `hashicorp-key-management-vault-url`
 
 * Description: HTTP\[s] URL that is used to connect to the Hashicorp Vault server. It must include the name of the scheme (`https://` for a secure connection) and, according to the API rules for storages of the key-value type in Hashicorp Vault, after the server address, the path must begin with the "/v1/" string (as prefix), for example: `https://127.0.0.1:8200/v1/my_secrets`. By default, the path is not set, therefore you must replace with the correct path to your secrets.
-* Commandline: `--[loose-]hashicorp-key-management-vault-url="<url>"`
+* Command line: `--[loose-]hashicorp-key-management-vault-url="<url>"`
 
 #### `hashicorp-key-management-token`
 
 * Description: Authentication token that passed to the Hashicorp Vault in the request header. By default, this parameter contains an empty string, so you must specify the correct value for it, otherwise the Hashicorp Vault server will refuse authorization. Alternatively, you can define an environment variable `VAULT_TOKEN` and store the token there.
-* Commandline: `--[loose-]hashicorp-key-management-token="<token>"`
+* Command line: `--[loose-]hashicorp-key-management-token="<token>"`
 
 #### `hashicorp-key-management-vault-ca`
 
 * Description: Path to the Certificate Authority (CA) bundle (is a file that contains root and intermediate certificates). By default, this parameter contains an empty string, which means no CA bundle.
-* Commandline: `--[loose-]hashicorp-key-management-vault-ca="<path>"`
+* Command line: `--[loose-]hashicorp-key-management-vault-ca="<path>"`
 
 #### `hashicorp-key-management-timeout`
 
 * Description: Set the duration (in seconds) for the Hashicorp Vault server connection timeout. The default value is 15 seconds. The allowed range is from 1 to 86400 seconds. The user can also specify a zero value, which means the default timeout value set by the libcurl library (currently 300 seconds).
-* Commandline: `--[loose-]hashicorp-key-management-timeout=<timeout>`
+* Command line: `--[loose-]hashicorp-key-management-timeout=<timeout>`
 
 #### `hashicorp-key-management-max-retries`
 
 * Description: Number of server request retries in case of timeout. Default is three retries.
-* Commandline: `----[loose-]hashicorp-key-management-max-retries=<retries>`
+* Command line: `----[loose-]hashicorp-key-management-max-retries=<retries>`
 
 #### `hashicorp-key-management-caching-enabled`
 
 * Description: Enable key caching (storing key values received from the Hashicorp Vault server in the local memory). By default caching is enabled.
-* Commandline: `--[loose-]hashicorp-key-management-caching-enabled="on"|"off"`
+* Command line: `--[loose-]hashicorp-key-management-caching-enabled="on"|"off"`
 
 #### `hashicorp-key-management-use-cache-on-timeout`
 
 * Description: This parameter instructs the plugin to use the key values or version numbers taken from the cache in the event of a timeout when accessing the vault server. By default this option is disabled. Please note that key values or version numbers will be read from the cache when the timeout expires only after the number of attempts to read them from the storage server that specified by the [--\[loose-\]hashicorp-key-management-max-retries](hashicorp-key-management-plugin.md#hashicorp-key-management-max-retries) parameter has been exhausted.
-* Commandline: `--[loose-]hashicorp-key-management-use-cache-on-timeout="on"|"off"`
+* Command line: `--[loose-]hashicorp-key-management-use-cache-on-timeout="on"|"off"`
 
 #### `hashicorp-key-management-cache-timeout`
 
-* Description: The time (in milliseconds) after which the value of the key stored in the cache becomes invalid and an attempt to read this data causes a new request send to the vault server. By default, cache entries become invalid after 60,000 milliseconds (after one minute). If the value of this parameter is zero, then the keys will always be considered invalid, but they still can be used if the vault server is unavailable and the corresponding cache operating mode (--\[loose-]hashicorp-key-management-use-cache-on-timeout="on") is enabled.
-* Commandline: `--[loose-]hashicorp-key-management-cache-timeout=<timeout>`
+* Description: The time (in milliseconds) after which the value of the key stored in the cache becomes invalid and an attempt to read this data causes a new request send to the vault server. By default, cache entries become invalid after 60,000 milliseconds (after one minute). If the value of this parameter is zero, then the keys will always be considered invalid, but they still can be used if the vault server is unavailable and the corresponding cache operating mode (`--[loose-]hashicorp-key-management-use-cache-on-timeout="on"`) is enabled.
+* As of MariaDB 10.6.24, the default value is 1 year (specified in milliseconds).
+* Command line: `--[loose-]hashicorp-key-management-cache-timeout=<timeout>`
 
 #### `hashicorp-key-management-cache-version-timeout`
 
 * Description: The time (in milliseconds) after which the information about latest version number of the key (which stored in the cache) becomes invalid and an attempt to read this information causes a new request send to the vault server. If the value of this parameter is zero, then information about latest key version numbers always considered invalid, unless there is no communication with the vault server and use of the cache is allowed when the server is unavailable. By default, this parameter is zero, that is, the latest version numbers for the keys stored in the cache are considered always invalid, except when the vault server is unavailable and use\
   of the cache is allowed on server failures.
-* Commandline: `--[loose-]hashicorp-key-management-cache-version-timeout=<timeout>`
+* Command line: `--[loose-]hashicorp-key-management-cache-version-timeout=<timeout>`
 
 #### `hashicorp-key-management-check-kv-version`
 
 * Description: This parameter enables ("on", this is the default value) or disables ("off") checking the kv storage version during plugin initialization. The plugin requires storage to be version 2 or older in order for it to work properly.
-* Commandline: `--[loose-]hashicorp-key-management-check-kv-version="on"|"off"`
+* Command line: `--[loose-]hashicorp-key-management-check-kv-version="on"|"off"`
 
 ## See Also
 
