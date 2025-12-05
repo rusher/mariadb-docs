@@ -22,7 +22,7 @@ Start MariaDB Server:
 mysql.server start
 ```
 
-Alternatively, automatically start MariaDB Server:
+Alternatively, and strongly recommended, automatically start MariaDB Server:
 
 ```bash
 brew services start mariadb
