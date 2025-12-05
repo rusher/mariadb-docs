@@ -243,7 +243,7 @@ An index-level hint that enables or disables the specified indexes for sorting r
 This hint is available from MariaDB 12.1.
 {% endhint %}
 
-An index-level hint that enables or disables the specified indexes, for all scopes (join access method, GROUP BY, or sorting). Equivalent to `FORCE INDEX` and `IGNORE INDEX`.
+An index-level hint that enables or disables the specified indexes, for all scopes (join access method, `GROUP BY`, or sorting). Equivalent to [FORCE INDEX](../query-optimizations/force-index.md) and [IGNORE INDEX](../query-optimizations/ignore-index.md).
 
 ### INDEX\_MERGE and NO\_INDEX\_MERGE
 
