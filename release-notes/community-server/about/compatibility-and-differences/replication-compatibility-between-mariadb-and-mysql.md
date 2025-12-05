@@ -37,7 +37,7 @@ Prior to [MariaDB 10.6.21](../../10.6/10.6.21.md), [MariaDB 10.11.11](../../10.1
 * `binlog-row-value-options` should be set to `""` should be set. This disables the incompatible `PARTIAL_UPDATE_ROWS_EVENT` event.
 * `binlog_transaction_compression` should be set to `0`. This disables binlog compression and the incompatible `TRANSACTION_PAYLOAD_EVENT` event.
 * MySQL 8.0 utf8mb4\_ja\_0900\_ collations can not be used when replicating to [MariaDB 10.6](../../10.6/what-is-mariadb-106.md) - [MariaDB 11.4.4](../../11.4/11.4.4.md). [MariaDB 11.4.5](../../11.4/11.4.5.md) and above will support [most of the MySQL 8.0 utf8mb4\_ja\_0900\_... collations](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/character-sets/supported-character-sets-and-collations#collations).
-* For differences at the SQL level that may cause replication failures, see [Incompatibilities and Feature Differences](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/compatibility-differences/README.md) between the specific versions. When using [binlog\_format](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables#binlog_format) this almost exclusively affects DDL'sm, where MariaDB is very compatible with MySQL.
+* For differences at the SQL level that may cause replication failures, see [Incompatibilities and Feature Differences](./) between the specific versions. When using [binlog\_format](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables#binlog_format) this almost exclusively affects DDL'sm, where MariaDB is very compatible with MySQL.
 
 Here are the changes one should do in the config files for MySQL 8.0:
 
@@ -74,7 +74,7 @@ character-set-server=utf8mb4
 collation-server=utf8mb4_0900_ai_ci
 ```
 
-For differences at the SQL level that may cause replication failures, see [Incompatibilities and Feature Differences](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/compatibility-differences/README.md) between the specific versions.
+For differences at the SQL level that may cause replication failures, see [Incompatibilities and Feature Differences](./) between the specific versions.
 
 ## See also
 
