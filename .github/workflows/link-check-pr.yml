@@ -25,10 +25,16 @@ jobs:
         if: steps.changes.outputs.any_changed == 'true'
         uses: lycheeverse/lychee-action@v2.3.0
         with:
-          # --no-progress keeps logs clean
-          # The variable at the end passes only the changed files to Lychee
-          args: --no-progress ${{ steps.changes.outputs.all_changed_files }}
+          # --no-progress: Keeps logs clean
+          # --exclude: Ignores specific domains or paths (regex)
+          # The variable at the end passes the changed files list
+          args: >-
+            --no-progress
+            --exclude dev\.mysql\.com
+            --exclude docs\.oracle\.com
+            ${{ steps.changes.outputs.all_changed_files }}
           fail: true
+
       - name: 📖 Help & Documentation
         if: failure()
         run: |
