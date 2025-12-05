@@ -34,7 +34,7 @@ Automatically starting MariaDB server installs a background service on macOS. Ma
 
 ## Connecting to MariaDB Server
 
-After MariaDB Server is started, you can connect to the server like this, using the shell user name (for instance, _`myuser`_):
+After MariaDB Server has started, you can connect to the server using the shell user name (see [this section](installing-mariadb-on-macos-using-homebrew.md#terminal-user-and-mariadb-user) for information on the user):
 
 ```bash
 mariadb
