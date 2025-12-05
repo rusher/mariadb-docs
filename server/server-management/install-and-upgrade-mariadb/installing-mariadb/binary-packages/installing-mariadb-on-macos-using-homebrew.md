@@ -46,7 +46,7 @@ Alternatively, connect as root:
 sudo mysql -u root
 ```
 
-For graphical clients you can use instead of the mariadb command-line client, see this section.
+For graphical clients you can use instead of the `mariadb` command-line client, see this section.
 
 ## Upgrading MariaDB
 
