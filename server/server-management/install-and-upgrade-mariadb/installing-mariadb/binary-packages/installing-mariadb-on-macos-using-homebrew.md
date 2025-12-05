@@ -8,6 +8,8 @@ description: >-
 
 MariaDB Server is available for installation on macOS via the [Homebrew](https://brew.sh/) package manager. MariaDB Server (together with many client programs and helper tools) is available as a Homebrew "bottle", a precompiled package. If you haven't yet installed Homebrew, [see this section](installing-mariadb-on-macos-using-homebrew.md#homebrew-installation).
 
+## Installing & Starting MariaDB
+
 Install MariaDB Server like this:
 
 ```bash
@@ -26,13 +28,15 @@ To autostart MariaDB Server, use Homebrew's services functionality, which config
 brew services start mariadb
 ```
 
-After MariaDB Server is started, you can log in like this, using the shell user name (for instance, _`myuser`_):
+## Connecting to MariaDB Server
+
+After MariaDB Server is started, you can connect to the server like this, using the shell user name (for instance, _`myuser`_):
 
 ```bash
 mariadb
 ```
 
-Or log in as root:
+Alternatively, connect as root:
 
 ```bash
 sudo mysql -u root
@@ -40,7 +44,7 @@ sudo mysql -u root
 
 ## Upgrading MariaDB
 
-Update your brew installation:
+Update Homebrew packages:
 
 ```bash
 brew update
