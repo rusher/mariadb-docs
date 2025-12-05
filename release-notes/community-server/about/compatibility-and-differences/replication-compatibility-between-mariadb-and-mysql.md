@@ -18,7 +18,7 @@ This page describes replication compatibility between MariaDB and MySQL. For rep
 
 MariaDB does not support the MySQL implementation of Global Transaction IDs (GTIDs), so the MariaDB replica server must use the binary log file and position for replication. If GTID mode is enabled on the MySQL primary server, the MariaDB replica server will remove the MySQL GTID events and replace them with MariaDB GTID events.
 
-You can disable `GTID` and use logfile name and position in MariaDB by excuting on the slave:
+You can disable `GTID` and use logfile name and position in MariaDB by executing on the slave:
 
 ```sql
 CHANGE MASTER ... MASTER_LOG_FILE=file_name MASTER_LOG_POS=# MASTER_USE_GTID=no
