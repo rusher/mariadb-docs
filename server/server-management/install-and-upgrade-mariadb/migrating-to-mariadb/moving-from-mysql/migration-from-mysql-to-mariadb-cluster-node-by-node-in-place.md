@@ -4,6 +4,8 @@
 **Version Requirement**
 
 This guide provides instructions for migrating a **MySQL 8.0 Galera Cluster** to a **MariaDB Galera Cluster 11.4**. Ensure that your systems meet or exceed these version requirements before proceeding. Please refer to the [Prerequisites](migration-from-mysql-to-mariadb-cluster-node-by-node-in-place.md#prerequisites) for detailed version information.
+
+The **End-of-Life (EOL)** date for continued maintenance and regular binary releases of MySQL Galera Cluster will be **September 30, 2026**.
 {% endhint %}
 
 This guide outlines the procedure for migrating a live MySQL Galera Cluster to a MariaDB Galera Cluster. It follows the process for migrating a live MySQL Galera Cluster to a MariaDB Galera Cluster by replacing the binaries on each node sequentially. This "In-Place" method maintains cluster availability during the migration, although the cluster capacity will be reduced while individual nodes are being processed.
