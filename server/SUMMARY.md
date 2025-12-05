@@ -419,7 +419,7 @@
         * [Installing MariaDB Binary Tarballs](server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-binary-tarballs.md)
         * [Installing MariaDB .deb Files](server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-deb-files.md)
         * [Installing MariaDB MSI Packages on Windows](server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows.md)
-        * [Installing MariaDB on macOS (Homebrew)](server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-on-macos-using-homebrew.md)
+        * [Installing MariaDB on macOS](server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-on-macos-using-homebrew.md)
         * [Installing MariaDB on macOS (PKG)](server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-server-pkg-packages-on-macos.md)
         * [Installing MariaDB Windows ZIP Packages](server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-windows-zip-packages.md)
         * [MariaDB Package Repository Setup and Usage](server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md)

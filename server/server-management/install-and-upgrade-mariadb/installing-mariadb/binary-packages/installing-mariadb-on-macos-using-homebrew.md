@@ -4,34 +4,32 @@ description: >-
   including starting the service and securing the installation.
 ---
 
-# Installing MariaDB on macOS (Homebrew)
+# Installing MariaDB on macOS
 
-MariaDB Server is available for installation on macOS (formerly Mac OS X) via the [Homebrew](https://brew.sh/) package manager.
+MariaDB Server is available for installation on macOS via the [Homebrew](https://brew.sh/) package manager. MariaDB Server (together with many client programs and helper tools) is available as a Homebrew "bottle", a precompiled package. If you haven't yet installed Homebrew, [see this section](installing-mariadb-on-macos-using-homebrew.md#homebrew-installation).
 
-MariaDB Server is available as a Homebrew "bottle", a pre-compiled package. This means you can install it without having to build from source yourself. This saves time.
-
-After installing Homebrew, MariaDB Server can be installed with this command:
+Install MariaDB Server like this:
 
 ```bash
 brew install mariadb
 ```
 
-After installation, start MariaDB Server:
+Start MariaDB Server:
 
 ```bash
 mysql.server start
 ```
 
-To auto-start MariaDB Server, use Homebrew's services functionality, which configures auto-start with the launchctl utility from [launchd](../../../starting-and-stopping-mariadb/launchd.md):
+To autostart MariaDB Server, use Homebrew's services functionality, which configures autostart with the `launchctl` utility from [launchd](../../../starting-and-stopping-mariadb/launchd.md):
 
 ```bash
 brew services start mariadb
 ```
 
-After MariaDB Server is started, you can log in as your user:
+After MariaDB Server is started, you can log in like this, using the shell user name (for instance, _`myuser`_):
 
 ```bash
-mysql
+mariadb
 ```
 
 Or log in as root:
@@ -52,6 +50,78 @@ Then upgrade MariaDB Server:
 
 ```bash
 brew upgrade mariadb
+```
+
+## Notes About Homebrew
+
+### Installation
+
+Install Homebrew like this:
+
+1. Open a Terminal (<kbd>⌘ + Space</kbd> to open _Spotlight_, type _Terminal_).
+2. Issue this command:\
+   `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`&#x20;
+   1. Alternatively, use the package installer (`.pkg`; at the time of writing this, [https://github.com/Homebrew/brew/releases/download/5.0.4/Homebrew-5.0.4.pkg](https://github.com/Homebrew/brew/releases/download/5.0.4/Homebrew-5.0.4.pkg))
+3. Refer to the [Homebrew website](https://brew.sh/) for more information, particularly to the [Homebrew documentation](https://docs.brew.sh/).
+
+### MariaDB Configuration
+
+In Homebrew, the configuration file for MariaDB is located at:
+
+* &#x20;`/usr/local/etc/my.cnf` for Intel-based Macs.
+* `/opt/homebrew/etc/my.cnf` for Apple Silicon Macs (ARM architecture).
+
+### MariaDB Information
+
+Find information about the MariaDB version, analytics, and more, using the `brew info` command:
+
+```shellscript
+~> brew info mariadb
+==> mariadb: stable 12.1.2 (bottled)
+Drop-in replacement for MySQL
+https://mariadb.org/
+...
+To restart mariadb after an upgrade:
+  brew services restart mariadb
+Or, if you don't want/need a background service you can just run:
+  /opt/homebrew/opt/mariadb/bin/mariadbd-safe --datadir\=/opt/homebrew/var/mysql
+==> Analytics
+install: 6,319 (30 days), 12,735 (90 days), 62,444 (365 days)
+install-on-request: 6,291 (30 days), 12,670 (90 days), 62,137 (365 days)
+build-error: 8 (30 days)
+```
+
+### MariaDB Programs
+
+MariaDB Server (`mariadbd`), the MariaDB command-line client (`mariadb`), and many more clients and tools are installed in `/opt/homebrew/Cellar/mariadb` (for Apple Silicon Macs). Find the location for your machine, as well as the MariaDB programs installed, with these commands:
+
+```shellscript
+~> which mariadb
+/opt/homebrew/bin/mariadb # in the next command, use this location to cd to
+~> cd /opt/homebrew/bin/; ls -1 maria*
+mariabackup
+mariadb
+mariadb-access
+...
+mariadbd
+mariadbd-multi
+mariadbd-safe
+mariadbd-safe-helper
+```
+
+### Terminal User & MariaDB User
+
+To find out which user is used, issue these commands in a shell like _Terminal_:
+
+```shellscript
+~> users
+myuser
+~> mariadb -e "SELECT USER()"
++------------------+
+| USER()           |
++------------------+
+| myuser@localhost |
++------------------+
 ```
 
 ## Building MariaDB Server from source
