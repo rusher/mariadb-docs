@@ -6,7 +6,7 @@ description: >-
 
 # Installing MariaDB on macOS
 
-MariaDB Server is available for installation on macOS via the [Homebrew](https://brew.sh/) package manager. MariaDB Server (together with many client programs and helper tools) is available as a Homebrew "bottle", a precompiled package. If you haven't yet installed Homebrew, [see this section](installing-mariadb-on-macos-using-homebrew.md#installation).
+MariaDB Server is available for installation on macOS via the [Homebrew](https://brew.sh/) package manager. MariaDB Server (together with many client programs and helper tools) is available as a Homebrew "bottle", a precompiled package. If you haven't yet installed Homebrew, [see this section](installing-mariadb-on-macos-using-homebrew.md#homebrew-installation).
 
 ## Installing & Starting MariaDB
 
@@ -62,9 +62,9 @@ Then upgrade MariaDB Server:
 brew upgrade mariadb
 ```
 
-## Notes About Homebrew
+## Notes & Further Information
 
-### Installation
+### Homebrew Installation
 
 Install Homebrew like this:
 
