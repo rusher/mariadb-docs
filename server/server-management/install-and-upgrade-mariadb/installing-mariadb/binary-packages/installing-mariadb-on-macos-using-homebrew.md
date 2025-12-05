@@ -10,7 +10,7 @@ MariaDB Server is available for installation on macOS via the [Homebrew](https:/
 
 ## Installing & Starting MariaDB
 
-Install MariaDB Server like this:
+Install MariaDB Server:
 
 ```bash
 brew install mariadb
@@ -22,11 +22,15 @@ Start MariaDB Server:
 mysql.server start
 ```
 
-To autostart MariaDB Server, use Homebrew's services functionality, which configures autostart with the `launchctl` utility from [launchd](../../../starting-and-stopping-mariadb/launchd.md):
+Alternatively, automatically start MariaDB Server:
 
 ```bash
 brew services start mariadb
 ```
+
+{% hint style="info" %}
+Automatically starting MariaDB server installs a background service on macOS. Make sure to allow adding that background service. See [this section](installing-mariadb-on-macos-using-homebrew.md#macos-background-service) for more information.
+{% endhint %}
 
 ## Connecting to MariaDB Server
 
@@ -126,6 +130,20 @@ myuser
 +------------------+
 | myuser@localhost |
 +------------------+
+```
+
+### macOS Background Service
+
+If you start MariaDB automatically, a macOS background service is added. You can find the MariaDB background service in <kbd>System Settings > General > Login Items & Extensions</kbd>. It's named `mariadbd-safe`.
+
+<div align="left"><figure><img src="../../../../.gitbook/assets/image (3).png" alt="" width="375"><figcaption></figcaption></figure></div>
+
+The toggle switch allows you to turn off the automatic start of MariaDB. This prevents MariaDB Server from automatically starting once you reboot macOS.
+
+To review the resource usage of MariaDB Server, use this command (type `q` to exit `top`when done):
+
+```shellscript
+top -pid $(pgrep mariadbd)
 ```
 
 ## Building MariaDB Server from source

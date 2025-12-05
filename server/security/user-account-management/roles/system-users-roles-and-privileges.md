@@ -1,10 +1,8 @@
 # System\`s Users, Roles, and Privileges
 
-{% hint style="info" %}
-**Important:** The `PUBLIC` role is created implicitly by `GRANT` statements and its creation is not logged, distinguishing it from standard system principals.
-{% endhint %}
+\{% hint style="info" %\} **Important:** The `PUBLIC` role is created implicitly by `GRANT` statements and its creation is not logged, distinguishing it from standard system principals. \{% endhint %\}
 
-MariaDB automatically creates several users and roles for administrative and internal server functions. 
+MariaDB automatically creates several users and roles for administrative and internal server functions.
 
 ## System Users
 
@@ -19,10 +17,10 @@ These user accounts are created by the `mariadb-install-db` script during the in
 
 ### `mariadb-sys@localhost`
 
-| **Creation**   | Created automatically by `mariadb-install-db`.                                                                         |
-| -------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| **Purpose**    | A mandatory system user required for internal server operations, such as executing scheduled events.                   |
-| **Management** | <p>This user account is essential for server functionality and is protected; </p><p><em>it cannot be dropped.</em></p> |
+| **Creation**   | Created automatically by `mariadb-install-db`.                                                                        |
+| -------------- | --------------------------------------------------------------------------------------------------------------------- |
+| **Purpose**    | A mandatory system user required for internal server operations, such as executing scheduled events.                  |
+| **Management** | <p>This user account is essential for server functionality and is protected;</p><p><em>it cannot be dropped.</em></p> |
 
 ## System Roles
 
