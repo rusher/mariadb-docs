@@ -158,7 +158,7 @@ Assuming a standard Homebrew installation of MariaDB, and assuming you connect t
 * Authentication method: Username/Password
 * Connection mode: Socket
 * Socket path: `/tmp/mysql.sock`
-* Username: (name of the shell user)
+* Username: (name of the shell user, without the `@localhost` suffix)
 
 <div align="left"><figure><img src="../../../../.gitbook/assets/image (4).png" alt="" width="375"><figcaption></figcaption></figure></div>
 
