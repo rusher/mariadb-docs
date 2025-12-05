@@ -178,7 +178,7 @@ Unzip `nation.zip`, then import the database into MariaDB Server, using this com
 mariadb < Downloads/nation.sql
 ```
 
-When done, use that database in the mariadb command-line client, like this:
+When done, use that database in the `mariadb` command-line client, like this:
 
 ```shellscript
 ~> mariadb nation
