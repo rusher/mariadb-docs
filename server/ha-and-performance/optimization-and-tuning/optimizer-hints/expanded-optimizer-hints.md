@@ -245,6 +245,17 @@ This hint is available from MariaDB 12.1.
 
 An index-level hint that enables or disables the specified indexes, for all scopes (join access method, `GROUP BY`, or sorting). Equivalent to [FORCE INDEX](../query-optimizations/force-index.md) and [IGNORE INDEX](../query-optimizations/ignore-index.md).
 
+#### Syntax
+
+```sql
+/*+ INDEX(table_name [index_name, ...]) */
+/*+ NO_INDEX(table_name [index_name, ...]) */
+```
+
+#### Behavior
+
+The hints operate by modifying the set of keys the optimizer considers for `SELECT` statements. The specific behavior depends on whether specific index keys are provided within the hint.
+
 ### INDEX\_MERGE and NO\_INDEX\_MERGE
 
 {% hint style="info" %}
