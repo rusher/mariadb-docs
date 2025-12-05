@@ -46,6 +46,8 @@ Alternatively, connect as root:
 sudo mysql -u root
 ```
 
+For graphical clients you can use instead of the mariadb command-line client, see this section.
+
 ## Upgrading MariaDB
 
 Update Homebrew packages:
@@ -145,6 +147,70 @@ To review the resource usage of MariaDB Server, use this command (type `q` to ex
 ```shellscript
 top -pid $(pgrep mariadbd)
 ```
+
+### Graphical Clients
+
+MariaDB doesn't offer graphical clients for working with MariaDB Server, but there are [many third-party graphical clients](../../../../clients-and-utilities/graphical-and-enhanced-clients/), some of which run on macOS. One of those is [Beekeeper Studio](../../../../clients-and-utilities/graphical-and-enhanced-clients/beekeeper-studio.md), a subscription-based client that has a (not too) [limited free version](https://www.beekeeperstudio.io/get), though.
+
+Assuming a standard Homebrew installation of MariaDB, and assuming you connect to MariaDB Server [using the standard shell user](installing-mariadb-on-macos-using-homebrew.md#terminal-user-and-mariadb-user), configure Beekeeper Studio like this:
+
+* Connection type: MariaDB
+* Authentication method: Username/Password
+* Connection mode: Socket
+* Socket path: `/tmp/mysql.sock`
+* Username: (name of the shell user)
+
+<div align="left"><figure><img src="../../../../.gitbook/assets/image (4).png" alt="" width="375"><figcaption></figcaption></figure></div>
+
+Once connected to MariaDB Server, you can run queries in Beehive Studio:
+
+<figure><img src="../../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+
+The query shown in this screenshot uses a MariaDB sample database called _nation_ which you can use to get familiar with MariaDB. See [this section](installing-mariadb-on-macos-using-homebrew.md#mariadb-sample-database) for more information.
+
+### MariaDB Sample Database
+
+MariaDB offers a sample database you can use to get familiar with using MariaDB. You can download it here: [https://mariadbtutorial.com/wp-content/uploads/2019/10/nation.zip](https://mariadbtutorial.com/wp-content/uploads/2019/10/nation.zip)
+
+Unzip `nation.zip`, then import the database into MariaDB Server, using this command (assuming you downloaded and unzipped the sample database in the `Downloads` folder):
+
+```shellscript
+mariadb < Downloads/nation.sql
+```
+
+When done, use that database in the mariadb command-line client, like this:
+
+```shellscript
+~> mariadb nation
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 14
+Server version: 12.1.2-MariaDB Homebrew
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [nation]> SHOW TABLES;
++-------------------+
+| Tables_in_nation  |
++-------------------+
+| continents        |
+| countries         |
+| country_languages |
+| country_stats     |
+| guests            |
+| languages         |
+| region_areas      |
+| regions           |
+| vips              |
++-------------------+
+9 rows in set (0.001 sec)
+```
+
+Alternatively, open the database in [a graphical client](installing-mariadb-on-macos-using-homebrew.md#graphical-clients).
 
 ## Building MariaDB Server from source
 
