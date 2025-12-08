@@ -315,7 +315,7 @@ Note that before Galera 3, the `repl` tag was named `replicator`.
 
     `gmcast.listen_addr=ssl://192.168.8.111:4567` \
     If your system supports IPv6, you can also specify it like this:\
-    `wsrep_cluster_address='gcomm://[::1]:@mysqld.1.#galera_port'`
+    `gmcast.listen_addr=tcp://[::]:4567`
 * Dynamic: No
 * Default: `tcp://0.0.0.0:4567`
 
