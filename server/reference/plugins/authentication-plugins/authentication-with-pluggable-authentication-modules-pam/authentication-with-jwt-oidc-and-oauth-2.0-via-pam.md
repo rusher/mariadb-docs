@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Authentication with JWT, OIDC, and OAuth 2.0 via PAM
 
 {% hint style="danger" %}
