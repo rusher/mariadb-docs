@@ -2231,6 +2231,7 @@
         * [Configuring PAM Authentication and User Mapping with LDAP Authentication](reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/configuring-pam-authentication-and-user-mapping-with-ldap-authentication.md)
         * [Configuring PAM Authentication and User Mapping with Unix Authentication](reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/configuring-pam-authentication-and-user-mapping-with-unix-authentication.md)
         * [User and Group Mapping with PAM](reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/user-and-group-mapping-with-pam.md)
+        * [Authentication with JWT, OIDC, and OAuth 2.0 via PAM](reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-with-jwt-oidc-and-oauth-2.0-via-pam.md)
     * [MariaDB Replication & Cluster Plugins](reference/plugins/mariadb-replication-cluster-plugins/README.md)
       * [WSREP\_INFO Plugin](reference/plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin.md)
       * [wsrep\_provider](reference/plugins/mariadb-replication-cluster-plugins/wsrep_provider.md)
