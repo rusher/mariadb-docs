@@ -80,8 +80,16 @@ A somewhat Oracle-like isolation level with respect to consistent (non-locking) 
 For locking reads (`SELECT` with `FOR UPDATE` or `LOCK IN SHARE MODE`), InnoDB locks only index records, not the gaps before them, and thus allows the free insertion of new records next to locked records. For `UPDATE` and `DELETE` statements, locking depends on whether the statement uses a unique index with a unique search condition (such as `WHERE id = 100`), or a range-type search condition (such as `WHERE id > 100`). For a unique index with a unique search condition, InnoDB locks only the index record found, not the gap before it. For range-type searches, InnoDB locks the index\
 range scanned, using gap locks or next-key (gap plus index-record) locks to block insertions by other sessions into the gaps covered by the range. This is necessary because "phantom rows" must be blocked for MariaDB replication and recovery to work.
 
-**Note:** If the `READ COMMITTED` isolation level is used or the [innodb\_locks\_unsafe\_for\_binlog](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_locks_unsafe_for_binlog) system variable is enabled, there is no InnoDB gap locking except for [foreign-key](../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/foreign-keys.md) constraint checking and\
-duplicate-key checking. Also, record locks for non-matching rows are released after MariaDB has evaluated the `WHERE` condition.If you use `READ COMMITTED` or enable `innodb_locks_unsafe_for_binlog`, you must use row-based binary logging.
+{% hint style="info" %}
+If the `READ COMMITTED` isolation level is used or the [innodb\_locks\_unsafe\_for\_binlog](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_locks_unsafe_for_binlog) system variable is enabled, there is no InnoDB gap locking except for [foreign-key](../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/foreign-keys.md) constraint checking and\
+duplicate-key checking. Also, record locks for non-matching rows are released after MariaDB has evaluated the `WHERE` condition. If you use `READ COMMITTED` or enable `innodb_locks_unsafe_for_binlog`, you must use row-based binary logging.
+{% endhint %}
+
+{% hint style="info" %}
+Rows that don't match are not being locked in a so called semiconsistent read. This means you might see only a partially consistent read when the transaction isolation level is `READ COMMITTED` or `READ UNCOMMITTED`.&#x20;
+
+(A semiconsistent read applies to `UPDATE` and `DELETE` statements. Those statements skip locked rows, provided the version in the current read does not match the `WHERE` condition. Also, if the latest version of a record was successfully locked, but found not to match the condition, the lock is released.)
+{% endhint %}
 
 #### REPEATABLE READ
 
