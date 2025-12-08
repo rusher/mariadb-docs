@@ -155,14 +155,21 @@ $ sudo openssl enc -aes-256-cbc -md sha1 \
 
 The resulting `keyfile.enc` file is the encrypted version of `keyfile`. Delete the unencrypted key file.
 
-{% hint style="info" %}
 Some more recent `openssl` versions may throw this warning:
 
 ```bash
 *** WARNING : deprecated key derivation used.
 Using -iter or -pbkdf2 would be better.
 ```
-{% endhint %}
+
+If you encounter that warning, use one of these commands instead:
+
+{% code overflow="wrap" %}
+```bash
+$ sudo openssl enc -aes-256-cbc -md sha256 -pbkdf2 -pass pass:secret -in /tmp/keys.txt -out /tmp/keys.enc
+$ sudo openssl enc -aes-256-cbc -md sha256 -iter 20000 -pass pass:secret -in /tmp/keys.txt -out /tmp/keys.enc
+```
+{% endcode %}
 
 Having the key file encrypted requires both the [file\_key\_management\_filename](file-key-management-encryption-plugin.md#file_key_management_filename) and the [file\_key\_management\_filekey](file-key-management-encryption-plugin.md#file_key_management_filekey) system variables to be configured.
 
