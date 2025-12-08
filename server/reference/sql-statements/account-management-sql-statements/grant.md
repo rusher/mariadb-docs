@@ -552,6 +552,14 @@ GRANT SELECT (name, position) ON Employee TO 'jeffrey'@'localhost';
 GRANT EXECUTE ON PROCEDURE mysql.create_db TO maintainer;
 ```
 
+### Package Privileges
+
+| Privilege     | Description                                                            |
+| ------------- | ---------------------------------------------------------------------- |
+| ALTER ROUTINE | Change the characteristics of a stored package.                        |
+| EXECUTE       | Execute a stored package or package body.                              |
+| GRANT OPTION  | Grant package privileges. You can only grant privileges that you have. |
+
 ### Proxy Privileges
 
 | Privilege | Description                                 |
