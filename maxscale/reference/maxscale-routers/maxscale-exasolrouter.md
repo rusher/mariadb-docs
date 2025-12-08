@@ -4,7 +4,7 @@
 
 The _Exasol Router_ is a router that in itself is capable of using an Exasol
 cluster. It is primarily intended to be used together with
-[SmartRouter](maxscale-maxscale-smartrouter.md), with _writes_ being directed
+[SmartRouter](maxscale-smartrouter.md), with _writes_ being directed
 to a regular MariaDB cluster and _reads_ to Exasol.
 
 Unlike the other routers or MaxScale, the Exasol router does not use `servers`,
