@@ -384,7 +384,7 @@
     * [Installing Enterprise Server](server-management/install-and-upgrade-mariadb/installing-enterprise-server/README.md)
       * [Customer Download Token](server-management/install-and-upgrade-mariadb/installing-enterprise-server/token.md)
       * [Installing MariaDB Enterprise Server](architecture/topologies/single-node-topologies/enterprise-server.md#installation)
-      * [Primary/Replica](architecture/topologies/primary-replica/README.md)
+      * [Installing Primary/Replica](architecture/topologies/primary-replica/README.md)
       * [Enterprise Server with ColumnStore (Local Storage)](architecture/topologies/single-node-topologies/enterprise-server-with-columnstore-local-storage/README.md)
       * [Enterprise Server with ColumnStore (Object Storage)](architecture/topologies/single-node-topologies/enterprise-server-with-columnstore-object-storage/README.md)
       * [MariaDB Enterprise Server Upgrade Paths](server-management/install-and-upgrade-mariadb/installing-enterprise-server/mariadb-enterprise-server-upgrade-paths/README.md)

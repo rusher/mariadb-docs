@@ -842,16 +842,16 @@ subpartition_definition:
 
 If the `PARTITION BY` clause is used, the table will be [partitioned](../../../../server-usage/partitioning-tables/). A partition method must be explicitly indicated for partitions and subpartitions. Partition methods are:
 
-* \[LINEAR] [HASH](../../../../../server-management/partitioning-tables/partitioning-types/hash-partitioning-type.md) creates a hash key which will be used to read and write rows. The partition function can be any valid SQL expression which returns an `INTEGER` number. Thus, it is possible to use the [HASH](../../../../server-usage/partitioning-tables/partitioning-types/hash-partitioning-type.md) method on an integer column, or on functions which accept integer columns as an argument. However, `VALUES LESS THAN` and `VALUES IN` clauses can not be used with [HASH](../../../../server-usage/partitioning-tables/partitioning-types/hash-partitioning-type.md). An example:
+* `[LINEAR]` [`HASH`](../../../../server-usage/partitioning-tables/partitioning-types/hash-partitioning-type.md) creates a hash key which will be used to read and write rows. The partition function can be any valid SQL expression which returns an `INTEGER` number. Thus, it is possible to use the `HASH` method on an integer column, or on functions which accept integer columns as an argument. However, `VALUES LESS THAN` and `VALUES IN` clauses can not be used with `HASH`. An example:
 
 ```sql
 CREATE TABLE t1 (a INT, b CHAR(5), c DATETIME)
     PARTITION BY HASH ( YEAR(c) );
 ```
 
-\[LINEAR] [HASH](../../../../../server-management/partitioning-tables/partitioning-types/hash-partitioning-type.md) can be used for subpartitions, too.
+`[LINEAR]` [`HASH`](../../../../server-usage/partitioning-tables/partitioning-types/hash-partitioning-type.md) can be used for subpartitions, too.
 
-* \[LINEAR] [KEY](../../../../../server-management/partitioning-tables/partitioning-types/key-partitioning-type.md) is similar to [HASH](../../../../server-usage/partitioning-tables/partitioning-types/hash-partitioning-type.md), but the index has an even distribution of data. Also, the expression can only be a column or a list of columns. `VALUES LESS THAN` and `VALUES IN` clauses can not be used with [KEY](../../../../server-usage/partitioning-tables/partitioning-types/key-partitioning-type.md).
+* `[LINEAR]` [`KEY`](../../../../server-usage/partitioning-tables/partitioning-types/key-partitioning-type.md) is similar to `HASH`, but the index has an even distribution of data. Also, the expression can only be a column or a list of columns. `VALUES LESS THAN` and `VALUES IN` clauses can not be used with `KEY`.
 * [RANGE](../../../../server-usage/partitioning-tables/partitioning-types/range-partitioning-type.md) partitions the rows using on a range of values, using the `VALUES LESS THAN` operator. `VALUES IN` is not allowed with `RANGE`. The partition function can be any valid SQL expression which returns a single value.
 * [LIST](../../../../server-usage/partitioning-tables/partitioning-types/list-partitioning-type.md) assigns partitions based on a table's column with a restricted set of possible values. It is similar to `RANGE`, but `VALUES IN` must be used for at least 1 columns, and `VALUES LESS THAN` is disallowed.
 * `SYSTEM_TIME` partitioning is used for [System-versioned tables](../../../sql-structure/temporal-tables/system-versioned-tables.md) to store historical data separately from current data.
