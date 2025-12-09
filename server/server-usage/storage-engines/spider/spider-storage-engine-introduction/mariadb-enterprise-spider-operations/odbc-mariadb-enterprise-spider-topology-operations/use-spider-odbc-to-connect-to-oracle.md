@@ -18,17 +18,19 @@ The following procedure has been tested on _CentOS 7 AWS EC2 t3a.Medium_ and a _
 
 {% stepper %}
 {% step %}
-In your working directory create a new folder to hold the Oracle ODBC `RPMs mkdir oracle_odbc_rpms`, then change to that directory.
+In your working directory, create a folder to hold the Oracle ODBC `RPMs mkdir oracle_odbc_rpms`, then change to that directory.
 {% endstep %}
 
 {% step %}
 Download the following files (make sure to use the appropriate driver for your scenario):
 
+{% code overflow="wrap" %}
 ```bash
 wget https://download.oracle.com/otn_software/linux/instantclient/1916000/oracle-instantclient19.16-odbc-19.16.0.0.0-1.x86_64.rpm
 wget https://download.oracle.com/otn_software/linux/instantclient/1916000/oracle-instantclient19.16-sqlplus-19.16.0.0.0-1.x86_64.rpm
 wget https://download.oracle.com/otn_software/linux/instantclient/1916000/oracle-instantclient19.16-basic-19.16.0.0.0-1.x86_64.rpm
 ```
+{% endcode %}
 {% endstep %}
 
 {% step %}
@@ -71,7 +73,7 @@ TNSNamesFile = /etc/tnsnames.ora
 {% endstep %}
 
 {% step %}
-Put the following in `/etc/tnsnames.ora`:
+Add the following line to `/etc/tnsnames.ora`:
 
 {% code overflow="wrap" %}
 ```
@@ -79,8 +81,8 @@ REMOTE=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST={host_name/ip address})(PORT=15
 ```
 {% endcode %}
 
-* Name the connection string as you like, just be sure to use the same name in the `odbc.ini` file.
-* Be sure to put in your host name and IP address, and the service name for your instance.
+* Name the connection string as you like — just be sure to use the same name in the `odbc.ini` file.
+* Make sure to include your hostname and IP address, and the service name for your instance.
 {% endstep %}
 
 {% step %}
@@ -119,13 +121,13 @@ CREATE OR REPLACE TABLE spider_test.contacts
   CUSTOMER_ID BIGINT) ENGINE=SPIDER COMMENT='wrapper "odbc", dsn "ORARDS", table "CONTACTS"';
 ```
 
-* This creates a new database, and a table that should be able to connect to an Oracle server via ODBC.
-* `dsn` must be the same as what we put in the `odbc.ini file` .
-* It's best to always use upper case for both column names and the table value in the comment section, because these values are passed directly to Oracle, and it prefers upper case.
+* This creates a new database and a table that should be able to connect to an Oracle server via ODBC.
+* `dsn` must be the same put in the `odbc.ini file` .
+* It's best to always use upper case for both column names and the table value in the comment section, because these values are passed directly to Oracle Database, which prefers upper-case object names.
 {% endstep %}
 
 {% step %}
-You should now be able to select data from `spider_test.contacts` table, which is coming from the remote Oracle database.
+You should now be able to select data from `spider_test.contacts` table. That data is coming from the remote Oracle database.
 {% endstep %}
 {% endstepper %}
 
