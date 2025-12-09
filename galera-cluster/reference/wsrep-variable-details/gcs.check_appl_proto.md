@@ -10,7 +10,7 @@ Galera Cluster automatically uses the highest protocol version supported by all 
 
 However, MySQL and MariaDB have evolved differently, and their internal protocol versions are incomparable. This incompatibility prevents a mixed-node cluster (MySQL nodes and MariaDB nodes) from forming, which blocks rolling migrations.
 
-Migration Usage: When migrating from a MySQL-based Galera cluster (e.g., Percona XtraDB Cluster) to MariaDB Galera Cluster, this parameter must be set to `FALSE` (OFF) on all nodes to disable the protocol check. Once the cluster is fully migrated to MariaDB, it should be set back to `TRUE`.
+Migration Usage: When [migrating from a MySQL-based Galera cluster](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/migrating-to-mariadb/moving-from-mysql/migration-from-mysql-to-mariadb-cluster-node-by-node-in-place) (e.g., Percona XtraDB Cluster) to MariaDB Galera Cluster, this parameter must be set to `FALSE` (OFF) on all nodes to disable the protocol check. Once the cluster is fully migrated to MariaDB, it should be set back to `TRUE`.
 
 {% hint style="warning" %}
 Known reporting issue in early versions
