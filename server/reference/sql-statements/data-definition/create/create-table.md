@@ -963,7 +963,7 @@ CREATE TABLE t1(
 * [CREATE TABLE with Vectors](../../../sql-structure/vectors/create-table-with-vectors.md)
 * Storage engines can add their own [attributes for columns, indexes and tables](../../../../server-usage/storage-engines/storage-engines-storage-engine-development/engine-defined-new-tablefieldindex-attributes.md)
 * Variable [slave-ddl-exec-mode](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)
-* [InnoDB Limitations](https://mariadb.com/kb/en/InnoDB_Limitations)
+* [InnoDB Limitations](../../../../server-usage/storage-engines/innodb/innodb-limitations.md)
 
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
