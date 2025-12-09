@@ -21,6 +21,7 @@
   * [Managing ColumnStore](mariadb-columnstore/management/README.md)
     * [Deployment](mariadb-columnstore/management/deployment/README.md)
       * [Installing ColumnStore](mariadb-columnstore/management/deployment/install-guide/README.md)
+        * [MariaDB ColumnStore Hardware Guide](mariadb-columnstore/columnstore-quickstart-guides/mariadb-columnstore-hardware-guide.md)
         * [Single-Node Localstorage](mariadb-columnstore/management/deployment/install-guide/singlenode-localstorage/README.md)
           * [Step 1: Prepare Systems for Enterprise ColumnStore Nodes](mariadb-columnstore/management/deployment/install-guide/singlenode-localstorage/step-1-prepare-systems-for-enterprise-columnstore-nodes.md)
           * [Step 2: Install Enterprise ColumnStore](mariadb-columnstore/management/deployment/install-guide/singlenode-localstorage/step-2-install-enterprise-columnstore.md)

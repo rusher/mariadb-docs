@@ -1,5 +1,7 @@
 ---
-description: Quickstart guide for MariaDB ColumnStore hardware requirements
+description: >-
+  This page details MariaDB ColumnStore hardware requirements (CPU, RAM,
+  storage, and network).
 ---
 
 # MariaDB ColumnStore Hardware Guide
