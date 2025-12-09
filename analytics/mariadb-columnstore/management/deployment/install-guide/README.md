@@ -21,8 +21,8 @@ layout:
 
 # Installing ColumnStore
 
-{% content-ref url="/broken/spaces/rBEU9juWLfTDcdwF3Q14/pages/XLSLR2JRBIZf4BlT1xED" %}
-[Broken link](/broken/spaces/rBEU9juWLfTDcdwF3Q14/pages/XLSLR2JRBIZf4BlT1xED)
+{% content-ref url="../../../columnstore-quickstart-guides/mariadb-columnstore-hardware-guide.md" %}
+[mariadb-columnstore-hardware-guide.md](../../../columnstore-quickstart-guides/mariadb-columnstore-hardware-guide.md)
 {% endcontent-ref %}
 
 {% content-ref url="singlenode-localstorage/" %}
