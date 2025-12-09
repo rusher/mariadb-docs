@@ -1,22 +1,35 @@
 # MaxScale ExasolRouter
 
+{% hint style="info" %}
+This functionality is available from MaxScale 25.10.1.
+{% endhint %}
+
 ## Overview
 
-The _Exasol Router_ is a router that in itself is capable of using an Exasol
+_ExasolRouter_ is a router that in itself is capable of using an Exasol
 cluster. It is primarily intended to be used together with
 [SmartRouter](maxscale-smartrouter.md), with _writes_ being directed
 to a regular MariaDB cluster and _reads_ to Exasol.
 
-Unlike the other routers or MaxScale, the Exasol router does not use `servers`,
-`targets`, or `cluster` entries in the configuration file to define servers.
-Instead, Exasol database nodes are specified directly via the `connection_string`
-setting.
+Unlike the other routers of MaxScale, the targets _ExasolRouter_ routes to
+are not specified using `servers`, `targets`, or `cluster` entries in
+the configuration file. Instead, Exasol database nodes are specified using
+the [connection_string](connection_string) setting.
+
+If _ExasolRouter_ is used standalone, a MariaDB server or a service should
+be specified using `targets`. _ExasolRouter_ will not route to it, but it
+will use it for authenticating clients. However, Exasol will be accessed
+on behalf of all clients using the credentials specified in the
+[connection_string](connection_string).
 
 ## Users
 
-Currently, the Exasol router _always_ uses the service `user` and `password`
-settings when accessing Exasol. That is, it uses those settings _regardless_
-of the identity of the client accessing MaxScale.
+A `user` and `password` must _always_ be specified, but will only be used
+if a MariaDB server/service has been specified as a target, and only for
+authenticating a client.
+
+The user and password to be used when accessing Exasol must be specified
+using `UID` and `PWD` in the [connection_string](connection_string).
 
 ## Settings
 
@@ -30,12 +43,10 @@ Specifies the Exasol connection string.
 
 For example:
 ```
-connection_string=127.0.0.1:8563
-
-connection_string=127.0.0.1/340F511A5A5179FF44A6828CC140FAEBAF1F2E2ECD73FBCD7EDD54C8B96A5886:8563
+connection_string=DSN=ExasolDSN;UID=sys;PWD=exasol;FINGERPRINT=NOCERTCHECK
 ```
-The latter alternative illustrates the case when the Exasol server uses a
-self-signed certificate.
+Here it is assumed there is an `odbc.ini` ODBC configuration file containing
+an `ExasolDSN` entry.
 
 ### `appearance`
 
@@ -118,9 +129,8 @@ is transformed into the statement `OPEN SCHEMA <db>`.
 
 ### SQL
 
-Currently a transformation will be made **only** if there is an **exact**
-match (apart from case) with the MariaDb SQL. At this point the goal is
-to match what the MariaDB command line client sends.
+Currently a transformation will be made _only_ if there is an **exact**
+match (apart from case and differences in whitespace) with the MariaDb SQL.
 
 | MariaDb | Exasol  |
 | ------- | ------- |
@@ -129,43 +139,45 @@ to match what the MariaDB command line client sends.
 | SHOW DATABASES | SELECT SCHEMA_NAME AS 'Database' FROM EXA_SCHEMAS ORDER BY SCHEMA_NAME |
 | SHOW TABLES | SELECT TABLE_NAME AS 'Tables' FROM SYS.EXA_ALL_TABLES WHERE TABLE_SCHEMA = CURRENT_SCHEMA ORDER BY TABLE_NAME |
 
-## Limitations
-
-The following is assumed regarding the data returned by Exasol:
-* The value in a column of a row is assumed to be no more than 1024 bytes, and
-* the complete returned result set will fit in a 16MB MariaDB protocol packet.
-
-If these limitations are exceeded, the router may malfunction or crash.
-
-These limitations are temporary and will be removed before Dec 8.
-
 ## SmartRouter
 
 The primary purpose of the Exasol router is to be used together with
 [SmartRouter](maxscale-smartrouter.md). A minimal configuration looks
 as follows:
 ```
-[ExasolService]
-type=service
-router=exasolrouter
-user=sys
-password=exasol
-connection_string=127.0.0.1/340F511A5A5179FF44A6828CC140FAEBAF1F2E2ECD73FBCD7EDD54C8B96A5886:8563
-
 [Server1]
 type=server
 address=127.0.0.1
 port=3306
 protocol=mariadbbackend
 
+[ExasolService]
+type=service
+router=exasolrouter
+connection_string=DSN=ExasolDSN;UID=sys;PWD=exasol
+user=
+password=
+
 [SmartService]
 type=service
 router=smartrouter
-user=MyUser
-password=MyPassword
+user=MyServiceUser
+password=MyServicePassword
 targets=Server1, ExasolService
 master=Server1
+
+[SmartListener]
+type=listener
+service=SmartService
+port=4007
+
 ```
+Here it is assumed there is an `odbc.ini` ODBC configuration file containing
+and `ExasolDSN` entry.
+
+Note that `user` and `password` must be specified, even if they in this
+context are not used.
+
 With this setup, all writes will always be sent to `Server1`. Reads will initially
 be sent to both `Server1` and `ExasolService` and once SmartRouter has learnt what
 kind of reads are best sent to which target, it will exclusively send reads to
@@ -173,6 +185,33 @@ either `Server1` or `ExasolService` depending on which one is likely to provide
 the response faster.
 
 Here, a single server was used as `master`. It could just as well be a
-[ReadWriteSplit](maxscale-readwritesplit.md) service, in front of a MariaDB
+[ReadWriteSplit](maxscale-readwritesplit.md) service in front of a MariaDB
 cluster, which would provide HA.
 
+## Stand-Alone
+A minimal stand-alone configuration looks as follows.
+
+```
+[Server1]
+type=server
+address=127.0.0.1
+port=3306
+protocol=mariadbbackend
+
+[ExasolService]
+type=service
+router=exasolrouter
+connection_string=DSN=ExasolDSN;UID=sys;PWD=exasol;FINGERPRINT=NOCERTCHECK
+targets=Server1
+user=MyServiceUser
+password=MyServicePassword
+
+[ExasolListener]
+type=listener
+service=ExasolService
+port=4008
+```
+
+With this setup, it is possible to connect using the regular `mariadb`
+command line utility to the port 4008 and all queries will be sent to
+Exasol.
