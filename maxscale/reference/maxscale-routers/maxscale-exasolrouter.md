@@ -14,13 +14,13 @@ to a regular MariaDB cluster and _reads_ to Exasol.
 Unlike the other routers of MaxScale, the targets _ExasolRouter_ routes to
 are not specified using `servers`, `targets`, or `cluster` entries in
 the configuration file. Instead, Exasol database nodes are specified using
-the [connection_string](connection_string) setting.
+the [connection\_string](#connection_string) setting.
 
 If _ExasolRouter_ is used standalone, a MariaDB server or a service should
 be specified using `targets`. _ExasolRouter_ will not route to it, but it
 will use it for authenticating clients. However, Exasol will be accessed
 on behalf of all clients using the credentials specified in the
-[connection_string](connection_string).
+[connection\_string](#connection_string).
 
 ## Users
 
@@ -29,7 +29,7 @@ if a MariaDB server/service has been specified as a target, and only for
 authenticating a client.
 
 The user and password to be used when accessing Exasol must be specified
-using `UID` and `PWD` in the [connection_string](connection_string).
+using `UID` and `PWD` in the [connection\_string](#connection_string).
 
 ## Settings
 
@@ -92,7 +92,7 @@ def adapter_call(request):
 /
 ```
 
-See [preprocessor_script](#preprocessor_script)
+See [preprocessor\_script](#preprocessor_script)
 
 ### `preprocessor_script`
 
