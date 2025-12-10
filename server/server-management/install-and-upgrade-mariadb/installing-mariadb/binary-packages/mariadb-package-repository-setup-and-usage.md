@@ -164,6 +164,26 @@ If you do not want to configure the **MariaDB Repository** on your system, for e
 
 ### MariaDB MaxScale Repository
 
+{% hint style="warning" %}
+## Note
+
+MaxScale releases, as of 2025-12-09, are now signed with a new key. The `mariadb_repo_setup` and `mariadb_es_repo_setup` scripts have been updated to automatically install the new key, but for existing repositories you'll need to do the following.
+
+On Debian and Ubuntu:
+
+```
+curl -LsSO https://supplychain.mariadb.com/mariadb-keyring-2025.gpg
+sudo mv mariadb-keyring-2025.gpg /etc/apt/trusted.gpg.d/
+sudo apt update
+```
+
+On RHEL & friends:
+
+```
+sudo rpm --import https://supplychain.mariadb.com/MariaDB-Enterprise-GPG-KEY-2025
+```
+{% endhint %}
+
 The **MariaDB MaxScale Repository** contains software packages related to [MariaDB MaxScale](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/maxscale/README.md).
 
 By default, the script will configure your system to install from the repository of the _latest_ GA version of MariaDB MaxScale. When a new major GA release occurs, the repository will automatically switch to the new version. If instead you would like to stay on a particular version you will need to manually edit the repository configuration file and change '`latest`' to the version you want (e.g. '`6.1`') or run the MariaDB Package Repository setup script again, specifying the particular version or series you want.
@@ -404,6 +424,7 @@ sudo zypper install maxscale
 
 | Version    | sha256sum                                                          |
 | ---------- | ------------------------------------------------------------------ |
+| 2025-12-10 | `62a28aa1f060b4055751d93a88bc11c5556c2b23103c6a6287a8fcb0a4b8a13f` |
 | 2025-10-22 | `1f584ffd368d18c64b8820bf6cd9b1114dda11a0ecf9524be3c967a3a5be941b` |
 | 2025-09-08 | `c33b022c2cc325fa50be62eae070ea0bdcaf85367f840accac7acaeea1e8a972` |
 | 2025-06-04 | `4d483b4df193831a0101d3dfa7fb3e17411dda7fc06c31be4f9e089c325403c0` |
@@ -442,6 +463,7 @@ sudo zypper install maxscale
 
 | Version    | sha256sum                                                          |
 | ---------- | ------------------------------------------------------------------ |
+| 2025-12-10 | `73f4ab14ccc3ceb8c03bb283dd131a3235cfc28086475f43e9291d2060d48c97` |
 | 2025-11-18 | `7a3e1610fee91347e198214e3672a6d3932ccbbf67905d9e892e9255baaec292` |
 | 2025-08-07 | `923eea378be2c129adb4d191f01162c1fe5473f1114d7586f096b5f6b9874efe` |
 | 2025-02-13 | `c4a0f3dade02c51a6a28ca3609a13d7a0f8910cccbb90935a2f218454d3a914a` |
