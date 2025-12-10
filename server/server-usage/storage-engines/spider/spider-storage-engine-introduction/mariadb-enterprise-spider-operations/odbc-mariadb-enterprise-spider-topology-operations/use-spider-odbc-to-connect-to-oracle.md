@@ -124,6 +124,7 @@ systemctl start mariadb or systemctl start mysqld
 {% step %}
 Log in to MariaDB, and run the following:
 
+{% code overflow="wrap" %}
 ```sql
 INSTALL SONAME 'ha_spider';
 CREATE DATABASE spider_test;
@@ -135,11 +136,13 @@ CREATE OR REPLACE TABLE spider_test.contacts
   LAST_NAME   VARCHAR( 255 ) NOT NULL,
   EMAIL       VARCHAR( 255 ) NOT NULL,
   PHONE       VARCHAR( 20 )          ,
-  CUSTOMER_ID BIGINT) ENGINE=SPIDER COMMENT='wrapper "odbc", dsn "ORARDS", table "CONTACTS"';
+  CUSTOMER_ID BIGINT) ENGINE=SPIDER 
+  CONNECTION='WRAPPER "odbc", DSN "ORARDS", table "CONTACTS"';
 ```
+{% endcode %}
 
 * This creates a new database and a table that should be able to connect to an Oracle server via ODBC.
-* `dsn` must be the same put in the `odbc.ini file` .
+* `DSN` must be the same put in the `odbc.ini file` .
 * It's best to always use upper case for both column names and the table value in the comment section, because these values are passed directly to Oracle Database, which prefers upper-case object names.
 {% endstep %}
 
