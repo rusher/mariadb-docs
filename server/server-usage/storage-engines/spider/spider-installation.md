@@ -45,7 +45,6 @@ The data node is now ready for use. You can test it by attempting to connect the
 
 ```sql
 $ mysql -u spider -p -h 192.168.1.5 test -e "SHOW TABLES;"
-
 +----------------+
 | Tables_in_test |
 +----------------+
@@ -69,9 +68,9 @@ $ sudo apt install mariadb-plugin-spider
 
 On other Linux distributions, the Spider storage engine is installed with MariaDB Server.
 
-### Step 2a: Load the Spider Plugin ([MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) and Later)
+### Step 2a: Load the Spider Plugin
 
-With [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) and later, the Spider storage engine can be loaded as a normal plugin, and Spider automatically creates its dependencies. There are two primary ways to load the plugin.
+The Spider storage engine can be loaded as a normal plugin, and Spider automatically creates its dependencies. There are two primary ways to load the plugin.
 
 The plugin can be loaded dynamically without a server restart by executing `INSTALL SONAME` or `INSTALL PLUGIN`:
 
@@ -81,51 +80,25 @@ INSTALL SONAME "ha_spider";
 
 Alternatively, the plugin can be loaded by adding `plugin_load_add=ha_spider` to a configuration file:
 
-```
-<<quote>>
+```ini
 [mariadb]
 ...
 plugin_load_add = "ha_spider"
-<</quote>>
 ```
 
 If the plugin is loaded in a configuration file, then the server will load the plugin after the server has been restarted.
 
 Loading the plugin also creates a series of new tables in the `mysql` database, including:
 
-| table name                             | added version                                                                                                                                               |
-| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| spider\_xa                             | [MariaDB 10.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes) |
-| spider\_xa\_member                     | [MariaDB 10.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes) |
-| spider\_xa\_failed\_log                | [MariaDB 10.0.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes) |
-| spider\_tables                         | [MariaDB 10.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes) |
-| spider\_link\_mon\_servers             | [MariaDB 10.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes) |
-| spider\_link\_failed\_log              | [MariaDB 10.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes) |
-| spider\_table\_position\_for\_recovery | [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes) |
-| spider\_table\_sts                     | [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes) |
-| spider\_table\_crd                     | [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes) |
-
-### Step 2b: Load the Spider Plugin ([MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) and Before)
-
-With [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) and before, the Spider storage engine can be loaded by executing the included `install_spider.sql` script:
-
-```
-$ mysql --user root --password < /usr/share/mysql/install_spider.sql
-```
-
-Running this configuration script also creates a series of new tables in the `mysql` database, including:
-
-| table name                             | added version                                                                                                                                               |
-| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| spider\_xa                             | [MariaDB 10.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes) |
-| spider\_xa\_member                     | [MariaDB 10.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes) |
-| spider\_xa\_failed\_log                | [MariaDB 10.0.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes) |
-| spider\_tables                         | [MariaDB 10.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes) |
-| spider\_link\_mon\_servers             | [MariaDB 10.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes) |
-| spider\_link\_failed\_log              | [MariaDB 10.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes) |
-| spider\_table\_position\_for\_recovery | [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes) |
-| spider\_table\_sts                     | [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes) |
-| spider\_table\_crd                     | [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes) |
+* spider\_xa
+* spider\_xa\_member
+* spider\_xa\_failed\_log
+* spider\_tables
+* spider\_link\_mon\_servers
+* spider\_link\_failed\_log
+* spider\_table\_position\_for\_recovery
+* spider\_table\_sts
+* spider\_table\_crd
 
 ### Step 3: Verify Loading of the Spider Plugin
 
@@ -135,7 +108,6 @@ You can verify that the Spider plugin has been loaded by querying the `informati
 SELECT ENGINE, SUPPORT
 FROM information_schema.ENGINES
 WHERE ENGINE = 'SPIDER';
-
 +--------------------+---------+
 | ENGINE             | SUPPORT |
 +--------------------+---------+
@@ -143,7 +115,7 @@ WHERE ENGINE = 'SPIDER';
 +--------------------+---------+
 ```
 
-If the Spider plugin is not loaded, then the query will not return any results.
+If the Spider plugin is not loaded, then the query does not return any results.
 
 ## Configuring Spider Nodes
 
@@ -165,7 +137,7 @@ OPTIONS (
 
 In the event that you need to modify or replace this server after setting up the Spider table, remember to issue a [FLUSH](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) statement to update the server definition.
 
-```
+```sql
 FLUSH TABLES;
 ```
 
@@ -185,7 +157,7 @@ COMMENT='wrapper "mysql", srv "dataNode1", table "spider_example"';
 
 This configures Spider to use the server `dataNode1`, (defined above), as a remote table. Any data you write to this table is actually stored on the MariaDB server at 192.168.1.5.
 
-Alternatively, starting from [MariaDB 10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes), one could specify spider table parameters using table options:
+Alternatively, starting from [MariaDB 10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes), one can specify spider table parameters using table options:
 
 ```sql
 CREATE TABLE test.spider_example (
