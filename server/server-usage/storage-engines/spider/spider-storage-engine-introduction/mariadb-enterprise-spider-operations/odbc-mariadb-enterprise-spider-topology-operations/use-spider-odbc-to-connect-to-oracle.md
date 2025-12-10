@@ -8,7 +8,24 @@ description: >-
 
 ## Overview
 
-This article describes how to use Spider ODBC to connect to Oracle. This can make it easier to migrate, by not requiring a wholesale cut over, but instead enabling a piecemeal approach.
+This article describes how to use Spider ODBC to connect to Oracle. This can make it easier to migrate, by not requiring a wholesale cutover, but instead enabling a piecemeal approach.
+
+The setup looks as shown in this figure:
+
+<figure><img src="../../../../../../.gitbook/assets/image (6).png" alt="The figure shows a user connecting to a MariaDB Enterprise Server host, with the Spider storage engine enabled. A Spider database table is connected to Unix ODBC. There are multiple instances of ODBC drivers. The Oracle Server host next to the MariaDB one connects to one or more of those ODBC drivers, populating the Spider table with the data from an Oracle table in the Oracle Server."><figcaption></figcaption></figure>
+
+## Prerequisites
+
+In MariaDB,
+
+* The Spider storage engine must be installed.
+* The Spider storage engine plugin must be installed in MariaDB Enterprise Server. This is described in the instructions below.
+* An ODBC driver manager, unixODBC, must be installed.
+
+In Oracle Database,
+
+* The ODBC driver must be installed.
+* The Oracle Basic Client must be installed. This is a prerequisite for installing the ODBC driver.
 
 {% hint style="info" %}
 The following procedure has been tested on _CentOS 7 AWS EC2 t3a.Medium_ and a _t3.small RDS_ Oracle 19 database. It assumes you are just doing a simple install of MariaDB. Also, the following schema is used to populate the Oracle database: [Oracle Sample Database](https://www.oracletutorial.com/getting-started/oracle-sample-database/).
