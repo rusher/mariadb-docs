@@ -68,7 +68,7 @@ $ sudo apt install mariadb-plugin-spider
 
 On other Linux distributions, the Spider storage engine is installed with MariaDB Server.
 
-### Step 2a: Load the Spider Plugin
+### Step 2: Load the Spider Plugin
 
 The Spider storage engine can be loaded as a normal plugin, and Spider automatically creates its dependencies. There are two primary ways to load the plugin.
 
