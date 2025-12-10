@@ -157,6 +157,11 @@ You should now be able to select data from `spider_test.contacts` table. That da
 * If the version of MariaDB does not have the [spider\_direct\_aggregate](../../../../../../ha-and-performance/optimization-and-tuning/system-variables/spider-status-variables.md#spider_direct_aggregate) variable, you aren't able to use a few aggregate functions on their own. (MENT-1558).
 * If you get the following error message: `Error from ODBC 0 01004 [Oracle][ODBC]String data, right truncated.`, you need to set a larger value for the variable [spider\_buffer\_size](../../../spider-system-variables.md#spider_buffer_size). (MENT-1557).
 
+## See Also
+
+* [Connecting to Oracle from MariaDB Enterprise Server using Spider](https://mariadb.com/resources/blog/connecting-to-oracle-from-mariadb-enterprise-server-using-spider/)\
+  Blog post by Anders Karlsson, January 2024 - 13 minute read
+
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formId="4316" %}
