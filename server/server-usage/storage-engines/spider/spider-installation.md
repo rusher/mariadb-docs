@@ -6,9 +6,9 @@ description: >-
 
 # Spider Installation
 
-The Spider storage engine supports partitioning and XA transactions, and allows tables of different MariaDB instances to be handled as if they were on the same instance.
+The Spider storage engine supports partitioning and XA transactions, and allows tables of different database host instances to be handled as if they were on the same instance.
 
-To use Spider, you need two or more instances of MariaDB, typically running on separate hosts. The Spider node is the MariaDB server that receives queries from your application. It then processes these queries, connecting to one or more data nodes. The data nodes are the MariaDB servers that actually store the table data.
+To make sensible use of Spider, you need two or more database host instances, typically running on separate hosts. Those database instances can be two or more MariaDB Server hosts, or a MariaDB Server host and an Oracle Database, etc. The Spider node is the MariaDB server that receives queries from your application. It then processes these queries, connecting to one or more data nodes. The data nodes are the MariaDB servers that actually store the table data.
 
 In order for this to work, you need to configure the data nodes to accept queries from the Spider node and you need to configure the Spider node to use the data nodes as remote storage.
 
@@ -58,15 +58,33 @@ The Spider storage engine must be installed on the Spider node. The Spider node 
 
 To install the Spider storage engine, complete the installation process shown below.
 
-### Step 1: Install Spider Package (Debian/Ubuntu)
+### Step 1: Install Spider Package
 
-On Debian and Ubuntu, the Spider storage engine is installed via a separate `mariadb-plugin-spider` package. To install the package via APT, execute the following command:
+{% tabs %}
+{% tab title="APT" %}
+#### APT (Debian, Ubuntu, etc.)
+
+To install the Spider storage engine, execute the following command:
 
 ```bash
 $ sudo apt install mariadb-plugin-spider
 ```
+{% endtab %}
 
+{% tab title="YUM" %}
+#### YUM (CentOS etc.)
+
+To install the Spider storage engine, execute the following command:
+
+```bash
+sudo yum install MariaDB-spider-engine
+```
+{% endtab %}
+
+{% tab title="Other Linux distributions" %}
 On other Linux distributions, the Spider storage engine is installed with MariaDB Server.
+{% endtab %}
+{% endtabs %}
 
 ### Step 2: Load the Spider Plugin
 
