@@ -195,8 +195,8 @@ The result (limited to 10 rows) looks like this:
 ## See Also
 
 * [Joining Tables with JOIN Clauses Guide](../../../../../../mariadb-quickstart-guides/mariadb-join-guide.md)
-* [JOIN Syntax](join-syntax.md)
-* [Comma vs JOIN](comma-vs-join.md)
+* [JOIN Syntax](../../joins/join-syntax.md)
+* [Comma vs JOIN](../../joins/comma-vs-join.md)
 * [Joins, Subqueries and SET](../../../../../sql-structure/joins-subqueries-set.md)
 
 _The first version of this article was copied, with permission, from_ [_More\_Advanced\_Joins_](https://hashmysql.org/wiki/More_Advanced_Joins) _on 2012-10-05._

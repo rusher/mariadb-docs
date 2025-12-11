@@ -7,7 +7,7 @@ description: >-
 
 # Subqueries and JOINs
 
-A [subquery](./) can quite often, but not in all cases, be rewritten as a [JOIN](../joins-subqueries/joins/join-syntax.md).
+A [subquery](./) can quite often, but not in all cases, be rewritten as a [JOIN](../../joins/join-syntax.md).
 
 ## Rewriting Subqueries as JOINS
 

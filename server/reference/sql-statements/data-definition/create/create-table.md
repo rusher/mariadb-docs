@@ -244,7 +244,7 @@ CREATE TABLE t1 (a INT DEFAULT (1+1), b INT DEFAULT (a+1));
 CREATE TABLE t2 (a BIGINT PRIMARY KEY DEFAULT UUID_SHORT());
 ```
 
-The `DEFAULT` clause cannot contain any [stored functions](../../../../server-usage/stored-routines/stored-functions/) or [subqueries](../../data-manipulation/selecting-data/subqueries/), and a column used in the clause must already have been defined earlier in the statement.
+The `DEFAULT` clause cannot contain any [stored functions](../../../../server-usage/stored-routines/stored-functions/) or [subqueries](../../data-manipulation/selecting-data/joins-subqueries/subqueries/), and a column used in the clause must already have been defined earlier in the statement.
 
 It is possible to assign [BLOB](../../../data-types/string-data-types/blob.md) or [TEXT](../../../data-types/string-data-types/text.md) columns a `DEFAULT` value.
 
@@ -257,7 +257,7 @@ set based on the new value. An `AUTO_INCREMENT` column is implicitly `NOT NULL`.
 
 ### ZEROFILL Column Option
 
-If the `ZEROFILL` column option is specified for a column using a [numeric](../../../data-types/numeric-data-types/numeric-data-type-overview.md) data type, then the column will be set to `UNSIGNED` and the spaces used by default to pad the field are replaced with zeros. `ZEROFILL` is ignored in expressions or as part of a [UNION](../../data-manipulation/selecting-data/joins-subqueries/union.md), [INTERSECT](../../data-manipulation/selecting-data/joins-subqueries/intersect.md), or [EXCEPT](../../data-manipulation/selecting-data/joins-subqueries/except.md). `ZEROFILL` is a non-standard MariaDB and MySQL extension.
+If the `ZEROFILL` column option is specified for a column using a [numeric](../../../data-types/numeric-data-types/numeric-data-type-overview.md) data type, then the column will be set to `UNSIGNED` and the spaces used by default to pad the field are replaced with zeros. `ZEROFILL` is ignored in expressions or as part of a [UNION](../../data-manipulation/selecting-data/set-operations/union.md), [INTERSECT](../../data-manipulation/selecting-data/set-operations/intersect.md), or [EXCEPT](../../data-manipulation/selecting-data/set-operations/except.md). `ZEROFILL` is a non-standard MariaDB and MySQL extension.
 
 ### PRIMARY KEY Column Option
 

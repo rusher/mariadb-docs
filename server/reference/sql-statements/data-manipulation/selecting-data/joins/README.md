@@ -20,8 +20,8 @@ Main `JOIN` page, documenting all join types available in MariaDB.
 
 {% columns %}
 {% column %}
-{% content-ref url="/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/IJX7GJ5nGfK7VQRNDHWF" %}
-[Broken link](/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/IJX7GJ5nGfK7VQRNDHWF)
+{% content-ref url="../../../../../mariadb-quickstart-guides/mariadb-join-guide.md" %}
+[mariadb-join-guide.md](../../../../../mariadb-quickstart-guides/mariadb-join-guide.md)
 {% endcontent-ref %}
 {% endcolumn %}
 
@@ -32,8 +32,8 @@ Introduction to joining tables in MariaDB.
 
 {% columns %}
 {% column %}
-{% content-ref url="/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/m2vfJkYWFY6aUNIsVFgK" %}
-[Broken link](/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/m2vfJkYWFY6aUNIsVFgK)
+{% content-ref url="../joins-subqueries/joins/more-advanced-joins.md" %}
+[more-advanced-joins.md](../joins-subqueries/joins/more-advanced-joins.md)
 {% endcontent-ref %}
 {% endcolumn %}
 
