@@ -165,7 +165,7 @@ Most [built-in functions](../../../sql-functions/) are supported in expressions 
 ERROR 1901 (HY000): Function or expression 'dayname()' cannot be used in the GENERATED ALWAYS AS clause of `v`
 ```
 
-[Subqueries](../../data-manipulation/selecting-data/joins-subqueries/subqueries/) are not supported in expressions for generated columns because the underlying data can change.
+[Subqueries](../../data-manipulation/selecting-data/subqueries/) are not supported in expressions for generated columns because the underlying data can change.
 
 Using anything that depends on data outside the row is not supported in expressions for generated columns.
 

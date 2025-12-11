@@ -16,7 +16,7 @@ SELECT ... WHERE EXISTS <Table subquery>
 
 [Subqueries](./) using the `EXISTS` keyword will return `true` if the subquery returns any rows. Conversely, subqueries using `NOT EXISTS` will return `true` only if the subquery returns no rows from the table.
 
-EXISTS subqueries ignore the columns specified by the [SELECT](../../select.md) of the subquery, since they're not relevant. For example,
+EXISTS subqueries ignore the columns specified by the [SELECT](../select.md) of the subquery, since they're not relevant. For example,
 
 ```sql
 SELECT col1 FROM t1 WHERE EXISTS (SELECT * FROM t2);

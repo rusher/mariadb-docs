@@ -8,9 +8,9 @@ description: >-
 
 A scalar subquery is a [subquery](./) that returns a single value. This is the simplest form of a subquery, and can be used in most places a literal or single column value is valid.
 
-The data type, length and [character set and collation](../../../../../data-types/string-data-types/character-sets/) are all taken from the result returned by the subquery. The result of a subquery can always be NULL, that is, no result returned. Even if the original value is defined as NOT NULL, this is disregarded.
+The data type, length and [character set and collation](../../../../data-types/string-data-types/character-sets/) are all taken from the result returned by the subquery. The result of a subquery can always be NULL, that is, no result returned. Even if the original value is defined as NOT NULL, this is disregarded.
 
-A subquery cannot be used where only a literal is expected, for example [LOAD DATA INFILE](../../../inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) expects a literal string containing the file name, and LIMIT requires a literal integer.
+A subquery cannot be used where only a literal is expected, for example [LOAD DATA INFILE](../../inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) expects a literal string containing the file name, and LIMIT requires a literal integer.
 
 ## Examples
 

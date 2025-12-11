@@ -26,7 +26,7 @@ INSERT INTO customer VALUES
 
 ### ORDER BY and LIMIT
 
-To use [ORDER BY](../../order-by.md) or limit [LIMIT](../../limit.md) in [subqueries](./) both must be used.. For example:
+To use [ORDER BY](../order-by.md) or limit [LIMIT](../limit.md) in [subqueries](./) both must be used.. For example:
 
 ```sql
 SELECT * FROM staff WHERE name IN (SELECT name FROM customer ORDER BY name);
@@ -106,7 +106,7 @@ Subqueries in the `FROM` clause cannot be correlated subqueries. They cannot be 
 
 ### Stored Functions
 
-A subquery can refer to a [stored function](../../../../../../server-usage/stored-routines/stored-functions/) which modifies data. This is an extension to the SQL standard, but can result in indeterminate outcomes. For example, take:
+A subquery can refer to a [stored function](../../../../../server-usage/stored-routines/stored-functions/) which modifies data. This is an extension to the SQL standard, but can result in indeterminate outcomes. For example, take:
 
 ```sql
 SELECT ... WHERE x IN (SELECT f() ...);
@@ -114,7 +114,7 @@ SELECT ... WHERE x IN (SELECT f() ...);
 
 where _f()_ inserts rows. The function _f()_ could be executed a different number of times depending on how the optimizer chooses to handle the query.
 
-This sort of construct is therefore not safe to use in replication that is not [row-based](../../../../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md), as there could be different results on the master and the slave.
+This sort of construct is therefore not safe to use in replication that is not [row-based](../../../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md), as there could be different results on the master and the slave.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

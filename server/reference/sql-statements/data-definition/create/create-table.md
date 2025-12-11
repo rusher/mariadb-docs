@@ -244,7 +244,7 @@ CREATE TABLE t1 (a INT DEFAULT (1+1), b INT DEFAULT (a+1));
 CREATE TABLE t2 (a BIGINT PRIMARY KEY DEFAULT UUID_SHORT());
 ```
 
-The `DEFAULT` clause cannot contain any [stored functions](../../../../server-usage/stored-routines/stored-functions/) or [subqueries](../../data-manipulation/selecting-data/joins-subqueries/subqueries/), and a column used in the clause must already have been defined earlier in the statement.
+The `DEFAULT` clause cannot contain any [stored functions](../../../../server-usage/stored-routines/stored-functions/) or [subqueries](../../data-manipulation/selecting-data/subqueries/), and a column used in the clause must already have been defined earlier in the statement.
 
 It is possible to assign [BLOB](../../../data-types/string-data-types/blob.md) or [TEXT](../../../data-types/string-data-types/text.md) columns a `DEFAULT` value.
 

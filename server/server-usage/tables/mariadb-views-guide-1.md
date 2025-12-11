@@ -10,7 +10,7 @@ description: >-
 
 **Up-front warning:** This is the beginning of a very basic tutorial on views,\
 based on my experimentation with them. This tutorial assumes that you've read\
-the appropriate tutorials up to and including [More Advanced Joins](../../mariadb-quickstart-guides/more-advanced-joins.md) (or that\
+the appropriate tutorials up to and including [More Advanced Joins](../../reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/more-advanced-joins.md) (or that\
 you understand the concepts behind them). This page is intended to give you a\
 general idea of how views work and what they do, as well as some examples of\
 when you could use them.
@@ -24,7 +24,7 @@ and CREATE VIEW privileges on this table.
 ## The Employee Database
 
 First, we need some data we can perform our optimizations on, so we'll recreate\
-the tables from the [More Advanced Joins](../../mariadb-quickstart-guides/more-advanced-joins.md) tutorial, to\
+the tables from the [More Advanced Joins](../../reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/more-advanced-joins.md) tutorial, to\
 provide us with a starting point. If you have already completed that tutorial\
 and have this database already, you can skip ahead.
 

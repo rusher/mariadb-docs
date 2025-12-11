@@ -127,7 +127,7 @@ You **cannot** optionally specify a list of column names in parenthesis.
 {% endtab %}
 {% endtabs %}
 
-See also [Correlation Column List](../subqueries/subqueries-in-a-from-clause-derived-tables.md#correlation-column-list).
+See also [Correlation Column List](../../subqueries/subqueries-in-a-from-clause-derived-tables.md#correlation-column-list).
 
 ### System-Versioned Tabled
 
@@ -178,7 +178,7 @@ SELECT left_tbl.*
 ## See Also
 
 * [Joining Tables with JOIN Clauses Guide](../../../../../../mariadb-quickstart-guides/mariadb-join-guide.md)
-* [More Advanced Joins](../../../../../../mariadb-quickstart-guides/more-advanced-joins.md)
+* [More Advanced Joins](more-advanced-joins.md)
 * [Comma vs JOIN](comma-vs-join.md)
 * [Joins, Subqueries and SET](../../../../../sql-structure/joins-subqueries-set.md)
 

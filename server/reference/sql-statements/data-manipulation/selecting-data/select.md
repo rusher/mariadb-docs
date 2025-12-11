@@ -83,7 +83,7 @@ The hint limits the time of statement execution to the number of milliseconds gi
 
 ## Description
 
-`SELECT` is used to retrieve rows selected from one or more tables, and can include [UNION](joins-subqueries/union.md) statements and [subqueries](joins-subqueries/subqueries/).
+`SELECT` is used to retrieve rows selected from one or more tables, and can include [UNION](joins-subqueries/union.md) statements and [subqueries](subqueries/).
 
 * Each `select_expr` expression indicates a column or data that you want to retrieve. You must have at least one select expression. See [Select Expressions](select.md#select-expressions) below.
 * The `FROM` clause indicates the table or tables from which to retrieve rows. Use either a single table name or a `JOIN` expression. See [JOIN](joins-subqueries/joins/join-syntax.md) for details. If no table is involved, [FROM DUAL](dual.md) can be specified.
