@@ -4,7 +4,7 @@ description: >-
   and demonstrates how to combine data from multiple tables.
 ---
 
-# Joining Tables with JOIN Clauses Guide
+# Joining Tables with JOIN Clauses
 
 This guide offers a simple, hands-on introduction to three basic `JOIN` types in MariaDB: `INNER JOIN`, `CROSS JOIN`, and `LEFT JOIN`. Use these examples to understand how different joins combine data from multiple tables based on specified conditions.
 
@@ -170,7 +170,7 @@ While this syntax works, the explicit `JOIN` syntax (`INNER JOIN`, `LEFT JOIN`, 
 
 ### See Also
 
-* [More Advanced Joins](../reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/more-advanced-joins.md)
+* [More Advanced Joins](more-advanced-joins.md)
 * [JOIN Syntax](../reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md)
 * [Comma vs JOIN](../reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/comma-vs-join.md)
 * [Joins, Subqueries and SET](../reference/sql-structure/joins-subqueries-set.md)

@@ -6,22 +6,50 @@ description: >-
 
 # Joins
 
-{% content-ref url="../../../../../../mariadb-quickstart-guides/mariadb-join-guide.md" %}
-[mariadb-join-guide.md](../../../../../../mariadb-quickstart-guides/mariadb-join-guide.md)
-{% endcontent-ref %}
-
-{% content-ref url="more-advanced-joins.md" %}
-[more-advanced-joins.md](more-advanced-joins.md)
-{% endcontent-ref %}
-
+{% columns %}
+{% column %}
 {% content-ref url="join-syntax.md" %}
 [join-syntax.md](join-syntax.md)
 {% endcontent-ref %}
+{% endcolumn %}
 
+{% column %}
+Main `JOIN` page, documenting all join types available in MariaDB.
+{% endcolumn %}
+{% endcolumns %}
+
+{% columns %}
+{% column %}
+{% content-ref url="/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/IJX7GJ5nGfK7VQRNDHWF" %}
+[Broken link](/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/IJX7GJ5nGfK7VQRNDHWF)
+{% endcontent-ref %}
+{% endcolumn %}
+
+{% column %}
+Introduction to joining tables in MariaDB.
+{% endcolumn %}
+{% endcolumns %}
+
+{% columns %}
+{% column %}
+{% content-ref url="/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/m2vfJkYWFY6aUNIsVFgK" %}
+[Broken link](/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/m2vfJkYWFY6aUNIsVFgK)
+{% endcontent-ref %}
+{% endcolumn %}
+
+{% column %}
+Introduction to advanced joins in MariaDB.
+{% endcolumn %}
+{% endcolumns %}
+
+{% columns %}
+{% column %}
 {% content-ref url="comma-vs-join.md" %}
 [comma-vs-join.md](comma-vs-join.md)
 {% endcontent-ref %}
+{% endcolumn %}
 
-{% content-ref url="../../../../../sql-structure/joins-subqueries-set.md" %}
-[joins-subqueries-set.md](../../../../../sql-structure/joins-subqueries-set.md)
-{% endcontent-ref %}
+{% column %}
+How to use a comma instead of a `JOIN` clause, and why you should always prefer the latter.
+{% endcolumn %}
+{% endcolumns %}
