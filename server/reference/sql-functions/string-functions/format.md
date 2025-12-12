@@ -42,11 +42,12 @@ SELECT FORMAT(1234567.89, 0) AS 'Format';
 | 1,234,568 |
 +-----------+
 
-SELECT FORMAT(123456789,2,'rm_CH') AS 'Format';
+-- Format number to German number formatting
+SELECT FORMAT(123456789,2,'de_DE') AS 'Format';
 +----------------+
 | Format         |
 +----------------+
-| 123'456'789,00 |
+| 123.456.789,00 |
 +----------------+
 ```
 
