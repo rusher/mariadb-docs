@@ -27,7 +27,7 @@ If the node is a replication slave, then the node's [slave SQL thread](https://a
 
 If the node is a replication slave, then it is probably also a good idea to enable [wsrep\_restart\_slave](../../reference/galera-cluster-system-variables.md#wsrep_restart_slave). When this is enabled, the node will restart its [slave threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-threads#threads-on-the-slave) whenever it rejoins the cluster.
 
-#### Parallel Replication Support
+## Parallel Replication Support
 
 Historically, Galera Cluster nodes acting as asynchronous replication slaves were restricted to single-threaded execution (`slave_parallel_threads=0`). Enabling parallel replication often resulted in deadlocks due to conflicts between [Binary Log Group Commit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/binary-log-group-commit) (BGC) ordering and Galera's internal pre-commit ordering.
 

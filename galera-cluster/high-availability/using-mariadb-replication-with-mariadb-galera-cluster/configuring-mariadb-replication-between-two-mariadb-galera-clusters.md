@@ -224,13 +224,13 @@ START SLAVE;
 {% tab title="File and Position" %}
 To get the [binary log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log) file and position coordinates on the second cluster, you can execute [SHOW MASTER STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-status):
 
-```
+```sql
 SHOW MASTER STATUS
 ```
 
 Then on the first cluster, you would set `master_log_file` and `master_log_pos` in the [CHANGE MASTER TO](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to) command. For example:
 
-```
+```sql
 CHANGE MASTER TO 
    MASTER_HOST="c2dbserver1", 
    MASTER_PORT=3310, 
