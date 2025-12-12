@@ -1,8 +1,8 @@
 ---
 description: >-
-  Find comprehensive resources for installing MariaDB MaxScale, including
-  step-by-step guides for package managers, tarball installation, and building
-  MaxScale directly from source code.
+  Choose the right installation method for MariaDB MaxScale. This section
+  includes guides for building from source code and installing via tarballs for
+  custom or non-standard deployments.
 ---
 
 # Installation & Configuration

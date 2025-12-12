@@ -1,3 +1,9 @@
+---
+description: >-
+  Enable remote management by configuring the MaxScale REST API. Learn to set
+  listening ports, bind addresses, and secure administrative traffic with TLS.
+---
+
 # Configuring MaxScale's REST API
 
 ## Overview
@@ -14,8 +20,8 @@ The REST API is enabled by default. However, the default configuration is not op
 
 1. [Configure MaxScale's REST API](maxgui/configuring-maxscale-for-maxgui.md) for remote connections by configuring several global parameters in maxscale.cnf.
 
-| Parameter                                                                                                                                                                         | Description                                                                                                 |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| Parameter                                                            | Description                                                                                                 |
+| -------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
 | [admin\_host](deployment/maxscale-configuration-guide.md#admin_host) | • This parameter defines the network address that the REST API listens on.• The default value is 127.0.0.1. |
 | [admin\_port](deployment/maxscale-configuration-guide.md#admin_port) | • This parameter defines the network port that the REST API listens on.• The default value is 8989.         |
 

@@ -1,3 +1,9 @@
+---
+description: >-
+  Perform day-to-day operations on MaxScale. This section covers managing REST
+  API users, rotating logs, and enabling TLS for secure client connections.
+---
+
 # Operating MaxScale
 
 * REST API
