@@ -74,12 +74,6 @@ The `CACHE` option is the primary lever for balancing performance against data c
 | CACHE 1000    | Single Writer    | Recommended for write-heavy single nodes. Allows the writer node to batch updates to disk, offering performance similar to a standalone server. However, if a secondary node writes to the sequence, the primary node's cache is discarded, creating gaps. |
 | CACHE 50      | Hybrid           | A balanced approach. Reduces disk flushes significantly compared to `CACHE 1` while limiting the size of potential gaps during occasional concurrent writes.                                                                                               |
 
-{% hint style="danger" %}
-#### Avoid Using `NOCACHE`
-
-While `NOCACHE` seems similar to `CACHE 1`, `NOCACHE` may lead to different locking paths in the storage engine, potentially reducing performance in a clustered environment. Opt for `CACHE 1` for "no cache" behavior instead.
-{% endhint %}
-
 ## Use Case: Active-Active Ticket Reservation System
 
 A common requirement for Galera is a distributed system (e.g., ticket sales) where users in different regions must be able to book items simultaneously without "race conditions" or duplicate Booking IDs.
@@ -106,15 +100,9 @@ COMMIT;
 
 ## Troubleshooting
 
-### Common Errors
-
 | Error                                                | Cause                                                                                                         | Resolution                                                                                                 |
 | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | `ERROR 1235 ... doesn't yet support SEQUENCEs`       | The server version is older than 10.11.16 and Streaming Replication is enabled.                               | Upgrade to a supported version or disable Streaming Replication (`SET SESSION wsrep_trx_fragment_size=0`). |
 | `ERROR 1213: Deadlock found when trying to get lock` | The sequence was likely defined with `INCREMENT BY 1` (default), causing nodes to contend for the same value. | Alter the sequence to use the Galera offset logic: `ALTER SEQUENCE my_seq INCREMENT BY 0;`                 |
-
-### Sequence Gaps
-
-It is normal behavior to see gaps in sequence numbers if using `CACHE > 1` in a multi-writer environment. When one node replicates a new high-water mark, other nodes must drop their reserved cache to synchronize. If strict continuity is required (e.g., invoice numbering), `CACHE 1` must be used.
 
 _This page is licensed: CC BY-SA / Gnu FDL_
