@@ -1,6 +1,6 @@
 # Managing Sequences in Galera Cluster
 
-\[Sequences] allows for the generation of unique integers independent of any specific table. While standard sequences function normally in a standalone MariaDB server, using them in a \[MariaDB Galera Cluster] requires specific configurations to ensure conflict-free operation and optimal performance.
+[Sequences](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/sequences/sequence-overview) allows for the generation of unique integers independent of any specific table. While standard sequences function normally in a standalone MariaDB server, using them in a [MariaDB Galera Cluster](../../readme/mariadb-galera-cluster-usage-guide.md) requires specific configurations to ensure conflict-free operation and optimal performance.
 
 {% hint style="success" %}
 #### Streaming Replication Support in MariaDB
@@ -8,11 +8,11 @@
 Starting from MariaDB 10.6.17 (and Galera 26.4.16), sequences are fully supported in transactions utilizing streaming replication. In earlier versions, using `NEXTVAL()` within a transaction where `wsrep_trx_fragment_size > 0` would cause an `ERROR 1235`. The WSREP API now ensures proper serialization of sequence state in transaction fragments, allowing sequences to be used effectively in large-scale ETL and batch operations.
 {% endhint %}
 
-### Configuring Sequences for Galera
+## Configuring Sequences for Galera
 
 Because Galera is a multi-primary system, multiple nodes may attempt to generate sequence values simultaneously. To prevent duplicate values and certification failures, the cluster utilizes an offset-based generation strategy.
 
-#### 1. Mandatory: INCREMENT BY 0
+### Mandatory: INCREMENT BY 0
 
 For a sequence to function correctly in a multi-node environment, it must be defined with `INCREMENT BY 0`.
 
@@ -64,7 +64,7 @@ sequenceDiagram
 
 This ensures that nodes generate interleaved, non-conflicting IDs preventing Certification Failures (Error 1213) without requiring network locks.
 
-#### 2. Cache Configuration Strategies
+### Cache Configuration Strategies
 
 The `CACHE` option is the primary lever for balancing performance against data continuity. In Galera, replication introduces a "Flush-on-Sync" behavior: when any node commits a sequence update, other nodes must sync their state, discarding any unused values in their local cache.
 
@@ -74,17 +74,17 @@ The `CACHE` option is the primary lever for balancing performance against data c
 | CACHE 1000    | Single Writer    | Recommended for write-heavy single nodes. Allows the writer node to batch updates to disk, offering performance similar to a standalone server. However, if a secondary node writes to the sequence, the primary node's cache is discarded, creating gaps. |
 | CACHE 50      | Hybrid           | A balanced approach. Reduces disk flushes significantly compared to `CACHE 1` while limiting the size of potential gaps during occasional concurrent writes.                                                                                               |
 
-Export to Sheets
+{% hint style="danger" %}
+#### Avoid Using `NOCACHE`
 
-> Warning: Avoid using `NOCACHE`. Although it seems similar to `CACHE 1`, `NOCACHE` can trigger different locking paths within the storage engine that may degrade performance in a clustered environment. Always prefer `CACHE 1` when you need "no cache" behavior.
+While `NOCACHE` seems similar to `CACHE 1`, `NOCACHE` may lead to different locking paths in the storage engine, potentially reducing performance in a clustered environment. Opt for `CACHE 1` for "no cache" behavior instead.
+{% endhint %}
 
-### Use Case: Active-Active Ticket Reservation System
+## Use Case: Active-Active Ticket Reservation System
 
 A common requirement for Galera is a distributed system (e.g., ticket sales) where users in different regions must be able to book items simultaneously without "race conditions" or duplicate Booking IDs.
 
 In this example, we configure a sequence to allow high-speed concurrent bookings from multiple nodes.
-
-SQL
 
 ```sql
 -- 1. Create a sequence optimized for concurrent access
@@ -104,18 +104,16 @@ VALUES (@new_id, 'Jane Doe', 'Concert 2025');
 COMMIT;
 ```
 
-### Troubleshooting
+## Troubleshooting
 
-#### Common Errors
+### Common Errors
 
 | Error                                                | Cause                                                                                                         | Resolution                                                                                                 |
 | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | `ERROR 1235 ... doesn't yet support SEQUENCEs`       | The server version is older than 10.6.17 and Streaming Replication is enabled.                                | Upgrade to a supported version or disable Streaming Replication (`SET SESSION wsrep_trx_fragment_size=0`). |
 | `ERROR 1213: Deadlock found when trying to get lock` | The sequence was likely defined with `INCREMENT BY 1` (default), causing nodes to contend for the same value. | Alter the sequence to use the Galera offset logic: `ALTER SEQUENCE my_seq INCREMENT BY 0;`                 |
 
-Export to Sheets
-
-#### Sequence Gaps
+## Sequence Gaps
 
 It is normal behavior to see gaps in sequence numbers if using `CACHE > 1` in a multi-writer environment. When one node replicates a new high-water mark, other nodes must drop their reserved cache to synchronize. If strict continuity is required (e.g., invoice numbering), `CACHE 1` must be used.
 
