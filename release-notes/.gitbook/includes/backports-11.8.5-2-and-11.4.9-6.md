@@ -9,4 +9,4 @@ title: backports-11.8.5-2-and-11.4.9-6
 * Two new fields are available via `SHOW REPLICA STATUS` ([MENT-2129](https://jira.mariadb.org/browse/MENT-2129))
   1. `Connects_Tried`, which provides the number of attempts the replica has made to connect to the primary, and
   2. `Master_Retry_Count`, which provides the number of times the replica will attempt to connect to a primary before giving up.
-* The authentication plugin caching\_sha2\_password has been added, not loaded by default ([MDEV-37600](https://jira.mariadb.org/browse/MDEV-37600))
+* The authentication plugin `caching_sha2_password` has been added, not loaded by default ([MDEV-37600](https://jira.mariadb.org/browse/MDEV-37600))
