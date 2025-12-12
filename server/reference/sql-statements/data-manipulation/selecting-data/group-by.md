@@ -19,11 +19,7 @@ You can also use a single integer as the grouping expression. If you use an inte
 the results will be grouped by the \_n\_th column in the select expression.
 
 The `WHERE` clause is applied before the `GROUP BY` clause. It filters non-aggregated\
-rows before the rows are grouped together. To filter grouped rows based on aggregate values,\
-use the `HAVING` clause. The `HAVING` clause takes any expression and evaluates it as\
-a boolean, just like the `WHERE` clause. You can use grouping functions in the `HAVING`\
-clause. As with the select expression, if you reference non-grouped columns in the `HAVING`\
-clause, the behavior is undefined.
+rows before the rows are grouped together. To filter grouped rows based on aggregate values, use the `HAVING` clause. The `HAVING` clause takes any expression and evaluates it as a boolean, just like the `WHERE` clause. You can use grouping functions in the `HAVING` clause. As with the select expression, if you reference non-grouped columns in the `HAVING` clause, the behavior is undefined.
 
 By default, if a `GROUP BY` clause is present, the rows in the output will be sorted by the expressions used in the `GROUP BY`. You can also specify `ASC` or `DESC` (ascending, descending) after those expressions, like in [ORDER BY](order-by.md). The default is `ASC`.
 
@@ -60,8 +56,7 @@ SELECT wins, COUNT(*) FROM plays GROUP BY wins;
 3 rows in set (0.00 sec)
 ```
 
-The `GROUP BY` expression can be a computed value, and can refer back to an identifier\
-specified with `AS`. Get a list of win averages along with a count:
+The `GROUP BY` expression can be a computed value, and can refer back to an identifier specified with `AS`. Get a list of win averages along with a count:
 
 ```sql
 SELECT (wins / plays) AS winavg, COUNT(*) FROM plays GROUP BY winavg;

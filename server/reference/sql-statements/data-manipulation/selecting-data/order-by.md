@@ -8,16 +8,13 @@ description: >-
 
 ## Description
 
-Use the `ORDER BY` clause to order a resultset, such as that are returned from a [SELECT](select.md)\
-statement. You can specify just a column or use any expression with functions. If you are\
-using the `GROUP BY` clause, you can use grouping functions in `ORDER BY`. Ordering is done after grouping.
+Use the `ORDER BY` clause to order a resultset, such as that are returned from a [SELECT](select.md) statement. You can specify just a column or use any expression with functions. If you are using the `GROUP BY` clause, you can use grouping functions in `ORDER BY`. Ordering is done after grouping.
 
-You can use multiple ordering expressions, separated by commas. Rows will be sorted by\
-the first expression, then by the second expression if they have the same value for the first, and so on.
+You can use multiple ordering expressions, separated by commas. Rows are sorted by the first expression, then by the second expression if they have the same value for the first, and so on.
 
 You can use the keywords `ASC` and `DESC` after each ordering expression to force that ordering to be ascending or descending, respectively. Ordering is ascending by default.
 
-You can also use a single integer as the ordering expression. If you use an integer _n_, the results will be ordered by the \_n\_th column in the select expression.
+You can also use a single integer as the ordering expression. If you use an integer _`n`_, the results is ordered by the n<sup>th</sup> column in the select expression.
 
 When string values are compared, they are compared as if by the [STRCMP](../../../sql-functions/string-functions/strcmp.md) function. `STRCMP` ignores trailing whitespace and may normalize characters and ignore case, depending on the [collation](../../../data-types/string-data-types/character-sets/) in use.
 
@@ -85,7 +82,7 @@ SELECT * FROM seq ORDER BY x,i;
 +------+------+
 ```
 
-ORDER BY in an [UPDATE](../changing-deleting-data/update.md) statement, in conjunction with [LIMIT](limit.md):
+`ORDER BY` in an [UPDATE](../changing-deleting-data/update.md) statement, in conjunction with [LIMIT](limit.md):
 
 ```sql
 UPDATE seq SET x='z' WHERE x='b' ORDER BY i DESC LIMIT 1;
