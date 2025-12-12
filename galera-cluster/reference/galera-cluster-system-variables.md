@@ -1,16 +1,12 @@
 # Galera Cluster System Variables
 
-/This page documents system variables related to Galera Cluster. For options that are not system variables, see [Galera Options](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd-options#galera-cluster-options).
-
-See [Server System Variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables) for a complete list of system variables and instructions on setting them.
-
-Also see the [Full list of MariaDB options, system and status variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables).
+This page documents system variables related to Galera Cluster. For options that are not system variables, see [Galera Options](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd-options#galera-cluster-options). See [Server System Variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables) for a complete list of system variables and instructions on setting them. Also see the [Full list of MariaDB options, system and status variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables).
 
 #### `wsrep_allowlist`
 
 * Description:
-  * Allowed IP addresses, comma delimited.
-  * Note that setting `gmcast.listen_addr=tcp://[::]:4567` on a dual-stack system (eg. Linux with `net.ipv6.bindv6only = 0`), IPv4 addresses need to allowlisted using the IPv4-mapped IPv6 address (eg. `::ffff:1.2.3.4`).
+  * Allowed IP addresses, comma-delimited.
+  * Note that setting `gmcast.listen_addr=tcp://[::]:4567` on a dual-stack system (for instance, Linux with `net.ipv6.bindv6only = 0`), IPv4 addresses need to be allow-listed using the IPv4-mapped IPv6 address (eg. `::ffff:1.2.3.4`).
 * Command line: `--wsrep-allowlist=value1[,value2...]`
 * Scope: Global
 * Dynamic: No
@@ -20,19 +16,18 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 
 #### `wsrep_applier_retry_count`
 
-* Description: Maximum number of applier retry attempts. Prior to MariaDB 12.1, replication\
-  applying always stops for the first non-ignored failure occurring in event applying, and the node will emergency abort (or start inconsistency voting). Some failures, however, can be concurrency related, and applying may succeed if the operation is tried at later time. This variable controls the retry-applying feature. It is set to zero by default, which means no retrying.
+* Description: Maximum number of applier retry attempts. Previously, replication applying always stopped for the first non-ignored failure occurring in event applying, and the node emergency-aborts (or start inconsistency voting). Some failures, however, can be concurrency related, and applying may succeed if the operation is tried at later time. This variable controls the retry-applying feature. It is set to `0` by default, which means no retrying.
 * Command line: `--wsrep-applier-retry-count=value`
 * Scope: Global
 * Dynamic: Yes
-* Data Type: INT UNSIGNED
+* Data Type: `INT UNSIGNED`
 * Default Value: `0`
 * Range: `0` to `4294967295`
 * Introduced: [MariaDB 12.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/12.1/changes-and-improvements-in-mariadb-12.1)
 
 #### `wsrep_auto_increment_control`
 
-* Description: If set to `1` (the default), will automatically adjust the [auto\_increment\_increment](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) and [auto\_increment\_offset](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) variables according to the size of the cluster, and when the cluster size changes. This avoids replication conflicts due to [auto\_increment](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/auto_increment). In a primary-replica environment, can be set to `OFF`.
+* Description: If set to `1` (the default), automatically adjusts the [auto\_increment\_increment](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) and [auto\_increment\_offset](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) variables according to the size of the cluster, and readjusts them when the cluster size changes. This avoids replication conflicts due to [auto\_increment](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/auto_increment). In a primary-replica environment, can be set to `OFF`.
 * Command line: `--wsrep-auto-increment-control[={0|1}]`
 * Scope: Global
 * Dynamic: Yes
@@ -49,7 +44,9 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 * Default Value: `OFF`
 * Removed: [MariaDB 11.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes)
 
-#### `wsrep_certificate_expiration_hours_warning`
+#### `wsrep_certificate_expiration_hours_warning`&#x20;
+
+This variable is documented in detail here:
 
 {% content-ref url="wsrep-variable-details/wsrep_certificate_expiration_hours_warning.md" %}
 [wsrep\_certificate\_expiration\_hours\_warning.md](wsrep-variable-details/wsrep_certificate_expiration_hours_warning.md)
@@ -58,8 +55,8 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 #### `wsrep_certification_rules`
 
 * Description: Certification rules to use in the cluster. Possible values are:
-  * `strict`: Stricter rules that could result in more certification failures. For example with foreign keys, certification failure could result if different nodes receive non-conflicting insertions at about the same time that point to the same row in a parent table
-  * `optimized`: relaxed rules that allow more concurrency and cause less certification failures.
+  * `strict`: Stricter rules that could result in more certification failures. For example with foreign keys, certification failure could result if different nodes receive non-conflicting insertions at about the same time that point to the same row in a parent table.
+  * `optimized`: Relaxed rules that allow more concurrency and cause less certification failures.
 * Command line: `--wsrep-certifcation-rules`
 * Scope: Global
 * Dynamic: Yes
@@ -69,7 +66,7 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 
 #### `wsrep_certify_nonPK`
 
-* Description: When set to `ON` (the default), Galera will still certify transactions for tables with no [primary key](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/mariadb-quickstart-guides/mariadb-indexes-guide#primary-key). However, this can still cause undefined behavior in some circumstances. It is recommended to define primary keys for every InnoDB table when using Galera.
+* Description: When set to `ON` (the default), Galera still certifies transactions for tables with no [primary key](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/mariadb-quickstart-guides/mariadb-indexes-guide#primary-key). However, this can still cause undefined behavior in some circumstances. It is recommended to define primary keys for every InnoDB table when using Galera.
 * Command line: `--wsrep-certify-nonPK[={0|1}]`
 * Scope: Global
 * Dynamic: Yes
@@ -134,12 +131,14 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 #### `wsrep_debug`
 
 * Description: WSREP debug level logging.
-  * Before [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/10.6/10.6.1), DDL logging was only logged on the originating node. From [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/10.6/10.6.1), it is logged on other nodes as well.
-
-It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB server code contains WSREP\_DEBUG log writes, and these will be added to server error log`2: TRANSACTION`: Logging from wsrep-lib transaction is added to the error log`3: STREAMING`: Logging from streaming transactions in wsrep-lib is added to the error log`4: CLIENT`: Logging from wsrep-lib client state is added to the error log.
-
-* Command line:
-  * `--wsrep-debug[={NONE|SERVER|TRANSACTION|STREAMING|CLIENT}]`
+  * Before MariaDB 10.6.1, DDL logging was only logged on the originating node. From [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/10.6/10.6.1), it is logged on other nodes as well.
+  * Data type is [enum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/enum). Valid values are:
+    * `0: NONE`: Off (default).
+    * `1: SERVER`: MariaDB server code contains `WSREP_DEBUG` log writes, and these are added to server error log.
+    * `2: TRANSACTION`: Logging from wsrep-lib transaction is added to the error log.
+    * `3: STREAMING`: Logging from streaming transactions in wsrep-lib is added to the error log.
+    * `4: CLIENT`: Logging from `wsrep-lib` client state is added to the error log.
+* Command line: `--wsrep-debug[={NONE|SERVER|TRANSACTION|STREAMING|CLIENT}]`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: Enumeration
@@ -148,7 +147,7 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 
 #### `wsrep_desync`
 
-* Description: When a node receives more write-sets than it can apply, the transactions are placed in a received queue. If the node's received queue has too many write-sets waiting to be applied (as defined by the [gcs.fc\_limit](wsrep-variable-details/wsrep_provider_options.md#gcsfc_limit) WSREP provider option), then the node would usually engage Flow Control. However, when this option is set to `ON`, Flow Control will be disabled for the desynced node. The desynced node works through the received queue until it reaches a more manageable size. The desynced node continues to receive write-sets from the other nodes in the cluster. The other nodes in the cluster do not wait for the desynced node to catch up, so the desynced node can fall even further behind the other nodes in the cluster. You can check if a node is desynced by checking if the [wsrep\_local\_state\_comment](galera-cluster-status-variables.md#wsrep_local_state_comment) status variable is equal to `Donor/Desynced`.
+* Description: When a node receives more write-sets than it can apply, the transactions are placed in a received queue. If the node's received queue has too many write-sets waiting to be applied (as defined by the [gcs.fc\_limit](wsrep-variable-details/wsrep_provider_options.md#gcsfc_limit) `WSREP` provider option), then the node would usually engage Flow Control. However, when this option is set to `ON`, Flow Control will be disabled for the desynced node. The desynced node works through the received queue until it reaches a more manageable size. The desynced node continues to receive write-sets from the other nodes in the cluster. The other nodes in the cluster do not wait for the desynced node to catch up, so the desynced node can fall even further behind the other nodes in the cluster. You can check if a node is desynced by checking if the [wsrep\_local\_state\_comment](galera-cluster-status-variables.md#wsrep_local_state_comment) status variable is equal to `Donor/Desynced`.
 * Command line: `--wsrep-desync[={0|1}]`
 * Scope: Global
 * Dynamic: Yes
@@ -157,7 +156,7 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 
 #### `wsrep_dirty_reads`
 
-* Description: By default, when not synchronized with the group ([wsrep\_ready](galera-cluster-status-variables.md#wsrep_ready)=OFF) a node will reject all queries other than SET and SHOW. If `wsrep_dirty_reads` is set to `1`, queries which do not change data, like SELECT queries (dirty reads), creating of prepare statement, etc. will be accepted by the node.
+* Description: By default, when not synchronized with the group ([wsrep\_ready](galera-cluster-status-variables.md#wsrep_ready)=`OFF`), a node rejects all queries other than `SET` and `SHOW`. If `wsrep_dirty_reads` is set to `1`, queries which do not change data, like `SELECT` queries (dirty reads), creating of prepare statement, and so forth will be accepted by the node.
 * Command line: `--wsrep-dirty-reads[={0|1}]`
 * Scope: Global,Session
 * Dynamic: Yes
@@ -176,7 +175,7 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 
 #### `wsrep_forced_binlog_format`
 
-* Description: A [binary log format](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log/binary-log-formats) that will override any session binlog format settings.
+* Description: A [binary log format](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log/binary-log-formats) that overrides any session binlog format settings.
 * Command line: `--wsrep-forced-binlog-format=value`
 * Scope: Global
 * Dynamic: Yes
@@ -211,7 +210,7 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 
 #### `wsrep_gtid_seq_no`
 
-* Description: Internal server usage, manually set WSREP GTID seqno.
+* Description: Internal server usage, manually set `WSREP GTID seqno`.
 * Command line: None
 * Scope: Session only
 * Dynamic: Yes
@@ -223,8 +222,8 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 
 * Description: Bitmask determining whether errors are ignored, or reported back to the provider.
   * 0: No errors are skipped.
-  * 1: Ignore some DDL errors (DROP DATABASE, DROP TABLE, DROP INDEX, ALTER TABLE).
-  * 2: Skip DML errors (Only ignores DELETE errors).
+  * 1: Ignore some DDL errors (`DROP DATABASE`, `DROP TABLE`, `DROP INDEX`, `ALTER TABLE`).
+  * 2: Skip DML errors (Only ignores `DELETE` errors).
   * 4: Ignore all DDL errors.
 * Command line: `--wsrep-ignore-apply-errors`
 * Scope: Global
@@ -241,7 +240,7 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 * Dynamic: Yes
 * Data Type: Boolean
 * Default Value: `OFF`
-* Deprecated: [MariaDB 10.4.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1042-release-notes)
+* Deprecated: MariaDB 10.4.2
 * Removed: [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115)
 
 #### `wsrep_log_conflicts`
@@ -255,29 +254,27 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 
 #### `wsrep_max_ws_rows`
 
-* Description: Maximum permitted number of rows per writeset. The support for this variable has been added and in order to be backward compatible the default value has been changed to `0`, which essentially allows writesets to be any size.
+* Description: Maximum permitted number of rows per write set. The support for this variable has been added and in order to be backward compatible. The default value has been changed to `0`, which essentially allows write sets to be any size.
 * Command line: `--wsrep-max-ws-rows=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: Numeric
-* Default Value:
-  * `0`
+* Default Value: `0`
 * Range: `0` to `1048576`
 
 #### `wsrep_max_ws_size`
 
-* Description: Maximum permitted size in bytes per write set. Writesets exceeding 2GB will be rejected.
+* Description: Maximum permitted size in bytes per write set. Write sets exceeding 2GB are rejected.
 * Command line: `--wsrep-max-ws-size=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: Numeric
-* Default Value:
-  * `2147483647` (2GB)
+* Default Value: `2147483647` (2GB)
 * Range: `1024` to `2147483647`
 
 #### `wsrep_mode`
 
-* Description: Turns on `WSREP` features which are not part of default behavior.
+* Description: Turns on `WSREP` features which are not part of the default behavior.
   * `BINLOG_ROW_FORMAT_ONLY`: Only `ROW` [binlog format](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log/binary-log-formats) is supported.
   * `DISALLOW_LOCAL_GTID`: Nodes can have GTIDs for local transactions in a number of scenarios. If `DISALLOW_LOCAL_GTID` is set, these operations produce an error `ERROR HY000: Galera replication not supported`. Scenarios include:
     * A DDL statement is executed with `wsrep_OSU_method=RSU` set.
@@ -300,7 +297,7 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 #### `wsrep_mysql_replication_bundle`
 
 * Description: Determines the number of replication events that are grouped together. Experimental implementation aimed to assist with bottlenecks when a single replica faces a large commit time delay. If set to `0` (the default), there is no grouping.
-* Comman dline: `--wsrep-mysql-replication-bundle=#`
+* Command line: `--wsrep-mysql-replication-bundle=#`
 * Scope: Global
 * Dynamic: No
 * Data Type: Numeric
@@ -309,13 +306,13 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 
 #### `wsrep_node_address`
 
-* Description: Specifies the node's network address, in the format `ip address[:port]`. It supports IPv6. The default behavior is for the node to pull the address of the first network interface on the system and the default Galera port. This autoguessing can be unreliable, particularly in the following cases:
-  * cloud deployments
-  * container deployments
-  * servers with multiple network interfaces.
-  * servers running multiple nodes.
-  * network address translation (NAT).
-  * clusters with nodes in more than one region.
+* Description: Specifies the node's network address, in the format `ip address[:port]`. It supports IPv6. The default behavior is for the node to pull the address of the first network interface on the system and the default Galera port. This automatic guessing can be unreliable, particularly in the following cases:
+  * Cloud deployments
+  * Container deployments
+  * Servers with multiple network interfaces
+  * Servers running multiple nodes
+  * Network address translation (NAT)
+  * Clusters with nodes in more than one region
 * See also [wsrep\_provider\_options -> gmcast.listen\_addr](wsrep-variable-details/wsrep_provider_options.md#gmcastlisten_addr)
 * Command line: `--wsrep-node-address=value`
 * Scope: Global
@@ -346,9 +343,7 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 * Description: Command to be executed each time the node state or the cluster membership changes. Can be used for raising an alarm, configuring load balancers and so on. See the [Codership Notification Script page](https://galeracluster.com/library/documentation/notification-cmd.html) for more details.
 * Command line: `--wsrep-notify-command=value`
 * Scope: Global
-* Dynamic:
-  * No (>= [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-1059-release-notes))
-  * Yes (<= [MariaDB 10.5.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-1058-release-notes))
+* Dynamic: No
 * Data Type: String
 * Default Value: Empty
 
@@ -388,19 +383,19 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 * Description: Location of the wsrep library, usually `/usr/lib/libgalera_smm.so` on Debian and Ubuntu, and `/usr/lib64/libgalera_smm.so` on Red Hat/CentOS.
 * Command line: `--wsrep-provider=value`
 * Scope: Global
-  * No (>= [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-1059-release-notes))
-  * Yes (<= [MariaDB 10.5.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-1058-release-notes))
 * Data Type: String
 * Default Value: None
 
 #### `wsrep_provider_options`
 
-* Description: Semicolon (;) separated list of wsrep options (see [wsrep\_provider\_options](wsrep-variable-details/wsrep_provider_options.md)).
+* Description: Semicolon (`;`) separated list of `wsrep` options (see [wsrep\_provider\_options](wsrep-variable-details/wsrep_provider_options.md)).
 * Command line: `--wsrep-provider-options=value`
 * Scope: Global
 * Dynamic: No
 * Data Type: String
 * Default Value: Empty
+
+More details can be found on this page:
 
 {% content-ref url="wsrep-variable-details/wsrep_provider_options.md" %}
 [wsrep\_provider\_options.md](wsrep-variable-details/wsrep_provider_options.md)
@@ -418,9 +413,9 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 #### `wsrep_reject_queries`
 
 * Description: Variable to set to reject queries from client connections, useful for maintenance. The node continues to apply write-sets, but an `Error 1047: Unknown command` error is generated by a client query.
-  * `NONE` - Not set. Queries will be processed as normal.
-  * `ALL` - All queries from client connections will be rejected, but existing client connections will be maintained.
-  * `ALL_KILL` All queries from client connections will be rejected, and existing client connections, including the current one, will be immediately killed.
+  * `NONE` - Not set. Queries are processed as normal.
+  * `ALL` - All queries from client connections will be rejected, but existing client connections are maintained.
+  * `ALL_KILL` All queries from client connections will be rejected, and existing client connections, including the current one, are immediately killed.
 * Command line: `--wsrep-reject-queries[=value]`
 * Scope: Global
 * Dynamic: Yes
@@ -442,7 +437,7 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 
 #### `wsrep_restart_slave`
 
-* Description: If set to ON, the replica is restarted automatically, when node joins back to cluster.
+* Description: If set to `ON`, the replica is restarted automatically, when node joins back to cluster.
 * Command line: `--wsrep-restart-slave[={0|1}]`
 * Scope: Global
 * Dynamic: Yes
@@ -500,7 +495,9 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 * Default Value: `table`
 * Valid Values: `table`, `none`
 
-#### `wsrep_ssl_mode`
+#### `wsrep_ssl_mode`&#x20;
+
+This variable is documented in details on this page:
 
 {% content-ref url="wsrep-variable-details/wsrep_ssl_mode.md" %}
 [wsrep\_ssl\_mode.md](wsrep-variable-details/wsrep_ssl_mode.md)
@@ -517,8 +514,12 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 
 #### `wsrep_sst_donor`
 
-* Description: Comma-separated list (from 5.5.33) or name (as per [wsrep\_node\_name](galera-cluster-system-variables.md#wsrep_node_name)) of the servers as donors, or the source of the state transfer, in order of preference. The donor-selection algorithm, in general, prefers a donor capable of transferring only the missing transactions (IST) to the joiner node, instead of the complete state (SST). Thus, it starts by looking for an IST-capable node in the given donor list followed by rest of the nodes in the cluster. In case multiple candidate nodes are found outside the specified donor list, the node in the same segment ([gmcast.segment](wsrep-variable-details/wsrep_provider_options.md#gmcastsegment)) as the joiner is preferred. If none of the existing nodes in the cluster can serve the missing transactions through IST, the algorithm moves on to look for a suitable node to transfer the entire state (SST). It first looks at the nodes specified in the donor list (irrespective of their segment). If no suitable donor is still found, the rest of the donor nodes are checked for suitability only if the donor list has a "terminating-comma". Note that a stateless node (the Galera arbitrator) can never be a donor. See [Introduction to State Snapshot Transfers (SSTs)](../high-availability/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md) for more information.\
-  \[NOTE] Although the variable is dynamic, the node will not use the new value unless the node requiring SST or IST disconnects from the cluster. To force this, set [wsrep\_cluster\_address](galera-cluster-system-variables.md#wsrep_cluster_address) to an empty string and back to the nodes list. After setting this variable dynamically, on startup the value from the configuration file will be used again.
+* Description: Comma-separated list (from 5.5.33) or name (as per [wsrep\_node\_name](galera-cluster-system-variables.md#wsrep_node_name)) of the servers as donors, or the source of the state transfer, in order of preference. The donor-selection algorithm, in general, prefers a donor capable of transferring only the missing transactions (IST) to the joiner node, instead of the complete state (SST). Thus, it starts by looking for an IST-capable node in the given donor list followed by rest of the nodes in the cluster. In case multiple candidate nodes are found outside the specified donor list, the node in the same segment ([gmcast.segment](wsrep-variable-details/wsrep_provider_options.md#gmcastsegment)) as the joiner is preferred. If none of the existing nodes in the cluster can serve the missing transactions through IST, the algorithm moves on to look for a suitable node to transfer the entire state (SST). It first looks at the nodes specified in the donor list (irrespective of their segment). If no suitable donor is still found, the rest of the donor nodes are checked for suitability only if the donor list has a "terminating-comma". Note that a stateless node (the Galera arbitrator) can never be a donor. See [Introduction to State Snapshot Transfers (SSTs)](../high-availability/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md) for more information.
+
+{% hint style="info" %}
+Although the variable is dynamic, the node does not use the new value unless the node requiring SST or IST disconnects from the cluster. To force this, set [wsrep\_cluster\_address](galera-cluster-system-variables.md#wsrep_cluster_address) to an empty string and back to the nodes list. After setting this variable dynamically, on startup the value from the configuration file will be used again.
+{% endhint %}
+
 * Command line: `--wsrep-sst-donor=value`
 * Scope: Global
 * Dynamic: Yes (read note above)
@@ -542,7 +543,9 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 * Dynamic: Yes
 * Data Type: String
 * Default Value: `rsync`
-* Valid Values: `rsync`, `mysqldump`, `xtrabackup`, `xtrabackup-v2`, `mariadb-backup`
+* Valid Values: `rsync`, `mysqldump`, `xtrabackup`, `xtrabackup-v2`, `mariadb-backup`&#x20;
+
+See this page for more information about this variable:
 
 {% content-ref url="wsrep-variable-details/wsrep_sst_method.md" %}
 [wsrep\_sst\_method.md](wsrep-variable-details/wsrep_sst_method.md)
