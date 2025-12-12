@@ -144,7 +144,7 @@ Generate a random encryption password using the [openssl rand](https://www.opens
 $ sudo openssl rand -hex 128 > /etc/mysql/encryption/keyfile.key
 ```
 
-Encrypt the key file using the [openssl enc](https://www.openssl.org/docs/man1.1.1/man1/enc.html) command. To encrypt the key file with the encryption password created in the previous step, execute one of the following commands:
+Encrypt the key file using the [openssl enc](https://www.openssl.org/docs/man1.1.1/man1/enc.html) command. To encrypt the key file with the encryption password created in the previous step, execute, for example, one of the following commands:
 
 {% code overflow="wrap" %}
 ```bash
