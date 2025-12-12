@@ -29,11 +29,17 @@ If the node is a replication slave, then it is probably also a good idea to enab
 
 ## Parallel Replication Support
 
-Historically, Galera Cluster nodes acting as asynchronous replication slaves were restricted to single-threaded execution (`slave_parallel_threads=0`). Enabling parallel replication often resulted in deadlocks due to conflicts between [Binary Log Group Commit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/binary-log-group-commit) (BGC) ordering and Galera's internal pre-commit ordering.
+Historically, Galera Cluster nodes acting as asynchronous replication slaves were restricted to single-threaded execution (`slave_parallel_threads=0`). Enabling parallel replication often resulted in deadlocks due to conflicts between [Binary Log Group Commit (BGC)](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance) ordering and Galera's internal pre-commit ordering.
 
-This limitation has been resolved. You can now safely configure [slave\_parallel\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables#slave_parallel_threads) to a value greater than `0` on a Galera node to improve the performance of incoming replication streams.
+As of MariaDB 12.1.1, this limitation has been resolved.
 
-**Recommended Configuration:**
+{% hint style="info" %}
+This fix is specific to MariaDB 12.1.1 and newer versions. It has not been backported to earlier release series such as 10.5, 10.6, 10.11, or 11.4.
+{% endhint %}
+
+On supported versions, you can safely configure `slave_parallel_threads` to a value greater than `0` to improve the performance of incoming replication streams.
+
+Recommended Configuration (MariaDB 12.1.1+):
 
 ```sql
 SET GLOBAL slave_parallel_threads = 4; -- Adjust based on workload

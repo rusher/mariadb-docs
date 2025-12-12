@@ -25,6 +25,7 @@
     * [Using the Notification Command (wsrep\_notify\_cmd)](galera-management/configuration/using-the-notification-command-wsrep_notify_cmd.md)
   * [General Operations](galera-management/general-operations/README.md)
     * [Performing Schema Upgrades in Galera Cluster](galera-management/general-operations/performing-schema-upgrades-in-galera-cluster.md)
+    * [Managing Sequences in Galera Cluster](galera-management/general-operations/managing-sequences-in-galera-cluster.md)
     * [Backing Up a MariaDB Galera Cluster](galera-management/general-operations/backing-up-a-mariadb-galera-cluster.md)
   * [Upgrading Galera Cluster](galera-management/upgrading-galera-cluster/README.md)
     * [Upgrading from MariaDB 10.3 to MariaDB 10.4 with Galera Cluster](galera-management/upgrading-galera-cluster/upgrading-from-mariadb-10-3-to-mariadb-10-4-with-galera-cluster.md)
