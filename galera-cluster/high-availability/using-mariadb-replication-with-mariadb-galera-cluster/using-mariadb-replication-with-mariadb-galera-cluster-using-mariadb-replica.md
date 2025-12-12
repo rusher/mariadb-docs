@@ -27,6 +27,19 @@ If the node is a replication slave, then the node's [slave SQL thread](https://a
 
 If the node is a replication slave, then it is probably also a good idea to enable [wsrep\_restart\_slave](../../reference/galera-cluster-system-variables.md#wsrep_restart_slave). When this is enabled, the node will restart its [slave threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-threads#threads-on-the-slave) whenever it rejoins the cluster.
 
+#### Parallel Replication Support
+
+Historically, Galera Cluster nodes acting as asynchronous replication slaves were restricted to single-threaded execution (`slave_parallel_threads=0`). Enabling parallel replication often resulted in deadlocks due to conflicts between [Binary Log Group Commit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/binary-log-group-commit) (BGC) ordering and Galera's internal pre-commit ordering.
+
+This limitation has been resolved. You can now safely configure [slave\_parallel\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables#slave_parallel_threads) to a value greater than `0` on a Galera node to improve the performance of incoming replication streams.
+
+**Recommended Configuration:**
+
+```sql
+SET GLOBAL slave_parallel_threads = 4; -- Adjust based on workload
+SET GLOBAL slave_parallel_mode = 'optimistic';
+```
+
 ## Replication Filters
 
 Both [MariaDB replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication) and [MariaDB Galera Cluster](../../) support [replication filters](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-filters), so extra caution must be taken when using all of these features together. See [Configuring MariaDB Galera Cluster: Replication Filters](../../galera-management/configuration/configuring-mariadb-galera-cluster.md#replication-filters) for more details on how MariaDB Galera Cluster interprets replication filters.
