@@ -113,7 +113,7 @@ COMMIT;
 | `ERROR 1235 ... doesn't yet support SEQUENCEs`       | The server version is older than 10.6.17 and Streaming Replication is enabled.                                | Upgrade to a supported version or disable Streaming Replication (`SET SESSION wsrep_trx_fragment_size=0`). |
 | `ERROR 1213: Deadlock found when trying to get lock` | The sequence was likely defined with `INCREMENT BY 1` (default), causing nodes to contend for the same value. | Alter the sequence to use the Galera offset logic: `ALTER SEQUENCE my_seq INCREMENT BY 0;`                 |
 
-## Sequence Gaps
+### Sequence Gaps
 
 It is normal behavior to see gaps in sequence numbers if using `CACHE > 1` in a multi-writer environment. When one node replicates a new high-water mark, other nodes must drop their reserved cache to synchronize. If strict continuity is required (e.g., invoice numbering), `CACHE 1` must be used.
 
