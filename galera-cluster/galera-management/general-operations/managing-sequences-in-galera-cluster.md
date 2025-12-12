@@ -5,7 +5,7 @@
 {% hint style="success" %}
 #### Streaming Replication Support in MariaDB
 
-Starting from MariaDB 10.6.17 (and Galera 26.4.16), sequences are fully supported in transactions utilizing streaming replication. In earlier versions, using `NEXTVAL()` within a transaction where `wsrep_trx_fragment_size > 0` would cause an `ERROR 1235`. The WSREP API now ensures proper serialization of sequence state in transaction fragments, allowing sequences to be used effectively in large-scale ETL and batch operations.
+Starting from MariaDB 10.11.16 (and Galera 26.4.16), sequences are fully supported in transactions utilizing streaming replication. In earlier versions, using `NEXTVAL()` within a transaction where `wsrep_trx_fragment_size > 0` would cause an `ERROR 1235`. The WSREP API now ensures proper serialization of sequence state in transaction fragments, allowing sequences to be used effectively in large-scale ETL and batch operations. See MDEV-34124
 {% endhint %}
 
 ## Configuring Sequences for Galera
@@ -110,7 +110,7 @@ COMMIT;
 
 | Error                                                | Cause                                                                                                         | Resolution                                                                                                 |
 | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `ERROR 1235 ... doesn't yet support SEQUENCEs`       | The server version is older than 10.6.17 and Streaming Replication is enabled.                                | Upgrade to a supported version or disable Streaming Replication (`SET SESSION wsrep_trx_fragment_size=0`). |
+| `ERROR 1235 ... doesn't yet support SEQUENCEs`       | The server version is older than 10.11.16 and Streaming Replication is enabled.                               | Upgrade to a supported version or disable Streaming Replication (`SET SESSION wsrep_trx_fragment_size=0`). |
 | `ERROR 1213: Deadlock found when trying to get lock` | The sequence was likely defined with `INCREMENT BY 1` (default), causing nodes to contend for the same value. | Alter the sequence to use the Galera offset logic: `ALTER SEQUENCE my_seq INCREMENT BY 0;`                 |
 
 ### Sequence Gaps
