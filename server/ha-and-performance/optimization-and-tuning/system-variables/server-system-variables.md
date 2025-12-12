@@ -2023,7 +2023,7 @@ MariaDB sets the limit with [setrlimit](https://linux.die.net/man/2/setrlimit). 
 
 * Description: Controls storing of optimizer context of all tables that are referenced in a query.
 * Command line: `--optimizer-record-context{=0|1}`
-* Scope: Global, Session
+* Scope: Session
 * Dynamic: Yes
 * Data Type: boolean
 * Default Value: `OFF`
