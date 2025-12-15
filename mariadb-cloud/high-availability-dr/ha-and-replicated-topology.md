@@ -80,7 +80,7 @@ In MariaDB Cloud, you can control routing using 2 strategies:
 ## **Level 3 Resiliency - Disaster Recovery – Across Regions, Cloud Providers, or “Self-managed” Environments**
 
 {% hint style="success" %}
-Please refer to [this](<../High Availability, DR/Setup Global Replication.md>) document for the steps to setup a distant replica for DR.
+Please refer to [this](setup-global-replication.md) document for the steps to setup a distant replica for DR.
 {% endhint %}
 
 The major cloud providers tout disaster recovery across regions, ensuring resilience against natural disasters impacting an entire geographical region. But in reality, such disasters are exceedingly rare. Whatʼs far more common are technical issues impacting an entire region for a specific cloud provider. For instance, we’ve encountered DNS-level failures in GCP regions, rendering all services dependent on DNS, including MariaDB Cloud, inaccessible.

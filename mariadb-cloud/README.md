@@ -26,13 +26,13 @@ Originally developed by [MariaDB](http://mariadb.com), MariaDB Cloud is aimed to
 
 MariaDB Cloud provides MariaDB and MySQL-compatible workloads with enterprise-grade and production-ready features:
 
-* [Serverless deployment for instant autoscaling](about/serverless.md#intelligent-scaling)
+* [Serverless deployment for instant autoscaling](readme/serverless.md#intelligent-scaling)
 * [Integrated AI agents for database interaction](cloud-ai/copilot-guide.md)
 * [Automated complex database configurations](cloud-management/config/)
 * [Cloud-native capabilities with auto-scaling](cloud-management/autonomously-scale-compute-storage.md)
-* [Global replication](<High Availability, DR/Setup Global Replication.md>)
+* [Global replication](high-availability-dr/setup-global-replication.md)
 * [Automated backups](cloud-data-handling/backup-and-restore/mariadb-backup.md)
-* [Advanced security with end-to-end encryption and private connectivity](Security/)
+* [Advanced security with end-to-end encryption and private connectivity](security/)
 * Compliance and governance features
 * Numerous additional powerful capabilities
 

@@ -80,7 +80,7 @@ If you encounter an error while importing your users, you may need to uninstall 
 {% step %}
 ### **Start Replication**
 
-Turn on replication using MariaDB Cloud stored procedures. There are procedures allowing you to set up and start replication. See our [documentation](../../../reference-guide/stored-procedures.md) for details. The `dump.sql` file you created in step 1 will contain the GTID and binary log information needed for the `change_external_primary` procedure.
+Turn on replication using MariaDB Cloud stored procedures. There are procedures allowing you to set up and start replication. See our [documentation](../../../reference/stored-procedures.md) for details. The `dump.sql` file you created in step 1 will contain the GTID and binary log information needed for the `change_external_primary` procedure.
 
 ```sql
 CALL sky.change_external_primary(host VARCHAR(255), port INT, logfile TEXT, logpos LONG,

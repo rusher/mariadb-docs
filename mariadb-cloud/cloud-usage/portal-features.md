@@ -59,7 +59,7 @@ See "[Client Connections](../connecting-to-mariadb-cloud-dbs/)" for details on h
 From the Dashboard, the "MANAGE" button for a service provides access to:
 
 * [Self-Service Operations](manage-your-service.md) to stop/start, delete, or scale your service
-* [Security access](<../Security/Configuring Firewall.md>) to manage the firewall
+* [Security access](../security/configuring-firewall.md) to manage the firewall
 * [Autonomous](../cloud-management/autonomously-scale-compute-storage.md) settings for auto-scale of nodes and auto-scale of storage
 * [Apply custom configuration](../cloud-management/config/)
 
@@ -95,8 +95,8 @@ The Settings page allows you to access administrative and organizational configu
 Once you click the Settings link, the following options appear:
 
 * Organization
-* [User Management](<../Security/Managing Portal Users.md>)
-* [Secure Access (Firewall)](<../Security/Configuring Firewall.md>)
+* [User Management](../security/managing-portal-users.md)
+* [Secure Access (Firewall)](../security/configuring-firewall.md)
 * [Configuration Manager](../cloud-management/config/)
 * Policies for monitoring alerts
 * [Notification Channels](notifications.md) for the delivery of monitoring alerts by email

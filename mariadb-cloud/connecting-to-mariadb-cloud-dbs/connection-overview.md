@@ -14,7 +14,7 @@ Access to all services is by default protected by a firewall. You need to whitel
 
 {% hint style="danger" %}
 **Warning**: Using `0.0.0.0/0` will disable the firewall. Never do this for production databases.\
-For more details, go to the [Firewall](<../Security/Configuring Firewall.md>) settings page.
+For more details, go to the [Firewall](../security/configuring-firewall.md) settings page.
 {% endhint %}
 
 ## Connecting Using the MariaDB Client

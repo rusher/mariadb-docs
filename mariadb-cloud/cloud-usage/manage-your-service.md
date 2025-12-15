@@ -2,7 +2,7 @@
 
 MariaDB Cloud's self-service management features enable authorized accounts to launch cloud databases, start and stop cloud databases, delete cloud databases, apply database configuration changes, and configure the cloud database's IP firewall.
 
-Self-service [user management](<../Security/Managing Portal Users.md>) features enable you to define role-based access for your team to jointly manage MariaDB Cloud resources.
+Self-service [user management](../security/managing-portal-users.md) features enable you to define role-based access for your team to jointly manage MariaDB Cloud resources.
 
 ## Stop a Service
 
@@ -123,9 +123,9 @@ Your service and all its data will be deleted. This operation is non-reversible.
 ## Other Self-Service Operations
 
 * [Service Launch](launch-page.md)
-* [Firewall Management](<../Security/Configuring Firewall.md>)
+* [Firewall Management](../security/configuring-firewall.md)
 * [Configuration Management](../cloud-management/config/)
 * Private Connections:
   * [AWS PrivateLink](../connecting-to-mariadb-cloud-dbs/using-aws-azure-gcp-private-vpc-connections/setting-up-aws-private-link.md)
   * [GCP Private Service Connect](../connecting-to-mariadb-cloud-dbs/using-aws-azure-gcp-private-vpc-connections/setting-up-gcp-private-service-connect.md)
-* [User Management](<../Security/Managing Portal Users.md>)
+* [User Management](../security/managing-portal-users.md)
