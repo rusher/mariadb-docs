@@ -7,7 +7,8 @@ description: A list of all MariaDB Connector/J releases
 ## 3.5
 
 | Release               | Release Date | Status      | Min. Java Compat. |
-| --------------------- | ------------ | ----------- | ----------------- |
+|-----------------------|--------------| ----------- | ----------------- |
+| [3.5.7](3.5/3.5.7.md) | XX Dec 2025  | Stable (GA) | Java 8            |
 | [3.5.6](3.5/3.5.6.md) | 12 Aug 2025  | Stable (GA) | Java 8            |
 | [3.5.5](3.5/3.5.5.md) | 08 Aug 2025  | Stable (GA) | Java 8            |
 | [3.5.4](3.5/3.5.4.md) | 01 Jul 2025  | Stable (GA) | Java 8            |
