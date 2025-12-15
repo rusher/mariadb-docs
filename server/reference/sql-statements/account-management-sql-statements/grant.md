@@ -936,23 +936,49 @@ GRANT select, insert on db.* TO alice;
 
 {% tabs %}
 {% tab title="Current" %}
-[blog post](https://mariadb.org/grant-to-public-in-mariadb/)
+### Syntax
+
+```sql
+GRANT <privilege> ON <db_name>.<object> TO PUBLIC;
+REVOKE <privilege> ON <db_name>.<object> FROM PUBLIC;
+```
+
+`GRANT ... TO PUBLIC` grants privileges to all users with access to the server. The privileges also apply to users created after the privileges are granted. This can be useful when you only wants to state once that all users need to have a certain set of privileges. When running [SHOW GRANTS](../administrative-sql-statements/show/show-grants.md), a user also sees all privileges inherited from `PUBLIC`. [SHOW GRANTS FOR PUBLIC](../administrative-sql-statements/show/show-grants.md#for-public) only show `TO PUBLIC` grants.
+
+### Example
+
+The following example shows the difference between granting privileges to particular users and granting privileges to `PUBLIC`.
+
+```sql
+-- ... (connect as user root) ... 
+MariaDB [(none)]> CREATE USER developer; 
+MariaDB [(none)]> CREATE DATABASE dev_db; 
+MariaDB [(none)]> GRANT ALL ON dev_db.* TO PUBLIC; 
+MariaDB [(none)]> GRANT ALL ON mysql.* TO developer; 
+-- ... (connect as user developer) ... 
+MariaDB [(none)]> SHOW GRANTS; 
++-------------------------------------------------+ 
+| Grants for developer@%                          | 
++-------------------------------------------------+ 
+| GRANT USAGE ON . TO developer@%                 | 
+| GRANT ALL PRIVILEGES ON mysql.* TO developer@%  | 
+| GRANT ALL PRIVILEGES ON dev_db.* TO PUBLIC      | 
++-------------------------------------------------+ 
+MariaDB [(none)]> SHOW GRANTS FOR PUBLIC; 
++------------------------------------------------+ 
+| Grants for PUBLIC                              | 
++------------------------------------------------+ 
+| GRANT ALL PRIVILEGES ON `dev_db`.* TO `PUBLIC` | 
++------------------------------------------------+
+```
+
+For more details, and information on the background of this feature, refer to this [blog post](https://mariadb.org/grant-to-public-in-mariadb/).
 {% endtab %}
 
 {% tab title="< 10.11.0" %}
 TO PUBLIC is unavailable.
 {% endtab %}
 {% endtabs %}
-
-### Syntax
-
-```sql
-GRANT <privilege> ON <DATABASE>.<object> TO PUBLIC;
-REVOKE <privilege> ON <DATABASE>.<object> FROM PUBLIC;
-```
-
-`GRANT ... TO PUBLIC` grants privileges to all users with access to the server. The privileges also apply to users created after the privileges are granted. This can be useful when one only wants to state once that all users need to have a certain set of privileges.\
-When running [SHOW GRANTS](../administrative-sql-statements/show/show-grants.md), a user will also see all privileges inherited from PUBLIC. [SHOW GRANTS FOR PUBLIC](../administrative-sql-statements/show/show-grants.md#for-public) will only show TO PUBLIC grants.
 
 ## Grant Examples
 
