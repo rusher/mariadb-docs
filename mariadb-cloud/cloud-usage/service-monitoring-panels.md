@@ -2,7 +2,7 @@
 
 The available panels are :
 
-<figure><img src="../.gitbook/assets/monitoring (1).png" alt=""><figcaption><p>Monitoring page</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/monitoring (1) (1).png" alt=""><figcaption><p>Monitoring page</p></figcaption></figure>
 
 ## Current SQL Commands (service)
 
