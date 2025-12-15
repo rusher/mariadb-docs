@@ -11,7 +11,7 @@ MariaDB supports the implementation of constraints at the table-level using eith
 
 ## Syntax
 
-```
+```sql
 [CONSTRAINT [symbol]] constraint_expression
 
 constraint_expression:
@@ -58,8 +58,7 @@ The [Information Schema TABLE\_CONSTRAINTS Table](../../system-tables/informatio
 
 ### FOREIGN KEY Constraints
 
-[InnoDB](../../../server-usage/storage-engines/innodb/) supports [foreign key](../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/foreign-keys.md) constraints. The syntax for a foreign key\
-constraint definition in InnoDB looks like this:
+[InnoDB](../../../server-usage/storage-engines/innodb/) supports [foreign key](../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/foreign-keys.md) constraints. The syntax for a foreign key constraint definition in InnoDB looks like this:
 
 ```sql
 [CONSTRAINT [symbol]] FOREIGN KEY
@@ -76,31 +75,28 @@ The [Information Schema REFERENTIAL\_CONSTRAINTS](../../system-tables/informatio
 
 ### CHECK Constraints
 
-Constraints are enforced. Before [MariaDB 10.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1021-release-notes) constraint expressions were accepted in the syntax but ignored.
-
-You can define constraints in 2 different ways:
+Constraints are enforced. You can define constraints in 2 different ways:
 
 * `CHECK(expression)` given as part of a column definition.
 * `CONSTRAINT [constraint_name] CHECK (expression)`
 
-Before a row is inserted or updated, all constraints are evaluated in the order they are defined. If any constraint expression returns false, then the row will not be inserted or updated.\
-One can use most deterministic functions in a constraint, including [UDFs](../../../server-usage/user-defined-functions/).
+Before a row is inserted or updated, all constraints are evaluated in the order they are defined. If any constraint expression returns false, then the row is not inserted or updated. You can use most deterministic functions in a constraint, including [UDFs](../../../server-usage/user-defined-functions/).
 
 ```sql
 CREATE TABLE t1 (a INT CHECK (a>2), b INT CHECK (b>2), CONSTRAINT a_greater CHECK (a>b));
 ```
 
-If you use the second format and you don't give a name to the constraint, then the constraint will get an automatically generated name. This is done so that you can later delete the constraint with [ALTER TABLE DROP constraint\_name](alter/alter-table/).
+If you use the second format and you don't give a name to the constraint, the constraint gets an automatically generated name. This is done so that you can later delete the constraint with [ALTER TABLE DROP constraint\_name](alter/alter-table/).
 
-One can disable all constraint expression checks by setting the [check\_constraint\_checks](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#check_constraint_checks) variable to `OFF`. This is useful for example when loading a table that violates some constraints that you want to later find and fix in SQL.
+You can disable all constraint expression checks by setting the [check\_constraint\_checks](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#check_constraint_checks) variable to `OFF`. This is useful for example when loading a table that violates some constraints that you want to later find and fix in SQL.
 
 ### Replication
 
-In [row-based](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#row-based) [replication](../../../ha-and-performance/standard-replication/), only the master checks constraints, and failed statements will not be replicated. In [statement-based](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based) replication, the slaves will also check constraints. Constraints should therefore be identical, as well as deterministic, in a replication environment.
+In [row-based](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#row-based) [replication](../../../ha-and-performance/standard-replication/), only the master checks constraints, and failed statements are not replicated. In [statement-based](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based) replication, the slaves also check constraints. Constraints should therefore be identical, as well as deterministic, in a replication environment.
 
 ### Auto\_increment
 
-[auto\_increment](../../data-types/auto_increment.md) columns are not permitted in check constraints. Before [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes), they were permitted, but would not work correctly. See [MDEV-11117](https://jira.mariadb.org/browse/MDEV-11117).
+[auto\_increment](../../data-types/auto_increment.md) columns are not permitted in check constraints.
 
 ## Examples
 
@@ -123,8 +119,6 @@ CREATE TABLE product_order (NO INT NOT NULL AUTO_INCREMENT,
                             FOREIGN KEY (customer_id)
                               REFERENCES customer(id)) ENGINE=INNODB;
 ```
-
-The following examples will work from [MariaDB 10.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1021-release-notes) onwards.
 
 Numeric constraints and comparisons:
 
