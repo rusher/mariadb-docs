@@ -73,6 +73,29 @@ reference_option:
 
 The [Information Schema REFERENTIAL\_CONSTRAINTS](../../system-tables/information-schema/information-schema-tables/information-schema-referential_constraints-table.md) table has more information about foreign keys.
 
+{% hint style="info" %}
+From MariaDB 12.1, constraints are improved to allow constraints that haven't been named for multiple table references.
+{% endhint %}
+
+Consider this example, which creates two tables, then adds constraints to them:
+
+```sql
+CREATE TABLE t1(a int, b int, key(a),key(b))engine=innodb;
+CREATE TABLE t2(a int, b int, key(a),key(b))engine=innodb;
+ALTER TABLE t2 ADD CONSTRAINT c FOREIGN KEY (b) REFERENCES t1(a);
+ALTER TABLE t1 ADD CONSTRAINT c FOREIGN KEY (b) REFERENCES t2(a);
+```
+
+Previously, the last statement failed because of duplicate constraint names:
+
+{% code overflow="wrap" %}
+```
+mysqltest: At line 5: query 'alter table t1 add constraint c foreign key (b) references t2(a)' failed: ER_CANT_CREATE_TABLE (1005): Can't create table `test`.`t1` (errno: 121 "Duplicate key on write or update")
+```
+{% endcode %}
+
+Now, the statement works, because internally, names are assigned that aren't duplicates. (User-visible names can be duplicates, but internally they're prefixed with the schema and table names.)
+
 ### CHECK Constraints
 
 Constraints are enforced. You can define constraints in 2 different ways:
