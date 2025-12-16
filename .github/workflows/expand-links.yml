@@ -1,0 +1,57 @@
+name: Expand Cross-Space Links (DOCS-5904)
+
+on:
+  pull_request:
+    paths:
+      - '**.md' # Only runs when Markdown files are changed
+
+permissions:
+  contents: write # Needed to push the fixed links back to the PR
+
+jobs:
+  expand-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }} # Checkout the actual PR branch
+
+      - name: Replace Link Aliases
+        shell: bash
+        run: |
+          # ========================================================
+          # 1. DEFINE YOUR ALIASES HERE
+          # Format: LINKS["{alias}"]="full_url"
+          # (Note: No trailing slashes at the end of URLs)
+          # ========================================================
+          declare -A LINKS
+          
+          LINKS["{server}"]="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV"
+          LINKS["{maxscale}"]="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX"
+          LINKS["{analytics}"]="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/rBEU9juWLfTDcdwF3Q14"
+          LINKS["{galera}"]="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7"
+          
+          # ========================================================
+          # 2. EXECUTION LOGIC
+          # ========================================================
+          echo "🔍 Scanning for aliases to expand..."
+
+          for alias in "${!LINKS[@]}"; do
+            target="${LINKS[$alias]}"
+            
+            # Check if this alias exists in any .md file
+            if grep -r -q "$alias" . --include="*.md"; then
+                echo "  -> Expanding $alias to $target"
+                
+                # Replace safely in .md files
+                # We use pipe (|) as delimiter to handle slashes in URLs safely
+                grep -rl "$alias" . --include="*.md" | xargs -r sed -i "s|$alias|$target|g"
+            fi
+          done
+
+      - name: Commit and Push Changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "docs: expand cross-space link aliases [skip ci]"
+          file_pattern: "*.md"

@@ -2,7 +2,7 @@
 
 The Launch page allows you to create a new MariaDB Cloud service by selecting the service type and topology, choosing a cloud provider and region, defining the resource configuration, specifying service attributes, and setting security options. You can access this page by clicking [Launch New Service](https://app.skysql.com/launch-service) in the Portal Dashboard.
 
-<figure><img src="../.gitbook/assets/launch.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/launch-dashboard.png" alt="MariaDB Cloud Launch page shows service attributes configuration options during new service creation."><figcaption></figcaption></figure>
 
 _Launch Service_
 
