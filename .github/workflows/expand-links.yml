@@ -29,7 +29,7 @@ jobs:
           LINKS["{server}"]="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/"
           LINKS["{maxscale}"]="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/"
           LINKS["{analytics}"]="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/rBEU9juWLfTDcdwF3Q14/"
-          LINKS["{galera}"]=https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/
+          LINKS["{galera}"]="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/"
           
           # ========================================================
           # 2. EXECUTION LOGIC
