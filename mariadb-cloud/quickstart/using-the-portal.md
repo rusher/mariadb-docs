@@ -9,7 +9,7 @@ You can provision a database in four ways:
 * Terraform Provider: Use infrastructure-as-code to manage your database.
 * Python Scripts: Use Python code to connect to the DBaaS API for provisioning and managing services.
 
-This quickstart guide will walk you through using the Portal.
+This QuickStart guide will help you get started with the Portal.
 
 ## Step 1: Register for MariaDB Cloud
 
@@ -40,7 +40,7 @@ Go to [app.skysql.com](https://app.skysql.com) to sign up. You can sign up using
 5. Click the `Launch Service` button.\
    For additional information on available selections, see "[Service Launch](../cloud-usage/launch-page.md)".
 
-<figure><img src="/broken/files/WqVAE6f94I7XrXf5Q6TB" alt="Provide a unique service name for the database service."><figcaption><p>Service Name Identifier</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/service-attribute.png" alt="Provide a unique service name for the database service."><figcaption><p>Service Name Identifier</p></figcaption></figure>
 
 6. After launching, you will then be redirected to the Dashboard. \
    **Note**: If you choose a Serverless deployment, your service will be in a 'Healthy' state and ready for use. For Provisioned deployment types, the service will initially be in a 'Creating' state. Please wait until it transitions to a 'Healthy' state before proceeding to the next step. Typically, launching a new Provisioned database takes about 5 minutes or less.
@@ -59,7 +59,7 @@ To see expanded status and metrics information:
 2. From the Monitoring Dashboard, use the navigation tabs to view either the Service Overview or individual server details.
 3. Specific metric views are available and can be accessed using the buttons in the upper-right corner of the service overview. These views include `Status`, `Lags`, `Queries`, `Database`, and `System`.<br>
 
-<figure><img src="/broken/files/40JSyWYSVJ5PFb1hLGel" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/monitoring.png" alt="Monitoring dashboard showing service status, database, and operating system metrics, log access, and navigation tabs for service and server-level views."><figcaption></figcaption></figure>
 
 _Monitoring Dashboard_
 
@@ -71,13 +71,13 @@ MariaDB Cloud features automatic rule-based scaling (Autonomous) and manual on-d
 
 With automatic scaling, node count (horizontal) and node size (vertical) changes can be triggered based on load. Additionally, storage capacity expansion can be triggered based on usage. These Autonomous features are opt-in. For additional information, see "[Autonomous](../cloud-management/autonomously-scale-compute-storage.md)".
 
-<figure><img src="/broken/files/SIptOMxyN5PdjQ3ww3aB" alt="Autonomous Settings enables automatic scaling of node count, node size, and storage capacity based on workload and usage."><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/autonomous-settings.png" alt="Autonomous Settings enables automatic scaling of node count, node size, and storage capacity based on workload and usage."><figcaption></figcaption></figure>
 
 _Autonomous Settings for automatic scaling and storage management_
 
 With manual scaling, you can perform horizontal scaling (In/Out), vertical scaling (Up/Down), and storage expansion on demand using Self-Service Operations. For additional information, see "[Self-Service Operations](../cloud-usage/manage-your-service.md)".
 
-<figure><img src="/broken/files/003Fpv005ZFv1edLTylG" alt="Self-service operations allow on-demand horizontal scaling, vertical scaling, and storage expansion."><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/self-scaling (1).png" alt="Self-service operations allow on-demand horizontal scaling, vertical scaling, and storage expansion."><figcaption></figcaption></figure>
 
 _Self-Service Scaling of Nodes and storage_
 

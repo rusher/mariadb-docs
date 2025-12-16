@@ -6,7 +6,7 @@ Self-service [user management](../security/managing-portal-users.md) features en
 
 ## Stop a Service
 
-<figure><img src="../.gitbook/assets/stop-service.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/stopping-service.png" alt="MariaDB Cloud Portal showing the Stop Service Option  used to stop a running database service."><figcaption></figcaption></figure>
 
 _Stop Service_
 
@@ -40,7 +40,7 @@ The service will be started. Service start may take up to 10-15 minutes. The nor
 
 ## Scale Nodes In/Out
 
-<figure><img src="../.gitbook/assets/scale-in-out.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/scale-nodes(inout).png" alt="MariaDB Cloud Portal showing the Scale Nodes In/Out option used to manage the number of nodes for a service."><figcaption></figcaption></figure>
 
 _Service - Horizontal Scaling_
 
@@ -62,7 +62,7 @@ The service immediately goes into scaling status.
 
 ## Scale Nodes Up/Down
 
-<figure><img src="../.gitbook/assets/scale-up-down.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/scale-nodes(updown).png" alt="MariaDB Cloud Portal showing the Scale Nodes Up/Down option to increase or decrease node size for a service."><figcaption></figcaption></figure>
 
 _Service - Vertical Scaling_
 
@@ -84,7 +84,7 @@ The service immediately goes into scaling status.
 
 ## Scale Storage
 
-<figure><img src="../.gitbook/assets/scale-storage.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/scaling-storage.png" alt="MariaDB Cloud Portal showing the Scale Storage option used to increase block storage capacity for a service."><figcaption></figcaption></figure>
 
 _Service - Scale Storage_
 
@@ -103,7 +103,7 @@ Storage upgrades are not reversible.
 
 ## Delete a Service
 
-<figure><img src="../.gitbook/assets/delete-service.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/deleting-service.png" alt="MariaDB Cloud Portal showing the Delete Service option used to permanently remove a database service."><figcaption></figcaption></figure>
 
 _Service - Delete_
 
