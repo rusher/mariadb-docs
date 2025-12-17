@@ -2,6 +2,12 @@
 
 Vault is open source software for secret management provided by HashiCorp. It is designed to avoid sharing secrets of various types, like passwords and private keys. When building automation, Vault is a good solution to avoid storing secrets in plain text in a repository.
 
+{% hint style="danger" %}
+**Unsafe Operations**&#x20;
+
+While the MariaDB server is running, it is **unsafe** to execute `vault secrets disable` or `vault token revoke`. These operations can destabilize the connection between the database and the secret manager.
+{% endhint %}
+
 MariaDB and Vault may relate to each other in several ways:
 
 * MariaDB has a [Hashicorp Key Management plugin](../../security/securing-mariadb/encryption/data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md), to manage and rotate SSH keys.
