@@ -1,7 +1,7 @@
 # Hashicorp Key Management Plugin
 
 {% hint style="info" %}
-**MariaDB starting with** [**Community Server 10.9**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109) **and** [**Enterprise Server 10.4**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/enterprise-server/about/mariadb-enterprise-server-differences/differences-in-mariadb-enterprise-server-10-4)
+**MariaDB starting with** [**Community Server 10.9**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109) **and** [**Enterprise Server 10.4**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/enterprise-server/about/mariadb-enterprise-server-differences/differences-in-mariadb-enterprise-server-10.4)
 {% endhint %}
 
 The Hashicorp Key Management Pugin is used to implement encryption using keys stored in the Hashicorp Vault KMS. For more information, see [Hashicorp Vault and MariaDB](../../../../../server-management/automated-mariadb-deployment-and-administration/hashicorp-vault-and-mariadb.md), and for how to install Vault, see [Install Vault](https://www.vaultproject.io/docs/install), as well as [MySQL/MariaDB Database Secrets Engine](https://developer.hashicorp.com/vault/docs/secrets/databases/mysql-maria).
@@ -17,6 +17,12 @@ The current version of this plugin implements the following features:
 * HashiCorp Vault 1.2.4 was used for development and testing.
 * As of MariaDB 10.6.24, the plugin is configured to use cached keys for all communication errors, not just for timeouts. This ensures continuous operation when the Vault server is temporarily unreachable.
 * As of MariaDB 10.6.24, the default setting for cache usage on error is `ON`.
+
+{% hint style="info" %}
+**Key Rotation and Cache Flushing**&#x20;
+
+As of MariaDB 12.3, you can manually rotate keys and flush the cache without restarting the server. See Key Rotation and Cache Flushing for details.
+{% endhint %}
 
 Since we require support for key versioning, the key-value storage must be configured in Hashicorp Vault as a key-value storage that uses the interface of the second version. For example, you can create it as follows:
 
@@ -120,6 +126,50 @@ The plugin supports the following parameters, which must be set in advance and c
 
 * Description: This parameter enables ("on", this is the default value) or disables ("off") checking the kv storage version during plugin initialization. The plugin requires storage to be version 2 or older in order for it to work properly.
 * Command line: `--[loose-]hashicorp-key-management-check-kv-version="on"|"off"`
+
+## Key Rotation and Cache Flushing
+
+_Available as of MariaDB 12.3_
+
+The HashiCorp Key Management plugin supports key versioning provided by the HashiCorp Vault Server. In previous versions, rotating keys required a server restart to clear the internal cache. As of MariaDB 12.3, you can initiate key rotation and flush the plugin cache manually while the server is running.
+
+### Rotating Keys via System Variable
+
+You can rotate keys using the `hashicorp_key_management_rotate_key` system variable. Setting this variable erases the associated data from the cache; the system will re-request the key from the HashiCorp Vault server upon the next access.
+
+```sql
+SET GLOBAL hashicorp_key_management_rotate_key = value;
+```
+
+Values:
+
+* \<identifier>: Specifying a Key ID rotates that specific key.
+* -1: A value of -1 rotates all keys.
+* 0: A value of 0 performs no rotation.
+
+### Flushing the Cache
+
+You can explicitly flush the cached keys using the FLUSH command. This requires the RELOAD privilege.
+
+```sql
+FLUSH HASHICORP_KEY_MANAGEMENT_CACHE;
+```
+
+### Verifying Key Versions
+
+To view the current Key IDs and Key Versions stored in the latest version cache, you can query the Information Schema or use the SHOW command. Accessing this table requires the PROCESS privilege.
+
+Using the SHOW command:&#x20;
+
+```sql
+SHOW HASHICORP_KEY_MANAGEMENT_CACHE;
+```
+
+Querying the table directly:&#x20;
+
+```sql
+SELECT * FROM INFORMATION_SCHEMA.HASHICORP_KEY_MANAGEMENT_CACHE;
+```
 
 ## See Also
 
