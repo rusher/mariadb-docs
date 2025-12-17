@@ -1,6 +1,7 @@
 ---
 description: >-
-  Changes and improvements in the 12.2 series of MariaDB Community Server
+  An overview of changes, improvements, and what's new in MariaDB Community
+  Server 12.2
 ---
 
 # MariaDB 12.2 Changes & Improvements
