@@ -1,7 +1,9 @@
 # Hashicorp Key Management Plugin
 
 {% hint style="info" %}
-**MariaDB starting with** [**Community Server 10.9**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109) **and** [**Enterprise Server 10.4**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/enterprise-server/about/mariadb-enterprise-server-differences/differences-in-mariadb-enterprise-server-10.4)
+**Key Rotation and Cache Flushing**&#x20;
+
+As of MariaDB 12.3, you can manually rotate keys and flush the cache without restarting the server. See [Key Rotation and Cache Flushing](hashicorp-key-management-plugin.md#key-rotation-and-cache-flushing) for details.
 {% endhint %}
 
 The Hashicorp Key Management Pugin is used to implement encryption using keys stored in the Hashicorp Vault KMS. For more information, see [Hashicorp Vault and MariaDB](../../../../../server-management/automated-mariadb-deployment-and-administration/hashicorp-vault-and-mariadb.md), and for how to install Vault, see [Install Vault](https://www.vaultproject.io/docs/install), as well as [MySQL/MariaDB Database Secrets Engine](https://developer.hashicorp.com/vault/docs/secrets/databases/mysql-maria).
@@ -17,12 +19,6 @@ The current version of this plugin implements the following features:
 * HashiCorp Vault 1.2.4 was used for development and testing.
 * As of MariaDB 10.6.24, the plugin is configured to use cached keys for all communication errors, not just for timeouts. This ensures continuous operation when the Vault server is temporarily unreachable.
 * As of MariaDB 10.6.24, the default setting for cache usage on error is `ON`.
-
-{% hint style="info" %}
-**Key Rotation and Cache Flushing**&#x20;
-
-As of MariaDB 12.3, you can manually rotate keys and flush the cache without restarting the server. See Key Rotation and Cache Flushing for details.
-{% endhint %}
 
 Since we require support for key versioning, the key-value storage must be configured in Hashicorp Vault as a key-value storage that uses the interface of the second version. For example, you can create it as follows:
 
