@@ -1,3 +1,10 @@
+---
+description: >-
+  Intelligently route queries based on workload type. SmartRouter directs
+  transactional queries to MariaDB and analytical queries to column-store
+  engines for hybrid processing.
+---
+
 # MaxScale SmartRouter
 
 ## Overview

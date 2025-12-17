@@ -1,3 +1,10 @@
+---
+description: >-
+  Implement database sharding with a single logical entry point. The
+  SchemaRouter routes queries to specific backend servers based on the database
+  or table being accessed.
+---
+
 # MaxScale SchemaRouter
 
 ## Overview

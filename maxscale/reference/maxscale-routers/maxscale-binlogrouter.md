@@ -1,3 +1,10 @@
+---
+description: >-
+  Replicate binary logs from a primary server to local storage. This router
+  serves as an intermediate replication master reducing load on the primary
+  database in large clusters.
+---
+
 # MaxScale Binlogrouter
 
 ## Overview

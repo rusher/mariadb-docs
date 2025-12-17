@@ -1,3 +1,9 @@
+---
+description: >-
+  Import data from Apache Kafka into MariaDB. This router consumes messages from
+  Kafka topics and applies them as transactions to your database tables.
+---
+
 # MaxScale KafkaImporter
 
 ## Overview

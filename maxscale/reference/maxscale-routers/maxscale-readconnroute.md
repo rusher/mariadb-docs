@@ -1,3 +1,10 @@
+---
+description: >-
+  Balance connections across backend servers. This lightweight router
+  distributes new client connections to available nodes without inspecting
+  individual SQL statements.
+---
+
 # MaxScale Readconnroute
 
 ## Overview

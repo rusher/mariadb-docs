@@ -1,3 +1,10 @@
+---
+description: >-
+  Duplicate client queries to multiple targets. The Mirror router sends traffic
+  to a primary server while asynchronously forwarding the same queries to a
+  secondary server for testing.
+---
+
 # MaxScale Mirror
 
 ## Overview

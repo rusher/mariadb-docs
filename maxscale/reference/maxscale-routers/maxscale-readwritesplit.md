@@ -1,3 +1,10 @@
+---
+description: >-
+  Optimize query performance with read-write splitting. This router directs
+  write queries to the primary server and load balances read queries across
+  available replica nodes.
+---
+
 # MaxScale Readwritesplit
 
 ## Overview

@@ -1,3 +1,10 @@
+---
+description: >-
+  Route analytical queries to an Exasol cluster. This router integrates Exasol
+  with MaxScale often used alongside SmartRouter for hybrid
+  transactional/analytical workloads.
+---
+
 # MaxScale Exasolrouter
 
 {% hint style="info" %}

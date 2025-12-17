@@ -1,3 +1,10 @@
+---
+description: >-
+  Stream replication events from MariaDB to Apache Kafka. This router captures
+  data changes (CDC) and publishes them as JSON objects to Kafka topics for
+  downstream processing.
+---
+
 # MaxScale KafkaCDC
 
 ## Overview

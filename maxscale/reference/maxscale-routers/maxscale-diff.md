@@ -1,3 +1,10 @@
+---
+description: >-
+  Compare the behavior of two MariaDB server versions. The Diff router executes
+  queries against a main and a test server to detect discrepancies in results or
+  performance.
+---
+
 # MaxScale Diff
 
 ## Overview
