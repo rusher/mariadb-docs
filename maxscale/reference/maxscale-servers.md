@@ -17,7 +17,7 @@ port=3306
 
 ## Settings
 
-#### `address`
+### `address`
 
 * Type: string
 * Mandatory: Yes, if `socket` is not provided.
@@ -28,7 +28,7 @@ The IP-address or hostname of the machine running the database server. MaxScale 
 
 Either _address_ or _socket_ must be defined, but not both. If the address is given as a hostname, MaxScale will perform name lookup on the hostname when starting and update the result every minute and when the address changes.
 
-#### `port`
+### `port`
 
 * Type: number
 * Mandatory: No
@@ -37,7 +37,7 @@ Either _address_ or _socket_ must be defined, but not both. If the address is gi
 
 The port the backend server listens on for incoming connections. MaxScale uses this port to connect to the server.
 
-#### `socket`
+### `socket`
 
 * Type: string
 * Mandatory: Yes, if `address` is not provided.
@@ -46,7 +46,7 @@ The port the backend server listens on for incoming connections. MaxScale uses t
 
 The absolute path to a UNIX domain socket the MariaDB server is listening on.
 
-#### `private_address`
+### `private_address`
 
 * Type: string
 * Mandatory: No
@@ -55,7 +55,7 @@ The absolute path to a UNIX domain socket the MariaDB server is listening on.
 
 Alternative IP-address or hostname for the server. This is currently only used by MariaDB Monitor to detect and set up replication. See [MariaDB Monitor documentation](maxscale-monitors/mariadb-monitor.md) for more information.
 
-#### `monitoruser`
+### `monitoruser`
 
 * Type: string
 * Mandatory: No
@@ -69,7 +69,7 @@ monitoruser=mymonitoruser
 monitorpw=mymonitorpasswd
 ```
 
-#### `monitorpw`
+### `monitorpw`
 
 * Type: string
 * Mandatory: No
@@ -85,7 +85,7 @@ monitorpw=mymonitorpasswd
 
 `monitorpw` may be either a plain text password or an encrypted password. See the section [encrypting passwords](maxscale-servers.md#encrypting-passwords) for more information.
 
-#### `extra_port`
+### `extra_port`
 
 * Type: number
 * Mandatory: No
@@ -100,7 +100,7 @@ If the connection to the extra-port fails due to connection number limit or if t
 
 For more information, see [extra\_port](../../server/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md#extra_port) and [extra\_max\_connections](../../server/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md#extra_max_connections)
 
-#### `persistpoolmax`
+### `persistpoolmax`
 
 * Type: number
 * Mandatory: No
@@ -113,7 +113,7 @@ Every routing thread has its own pool. As of version 6.3.0, MaxScale will round 
 
 When a MariaDB-protocol connection is taken from the pool to be used in a new session, the state of the connection is dependent on the router. ReadWriteSplit restores the connection to match the session state. Other routers do not.
 
-#### `persistmaxtime`
+### `persistmaxtime`
 
 * Type: [duration](maxscale-servers.md#durations)
 * Mandatory: No
@@ -124,7 +124,7 @@ The `persistmaxtime` parameter defaults to zero but can be set to a duration as 
 
 A DCB placed in the persistent pool for a server will only be reused if the elapsed time since it joined the pool is less than the given value. Otherwise, the DCB will be discarded and the connection closed.
 
-#### `max_routing_connections`
+### `max_routing_connections`
 
 * Type: number
 * Mandatory: No
@@ -145,7 +145,7 @@ If connection sharing is on, sessions exceeding the limit will be put on hold un
 max_routing_connections=1234
 ```
 
-#### `proxy_protocol`
+### `proxy_protocol`
 
 * Type: [boolean](maxscale-servers.md#booleans)
 * Mandatory: No
@@ -160,7 +160,7 @@ PROXY protocol will be supported by MariaDB 10.3, which this feature has been te
 
 Other SQL-servers may support PROXY protocol as well, but the implementation may be highly restricting. Strict adherence to the protocol requires that the backend server does not allow mixing of un-proxied and proxied connections from a given IP. MaxScale requires normal connections to backends for monitoring and authentication data queries, which would be blocked. To bypass this restriction, the server monitor needs to be disabled and the service listener needs to be configured to disregard authentication errors (`skip_authentication=true`). Server states also need to be set manually in MaxCtrl. These steps are _not_ required for MariaDB 10.3, since its implementation is more flexible and allows both PROXY-headered and headerless connections from a proxy-enabled IP.
 
-#### `disk_space_threshold`
+### `disk_space_threshold`
 
 * Type: Custom
 * Mandatory: No
@@ -193,7 +193,7 @@ The last line means that the disk mounted at `/data1` may be used up to 80%, the
 
 Note that the path to be used, is one of the paths returned by:
 
-```
+```sql
 > use information_schema;
 > select * from disks;
 +-----------+----------------------+-----------+----------+-----------+
@@ -206,7 +206,7 @@ Note that the path to be used, is one of the paths returned by:
 
 There is no default value, but this parameter must be explicitly specified if the disk space situation should be monitored.
 
-#### `rank`
+### `rank`
 
 * Type: [enum](maxscale-servers.md#enumerations)
 * Mandatory: No
@@ -224,7 +224,7 @@ Readwritesplit will pick servers that have the same rank as the current primary.
 
 The following example server configuration demonstrates how `rank` can be used to exclude `DR-site` servers from routing.
 
-```
+```ini
 [main-site-primary]
 type=server
 address=192.168.0.11
@@ -248,7 +248,7 @@ rank=secondary
 
 The `main-site-primary` and `main-site-replica` servers will be used as long as they are available. When they are no longer available, the `DR-site-primary` and `DR-site-replica` will be used.
 
-#### `priority`
+### `priority`
 
 * Type: number
 * Mandatory: No
@@ -259,7 +259,7 @@ Server priority. Currently only used by galeramon to choose the order in which n
 
 Starting with MaxScale 2.5.21, this parameter also accepts negative values. In older versions, the parameter only accepted non-negative values.
 
-#### `initial_status`
+### `initial_status`
 
 * Type: enum
 * Mandatory: No
@@ -271,7 +271,7 @@ The initial state of a server. This is the status in which the server is set int
 
 The main use-case of this setting is to enable static roles for servers that have no monitor. This can be useful for some special configurations where monitoring is either not an option or the behavior of the monitors is not suitable.
 
-#### `replication_custom_options`
+### `replication_custom_options`
 
 * Type: string
 * Default: None
@@ -281,7 +281,7 @@ Server-specific custom string added to "CHANGE MASTER TO"-commands sent by Maria
 
 See [MariaDB Monitor documentation](maxscale-monitors/mariadb-monitor.md#replication_custom_options) for more information.
 
-#### `use_service_credentials`
+### `use_service_credentials`
 
 * Type: [boolean](maxscale-servers.md#booleans)
 * Mandatory: No
@@ -294,7 +294,7 @@ When enabled, the backend authentication will use the credentials defined in the
 
 To disable this and log in directly using the client credentials, add `use_service_credentials=false` to the server section. If disabled or if the service user does not have the `SET USER` grant, the PARSEC authentication plugin cannot be used and the Ed25519 authentication plugin must be configured to use the `caching_sha256_password` authentication by adding `authenticator_options=ed_mode=sha256` to the listeners.
 
-#### `labels`
+### `labels`
 
 * Type: string list
 * Mandatory: No

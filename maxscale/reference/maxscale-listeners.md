@@ -16,7 +16,7 @@ port=4006
 
 ## Settings
 
-#### `service`
+### `service`
 
 * Type: service
 * Mandatory: Yes
@@ -24,7 +24,7 @@ port=4006
 
 The service to which the listener is associated. This is the name of a service that is defined elsewhere in the configuration file.
 
-#### `protocol`
+### `protocol`
 
 * Type: protocol
 * Mandatory: No
@@ -37,7 +37,7 @@ Usually this does not need to be defined as the default protocol is the MariaDB 
 
 For NoSQL client connections, the protocol must be set to `protocol=nosqlprotocol`. For more details on how to configure the NoSQL protocol, refer to the [NoSQL Protocol](maxscale-protocols/maxscale-nosql-protocol-module.md) module documentation.
 
-#### `address`
+### `address`
 
 * Type: string
 * Mandatory: No
@@ -46,7 +46,7 @@ For NoSQL client connections, the protocol must be set to `protocol=nosqlprotoco
 
 This sets the address the listening socket is bound to. The address may be specified as an IP address in 'dot notation' or as a hostname. If left undefined the listener will bind to all network interfaces.
 
-#### `port`
+### `port`
 
 * Type: number
 * Mandatory: Yes, if `socket` is not provided.
@@ -55,7 +55,7 @@ This sets the address the listening socket is bound to. The address may be speci
 
 The port the listener listens on. If left undefined a default port for the protocol is used.
 
-#### `socket`
+### `socket`
 
 * Type: string
 * Mandatory: Yes, if `port` is not provided.
@@ -66,7 +66,7 @@ If defined, the listener uses Unix domain sockets to listen for incoming connect
 
 If you want to use both network ports and UNIX domain sockets with a service, define two separate listeners that connect to the same service.
 
-#### `authenticator`
+### `authenticator`
 
 * Type: string
 * Mandatory: No
@@ -75,7 +75,7 @@ If you want to use both network ports and UNIX domain sockets with a service, de
 
 The authenticator module to use. Each protocol module defines a default authentication module, which is used if the setting is left undefined. MariaDB protocol support multiple authenticators and they can be used simultaneously by giving a comma-separated list e.g. `authenticator=mariadbauth,gssapiauth`
 
-#### `authenticator_options`
+### `authenticator_options`
 
 * Type: string
 * Mandatory: No
@@ -84,7 +84,7 @@ The authenticator module to use. Each protocol module defines a default authenti
 
 This defines additional options for authentication. As of MaxScale 2.5.0, only _MariaDBClient_ and its authenticators support additional options. The value of this parameter should be a comma-separated list of key-value pairs. See authenticator specific documentation for more details.
 
-#### `sql_mode`
+### `sql_mode`
 
 * Type: [enum](maxscale-listeners.md#enumerations)
 * Mandatory: No
@@ -94,7 +94,7 @@ This defines additional options for authentication. As of MaxScale 2.5.0, only _
 
 Specify the sql mode for the listener similarly to global `sql_mode` setting. If both are used this setting will override the global setting for this listener.
 
-#### `proxy_protocol_networks`
+### `proxy_protocol_networks`
 
 Define an IP-address or a subnetwork which may send a [proxy protocol header](https://www.haproxy.org/download/1.8/doc/proxy-protocol.txt) when connecting. The proxy header contains the original client IP-address and port, and MaxScale will use that information in its internal bookkeeping. This means the client is authenticated as if it was connecting from the host in the proxy header. If proxy protocol is also enabled in MaxScale server settings, MaxScale will relay the original client address and port to the server. See [server settings](maxscale-listeners.md#proxy_protocol) for more information.
 
@@ -110,7 +110,7 @@ proxy_protocol_networks=192.168.0.1,198.168.0.0/16
 
 Similar to MariaDB Server, MaxScale will also accept normal connections even if `proxy_protocol_networks` is configured for the listener.
 
-#### `connection_init_sql_file`
+### `connection_init_sql_file`
 
 * Type: path
 * Mandatory: No
@@ -125,12 +125,12 @@ connection_init_sql_file=/home/dba/init_queries.txt
 
 Example query file:
 
-```
+```sql
 set @myvar = 'mytext';
 set @myvar2 = 4;
 ```
 
-#### `user_mapping_file`
+### `user_mapping_file`
 
 * Type: path
 * Mandatory: No
@@ -171,7 +171,7 @@ If a mapping is found, MaxScale searches the credentials array for a matching us
 
 An example mapping file is below.
 
-```
+```json
 {
     "user_map": [
         {
@@ -204,7 +204,7 @@ An example mapping file is below.
 }
 ```
 
-#### `connection_metadata`
+### `connection_metadata`
 
 * Type: stringlist
 * Default: `character_set_client=auto,character_set_connection=auto,character_set_results=auto,max_allowed_packet=auto,system_time_zone=auto,time_zone=auto,tx_isolation=auto,maxscale=auto`
@@ -233,7 +233,7 @@ The configuration has three variables, `redirect_url`, `service_name` and `max_a
 
 If the `connection_metadata` variable list contains the `tx_isolation` variable and the backend MariaDB server from which the variable is retrieved is MariaDB 11 or newer, the value is renamed to `transaction_isolation`. The `tx_isolation` parameter was deprecated in favor of `transaction_isolation` in MariaDB 11 (MDEV-21921).
 
-#### `redirect_url`
+### `redirect_url`
 
 * Type: URL
 * Mandatory: No
