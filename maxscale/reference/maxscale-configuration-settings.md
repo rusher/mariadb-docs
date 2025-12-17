@@ -604,69 +604,69 @@ description: >-
 
 **Listener**
 
-#### [**address**](../maxscale-management/deployment/installation-and-configuration/maxscale-configuration-guide.md)
+#### [**address**](maxscale-listeners.md#address)
 
 * Type: string
 * Mandatory: No
 * Dynamic: No
 * Default: `"::"`
 
-#### [**authenticator**](../maxscale-management/deployment/installation-and-configuration/maxscale-configuration-guide.md)
+#### [**authenticator**](maxscale-listeners.md#authenticator)
 
 * Type: string
 * Mandatory: No
 * Dynamic: No
 * Default: `""`
 
-#### [**authenticator\_options**](../maxscale-management/deployment/installation-and-configuration/maxscale-configuration-guide.md)
+#### [**authenticator\_options**](maxscale-listeners.md#authenticator_options)
 
 * Type: string
 * Mandatory: No
 * Dynamic: No
 * Default: `""`
 
-#### [**connection\_init\_sql\_file**](../maxscale-management/deployment/installation-and-configuration/maxscale-configuration-guide.md)
+#### [**connection\_init\_sql\_file**](maxscale-listeners.md#connection_init_sql_file)
 
 * Type: path
 * Mandatory: No
 * Dynamic: Yes
 * Default: `""`
 
-#### [**connection\_metadata**](../maxscale-management/deployment/installation-and-configuration/maxscale-configuration-guide.md)
+#### [**connection\_metadata**](maxscale-listeners.md#connection_metadata)
 
 * Type: stringlist
 * Default: `character_set_client=auto,character_set_connection=auto,character_set_results=auto,max_allowed_packet=auto,system_time_zone=auto,time_zone=auto,tx_isolation=auto,maxscale=auto`
 * Dynamic: Yes
 * Mandatory: No
 
-#### [**port**](../maxscale-management/deployment/installation-and-configuration/maxscale-configuration-guide.md)
+#### [**port**](maxscale-listeners.md#port)
 
 * Type: number
 * Mandatory: Yes, if `socket` is not provided.
 * Dynamic: No
 * Default: `0`
 
-#### [**protocol**](../maxscale-management/deployment/installation-and-configuration/maxscale-configuration-guide.md)
+#### [**protocol**](maxscale-listeners.md#protocol)
 
 * Type: protocol
 * Mandatory: No
 * Dynamic: No
 * Default: `mariadb`
 
-#### [**service**](../maxscale-management/deployment/installation-and-configuration/maxscale-configuration-guide.md)
+#### [**service**](maxscale-listeners.md#service)
 
 * Type: service
 * Mandatory: Yes
 * Dynamic: No
 
-#### [**socket**](../maxscale-management/deployment/installation-and-configuration/maxscale-configuration-guide.md)
+#### [**socket**](maxscale-listeners.md#socket)
 
 * Type: string
 * Mandatory: Yes, if `port` is not provided.
 * Dynamic: No
 * Default: `""`
 
-#### [**sql\_mode**](../maxscale-management/deployment/installation-and-configuration/maxscale-configuration-guide.md)
+#### [**sql\_mode**](maxscale-listeners.md#sql_mode)
 
 * Type: [enum](../maxscale-management/deployment/installation-and-configuration/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
@@ -674,7 +674,7 @@ description: >-
 * Values: `default`, `oracle`
 * Default: `default`
 
-#### [**user\_mapping\_file**](../maxscale-management/deployment/installation-and-configuration/maxscale-configuration-guide.md)
+#### [**user\_mapping\_file**](maxscale-listeners.md#user_mapping_file)
 
 * Type: path
 * Mandatory: No
@@ -683,91 +683,91 @@ description: >-
 
 **Server**
 
-#### [**address**](../maxscale-management/deployment/installation-and-configuration/maxscale-configuration-guide.md)
+#### [**address**](maxscale-servers.md#address)
 
 * Type: string
 * Mandatory: Yes, if `socket` is not provided.
 * Dynamic: Yes
 * Default: `""`
 
-#### [**disk\_space\_threshold**](../maxscale-management/deployment/installation-and-configuration/maxscale-configuration-guide.md)
+#### [**disk\_space\_threshold**](maxscale-servers.md#disk_space_threshold)
 
 * Type: Custom
 * Mandatory: No
 * Dynamic: No
 * Default: None
 
-#### [**extra\_port**](../maxscale-management/deployment/installation-and-configuration/maxscale-configuration-guide.md)
+#### [**extra\_port**](maxscale-servers.md#extra_port)
 
 * Type: number
 * Mandatory: No
 * Dynamic: Yes
 * Default: `0`
 
-#### [**max\_routing\_connections**](../maxscale-management/deployment/installation-and-configuration/maxscale-configuration-guide.md)
+#### [**max\_routing\_connections**](maxscale-servers.md#max_routing_connections)
 
 * Type: number
 * Mandatory: No
 * Dynamic: Yes
 * Default: `0`
 
-#### [**monitorpw**](../maxscale-management/deployment/installation-and-configuration/maxscale-configuration-guide.md)
+#### [**monitorpw**](maxscale-servers.md#monitorpw)
 
 * Type: string
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
 
-#### [**monitoruser**](../maxscale-management/deployment/installation-and-configuration/maxscale-configuration-guide.md)
+#### [**monitoruser**](maxscale-servers.md#monitoruser)
 
 * Type: string
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
 
-#### [**persistmaxtime**](../maxscale-management/deployment/installation-and-configuration/maxscale-configuration-guide.md)
+#### [**persistmaxtime**](maxscale-servers.md#persistmaxtime)
 
 * Type: [duration](../maxscale-management/deployment/installation-and-configuration/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `0s`
 
-#### [**persistpoolmax**](../maxscale-management/deployment/installation-and-configuration/maxscale-configuration-guide.md)
+#### [**persistpoolmax**](maxscale-servers.md#persistpoolmax)
 
 * Type: number
 * Mandatory: No
 * Dynamic: Yes
 * Default: `0`
 
-#### [**port**](../maxscale-management/deployment/installation-and-configuration/maxscale-configuration-guide.md)
+#### [**port**](maxscale-servers.md#port)
 
 * Type: number
 * Mandatory: No
 * Dynamic: Yes
 * Default: `3306`
 
-#### [**priority**](../maxscale-management/deployment/installation-and-configuration/maxscale-configuration-guide.md)
+#### [**priority**](maxscale-servers.md#priority)
 
 * Type: number
 * Mandatory: No
 * Dynamic: Yes
 * Default: 0
 
-#### [**private\_address**](../maxscale-management/deployment/installation-and-configuration/maxscale-configuration-guide.md)
+#### [**private\_address**](maxscale-servers.md#private_address)
 
 * Type: string
 * Mandatory: No
 * Dynamic: Yes
 * Default: `""`
 
-#### [**proxy\_protocol**](../maxscale-management/deployment/installation-and-configuration/maxscale-configuration-guide.md)
+#### [**proxy\_protocol**](maxscale-servers.md#proxy_protocol)
 
 * Type: [boolean](../maxscale-management/deployment/installation-and-configuration/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
 
-#### [**rank**](../maxscale-management/deployment/installation-and-configuration/maxscale-configuration-guide.md)
+#### [**rank**](maxscale-servers.md#rank)
 
 * Type: [enum](../maxscale-management/deployment/installation-and-configuration/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
@@ -775,13 +775,13 @@ description: >-
 * Values: `primary`, `secondary`
 * Default: `primary`
 
-#### [**replication\_custom\_options**](../maxscale-management/deployment/installation-and-configuration/maxscale-configuration-guide.md)
+#### [**replication\_custom\_options**](maxscale-servers.md#replication_custom_options)
 
 * Type: string
 * Default: None
 * Dynamic: Yes
 
-#### [**socket**](../maxscale-management/deployment/installation-and-configuration/maxscale-configuration-guide.md)
+#### [**socket**](maxscale-servers.md#socket)
 
 * Type: string
 * Mandatory: Yes, if `address` is not provided.
