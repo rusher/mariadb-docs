@@ -40,9 +40,9 @@ A server represents an individual database server to which a client can be conne
 | Auth Error               | The monitor cannot login and query the server due to insufficient privileges.                                                                                                                                                                                                                                              |
 | Maintenance              | The server is under maintenance. Typically this status bit is turned on manually using maxctrl, but it will also be turned on for a server that for some reason is blocking connections from MaxScale. When a server is in maintenance mode, no connections will be created to it and existing connections will be closed. |
 | Slave of External Master | The server is a replica of a primary that is not being monitored.                                                                                                                                                                                                                                                          |
-| Master Stickiness        | The server is monitored by a galeramon with disable\_master\_failback=true. See [disable\_master\_failback](../../reference/maxscale-monitors/galera-monitor.md#disable_master_failback) for more information.                                                                                                             |
+| Master Stickiness        | The server is monitored by a galeramon with disable\_master\_failback=true. See [disable\_master\_failback](../../../reference/maxscale-monitors/galera-monitor.md#disable_master_failback) for more information.                                                                                                          |
 
-For more information on how to manually set these states via MaxCtrl, read the [Administration Tutorial](../../mariadb-maxscale-tutorials/maxscale-administration-tutorial.md).
+For more information on how to manually set these states via MaxCtrl, read the [Administration Tutorial](../../../mariadb-maxscale-tutorials/maxscale-administration-tutorial.md).
 
 #### Monitor
 
@@ -99,7 +99,7 @@ An [include section](maxscale-configuration-guide.md#include-1) defines common p
 The administration of MaxScale can be divided in two parts:
 
 * Writing the MaxScale configuration file, which is described in the following [section](maxscale-configuration-guide.md#configuration).
-* Performing runtime modifications using [MaxCtrl](../../reference/maxscale-maxctrl.md)
+* Performing runtime modifications using [MaxCtrl](../../../reference/maxscale-maxctrl.md)
 
 For detailed information about _MaxCtrl_ please refer to the specific documentation referred to above. In the following it will only be explained how MaxCtrl relate to each other, as far as user credentials go.
 
@@ -113,7 +113,7 @@ Note that if MaxCtrl is invoked without explicitly providing a user and password
 
 The REST API calls to MaxScale can be logged by enabling [admin\_audit](maxscale-configuration-guide.md#admin_audit).
 
-For more detail see the admin audit configuration values `admin_audit`, `admin_audit_file` and `admin_audit_exclude_methods` below and [Administration Tutorial](../../mariadb-maxscale-tutorials/maxscale-administration-tutorial.md).
+For more detail see the admin audit configuration values `admin_audit`, `admin_audit_file` and `admin_audit_exclude_methods` below and [Administration Tutorial](../../../mariadb-maxscale-tutorials/maxscale-administration-tutorial.md).
 
 ### Static Configuration Parameters
 
@@ -337,10 +337,10 @@ An _auto tunable_ parameter is a parameter whose value can be derived from a par
 
 The current auto tunable parameters are:
 
-| MaxScale Parameter                                                            | Server Variable Dependency                                                                                                                                                                 |
-| ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [connection\_keepalive](maxscale-configuration-guide.md#connection_keepalive) | 80% of the smallest value of the servers used by the service                                                                                                                               |
-| [wait\_timeout](maxscale-configuration-guide.md#wait_timeout)                 | The smallest [wait\_timeout](../../../server/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#wait_timeout) value of the servers used by the service |
+| MaxScale Parameter                                                            | Server Variable Dependency                                                                                                                                                                    |
+| ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [connection\_keepalive](maxscale-configuration-guide.md#connection_keepalive) | 80% of the smallest value of the servers used by the service                                                                                                                                  |
+| [wait\_timeout](maxscale-configuration-guide.md#wait_timeout)                 | The smallest [wait\_timeout](../../../../server/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#wait_timeout) value of the servers used by the service |
 
 The values of the server variables are collected by monitors, which means that if the servers of a service are not monitored by a monitor, then the parameters of that service will not be auto tuned.
 
@@ -497,7 +497,7 @@ Deprecated and ignored.
 * Dynamic: Yes
 * Default: `false`
 
-Deprecated since MariaDB MaxScale 25.01. Use [cooperative monitoring](../../reference/maxscale-monitors/mariadb-monitor.md#cooperative-monitoring) instead.
+Deprecated since MariaDB MaxScale 25.01. Use [cooperative monitoring](../../../reference/maxscale-monitors/mariadb-monitor.md#cooperative-monitoring) instead.
 
 Controls whether MaxScale is a passive node in a cluster of multiple MaxScale instances.
 
@@ -1167,7 +1167,7 @@ The port where the REST API listens on. The default value is port 8989.
 
 Enable REST API authentication using HTTP Basic Access authentication. This is not a secure method of authentication without HTTPS but it does add a small layer of security.
 
-For more information, read the [REST API documentation](../../reference/maxscale-rest-api/maxscale-rest-api.md).
+For more information, read the [REST API documentation](../../../reference/maxscale-rest-api/maxscale-rest-api.md).
 
 #### `admin_ssl_key`
 
@@ -1373,7 +1373,7 @@ admin_readonly_hosts=mydomain%.com
 
 The signature algorithm used by the MaxScale REST API when generating JSON Web Tokens.
 
-For more information about the tokens and how they work, refer to [the REST API documentation](../../reference/maxscale-rest-api/maxscale-rest-api.md).
+For more information about the tokens and how they work, refer to [the REST API documentation](../../../reference/maxscale-rest-api/maxscale-rest-api.md).
 
 If a symmetric algorithm is used (i.e. `HS256`, `HS384` or `HS512`), MaxScale will generate a random encryption key on startup and use that to sign the messages. The symmetric key can also be retrieved from an [Encryption Key Manager](maxscale-configuration-guide.md#encryption-key-managers) if the `admin_jwt_key` parameter is defined.
 
@@ -1896,7 +1896,7 @@ user=maxscale
 password=Mhu87p2D
 ```
 
-See [MySQL protocol authentication documentation](../../maxscale-security/authentication-modules.md) for more information (such as required grants) and troubleshooting tips regarding user account management and client authentication.
+See [MySQL protocol authentication documentation](../../../maxscale-security/authentication-modules.md) for more information (such as required grants) and troubleshooting tips regarding user account management and client authentication.
 
 #### `password`
 
@@ -1911,7 +1911,7 @@ user=maxscale
 password=Mhu87p2D
 ```
 
-See [MySQL protocol authentication documentation](../../maxscale-security/authentication-modules.md) for more information (such as required grants) and troubleshooting tips regarding user account management and client authentication.
+See [MySQL protocol authentication documentation](../../../maxscale-security/authentication-modules.md) for more information (such as required grants) and troubleshooting tips regarding user account management and client authentication.
 
 From 23.08.0 onwards, MaxScale will remember the previous password when the password is changed. If the fetching of the user account information fails using the new password, it will be attempted using the previous one. The purpose of this change is to make it a smoother operation to change the password of the service user. The steps are as follows:
 
@@ -1927,9 +1927,9 @@ Since the old password is remembered and used if the new password does not work,
 * Dynamic: Yes
 * Default: None
 
-[Role](../../../server/security/user-account-management/roles/roles_overview.md) the service should activate right after connecting to a server. If empty, no role is set. This setting may be useful if the same username is used for both monitors and services. As monitors and services require different privileges, these privileges can be granted to the monitor and the service roles separately instead of granting them all to the same user.
+[Role](../../../../server/security/user-account-management/roles/roles_overview.md) the service should activate right after connecting to a server. If empty, no role is set. This setting may be useful if the same username is used for both monitors and services. As monitors and services require different privileges, these privileges can be granted to the monitor and the service roles separately instead of granting them all to the same user.
 
-For services, this setting only affects user account fetching from MariaDB Servers. It does not affect router specific connections such as replication by the [Binlogrouter](../../reference/maxscale-routers/maxscale-binlogrouter.md) or replication management by the [Diff router](../../reference/maxscale-routers/maxscale-diff.md).
+For services, this setting only affects user account fetching from MariaDB Servers. It does not affect router specific connections such as replication by the [Binlogrouter](../../../reference/maxscale-routers/maxscale-binlogrouter.md) or replication management by the [Diff router](../../../reference/maxscale-routers/maxscale-diff.md).
 
 #### `enable_root_user`
 
@@ -2454,302 +2454,18 @@ address=127.0.0.1
 port=3000
 ```
 
+For a complete list of server configuration parameters, see the [Server Reference](../../../reference/maxscale-servers.md).
+
 Limitations:
 
 * MaxScale: No limitations.
 * MaxScale Trial: At most 3 servers can be created.
 
-#### `address`
-
-* Type: string
-* Mandatory: Yes, if `socket` is not provided.
-* Dynamic: Yes
-* Default: `""`
-
-The IP-address or hostname of the machine running the database server. MaxScale uses this address to connect to the server.
-
-Either _address_ or _socket_ must be defined, but not both. If the address is given as a hostname, MaxScale will perform name lookup on the hostname when starting and update the result every minute and when the address changes.
-
-#### `port`
-
-* Type: number
-* Mandatory: No
-* Dynamic: Yes
-* Default: `3306`
-
-The port the backend server listens on for incoming connections. MaxScale uses this port to connect to the server.
-
-#### `socket`
-
-* Type: string
-* Mandatory: Yes, if `address` is not provided.
-* Dynamic: Yes
-* Default: `""`
-
-The absolute path to a UNIX domain socket the MariaDB server is listening on.
-
-#### `private_address`
-
-* Type: string
-* Mandatory: No
-* Dynamic: Yes
-* Default: `""`
-
-Alternative IP-address or hostname for the server. This is currently only used by MariaDB Monitor to detect and set up replication. See [MariaDB Monitor documentation](../../reference/maxscale-monitors/mariadb-monitor.md) for more information.
-
-#### `monitoruser`
-
-* Type: string
-* Mandatory: No
-* Dynamic: Yes
-* Default: None
-
-This setting together with [monitorpasswd](maxscale-configuration-guide.md#monitorpw) define server-specific credentials for monitoring the server. Monitors typically use the credentials in their own configuration sections to connect to all servers. If server-specific settings are given, the monitor uses those instead.
-
-```
-monitoruser=mymonitoruser
-monitorpw=mymonitorpasswd
-```
-
-#### `monitorpw`
-
-* Type: string
-* Mandatory: No
-* Dynamic: Yes
-* Default: None
-
-This setting together with [monitoruser](maxscale-configuration-guide.md#monitoruser) define server-specific credentials for monitoring the server. Monitors typically use the credentials in their own configuration sections to connect to all servers. If server-specific settings are given, the monitor uses those instead.
-
-```
-monitoruser=mymonitoruser
-monitorpw=mymonitorpasswd
-```
-
-`monitorpw` may be either a plain text password or an encrypted password. See the section [encrypting passwords](maxscale-configuration-guide.md#encrypting-passwords) for more information.
-
-#### `extra_port`
-
-* Type: number
-* Mandatory: No
-* Dynamic: Yes
-* Default: `0`
-
-An alternative port used for administrative connections to the server. If this setting is defined, MaxScale uses it for monitoring the server and to fetch user accounts. Client sessions will still use the normal port.
-
-Defining _extra\_port_ allows MaxScale to connect even when _max\_connections_ on the backend server has been reached. Extra-port connections have their own connection limit, which is one by default. This needs to be increased to allow both monitor and user account manager to connect.
-
-If the connection to the extra-port fails due to connection number limit or if the port is not open on the server, normal port is used.
-
-For more information, see [extra\_port](../../../server/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md#extra_port) and [extra\_max\_connections](../../../server/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md#extra_max_connections)
-
-#### `persistpoolmax`
-
-* Type: number
-* Mandatory: No
-* Dynamic: Yes
-* Default: `0`
-
-Sets the size of the server connection pool. Disabled by default. When enabled, MaxScale places unused connections to the server to a pool and reuses them later. Connections typically become unused when a session closes. If the size of the pool reaches _persistpoolmax_, unused connections are closed instead.
-
-Every routing thread has its own pool. As of version 6.3.0, MaxScale will round up _persistpoolmax_ so that every thread has an equal size pool.
-
-When a MariaDB-protocol connection is taken from the pool to be used in a new session, the state of the connection is dependent on the router. ReadWriteSplit restores the connection to match the session state. Other routers do not.
-
-#### `persistmaxtime`
-
-* Type: [duration](maxscale-configuration-guide.md#durations)
-* Mandatory: No
-* Dynamic: Yes
-* Default: `0s`
-
-The `persistmaxtime` parameter defaults to zero but can be set to a duration as documented [here](maxscale-configuration-guide.md#durations). If no explicit unit is provided, the value is interpreted as seconds in MaxScale 2.4. In subsequent versions a value without a unit may be rejected. Note that since the granularity of the parameter is seconds, a value specified in milliseconds will be rejected, even if the duration is longer than a second.
-
-A DCB placed in the persistent pool for a server will only be reused if the elapsed time since it joined the pool is less than the given value. Otherwise, the DCB will be discarded and the connection closed.
-
-#### `max_routing_connections`
-
-* Type: number
-* Mandatory: No
-* Dynamic: Yes
-* Default: 0 in MaxScale, 15 in MaxScale Trial.
-* Minimum: 0 in MaxScale, 1 in MaxScale Trial.
-* Maximum: Unlimited in MaxScale, 15 in MaxScale Trial.
-
-Maximum number of routing connections to this server. Connections held in a pool also count towards this maximum. Does not limit monitor connections or user account fetching. A value of 0 means no limit, which is the default for MaxScale. MaxScle Trial is limited to a maximum of 15 connections per server.
-
-Since every client session can generate a connection to a server, the server may run out of memory when the number of clients is high enough. This setting limits server memory use caused by MaxScale. The effect depends on if the service setting [idle\_session\_pool\_time](maxscale-configuration-guide.md#idle_session_pool_time), i.e. connection sharing, is enabled or not.
-
-If connection sharing is not on, _max\_routing\_connections_ simply sets a limit. Any sessions attempting to exceed this limit will fail to connect to the backend. The client can still connect to MaxScale, but queries will fail.
-
-If connection sharing is on, sessions exceeding the limit will be put on hold until a connection is available. Such sessions will appear unresponsive, as queries will hang, possibly for a long time. The timeout is controlled by [multiplex\_timeout](maxscale-configuration-guide.md#multiplex_timeout).
-
-```
-max_routing_connections=1234
-```
-
-#### `proxy_protocol`
-
-* Type: [boolean](maxscale-configuration-guide.md#booleans)
-* Mandatory: No
-* Dynamic: Yes
-* Default: `false`
-
-If `proxy_protocol` is enabled, MaxScale will send a [PROXY protocol](https://www.haproxy.org/download/1.8/doc/proxy-protocol.txt) header when connecting client sessions to the server. The header contains the original client IP address and port, as seen by MaxScale. The server will then read the header and perform authentication as if the connection originated from this address instead of MaxScale's IP address. With this feature, the user accounts on the backend server can be simplified to only contain the actual client hosts and not the MaxScale host.
-
-**NOTE**: If you use a cloud load balancer like AWS ELB that supports the proxy protocol in front of a MaxScale, you need to configure [proxy\_protocol\_networks](maxscale-configuration-guide.md#proxy_protocol_networks) in MaxScale. This also needs to be done whenever one MaxScale may connect to another Maxscale and the connecting MaxScale has `proxy_protocol` enabled.
-
-PROXY protocol will be supported by MariaDB 10.3, which this feature has been tested with. To use it, enable the PROXY protocol in MaxScale for every compatible server and configure the MariaDB servers themselves to accept the protocol headers from MaxScale's IP address. On the server side, the protocol should be enabled only for trusted IPs, as it allows the sender to spoof the connection origin. If a proxy header is sent to a server not expecting it, the connection will fail. Usually PROXY protocol should be enabled for every server in a cluster, as they typically have similar grants.
-
-Other SQL-servers may support PROXY protocol as well, but the implementation may be highly restricting. Strict adherence to the protocol requires that the backend server does not allow mixing of un-proxied and proxied connections from a given IP. MaxScale requires normal connections to backends for monitoring and authentication data queries, which would be blocked. To bypass this restriction, the server monitor needs to be disabled and the service listener needs to be configured to disregard authentication errors (`skip_authentication=true`). Server states also need to be set manually in MaxCtrl. These steps are _not_ required for MariaDB 10.3, since its implementation is more flexible and allows both PROXY-headered and headerless connections from a proxy-enabled IP.
-
-#### `disk_space_threshold`
-
-* Type: Custom
-* Mandatory: No
-* Dynamic: Yes
-* Default: None
-
-This parameter specifies how full a disk may be, before MaxScale should start logging warnings or take other actions (e.g. perform a switchover). This functionality will only work with MariaDB server versions 10.1.32, 10.2.14 and 10.3.6 onwards, if the `DISKS` _information schema plugin_ has been installed.
-
-**NOTE**: Since MariaDB 10.4.7, MariaDB 10.3.17 and MariaDB 10.2.26, the information will be available _only_ if the monitor user has the `FILE` privilege.
-
-A limit is specified as a path followed by a colon and a percentage specifying how full the corresponding disk may be, before action is taken. E.g. an entry like
-
-```
-/data:80
-```
-
-specifies that the disk that has been mounted on `/data` may be used until 80% of the total space has been consumed. Multiple entries can be specified by separating them by a comma. If the path is specified using `*`, then the limit applies to all disks. However, the value of `*` is only applied if there is not an exact match.
-
-Note that if a particular disk has been mounted on several paths, only one path need to be specified. If several are specified, then the one with the smallest percentage will be applied.
-
-Examples:
-
-```
-disk_space_threshold=*:80
-disk_space_threshold=/data:80
-disk_space_threshold=/data1:80,/data2:60,*:90
-```
-
-The last line means that the disk mounted at `/data1` may be used up to 80%, the disk mounted at `/data2` may be used up to 60% and all other disks mounted at any paths may be used up until 90% of maximum capacity, before MaxScale starts to warn to take action.
-
-Note that the path to be used, is one of the paths returned by:
-
-```
-> use information_schema;
-> select * from disks;
-+-----------+----------------------+-----------+----------+-----------+
-| Disk      | Path                 | Total     | Used     | Available |
-+-----------+----------------------+-----------+----------+-----------+
-| /dev/sda3 | /                    |  47929956 | 34332348 |  11139820 |
-| /dev/sdb1 | /data                | 961301832 |    83764 | 912363644 |
-...
-```
-
-There is no default value, but this parameter must be explicitly specified if the disk space situation should be monitored.
-
-#### `rank`
-
-* Type: [enum](maxscale-configuration-guide.md#enumerations)
-* Mandatory: No
-* Dynamic: Yes
-* Values: `primary`, `secondary`
-* Default: `primary`
-
-This parameter controls the order in which servers are used. Valid values for this parameter are `primary` and `secondary`. The default value is `primary`.
-
-This behavior depends on the router implementation but the general rule of thumb is that primary servers will be used before secondary servers. Note that this **does not affect** how monitors select servers.
-
-Readconnroute will always use primary servers before secondary servers as long as they match the configured server type.
-
-Readwritesplit will pick servers that have the same rank as the current primary. Read the [readwritesplit documentation on server ranks](../../reference/maxscale-routers/maxscale-readwritesplit.md#server-ranks) for a detailed description of the behavior.
-
-The following example server configuration demonstrates how `rank` can be used to exclude `DR-site` servers from routing.
-
-```
-[main-site-primary]
-type=server
-address=192.168.0.11
-rank=primary
-
-[main-site-replica]
-type=server
-address=192.168.0.12
-rank=primary
-
-[DR-site-primary]
-type=server
-address=192.168.0.21
-rank=secondary
-
-[DR-site-replica]
-type=server
-address=192.168.0.22
-rank=secondary
-```
-
-The `main-site-primary` and `main-site-replica` servers will be used as long as they are available. When they are no longer available, the `DR-site-primary` and `DR-site-replica` will be used.
-
-#### `priority`
-
-* Type: number
-* Mandatory: No
-* Dynamic: Yes
-* Default: 0
-
-Server priority. Currently only used by galeramon to choose the order in which nodes are selected as the current primary server. Refer to the [Server Priorities](../../reference/maxscale-monitors/galera-monitor.md#interaction-with-server-priorities) section of the galeramon documentation for more information on how to use it.
-
-Starting with MaxScale 2.5.21, this parameter also accepts negative values. In older versions, the parameter only accepted non-negative values.
-
-#### `initial_status`
-
-* Type: enum
-* Mandatory: No
-* Dynamic: Yes
-* Values: `down`, `up`, `read`, `write`
-* Default: `down`
-
-The initial state of a server. This is the status in which the server is set into whenever it starts up or is reconfigured. This is only taken into account if the server is not being monitored by a monitor.
-
-The main use-case of this setting is to enable static roles for servers that have no monitor. This can be useful for some special configurations where monitoring is either not an option or the behavior of the monitors is not suitable.
-
-#### `replication_custom_options`
-
-* Type: string
-* Default: None
-* Dynamic: Yes
-
-Server-specific custom string added to "CHANGE MASTER TO"-commands sent by MariaDB Monitor. Overrides `replication_custom_options` setting set in the monitor. This setting affects the server where the command is ran at, not the source of the replication. That is, if monitor sends a "CHANGE MASTER TO"- command to server A telling it to replicate from server B, the setting value from MaxScale configuration for server A would be used.
-
-See [MariaDB Monitor documentation](../../reference/maxscale-monitors/mariadb-monitor.md#replication_custom_options) for more information.
-
-#### `use_service_credentials`
-
-* Type: [boolean](maxscale-configuration-guide.md#booleans)
-* Mandatory: No
-* Dynamic: Yes
-* Default: `true`
-
-Whether to use the service credentials to log into MariaDB and then switch to the client account. This feature is only used when the backend database is MariaDB version 12 or newer and if the service user has the `SET USER` grant.
-
-When enabled, the backend authentication will use the credentials defined in the service to log into the database and then execute a `SET SESSION AUTHORIZATION` query to change the user to the correct user account. This makes it possible to use any authentication plugin during the client-to-MaxScale authentication without requiring that a user mapping file is used. This also removes the need to use `proxy_protocol` in the servers as the exact client hostname can be specified directly in the `SET SESSION AUTHORIZATION` SQL.
-
-To disable this and log in directly using the client credentials, add `use_service_credentials=false` to the server section. If disabled or if the service user does not have the `SET USER` grant, the PARSEC authentication plugin cannot be used and the Ed25519 authentication plugin must be configured to use the `caching_sha256_password` authentication by adding `authenticator_options=ed_mode=sha256` to the listeners.
-
-#### `labels`
-
-* Type: string list
-* Mandatory: No
-* Dynamic: Yes
-* Default: None
-
-Comma-separated list of labels that are assigned for this server. These are user-defined labels that by default aren't interpreted by MaxScale. Some router modules may use them to customize the routing or to provide other mechanisms that otherwise depend on user-defined parameters.
-
 ### Monitor
 
 Monitor sections are used to define the monitoring module that watches a set of servers. Each server can only be monitored by one monitor.
 
-Common monitor parameters [can be found here](../../reference/maxscale-monitors/common-monitor-parameters.md).
+Common monitor parameters [can be found here](../../../reference/maxscale-monitors/common-monitor-parameters.md).
 
 ### Listener
 
@@ -2766,237 +2482,7 @@ service=MyService1
 port=3006
 ```
 
-#### `service`
-
-* Type: service
-* Mandatory: Yes
-* Dynamic: No
-
-The service to which the listener is associated. This is the name of a service that is defined elsewhere in the configuration file.
-
-#### `protocol`
-
-* Type: protocol
-* Mandatory: No
-* Dynamic: No
-* Default: `mariadb`
-
-The name of the protocol module used for communication between the client and MaxScale. The same protocol is also used for backend communication.
-
-Usually this does not need to be defined as the default protocol is the MariaDB network protocol that is used by SQL connections.
-
-For NoSQL client connections, the protocol must be set to `protocol=nosqlprotocol`. For more details on how to configure the NoSQL protocol, refer to the [NoSQL Protocol](../../reference/maxscale-protocols/maxscale-nosql-protocol-module.md) module documentation.
-
-#### `address`
-
-* Type: string
-* Mandatory: No
-* Dynamic: No
-* Default: `"::"`
-
-This sets the address the listening socket is bound to. The address may be specified as an IP address in 'dot notation' or as a hostname. If left undefined the listener will bind to all network interfaces.
-
-#### `port`
-
-* Type: number
-* Mandatory: Yes, if `socket` is not provided.
-* Dynamic: No
-* Default: `0`
-
-The port the listener listens on. If left undefined a default port for the protocol is used.
-
-#### `socket`
-
-* Type: string
-* Mandatory: Yes, if `port` is not provided.
-* Dynamic: No
-* Default: `""`
-
-If defined, the listener uses Unix domain sockets to listen for incoming connections. The parameter value is the name of the socket to use.
-
-If you want to use both network ports and UNIX domain sockets with a service, define two separate listeners that connect to the same service.
-
-#### `authenticator`
-
-* Type: string
-* Mandatory: No
-* Dynamic: No
-* Default: `""`
-
-The authenticator module to use. Each protocol module defines a default authentication module, which is used if the setting is left undefined. MariaDB protocol support multiple authenticators and they can be used simultaneously by giving a comma-separated list e.g. `authenticator=mariadbauth,gssapiauth`
-
-#### `authenticator_options`
-
-* Type: string
-* Mandatory: No
-* Dynamic: No
-* Default: `""`
-
-This defines additional options for authentication. As of MaxScale 2.5.0, only _MariaDBClient_ and its authenticators support additional options. The value of this parameter should be a comma-separated list of key-value pairs. See authenticator specific documentation for more details.
-
-#### `sql_mode`
-
-* Type: [enum](maxscale-configuration-guide.md#enumerations)
-* Mandatory: No
-* Dynamic: Yes
-* Values: `default`, `oracle`
-* Default: `default`
-
-Specify the sql mode for the listener similarly to global `sql_mode` setting. If both are used this setting will override the global setting for this listener.
-
-#### `proxy_protocol_networks`
-
-Define an IP-address or a subnetwork which may send a [proxy protocol header](https://www.haproxy.org/download/1.8/doc/proxy-protocol.txt) when connecting. The proxy header contains the original client IP-address and port, and MaxScale will use that information in its internal bookkeeping. This means the client is authenticated as if it was connecting from the host in the proxy header. If proxy protocol is also enabled in MaxScale server settings, MaxScale will relay the original client address and port to the server. See [server settings](maxscale-configuration-guide.md#proxy_protocol) for more information.
-
-This setting may be useful if a compatible load balancer is relaying client connections to MaxScale. If proxy headers are used, both MaxScale and the backends will know where the client originally came from.
-
-The `proxy_protocol_networks`-setting works similarly to the equivalent setting in [MariaDB Server](../../../server/clients-and-utilities/server-client-software/client-libraries/proxy-protocol-support.md). The value can be a single IP or subnetwork, or a comma-separated list of them. Subnetworks are given in CIDR-format, e.g. "192.168.0.0/16". "\*" is a valid value, allowing anyone to send the header. "localhost" allows proxy headers from domain socket connections.
-
-Only trusted IPs should be added to the list, as the proxy header may affect authentication results.
-
-```
-proxy_protocol_networks=192.168.0.1,198.168.0.0/16
-```
-
-Similar to MariaDB Server, MaxScale will also accept normal connections even if `proxy_protocol_networks` is configured for the listener.
-
-#### `connection_init_sql_file`
-
-* Type: path
-* Mandatory: No
-* Dynamic: Yes
-* Default: `""`
-
-Path to a text file with sql queries. Any sessions created from the listener will send the contents of the file to backends after authentication. Each non-empty line in the file is interpreted as a query. Each query must succeed for the backend connection to be usable for client queries. The queries should not return any data.
-
-```
-connection_init_sql_file=/home/dba/init_queries.txt
-```
-
-Example query file:
-
-```
-set @myvar = 'mytext';
-set @myvar2 = 4;
-```
-
-#### `user_mapping_file`
-
-* Type: path
-* Mandatory: No
-* Dynamic: Yes
-* Default: `""`
-
-Path to a json-text file with user and group mapping, as well as server credentials. Only affects MariaDB-protocol based listeners. Default value is empty, which disables the feature.
-
-```
-user_mapping_file=/home/root/mapping.json
-```
-
-Should not be used together with [PAM Authenticator](../../reference/maxscale-authenticators/maxscale-pam-authenticator.md) settings `pam_backend_mapping` or `pam_mapped_pw_file`, as these may overwrite the mapped credentials. Is most powerful when combined with service setting `user_accounts_file`, as then MaxScale can accept users that do not exist on backends and map them to backend users.
-
-This file functions very similar to [PAM-based mapping](../../../server/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/user-and-group-mapping-with-pam.md) Both user-to-user and group-to-user mappings can be defined. Also, the password and authentication plugin for the mapped users can be added. The file is only read during listener creation (typically MaxScale start) or when a listener is modified during runtime. When a client logs into MaxScale, their username is searched from the mapping data. If the name matches either a name mapping or a Linux group mapping, the username is replaced by the mapped name. The mapped name is then used when logging into backends. If the file also contains credentials for the mapped user, then those are used. Otherwise, MaxScale tries to log in with an empty password and default MariaDB authentication.
-
-Three arrays are read from the file: _user\_map_, _group\_map_ and _server\_credentials_, none of which are mandatory.
-
-Each array element in the _user\_map_-array must define the following fields:
-
-* original\_user: String. Incoming client username.
-* mapped\_user: String. Username the client is mapped to.
-
-Each array element in the _group\_map_-array must define the following fields:
-
-* original\_group: String. Incoming client Linux group.
-* mapped\_user: String. Username the client is mapped to.
-
-Each array element in the _server\_credentials_-array can define the following fields:
-
-* mapped\_user: String. The mapped username this password is for.
-* password: String. Backend server password. Can be encrypted with maxpasswd.
-* plugin: String, optional. Authentication plugin to use. Must be enabled on the listener. Defaults to empty, which results in standard MariaDB authentication.
-
-When a client successfully logs into MaxScale, MaxScale first searches for name-based mapping. The incoming client does not need to be a Linux user for name-based mapping to take place. If the name is not found, MaxScale checks if the client is a Linux user with a group membership matching an element in the group mapping array. If the client is a member of more than 100 groups, this check may fail.
-
-If a mapping is found, MaxScale searches the credentials array for a matching username, and uses the password and plugin listed. The plugin need not be the same as the one the original user used. Currently, "mysql\_native\_password" and "pam" are supported as mapped plugins.
-
-An example mapping file is below.
-
-```
-{
-    "user_map": [
-        {
-            "original_user": "bob",
-            "mapped_user": "janet"
-        },
-        {
-            "original_user": "karen",
-            "mapped_user": "janet"
-        }
-    ],
-    "group_map": [
-        {
-            "original_group": "visitors",
-            "mapped_user": "db_user"
-        }
-    ],
-    "server_credentials": [
-        {
-            "mapped_user": "janet",
-            "password": "secret_pw",
-            "plugin": "mysql_native_password"
-        },
-        {
-            "mapped_user": "db_user",
-            "password": "secret_pw2",
-            "plugin": "pam"
-        }
-    ]
-}
-```
-
-#### `connection_metadata`
-
-* Type: stringlist
-* Default: `character_set_client=auto,character_set_connection=auto,character_set_results=auto,max_allowed_packet=auto,system_time_zone=auto,time_zone=auto,tx_isolation=auto,maxscale=auto`
-* Dynamic: Yes
-* Mandatory: No
-
-Metadata that's sent to all connecting clients. The value must be a comma-separated list of key-value arguments. The keys or values cannot contain commas in them.
-
-Any values that are set to `auto` will be substituted with the value of the corresponding MariaDB system variable. Any system variables that do not not exist or have empty or null values will not be sent to the client. The system variable values are read from the first `Master` server that's reachable from the listener's service. If no `Master` server is reachable, the value is read from the first `Slave` server and if no `Slave` servers are available, from the first `Running` server. If no running servers are available, the system variables are not sent.
-
-The exception to this is the `maxscale=auto` value where the `auto` will be replaced with the MaxScale version string. This is useful for detecting whether a client is connected to MaxScale. To make MaxScale completely transparent to the client application, the `maxscale=auto` value can be removed from `connection_metadata`.
-
-MaxScale will always send a metadata value for `threads_connected` that contains the current number of connections to the service that the listener points to and for `connection_id` that contains the 64-bit connection ID value. The values can be overridden by defining them with some value, for example, `connection_metadata=threads_connected=0,connection_id=0`.
-
-The metadata is implemented using [the session state information](../../../server/reference/clientserver-protocol/4-server-response-packets/ok_packet.md#session-state-info) that is embedded in the OK packets that are generated by MaxScale. The values are encoded as system variables changes. This information can be accessed by all connectors that support reading the session state information. One example of this is the MariaDB Connector/C that implements it with the [mysql\_session\_track\_get\_first](https://github.com/mariadb-corporation/mariadb-connector-c/wiki/mysql_session_track_get_first) and [mysql\_session\_track\_get\_next](https://github.com/mariadb-corporation/mariadb-connector-c/wiki/mysql_session_track_get_next) functions.
-
-The following example demonstrates the use of `connection_metadata`:
-
-```
-connection_metadata=redirect_url=localhost:3306,service_name=my-service,max_allowed_packet=auto
-```
-
-The configuration has three variables, `redirect_url`, `service_name` and `max_allowed_packet` that have the values `localhost:3306`, `my-service` and `auto`. The `auto` value is special and gets replaced with the `max_allowed_packet` value from the MariaDB server. This means that the final metadata that is sent to the client would be `redirect_url=localhost:3306`, `service_name=my-service` and `max_allowed_packet=16777216`.
-
-**Version-specific Behavior**
-
-If the `connection_metadata` variable list contains the `tx_isolation` variable and the backend MariaDB server from which the variable is retrieved is MariaDB 11 or newer, the value is renamed to `transaction_isolation`. The `tx_isolation` parameter was deprecated in favor of `transaction_isolation` in MariaDB 11 (MDEV-21921).
-
-#### `redirect_url`
-
-* Type: URL
-* Mandatory: No
-* Dynamic: Yes
-* Default: `""`
-
-Database URL where clients are redirected.
-
-If set, the `redirect_url` system variable tracker is sent in the final response to the client after authentication is complete. The URL must start with a valid connection prefix, either `mariadb://` or `mysql://`, and if a port is defined it must be a number.
-
-If the [connection metadata](maxscale-configuration-guide.md#connection_metadata) has `redirect_url` in it and the `redirect_url` parameter is defined, the value of the `redirect_url` parameter is used.
-
-For more information about connection redirection and how MaxScale deals with it, read the [Connection Redirection](../../reference/maxscale-protocols/maxscale-mariadb-protocol-module.md#connection-redirection) section in the MariaDB protocol module documentation.
+For a complete list of listener configuration parameters, see the [Listener Reference](../../../reference/maxscale-listeners.md).
 
 ### Include
 
@@ -3094,11 +2580,11 @@ Implements MariaDB protocol. The listener will accept MariaDB/MySQL connections 
 
 ### `CDC`
 
-See [Change Data Capture Protocol](../../reference/maxscale-protocols/maxscale-change-data-capture-cdc-protocol.md) for more information.
+See [Change Data Capture Protocol](../../../reference/maxscale-protocols/maxscale-change-data-capture-cdc-protocol.md) for more information.
 
 ### `nosqlprotocol`
 
-Accepts MongoDB® connections, yet stores and fetches results to/from MariaDB servers. See [NoSQL documentation](../../reference/maxscale-protocols/maxscale-nosql-protocol-module.md) for more information.
+Accepts MongoDB® connections, yet stores and fetches results to/from MariaDB servers. See [NoSQL documentation](../../../reference/maxscale-protocols/maxscale-nosql-protocol-module.md) for more information.
 
 ## TLS/SSL encryption
 
@@ -3220,7 +2706,7 @@ The default setting (MAX) allows all supported versions. MaxScale supports TLSv1
 
 In MaxScale versions 6.4.13, 22.08.11, 23.02.7, 23.08.3 and earlier, this setting defined the _only_ allowed TLS version, e.g. `ssl_version=TLSv12` would only enable TLSv12. The interpretation changed in MaxScale versions 6.4.14, 22.08.12, 23.02.8, 23.08.4 to enable the user to disable old versions while allowing multiple recent TLS versions. In these versions, `ssl_version=TLSv1.2` enabled both TLSv1.2 and TLSv1.3.
 
-The interpretation changed again in MaxScale versions 6.4.16, 22.08.13, 23.02.10, 23.08.6, 24.02.2. In these versions the value of `ssl_version` is an enumeration of accepted TLS protocol versions. This means that `admin_ssl_version=TLSv1.2` again only allows TLSv1.2. To retain the behavior from the previous releases where the newer versions were automatically enabled, the protocol versions must be explicitly listed, for example `admin_ssl_version=TLSv1.2,TLSv1.3`. The change was done to make the `ssl_version` behave identically to how the MariaDB [tls\_version](../../../server/security/securing-mariadb/encryption/data-in-transit-encryption/ssltls-system-variables.md#tls_version) parameter works.
+The interpretation changed again in MaxScale versions 6.4.16, 22.08.13, 23.02.10, 23.08.6, 24.02.2. In these versions the value of `ssl_version` is an enumeration of accepted TLS protocol versions. This means that `admin_ssl_version=TLSv1.2` again only allows TLSv1.2. To retain the behavior from the previous releases where the newer versions were automatically enabled, the protocol versions must be explicitly listed, for example `admin_ssl_version=TLSv1.2,TLSv1.3`. The change was done to make the `ssl_version` behave identically to how the MariaDB [tls\_version](../../../../server/security/securing-mariadb/encryption/data-in-transit-encryption/ssltls-system-variables.md#tls_version) parameter works.
 
 #### `ssl_cipher`
 
@@ -3322,42 +2808,42 @@ Currently a number of routing modules are available, these are designed for a ra
 
 Connection based load balancing:
 
-* [ReadConnRoute](../../reference/maxscale-routers/maxscale-readconnroute.md)
+* [ReadConnRoute](../../../reference/maxscale-routers/maxscale-readconnroute.md)
 
 Read/Write aware statement based router:
 
-* [ReadWriteSplit](../../reference/maxscale-routers/maxscale-readwritesplit.md)
+* [ReadWriteSplit](../../../reference/maxscale-routers/maxscale-readwritesplit.md)
 
 Simple sharding on database level:
 
-* [SchemaRouter](../../reference/maxscale-routers/maxscale-schemarouter.md)
+* [SchemaRouter](../../../reference/maxscale-routers/maxscale-schemarouter.md)
 
 Binary log server:
 
-* [Binlogrouter](../../reference/maxscale-routers/maxscale-binlogrouter.md)
+* [Binlogrouter](../../../reference/maxscale-routers/maxscale-binlogrouter.md)
 
 ### Monitor Modules
 
 Monitor modules are used by MariaDB MaxScale to internally monitor the state of the backend databases in order to set the server flags for each of those servers. The router modules then use these flags to determine if the particular server is a suitable destination for routing connections for particular query classifications. The monitors are run within separate threads of MariaDB MaxScale and do not affect MariaDB MaxScale's routing performance.
 
-* [MariaDB Monitor](../../reference/maxscale-monitors/mariadb-monitor.md)
-* [Galera Monitor](../../reference/maxscale-monitors/galera-monitor.md)
+* [MariaDB Monitor](../../../reference/maxscale-monitors/mariadb-monitor.md)
+* [Galera Monitor](../../../reference/maxscale-monitors/galera-monitor.md)
 
 The use of monitors in MaxScale is not absolutely mandatory: it is possible to run MariaDB MaxScale without a monitor module. In this case an external monitoring system must the status of each server via MaxCtrl or the REST API. **Only do this if you know what you are doing.**
 
 ### Filter Modules
 
-![](<../../.gitbook/assets/image_10.png (1).png>)
+![](<../../../.gitbook/assets/image_10.png (1).png>)
 
 Filters provide a means to manipulate or process requests as they pass through MariaDB MaxScale between the client side protocol and the query router. A full explanation of each filter's functionality can be found in its documentation.
 
-The [Filter Tutorial](../../mariadb-maxscale-tutorials/filters.md) document shows how you can add a filter to a service and combine multiple filters in one service.
+The [Filter Tutorial](../../../mariadb-maxscale-tutorials/filters.md) document shows how you can add a filter to a service and combine multiple filters in one service.
 
-* [Query Log All (QLA) Filter](../../reference/maxscale-filters/maxscale-query-log-all-filter.md)
-* [Regular Expression Filter](../../reference/maxscale-filters/maxscale-regex-filter.md)
-* [Tee Filter](../../reference/maxscale-filters/maxscale-tee-filter.md)
-* [Top Filter](../../reference/maxscale-filters/maxscale-top-filter.md)
-* [Query Redirection Filter](../../reference/maxscale-filters/maxscale-named-server-filter.md)
+* [Query Log All (QLA) Filter](../../../reference/maxscale-filters/maxscale-query-log-all-filter.md)
+* [Regular Expression Filter](../../../reference/maxscale-filters/maxscale-regex-filter.md)
+* [Tee Filter](../../../reference/maxscale-filters/maxscale-tee-filter.md)
+* [Top Filter](../../../reference/maxscale-filters/maxscale-top-filter.md)
+* [Query Redirection Filter](../../../reference/maxscale-filters/maxscale-named-server-filter.md)
 
 ## Encrypting Passwords
 
@@ -3395,7 +2881,7 @@ password=61DD955512C39A4A8BC4BB1E5F116705
 
 ## Runtime Configuration Changes
 
-The [MaxCtrl](../../reference/maxscale-maxctrl.md) and [REST-API](../../reference/maxscale-rest-api/maxscale-rest-api.md) documents provide information about making runtime changes.
+The [MaxCtrl](../../../reference/maxscale-maxctrl.md) and [REST-API](../../../reference/maxscale-rest-api/maxscale-rest-api.md) documents provide information about making runtime changes.
 
 All changes to the configuration done via MaxCtrl are persisted as individual configuration files in `/var/lib/maxscale/maxscale.cnf.d/`. The content of these files will override any configurations found in the main configuration file or any auxiliary configuration files.
 
@@ -3498,7 +2984,7 @@ The encryption key managers can be enabled at runtime using `maxctrl alter maxsc
 
 The encryption keys are stored in a text file stored on a local filesystem.
 
-The file uses the same format as the MariaDB server [File Key Management Encryption Plugin](../../../server/security/securing-mariadb/encryption/data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md): a file consisting of an encryption key ID number and the hex-encoded encryption key separated by a semicolon. Read [Creating the Key File](../../../server/security/securing-mariadb/encryption/data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md#creating-the-key-file) for more details on how to create the file.
+The file uses the same format as the MariaDB server [File Key Management Encryption Plugin](../../../../server/security/securing-mariadb/encryption/data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md): a file consisting of an encryption key ID number and the hex-encoded encryption key separated by a semicolon. Read [Creating the Key File](../../../../server/security/securing-mariadb/encryption/data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md#creating-the-key-file) for more details on how to create the file.
 
 For example, to configure encryption for the `nosqlprotocol` shared credentials using the file-based encryption key:
 
@@ -3595,7 +3081,7 @@ The CA certificate to use. By default the system default certificates are used.
 
 Encryption keys are read from a local or remote Vault server using the secret engine included in the Vault. This key manager supports versioned keys. Only version 2 key-value stores are supported.
 
-The encryption keys use the same format as the MariaDB [HashiCorp Vault Key Management Plugin](../../../server/security/securing-mariadb/encryption/data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md) The key-value secret for each encryption key ID must contain the field `data` which must contain a hex-encoded string that is either 32, 48 or 64 characters long.
+The encryption keys use the same format as the MariaDB [HashiCorp Vault Key Management Plugin](../../../../server/security/securing-mariadb/encryption/data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md) The key-value secret for each encryption key ID must contain the field `data` which must contain a hex-encoded string that is either 32, 48 or 64 characters long.
 
 An easy way to generate a correct encryption key is to use the `vault` and `openssl` command line clients. The following command creates a 256-bit encryption key using `openssl` and stores it using the key ID `1`:
 
@@ -3785,7 +3271,7 @@ MariaDB MaxScale is designed to be executed as a service, therefore all error re
 
 ## Limitations
 
-The current limitations of MaxScale are listed in the [Limitations](../mariadb-maxscale-limitations-guide.md) document.
+The current limitations of MaxScale are listed in the [Limitations](../../mariadb-maxscale-limitations-guide.md) document.
 
 ## Performance Optimization
 
@@ -3870,7 +3356,7 @@ query_classifier_cache_size=3100000000
 
 ## Troubleshooting
 
-For a list of common problems and their solutions, read the [MaxScale Troubleshooting](../maxscale-troubleshooting.md) article on the MariaDB documentation.
+For a list of common problems and their solutions, read the [MaxScale Troubleshooting](../../maxscale-troubleshooting.md) article on the MariaDB documentation.
 
 ### Systemd Watchdog
 
