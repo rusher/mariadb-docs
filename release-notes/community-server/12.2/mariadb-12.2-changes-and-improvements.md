@@ -1,3 +1,8 @@
+---
+description: >-
+  Changes and improvements in the 12.2 series of MariaDB Community Server
+---
+
 # MariaDB 12.2 Changes & Improvements
 
 {% include "../../.gitbook/includes/latest-12-2.md" %}
