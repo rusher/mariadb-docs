@@ -3,9 +3,12 @@
 Vault is open source software for secret management provided by HashiCorp. It is designed to avoid sharing secrets of various types, like passwords and private keys. When building automation, Vault is a good solution to avoid storing secrets in plain text in a repository.
 
 {% hint style="danger" %}
-**Unsafe Operations**&#x20;
+**Unsafe Operations** \
+It is unsafe to execute `vault secrets disable` or `vault token revoke` while MariaDB is running. If the HashiCorp plugin's local cache is flushed while the Vault is disabled, the plugin cannot provide the keys needed for InnoDB background flushes or log writes, leading to a server crash.
+{% endhint %}
 
-It is unsafe to execute `vault secrets disable` or `vault token revoke` while the MariaDB server is running. These operations immediately sever access to the Vault, preventing InnoDB from encrypting data during background flushes or log writes. This can lead to server crashes and data corruption.
+{% hint style="success" %}
+Always ensure the MariaDB server has completed a clean shutdown before disabling Vault secrets or revoking access tokens.
 {% endhint %}
 
 MariaDB and Vault may relate to each other in several ways:
