@@ -15,7 +15,7 @@
 Ensure your HeidiSQL client is up to date.
 {% endhint %}
 
-For more information on HeidiSQL, see [this page]({server}/clients-and-utilities/graphical-and-enhanced-clients/heidisql.md). 
+For more information on HeidiSQL, see [this page](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/graphical-and-enhanced-clients/heidisql).
 
 {% hint style="warning" %}
 Using updated drivers on new MariaDB versions is essential as out of date drivers will return "Authentication failed" errors. It may be nessecary to manually install new drivers on Windows.
