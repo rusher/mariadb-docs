@@ -18,7 +18,7 @@ To access the User Management interface:
 2. Click the "Settings" link in the main menu (left navigation in the Portal).
 3. Click the [User Management](https://app.skysql.com/settings/user-management) button.
 
-<figure><img src="../.gitbook/assets/user-management.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/user-management (1).png" alt=""><figcaption></figcaption></figure>
 
 _User Management_
 
@@ -33,7 +33,7 @@ Each Team member has one of the following roles:
 
 ## **Add a Team Member**
 
-<figure><img src="../.gitbook/assets/user-management-invite.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/user-invite.png" alt=""><figcaption></figcaption></figure>
 
 _User Management - Invite_
 
@@ -51,6 +51,10 @@ An invitation is delivered by email. The user will be prompted to complete accou
 You can withdraw the invitation before it is accepted by clicking on the "Cancel Invitation" link in the Team member list.
 
 ## **Remove a Team Member**
+
+<figure><img src="../.gitbook/assets/remove-user.png" alt=""><figcaption></figcaption></figure>
+
+_Remove User_
 
 From the User Management interface, an Administrator can remove a team member:
 
