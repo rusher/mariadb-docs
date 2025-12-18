@@ -1,3 +1,9 @@
+---
+description: >-
+  The Information Schema HASHICORP_KEY_MANAGEMENT_CACHE table provides
+  information about keys managed by the HashiCorp Key Management plugin.
+---
+
 # Information Schema HASHICORP\_KEY\_MANAGEMENT\_CACHE
 
 {% hint style="info" %}

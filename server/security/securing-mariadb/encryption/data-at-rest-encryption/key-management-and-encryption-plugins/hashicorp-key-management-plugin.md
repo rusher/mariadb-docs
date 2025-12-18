@@ -143,7 +143,7 @@ FLUSH HASHICORP_KEY_MANAGEMENT_CACHE;
 
 To view the current Key IDs and Key Versions stored in the latest version cache, you can query the Information Schema table or use the `SHOW` command.
 
-See Information Schema HASHICORP\_KEY\_MANAGEMENT\_CACHE for table details.
+See [Information Schema HASHICORP\_KEY\_MANAGEMENT\_CACHE](../../../../../reference/system-tables/information-schema/information-schema-tables/information-schema-hashicorp_key_management_cache.md) for table details.
 
 Using the SHOW command:
 
