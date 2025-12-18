@@ -127,44 +127,28 @@ The plugin supports the following parameters, which must be set in advance and c
 
 _Available as of MariaDB 12.3_
 
-The HashiCorp Key Management plugin supports key versioning provided by the HashiCorp Vault Server. In previous versions, rotating keys required a server restart to clear the internal cache. As of MariaDB 12.3, you can initiate key rotation and flush the plugin cache manually while the server is running.
+The HashiCorp Key Management plugin supports key versioning provided by the HashiCorp Vault Server. In previous versions, rotating keys required a server restart to clear the internal cache. As of MariaDB 12.3, you can flush the plugin cache manually while the server is running.
 
-### Rotating Keys via System Variable
+#### Flushing the Cache
 
-You can rotate keys using the `hashicorp_key_management_rotate_key` system variable. Setting this variable erases the associated data from the cache; the system will re-request the key from the HashiCorp Vault server upon the next access.
+To rotate keys, you must flush the cached keys using the `FLUSH` command. This clears the local cache, forcing the server to re-fetch the latest key versions from the HashiCorp Vault server upon the next access.
 
-```sql
-SET GLOBAL hashicorp_key_management_rotate_key = value;
-```
-
-Values:
-
-* \<identifier>: Specifying a Key ID rotates that specific key.
-* -1: A value of -1 rotates all keys.
-* 0: A value of 0 performs no rotation.
-
-### Flushing the Cache
-
-You can explicitly flush the cached keys using the FLUSH command. This requires the RELOAD privilege.
+Executing this command requires the `RELOAD` privilege.
 
 ```sql
 FLUSH HASHICORP_KEY_MANAGEMENT_CACHE;
 ```
 
-### Verifying Key Versions
+#### Verifying Key Versions
 
-To view the current Key IDs and Key Versions stored in the latest version cache, you can query the Information Schema or use the SHOW command. Accessing this table requires the PROCESS privilege.
+To view the current Key IDs and Key Versions stored in the latest version cache, you can query the Information Schema table or use the `SHOW` command.
 
-Using the SHOW command:&#x20;
+See Information Schema HASHICORP\_KEY\_MANAGEMENT\_CACHE for table details.
+
+Using the SHOW command:
 
 ```sql
 SHOW HASHICORP_KEY_MANAGEMENT_CACHE;
-```
-
-Querying the table directly:&#x20;
-
-```sql
-SELECT * FROM INFORMATION_SCHEMA.HASHICORP_KEY_MANAGEMENT_CACHE;
 ```
 
 ## See Also
