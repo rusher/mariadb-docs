@@ -93,6 +93,8 @@ To remove a Notification Channel from the Notification Channel settings interfac
 
 <figure><img src="../.gitbook/assets/notifications-del.png" alt=""><figcaption></figcaption></figure>
 
+_Notification Channels - Removing a Channel_
+
 #### **Edit a Notification Channel**
 
 To modify a Notification Channel, from the Notification Channel settings interface:
@@ -102,3 +104,5 @@ To modify a Notification Channel, from the Notification Channel settings interfa
 3. Click the "Save" button.
 
 <figure><img src="../.gitbook/assets/notifications-edit.png" alt=""><figcaption></figcaption></figure>
+
+_Notification Channels - Editing a Channel_
