@@ -57,7 +57,7 @@ The common warnings/errors are:
 
 * Using obsolete options. If this is the case, remove them from your [my.cnf files](../configuring-mariadb/configuring-mariadb-with-option-files.md).
 * Check the manual for [new features](./) that have been added since your last MariaDB version.
-* Test that your application works as before. The main difference from before is that because of optimizer improvements your application should work better than before, but in some rare cases the optimizer may get something wrong. In this case, you can try to use [explain](../../../reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md), [optimizer trace](/broken/spaces/WCInJQ9cmGjq1lsTG91E/pages/wIjY1kOpUvbr3Rbr8GXl) or [optimizer\_switch](../../../ha-and-performance/optimization-and-tuning/query-optimizations/optimizer-switch.md) to fix the queries.
+* Test that your application works as before. The main difference from before is that because of optimizer improvements your application should work better than before, but in some rare cases the optimizer may get something wrong. In this case, you can try to use [explain](../../../reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md), [optimizer trace](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/mariadb-internals-documentation-query-optimizer/mariadb-internals-documentation-optimizer-trace) or [optimizer\_switch](../../../ha-and-performance/optimization-and-tuning/query-optimizations/optimizer-switch.md) to fix the queries.
 
 ## If Something Goes Wrong
 

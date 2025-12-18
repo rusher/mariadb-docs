@@ -47,7 +47,7 @@ Replication is used in a number of common scenarios. Uses include:
 
 ### Ring Replication with slaves
 
-![](<../../.gitbook/assets/multi-master-ring-replication1 (1).png>)
+![](/broken/files/O8IUh3MITbUbwVEIMNWA)
 
 * Provides read and write scaling.
 * Doesn’t handle conflicts.
@@ -56,7 +56,7 @@ Replication is used in a number of common scenarios. Uses include:
 
 ### Ring Replication with replication through slaves
 
-![](<../../.gitbook/assets/multi-master-ring-replication2 (1).png>)
+![](/broken/files/xJwiIPv0ebzXBejpi5yV)
 
 * Provides read and write scaling.
 * Doesn’t handle conflicts.
