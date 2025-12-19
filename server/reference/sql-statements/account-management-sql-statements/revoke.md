@@ -35,15 +35,13 @@ REVOKE ADMIN OPTION FOR role [, role] ...
     FROM account_or_role [, account_or_role] ...
 
 /* Variable Definitions */
+
 account_or_role:
     username
   | role
   | PUBLIC
-
-authentication_option:
-    IDENTIFIED BY 'password' 
-  | IDENTIFIED BY PASSWORD 'password_hash'
-  | IDENTIFIED {VIA | WITH} authentication_rule [OR authentication_rule ...]
+  | CURRENT_USER [()]
+  | CURRENT_ROLE [()]
 
 priv_type:
     ALL [PRIVILEGES]
