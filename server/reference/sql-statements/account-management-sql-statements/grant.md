@@ -30,7 +30,7 @@ GRANT role [, role] ...
 
 /* Variable Definitions */
 account_or_role:
-    username
+    username [authentication_option]
   | role
   | PUBLIC
   | CURRENT_USER [()]
