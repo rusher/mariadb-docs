@@ -1,12 +1,15 @@
 ---
 hidden: true
+description: >-
+  MariaDB Enterprise Server 11.4.7-4 is a Stable (GA) maintenance release of
+  MariaDB Enterprise Server 11.4, released on 2025-06-11
 ---
 
 # Changelog for MariaDB Enterprise Server 11.4.7-4
 
 {% include "../../.gitbook/includes/latest-es-11.4.md" %}
 
-MariaDB Enterprise Server 11.4.7-4 is a maintenance release of [MariaDB Enterprise Server](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/) 11.4. For the categorized highlights and other details of this release, see the [release notes](11.4.7-4.md).
+MariaDB Enterprise Server 11.4.7-4 is a Stable (GA) maintenance release of [MariaDB Enterprise Server](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/) 11.4. For the categorized highlights and other details of this release, see the [release notes](11.4.7-4.md).
 
 ## Changes <a href="#changes" id="changes"></a>
 

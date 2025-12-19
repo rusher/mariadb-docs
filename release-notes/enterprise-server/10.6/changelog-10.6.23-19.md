@@ -9,7 +9,7 @@ hidden: true
 
 <a href="https://mariadb.com/downloads/enterprise/enterprise-server/" class="button primary">Download</a> <a href="10.6.23-19.md" class="button secondary">Release Notes</a> <a href="changelog-10.6.23-19.md" class="button secondary">Changelog</a> <a href="whats-new.md" class="button secondary">Overview of MariaDB Enterprise Server 10.6</a>
 
-MariaDB Enterprise Server 10.6.23-19 is a maintenance release of [MariaDB Enterprise Server 10.6](whats-new.md). For the categorized highlights and other details of this release, see the [release notes](10.6.23-19.md).
+MariaDB Enterprise Server 10.6.23-19 is a Stable (GA) maintenance release of [MariaDB Enterprise Server 10.6](whats-new.md). For the categorized highlights and other details of this release, see the [release notes](10.6.23-19.md).
 
 **Release date:** 8 Sep 2025
 

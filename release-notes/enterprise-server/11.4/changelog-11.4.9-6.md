@@ -1,5 +1,8 @@
 ---
 hidden: true
+description: >-
+  MariaDB Enterprise Server 11.4.9-6 is a Stable (GA) maintenance release of
+  MariaDB Enterprise Server 11.4, released on 2025-12-11
 ---
 
 # Changelog for MariaDB Enterprise Server 11.4.9-6
@@ -8,9 +11,9 @@ hidden: true
 
 <a href="https://mariadb.com/downloads/enterprise/enterprise-server/" class="button primary">Download</a> <a href="11.4.9-6.md" class="button secondary">Release Notes</a> <a href="changelog-11.4.9-6.md" class="button secondary">Changelog</a> <a href="whats-new.md" class="button secondary">Overview of Enterprise Server 11.4</a>
 
-**Release date:**&#x20;
+**Release date:** 11 Dec 2025
 
-MariaDB Enterprise Server 11.4.9-6 is a maintenance release of [MariaDB Enterprise Server](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/) 11.4. For the categorized highlights and other details of this release, see the [release notes](11.4.9-6.md).
+MariaDB Enterprise Server 11.4.9-6 is a Stable (GA) maintenance release of [MariaDB Enterprise Server](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/) 11.4. For the categorized highlights and other details of this release, see the [release notes](11.4.9-6.md).
 
 ## Changes
 
