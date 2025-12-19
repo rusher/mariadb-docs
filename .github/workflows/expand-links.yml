@@ -18,11 +18,16 @@ jobs:
           ref: ${{ github.head_ref }}
           fetch-depth: 0 
 
-      - name: Fix Git Context
-        # CRITICAL FIX: Fetch the base branch so 'git diff' has something to compare against
-        run: git fetch origin ${{ github.base_ref }}
+      # REPLACED: Manual git diff with the robust standard action
+      - name: Get Changed Files
+        id: changed-files
+        uses: tj-actions/changed-files@v45
+        with:
+          files: '**.md'
+          separator: "," # Return files as a comma-separated list
 
-      - name: Replace Link Aliases (Robust)
+      - name: Replace Link Aliases (Safe Mode)
+        if: steps.changed-files.outputs.any_changed == 'true'
         shell: bash
         run: |
           # 1. CONFIGURATION
@@ -32,44 +37,36 @@ jobs:
           LINKS["{analytics}"]="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/rBEU9juWLfTDcdwF3Q14"
           LINKS["{galera}"]="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7"
 
-          # 2. DETECT CHANGES
-          # We explicitly compare the Base Branch vs the Head to find modified existing files
-          CHANGED_FILES=$(git diff --name-only origin/${{ github.base_ref }} HEAD | grep '\.md$' || true)
+          # 2. READ FILES FROM ACTION OUTPUT
+          # We read the comma-separated list into an array
+          IFS=',' read -r -a files <<< "${{ steps.changed-files.outputs.all_changed_files }}"
 
-          if [ -z "$CHANGED_FILES" ]; then
-            echo "⚠️ No markdown files detected in this diff."
-            exit 0
-          fi
-
-          echo "🔎 Scanning the following files:"
-          echo "$CHANGED_FILES"
-          echo "-----------------------------------"
+          echo "🔎 Scanning ${#files[@]} changed files..."
 
           # 3. EXECUTION
-          files_modified=0
+          count=0
           
-          # Iterate through aliases first, then files
-          for alias in "${!LINKS[@]}"; do
-            target="${LINKS[$alias]}"
-            
-            # Read files line by line to handle names safely
-            while IFS= read -r file; do
-              if [ -f "$file" ]; then
-                # Check if file contains the alias
+          for file in "${files[@]}"; do
+            if [ -f "$file" ]; then
+              for alias in "${!LINKS[@]}"; do
+                target="${LINKS[$alias]}"
+                
+                # Check for alias (Fixed string mode)
                 if grep -Fq "$alias" "$file"; then
-                  echo "  👉 Found $alias in $file... Replacing."
-                  # Escape the alias for sed ensuring regex doesn't break
-                  sed -i "s|$alias|$target|g" "$file"
-                  files_modified=$((files_modified+1))
+                  echo "  👉 Found $alias in $file"
+                  
+                  # Use '@' delimiter to avoid conflict with Table pipes '|'
+                  sed -i "s@$alias@$target@g" "$file"
+                  count=$((count+1))
                 fi
-              fi
-            done <<< "$CHANGED_FILES"
+              done
+            fi
           done
 
-          if [ "$files_modified" -eq 0 ]; then
-             echo "✅ Scanned files, but no aliases found to replace."
+          if [ "$count" -eq 0 ]; then
+             echo "✅ No aliases found to replace."
           else
-             echo "🚀 Replaced aliases in $files_modified instances."
+             echo "🚀 Replaced aliases in $count files."
           fi
 
       - name: Commit and Push Changes
