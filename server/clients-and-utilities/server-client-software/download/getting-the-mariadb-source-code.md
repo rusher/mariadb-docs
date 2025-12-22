@@ -15,6 +15,8 @@ At any given time, developers is working on their own branches locally or on Git
 The main MariaDB branches are:
 
 * [main](https://github.com/MariaDB/server/tree/main)
+* [12.3](https://github.com/MariaDB/server/tree/12.3)
+* [12.2](https://github.com/MariaDB/server/tree/12.2)
 * [12.1](https://github.com/MariaDB/server/tree/12.1)
 * [12.0](https://github.com/MariaDB/server/tree/12.0)
 * [11.8](https://github.com/MariaDB/server/tree/11.8)
