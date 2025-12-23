@@ -253,13 +253,14 @@ On RHEL/CentOS, `socat` can be installed from the [Extra Packages for Enterprise
 
 ## TLS <a href="#tls" id="tls"></a>
 
-This SST method supports two different TLS methods. The specific method can be selected by setting the `encrypt` option in the `[sst]` section of the MariaDB configuration file. The options are:
+This SST method supports three different TLS methods. The specific method can be selected by setting the `encrypt` option in the `[sst]` section of the MariaDB configuration file. The options are:
 
 * TLS using OpenSSL encryption built into `socat` (`encrypt=2`)
 * TLS using OpenSSL encryption with Galera-compatible certificates and keys (`encrypt=3`)
+* TLS using OpenSSL encryption with standard MySQL/MariaDB SSL certificates (`encrypt=4`)
 
 {% hint style="warning" %}
-Note that `encrypt=1` refers to a TLS encryption method that has been deprecated and removed. `encrypt=4` refers to a TLS encryption method in `xtrabackup-v2` that has not yet been ported to `mariadb-backup`. See [MDEV-18050](https://jira.mariadb.org/browse/MDEV-18050) about that.
+Note that `encrypt=1` refers to a TLS encryption method that has been deprecated and removed.
 {% endhint %}
 
 ### TLS Using OpenSSL Encryption Built into Socat <a href="#tls-using-openssl-encryption-built-into-socat" id="tls-using-openssl-encryption-built-into-socat"></a>
