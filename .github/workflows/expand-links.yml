@@ -1,62 +1,50 @@
-name: Expand Links (Global Fix)
+name: Expand Cross-Space Links (DOCS-5904)
 
 on:
-  workflow_dispatch: # Button to run manually
   pull_request:
     paths:
-      - '**.md'
+      - '**.md' # Only trigger if markdown files are changed
 
 permissions:
-  contents: write
+  contents: write # Required to commit changes back to the PR
 
 jobs:
-  fix-all-links:
+  expand-links:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.head_ref }}
-          fetch-depth: 0
+          ref: ${{ github.head_ref }} # Checkout the branch, not the detached HEAD
 
-      - name: Run Global Search & Replace
+      - name: Replace Link Aliases
         shell: bash
         run: |
-          # 1. CONFIGURATION
+          # ---------------------------------------------------------
+          # CONFIGURATION: Add new spaces here
+          # Format: ["{alias}"]="target_url"
+          # ---------------------------------------------------------
           declare -A LINKS
-          LINKS["{server}"]="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV"
-          LINKS["{maxscale}"]="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX"
-          LINKS["{analytics}"]="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/rBEU9juWLfTDcdwF3Q14"
-          LINKS["{galera}"]="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7"
+          LINKS["{server}"]="https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV"
+          LINKS["{maxscale}"]="https://app.gitbook.com/s/YOUR_MAXSCALE_ID_HERE"
+          
+          # ---------------------------------------------------------
+          # EXECUTION
+          # ---------------------------------------------------------
+          has_changes=false
 
-          echo "🔎 Scanning ENTIRE repository..."
-          files_changed=0
-
-          # 2. FIND ALL MARKDOWN FILES (Recursive)
-          # We use process substitution to avoid subshell issues
-          while IFS= read -r file; do
-            modified=false
-            for alias in "${!LINKS[@]}"; do
-              target="${LINKS[$alias]}"
-              if grep -Fq "$alias" "$file"; then
-                # Use @ as delimiter to prevent table pipe conflicts
-                sed -i "s@$alias@$target@g" "$file"
-                modified=true
-              fi
-            done
+          # Loop through keys in the LINKS array
+          for alias in "${!LINKS[@]}"; do
+            target="${LINKS[$alias]}"
+            echo "Looking for instances of $alias to replace with actual URL..."
             
-            if [ "$modified" = true ]; then
-              echo "  👉 Fixed: $file"
-              files_changed=$((files_changed+1))
-            fi
-          done < <(find . -type f -name "*.md" -not -path "./.git/*")
-
-          echo "------------------------------------------------"
-          echo "🚀 Modified $files_changed files."
+            # Find .md files containing the alias and replace in-place
+            # We use pipe (|) as delimiter because URLs contain slashes
+            grep -rl "$alias" . --include="*.md" | xargs -r sed -i "s|$alias|$target|g"
+          done
 
       - name: Commit and Push Changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "docs: global link expansion fix [skip ci]"
-          # CRITICAL FIX: Use recursive glob pattern to catch files in subfolders
-          file_pattern: "**/*.md"
+          commit_message: "docs: expand cross-space link aliases [skip ci]"
+          file_pattern: "*.md"
