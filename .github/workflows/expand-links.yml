@@ -1,6 +1,7 @@
-name: Expand Cross-Space Links (DOCS-5904)
+name: Expand Links (Manual Fixer)
 
 on:
+  workflow_dispatch: # Button click trigger
   pull_request:
     paths:
       - '**.md'
@@ -9,68 +10,76 @@ permissions:
   contents: write
 
 jobs:
-  expand-links:
+  fix-all-links:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
-          fetch-depth: 0 
+          fetch-depth: 0
 
-      # REPLACED: Manual git diff with the robust standard action
-      - name: Get Changed Files
-        id: changed-files
-        uses: tj-actions/changed-files@v45
-        with:
-          files: '**.md'
-          separator: "," # Return files as a comma-separated list
-
-      - name: Replace Link Aliases (Safe Mode)
-        if: steps.changed-files.outputs.any_changed == 'true'
+      - name: Run Global Search & Replace (With Exclusions)
         shell: bash
         run: |
+          # ========================================================
           # 1. CONFIGURATION
+          # ========================================================
           declare -A LINKS
           LINKS["{server}"]="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV"
           LINKS["{maxscale}"]="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX"
           LINKS["{analytics}"]="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/rBEU9juWLfTDcdwF3Q14"
           LINKS["{galera}"]="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7"
 
-          # 2. READ FILES FROM ACTION OUTPUT
-          # We read the comma-separated list into an array
-          IFS=',' read -r -a files <<< "${{ steps.changed-files.outputs.all_changed_files }}"
+          # ⚠️ ADD FILES TO EXCLUDE HERE
+          # (Partial matches work: "legacy" will exclude "folder/legacy/file.md")
+          declare -a EXCLUDE_LIST=(
+            "mariadb-cloud/legacy-file.md"
+            "do-not-touch.md"
+            "archive/"
+          )
 
-          echo "🔎 Scanning ${#files[@]} changed files..."
+          # ========================================================
+          # 2. EXECUTION
+          # ========================================================
+          echo "🔎 Scanning repository..."
+          files_changed=0
 
-          # 3. EXECUTION
-          count=0
-          
-          for file in "${files[@]}"; do
-            if [ -f "$file" ]; then
-              for alias in "${!LINKS[@]}"; do
-                target="${LINKS[$alias]}"
-                
-                # Check for alias (Fixed string mode)
-                if grep -Fq "$alias" "$file"; then
-                  echo "  👉 Found $alias in $file"
-                  
-                  # Use '@' delimiter to avoid conflict with Table pipes '|'
-                  sed -i "s@$alias@$target@g" "$file"
-                  count=$((count+1))
-                fi
-              done
-            fi
-          done
+          # Find all .md files (excluding .git)
+          while IFS= read -r file; do
+            
+            # --- Exclusion Logic ---
+            skip_file=false
+            for exclude in "${EXCLUDE_LIST[@]}"; do
+              if [[ "$file" == *"$exclude"* ]]; then
+                echo "  ⏭️ SKIPPING (Excluded): $file"
+                skip_file=true
+                break
+              fi
+            done
+            if [ "$skip_file" = true ]; then continue; fi
+            # -----------------------
 
-          if [ "$count" -eq 0 ]; then
-             echo "✅ No aliases found to replace."
+            # Process the file
+            for alias in "${!LINKS[@]}"; do
+              target="${LINKS[$alias]}"
+              if grep -Fq "$alias" "$file"; then
+                echo "  👉 FIXING: $alias found in $file"
+                sed -i "s@$alias@$target@g" "$file"
+                files_changed=$((files_changed+1))
+              fi
+            done
+
+          done < <(find . -name "*.md" -not -path "./.git/*")
+
+          if [ "$files_changed" -eq 0 ]; then
+            echo "✅ Repository is clean."
           else
-             echo "🚀 Replaced aliases in $count files."
+            echo "🚀 Fixed aliases in $files_changed files."
           fi
 
       - name: Commit and Push Changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "docs: expand cross-space link aliases [skip ci]"
+          commit_message: "docs: global link expansion fix [skip ci]"
           file_pattern: "*.md"
