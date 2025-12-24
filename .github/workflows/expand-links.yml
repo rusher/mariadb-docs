@@ -1,7 +1,7 @@
-name: Expand Links (Manual Fixer)
+name: Expand Links (Global Fix)
 
 on:
-  workflow_dispatch: # Button click trigger
+  workflow_dispatch: # Button to run manually
   pull_request:
     paths:
       - '**.md'
@@ -19,67 +19,44 @@ jobs:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
 
-      - name: Run Global Search & Replace (With Exclusions)
+      - name: Run Global Search & Replace
         shell: bash
         run: |
-          # ========================================================
           # 1. CONFIGURATION
-          # ========================================================
           declare -A LINKS
           LINKS["{server}"]="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV"
           LINKS["{maxscale}"]="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX"
           LINKS["{analytics}"]="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/rBEU9juWLfTDcdwF3Q14"
           LINKS["{galera}"]="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7"
 
-          # ⚠️ ADD FILES TO EXCLUDE HERE
-          # (Partial matches work: "legacy" will exclude "folder/legacy/file.md")
-          declare -a EXCLUDE_LIST=(
-            "mariadb-cloud/legacy-file.md"
-            "do-not-touch.md"
-            "archive/"
-          )
-
-          # ========================================================
-          # 2. EXECUTION
-          # ========================================================
-          echo "🔎 Scanning repository..."
+          echo "🔎 Scanning ENTIRE repository..."
           files_changed=0
 
-          # Find all .md files (excluding .git)
+          # 2. FIND ALL MARKDOWN FILES (Recursive)
+          # We use process substitution to avoid subshell issues
           while IFS= read -r file; do
-            
-            # --- Exclusion Logic ---
-            skip_file=false
-            for exclude in "${EXCLUDE_LIST[@]}"; do
-              if [[ "$file" == *"$exclude"* ]]; then
-                echo "  ⏭️ SKIPPING (Excluded): $file"
-                skip_file=true
-                break
-              fi
-            done
-            if [ "$skip_file" = true ]; then continue; fi
-            # -----------------------
-
-            # Process the file
+            modified=false
             for alias in "${!LINKS[@]}"; do
               target="${LINKS[$alias]}"
               if grep -Fq "$alias" "$file"; then
-                echo "  👉 FIXING: $alias found in $file"
+                # Use @ as delimiter to prevent table pipe conflicts
                 sed -i "s@$alias@$target@g" "$file"
-                files_changed=$((files_changed+1))
+                modified=true
               fi
             done
+            
+            if [ "$modified" = true ]; then
+              echo "  👉 Fixed: $file"
+              files_changed=$((files_changed+1))
+            fi
+          done < <(find . -type f -name "*.md" -not -path "./.git/*")
 
-          done < <(find . -name "*.md" -not -path "./.git/*")
-
-          if [ "$files_changed" -eq 0 ]; then
-            echo "✅ Repository is clean."
-          else
-            echo "🚀 Fixed aliases in $files_changed files."
-          fi
+          echo "------------------------------------------------"
+          echo "🚀 Modified $files_changed files."
 
       - name: Commit and Push Changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "docs: global link expansion fix [skip ci]"
-          file_pattern: "*.md"
+          # CRITICAL FIX: Use recursive glob pattern to catch files in subfolders
+          file_pattern: "**/*.md"
