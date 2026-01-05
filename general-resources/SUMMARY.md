@@ -67,6 +67,7 @@
   * [Log of MariaDB Contributions](community/contributing-participating/log-of-mariadb-contributions.md)
   * [Web Hosting Providers Offering MariaDB](community/contributing-participating/web-hosting-providers-offering-mariadb.md)
   * [Google Summer of Code](community/contributing-participating/google-summers-of-code/README.md)
+    * [Google Summer of Code 2026](community/contributing-participating/google-summers-of-code/google-summer-of-code-2026.md)
     * [Google Summer of Code 2025](community/contributing-participating/google-summers-of-code/google-summer-of-code-2025.md)
     * [Google Summer of Code 2024](community/contributing-participating/google-summers-of-code/google-summer-of-code-2024.md)
     * [Google Summer of Code 2023](community/contributing-participating/google-summers-of-code/google-summer-of-code-2023.md)
