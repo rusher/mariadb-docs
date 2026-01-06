@@ -10,7 +10,7 @@ description: >-
 This functionality is available from MariaDB 11.4.
 {% endhint %}
 
-The term _Online Schema Change_ refers to the ability to update the table schema without blocking concurrent DML statements for the duration of the schema change.
+The term _Online Schema Change_ refers to the ability to update the table schema without blocking concurrent DML[^1] statements for the duration of the schema change.
 
 ## Example
 
