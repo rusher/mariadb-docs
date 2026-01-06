@@ -14,7 +14,7 @@ RELEASE_LOCK(str)
 
 ## Description
 
-Releases the lock named by the string `str` that was obtained with [GET\_LOCK()](get_lock.md). Returns 1 if the lock was released, 0 if the lock was not established by this thread (in which case the lock is not released), and `NULL` if the named lock did not exist. The lock does not exist if it was never obtained by a call to `GET_LOCK()` or if it has previously been released.
+Releases the lock named by the string `str` that was obtained with [GET\_LOCK()](get_lock.md). Returns `1` if the lock was released, `0` if the lock was not established by this connection (in which case the lock is not released), and `NULL` if the named lock did not exist. The lock does not exist if it was never obtained by a call to `GET_LOCK()` or if it has previously been released.
 
 `str` is case insensitive. If `str` is an empty string or `NULL`, `RELEASE_LOCK()` returns `NULL` and does nothing.
 
