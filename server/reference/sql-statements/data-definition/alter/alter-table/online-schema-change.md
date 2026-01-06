@@ -6,6 +6,10 @@ description: >-
 
 # Online Schema Change
 
+{% hint style="info" %}
+This functionality is available from MariaDB 11.4.
+{% endhint %}
+
 The term _Online Schema Change_ refers to the ability to update the table schema without blocking concurrent DML statements for the duration of the schema change.
 
 ## Example
@@ -28,7 +32,7 @@ INSERT INTO items(name) VALUES (“New item”);
 
 If the `INSERT` statement starts after the `ALTER TABLE` statement, it is not blocked, but proceeds normally, and may finish before the `ALTER TABLE` statement.
 
-`ALTER TABLE` always allows concurrent [SELECT ](../../../data-manipulation/selecting-data/select.md)statements. If the `LOCK=NONE` locking strategy is chosen, it allows concurrent modifications via DML[^1] statements like `INSERT`, `DELETE`, or `UPDATE`. `LOCK=NONE` is supported by the InnoDB and the Partition engine when `ALGORITHM=NOCOPY` is chosen, and is a default locking strategy when available.
+`ALTER TABLE` always allows concurrent [SELECT](../../../data-manipulation/selecting-data/select.md) statements. If the `LOCK=NONE` locking strategy is chosen, it allows concurrent modifications via DML[^1] statements like `INSERT`, `DELETE`, or `UPDATE`. `LOCK=NONE` is supported by the InnoDB and the Partition engine when `ALGORITHM=NOCOPY` is chosen, and is a default locking strategy when available.
 
 ### New Behavior
 
