@@ -24,7 +24,7 @@ WHERE ENGINE = 'Aria'
   AND TABLE_SCHEMA != 'information_schema';
 ```
 
-Each table in the result-set was potentially written to disk in an encrypted state. Before removing the configuration for the encryption keys, you need to rebuild each of these to an unencrypted state. This can be done with an [ALTER TABLE](../../../../../reference/sql-statements/data-definition/alter/alter-table/) statement.
+Each table in the result set was potentially written to disk in an encrypted state. Before removing the configuration for the encryption keys, you need to rebuild each of these to an unencrypted state. This can be done with an [ALTER TABLE](../../../../../reference/sql-statements/data-definition/alter/alter-table/) statement.
 
 ```sql
 ALTER TABLE test.aria_table ENGINE = Aria ROW_FORMAT = PAGE;
