@@ -10,7 +10,7 @@ MariaDB Enterprise Server 10.4 introduces the following new features:
 
 ## Enterprise Lifecycle
 
-MariaDB Enterprise Server uses an [enterprise lifecycle](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/~/changes/32/mariadb-enterprise-server-release-notes/enterprise-server-lifecycle) that provides optimized builds, predictable release behavior, and vendor support.
+MariaDB Enterprise Server uses an [enterprise lifecycle](../../enterprise-server-lifecycle.md) that provides optimized builds, predictable release behavior, and vendor support.
 
 ## InnoDB Instant ALTER
 
@@ -30,7 +30,7 @@ MariaDB Enterprise Server uses an [enterprise lifecycle](https://app.gitbook.com
 
 ## Enterprise Backup
 
-[MariaDB Enterprise Backup](../../10-4/broken-reference/) enables non-blocking backups of MariaDB Enterprise Server.
+[MariaDB Enterprise Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-enterprise-backup) enables non-blocking backups of MariaDB Enterprise Server.
 
 ## Data-at-Rest Encryption
 
@@ -42,10 +42,10 @@ With [data-at-rest encryption](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/se
 
 ## MariaDB Enterprise Cluster
 
-MariaDB Enterprise Server includes support for [MariaDB Enterprise Cluster](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/galera/README.md), which incorporates Galera Cluster 4. New features include:
+MariaDB Enterprise Server includes support for [MariaDB Enterprise Cluster](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/), which incorporates Galera Cluster 4. New features include:
 
 * Parallel replication and improved performance when blocks of grouped transactions can be committed without conflict.
-* The [Streaming replication](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/galera/README.md), to eliminate transaction limitations by fragmenting huge transactions for replication.
+* The [Streaming replication](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/readme/about-galera-replication#streaming-replication), to eliminate transaction limitations by fragmenting huge transactions for replication.
 * Rolling upgrades to permit a smooth transition of MariaDB Cluster deployments to Galera 4 functionality by operating as a Galera 3-compatible node until all nodes are Galera 4-compatible.
 
 ## Data Reliability and SQL Functionality
@@ -67,7 +67,7 @@ MariaDB Enterprise Server features [security](https://app.gitbook.com/s/SsmexDFP
 * ALTER USER option for account locking, to enable MariaDB Enterprise Server to reject all new connections for an account.
 * Account blocking based on number of failed login attempts.
 * Ability to set password expiration dates.
-* Logging of access when passwords are ignored, e.g., for passwordless authentication by UNIX socket.
+* Logging of access when passwords are ignored, e.g., for password less authentication by UNIX socket.
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

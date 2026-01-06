@@ -1,6 +1,6 @@
 # Release Notes for MariaDB Enterprise Server 10.4.33-23
 
-MariaDB Enterprise Server 10.4.33-23 is a maintenance release of [MariaDB Enterprise Server](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb-enterprise-server/README.md) 10.4. This release includes a variety of fixes.
+MariaDB Enterprise Server 10.4.33-23 is a maintenance release of [MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-enterprise-server/mariadb-enterprise-server-upgrade-paths/upgrades/mariadb-enterprise-server-10.4). This release includes a variety of fixes.
 
 MariaDB Enterprise Server 10.4.33-23 was released on 2024-03-11.
 
@@ -95,7 +95,7 @@ wsrep::transaction::before_rollback(): Assertion state() == s_executing || state
 
 ## \* Platforms
 
-In alignment to the enterprise lifecycle, MariaDB Enterprise Server 10.4.33-23 is provided for:
+In alignment to the [enterprise lifecycle](../../enterprise-server-lifecycle.md), MariaDB Enterprise Server 10.4.33-23 is provided for:
 
 * CentOS 7 (x86\_64)
 * Debian 10 (x86\_64, ARM64)
@@ -107,15 +107,15 @@ In alignment to the enterprise lifecycle, MariaDB Enterprise Server 10.4.33-23 i
 * SUSE Linux Enterprise Server 15 (x86\_64, ARM64)
 * Ubuntu 20.04 (x86\_64, ARM64)
 
-Some components of MariaDB Enterprise Server are supported on a subset of platforms. See MariaDB Engineering Policies for details.
+Some components of MariaDB Enterprise Server are supported on a subset of platforms. See [MariaDB Corporation Engineering Policies](https://mariadb.com/engineering-policies) for details.
 
 ## Installation Instructions
 
 * [MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/single-node-topologies/enterprise-server)
-* [Enterprise Cluster Topology with MariaDB Enterprise Server ](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)[10](../10-4/broken-reference/)[.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)
+* [Enterprise Cluster Topology with MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)
 * [Primary/Replica Topology with MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/primary-replica)
-* [Enterprise Spider Sharded Topology with MariaDB Enterprise Server 10.4](../10-4/broken-reference/)
-* [Enterprise Spider Federated Topology with MariaDB Enterprise Server 10.4](../10-4/broken-reference/)
+* [Enterprise Spider Sharded Topology with MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/mariadb-enterprise-spider-topologies/sharded-mariadb-enterprise-spider-topology)
+* [Enterprise Spider Federated Topology with MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology)
 
 ## Upgrade Instructions
 

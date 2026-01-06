@@ -1,6 +1,6 @@
 # Release Notes for MariaDB Enterprise Server 10.4.11-5
 
-This fifth release of [MariaDB Enterprise Server](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb-enterprise-server/README.md) 10.4 is a maintenance release, including a variety of fixes.
+This fifth release of [MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-enterprise-server/mariadb-enterprise-server-upgrade-paths/upgrades/mariadb-enterprise-server-10.4) is a maintenance release, including a variety of fixes.
 
 MariaDB Enterprise Server 10.4.11-5 was released on 2020-01-06.
 
@@ -30,7 +30,7 @@ MariaDB Enterprise Server 10.4.11-5 was released on 2020-01-06.
 ### Can result in unexpected behavior
 
 * Client received error `SEC_E_INVALID_TOKEN` when SSL is used and connecting to MariaDB Enterprise Server running on Microsoft Windows. ([MDEV-13492](https://jira.mariadb.org/browse/MDEV-13492))
-* The restore of [Aria](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/aria) tables was not always possible if MariaDB Backup was using the parameters [--prepare](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-4/broken-reference/README.md) `--incremental` ([MDEV-18310](https://jira.mariadb.org/browse/MDEV-18310))
+* The restore of [Aria](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/aria) tables was not always possible if MariaDB Backup was using the parameters [--prepare](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup/mariadb-backup-options#prepare) `--incremental` ([MDEV-18310](https://jira.mariadb.org/browse/MDEV-18310))
 * An incomplete result set was returned when [sort\_buffer\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#sort_buffer_size) was too small. ([MDEV-21044](https://jira.mariadb.org/browse/MDEV-21044))
 * A query with system versioning filters did not show an error when executed on not [system versioned tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/temporal-tables/system-versioned-tables). ([MDEV-18929](https://jira.mariadb.org/browse/MDEV-18929))
 * [CHECK TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/table-statements/check-table) erroneously reported error `"Found a misplaced row"` for [system versioned tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/temporal-tables/system-versioned-tables) with history partition. ([MDEV-21011](https://jira.mariadb.org/browse/MDEV-21011))
@@ -42,7 +42,7 @@ Interface Changes
 
 ## Platforms
 
-In alignment with the [enterprise lifecycle](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/~/changes/32/mariadb-enterprise-server-release-notes/enterprise-server-lifecycle), MariaDB Enterprise Server 10.4.11-5 is provided for:
+In alignment with the [enterprise lifecycle](../../enterprise-server-lifecycle.md), MariaDB Enterprise Server 10.4.11-5 is provided for:
 
 * Red Hat Enterprise Linux 8
 * Red Hat Enterprise Linux 7
@@ -59,7 +59,7 @@ In alignment with the [enterprise lifecycle](https://app.gitbook.com/o/diTpXxF5W
 * SUSE Linux Enterprise Server 12
 * Microsoft Windows
 
-Some components of MariaDB Enterprise Server might not support all platforms. For additional information, see "[MariaDB Corporation Engineering Policies](https://mariadb.com/engineering-policies)".
+Some components of MariaDB Enterprise Server might not support all platforms. For additional information, see [MariaDB Corporation Engineering Policies](https://mariadb.com/engineering-policies).
 
 #### Note
 
@@ -68,10 +68,10 @@ CentOS 6, Debian 8, and Red Hat Enterprise Linux 6 are no longer supported as pe
 ## Installation Instructions
 
 * [MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/single-node-topologies/enterprise-server)
-* [Enterprise Cluster Topology with MariaDB Enterprise Server ](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)[10](../10-4/broken-reference/)[.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)
+* [Enterprise Cluster Topology with MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)
 * [Primary/Replica Topology with MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/primary-replica)
-* [Enterprise Spider Sharded Topology with MariaDB Enterprise Server 10.4](../10-4/broken-reference/)
-* [Enterprise Spider Federated Topology with MariaDB Enterprise Server 10.4](../10-4/broken-reference/)
+* [Enterprise Spider Sharded Topology with MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/mariadb-enterprise-spider-topologies/sharded-mariadb-enterprise-spider-topology)
+* [Enterprise Spider Federated Topology with MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology)
 
 ## Upgrade Instructions
 
