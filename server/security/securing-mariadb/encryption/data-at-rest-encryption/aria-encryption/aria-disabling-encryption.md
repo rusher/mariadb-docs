@@ -6,7 +6,7 @@ Don't remove the [Encryption Key Management](../../../securing-mariadb-encryptio
 
 ## Disabling Encryption on User-created Tables
 
-With tables that the user creates, you can disable encryption by setting the [aria\_encrypt\_tables](../../../../../reference/storage-engines/aria/aria-system-variables.md#aria_encrypt_tables) system variable to `OFF`. Once this is set, MariaDB no longer encrypts new tables created with the Aria storage engine.
+With tables that the user creates, you can disable encryption by setting the [aria\_encrypt\_tables](../../../../../server-usage/storage-engines/aria/aria-system-variables.md#aria_encrypt_tables) system variable to `OFF`. Once this is set, MariaDB no longer encrypts new tables created with the Aria storage engine.
 
 ```sql
 SET GLOBAL aria_encrypt_tables = OFF;
