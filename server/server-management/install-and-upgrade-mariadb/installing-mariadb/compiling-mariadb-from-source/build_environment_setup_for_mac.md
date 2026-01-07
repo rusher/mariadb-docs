@@ -4,7 +4,7 @@ description: >-
   installing dependencies via Homebrew and configuring CMake.
 ---
 
-# Build Environment Setup for Mac
+# Build Environment Setup for macOS
 
 ## Prelude
 
@@ -28,7 +28,7 @@ brew install bison byacc cmake git gnutls libxml2 m4 openssl pcre pcre2 zlib zst
 
 Second, clone MariaDB from the GitHub repository: see the [Getting the MariaDB Source Code](../../../../clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code.md) page for options.
 
-## Setup the Environment
+## Set Up the Environment
 
 CMake should find the dependencies automatically, but we may need to set several environment variables to explicitly point at locations of dependencies installed by Homebrew to avoid conflicts with system-native versions that aren't suitable for building MariaDB. In the worst case scenario, use the following (but you can try building MariaDB first by skipping to the "Run CMake" section below to see if these are necessary in your setup):
 
@@ -103,12 +103,18 @@ cmake .. \
         -DCONC_WITH_UNITTEST=OFF \
         -DWITH_WSREP=OFF \
         -DWITHOUT_DYNAMIC_PLUGINS=0 \
-        -DWITH_SSL=bundled
+        -DWITH_SSL=bundled \
+        -DWITH_PCRE=bundled \
+        -G Ninja
 ```
 
 (You can vary the values of these flags depending on what you need to do.)
 
-If `CMake` runs succesfully, you can then run the build itself:
+{% hint style="info" %}
+To install Ninja, run `brew install ninja` in Terminal.
+{% endhint %}
+
+If `CMake` runs successfully, you can then run the build itself:
 
 ```
 cmake --build . --parallel 8
