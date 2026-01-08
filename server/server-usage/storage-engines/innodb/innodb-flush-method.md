@@ -14,7 +14,7 @@ The `innodb_flush_method` variable has been deprecated from MariaDB 11.0.
 
 [innodb\_flush\_method](innodb-system-variables.md#innodb_flush_method) is a variable that has been available in MariaDB (and MySQL) for a long time. It defines the method used to flush data to InnoDB data files and log files, which can affect I/O throughput quite a bit.&#x20;
 
-The default setting for this variable initially was `fsync`, but was changed to `O_DIRECT` in MariaDB 10.6. The variable has been deprecated in MariaDB 11.0 and replaced by other settings (which are not described here – see the documentation of the variable for that).
+The default setting for this variable initially was `fsync`, but was [changed to `O_DIRECT` in MariaDB 10.6](innodb-flush-method.md#behavior-change-in-mariadb-10.6). The variable has been [deprecated in MariaDB 11.0 and replaced by other settings](innodb-flush-method.md#behavior-change-in-mariadb-11.0).
 
 This page describes the main settings and examines when it makes sense or not to change the default values.
 
