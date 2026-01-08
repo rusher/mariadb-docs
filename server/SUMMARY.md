@@ -189,6 +189,7 @@
       * [InnoDB Change Buffering](server-usage/storage-engines/innodb/innodb-change-buffering.md)
       * [InnoDB Data Scrubbing](server-usage/storage-engines/innodb/innodb-data-scrubbing.md)
       * [InnoDB Doublewrite Buffer](server-usage/storage-engines/innodb/innodb-doublewrite-buffer.md)
+      * [InnoDB Flush Method](server-usage/storage-engines/innodb/innodb-flush-method.md)
       * [InnoDB Lock Modes](server-usage/storage-engines/innodb/innodb-lock-modes.md)
       * [InnoDB Monitors](server-usage/storage-engines/innodb/innodb-monitors.md)
       * [InnoDB Page Compression](server-usage/storage-engines/innodb/innodb-page-compression.md)
