@@ -2391,7 +2391,8 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `innodb_snapshot_isolation`
 
-* Description: Whether or not to use snapshot isolation (write/write conflict detection within InnoDB). If enabled (set to `ON`), an error `DB_RECORD_CHANGED` (`HA_ERR_RECORD_CHANGED`, `ER_CHECKREAD`) is raised if an attempt is made to acquire a lock on a record that does not exist in the current read view. This error is treated in the same way as a deadlock, and the transaction is rolled back. When set, the default isolation level, [REPEATABLE READ](../../../reference/sql-statements/transactions/transactions-repeatable-read.md) are come Snapshot Isolation.
+* Description: Whether or not to use snapshot isolation (write/write conflict detection within InnoDB).\
+  If enabled (set to `ON`), an error `DB_RECORD_CHANGED` (`HA_ERR_RECORD_CHANGED`, `ER_CHECKREAD`) is raised if an attempt is made to acquire a lock on a record that does not exist in the current read view. This error is treated in the same way as a deadlock, and the transaction is rolled back. This affects the default isolation level, [REPEATABLE READ](../../../reference/sql-statements/transactions/transactions-repeatable-read.md).
 * Command line: `--innodb-snapshot-isolation={0|1}`
 * Scope: Global, Session
 * Dynamic: Yes
