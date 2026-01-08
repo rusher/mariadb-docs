@@ -1197,8 +1197,8 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: [InnoDB](./) flushing method. Windows always uses `async_unbuffered` , meaning that this variable has no effect. Adjusting this variable can give performance improvements, but behavior differs widely on different filesystems. Changing from the default value may cause problems in some situations, so test and benchmark carefully before adjusting. In MariaDB, Windows recognizes and correctly handles the Unix methods, but if no methods are specified, it uses its own default – unbuffered write (analog of `O_DIRECT`) plus syncs (for instance, `FileFlushBuffers()`) for all files.
 * A detailed description of the variable and its effects can be found [on this page](innodb-flush-method.md).
-  * `O_DSYNC` - `O_DSYNC` is used to open and flush logs, and `fsync()` to flush the data files.
-  * `O_DIRECT` - `O_DIRECT` is used to open data files, and `fsync()` to flush data and logs. This is the default on Unix from MariaDB 10.6.
+  * `O_DSYNC` is used to open and flush logs, and `fsync()` to flush the data files.
+  * `O_DIRECT` is used to open data files, and `fsync()` to flush data and logs. This is the default on Unix from MariaDB 10.6.
   * `O_DIRECT_NO_FSYNC` uses `O_DIRECT` during flushing I/O, but skips `fsync()` afterwards. Not suitable for XFS filesystems. Generally not recommended over `O_DIRECT`, as it does not get the benefit of [innodb\_use\_native\_aio=ON](innodb-system-variables.md#innodb_use_native_aio).
   * `ALL_O_DIRECT` is available with XtraDB only. Uses `O_DIRECT` for opening both data and logs and `fsync()` to flush data but not logs. Use with large InnoDB files only, because otherwise it may cause a performance degradation. Set [innodb\_log\_block\_size](innodb-system-variables.md#innodb_log_block_size) to 4096 on ext4 filesystems. This is the default log block size on ext4 and avoids unaligned AIO/DIO warnings.
   * `unbuffered` - Windows-only default
