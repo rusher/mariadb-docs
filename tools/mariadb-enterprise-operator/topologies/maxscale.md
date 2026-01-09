@@ -531,6 +531,7 @@ Multiple `MaxScale` replicas can be specified by providing the `spec.replicas` f
 ```sh
 kubectl scale maxscale maxscale-galera --replicas 3
 ```
+Or even configuring an `HorizontalPodAutoscaler` to do the job automatically.
 
 ## Suspend resources
 
