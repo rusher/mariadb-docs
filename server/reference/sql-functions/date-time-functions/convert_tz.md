@@ -26,7 +26,7 @@ The supported range is `1970-01-01 00:00:00` to `2106-02-07 06:28:15` UTC.
 {% endtab %}
 
 {% tab title="< 11.5" %}
-The supported range is `'1970-01-01 00:00:01'` to `'2038-01-19 05:14:07'` UTC.
+The supported range is `1970-01-01 00:00:01` to `2038-01-19 05:14:07` UTC.
 {% endtab %}
 {% endtabs %}
 
