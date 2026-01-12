@@ -1,3 +1,10 @@
+---
+description: >-
+  Reference list of system variables related to TLS configuration, such as
+  `ssl_cipher`, `ssl_crl`, and `have_ssl`, used to manage and monitor encryption
+  settings.
+---
+
 # SSL/TLS System Variables
 
 The system variables listed on this page relate to encrypting data during transfer between servers and clients using the Transport Layer Security (TLS) protocol. Often, the term Secure Sockets Layer (SSL) is used interchangeably with TLS, although strictly speaking the SSL protocol is the predecessor of TLS and is no longer considered secure.

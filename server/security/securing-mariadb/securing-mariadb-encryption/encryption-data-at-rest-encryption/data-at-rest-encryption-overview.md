@@ -1,3 +1,10 @@
+---
+description: >-
+  Introduction to MariaDB's transparent data-at-rest encryption architecture,
+  which supports pluggable key management and per-table or per-tablespace
+  encryption for InnoDB and Aria engines.
+---
+
 # Data-at-Rest Encryption Overview
 
 ## Overview

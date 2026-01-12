@@ -1,3 +1,9 @@
+---
+description: >-
+  Instructions for enabling encryption for binary logs and relay logs using the
+  `encrypt_binlog` system variable to protect data modifications stored on disk.
+---
+
 # Encrypting Binary Logs
 
 MariaDB Server can encrypt the server's [binary logs](../../../../server-management/server-monitoring-logs/binary-log/) and [relay logs](../../../../server-management/server-monitoring-logs/binary-log/relay-log.md). This ensures that your binary logs are only accessible through MariaDB.

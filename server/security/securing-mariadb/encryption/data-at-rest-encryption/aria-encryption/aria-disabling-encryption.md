@@ -1,3 +1,10 @@
+---
+description: >-
+  Instructions for safely disabling encryption on Aria tables, emphasizing the
+  need to rebuild tables to an unencrypted state before removing key management
+  plugins.
+---
+
 # Aria Disabling Encryption
 
 The process involved in safely disabling data-at-rest encryption for your Aria tables is very similar to that of enabling encryption. To disable, you need to set the relevant system variables and then rebuild each table into an unencrypted state.

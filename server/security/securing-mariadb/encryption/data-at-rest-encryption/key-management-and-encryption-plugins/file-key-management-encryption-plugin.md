@@ -1,3 +1,10 @@
+---
+description: >-
+  Details the File Key Management plugin, which reads encryption keys from a
+  plain-text (or encrypted) file, serving as a simple solution or reference
+  implementation for data-at-rest encryption.
+---
+
 # File Key Management Encryption Plugin
 
 MariaDB's [data-at-rest encryption](../../../securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md) requires the use of a [key management and encryption plugin](../../../securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md). These plugins are responsible both for the management of encryption keys and for the actual encryption and decryption of data.

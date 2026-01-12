@@ -1,3 +1,10 @@
+---
+description: >-
+  Guide to using the HashiCorp Key Management plugin, which integrates MariaDB
+  with HashiCorp Vault for centralized, secure key storage and lifecycle
+  management.
+---
+
 # Hashicorp Key Management Plugin
 
 {% hint style="info" %}
