@@ -1,14 +1,11 @@
+---
+description: >-
+  Details the authentication changes introduced in MariaDB 10.4, including
+  multiple authentication plugins per user, the `mysql.global_priv` table, and
+  the default unix_socket authentication for root.
+---
+
 # Authentication
-
-{% tabs %}
-{% tab title="Current" %}
-
-{% endtab %}
-
-{% tab title="< 10.4" %}
-MariaDB 10.4 introduced a number of changes to the authentication process, intended to make things easier and more intuitive. Those changes aren't available in earlier versions of MariaDB.
-{% endtab %}
-{% endtabs %}
 
 For Windows, see [Authentication Plugin - GSSAPI](../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md).
 
