@@ -1,3 +1,10 @@
+---
+description: >-
+  Documentation for the `ORACLE` SQL mode, which provides extensive
+  compatibility with Oracle Database PL/SQL syntax, data types, and sequences,
+  facilitating migration.
+---
+
 # SQL\_MODE=ORACLE
 
 {% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/Dn7q74OYovrrC5l3cYgb/" %}
