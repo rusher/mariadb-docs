@@ -28,7 +28,7 @@ The `DROP USER` statement removes one or more MariaDB accounts. It removes privi
 
 {% tabs %}
 {% tab title="Current" %}
-If you specify an account that is currently connected, it is not deleted until the connection is closed. The connection is not automatically closed. The statement completes with a warning:
+If you specify an account that is currently connected, it is deleted, but the statement completes with a warning:
 
 {% code overflow="wrap" %}
 ```sql
