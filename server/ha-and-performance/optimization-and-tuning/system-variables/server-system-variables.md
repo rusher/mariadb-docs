@@ -1,3 +1,11 @@
+---
+description: >-
+  Documentation for server system variables that control the server's
+  configuration and behavior (e.g., `max_connections`,
+  `innodb_buffer_pool_size`), which can often be set dynamically or in
+  configurat
+---
+
 # Server System Variables
 
 ## Overview

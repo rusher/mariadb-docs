@@ -1,3 +1,10 @@
+---
+description: >-
+  Details the `sql_mode` system variable, which defines the strictness of SQL
+  syntax and validation (e.g., `STRICT_TRANS_TABLES`, `ANSI_QUOTES`), enabling
+  emulation of other database behaviors.
+---
+
 # SQL\_MODE
 
 MariaDB supports several different modes which allow you to tune it to suit your needs.
