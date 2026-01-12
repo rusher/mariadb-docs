@@ -40,13 +40,13 @@ If you installed the plugin by providing the [--plugin-load](../../../server-man
 
 ## Using the Plugin
 
-To create a user in MariaDB that was using `caching_sha2_password` plugin in MySQL, do the usual
+To create a user in MariaDB that was using `caching_sha2_password` plugin in MySQL, issue this statement:
 
 ```sql
 CREATE USER user@host IDENTIFIED WITH caching_sha2_password USING 'authentication_string';
 ```
 
-where `authentication_string` is taken from the `mysql.user` table for the corresponding user in MySQL installation. Beware that the authentication string for `caching_sha2_password` in MySQL can contain non-printable characters and copying it from the terminal window will likely not work.
+Here, `authentication_string` is taken from the `mysql.user` table for the corresponding user in MySQL installation. Beware that the authentication string for `caching_sha2_password` in MySQL can contain non-printable characters and copying it from the terminal window will likely not work.
 
 ## System Variables
 
