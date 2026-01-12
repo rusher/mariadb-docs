@@ -306,6 +306,14 @@ Lock all tables across all databases. This is achieved by acquiring a global rea
 
 For each dumped database, lock all tables to be dumped before dumping them. The tables are locked with `READ LOCAL` to allow concurrent inserts in the case of [MyISAM](../../server-usage/storage-engines/myisam-storage-engine/) tables. For transactional tables such as [InnoDB](../../server-usage/storage-engines/innodb/), `--single-transaction` is a much better option than `--lock-tables` because it does not need to lock the tables at all. Because `--lock-tables` locks tables for each database separately, this option does not guarantee that the tables in the dump file are logically consistent between databases. Tables in different databases may be dumped in completely different states. Use `--skip-lock-tables` to disable.
 
+#### -L, --wildcards
+
+{% hint style="info" %}
+This option is available from MariaDB 12.1.
+{% endhint %}
+
+Usage of wildcards in the table or database name. Without the [--databases](mariadb-dump.md#b-databases) option, wildcards are only recognized in table names.
+
 #### --log-error=_file_
 
 Log warnings and errors by appending them to the named _file_. The default is no logging.
