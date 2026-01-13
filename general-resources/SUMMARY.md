@@ -245,7 +245,6 @@
       * [MariaDB Error Messages](development-articles/general-info/mariadb-fault-finding/mariadb-error-messages.md)
       * [Memory is Leaking](development-articles/general-info/mariadb-fault-finding/memory-is-leaking.md)
   * [MariaDB Internals](development-articles/mariadb-internals/README.md)
-    * [Information Schema plugins: SHOW and FLUSH statements](development-articles/mariadb-internals/information-schema-plugins-show-and-flush-statements.md)
     * [Merging into MariaDB](development-articles/mariadb-internals/mariadb-internals-documentation-merging-into-mariadb/README.md)
       * [Creating a New Merge Tree](development-articles/mariadb-internals/mariadb-internals-documentation-merging-into-mariadb/creating-a-new-merge-tree.md)
       * [Merging from MySQL (obsolete)](development-articles/mariadb-internals/mariadb-internals-documentation-merging-into-mariadb/merging-from-mysql-obsolete.md)

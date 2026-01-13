@@ -2229,6 +2229,7 @@
     * [Writing Plugins for MariaDB](reference/plugins/development-writing-plugins-for-mariadb.md)
     * [Encryption Plugin API](reference/plugins/encryption-plugin-api.md)
     * [Password Validation Plugin API](reference/plugins/password-validation.md)
+    * [Information Schema plugins: SHOW and FLUSH statements](reference/plugins/information-schema-plugins-show-and-flush-statements.md)
     * [MariaDB Enterprise Audit](reference/plugins/mariadb-enterprise-audit.md)
     * [MariaDB Community Audit Plugin](reference/plugins/mariadb-audit-plugin/README.md)
       * [Audit Plugin Overview](reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-overview.md)
