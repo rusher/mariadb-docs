@@ -174,22 +174,18 @@ SELECT * FROM t1, t2 WHERE t1.a(+) = t2.b;
 **Outer join operators**
 
 Outer join operators can occur only in the `WHERE` clause. The `WHERE` clause\
-can consist of one predicate, or of multiple predicates connected with `AND`. Each of the predicates can reference:
+can consist of one predicate[^1], or of multiple predicates connected with `AND`. Each of the predicates can reference:
 
-* only one outer-joined table (that is, the "`INNER`" table) (all\
-  references to its columns have an "outer join operator");
-* zero, one or more "`OUTER`" tables (without an outer join\
-  operator).
+* only one outer-joined table (that is, the "`INNER`" table) (all references to its columns have an "outer join operator");
+* zero, one, or more "`OUTER`" tables (without an outer join operator).
 
-If a query uses outer join operators, the `FROM` clause must be a simple\
-comma-separated list of tables (denoting inner join operations):
+If a query uses [outer join operators](#user-content-fn-2)[^2], the `FROM` clause must be a simple comma-separated list of tables (denoting inner join operations):
 
 ```sql
 FROM t1, t2, ..., tN
 ```
 
-If outer join operators dictates that some table `t_j` is joined with an outer\
-join, the `FROM` clause looks like this:
+If an outer join operators dictates that a table `t_j` is joined with an outer join, the `FROM` clause looks like this:
 
 ```sql
 FROM (t1, ..., tbl) LEFT JOIN t_j ON outer_join_predicates, ... tN
@@ -199,13 +195,9 @@ Here, all tables used by `outer_join_predicates` are moved to the left (which is
 
 **Predicates**
 
-A predicate that refers to an `INNER` table and `OUTER` table dictates that\
-the `INNER` table is joined with an outer join operation.
+A predicate that refers to an `INNER` table and `OUTER` table dictates that the `INNER` table is joined with an outer join operation.
 
-A predicate that only refers to an `INNER` table (like `t1.col(+)=124`) is\
-added to the table's `ON` expression, provided there is another predicate that\
-dictates that the inner table is joined with outer join operation\
-(otherwise, the predicate remains in the `WHERE` clause and a warning is issued).
+A predicate that only refers to an `INNER` table (like `t1.col(+)=124`) is added to the table's `ON` expression, provided there is another predicate that dictates that the inner table is joined with outer join operation (otherwise, the predicate remains in the `WHERE` clause and a warning is issued).
 
 ## Examples
 
@@ -225,3 +217,7 @@ SELECT left_tbl.*
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}
+
+[^1]: A predicate is a condition that specifies how rows from two or more tables are matched together, forming the basis for the join operation.
+
+[^2]: An outer join operator is used to return all rows from one or both tables involved in the join, including those that do not have matching rows in the other table.
