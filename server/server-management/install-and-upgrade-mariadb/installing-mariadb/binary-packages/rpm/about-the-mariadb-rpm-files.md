@@ -13,40 +13,57 @@ The available RPM packages depend on the specific MariaDB release series.
 
 ### Available RPM Packages in MariaDB
 
-The following RPMs are available in MariaDB 12.1:
+The following RPMs are available in MariaDB Community Server 12.1:
 
-| Package Name                       | Description                                                                                                                                                                                                  |
-| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `galera-4`                         | The WSREP provider for Galera 4.                                                                                                                                                                             |
-| `galera-4-debuginfo`               | Debuginfo for `galera-4`                                                                                                                                                                                     |
-| `galera-4-debugsource`             | Debug sources for package `galera-4`                                                                                                                                                                         |
-| `mariadb-backup`                   | `mariadb-backup` is a command-line utility for creating consistent and reliable backups of MariaDB databases, supporting full and incremental backup options.                                                |
-| `mariadb-backup-debuginfo`         | Debuginfo for `mariadb-backup`                                                                                                                                                                               |
-| `MariaDB-client`                   | Client tools like mariadb CLI, `mariadb-dump`, and others.                                                                                                                                                   |
-| `mariadb-client-compat`            | Symbolic links from old MySQL tool names to MariaDB, like `mysqladmin` -> `mariadb-admin` or `mysql` -> `mariadb`. Good to have if you are using MySQL tool names in your scripts.                           |
-| `mariadb-client-debuginfo`         | Debuginfo for client tools like mariadb CLI, `mariadb-dump`, and others.                                                                                                                                     |
-| `mariadb-common`                   | Character set files and `/etc/my.cnf`                                                                                                                                                                        |
-| `mariadb-common-debuginfo`         | Debuginfo for character set files and `/etc/my.cnf`                                                                                                                                                          |
-| `mariadb-compat`                   | Old shared client libraries, may be needed by old mariadb or mysql clients                                                                                                                                   |
-| `mariadb-connect-engine`           | The CONNECT storage engine.                                                                                                                                                                                  |
-| `mariadb-connect-engine-debuginfo` | Debuginfo for the CONNECT storage engine.                                                                                                                                                                    |
-| `mariadb-cracklib-password-check`  | The `cracklib_password_check` password validation plugin.                                                                                                                                                    |
-| `mariadb-cracklib-password-check`  | Debuginfo for the `cracklib_password_check` password validation plugin.                                                                                                                                      |
-| `mariadb-devel`                    | Development headers and static libraries.                                                                                                                                                                    |
-| `mariadb-devel-debuginfo`          | Debuginfo for development headers and static libraries.                                                                                                                                                      |
-| `mariadb-gssapi-server`            | The gssapi authentication plugin.                                                                                                                                                                            |
-| `mariadb-gssapi-server-debuginfo`  | Debuginfo for the gssapi authentication plugin.                                                                                                                                                              |
-| `mariadb-rocksdb-engine`           | The MyRocks storage engine.                                                                                                                                                                                  |
-| `mariadb-rocksdb-engine-debuginfo` | Debuginfo for the MyRocks storage engine.                                                                                                                                                                    |
-| `mariadb-server`                   | The server and server tools, like `myisamchk` and `mariadb-hotcopy` are here.                                                                                                                                |
-| `mariadb-server-compat`            | Symbolic links from old MySQL server executable names to MariaDB, like `mysqld` -> `mariadbd` or `mysql_install_db` -> `mariadb-install-db`. Good to have if you are using MySQL tool names in your scripts. |
-| `mariadb-server-debuginfo`         | Debuginfo for the server and server tools, like `myisamchk` and `mariadb-hotcopy` are here.                                                                                                                  |
-| `mariadb-shared`                   | Dynamic client libraries.                                                                                                                                                                                    |
-| `mariadb-shared-debuginfo`         | Debuginfo for dynamic client libraries.                                                                                                                                                                      |
-| `mariadb-test`                     | `mysql-client-test` executable, and mysql-test framework with the tests.                                                                                                                                     |
-| `mariadb-test-debuginfo`           | Debuginfo for `mysql-client-test` executable, and `mysql-test` framework with the tests.                                                                                                                     |
-| `mariadb-tokudb-engine`            | The TokuDB storage engine.                                                                                                                                                                                   |
-| `mariadb-tokudb-engine-debuginfo`  | Debuginfo for the TokuDB storage engine.                                                                                                                                                                     |
+| Package Name                       | Description                                                                                              |
+| ---------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `galera-4`                         | The WSREP provider for Galera 4                                                                         |
+| `galera-4-debuginfo`               | Debuginfo for `galera-4`                                                                                 |
+| `galera-4-debugsource`             | Debug sources for package `galera-4`                                                                     |
+| `MariaDB-backup`                   | `mariadb-backup` is a command-line utility for creating consistent and reliable backups of MariaDB databases, supporting full and incremental backup options |
+| `MariaDB-backup-debuginfo`         | Debuginfo for `mariadb-backup`                                                                           |
+| `MariaDB-client`                   | Client tools like mariadb CLI, `mariadb-dump`, and others                                               |
+| `MariaDB-client-compat`            | Symbolic links from old MySQL tool names to MariaDB, like `mysqladmin` -> `mariadb-admin` or `mysql` -> `mariadb`. Good to have if you are using MySQL tool names in your scripts |
+| `MariaDB-client-debuginfo`         | Debuginfo for client tools like mariadb CLI, `mariadb-dump`, and others                                 |
+| `MariaDB-columnstore-engine        | The MariaDB ColumnStore storage engine   |
+| `MariaDB-columnstore-engine-debuginfo | Debuginfo for `MariaDB-columnstore-engine`                                                            |
+| `MariaDB-common`                   | Character set files and `/etc/my.cnf`                                                                    |
+| `MariaDB-common-debuginfo`         | Debuginfo for character set files and `/etc/my.cnf`                                                      |
+| `MariaDB-compat`                   | Old shared client libraries, may be needed by old mariadb or mysql clients                               |
+| `MariaDB-connect-engine`           | The CONNECT storage engine                                                                              |
+| `MariaDB-connect-engine-debuginfo` | Debuginfo for the CONNECT storage engine                                                                |
+| `MariaDB-connect-engine-jdbc`      | Connect storage engine JDBC interface used to interact with external DBMS via Java connector             |
+| `MariaDB-cracklib-password-check`  | The `cracklib_password_check` password validation plugin                                                |
+| `MariaDB-cracklib-password-check-debuginfo`  | Debuginfo for the `cracklib_password_check` password validation plugin                                  |
+| `MariaDB-devel`                    | Development headers and static libraries                                                                |
+| `MariaDB-devel-debuginfo`          | Debuginfo for development headers and static libraries                                                  |
+| `MariaDB-gssapi-server`            | The gssapi authentication plugin                                                                        |
+| `MariaDB-gssapi-server-debuginfo`  | Debuginfo for the gssapi authentication plugin                                                          |
+| `MariaDB-hashicorp-key-management` | Encryption plugin that uses Hashicorp Vault for storing encryption keys for MariaDB Data-at-Rest encryption |
+| `MariaDB-hashicorp-key-management-debuginfo` | Debuginfo for `MariaDB-hashicorp-key-management`                                              |
+| `MariaDB-oqgraph-engine`           | The Open Query GRAPH computation engine, or OQGRAPH, storage engine                                     |
+| `MariaDB-oqgraph-engine-debuginfo` | Debuginfo for the OQGRAPH storage engine                                                                |
+| `MariaDB-provider-bzip2`           | BZip2 compression support in the server and storage engines                                             |
+| `MariaDB-provider-bzip2-debuginfo` | Debuginfo for `MariaDB-provider-bzip2`                                                                  |
+| `MariaDB-provider-lz4`             | LZ4 compression support in the server and storage engines                                               |
+| `MariaDB-provider-lz4-debuginfo`   | Debuginfo for `MariaDB-provider-lz4`                                                                    |
+| `MariaDB-provider-lzma`            | LZMA compression support in the server and storage engines                                              |
+| `MariaDB-provider-lzma-debuginfo`  | Debuginfo for `MariaDB-provider-lzma`                                                                   |
+| `MariaDB-provider-lzo`             | LZO compression support in the server and storage engines                                               |
+| `MariaDB-provider-lzo-debuginfo`   | Debuginfo for `MariaDB-provider-lzo`                                                                    |
+| `MariaDB-provider-snappy`          | Snappy compression support in the server and storage engines                                            |
+| `MariaDB-provider-snappy-debuginfo` | Debuginfo for `MariaDB-provider-snappy`                                                                |
+| `MariaDB-rocksdb-engine`           | The MyRocks storage engine                                                                              |
+| `MariaDB-rocksdb-engine-debuginfo` | Debuginfo for the MyRocks storage engine                                                                |
+| `MariaDB-s3-engine`                | The S3 storage engine, which allows one to archive MariaDB tables in Amazon S3 (or any third-party public or private cloud that implements S3 API), but still have them accessible in MariaDB in read-only mode |
+| `MariaDB-s3-engine-debuginfo`      | Debuginfo for the S3 storage engine |
+| `MariaDB-server`                   | The server and server tools, like `myisamchk` and `mariadb-hotcopy` are here                            |
+| `MariaDB-server-compat`            | Symbolic links from old MySQL server executable names to MariaDB, like `mysqld` -> `mariadbd` or `mysql_install_db` -> `mariadb-install-db`. Good to have if you are using MySQL tool names in your scripts |
+| `MariaDB-server-debuginfo`         | Debuginfo for the server and server tools, like `myisamchk` and `mariadb-hotcopy` are here              |
+| `MariaDB-shared`                   | Dynamic client libraries                                                                                |
+| `MariaDB-shared-debuginfo`         | Debuginfo for dynamic client libraries                                                                  |
+| `MariaDB-test`                     | `mysql-client-test` executable, and mysql-test framework with the tests                                 |
+| `MariaDB-test-debuginfo`           | Debuginfo for `mysql-client-test` executable, and `mysql-test` framework with the tests                 |
 
 ## Installing RPM Packages
 
