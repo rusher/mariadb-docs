@@ -107,7 +107,7 @@ Revoking all privileges (on all objects – note you must specify `ON *.*`):
 REVOKE ALL ON *.* FROM 'myuser'@'localhost';
 ```
 
-Revoking all privileges and the `GRANT` option (note that `ON *.*` doesn't have to be specified here):
+Revoking all privileges and the `GRANT` option (note that `ON *.*` cannot be specified here):
 
 ```sql
 REVOKE ALL, GRANT OPTION FROM 'myuser'@'localhost';
