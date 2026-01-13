@@ -143,6 +143,8 @@ Index hints can be specified to affect how the MariaDB optimizer makes use of in
 This feature is available from MariaDB 12.1.
 {% endhint %}
 
+#### Overview
+
 When [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/sql_modeoracle) is active, the Oracle-style `+` syntax can be used. For example, the following two queries are identical:
 
 ```sql
@@ -166,6 +168,44 @@ and
 ```sql
 SELECT * FROM t1, t2 WHERE t1.a(+) = t2.b;
 ```
+
+#### Caveats
+
+**Outer join operators**
+
+Outer join operators can occur only in the `WHERE` clause. The `WHERE` clause\
+can consist of one predicate, or of multiple predicates connected with `AND`. Each of the predicates can reference:
+
+* only one outer-joined table (that is, the "`INNER`" table) (all\
+  references to its columns have an "outer join operator");
+* zero, one or more "`OUTER`" tables (without an outer join\
+  operator).
+
+If a query uses outer join operators, the `FROM` clause must be a simple\
+comma-separated list of tables (denoting inner join operations):
+
+```sql
+FROM t1, t2, ..., tN
+```
+
+If outer join operators dictates that some table `t_j` is joined with an outer\
+join, the `FROM` clause looks like this:
+
+```sql
+FROM (t1, ..., tbl) LEFT JOIN t_j ON outer_join_predicates, ... tN
+```
+
+Here, all tables used by `outer_join_predicates` are moved to the left (which is in order because an inner join is commutative).
+
+**Predicates**
+
+A predicate that refers to an `INNER` table and `OUTER` table dictates that\
+the `INNER` table is joined with an outer join operation.
+
+A predicate that only refers to an `INNER` table (like `t1.col(+)=124`) is\
+added to the table's `ON` expression, provided there is another predicate that\
+dictates that the inner table is joined with outer join operation\
+(otherwise, the predicate remains in the `WHERE` clause and a warning is issued).
 
 ## Examples
 
