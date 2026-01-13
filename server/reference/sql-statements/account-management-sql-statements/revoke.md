@@ -75,18 +75,22 @@ priv_level:
 
 The `REVOKE` statement enables system administrators to revoke privileges (or roles - see [section below](revoke.md#roles)) from MariaDB accounts. Each account is named using the same format as for the `GRANT` statement; for example, `jeffrey@localhost`. If you specify only the user name part of the account name, a host name part of `%` is used. For details on the levels at which privileges exist, the available `priv_type` and `priv_level` values, and the syntax for specifying users and passwords, see [GRANT](grant.md).
 
-To use the first `REVOKE` syntax, you must have the `GRANT OPTION` privilege, and you must have the privileges that you are revoking.
+To use the first syntax (`REVOKE ... ON ... FROM ...`), you must have the `GRANT OPTION` privilege, and you must have the privileges that you are revoking. Also, remember to specify the `ON` clause (in many cases, `ON *.*` to revoke privileges for all objects):
 
-To revoke all privileges, use the second syntax, which drops all global, database, table, column, and routine privileges for the named user or users:
+```sql
+REVOKE ALL ON *.* FROM 'myuser'@'localhost';
+```
+
+This leaves the `USAGE` privilege, and can leave other privileges, too. For that reason, the second syntax (`REVOKE ALL PRIVILEGES, GRANT OPTION FROM ...`) is preferable, which drops all global, database, table, column, and routine privileges for the named user or users:
 
 ```sql
 REVOKE ALL PRIVILEGES, GRANT OPTION FROM user [, user] ...
 ```
 
-To use this `REVOKE` syntax, you must have the global [CREATE USER](create-user.md) privilege or the [UPDATE](../data-manipulation/changing-deleting-data/update.md) privilege for the mysql database. See [GRANT](grant.md).
+To use this `REVOKE` syntax, you must have the global [CREATE USER](create-user.md) privilege or the [UPDATE](../data-manipulation/changing-deleting-data/update.md) privilege for the mysql database. See [GRANT](grant.md). For that syntax, the `ON *.*` clause must not be used (it yields an error).
 
 {% hint style="info" %}
-Revoking all privileges doesn't remove _all_ privileges. The user still keeps the `USAGE` privilege, making it possible to connect to the server (but nothing else). To remove that privilege, too, remove the user entirely with a `DROP USER` statement.
+Revoking all privileges doesn't remove _all_ privileges, not even with the second syntax. The user still keeps the `USAGE` privilege, making it possible to connect to the server (but nothing else). To remove that privilege, too, remove the user entirely with a `DROP USER` statement.
 {% endhint %}
 
 ### Examples
