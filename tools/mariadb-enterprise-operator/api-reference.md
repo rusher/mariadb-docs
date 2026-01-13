@@ -1,7 +1,4 @@
-
-# API Reference
-
-## Packages
+# Packages
 - [enterprise.mariadb.com/v1alpha1](#enterprisemariadbcomv1alpha1)
 
 
