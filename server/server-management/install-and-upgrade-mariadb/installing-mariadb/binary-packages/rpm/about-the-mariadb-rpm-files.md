@@ -13,14 +13,16 @@ The available RPM packages depend on the specific MariaDB release series.
 
 ### Available RPM Packages in MariaDB
 
-The following RPMs are available in current versions of MariaDB:
+The following RPMs are available in MariaDB 12.1:
 
 | Package Name                       | Description                                                                                                                                                                                                  |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `galera-4`                         | The WSREP provider for Galera 4.                                                                                                                                                                             |
+| `galera-4-debuginfo`               | Debuginfo for `galera-4`                                                                                                                                                                                     |
+| `galera-4-debugsource`             | Debug sources for package `galera-4`                                                                                                                                                                         |
 | `mariadb-backup`                   | `mariadb-backup` is a command-line utility for creating consistent and reliable backups of MariaDB databases, supporting full and incremental backup options.                                                |
 | `mariadb-backup-debuginfo`         | Debuginfo for `mariadb-backup`                                                                                                                                                                               |
-| `mariadb-client`                   | Client tools like mariadb CLI, `mariadb-dump`, and others.                                                                                                                                                   |
+| `MariaDB-client`                   | Client tools like mariadb CLI, `mariadb-dump`, and others.                                                                                                                                                   |
 | `mariadb-client-compat`            | Symbolic links from old MySQL tool names to MariaDB, like `mysqladmin` -> `mariadb-admin` or `mysql` -> `mariadb`. Good to have if you are using MySQL tool names in your scripts.                           |
 | `mariadb-client-debuginfo`         | Debuginfo for client tools like mariadb CLI, `mariadb-dump`, and others.                                                                                                                                     |
 | `mariadb-common`                   | Character set files and `/etc/my.cnf`                                                                                                                                                                        |
