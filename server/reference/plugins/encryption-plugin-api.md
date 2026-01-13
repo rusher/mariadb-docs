@@ -2,9 +2,7 @@
 
 {% include "../../.gitbook/includes/this-page-contains-backgrou....md" %}
 
-MariaDB's [data-at-rest encryption](../../security/securing-mariadb/encryption/data-at-rest-encryption/) requires the use of a&#x20;
-
-[key management and encryption plugin](../../security/securing-mariadb/encryption/data-at-rest-encryption/key-management-and-encryption-plugins/). These plugins are responsible both for the management of encryption keys and for the actual encryption and decryption of data.
+MariaDB's [data-at-rest encryption](../../security/securing-mariadb/encryption/data-at-rest-encryption/) requires the use of a [key management and encryption plugin](../../security/securing-mariadb/encryption/data-at-rest-encryption/key-management-and-encryption-plugins/). These plugins are responsible both for the management of encryption keys and for the actual encryption and decryption of data.
 
 MariaDB supports the use of [multiple encryption keys](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md#using-multiple-encryption-keys). Each encryption key uses a 32-bit integer as a key identifier. If the specific plugin supports [key rotation](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md#key-rotation),  encryption keys can also be rotated, which creates a new version of the encryption key.
 

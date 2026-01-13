@@ -1,16 +1,18 @@
-# Information Schema plugins: SHOW and FLUSH statements
+# Information Schema Plugins: SHOW and FLUSH Statements
 
-Information Schema plugins can support [SHOW](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show) and [FLUSH](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/flush-commands/flush) statements.
+{% include "../../.gitbook/includes/this-page-contains-backgrou....md" %}
+
+Information Schema plugins support [SHOW](../sql-statements/administrative-sql-statements/show/) and [FLUSH](../sql-statements/administrative-sql-statements/flush-commands/flush.md) statements.
 
 ## SHOW
 
-`SHOW` statements support is enabled automatically. A plugin only needs to specify column names for the `SHOW` statement in the `old_name` member of the field declaration structure. Columns with the `old_name` set to 0 will be hidden from the `SHOW` statement. If all columns are hidden, the `SHOW` statement will not work for this plugin.
+`SHOW` statement support is enabled by default. A plugin only has to specify column names for the `SHOW` statement in the `old_name` member of the field declaration structure. Columns with the `old_name` set to `0` are hidden from the `SHOW` statement. If all columns are hidden, the `SHOW` statement doesn't work for this plugin.
 
-Note that `SHOW` statement is a user-friendly shortcut; it's easier to type and should be easier to view — if the Information Schema table contains many columns, the `SHOW` statement is supposed to display only most important columns and fit nicely on the 80x25 terminal screen.
+Note that `SHOW`` `_`statement`_ is a user-friendly shortcut – it's easier to type and view. If the Information Schema table contains many columns, the `SHOW` statement is supposed to display only the most important columns, so that the output fits nicely on the 80x25 terminal screen.
 
-Consider an example, [LOCALES plugin](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/community/data-types/string-data-types/character-sets/internationalization-and-localization/locales-plugin.md):
+Consider an example, the [LOCALES plugin](../data-types/string-data-types/character-sets/internationalization-and-localization/locales-plugin.md):
 
-```
+```c
 static ST_FIELD_INFO locale_info_locale_fields_info[]=
 {
   {"ID", 4, MYSQL_TYPE_LONGLONG, 0, 0, "Id", 0},
@@ -25,10 +27,10 @@ static ST_FIELD_INFO locale_info_locale_fields_info[]=
 };
 ```
 
-While the [INFORMATION\_SCHEMA.LOCALES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-locales-table) table has 8 columns, the [SHOW LOCALES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-locales) statement will only display 4 of them:
+While the [INFORMATION\_SCHEMA.LOCALES](../system-tables/information-schema/information-schema-tables/information-schema-locales-table.md) table has 8 columns, the [SHOW LOCALES](../sql-statements/administrative-sql-statements/show/show-locales.md) statement only displays 4 of them:
 
-```
-MariaDB [test]> show locales;
+```sql
+MariaDB [test]> SHOW LOCALES;
 +-----+-------+-------------------------------------+------------------------+
 | Id  | Name  | Description                         | Error_Message_Language |
 +-----+-------+-------------------------------------+------------------------+
@@ -41,9 +43,9 @@ MariaDB [test]> show locales;
 
 ## FLUSH
 
-To support the `FLUSH` statement a plugin must declare the `reset_table` callback. For example, in the [QUERY\_RESPONSE\_TIME](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/community/plugins/other-plugins/query-response-time-plugin.md) plugin:
+To support the `FLUSH` statement, a plugin must declare the `reset_table` callback. For example, in the [QUERY\_RESPONSE\_TIME](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/community/plugins/other-plugins/query-response-time-plugin.md) plugin:
 
-```
+```c
 static int query_response_time_info_init(void *p)
 {
   ST_SCHEMA_TABLE *i_s_query_response_time= (ST_SCHEMA_TABLE *) p;
