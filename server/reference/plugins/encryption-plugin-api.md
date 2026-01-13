@@ -1,10 +1,14 @@
 # Encryption Plugin API
 
-MariaDB's [data-at-rest encryption](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md) requires the use of a [key management and encryption plugin](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md). These plugins are responsible both for the management of encryption keys and for the actual encryption and decryption of data.
+{% include "../../.gitbook/includes/this-page-contains-backgrou....md" %}
 
-MariaDB supports the use of [multiple encryption keys](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md#using-multiple-encryption-keys). Each encryption key uses a 32-bit integer as a key identifier. If the specific plugin supports [key rotation](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md#rotating-keys), then encryption keys can also be rotated, which creates a new version of the encryption key.
+MariaDB's [data-at-rest encryption](../../security/securing-mariadb/encryption/data-at-rest-encryption/) requires the use of a&#x20;
 
-See [Data at Rest Encryption](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md) and [Encryption Key Management](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md) for more information.
+[key management and encryption plugin](../../security/securing-mariadb/encryption/data-at-rest-encryption/key-management-and-encryption-plugins/). These plugins are responsible both for the management of encryption keys and for the actual encryption and decryption of data.
+
+MariaDB supports the use of [multiple encryption keys](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md#using-multiple-encryption-keys). Each encryption key uses a 32-bit integer as a key identifier. If the specific plugin supports [key rotation](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md#key-rotation),  encryption keys can also be rotated, which creates a new version of the encryption key.
+
+See [Data at Rest Encryption](../../security/securing-mariadb/encryption/data-at-rest-encryption/) and [Encryption Key Management](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md) for more information.
 
 ## Encryption Plugin API
 
@@ -15,7 +19,8 @@ The Encryption plugin API was created to allow a plugin to:
 
 This is how the API reflects that:
 
-```
+{% code expandable="true" %}
+```c
 /* Returned from get_latest_key_version() */
 #define ENCRYPTION_KEY_VERSION_INVALID (~(unsigned int)0)
 #define ENCRYPTION_KEY_NOT_ENCRYPTED (0)
@@ -114,6 +119,7 @@ struct st_mariadb_encryption {
                                    unsigned int key_version);
 };
 ```
+{% endcode %}
 
 The first method is used for key rotation. A plugin that doesn't support key rotation — for example, **file\_key\_management** — can return a fixed version for any valid key id. Note that it still has to return an error for an invalid key id. The version `ENCRYPTION_KEY_NOT_ENCRYPTED` means that the data should not be encrypted.
 
@@ -130,49 +136,21 @@ The MariaDB source tree has four encryption plugins. All these plugins are fairl
 ### file\_key\_management
 
 It reads encryption keys from a plain-text file. It supports two different encryption algorithms. It supports multiple encryption keys. It does not support key rotation.\
-See the [File Key Management Plugin](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md) article for more details.
-
-#### Versions
-
-| Version | Status | Introduced                                                                                                                                                    |
-| ------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1.0     | Stable | [MariaDB 10.1.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10118-release-notes) |
-| 1.0     | Gamma  | [MariaDB 10.1.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes) |
-| 1.0     | Alpha  | [MariaDB 10.1.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes) |
+See [File Key Management Plugin](../../security/securing-mariadb/encryption/data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md#using-the-file-key-management-plugin) for details.
 
 ### aws\_key\_management
 
 The AWS Key Management plugin uses the [Amazon Web Services (AWS) Key Management Service (KMS)](https://aws.amazon.com/kms/) to generate and store AES keys on disk, in encrypted form, using the Customer Master Key (CMK) kept in AWS KMS. When MariaDB Server starts, the plugin will decrypt the encrypted keys, using the AWS KMS "Decrypt" API function. MariaDB data will then be encrypted and decrypted using the AES key. It supports multiple encryption keys. It supports key rotation.
 
-See the [AWS Key Management Plugin](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md) article for more details.
-
-#### Versions
-
-| Version | Status       | Introduced                                                                                                                                                                                                                                                                                                                 |
-| ------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1.0     | Stable       | [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes), [MariaDB 10.1.24](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10124-release-notes) |
-| 1.0     | Beta         | [MariaDB 10.1.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10118-release-notes)                                                                                                                                                              |
-| 1.0     | Experimental | [MariaDB 10.1.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes)                                                                                                                                                              |
+See [AWS Key Management Plugin](../../security/securing-mariadb/encryption/data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md) for details.
 
 ### example\_key\_management
 
 Uses random time-based generated keys, ignores key identifiers, supports key versions and key rotation. Uses AES\_ECB and AES\_CBC as encryption algorithms and changes them automatically together with key versions.
 
-#### Versions
-
-| Version | Status       | Introduced                                                                                                                                                    |
-| ------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1.0     | Experimental | [MariaDB 10.1.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes) |
-
 ### debug\_key\_management
 
 Key is generated from the version, user manually controls key rotation. Only supports key identifier 1, uses only AES\_CBC.
-
-#### Versions
-
-| Version | Status       | Introduced                                                                                                                                                    |
-| ------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1.0     | Experimental | [MariaDB 10.1.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes) |
 
 ## Encryption Service
 
@@ -180,7 +158,8 @@ Encryption is generally needed on the very low level **inside the storage engine
 
 Service functions are declared as follows:
 
-```
+{% code overflow="wrap" %}
+```c
 unsigned int encryption_key_get_latest_version(unsigned int key_id);
 unsigned int encryption_key_get(unsigned int key_id, unsigned int key_version,
                                 unsigned char *buffer, unsigned int *length);
@@ -195,10 +174,11 @@ int encryption_ctx_finish(void *ctx, unsigned char *dst, unsigned int *dlen);
 unsigned int encryption_encrypted_length(unsigned int slen, unsigned int key_id,
                                          unsigned int key_version);
 ```
+{% endcode %}
 
 There are also convenience helpers to check for a key or key version existence and to encrypt or decrypt a block of data with one function call.
 
-```
+```c
 unsigned int encryption_key_id_exists(unsigned int id);
 unsigned int encryption_key_version_exists(unsigned int id,
                                            unsigned int version);
