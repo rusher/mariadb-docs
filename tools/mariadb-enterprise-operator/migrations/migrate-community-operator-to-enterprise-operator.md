@@ -1,4 +1,3 @@
-
 # Migrate Community operator to Enterprise operator
 
 In this guide, we will be migrating from the [MariaDB Community Operator](https://github.com/mariadb-operator/mariadb-operator) to the [MariaDB Enterprise Kubernetes Operator](../README.md) without downtime. This guide assumes:

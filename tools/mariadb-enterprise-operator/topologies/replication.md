@@ -180,13 +180,9 @@ Depending on the `PhysicalBackup` strategy used, the operator will track the GTI
 - __mariadb-backup__: When using `PhysicalBackup` with the `mariadb-backup` strategy, the GTID will be restored to a `mariadb-enterprise-operator.info` file in the data directory, which the agent will expose to the operator via HTTP.
 - __VolumeSnapshot__: When using `PhysicalBackup` with the `VolumeSnapshot` strategy, the GTID position will be kept in a `enterprise.mariadb.com/gtid` annotation in the `VolumeSnapshot` object, which later on the operator will read when restoring the backup.
 
-When using `PhysicalBackup` with the `mariadb-backup` strategy, the GTID will be restored to a `mariadb-enterprise-operator.info` file in the data directory, which the agent will expose to the operator via HTTP.
-
 It is important to note that, by default, physical backups are only taken in ready replicas when the `MariaDB` resource is in a ready state. If you are running with a single replica, it is recommended to set `mariaDbRef.waitForIt=false` and `target=PreferReplica` in the `PhysicalBackup` CR to allow taking backups from the primary when the replica is not ready. Please refer to the [physical backup documentation](../backup-and-restore/physical_backup.md) for configuring this behaviour.
 
 #### `VolumeSnapshot`
-
-When using `PhysicalBackup` with the `VolumeSnapshot` strategy, the GTID position will be kept in a `enterprise.mariadb.com/gtid` annotation in the `VolumeSnapshot` object, which later on the operator will read when restoring the backup.
 
 {% hint style="warning" %}
 Refrain from removing the `enterprise.mariadb.com/gtid` annotation in the `VolumeSnapshot` object, as it is required for configuring the replica when restoring the backup.
