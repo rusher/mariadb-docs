@@ -1,5 +1,7 @@
 # Stored Procedure Internals
 
+{% include "../../../../.gitbook/includes/this-page-contains-backgrou....md" %}
+
 ## Implementation Specification for Stored Procedures
 
 ### How Parsing and Execution of Queries Work

@@ -1,4 +1,6 @@
-# Using the Non-blocking Library
+# Using the Non-Blocking Library
+
+{% include "../../../../../.gitbook/includes/this-page-contains-backgrou....md" %}
 
 The MariaDB non-blocking client API is modelled after the normal blocking\
 library calls. This makes it easy to learn and remember. It makes it easier to\

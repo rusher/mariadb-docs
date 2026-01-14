@@ -1,5 +1,7 @@
 # Merging with a Merge Tree
 
+{% include "../../../../.gitbook/includes/this-page-contains-backgrou....md" %}
+
 If you have a [merge tree](creating-a-new-merge-tree.md), you merge into MariaDB as follows:
 
 1. MariaDB merge trees are in the [mergetrees](https://github.com/MariaDB/mergetrees) repository. Add it as a new remote:

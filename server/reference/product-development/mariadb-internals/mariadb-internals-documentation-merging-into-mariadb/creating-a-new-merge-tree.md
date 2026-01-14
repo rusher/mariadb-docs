@@ -1,5 +1,7 @@
 # Creating a New Merge Tree
 
+{% include "../../../../.gitbook/includes/this-page-contains-backgrou....md" %}
+
 This article is obsolete. We don't use bzr anymore. This howto needs to be rewritten to explain how to create a merge tree in git.
 
 **Merge tree** in the context of this HOWTO is a tree created specifically to simplify merges of third-party packages into MariaDB. WIth a merge tree there's a clear separation between upstream changes and our changes and in most cases bzr can do the merges automatically.

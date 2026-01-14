@@ -1,5 +1,7 @@
 # Memory is Leaking
 
+{% include "../../../../.gitbook/includes/this-page-contains-backgrou....md" %}
+
 Operating system memory can be assigned, giving MariaDB a virtual address space, and allocated (paged in), once MariaDB starts to use this memory.
 
 When looking at something that might be a memory leak, pay particular attention between the virtual size and the resident size.

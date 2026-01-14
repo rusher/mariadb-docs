@@ -21,3 +21,23 @@ layout:
 This section contains background information, mostly aimed at engineers developing MariaDB features.
 {% endhint %}
 
+{% content-ref url="mariadb-server-roadmap.md" %}
+[mariadb-server-roadmap.md](mariadb-server-roadmap.md)
+{% endcontent-ref %}
+
+{% content-ref url="working-with-github.md" %}
+[working-with-github.md](working-with-github.md)
+{% endcontent-ref %}
+
+{% content-ref url="mariadb-fault-finding/" %}
+[mariadb-fault-finding](mariadb-fault-finding/)
+{% endcontent-ref %}
+
+{% content-ref url="quality/" %}
+[quality](quality/)
+{% endcontent-ref %}
+
+{% content-ref url="tools/" %}
+[tools](tools/)
+{% endcontent-ref %}
+

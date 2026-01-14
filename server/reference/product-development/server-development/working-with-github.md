@@ -4,6 +4,8 @@ description: Creating pull requests.
 
 # Working with GitHub
 
+{% include "../../../.gitbook/includes/this-page-contains-backgrou....md" %}
+
 ## Benefits of a Pull Request
 
 A pull request created on GitHub provides visibility to the entire userbase on the changes that are occurring in MariaDB Server.

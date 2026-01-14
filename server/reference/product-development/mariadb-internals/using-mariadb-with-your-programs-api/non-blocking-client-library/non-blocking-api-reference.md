@@ -1,5 +1,7 @@
 # Non-blocking API Reference
 
+{% include "../../../../../.gitbook/includes/this-page-contains-backgrou....md" %}
+
 Here is a list of all functions in the non-blocking client API and their\
 parameters. Apart from operating in a non-blocking way, they all work exactly\
 the same as their blocking counterparts, so their exact semantics can be\

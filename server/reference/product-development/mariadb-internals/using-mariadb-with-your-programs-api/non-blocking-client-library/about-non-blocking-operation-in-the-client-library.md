@@ -1,5 +1,7 @@
 # About Non-blocking Operation in the Client Library
 
+{% include "../../../../../.gitbook/includes/this-page-contains-backgrou....md" %}
+
 MariaDB, starting with version 5.5.21 supports _non-blocking_ operations in\
 the client-library. This allows an application to start a query or other\
 operation against the database, and then continue to do other work (in the same\

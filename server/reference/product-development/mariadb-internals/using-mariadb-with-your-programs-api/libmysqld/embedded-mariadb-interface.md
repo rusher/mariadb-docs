@@ -1,5 +1,7 @@
 # Embedded MariaDB Interface
 
+{% include "../../../../../.gitbook/includes/this-page-contains-backgrou....md" %}
+
 The embedded MariaDB server, `libmysqld` has the identical interface as the [C client library](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c)`libmysqclient`.
 
 The normal usage of the embedded server is to use the normal `mysql.h` include file in your application and link with `libmysqld` instead of `libmysqlclient`.

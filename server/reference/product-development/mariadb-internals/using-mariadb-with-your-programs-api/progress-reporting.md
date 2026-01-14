@@ -1,5 +1,7 @@
 # Progress Reporting
 
+{% include "../../../../.gitbook/includes/this-page-contains-backgrou....md" %}
+
 MariaDB supports progress reporting for some long running commands.
 
 ## What is Progress Reporting?

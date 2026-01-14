@@ -20,3 +20,19 @@ layout:
 
 # Non-Blocking Client Library
 
+{% hint style="info" %}
+This section contains background information, mostly aimed at engineers developing MariaDB features.
+{% endhint %}
+
+{% content-ref url="about-non-blocking-operation-in-the-client-library.md" %}
+[about-non-blocking-operation-in-the-client-library.md](about-non-blocking-operation-in-the-client-library.md)
+{% endcontent-ref %}
+
+{% content-ref url="non-blocking-api-reference.md" %}
+[non-blocking-api-reference.md](non-blocking-api-reference.md)
+{% endcontent-ref %}
+
+{% content-ref url="using-the-non-blocking-library.md" %}
+[using-the-non-blocking-library.md](using-the-non-blocking-library.md)
+{% endcontent-ref %}
+

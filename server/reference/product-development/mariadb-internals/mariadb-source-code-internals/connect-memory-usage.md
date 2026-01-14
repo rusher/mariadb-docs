@@ -1,4 +1,6 @@
-# Connect Memory Usage
+# Connection Memory Usage
+
+{% include "../../../../.gitbook/includes/this-page-contains-backgrou....md" %}
 
 When creating a connection, a THD object is created for that connection. This contains\
 all connection information and also caches to speed up queries and avoid frequent malloc() calls.

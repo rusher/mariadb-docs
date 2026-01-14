@@ -1,5 +1,7 @@
 # MariaDB Server Roadmap
 
+{% include "../../../.gitbook/includes/this-page-contains-backgrou....md" %}
+
 This page talks in general about the MariaDB Server roadmap, and how it is formed.The roadmap it describes is located in our [JIRA](tools/jira.md) issue tracker: [**jira.mariadb.org**](https://jira.mariadb.org)
 
 MariaDB was designed as a drop-in replacement of MySQL with more features, new storage engines, fewer bugs, and better performance. We aim to make upgrading from MySQL to MariaDB extremely easy.
