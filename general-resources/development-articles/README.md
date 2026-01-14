@@ -4,3 +4,4 @@ description: Articles of interest to MariaDB developers, including contributors 
 
 # Product Development
 
+This section has moved to Server > Reference > Product Development.

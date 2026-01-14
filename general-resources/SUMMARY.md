@@ -88,28 +88,6 @@
 ***
 
 * [Product Development](development-articles/README.md)
-  * [MariaDB Development](development-articles/general-info/README.md)
-  * [MariaDB Internals](development-articles/mariadb-internals/README.md)
-    * [Merging into MariaDB](development-articles/mariadb-internals/mariadb-internals-documentation-merging-into-mariadb/README.md)
-      * [Creating a New Merge Tree](development-articles/mariadb-internals/mariadb-internals-documentation-merging-into-mariadb/creating-a-new-merge-tree.md)
-      * [Merging from MySQL (obsolete)](development-articles/mariadb-internals/mariadb-internals-documentation-merging-into-mariadb/merging-from-mysql-obsolete.md)
-      * [Merging New XtraDB Releases (obsolete)](development-articles/mariadb-internals/mariadb-internals-documentation-merging-into-mariadb/merging-new-xtradb-releases-obsolete.md)
-      * [Merging TokuDB (obsolete)](development-articles/mariadb-internals/mariadb-internals-documentation-merging-into-mariadb/merging-tokudb-obsolete.md)
-      * [Merging with a Merge Tree](development-articles/mariadb-internals/mariadb-internals-documentation-merging-into-mariadb/merging-with-a-merge-tree.md)
-    * [MariaDB Source Code Internals](development-articles/mariadb-internals/mariadb-source-code-internals/README.md)
-      * [Stored Procedure Internals](development-articles/mariadb-internals/mariadb-source-code-internals/stored-procedure-internals.md)
-      * [MariaDB Memory Usage](development-articles/mariadb-internals/mariadb-source-code-internals/mariadb-memory-usage/README.md)
-        * [Connect Memory Usage](development-articles/mariadb-internals/mariadb-source-code-internals/mariadb-memory-usage/connect-memory-usage.md)
-    * [Using MariaDB with Your Programs (API)](development-articles/mariadb-internals/using-mariadb-with-your-programs-api/README.md)
-      * [Progress Reporting](development-articles/mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md)
-      * [libMariaDB](development-articles/mariadb-internals/using-mariadb-with-your-programs-api/libmariadb.md)
-      * [libmysqld](development-articles/mariadb-internals/using-mariadb-with-your-programs-api/libmysqld/README.md)
-        * [Embedded MariaDB Interface](development-articles/mariadb-internals/using-mariadb-with-your-programs-api/libmysqld/embedded-mariadb-interface.md)
-        * [The mariadb-test and mariadb-test-embedded Programs](development-articles/mariadb-internals/using-mariadb-with-your-programs-api/libmysqld/mariadb-test-and-mariadb-test-embedded.md)
-      * [Non-Blocking Client Library](development-articles/mariadb-internals/using-mariadb-with-your-programs-api/non-blocking-client-library/README.md)
-        * [About Non-blocking Operation in the Client Library](development-articles/mariadb-internals/using-mariadb-with-your-programs-api/non-blocking-client-library/about-non-blocking-operation-in-the-client-library.md)
-        * [Non-blocking API Reference](development-articles/mariadb-internals/using-mariadb-with-your-programs-api/non-blocking-client-library/non-blocking-api-reference.md)
-        * [Using the Non-blocking Library](development-articles/mariadb-internals/using-mariadb-with-your-programs-api/non-blocking-client-library/using-the-non-blocking-library.md)
 
 ## Additional Resources
 
