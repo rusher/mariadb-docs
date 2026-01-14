@@ -23,7 +23,7 @@ The File Key Management plugin is the [key management and encryption plugin](../
 * It supports key rotation with MariaDB Enterprise Server from MariaDB Enterprise Server 11.8.
 * It supports two different algorithms for encrypting data.
 
-It can also serve as an example and as a starting point when developing a key management and encryption plugin with the [encryption plugin API](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/encryption-plugin-api).
+It can also serve as an example and as a starting point when developing a key management and encryption plugin with the [encryption plugin API](/broken/spaces/WCInJQ9cmGjq1lsTG91E/pages/5UGvvjnJpWY0JXBeD4Hc).
 
 ## Installing the File Key Management Plugin's Package
 

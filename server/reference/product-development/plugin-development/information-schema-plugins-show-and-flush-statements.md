@@ -1,8 +1,8 @@
 # Information Schema Plugins: SHOW and FLUSH Statements
 
-{% include "../../.gitbook/includes/this-page-contains-backgrou....md" %}
+{% include "../../../.gitbook/includes/this-page-contains-backgrou....md" %}
 
-Information Schema plugins support [SHOW](../sql-statements/administrative-sql-statements/show/) and [FLUSH](../sql-statements/administrative-sql-statements/flush-commands/flush.md) statements.
+Information Schema plugins support [SHOW](../../sql-statements/administrative-sql-statements/show/) and [FLUSH](../../sql-statements/administrative-sql-statements/flush-commands/flush.md) statements.
 
 ## SHOW
 
@@ -10,7 +10,7 @@ Information Schema plugins support [SHOW](../sql-statements/administrative-sql-s
 
 Note that `SHOW`` `_`statement`_ is a user-friendly shortcut – it's easier to type and view. If the Information Schema table contains many columns, the `SHOW` statement is supposed to display only the most important columns, so that the output fits nicely on the 80x25 terminal screen.
 
-Consider an example, the [LOCALES plugin](../data-types/string-data-types/character-sets/internationalization-and-localization/locales-plugin.md):
+Consider an example, the [LOCALES plugin](../../data-types/string-data-types/character-sets/internationalization-and-localization/locales-plugin.md):
 
 ```c
 static ST_FIELD_INFO locale_info_locale_fields_info[]=
@@ -27,7 +27,7 @@ static ST_FIELD_INFO locale_info_locale_fields_info[]=
 };
 ```
 
-While the [INFORMATION\_SCHEMA.LOCALES](../system-tables/information-schema/information-schema-tables/information-schema-locales-table.md) table has 8 columns, the [SHOW LOCALES](../sql-statements/administrative-sql-statements/show/show-locales.md) statement only displays 4 of them:
+While the [INFORMATION\_SCHEMA.LOCALES](../../system-tables/information-schema/information-schema-tables/information-schema-locales-table.md) table has 8 columns, the [SHOW LOCALES](../../sql-statements/administrative-sql-statements/show/show-locales.md) statement only displays 4 of them:
 
 ```sql
 MariaDB [test]> SHOW LOCALES;

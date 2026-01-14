@@ -75,7 +75,7 @@ The [Aria storage engine](../../../../../server-usage/storage-engines/aria/) doe
 
 ## Encryption Plugin API
 
-New key management and encryption plugins can be developed using the [encryption plugin API](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/encryption-plugin-api).
+New key management and encryption plugins can be developed using the [encryption plugin API](/broken/spaces/WCInJQ9cmGjq1lsTG91E/pages/5UGvvjnJpWY0JXBeD4Hc).
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

@@ -6,6 +6,8 @@ description: >-
 
 # Storage Engine FAQ
 
+{% include "../../../.gitbook/includes/this-page-contains-backgrou....md" %}
+
 ### Are storage engines designed for MySQL compatible with MariaDB?
 
 In most cases, yes. MariaDB tries to keep API compatibility with MySQL, even across major versions.

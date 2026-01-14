@@ -1,6 +1,6 @@
 # Writing Plugins for MariaDB
 
-{% include "../../.gitbook/includes/this-page-contains-backgrou....md" %}
+{% include "../../../.gitbook/includes/this-page-contains-backgrou....md" %}
 
 ## About
 
@@ -8,24 +8,24 @@ Generally speaking, writing plugins for MariaDB is very similar to writing plugi
 
 ## Authentication Plugins
 
-See [Pluggable Authentication](authentication-plugins/pluggable-authentication-overview.md).
+See [Pluggable Authentication](../../plugins/authentication-plugins/pluggable-authentication-overview.md).
 
 ## Storage Engine Plugins
 
 Storage engines can extend `CREATE TABLE` syntax with optional\
-index, field, and table attribute clauses. See [Extending CREATE TABLE](../../server-usage/storage-engines/storage-engines-storage-engine-development/engine-defined-new-tablefieldindex-attributes.md) for more information. See also [Storage Engine Development](../../server-usage/storage-engines/storage-engines-storage-engine-development/).
+index, field, and table attribute clauses. See [Extending CREATE TABLE](../storage-engines-storage-engine-development/engine-defined-new-tablefieldindex-attributes.md) for more information. See also [Storage Engine Development](../storage-engines-storage-engine-development/).
 
 ## Information Schema Plugins
 
-Information Schema plugins can have their own [FLUSH](../sql-statements/administrative-sql-statements/flush-commands/flush.md) and [SHOW](../sql-statements/administrative-sql-statements/show/) statements. See [FLUSH and SHOW for Information Schema plugins](information-schema-plugins-show-and-flush-statements.md).
+Information Schema plugins can have their own [FLUSH](../../sql-statements/administrative-sql-statements/flush-commands/flush.md) and [SHOW](../../sql-statements/administrative-sql-statements/show/) statements. See [FLUSH and SHOW for Information Schema plugins](information-schema-plugins-show-and-flush-statements.md).
 
 ## Encryption Plugins
 
-[Encryption plugins](encryption-plugin-api.md) in MariaDB are used for the [data at rest encryption](../../security/securing-mariadb/encryption/data-at-rest-encryption/) feature. They are responsible for both key management and for the actual encryption and decryption of data.
+[Encryption plugins](encryption-plugin-api.md) in MariaDB are used for the [data at rest encryption](../../../security/securing-mariadb/encryption/data-at-rest-encryption/) feature. They are responsible for both key management and for the actual encryption and decryption of data.
 
 ## Function Plugins
 
-Function plugins add new SQL functions to MariaDB. Unlike the old [UDF API](../../server-usage/user-defined-functions/), function plugins can do almost anything that a built-function can.
+Function plugins add new SQL functions to MariaDB. Unlike the old [UDF API](../../../server-usage/user-defined-functions/), function plugins can do almost anything that a built-function can.
 
 ## Plugin Declaration Structure
 
@@ -36,7 +36,7 @@ the MySQL plugin declaration in the following ways:
 2. it has a 'maturity' declaration
 3. it has a field for a text representation of the version field
 
-MariaDB can load plugins that only have the MySQL plugin declaration but both `PLUGIN_MATURITY` and `PLUGIN_AUTH_VERSION` will show up as 'Unknown' in the [INFORMATION\_SCHEMA.PLUGINS table](../system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md).
+MariaDB can load plugins that only have the MySQL plugin declaration but both `PLUGIN_MATURITY` and `PLUGIN_AUTH_VERSION` will show up as 'Unknown' in the [INFORMATION\_SCHEMA.PLUGINS table](../../system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md).
 
 For compiled-in (not dynamically loaded) plugins, the presence of the MariaDB plugin declaration is mandatory.
 

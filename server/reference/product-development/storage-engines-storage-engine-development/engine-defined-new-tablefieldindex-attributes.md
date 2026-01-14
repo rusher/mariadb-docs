@@ -6,6 +6,8 @@ description: >-
 
 # Engine-defined New Table/Field/Index Attributes
 
+{% include "../../../.gitbook/includes/this-page-contains-backgrou....md" %}
+
 In MariaDB, a storage engine can allow the user to specify additional attributes per index, field, or table. The engine needs to declare what attributes it introduces.
 
 ## API
@@ -109,14 +111,14 @@ where the value of the ENGINE attribute is specified not quoted, while the value
 
 When an attribute is set, it are stored with the table definition and shown in the `SHOW CREATE TABLE;`. To remove an attribute from a table definition use `ALTER TABLE` to set its value to a `DEFAULT`.
 
-The values of unknown attributes or attributes with the illegal values cause an error by default. But with [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table/) one can change the storage engine and some previously valid attributes may become unknown — to the new engine. They are not removed automatically, though, because the table might be altered back to the first engine, and these attributes are valid again. Still [SHOW CREATE TABLE](../../../reference/sql-statements/administrative-sql-statements/show/show-create-table.md) will comment these unknown attributes out in the output, otherwise they would make a generated [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) statement invalid.
+The values of unknown attributes or attributes with the illegal values cause an error by default. But with [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table/) one can change the storage engine and some previously valid attributes may become unknown — to the new engine. They are not removed automatically, though, because the table might be altered back to the first engine, and these attributes are valid again. Still [SHOW CREATE TABLE](../../sql-statements/administrative-sql-statements/show/show-create-table.md) will comment these unknown attributes out in the output, otherwise they would make a generated [CREATE TABLE](../../sql-statements/data-definition/create/create-table.md) statement invalid.
 
-With the `IGNORE_BAD_TABLE_OPTIONS` [sql mode](../../../server-management/variables-and-modes/sql_mode.md) this behavior changes. Unknown attributes do not cause an error, they only result in a warning. And [SHOW CREATE TABLE](../../../reference/sql-statements/administrative-sql-statements/show/show-create-table.md) will not comment them out. This mode is implicitly enabled in the replication slave thread.
+With the `IGNORE_BAD_TABLE_OPTIONS` [sql mode](../../../server-management/variables-and-modes/sql_mode.md) this behavior changes. Unknown attributes do not cause an error, they only result in a warning. And [SHOW CREATE TABLE](../../sql-statements/administrative-sql-statements/show/show-create-table.md) will not comment them out. This mode is implicitly enabled in the replication slave thread.
 
 ## See Also
 
-* [Writing Plugins for MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/development-writing-plugins-for-mariadb)
-* [Storage Engines](../)
+* [Writing Plugins for MariaDB](/broken/spaces/WCInJQ9cmGjq1lsTG91E/pages/6TIILYWsiIrVC57q1o1p)
+* [Storage Engines](../../../server-usage/storage-engines/)
 * [Storage Engine Development](./)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

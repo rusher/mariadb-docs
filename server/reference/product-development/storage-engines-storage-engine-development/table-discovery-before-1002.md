@@ -6,6 +6,8 @@ description: >-
 
 # Table Discovery (before 10.0.2)
 
+{% include "../../../.gitbook/includes/this-page-contains-backgrou....md" %}
+
 This page describes the **old** discovery API, created in MySQL for NDB Cluster. It no longer works in MariaDB. New table discovery API is documented [here](table-discovery.md).
 
 There are four parts of it.
