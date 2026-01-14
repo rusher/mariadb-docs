@@ -30,6 +30,10 @@ Release dates for upcoming MariaDB Enterprise Server releases can be found [here
 [connectors](connectors/)
 {% endcontent-ref %}
 
+{% content-ref url="galera-cluster/" %}
+[galera-cluster](galera-cluster/)
+{% endcontent-ref %}
+
 {% content-ref url="enterprise-operator/" %}
 [enterprise-operator](enterprise-operator/)
 {% endcontent-ref %}
