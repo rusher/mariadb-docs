@@ -11,11 +11,11 @@ description: >-
 
 The available RPM packages depend on the specific MariaDB release series.
 
-### Available RPM Packages in MariaDB
+### List of RPM Packages in MariaDB
 
 {% tabs %}
 {% tab title="Enterprise Server" %}
-The following RPMs are available in MariaDB Enterprise Server 11.8:
+The following RPMs are in MariaDB Enterprise Server 11.8:
 
 | Package Name                                 | Description                                                                                                                                                                                                                                                                       |
 | -------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -73,7 +73,7 @@ Additionally, the following RPMs are available in the MariaDB Enterprise Unsuppo
 {% endtab %}
 
 {% tab title="Community Server" %}
-The following RPMs are available in MariaDB Community Server 12.1:
+The following RPMs are in MariaDB Community Server 12.1:
 
 | Package Name                                 | Description                                                                                                                                                                                                                                                                       |
 | -------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -125,6 +125,17 @@ The following RPMs are available in MariaDB Community Server 12.1:
 | `MariaDB-test-debuginfo`                     | Debuginfo for `MariaDB-test`                                                                                                                                                                                                                                                      |
 {% endtab %}
 {% endtabs %}
+
+### Removed RPM Packages
+
+Occasionally, RPM packages are removed from MariaDB. This could be because they are no longer needed, or because they were for features or storage engines that have been removed from MariaDB.
+
+Some examples of removed RPMs are:
+
+| Package Name          | Description                                                                            |
+| --------------------- | -------------------------------------------------------------------------------------- |
+| MariaDB-compat        | Old shared client libraries, removed in MariaDB 11.4 as they were no longer needed     |
+| MariaDB-tokudb-engine | The TokuDB storage engine. It was disabled in MariaDB 10.5 and removed in MariaDB 10.6 |
 
 ## Installing RPM Packages
 
