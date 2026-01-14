@@ -106,7 +106,7 @@ The debug `mariadb-debug` binary is still present if it is needed again in the f
 A debug binary has lots of code checks and asserts, that are not checked in production. This is done to get more performance when running in production.\
 In some cases, when one is trying to find a hard-to-repeat bug, it could be beneficial to have these checks in production builds too.
 
-Compiling with `-DDBUG_ASSERT_AS_PRINTF` will change DBUG\_ASSERT() to print any failed check to the [error log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log).
+Compiling with `-DDBUG_ASSERT_AS_PRINTF` will change DBUG\_ASSERT() to print any failed check to the [error log](../../../server-management/server-monitoring-logs/error-log.md).
 
 ```
 cmake . -DDBUG_ASSERT_AS_PRINTF

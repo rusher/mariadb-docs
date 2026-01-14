@@ -4,7 +4,7 @@
 
 Core dumps are enabled by default on **Windows**, so **this step can be skipped on Windows** in those versions. See [MDEV-18439](https://jira.mariadb.org/browse/MDEV-18439) for more information.
 
-In order to enable core dumps, you need to set the [core\_file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#core_file) system variable either on the command-line or in a relevant server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files). For example:
+In order to enable core dumps, you need to set the [core\_file](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#core_file) system variable either on the command-line or in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```
 [mariadb]
@@ -18,7 +18,7 @@ You can check your current value by executing:
 my_print_defaults --mariadbd
 ```
 
-[core\_file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#core_file) is a system variable. Its value can be checked at runtime by executing the following:
+[core\_file](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#core_file) is a system variable. Its value can be checked at runtime by executing the following:
 
 ```
 SHOW GLOBAL VARIABLES LIKE 'core_file';
@@ -44,11 +44,11 @@ sudo cat /proc/$(pidof mariadbd)/limits | grep "core file"
 
 If you need to change the core size limit, the method you use depends on how you start `mariadbd`. See the sections below for more details.
 
-The resource limits for the `mariadbd` process are printed to the [error log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log) when the `mariadbd` process crashes. That way, users can confirm whether the process may have been allowed to dump a core file. See [MDEV-15051](https://jira.mariadb.org/browse/MDEV-15051) for more information.
+The resource limits for the `mariadbd` process are printed to the [error log](../../../server-management/server-monitoring-logs/error-log.md) when the `mariadbd` process crashes. That way, users can confirm whether the process may have been allowed to dump a core file. See [MDEV-15051](https://jira.mariadb.org/browse/MDEV-15051) for more information.
 
 #### Running mariadbd Using mysqld\_safe
 
-If you are starting MariaDB by running [mysqld\_safe](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe), then configuring the following in the `[mysqld_safe]` option group in an option file should allow for unlimited sized core files:
+If you are starting MariaDB by running [mysqld\_safe](../../../clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md), then configuring the following in the `[mysqld_safe]` option group in an option file should allow for unlimited sized core files:
 
 ```
 [mysqld_safe]
@@ -62,9 +62,9 @@ You can check your current values by executing:
 my_print_defaults mysqld_safe
 ```
 
-See [mysqld\_safe: Configuring the Core File Size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe) for more details.
+See [mysqld\_safe: Configuring the Core File Size](../../../clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md) for more details.
 
-**Note:** If you are using [mysqld\_safe](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe) and running `mariadbd` as the `root` user, then no\
+**Note:** If you are using [mysqld\_safe](../../../clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md) and running `mariadbd` as the `root` user, then no\
 core file is created on some systems. The solution is to run `mariadbd` as another user.
 
 #### Running mariadbd Manually
@@ -149,7 +149,7 @@ EOF
 
 Note: if you are using containers, the pid is always going to be 1, so this may not be a useful setting. Appending an identifier like %t to the [kernel.core\_pattern](https://www.kernel.org/doc/html/latest/admin-guide/sysctl/kernel.html#core-pattern) will generate more unique files.
 
-The value of `kernel.core_pattern` is printed to the [error log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log) when the `mariadbd` process crashes. That way, users can determine where the process may have dumped a core file. See [MDEV-15051](https://jira.mariadb.org/browse/MDEV-15051) for more information.
+The value of `kernel.core_pattern` is printed to the [error log](../../../server-management/server-monitoring-logs/error-log.md) when the `mariadbd` process crashes. That way, users can determine where the process may have dumped a core file. See [MDEV-15051](https://jira.mariadb.org/browse/MDEV-15051) for more information.
 
 **Note:** Ensure that you have enough free disk space in the path pointed to by `kernel.core_pattern`.
 
@@ -270,16 +270,16 @@ If your `mariadbd` binary is built with [Address Sanitizer (ASAN)](https://app.g
 
 ## What's Included in Core Files
 
-Core files usually contain a dump of all memory in the process's full address space. This means that if a server has some large buffers configured (such as a large [InnoDB buffer pool](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-buffer-pool)), then the server's core files can get very large.
+Core files usually contain a dump of all memory in the process's full address space. This means that if a server has some large buffers configured (such as a large [InnoDB buffer pool](../../../server-usage/storage-engines/innodb/innodb-buffer-pool.md)), then the server's core files can get very large.
 
 Some large buffers have been excluded from core files on some systems as a way to reduce the size.
 
 The following buffers are excluded:
 
-* [InnoDB buffer pool](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-buffer-pool)
-* [InnoDB log buffer](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_log_buffer_size)
+* [InnoDB buffer pool](../../../server-usage/storage-engines/innodb/innodb-buffer-pool.md)
+* [InnoDB log buffer](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_log_buffer_size)
 * InnoDB Redo log buffer (fixed 2M)
-* [Query cache](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/query-cache)
+* [Query cache](../../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/query-cache.md)
 
 The buffers are only excluded on Linux when using kernel version 3.4 and above and when using a non-debug build of `mariadbd`. Some Linux kernel versions have a [bug](https://lists.launchpad.net/maria-discuss/msg05245.html) which would cause the following warning to be printed to the log:
 
