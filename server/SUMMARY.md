@@ -3936,3 +3936,4 @@
       * [Storage Engine FAQ](reference/product-development/storage-engines-storage-engine-development/storage-engine-faq.md)
       * [Table Discovery (before 10.0.2)](reference/product-development/storage-engines-storage-engine-development/table-discovery-before-1002.md)
       * [Table Discovery](reference/product-development/storage-engines-storage-engine-development/table-discovery.md)
+    * [Server Development](reference/product-development/server-development.md)
