@@ -3937,6 +3937,8 @@
       * [Table Discovery (before 10.0.2)](reference/product-development/storage-engines-storage-engine-development/table-discovery-before-1002.md)
       * [Table Discovery](reference/product-development/storage-engines-storage-engine-development/table-discovery.md)
     * [Server Development](reference/product-development/server-development/README.md)
+      * [MariaDB Server Roadmap](development-articles/general-info/mariadb-server-roadmap.md)
+      * [Working with GitHub](development-articles/general-info/working-with-github.md)   
       * [Debugging](reference/product-development/server-development/mariadb-fault-finding/README.md)
         * [Checking MariaDB](reference/product-development/server-development/mariadb-fault-finding/checking-mariadb.md)
         * [MariaDB Crashes](reference/product-development/server-development/mariadb-fault-finding/mariadb-crashes.md)
