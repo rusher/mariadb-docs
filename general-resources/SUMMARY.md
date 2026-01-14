@@ -88,8 +88,6 @@
 ***
 
 * [Product Development](development-articles/README.md)
-  * [MariaDB Quality Development Rules](development-articles/mariadb-quality-development-rules.md)
-  * [Uploading Package to PPA](development-articles/uploading-package-to-ppa.md)
   * [MariaDB Development](development-articles/general-info/README.md)
   * [MariaDB Internals](development-articles/mariadb-internals/README.md)
     * [Merging into MariaDB](development-articles/mariadb-internals/mariadb-internals-documentation-merging-into-mariadb/README.md)

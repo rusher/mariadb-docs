@@ -3916,6 +3916,8 @@
       * [XA\_PREPARE\_LOG\_EVENT](reference/clientserver-protocol/replication-protocol/xa_prepare_log_event.md)
       * [XID\_EVENT](reference/clientserver-protocol/replication-protocol/xid_event.md)
   * [Product Development](reference/product-development/README.md)
+    * [MariaDB Quality Development Rules](development-articles/mariadb-quality-development-rules.md)
+    * [Uploading Package to PPA](development-articles/uploading-package-to-ppa.md)  
     * [Debugging MariaDB](reference/product-development/debugging-mariadb/README.md)
       * [Compiling MariaDB for Debugging](reference/product-development/debugging-mariadb/compiling-mariadb-for-debugging.md)
       * [Creating a Trace File](reference/product-development/debugging-mariadb/creating-a-trace-file.md)
