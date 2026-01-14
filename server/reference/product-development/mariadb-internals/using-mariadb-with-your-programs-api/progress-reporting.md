@@ -7,9 +7,9 @@ MariaDB supports progress reporting for some long running commands.
 Progress reporting means that:
 
 * There is a `Progress` column\
-  in [SHOW PROCESSLIST](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-processlist) which shows the total progress\
+  in [SHOW PROCESSLIST](../../../sql-statements/administrative-sql-statements/show/show-processlist.md) which shows the total progress\
   (0-100%)
-* [INFORMATION\_SCHEMA.PROCESSLIST](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-processlist-table) has three columns which allow you to see in which process stage we are and how much of that stage is completed:
+* [INFORMATION\_SCHEMA.PROCESSLIST](../../../system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) has three columns which allow you to see in which process stage we are and how much of that stage is completed:
   * `STAGE`
   * `MAX_STAGE`
   * `PROGRESS` (within current stage).
@@ -24,17 +24,17 @@ different amounts of time.
 Currently, the following commands can send progress report messages to the\
 client:
 
-* [ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table)
-* [CREATE INDEX](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-index)
-* [DROP INDEX](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-index)
-* [LOAD DATA INFILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile) (not `LOAD DATA LOCAL INFILE`, as in that case we\
+* [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table/)
+* [CREATE INDEX](../../../sql-statements/data-definition/create/create-index.md)
+* [DROP INDEX](../../../sql-statements/data-definition/drop/drop-index.md)
+* [LOAD DATA INFILE](../../../sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) (not `LOAD DATA LOCAL INFILE`, as in that case we\
   don't know the size of the file).
 
 Some Aria storage engine operations also support progress messages:
 
-* [CHECK TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/table-statements/check-table)
-* [REPAIR TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/table-statements/repair-table)
-* [ANALYZE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/table-statements/analyze-table)
+* [CHECK TABLE](../../../sql-statements/table-statements/check-table.md)
+* [REPAIR TABLE](../../../sql-statements/table-statements/repair-table.md)
+* [ANALYZE TABLE](../../../sql-statements/table-statements/analyze-table.md)
 * [OPTIMIZE TABLE](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md)
 
 ### Limitations

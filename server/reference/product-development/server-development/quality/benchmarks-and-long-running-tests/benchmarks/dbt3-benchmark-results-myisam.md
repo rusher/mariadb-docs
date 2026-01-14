@@ -191,8 +191,6 @@ Here is the graphics of the results:
 
 (Smaller bars are better)
 
-![dbt3-myisam-s30-hdd](../../../../../.gitbook/assets/dbt3-myisam-s30-hdd.png)
-
 **NOTE:** Queries that are cut off by the graphics have timed out the period of 2 hours.
 
 Here are the actual results in seconds (smaller is better):
@@ -375,8 +373,6 @@ algorithm in MySQL is _in\_to\_exists_.
 
 Here is the graphics of the results of the benchmarked q20:\
 (Smaller bars are better)
-
-![dbt3-q20-myisam-s30-hdd](../../../../../.gitbook/assets/dbt3-q20-myisam-s30-hdd.png)
 
 **NOTE:** Queries that are cut off by the graphics have timed out the period of\
 30000 seconds.

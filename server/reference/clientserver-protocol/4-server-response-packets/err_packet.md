@@ -31,7 +31,7 @@ Note that the `ERR_Packet` is supposed to send a server error to the client. In 
 
 ## See also
 
-["Progress reporting"](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting)
+["Progress reporting"](/broken/spaces/WCInJQ9cmGjq1lsTG91E/pages/KgSCnuNXCMSK6rHfTpO5)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

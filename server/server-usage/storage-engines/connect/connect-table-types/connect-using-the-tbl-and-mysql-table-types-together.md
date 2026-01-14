@@ -57,7 +57,7 @@ SELECT c1, SUM(sc2) FROM rtall;
 
 Almost all the work are done on the remote machines, simultaneously thanks to the thread option, making this query super-fast even on big tables placed on many remote machines.
 
-Thread is currently experimental. Use it only for test and report any malfunction on [JIRA](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/general-info/tools/jira).
+Thread is currently experimental. Use it only for test and report any malfunction on [JIRA](/broken/spaces/WCInJQ9cmGjq1lsTG91E/pages/8H2QW24PZkCSvuwPkQtB).
 
 ## Providing a list of servers
 

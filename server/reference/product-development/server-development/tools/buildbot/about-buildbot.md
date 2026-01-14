@@ -47,8 +47,6 @@ Buildbot should be used by each MariaDB developer to ensure that the new changes
 
 ## How does the Buildbot work?
 
-![Buildbot overview](../../../../.gitbook/assets/buildbot_schematic.png)
-
 As it comes to the Buildbot Master, we use a multi-master configuration. This means that we have multiple running master processes. So, we have a dedicated master for the user interface and several other that deal with looking for changes and scheduling builds.
 
 Each time a push is made to the MariaDB Server Repository, it is detected by the buildbot master which schedules all the builds. Each build defines a different test configuration. We mainly use Docker Latent Workers which means that for each build, the master starts a Docker container on a remote machine. The container is configured to run the buildbot-worker process on startup. This process can now receive instructions from the master. In this way, by using latent workers there isn’t a buildbot-worker process continuously running on the worker machine. Instead, for each build a separate container is started.

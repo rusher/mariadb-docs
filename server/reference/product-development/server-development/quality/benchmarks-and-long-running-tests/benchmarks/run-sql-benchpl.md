@@ -1,7 +1,7 @@
 # run-sql-bench.pl
 
 `run-sql-bench.pl` is a perl script for automating runs of sql-bench\
-(You can find sql-bench in the [MariaDB source code](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code).)
+(You can find sql-bench in the [MariaDB source code](../../../../../../clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code.md).)
 
 `run-sql-bench.pl` can be found in the [mariadb-tools](mariadb-tools.md) project on Launchpad. Once you have a copy of mariadb-tools,\
 you'll find the script, and its configuration directories, in the `sql-bench` directory. For the purposes of this\
@@ -14,7 +14,7 @@ Example configuration scripts used for different runs can be found in the variou
 
 To run the `run-sql-bench.pl` script, do the following:
 
-1. [Branch a MariaDB or MySQL tree](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code)
+1. [Branch a MariaDB or MySQL tree](../../../../../../clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code.md)
 2. Optionally do some code changes in that tree and commit your changes
 3. Edit `run-sql-bench.pl` to set internal options, especially the "`my $path`" variable.
 4. Create a `${BASE_DIR}/sql-bench/conf/host.cnf` file for your system. An\

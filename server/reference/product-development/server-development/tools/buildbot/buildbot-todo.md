@@ -103,7 +103,7 @@ high.
 
 * Add `apt-get source mariadb-server` checking in buildbot (for package\
   testing).
-* Add testing of bintar package with real start of server [mysqld\_safe](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe) and\
+* Add testing of bintar package with real start of server [mysqld\_safe](../../../../../clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md) and\
   also test on different distro/version than what was built (eg\
   hardy<->jaunty).
 * In package build, sign .debs with dummy key, to more accurately test the real\

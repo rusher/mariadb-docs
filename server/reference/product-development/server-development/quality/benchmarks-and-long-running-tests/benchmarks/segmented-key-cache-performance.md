@@ -2,7 +2,7 @@
 
 ## Testing method for segmented key cache performance
 
-We used [SysBench v0.5](https://launchpad.net/sysbench) from Launchpad to test the [segmented key cache](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/segmented-key-cache) performance for the MyISAM storage engine of [MariaDB 5.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-2-series/mariadb-522-release-notes)-gamma.
+We used [SysBench v0.5](https://launchpad.net/sysbench) from Launchpad to test the [segmented key cache](../../../../../../ha-and-performance/optimization-and-tuning/system-variables/segmented-key-cache.md) performance for the MyISAM storage engine of [MariaDB 5.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-2-series/mariadb-522-release-notes)-gamma.
 
 As wrapper scripts for automated running of SysBench we used the `sysbench/` directory from [MariaDB Tools](https://launchpad.net/mariadb-tools).
 
@@ -18,8 +18,6 @@ We see up to 250% performance gain depending on the amount of concurrent users.
 
 #### On pitbull with --random-points=10
 
-![pitbull\_rp10](../../../../../.gitbook/assets/pitbull_rp10.png)
-
 In relative numbers:
 
 ```
@@ -32,8 +30,6 @@ select_random_points.lua --random-points=10
 
 #### On pitbull with --random-points=50
 
-![pitbull\_rp50](../../../../../.gitbook/assets/pitbull_rp50.png)
-
 In relative numbers:
 
 ```
@@ -45,8 +41,6 @@ select_random_points.lua --random-points=50
 ```
 
 #### On pitbull with --random-points=100
-
-![pitbull\_rp100](../../../../../.gitbook/assets/pitbull_rp100.png)
 
 In relative numbers:
 
@@ -66,8 +60,6 @@ You can find the absolute and relative numbers in our OpenOffice.org spread shee
 
 #### On perro with --random-points=10
 
-![perro\_rp10](../../../../../.gitbook/assets/perro_rp10.png)
-
 In relative numbers:
 
 ```
@@ -80,8 +72,6 @@ select_random_points.lua --random-points=10
 
 #### On perro with --random-points=50
 
-![perro\_rp50](../../../../../.gitbook/assets/perro_rp50.png)
-
 In relative numbers:
 
 ```
@@ -93,8 +83,6 @@ select_random_points.lua --random-points=50
 ```
 
 #### On perro with --random-points=100
-
-![perro\_rp100](../../../../../.gitbook/assets/perro_rp100.png)
 
 In relative numbers:
 

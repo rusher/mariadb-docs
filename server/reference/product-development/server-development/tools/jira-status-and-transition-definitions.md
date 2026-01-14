@@ -2,8 +2,6 @@
 
 Here is the MariaDB Server (MDEV) [Jira](jira.md) project workflow.
 
-![status\_transition\_jira](../../../.gitbook/assets/status_transition_jira.png)
-
 **OPEN**
 
 * Status assigned to newly created Jira issues
