@@ -3937,8 +3937,8 @@
       * [Table Discovery (before 10.0.2)](reference/product-development/storage-engines-storage-engine-development/table-discovery-before-1002.md)
       * [Table Discovery](reference/product-development/storage-engines-storage-engine-development/table-discovery.md)
     * [Server Development](reference/product-development/server-development/README.md)
-      * [MariaDB Server Roadmap](development-articles/general-info/mariadb-server-roadmap.md)
-      * [Working with GitHub](development-articles/general-info/working-with-github.md)   
+      * [MariaDB Server Roadmap](reference/product-development/server-development/mariadb-server-roadmap.md)
+      * [Working with GitHub](reference/product-development/server-development/working-with-github.md)   
       * [Debugging](reference/product-development/server-development/mariadb-fault-finding/README.md)
         * [Checking MariaDB](reference/product-development/server-development/mariadb-fault-finding/checking-mariadb.md)
         * [MariaDB Crashes](reference/product-development/server-development/mariadb-fault-finding/mariadb-crashes.md)
@@ -4011,5 +4011,5 @@
           * [DBT-3 Dataset](reference/product-development/server-development/quality/qa-datasets/dbt-3-dataset.md)
           * [DBT-3 Queries](reference/product-development/server-development/quality/qa-datasets/dbt-3-queries.md)
           * [OpenStreetMap Dataset](reference/product-development/server-development/quality/qa-datasets/openstreetmap-dataset.md)
-          * [osmdb06.sql](development-articles/general-info/quality/qa-datasets/osmdb06sql.md)
+          * [osmdb06.sql](reference/product-development/server-development/quality/qa-datasets/osmdb06sql.md)
 
