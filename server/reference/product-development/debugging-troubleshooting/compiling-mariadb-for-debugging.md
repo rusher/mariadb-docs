@@ -1,5 +1,7 @@
 # Compiling MariaDB for Debugging
 
+{% include "../../../.gitbook/includes/hint-lower-level-development.md" %}
+
 ## Compiling MariaDB for Debugging Using the `CMAKE_BUILD_TYPE` Option
 
 This option enables multiple debug instrumentation aspects within the MariaDB server that provided more detailed information around complex parts of the server and can be used to implement and run tests where the concurrent execution of multiple threads must be controlled to achieve a specific state. If you are not doing this, the following [option](compiling-mariadb-for-debugging.md#Building_Optimized_Build_With_Debug_Symbols) is sufficient.

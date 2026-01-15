@@ -1,4 +1,6 @@
-# How to Produce a Full Stack Trace for mariadbd
+# Producing a Full Stack Trace for mariadbd
+
+{% include "../../../.gitbook/includes/hint-lower-level-development.md" %}
 
 ## Partial Stack Traces in the Error Log
 

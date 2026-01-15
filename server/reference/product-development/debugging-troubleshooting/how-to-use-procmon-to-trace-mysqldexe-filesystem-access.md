@@ -1,4 +1,6 @@
-# How to Use procmon to Trace mysqld.exe Filesystem Access
+# Using procmon to Trace mysqld.exe Filesystem Access
+
+{% include "../../../.gitbook/includes/hint-lower-level-development.md" %}
 
 This article provides a walkthrough on using the Process Monitor on Windows, tracing file system access by mysqld.exe during the "install plugin" call.
 

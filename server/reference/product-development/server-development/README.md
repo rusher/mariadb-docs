@@ -29,8 +29,8 @@ This section contains background information, mostly aimed at engineers developi
 [working-with-github.md](working-with-github.md)
 {% endcontent-ref %}
 
-{% content-ref url="mariadb-fault-finding/" %}
-[mariadb-fault-finding](mariadb-fault-finding/)
+{% content-ref url="../debugging-troubleshooting/" %}
+[debugging-troubleshooting](../debugging-troubleshooting/)
 {% endcontent-ref %}
 
 {% content-ref url="quality/" %}

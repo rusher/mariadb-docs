@@ -15,7 +15,7 @@ layout:
     visible: true
 ---
 
-# Debugging
+# Debugging & Troubleshooting
 
 {% hint style="info" %}
 This section contains background information, mostly aimed at engineers developing MariaDB features.
@@ -33,7 +33,7 @@ This section contains background information, mostly aimed at engineers developi
 [mariadb-error-messages.md](mariadb-error-messages.md)
 {% endcontent-ref %}
 
-{% content-ref url="memory-is-leaking.md" %}
-[memory-is-leaking.md](memory-is-leaking.md)
+{% content-ref url="/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/yzWRXfsy15PGihpHnXUn" %}
+[Broken link](/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/yzWRXfsy15PGihpHnXUn)
 {% endcontent-ref %}
 

@@ -1,5 +1,7 @@
 # Creating a Trace File
 
+{% include "../../../.gitbook/includes/hint-lower-level-development.md" %}
+
 If `mysqld` is crashing, creating a trace file is a good way to find the issue.
 
 A `mysqld` binary that has been compiled with debugging support can create trace files using the DBUG package created by Fred Fish. To find out if your `mysqld` binary has debugging support, run `mysqld -V` on the command line. If the version number ends in `-debug` then your `mysqld` binary was compiled with debugging support.

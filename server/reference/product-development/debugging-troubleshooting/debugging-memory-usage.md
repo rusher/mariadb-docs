@@ -1,6 +1,62 @@
-# Memory is Leaking
+# Debugging Memory Usage
 
-{% include "../../../../.gitbook/includes/this-page-contains-backgrou....md" %}
+{% include "../../../.gitbook/includes/hint-system-level-debugging.md" %}
+
+## Troubleshooting Memory Usage
+
+This page describes how to debug MariaDB's memory usage. It uses CentOS 7 but can be applied to other systems as well.
+
+Use Google PerfTools for debugging memory usage: [heapprofile.html](https://gperftools.github.io/gperftools/heapprofile.html)
+
+On CentOS, install PerfTools like this:
+
+```bash
+sudo yum install gperftools 
+service mariadb stop
+systemctl edit mariadb
+```
+
+In the editor that opens, add and save this content:
+
+```ini
+[Service]
+Environment="HEAPPROFILE=/tmp/heap-prof-1"
+Environment="HEAP_PROFILE_ALLOCATION_INTERVAL=10737418240"
+Environment="HEAP_PROFILE_INUSE_INTERVAL=1073741824"
+Environment="LD_PRELOAD=/usr/lib64/libtcmalloc.so.4"
+```
+
+Then run this command:
+
+```bash
+service mariadb start
+```
+
+Now, run the workload. When memory consumption becomes large enough, run this command:
+
+```bash
+ls -la /tmp/heap-prof-*
+```
+
+This should show several files. Copy the last file from the list:
+
+```bash
+cp /tmp/heap-prof-1.0007.heap .
+```
+
+Then, run this command:
+
+```bash
+pprof --dot /usr/sbin/mysqld heap-prof-1.0007.heap  > 7.dot
+```
+
+{% hint style="info" %}
+This produces a lot of lines, like `/bin/addr2line: Dwarf Error: ...`.
+{% endhint %}
+
+Then, please send us the `7.dot` file.
+
+## Memory Leak Overview
 
 Operating system memory can be assigned, giving MariaDB a virtual address space, and allocated (paged in), once MariaDB starts to use this memory.
 
@@ -19,7 +75,7 @@ performance_schema=on
 performance-schema-instrument='memory/%=ON'
 ```
 
-This is available since [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-1052-release-notes). With this enabled, [performance\_schema.memory\_summary\_global\_by\_event\_name](../../../system-tables/performance-schema/performance-schema-tables/performance-schema-memory_summary_global_by_event_name-table.md) can start to show where the memory leak is occurring.
+This is available since [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-1052-release-notes). With this enabled, [performance\_schema.memory\_summary\_global\_by\_event\_name](../../system-tables/performance-schema/performance-schema-tables/performance-schema-memory_summary_global_by_event_name-table.md) can start to show where the memory leak is occurring.
 
 ## Memleak
 
@@ -31,7 +87,9 @@ The important aspect on measurement is to let MariaDB startup, and commence an n
 
 Increasing the time interval of `memleak` is important to run longer than the usual query. If your memory is leaking over hours, then a high interval of 10 minutes so will reduce memory temporary allocated for a query. Recording for a longer time or multiple times should provide enough information to narrow down the location of the leak.
 
-Note: Very old Linux kernels like Centos/RHEL 7 might not have sufficient hooks to measure this correctly.
+{% hint style="info" %}
+Very old Linux kernels like Centos/RHEL 7 might not have sufficient hooks to measure this correctly.
+{% endhint %}
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

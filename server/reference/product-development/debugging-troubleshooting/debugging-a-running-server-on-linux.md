@@ -1,5 +1,7 @@
 # Debugging a Running Server (on Linux)
 
+{% include "../../../.gitbook/includes/hint-lower-level-development.md" %}
+
 Even if you don't have a server that is [compiled for debugging](compiling-mariadb-for-debugging.md), there are still ways to get more information out from it if things go wrong.
 
 When things go wrong, it's always better to have a version of mysqld daemon that is not stripped.

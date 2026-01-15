@@ -1,5 +1,7 @@
 # Enabling Core Dumps
 
+{% include "../../../.gitbook/includes/hint-lower-level-development.md" %}
+
 ## Enabling in an Option File
 
 Core dumps are enabled by default on **Windows**, so **this step can be skipped on Windows** in those versions. See [MDEV-18439](https://jira.mariadb.org/browse/MDEV-18439) for more information.
