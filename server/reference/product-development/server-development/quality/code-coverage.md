@@ -13,10 +13,10 @@ For new code in MariaDB, we aim much higher:
 The goals are:
 
 1. All new lines of code should ideally be tested by MTR.
-2. Code which cannot reasonably be tested by MTR needs to be tested by another tool and those code lines marked with /\* purecov: tested \*/.
+2. Code which cannot reasonably be tested by MTR needs to be tested by another tool and those code lines marked with `/* purecov: tested */`.
    * In this case the tool used for testing should be documented in the worklog entry for the code or in the commit message.
-3. Code that can't reasonably be tested (such as error conditions) should be marked with '/\* purecov: inspected \*/' so that a reviewer of the code can easily spot this code.
-4. Code that is suspected to be deadcode should have a 'DBUG\_ASSERT(0)' or be marked with '/\* purecov: deadcode \*/' so that we have a chance to notice if the code is ever executed.
+3. Code that can't reasonably be tested (such as error conditions) should be marked with `/* purecov: inspected */` so that a reviewer of the code can easily spot this code.
+4. Code that is suspected to be deadcode should have a `DBUG_ASSERT(0)` or be marked with `/* purecov: deadcode */` so that we have a chance to notice if the code is ever executed.
 
 The reason we are using 'purecov' to mark lines is an attribution to the [purecov](ftp://ftp.software.ibm.com/software/rational/docs/v2002/dev_tools/purecov/html/ht_intro_pc.htm) tool we originally used for code coverage in the early years of MySQL.
 
@@ -46,12 +46,12 @@ For code blocks larger than 1 line one can use the block syntax:
 /* purecov: end */
 ```
 
-### Running mysql-test-run with gcov <a href="#running-mysql-test-run-with-gcov" id="running-mysql-test-run-with-gcov"></a>
+### Running mysql-test-run With gcov <a href="#running-mysql-test-run-with-gcov" id="running-mysql-test-run-with-gcov"></a>
 
 #### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
-1. First make sure that gcov 4.9 is installed.Older versions of the gocv library (lgcov) can't handle running several instances of a program in parallel. This causes the generated .gov files to not contain all executed lines when running mysql-test-run with the --parallel option or running test that starts several mysqld servers, like replication or spider tests.
-2. Compile MariaDB with BUILD/compile-pentium64-gcov (if your machine does not have a pentium CPU, hack this script, or just live with the pentium-specific stuff)
+1. First make sure that gcov 4.9 is installed.Older versions of the gocv library (lgcov) can't handle running several instances of a program in parallel. This causes the generated .gov files to not contain all executed lines when running `mysql-test-run` with the `--parallel` option or running test that starts several mysqld servers, like replication or spider tests.
+2. Compile MariaDB with `BUILD/compile-pentium64-gcov` (if your machine does not have a pentium CPU, hack this script, or just live with the pentium-specific stuff).
 
 #### Running mysql-test-run <a href="#running-mysql-test-run" id="running-mysql-test-run"></a>
 
