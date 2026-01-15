@@ -1,6 +1,6 @@
 # MariaDB Error Messages
 
-{% include "../../../.gitbook/includes/hint-system-level-debugging.md" %}
+{% include "../../../../.gitbook/includes/hint-system-level-debugging.md" %}
 
 MariaDB has a number of error messages. If the meaning is not clear, use the following table to guide you to the desired actions.
 

@@ -1,6 +1,6 @@
 # MariaDB Crashes
 
-{% include "../../../.gitbook/includes/hint-system-level-debugging.md" %}
+{% include "../../../../.gitbook/includes/hint-system-level-debugging.md" %}
 
 There are a number of causes of MariaDB crashes. Most of these are MariaDB encountering a situation where it cannot safely proceed. Crashes on Linux/Unix systems are fatal signals. On Windows these are similar looking exceptions.
 
