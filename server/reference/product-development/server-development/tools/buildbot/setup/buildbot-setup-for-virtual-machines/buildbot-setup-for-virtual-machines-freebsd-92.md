@@ -1,6 +1,12 @@
+---
+description: >-
+  Explains how to provision and configure virtual machine instances specifically
+  for Buildbot testing.
+---
+
 # Buildbot Setup for Virtual Machines - FreeBSD 9.2
 
-## Base install
+## Base Install
 
 ```
 qemu-img create -f qcow2 /kvm/vms/vm-freebsd92-amd64-serial.qcow2 15G
@@ -21,12 +27,11 @@ Once running you can connect to the VNC server from your local host with:
 vncviewer -via ${remote_host} localhost
 ```
 
-Replace `${remote_host}` with the host the\
-vm is running on.
+Replace `${remote_host}` with the host the vm is running on.
 
-**Note:** When you activate the install, vncviewer will disconnect after a bit\
-with a complaint about the rect being too large. This is fine. The installer\
-has just resized the vnc screen. Simply reconnect.
+{% hint style="info" %}
+When you activate the install, vncviewer will disconnect after a bit with a complaint about the rect being too large. This is fine. The installer has just resized the vnc screen. Simply reconnect.
+{% endhint %}
 
 Install, picking default options mostly, with the following notes:
 

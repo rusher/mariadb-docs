@@ -1,19 +1,18 @@
+---
+description: >-
+  Specific instructions and requirements for configuring a Buildbot worker on
+  macOS systems.
+---
 
-# Buildbot Setup for MacOSX
+# Buildbot Setup for macOS
 
-## Setting up a Buildbot slave on Mac OS X
+## Setting up a Buildbot Slave on macOS
 
+Install buildbot-slave using [macports](https://www.macports.org/) or buildbot from [fink](https://www.finkproject.org/) (if you use old version of `buildbot`/`buildbot-slave`, you should use the `buildbot` command instead of `buildslave-2.6` in the following instructions).
 
-Install buildbot-slave using [macports](https://www.macports.org/) or buildbot from [fink](https://www.finkproject.org/) (if you use old version of buildbot/buildbot-slave you should use buildbot command instead of buildslave-2.6 in following instructions).
+Add user buildbot. Make sure that you do not have a buildbot user and group on your system:
 
-
-Add user buildbot:
-
-
-Make sure that you do not have a buildbot user and group on your system
-
-
-```
+```bash
 # Check for group with id 101
 id -g -nr 101
 
@@ -21,10 +20,9 @@ id -g -nr 101
 id -u -nr 101
 ```
 
-If you do not have the group and user buildbot, then create the group and the user buildbot
+If you do not have the group and user buildbot, then create the group and the user buildbot:
 
-
-```
+```bash
 # Create group buildbot with group id 101
 GROUP="buildbot"
 dscl . create /groups/$GROUP
@@ -47,15 +45,13 @@ chown 101:101 $BUILDSLAVE_HOME
 
 To hide the user use:
 
-
-```
+```bash
 defaults write /Library/Preferences/com.apple.loginwindow HiddenUsersList -array-add buildbot
 ```
 
-Prepare environment:
+Prepare the environment:
 
-
-```
+```bash
 sudo -i -u buildbot
 buildslave-2.6 create-slave --usepty=0 maria-slave hasky.askmonty.org:9989 <slavename> <passwd>
 bzr init-repo maria-slave/<slavedirectory>
@@ -64,29 +60,24 @@ $EDITOR maria-slave/info/host
 logout
 ```
 
-Buildbot can be started/stopped manually with these commands (it's a good idea to start and stop it to see if it is set up correctly):
+Buildbot can be started/stopped manually with these commands (it's a good idea to start and stop it to see if it is set up correctly). If you installed buildbot from [fink](https://www.finkproject.org/), please make sure that the buildbot user is using the environment settings. Your .profile should contain following line:
 
-
-If you installed buildbot from [fink](https://www.finkproject.org/), please make sure that the buildbot user is using the environment settings. Your .profile should contain follwing line:
-
-
-```
+```bash
 sudo - buildbot
 more .profile
 test -r /sw/bin/init.sh && . /sw/bin/init.sh
 ```
 
-```
+```bash
 sudo -i -u buildbot
 buildslave-2.6 start maria-slave
 buildslave-2.6 stop maria-slave
 logout
 ```
 
-In order to make buildbot start on system boot, you'll need to create /Library/LaunchDaemons/net.sourceforge.buildbot.plist file with the following contents (modified example from buildbot wiki):
+In order to make buildbot start on system boot, you'll need to create a `/Library/LaunchDaemons/net.sourceforge.buildbot.plist` file with the following contents (modified example from buildbot wiki):
 
-
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -128,17 +119,15 @@ In order to make buildbot start on system boot, you'll need to create /Library/L
 </plist>
 ```
 
-If you installed buildbot from [fink](https://www.finkproject.org/), then you can edit and copy the plist file
+If you installed buildbot from [fink](https://www.finkproject.org/), you can edit and copy the `plist` file:
 
-
-```
+```bash
 $EDITOR /sw/share/doc/buildbot-py26/contrib/os-x/net.sourceforge.buildbot.slave.plist
 ```
 
-Your plist file should similar to this one after editing:
+Your `plist` file should similar to this one after editing:
 
-
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd 
 ">
@@ -183,14 +172,14 @@ Your plist file should similar to this one after editing:
 </plist>
 ```
 
-```
+```bash
 sudo cp /sw/share/doc/buildbot-py26/contrib/os-x/net.sourceforge.buildbot.slave.plist /Library/LaunchDaemons/
 ```
 
-Note: you have to start your buildslave via launchd, otherwise you will run into several problems. For further details, please refer to [Using Launchd](https://buildbot.net/trac/wiki/UsingLaunchd)
-
+{% hint style="warning" %}
+You have to start your build slave via `launchd`, otherwise you will run into several problems. For further details, please refer to [Using Launchd](https://buildbot.net/trac/wiki/UsingLaunchd).
+{% endhint %}
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

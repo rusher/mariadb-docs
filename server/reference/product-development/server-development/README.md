@@ -1,4 +1,8 @@
 ---
+description: >-
+  Covers foundational engineering topics, including the server roadmap, GitHub
+  collaboration workflows, and quality assurance protocols for core
+  contributions.
 layout:
   width: default
   title:

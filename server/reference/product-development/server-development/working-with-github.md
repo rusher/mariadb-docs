@@ -1,5 +1,7 @@
 ---
-description: Creating pull requests.
+description: >-
+  Outlines the workflow for contributing to MariaDB via GitHub, including branch
+  management, pull requests, and coding standards for developers.
 ---
 
 # Working with GitHub

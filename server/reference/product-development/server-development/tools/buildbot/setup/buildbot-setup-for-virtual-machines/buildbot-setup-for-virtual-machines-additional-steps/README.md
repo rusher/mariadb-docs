@@ -1,7 +1,7 @@
 ---
 description: >-
-  This section documents some additions that have been made after the initial
-  setup
+  Explains how to provision and configure virtual machine instances specifically
+  for Buildbot testing.
 layout:
   width: default
   title:

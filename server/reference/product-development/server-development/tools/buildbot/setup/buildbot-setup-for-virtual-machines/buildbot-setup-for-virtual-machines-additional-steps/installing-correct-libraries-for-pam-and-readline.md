@@ -1,4 +1,10 @@
-# Installing correct libraries for PAM and readline
+---
+description: >-
+  Explains how to provision and configure virtual machine instances specifically
+  for Buildbot testing.
+---
+
+# Installing Correct Libraries for PAM and readline
 
 Some additional/alternative libraries needs to be installed to handle readline\
 and PAM correctly.

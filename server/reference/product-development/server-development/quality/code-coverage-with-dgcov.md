@@ -1,3 +1,9 @@
+---
+description: >-
+  Technical instructions on using the dgcov tool to generate and analyze code
+  coverage reports for the MariaDB server.
+---
+
 # Code Coverage With dgcov
 
 {% include "../../../../.gitbook/includes/this-page-contains-backgrou....md" %}

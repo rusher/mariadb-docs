@@ -1,3 +1,9 @@
+---
+description: >-
+  Explains how to provision and configure virtual machine instances specifically
+  for Buildbot testing.
+---
+
 # Buildbot Setup for Virtual Machines - Ubuntu 9.04 i386
 
 This vm is used to build source tarball and for Ubuntu 9.04 32-bit .deb.

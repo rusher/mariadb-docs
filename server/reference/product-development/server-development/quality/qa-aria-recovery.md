@@ -1,3 +1,9 @@
+---
+description: >-
+  Focuses on testing the crash recovery capabilities of the Aria storage engine
+  to ensure data integrity after unexpected shutdowns.
+---
+
 # QA - Aria Recovery
 
 {% include "../../../../.gitbook/includes/this-page-contains-backgrou....md" %}

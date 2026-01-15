@@ -579,7 +579,7 @@ For each individual table you create (or alter), you can set some table options.
 
 The equal sign is optional.
 
-Some options are supported by the server and can be used for all tables, no matter what storage engine they use; other options can be specified for all storage engines, but have a meaning only for some engines. Also, engines can [extend CREATE TABLE with new options](../../../product-development/storage-engines-storage-engine-development/engine-defined-new-tablefieldindex-attributes.md).
+Some options are supported by the server and can be used for all tables, no matter what storage engine they use; other options can be specified for all storage engines, but have a meaning only for some engines. Also, engines can [extend CREATE TABLE with new options](../../../product-development/plugin-development/storage-engines-storage-engine-development/engine-defined-new-tablefieldindex-attributes.md).
 
 If the `IGNORE_BAD_TABLE_OPTIONS` [SQL\_MODE](../../../../server-management/variables-and-modes/sql_mode.md) is enabled, wrong table options generate a warning; otherwise, they generate an error.
 
@@ -961,7 +961,7 @@ CREATE TABLE t1(
 * [Character Sets and Collations](../../../data-types/string-data-types/character-sets/supported-character-sets-and-collations.md)
 * [SHOW CREATE TABLE](../../administrative-sql-statements/show/show-create-table.md)
 * [CREATE TABLE with Vectors](../../../sql-structure/vectors/create-table-with-vectors.md)
-* Storage engines can add their own [attributes for columns, indexes and tables](../../../product-development/storage-engines-storage-engine-development/engine-defined-new-tablefieldindex-attributes.md)
+* Storage engines can add their own [attributes for columns, indexes and tables](../../../product-development/plugin-development/storage-engines-storage-engine-development/engine-defined-new-tablefieldindex-attributes.md)
 * Variable [slave-ddl-exec-mode](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)
 * [InnoDB Limitations](../../../../server-usage/storage-engines/innodb/innodb-limitations.md)
 

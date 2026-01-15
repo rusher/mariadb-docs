@@ -1,3 +1,9 @@
+---
+description: >-
+  How to configure the operating system and MariaDB to produce a core dump file
+  when a crash occurs for post-mortem analysis.
+---
+
 # Enabling Core Dumps
 
 {% include "../../../.gitbook/includes/hint-lower-level-development.md" %}

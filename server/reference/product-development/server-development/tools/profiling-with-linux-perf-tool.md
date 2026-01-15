@@ -1,3 +1,9 @@
+---
+description: >-
+  A technical guide on using the Linux perf utility to analyze server
+  performance and identify code bottlenecks.
+---
+
 # Profiling with Linux perf tool
 
 Linux `perf` tool can be used to do non-intrusive profiling.

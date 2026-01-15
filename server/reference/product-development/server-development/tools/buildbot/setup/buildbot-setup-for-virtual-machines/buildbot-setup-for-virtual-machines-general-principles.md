@@ -1,3 +1,9 @@
+---
+description: >-
+  Explains how to provision and configure virtual machine instances specifically
+  for Buildbot testing.
+---
+
 # Buildbot Setup for Virtual Machines - General Principles
 
 The installations are kept minimal, picking mostly default options. This helps\

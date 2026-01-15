@@ -1,3 +1,10 @@
+---
+description: >-
+  Provides instructions for developers to upload MariaDB source packages to a
+  Personal Package Archive (PPA) using tools like dput for Ubuntu-based
+  distributions.
+---
+
 # Uploading Package to PPA
 
 After creating a Launchpad account:

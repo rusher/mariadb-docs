@@ -1,4 +1,8 @@
 ---
+description: >-
+  Offers deep-dive technical guides for diagnosing server issues, including
+  trace file generation, debugger usage, and analyzing core dumps or memory
+  usage.
 layout:
   width: default
   title:

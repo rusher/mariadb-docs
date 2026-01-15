@@ -1,12 +1,14 @@
+---
+description: >-
+  Information on the standardized datasets and database dumps used for DBT-3
+  Queries tests.
+---
 
 # DBT-3 Queries
 
 ## Q1
 
-
-See [MDEV-4309](https://jira.mariadb.org/browse/MDEV-4309) (just speeding up temptable-based GROUP BY execution).
-Optimizer seems to make a good choice here.
-
+See [MDEV-4309](https://jira.mariadb.org/browse/MDEV-4309) (just speeding up temptable-based GROUP BY execution). Optimizer seems to make a good choice here.
 
 ```
 SELECT
@@ -34,24 +36,17 @@ ORDER BY
 
 ## Q4
 
-
 See [MDEV-6015](https://jira.mariadb.org/browse/MDEV-6015).
-
 
 Applicable optimizations:
 
-
-* subquery cache brings no benefit because subquery refers to outer_table.pk, which is different for each row
+* subquery cache brings no benefit because subquery refers to outer\_table.pk, which is different for each row
 * EXISTS-to-IN is applicable
-
   * After that, BKA brings slight speedup
-
 
 Comments on query plan choice
 
-
 * It seems, we're using the best possible query plan here.
-
 
 ```
 SELECT
@@ -79,8 +74,6 @@ ORDER BY
 
 .
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

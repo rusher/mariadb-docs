@@ -1,8 +1,12 @@
+---
+description: >-
+  Explains how to provision and configure virtual machine instances specifically
+  for Buildbot testing.
+---
 
 # Buildbot Setup for Virtual Machines - CentOS 5 i386
 
 ## Base install
-
 
 ```
 cd /kvm
@@ -13,7 +17,6 @@ kvm -m 2047 -hda /kvm/vms/vm-centos5-i386-base.qcow2 -cdrom CentOS-5.3-i386-bin-
 
 ## Configure for serial console
 
-
 ```
 (cd vms && qemu-img create -b vm-centos5-i386-base.qcow2 -f qcow2 vm-centos5-i386-serial.qcow2)
 kvm -m 2047 -hda /kvm/vms/vm-centos5-i386-serial.qcow2 -cdrom CentOS-5.3-i386-bin-DVD.iso -redir 'tcp:2225::22' -boot c -smp 2 -cpu qemu32,-nx -net nic,model=virtio -net user -nographic
@@ -21,21 +24,18 @@ kvm -m 2047 -hda /kvm/vms/vm-centos5-i386-serial.qcow2 -cdrom CentOS-5.3-i386-bi
 
 Add to /boot/grub/menu.lst:
 
-
 ```
 serial --unit=0 --speed=115200 --word=8 --parity=no --stop=1
 terminal --timeout=3 serial console
 ```
 
-also add in menu.lst to kernel line (after removing `quiet splash'):
-
+also add in menu.lst to kernel line (after removing \`quiet splash'):
 
 ```
 console=tty0 console=ttyS0,115200n8
 ```
 
 Add login prompt on serial console:
-
 
 ```
 cat >>/etc/inittab <<END
@@ -46,7 +46,6 @@ END
 ```
 
 Create account.
-
 
 ```
 useradd buildbot
@@ -69,7 +68,6 @@ chmod go-rwx .ssh/authorized_keys
 
 ## Image for rpm build
 
-
 ```
 qemu-img create -b vm-centos5-i386-serial.qcow2 -f qcow2 vm-centos5-i386-build.qcow2
 kvm -m 2047 -hda /kvm/vms/vm-centos5-i386-build.qcow2 -cdrom /kvm/CentOS-5.3-i386-bin-DVD.iso -redir 'tcp:2225::22' -boot c -smp 2 -cpu qemu32,-nx -net nic,model=virtio -net user -nographic
@@ -77,14 +75,12 @@ kvm -m 2047 -hda /kvm/vms/vm-centos5-i386-build.qcow2 -cdrom /kvm/CentOS-5.3-i38
 
 Install compilers etc:
 
-
 ```
 sudo yum groupinstall "Development Tools"
 sudo yum install gperf readline-devel ncurses-devel zlib-devel libaio-devel openssl-devel perl perl\(DBI\)
 ```
 
 Download 5.0 rpm for shared-compat:
-
 
 ```
 sudo mkdir -p /srv/shared/yum/CentOS/5/i386/RPMS/
@@ -94,7 +90,6 @@ sudo wget http://mirror.ourdelta.org/yum/CentOS/5/i386/RPMS/MySQL-OurDelta-share
 
 ## Image for install/test
 
-
 ```
 qemu-img create -b vm-centos5-i386-serial.qcow2 -f qcow2 vm-centos5-i386-install.qcow2
 kvm -m 2047 -hda /kvm/vms/vm-centos5-i386-install.qcow2 -cdrom /kvm/CentOS-5.3-i386-bin-DVD.iso -redir 'tcp:2225::22' -boot c -smp 2 -cpu qemu32,-nx -net nic,model=virtio -net user -nographic
@@ -102,13 +97,10 @@ kvm -m 2047 -hda /kvm/vms/vm-centos5-i386-install.qcow2 -cdrom /kvm/CentOS-5.3-i
 
 Install extra dependencies:
 
-
 ```
 sudo yum install perl perl\(DBI\)
 ```
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

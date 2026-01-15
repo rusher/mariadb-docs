@@ -1,14 +1,16 @@
+---
+description: >-
+  Detailed configuration steps for setting up Buildbot workers on Solaris x86
+  platforms.
+---
 
 # Buildbot Setup for Solaris x86
 
 The following steps were used to create a Solaris 10 x86 BuildSlave.
 
-
 I started with a default install of Solaris 10.
 
-
 First I added a new user with:
-
 
 ```
 groupadd sudo
@@ -18,12 +20,9 @@ passwd ${username}
 
 I then logged in as the new user and setup an ssh key.
 
-
 Now to install software
 
-
 Prior to actually installing the software, I adjusted the global profile so that the /usr/local/ dirs were included in the various PATHs:
-
 
 ```
 vi /etc/profile
@@ -37,7 +36,6 @@ export LOGNAME PATH PYTHONPATH LD_LIBRARY_PATH
 ```
 
 The extra software, I downloaded from sunfreeware:
-
 
 ```
 cd /tmp
@@ -64,7 +62,6 @@ quit
 
 With all of the software downloaded, I next setup and configured sudo and python:
 
-
 ```
 su
 gunzip -v python-2.5.1-sol10-x86-local.gz 
@@ -82,7 +79,6 @@ mkdir -p /usr/local/var/lib/
 ```
 
 With sudo now working, I logged out and then back in. I then installed the other packages:
-
 
 ```
 cd /tmp
@@ -115,9 +111,7 @@ sudo pkgadd -d cmake-2.6.0-sol10-x86-local
 
 With those packages installed it was time to install the pieces of software which don't have pre-built packages:
 
-
 Install Zope Interface:
-
 
 ```
 cd /tmp
@@ -131,7 +125,6 @@ sudo python setup.py install
 
 Install the latest Twisted framework:
 
-
 ```
 cd /tmp
 wget http://tmrc.mit.edu/mirror/twisted/Twisted/10.2/Twisted-10.2.0.tar.bz2
@@ -143,7 +136,6 @@ sudo python setup.py install
 
 Install Bazaar:
 
-
 ```
 cd /tmp
 wget http://launchpad.net/bzr/2.2/2.2.2/+download/bzr-2.2.2.tar.gz
@@ -154,7 +146,6 @@ sudo python setup.py install
 ```
 
 Install ccache:
-
 
 ```
 cd /tmp
@@ -168,7 +159,6 @@ sudo make install
 ```
 
 Configure and start NTP:
-
 
 ```
 sudo cp /etc/inet/ntp.server /etc/inet/ntp.conf
@@ -196,7 +186,6 @@ sudo svcadm enable svc:/network/ntp
 
 Check out and make a test build of MariaDB:
 
-
 ```
 cd
 mkdir src
@@ -208,13 +197,11 @@ BUILD/compile-solaris-amd64
 
 Add a user for buildbot:
 
-
 ```
 sudo useradd -d /export/home/buildbot -m buildbot
 ```
 
 Install Buildbot:
-
 
 ```
 cd /tmp
@@ -227,16 +214,11 @@ sudo python setup.py install
 
 Create the buildbot as the buildbot user:
 
-
 On the build master, add new entry to /etc/buildbot/maria-master-private.cfg
 
-
-Remember the ${slave-name} and ${password} configured above, they're used in
-the next step.
-
+Remember the ${slave-name} and ${password} configured above, they're used in the next step.
 
 Back on the solaris machine:
-
 
 ```
 sudo su - buildbot
@@ -251,7 +233,6 @@ exit
 
 Now start the slave:
 
-
 ```
 sudo su - buildbot
 buildslave start maria-slave
@@ -259,8 +240,6 @@ buildslave start maria-slave
 
 That's the basic process.
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

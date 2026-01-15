@@ -1,3 +1,9 @@
+---
+description: >-
+  Explains how to interpret server error codes and messages to quickly identify
+  configuration or runtime failures.
+---
+
 # MariaDB Error Messages
 
 {% include "../../../../.gitbook/includes/hint-system-level-debugging.md" %}

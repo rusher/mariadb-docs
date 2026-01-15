@@ -1,3 +1,9 @@
+---
+description: >-
+  Information on the standardized datasets and database dumps used for
+  OpenStreetMap tests.
+---
+
 # OpenStreetMap Dataset
 
 This page describes how to use the OpenStreetMap dataset in testing.

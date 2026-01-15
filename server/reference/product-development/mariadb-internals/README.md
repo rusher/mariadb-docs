@@ -1,5 +1,8 @@
 ---
-description: Documentation on the internal workings of MariaDB.
+description: >-
+  Explores the low-level architecture of MariaDB, documenting source code
+  internals, merging procedures, and how to use internal APIs in external
+  programs.
 layout:
   width: default
   title:

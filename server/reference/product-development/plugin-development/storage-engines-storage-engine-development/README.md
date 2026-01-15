@@ -1,7 +1,7 @@
 ---
 description: >-
-  A resource for developers interested in creating custom storage engines for
-  MariaDB, detailing the API and development process.
+  A dedicated resource for engineers to learn how to build or modify storage
+  engines, detailing the pluggable API and data handling at the physical level.
 layout:
   width: default
   title:
@@ -28,12 +28,12 @@ This section contains background information, mostly aimed at engineers developi
 [engine-defined-new-tablefieldindex-attributes.md](engine-defined-new-tablefieldindex-attributes.md)
 {% endcontent-ref %}
 
-{% content-ref url="storage-engine-faq.md" %}
-[storage-engine-faq.md](storage-engine-faq.md)
+{% content-ref url="/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/LaTWe9ltpFvUfv0buwpT" %}
+[Broken link](/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/LaTWe9ltpFvUfv0buwpT)
 {% endcontent-ref %}
 
-{% content-ref url="table-discovery-before-1002.md" %}
-[table-discovery-before-1002.md](table-discovery-before-1002.md)
+{% content-ref url="/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/BpCg9gSJdAvLwSAc305O" %}
+[Broken link](/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/BpCg9gSJdAvLwSAc305O)
 {% endcontent-ref %}
 
 {% content-ref url="table-discovery.md" %}

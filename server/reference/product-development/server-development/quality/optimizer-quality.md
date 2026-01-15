@@ -1,3 +1,9 @@
+---
+description: >-
+  Details the specific quality assurance processes and testing strategies used
+  to validate the MariaDB query optimizer's performance.
+---
+
 # Optimizer Quality
 
 {% include "../../../../.gitbook/includes/this-page-contains-backgrou....md" %}

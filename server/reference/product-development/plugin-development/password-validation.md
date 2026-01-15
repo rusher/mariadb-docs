@@ -1,3 +1,9 @@
+---
+description: >-
+  Technical reference for building plugins that enforce specific security
+  policies and complexity rules for user passwords.
+---
+
 # Password Validation Plugin API
 
 {% include "../../../.gitbook/includes/this-page-contains-backgrou....md" %}

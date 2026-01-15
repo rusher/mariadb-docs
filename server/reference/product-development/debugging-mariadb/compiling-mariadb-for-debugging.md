@@ -1,3 +1,9 @@
+---
+description: >-
+  Explains how to build the MariaDB source code with specific flags enabled to
+  allow for deep-level internal debugging.
+---
+
 # Compiling MariaDB for Debugging
 
 {% include "../../../.gitbook/includes/hint-lower-level-development.md" %}

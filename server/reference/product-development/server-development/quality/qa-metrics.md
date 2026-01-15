@@ -1,3 +1,9 @@
+---
+description: >-
+  Defines the key performance indicators and metrics used by the QA team to
+  track the stability and health of the server over time.
+---
+
 # QA Metrics
 
 {% include "../../../../.gitbook/includes/this-page-contains-backgrou....md" %}

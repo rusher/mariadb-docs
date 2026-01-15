@@ -1,3 +1,9 @@
+---
+description: >-
+  Explains how to use the Random Query Generator (RQG) to find edge-case bugs by
+  executing automatically generated SQL queries.
+---
+
 # Random Query Generator Tests
 
 {% include "../../../../.gitbook/includes/this-page-contains-backgrou....md" %}

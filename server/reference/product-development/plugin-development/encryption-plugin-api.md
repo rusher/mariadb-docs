@@ -1,3 +1,9 @@
+---
+description: >-
+  Details the API used to develop encryption plugins for protecting data at
+  rest, including key management and encryption schemes.
+---
+
 # Encryption Plugin API
 
 {% include "../../../.gitbook/includes/this-page-contains-backgrou....md" %}

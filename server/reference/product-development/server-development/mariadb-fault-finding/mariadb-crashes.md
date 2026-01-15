@@ -1,3 +1,9 @@
+---
+description: >-
+  Provides specialized guidance on identifying the causes of server crashes and
+  gathering the necessary data for reporting bugs.
+---
+
 # MariaDB Crashes
 
 {% include "../../../../.gitbook/includes/hint-system-level-debugging.md" %}

@@ -1,3 +1,9 @@
+---
+description: >-
+  Instructions for monitoring and analyzing memory allocation to identify leaks
+  or excessive consumption within the server.
+---
+
 # Debugging Memory Usage
 
 {% include "../../../.gitbook/includes/hint-system-level-debugging.md" %}

@@ -1,7 +1,7 @@
 ---
 description: >-
-  This category contains articles documenting how the MariaDB Red Hat-based
-  buildbot build and test VMs were created
+  Explains how to provision and configure virtual machine instances specifically
+  for Buildbot testing.
 layout:
   width: default
   title:

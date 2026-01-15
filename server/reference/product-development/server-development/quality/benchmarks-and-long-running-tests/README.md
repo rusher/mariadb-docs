@@ -1,4 +1,7 @@
 ---
+description: >-
+  Outlines the procedures for executing performance benchmarks and extended
+  duration tests to identify stability issues or leaks.
 layout:
   width: default
   title:

@@ -1,3 +1,9 @@
+---
+description: >-
+  Details the process of generating a trace file to record the internal
+  execution flow of the server for developer analysis.
+---
+
 # Creating a Trace File
 
 {% include "../../../.gitbook/includes/hint-lower-level-development.md" %}

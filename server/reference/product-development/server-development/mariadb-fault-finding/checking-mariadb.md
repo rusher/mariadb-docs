@@ -1,3 +1,9 @@
+---
+description: >-
+  A starting guide for DBAs and developers to diagnose server issues, focusing
+  on initial checks and systemic health verification.
+---
+
 # Troubleshooting Overview
 
 {% include "../../../../.gitbook/includes/hint-system-level-debugging.md" %}

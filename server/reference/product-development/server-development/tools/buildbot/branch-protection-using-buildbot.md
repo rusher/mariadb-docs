@@ -1,3 +1,9 @@
+---
+description: >-
+  Details the policies and automated checks used to protect core branches from
+  unstable or unverified code submissions.
+---
+
 # Branch Protection Using Buildbot
 
 MariaDB uses branch protection to ensure that pushes to the MariaDB Server git repository cannot be made without first passing a series of tests. This page aims to describe what a developer should do in order to ensure that their changes get pushed to the main repository.

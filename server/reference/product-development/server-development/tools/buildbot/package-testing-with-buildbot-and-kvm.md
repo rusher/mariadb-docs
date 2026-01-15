@@ -1,6 +1,12 @@
+---
+description: >-
+  Explains how Buildbot utilizes Kernel-based Virtual Machines (KVM) to automate
+  the testing of installation packages.
+---
+
 # Package Testing with Buildbot and KVM
 
-## Buildbot testing of binary MariaDB packages
+## Buildbot Testing of Binary MariaDB Packages
 
 This part of the Buildbot setup uses KVM virtual machines to build packages on a wide range of Linux distributions and test the different packages in various ways.
 
@@ -36,7 +42,7 @@ Since we use the OurDelta scripts, which use a "bakery" for the build scripts si
 
 Because of this triggering, it is not possible to manually force a Buildbot run on "latest bzr version" on the non-tarball builders. Instead to force a build, it is necessary to set the build properties for source tarball and bakery manually to the files one wants to tests. But it is often easier just to pick an existing build (with correct tarball) and use the "resubmit build" feature instead. Another option is to force build on the tarball build only; it will then in turn trigger all of the other builds.
 
-### Basic install test
+### Basic Install Test
 
 On all builds (except source tarball), after the build a test is performed where the resulting package is installed in a virtual machine and basic testing is done.
 
@@ -44,7 +50,7 @@ The install test is done in a separate virtual machine from the one in which it 
 
 Note that for .deb (Debian and Ubuntu), we set up a small fake local apt repository, so that we can properly test that ''apt-get install'' is able to pull in any extra dependencies without anything special needed on the part of the user.
 
-### Upgrade tests for .deb packages
+### Upgrade Tests for .deb Packages
 
 On .deb builders (Debian and Ubuntu), we do three additional upgrade tests.
 
@@ -54,7 +60,7 @@ The third test is performed on a clean image without any pre-installed MySQL or 
 
 In all tests, some very basic test data is also created in the installation, so we can test that replacing the old server installation with our new MariaDB package does not nuke the user's existing data! The test is also useful to check that the upgrade runs correctly with respect to dependencies etc, something that is quite complex to get right with the .deb packaging.
 
-### Upgrade tests for .rpm packages
+### Upgrade Tests for .rpm Packages
 
 On .rpm builders (CentOS, Fedora, RHEL, SLES, openSUSE) we have numerous upgrade tests, although only a small portion of them is run for every branch.
 
@@ -68,13 +74,13 @@ In some cases, the tests can also set additional command-line options or environ
 
 Each test uses a clean VM image, installs an initial set of packages, and then uses one of the commands to upgrade the installation. It further checks that the server is upgraded, restarted and is reachable.
 
-### mysql-test-run.pl test
+### mysql-test-run.pl Test
 
 On the .deb builders (Debian and Ubuntu), we additionally do a full mysql-test-run.pl test run. This is done using the package _mariadb-test_.
 
 Note that currently, due to [Bug #491349](https://bugs.launchpad.net/bugs/491349), on newer Ubuntus the default apparmor profile prevents running mysql-test-run.pl. Until this is fixed, the tests need to uninstall apparmor before running the test suite.
 
-## See also
+## See Also
 
 * [Buildbot Setup for Virtual Machines](setup/buildbot-setup-for-virtual-machines/)
 

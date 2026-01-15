@@ -1,3 +1,9 @@
+---
+description: >-
+  Details how Jira is utilized for roadmap scheduling, sprint planning, and
+  managing the overall progress of development tasks.
+---
+
 # Jira - Project Planning and Tracking
 
 Jira is the tool that is used for [bug reporting](../../../community/community/bug-tracking/reporting-bugs.md), project planning and tracking in MariaDB development. It replaced the previous tool called [WorkLog](worklog.md). Jira is also where you can find the [MariaDB roadmap](https://jira.mariadb.org).

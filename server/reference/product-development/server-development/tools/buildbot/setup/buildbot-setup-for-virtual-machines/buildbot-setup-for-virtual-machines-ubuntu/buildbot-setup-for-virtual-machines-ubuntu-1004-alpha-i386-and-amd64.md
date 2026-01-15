@@ -1,8 +1,12 @@
+---
+description: >-
+  Explains how to provision and configure virtual machine instances specifically
+  for Buildbot testing.
+---
 
 # Buildbot Setup for Virtual Machines - Ubuntu 10.04 (alpha), i386 and amd64
 
-## Base install
-
+## Base Install
 
 ```
 qemu-img create -f qcow2 vm-lucid-amd64-serial.qcow2 8G
@@ -34,14 +38,12 @@ ssh -p 2239 buildbot@localhost 'sudo cp ttyS0.conf /etc/init/; rm ttyS0.conf; su
 
 Enabling passwordless sudo:
 
-
 ```
 sudo VISUAL=vi visudo
 # uncomment `%sudo ALL=NOPASSWD: ALL' line in `visudo`, and move to end.
 ```
 
 Editing /boot/grub/menu.lst:
-
 
 ```
 sudo vi /etc/default/grub
@@ -56,7 +58,6 @@ sudo update-grub
 
 ## VMs for building .debs
 
-
 ```
 for i in 'vm-lucid-amd64-serial.qcow2 2238 qemu64' 'vm-lucid-i386-serial.qcow2 2239 qemu32,-nx' ; do \
   set $i; \
@@ -69,9 +70,7 @@ done
 
 ## VMs for install testing.
 
-
 See above for how to obtain my.seed and sources.append.
-
 
 ```
 cat >sources.append <<END
@@ -92,7 +91,6 @@ done
 
 ## VMs for upgrade testing
 
-
 ```
 for i in 'vm-lucid-amd64-install.qcow2 2238 qemu64' 'vm-lucid-i386-install.qcow2 2239 qemu32,-nx' ; do \
   set $i; \
@@ -102,8 +100,6 @@ for i in 'vm-lucid-amd64-install.qcow2 2238 qemu64' 'vm-lucid-i386-install.qcow2
 done
 ```
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

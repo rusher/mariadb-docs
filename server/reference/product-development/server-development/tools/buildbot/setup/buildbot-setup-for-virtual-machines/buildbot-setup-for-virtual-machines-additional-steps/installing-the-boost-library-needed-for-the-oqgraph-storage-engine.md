@@ -1,4 +1,10 @@
-# Installing the Boost library needed for the OQGraph storage engine
+---
+description: >-
+  Explains how to provision and configure virtual machine instances specifically
+  for Buildbot testing.
+---
+
+# Installing the Boost Library Needed for the OQGraph Storage Engine
 
 The OQGraph storage engine needs a newer version of Boost that what is\
 available on (most) distributions. The version installed is 1.42.0, available\
@@ -7,7 +13,7 @@ from.
 The boost library is installed in all the builder virtual machine images with\
 the following single command:
 
-```
+```bash
 for i in "vm-hardy-amd64-build qemu64" "vm-hardy-i386-build qemu32,-nx" \
         "vm-intrepid-amd64-build qemu64" "vm-intrepid-i386-build qemu32,-nx" \
         "vm-karmic-amd64-build qemu64" "vm-karmic-i386-build qemu32,-nx" \

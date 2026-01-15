@@ -1,17 +1,15 @@
 # Configuring Git to Send Commit Notices
 
-Commit emails for MariaDB are sent to [commits@lists.mariadb.org](https://lists.mariadb.org/postorius/lists/commits.lists.mariadb.org/).\
-You can find the archive [here](https://lists.mariadb.org/hyperkitty/list/commits@lists.mariadb.org/).
+Commit emails for MariaDB are sent to [commits@lists.mariadb.org](https://lists.mariadb.org/postorius/lists/commits.lists.mariadb.org/). You can find the archive [here](https://lists.mariadb.org/hyperkitty/list/commits@lists.mariadb.org/).
 
-To allow others to see what you are working on in your MariaDB tree, you should:
+To allow others to see what you are working on in your MariaDB tree:
 
-1. [subscribe](https://lists.askmonty.org/cgi-bin/mailman/listinfo/commits) to\
-   the email list
+1. [subscribe](https://lists.askmonty.org/cgi-bin/mailman/listinfo/commits) to the email list
 2. configure git to send your commits to [commits@mariab.org](https://lists.askmonty.org/cgi-bin/mailman/listinfo/commits).
 
-Download the [post-commit git trigger](https://bazaar.launchpad.net/~maria-captains/mariadb-tools/trunk/view/head:/git_template/hooks/post-commit) script. Configure as
+Download the [post-commit git trigger](https://bazaar.launchpad.net/~maria-captains/mariadb-tools/trunk/view/head:/git_template/hooks/post-commit) script. Configure as:
 
-```
+```bash
 git config --global hooks.postcommitrecipients "commits@mariadb.org"
 git config --global hooks.postcommitbranches "*"
 ```

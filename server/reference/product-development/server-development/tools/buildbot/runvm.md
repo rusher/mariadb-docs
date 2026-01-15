@@ -1,3 +1,9 @@
+---
+description: >-
+  Documentation for the runvm script, which manages virtual machine lifecycles
+  during the Buildbot testing process.
+---
+
 # Buildbot runvm
 
 One type of build we do in BuildBot is to build and test [MariaDB](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/mariadb/README.md) binary\
@@ -23,7 +29,7 @@ setup, to ensure that the system can run unattended for longer periods of time.
 Essentially, instead of a normal Buildbot session which would do something like\
 this on the slave:
 
-```
+```make
 ./configure && make
 ```
 
@@ -42,7 +48,7 @@ See the **runvm Usage Examples** or **runvm --help** sections below for more det
 
 Here is an example command you could use to run a build inside a virtual machine using runvm:
 
-```
+```bash
 runvm --port=2222 ubuntu-hardy-i386.qcow2 \
   "= scp -P 2222 mariadb-5.1.41-rc.tar.gz localhost:" \
   "tar zxf mariadb-5.1.41-rc.tar.gz" \
@@ -90,7 +96,7 @@ like needing to manually run `fsck` after a crash or similar issue. We use this 
 
 To use this copy-and-discard technique with runvm, the --base-image option is useful:
 
-```
+```bash
 runvm --port=2222 --base-image=ubuntu-hardy-i386.qcow2 tmp.qcow2 \
   "= scp -P 2222 mariadb-5.1.41-rc.tar.gz localhost:" \
   "tar zxf mariadb-5.1.41-rc.tar.gz" \
@@ -115,10 +121,7 @@ But the basic principle is just a number of `runvm` commands like the examples a
 
 ## Getting runvm
 
-The `runvm` tool is available under GPL on Lauchpad in the project [Tools for MariaDB](https://launchpad.net/mariadb-tools). In the bzr repository\
-it is found as [buildbot/runvm](https://bazaar.launchpad.net/~maria-captains/mariadb-tools/trunk/annotate/head%3A/buildbot/runvm).\
-If someone finds it useful or has suggestions for improvements, please drop us\
-a line on the [maria-developers](https://launchpad.net/~maria-developers)\
+The `runvm` tool is available under GPL on Lauchpad in the project [Tools for MariaDB](https://launchpad.net/mariadb-tools). In the bzr repository it is found as [buildbot/runvm](https://bazaar.launchpad.net/~maria-captains/mariadb-tools/trunk/annotate/head%3A/buildbot/runvm). 0If someone finds it useful or has suggestions for improvements, please drop us a line on the [maria-developers](https://launchpad.net/~maria-developers)\
 mailing list.
 
 ## runvm --help

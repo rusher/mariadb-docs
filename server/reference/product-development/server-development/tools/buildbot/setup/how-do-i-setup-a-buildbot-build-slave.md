@@ -1,4 +1,10 @@
-# How do I setup a Buildbot build slave?
+---
+description: >-
+  A foundational tutorial on the general process of creating and connecting a
+  new build worker (slave).
+---
+
+# Setup of a Buildbot Build Slave
 
 These build instructions should in general be platform agnostic. It is based on a post by Adam M. Dutko on maria-discuss. See the [list archive](https://lists.launchpad.net/maria-discuss/msg00372.html).
 

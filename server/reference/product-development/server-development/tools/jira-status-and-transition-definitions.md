@@ -1,3 +1,9 @@
+---
+description: >-
+  Explains the various lifecycle statuses and workflow transitions used for
+  issue tracking in MariaDB's Jira instance.
+---
+
 # Jira - Status and Transition Definitions
 
 Here is the MariaDB Server (MDEV) [Jira](jira.md) project workflow.

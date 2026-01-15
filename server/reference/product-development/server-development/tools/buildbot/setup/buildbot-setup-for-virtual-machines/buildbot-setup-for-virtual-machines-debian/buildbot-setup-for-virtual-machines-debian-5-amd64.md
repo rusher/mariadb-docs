@@ -1,3 +1,9 @@
+---
+description: >-
+  Explains how to provision and configure virtual machine instances specifically
+  for Buildbot testing.
+---
+
 # Buildbot Setup for Virtual Machines - Debian 5 amd64
 
 Download netinst CD image debian-503-amd64-netinst.iso

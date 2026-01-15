@@ -1,6 +1,12 @@
+---
+description: >-
+  Explains how to provision and configure virtual machine instances specifically
+  for Buildbot testing.
+---
+
 # Buildbot Setup for Virtual Machines - Red Hat 6 x86
 
-The following steps were used to create a Red Hat 6 x86 buildslave.
+The following steps were used to create a Red Hat 6 x86 build slave.
 
 ## Initial Setup
 

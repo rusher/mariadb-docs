@@ -1,9 +1,12 @@
+---
+description: >-
+  Information on the standardized datasets and database dumps used for
+  OpenStreetMap.
+---
 
 # osmdb06.sql
 
-Below is the schema described in the [OpenStreetMap Dataset Use](openstreetmap-dataset.md) article. To use, copy everything in the box below into a file called
-'`osmdb06.sql`', then continue with the instructions.
-
+Below is the schema described in the [OpenStreetMap Dataset Use](openstreetmap-dataset.md) article. To use, copy everything in the box below into a file called '`osmdb06.sql`', then continue with the instructions.
 
 ```
 -- phpMyAdmin SQL Dump
@@ -657,8 +660,6 @@ ALTER TABLE `way_tags`
   ADD CONSTRAINT `way_tags_ibfk_1` FOREIGN KEY (`id`, `version`) REFERENCES `ways` (`id`, `version`);
 ```
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

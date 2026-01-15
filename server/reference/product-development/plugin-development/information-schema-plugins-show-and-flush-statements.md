@@ -1,3 +1,9 @@
+---
+description: >-
+  Explains how to create plugins that expose internal server data through
+  virtual tables in the Information Schema.
+---
+
 # Information Schema Plugins: SHOW and FLUSH Statements
 
 {% include "../../../.gitbook/includes/this-page-contains-backgrou....md" %}

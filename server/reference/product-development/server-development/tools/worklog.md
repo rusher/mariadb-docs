@@ -1,3 +1,9 @@
+---
+description: >-
+  Documentation regarding the MariaDB Worklog system, used to define, track, and
+  review the progress of new feature implementations.
+---
+
 # Worklog
 
 **Worklog has been replaced, please refer to** [**JIRA - project planning and tracking**](jira.md) **for further information**.

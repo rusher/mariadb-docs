@@ -1,3 +1,9 @@
+---
+description: >-
+  Provides a high-level view of upcoming features, version release schedules,
+  and the strategic direction for MariaDB Server development.
+---
+
 # MariaDB Server Roadmap
 
 {% include "../../../.gitbook/includes/this-page-contains-backgrou....md" %}

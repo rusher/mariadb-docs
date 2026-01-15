@@ -1,3 +1,9 @@
+---
+description: >-
+  Technical requirements and installation procedures for running Buildbot on
+  Solaris Sparc architecture.
+---
+
 # Buildbot Setup for Solaris Sparc
 
 ## Setting up a BuildBot slave on Solaris

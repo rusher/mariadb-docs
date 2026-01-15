@@ -1,4 +1,10 @@
-# Update Debian 4 mirrors for Buildbot VMs
+---
+description: >-
+  Explains how to provision and configure virtual machine instances specifically
+  for Buildbot testing.
+---
+
+# Update Debian 4 Mirrors for Buildbot VMs
 
 Debian 4 has become so old that the apt repository has been moved out of the\
 main Debian 4 mirror servers, and into the archive of old versions. This needs\

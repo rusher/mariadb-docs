@@ -1,10 +1,16 @@
+---
+description: >-
+  Provides an overview of how code coverage is measured to ensure that testing
+  suites effectively exercise the MariaDB source code.
+---
+
 # Code Coverage
 
 {% include "../../../../.gitbook/includes/this-page-contains-backgrou....md" %}
 
 ## Code Coverage
 
-We are working on getting more of the MariaDB source covered by our mysql-test-run (MTR) test suite. This is an ongoing (and slow) task as there is still a lot of old code with not very good coverage.
+We are working on getting more of the MariaDB source covered by our mysql-test-run (MTR) test suite. This is an ongoing task.
 
 ### Goals for new code <a href="#goals-for-new-code" id="goals-for-new-code"></a>
 

@@ -1,5 +1,7 @@
 ---
-description: RQG-based upgrade tests with focus on InnoDB data live upgrade
+description: >-
+  Dedicated testing protocols for verifying that the InnoDB storage engine can
+  safely upgrade data from older server versions.
 layout:
   width: default
   title:

@@ -1,3 +1,9 @@
+---
+description: >-
+  Explains how to provision and configure virtual machine instances specifically
+  for Buildbot testing.
+---
+
 # Resizing a Virtual Machine Image
 
 Some KVM images end up not having enough space on them. In such cases, it is preferable to increase the size of the VM rather than to just delete an image and rebuild it from scratch. The steps outlined below document what was done to increase the size of the Red Hat 5 x86 VM and should be able to be easily adapted to other VMs, should they need the same treatment in the future.

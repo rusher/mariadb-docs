@@ -1,4 +1,8 @@
 ---
+description: >-
+  Details the APIs and processes for extending MariaDB functionality through
+  custom plugins, such as authentication, logging, or specialized server
+  enhancements.
 layout:
   width: default
   title:
@@ -39,10 +43,6 @@ This section contains background information, mostly aimed at engineers developi
 
 {% content-ref url="audit-plugin-development.md" %}
 [audit-plugin-development.md](audit-plugin-development.md)
-{% endcontent-ref %}
-
-{% content-ref url="authentication-plugin-development.md" %}
-[authentication-plugin-development.md](authentication-plugin-development.md)
 {% endcontent-ref %}
 
 {% content-ref url="authentication-plugin-development.md" %}

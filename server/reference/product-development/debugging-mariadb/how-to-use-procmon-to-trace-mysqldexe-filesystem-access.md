@@ -1,3 +1,9 @@
+---
+description: >-
+  Covers using Process Monitor on Windows to trace filesystem and registry
+  access for the MariaDB server executable.
+---
+
 # Using procmon to Trace mysqld.exe Filesystem Access
 
 {% include "../../../.gitbook/includes/hint-lower-level-development.md" %}

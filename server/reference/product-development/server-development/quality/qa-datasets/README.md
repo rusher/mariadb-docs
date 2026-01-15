@@ -1,5 +1,7 @@
 ---
-description: Realistic datasets are essential for proper testing
+description: >-
+  Information on the standardized datasets and database dumps used across
+  different testing environments for consistent results.
 layout:
   width: default
   title:

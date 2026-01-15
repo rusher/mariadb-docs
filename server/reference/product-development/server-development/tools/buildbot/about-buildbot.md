@@ -1,3 +1,9 @@
+---
+description: >-
+  Provides a high-level overview of the Buildbot continuous integration system
+  and its role in testing MariaDB.
+---
+
 # About Buildbot
 
 ## Overview

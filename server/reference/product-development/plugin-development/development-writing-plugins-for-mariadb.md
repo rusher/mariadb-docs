@@ -1,3 +1,9 @@
+---
+description: >-
+  A comprehensive guide on the basic structure and necessary components for
+  creating a new plugin from scratch.
+---
+
 # Writing Plugins for MariaDB
 
 {% include "../../../.gitbook/includes/this-page-contains-backgrou....md" %}
@@ -13,7 +19,7 @@ See [Pluggable Authentication](../../plugins/authentication-plugins/pluggable-au
 ## Storage Engine Plugins
 
 Storage engines can extend `CREATE TABLE` syntax with optional\
-index, field, and table attribute clauses. See [Extending CREATE TABLE](../storage-engines-storage-engine-development/engine-defined-new-tablefieldindex-attributes.md) for more information. See also [Storage Engine Development](../storage-engines-storage-engine-development/).
+index, field, and table attribute clauses. See [Extending CREATE TABLE](storage-engines-storage-engine-development/engine-defined-new-tablefieldindex-attributes.md) for more information. See also [Storage Engine Development](storage-engines-storage-engine-development/).
 
 ## Information Schema Plugins
 

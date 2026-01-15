@@ -1,4 +1,10 @@
-# Installing VM images for testing .deb upgrade between versions
+---
+description: >-
+  Explains how to provision and configure virtual machine instances specifically
+  for Buildbot testing.
+---
+
+# Installing VM Images for Testing .deb Upgrade Between Versions
 
 This step creates virtual machine images used to do an important additional\
 upgrade test for .debs. Each virtual machine is pre-installed with an older\

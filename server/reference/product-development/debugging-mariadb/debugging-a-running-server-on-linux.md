@@ -1,3 +1,9 @@
+---
+description: >-
+  Explains how to attach debugging tools to a live MariaDB process on Linux
+  systems without restarting the service.
+---
+
 # Debugging a Running Server (on Linux)
 
 {% include "../../../.gitbook/includes/hint-lower-level-development.md" %}

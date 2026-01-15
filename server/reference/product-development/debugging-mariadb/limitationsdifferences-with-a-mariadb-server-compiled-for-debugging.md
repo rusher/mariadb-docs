@@ -1,3 +1,9 @@
+---
+description: >-
+  Highlights the performance impacts and behavioral changes to expect when
+  running a MariaDB server compiled with debug options.
+---
+
 # Limitations/Differences with a MariaDB Server Compiled for Debugging
 
 {% include "../../../.gitbook/includes/hint-lower-level-development.md" %}

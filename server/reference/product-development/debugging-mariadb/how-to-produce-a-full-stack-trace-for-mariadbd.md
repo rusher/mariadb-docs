@@ -1,3 +1,9 @@
+---
+description: >-
+  Steps to generate a complete stack trace for the main server daemon, essential
+  for pinpointing the location of software faults.
+---
+
 # Producing a Full Stack Trace for mariadbd
 
 {% include "../../../.gitbook/includes/hint-lower-level-development.md" %}

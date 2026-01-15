@@ -1,8 +1,14 @@
+---
+description: >-
+  Explains how to provision and configure virtual machine instances specifically
+  for Buildbot testing.
+---
+
 # Buildbot Setup for Virtual Machines - Ubuntu 8.04, 8.10, and 9.10
 
 These 6 platforms were installed together (i386 and amd64).
 
-## Base installs
+## Base Installations
 
 Ubuntu 8.04 "Hardy" amd64:
 

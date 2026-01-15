@@ -1,6 +1,12 @@
+---
+description: >-
+  Explains how to provision and configure virtual machine instances specifically
+  for Buildbot testing.
+---
+
 # Buildbot Setup for Virtual Machines - Fedora 17
 
-## Base install
+## Base Install
 
 ```
 qemu-img create -f qcow2 /kvm/vms/vm-fedora17-i386-serial.qcow2 10G

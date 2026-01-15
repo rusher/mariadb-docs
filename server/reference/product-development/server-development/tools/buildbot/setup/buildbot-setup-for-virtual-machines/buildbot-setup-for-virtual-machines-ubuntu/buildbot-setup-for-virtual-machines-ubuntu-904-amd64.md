@@ -1,8 +1,12 @@
+---
+description: >-
+  Explains how to provision and configure virtual machine instances specifically
+  for Buildbot testing.
+---
 
 # Buildbot Setup for Virtual Machines - Ubuntu 9.04 amd64
 
-## Base install
-
+## Base Install
 
 ```
 qemu-img create -f qcow2 vm-jaunty-amd64-serial.qcow2 8G
@@ -10,7 +14,6 @@ kvm -m 1024 -hda vm-jaunty-amd64-serial.qcow2 -cdrom /kvm/ubuntu-9.04-server-amd
 ```
 
 ## Serial port and passwordless login/sudo
-
 
 ```
 kvm -m 1024 -hda vm-jaunty-amd64-serial.qcow2 -cdrom /kvm/ubuntu-9.04-server-amd64.iso -redir tcp:2227::22 -boot c -smp 2 -cpu qemu64 -net nic,model=virtio -net user
@@ -20,21 +23,18 @@ sudo apt-get install emacs22-nox
 
 Add to /boot/grub/menu.lst:
 
-
 ```
 serial --unit=0 --speed=115200 --word=8 --parity=no --stop=1
 terminal --timeout=3 serial console
 ```
 
-also add in menu.lst to kernel line (after removing `quiet splash'):
-
+also add in menu.lst to kernel line (after removing \`quiet splash'):
 
 ```
 console=tty0 console=ttyS0,115200n8
 ```
 
 Create /etc/event.d/ttyS0:
-
 
 ```
 # ttyS0 - getty
@@ -57,7 +57,6 @@ exec /sbin/getty 115200 ttyS0
 
 Add account and allow passwordless sudo:
 
-
 ```
 sudo adduser --disabled-password buildbot
 sudo adduser buildbot sudo
@@ -74,7 +73,6 @@ chmod -R go-rwx .ssh
 
 ## VM for .deb building
 
-
 ```
 qemu-img create -b vm-jaunty-amd64-serial.qcow2 -f qcow2 vm-jaunty-amd64-build.qcow2
 kvm -m 1024 -hda vm-jaunty-amd64-build.qcow2 -cdrom /kvm/ubuntu-9.04-server-amd64.iso -redir tcp:2227::22 -boot c -smp 2 -cpu qemu64 -net nic,model=virtio -net user -nographic
@@ -84,7 +82,6 @@ sudo apt-get build-dep mysql-server-5.1
 
 ## VM for install testing
 
-
 ```
 qemu-img create -b vm-jaunty-amd64-serial.qcow2 -f qcow2 vm-jaunty-amd64-install.qcow2
 kvm -m 1024 -hda vm-jaunty-amd64-install.qcow2 -cdrom /kvm/ubuntu-9.04-server-amd64.iso -redir tcp:2227::22 -boot c -smp 2 -cpu qemu64 -net nic,model=virtio -net user -nographic
@@ -92,8 +89,6 @@ kvm -m 1024 -hda vm-jaunty-amd64-install.qcow2 -cdrom /kvm/ubuntu-9.04-server-am
 sudo adduser --system --group mysql
 ```
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

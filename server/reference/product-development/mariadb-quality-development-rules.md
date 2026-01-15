@@ -1,3 +1,9 @@
+---
+description: >-
+  Outlines strict quality standards for new features, including requirements for
+  design specifications, testability, and mandatory Worklog quality checklists.
+---
+
 # MariaDB Quality Development Rules
 
 Those are quality-improving rules that everyone with a write access to the MariaDB repository is expected to follow:

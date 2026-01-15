@@ -1,3 +1,9 @@
+---
+description: >-
+  A technical guide on using standard debuggers like GDB to step through code
+  and inspect the state of a MariaDB instance.
+---
+
 # Debugging MariaDB With a Debugger
 
 {% include "../../../.gitbook/includes/hint-lower-level-development.md" %}

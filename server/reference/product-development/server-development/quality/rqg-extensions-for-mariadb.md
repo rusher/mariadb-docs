@@ -1,3 +1,9 @@
+---
+description: >-
+  Describes MariaDB-specific enhancements to the Random Query Generator tool for
+  testing unique features and syntax.
+---
+
 # RQG Extensions for MariaDB
 
 {% include "../../../../.gitbook/includes/this-page-contains-backgrou....md" %}

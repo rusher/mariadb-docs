@@ -1,6 +1,12 @@
+---
+description: >-
+  Explains how to provision and configure virtual machine instances specifically
+  for Buildbot testing.
+---
+
 # Buildbot Setup for Virtual Machines - Ubuntu 12.10 "quantal"
 
-## Base install
+## Base Install
 
 ```
 qemu-img create -f qcow2 /kvm/vms/vm-quantal-amd64-serial.qcow2 10G

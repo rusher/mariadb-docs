@@ -1,3 +1,9 @@
+---
+description: >-
+  Provides a standardized template for developers to ensure every new feature
+  meets mandatory quality and documentation requirements.
+---
+
 # Worklog Quality Checklist Template
 
 {% include "../../../../.gitbook/includes/this-page-contains-backgrou....md" %}

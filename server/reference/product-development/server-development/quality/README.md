@@ -1,5 +1,7 @@
 ---
-description: This section collects articles related to MariaDB quality assurance efforts
+description: >-
+  Details the processes and methodologies used to ensure code quality, focusing
+  on testing frameworks and bug verification during development.
 layout:
   width: default
   title:
