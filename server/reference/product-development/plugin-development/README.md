@@ -33,8 +33,8 @@ This section contains background information, mostly aimed at engineers developi
 [password-validation.md](password-validation.md)
 {% endcontent-ref %}
 
-{% content-ref url="/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/OFylUYgBZFw71BeXhg8u" %}
-[Broken link](/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/OFylUYgBZFw71BeXhg8u)
+{% content-ref url="information-schema-plugins-show-and-flush-statements.md" %}
+[information-schema-plugins-show-and-flush-statements.md](information-schema-plugins-show-and-flush-statements.md)
 {% endcontent-ref %}
 
 {% content-ref url="audit-plugin-development.md" %}
