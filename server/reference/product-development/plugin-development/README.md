@@ -57,3 +57,7 @@ This section contains background information, mostly aimed at engineers developi
 [password-validation-plugin-development.md](password-validation-plugin-development.md)
 {% endcontent-ref %}
 
+{% content-ref url="storage-engines-storage-engine-development/" %}
+[storage-engines-storage-engine-development](storage-engines-storage-engine-development/)
+{% endcontent-ref %}
+

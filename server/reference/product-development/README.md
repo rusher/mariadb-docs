@@ -80,20 +80,6 @@ Details the APIs and processes for extending MariaDB functionality through custo
 
 {% columns %}
 {% column %}
-{% content-ref url="plugin-development/storage-engines-storage-engine-development/" %}
-[storage-engines-storage-engine-development](plugin-development/storage-engines-storage-engine-development/)
-{% endcontent-ref %}
-
-
-{% endcolumn %}
-
-{% column %}
-A dedicated resource for engineers to learn how to build or modify storage engines, detailing the pluggable API and data handling at the physical level.
-{% endcolumn %}
-{% endcolumns %}
-
-{% columns %}
-{% column %}
 {% content-ref url="server-development/" %}
 [server-development](server-development/)
 {% endcontent-ref %}
