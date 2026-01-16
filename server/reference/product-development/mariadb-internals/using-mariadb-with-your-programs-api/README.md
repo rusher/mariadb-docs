@@ -1,4 +1,7 @@
 ---
+description: >-
+  This main page serves as a landing hub for developers looking to integrate
+  MariaDB functionality into external applications using internal APIs.
 layout:
   width: default
   title:

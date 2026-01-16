@@ -1,3 +1,9 @@
+---
+description: >-
+  Provides a technical breakdown of how the server allocates and manages memory
+  for each client connection and thread.
+---
+
 # Connection Memory Usage
 
 {% include "../../../../.gitbook/includes/this-page-contains-backgrou....md" %}

@@ -1,3 +1,9 @@
+---
+description: >-
+  Explains how to set up Git to automatically notify relevant mailing lists or
+  systems when new commits are pushed to the repository.
+---
+
 # Configuring Git to Send Commit Notices
 
 Commit emails for MariaDB are sent to [commits@lists.mariadb.org](https://lists.mariadb.org/postorius/lists/commits.lists.mariadb.org/). You can find the archive [here](https://lists.mariadb.org/hyperkitty/list/commits@lists.mariadb.org/).

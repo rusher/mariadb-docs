@@ -1,3 +1,9 @@
+---
+description: >-
+  Details the now-obsolete workflow for integrating updated releases of the
+  XtraDB storage engine into MariaDB.
+---
+
 # Merging New XtraDB Releases (obsolete)
 
 {% include "../../../../.gitbook/includes/this-page-contains-backgrou....md" %}

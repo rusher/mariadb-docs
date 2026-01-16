@@ -1,3 +1,9 @@
+---
+description: >-
+  Covers the historic procedures for merging updates from the TokuDB storage
+  engine source tree into MariaDB.
+---
+
 # Merging TokuDB (obsolete)
 
 {% include "../../../../.gitbook/includes/this-page-contains-backgrou....md" %}

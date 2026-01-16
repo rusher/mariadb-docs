@@ -1,3 +1,9 @@
+---
+description: >-
+  Provides essential instructions and best practices for developers using Git to
+  manage source code and contribute to MariaDB.
+---
+
 # Using Git
 
 ## Getting the Source

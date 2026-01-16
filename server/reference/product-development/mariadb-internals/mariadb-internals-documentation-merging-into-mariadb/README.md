@@ -1,5 +1,7 @@
 ---
-description: This category explains how we merge various source trees into MariaDB
+description: >-
+  Serves as the primary category overview explaining the processes and
+  strategies used to merge various source trees into the MariaDB codebase.
 layout:
   width: default
   title:

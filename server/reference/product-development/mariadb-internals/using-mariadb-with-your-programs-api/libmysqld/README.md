@@ -1,5 +1,7 @@
 ---
-description: Articles about libmysqld.so, the embedded MariaDB server
+description: >-
+  Documentation for the embedded MariaDB server library, which allows for a full
+  MariaDB server to run inside a client application process.
 layout:
   width: default
   title:

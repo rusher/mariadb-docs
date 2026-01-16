@@ -33,8 +33,8 @@ This section contains background information, mostly aimed at engineers developi
 [encryption-plugin-api.md](encryption-plugin-api.md)
 {% endcontent-ref %}
 
-{% content-ref url="password-validation.md" %}
-[password-validation.md](password-validation.md)
+{% content-ref url="../../plugins/password-validation-plugins/password-validation.md" %}
+[password-validation.md](../../plugins/password-validation-plugins/password-validation.md)
 {% endcontent-ref %}
 
 {% content-ref url="audit-plugin-development.md" %}

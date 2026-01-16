@@ -1,3 +1,9 @@
+---
+description: >-
+  Describes the API and mechanisms that allow client applications to receive
+  real-time progress updates for long-running server-side operations.
+---
+
 # Progress Reporting
 
 {% include "../../../../.gitbook/includes/this-page-contains-backgrou....md" %}

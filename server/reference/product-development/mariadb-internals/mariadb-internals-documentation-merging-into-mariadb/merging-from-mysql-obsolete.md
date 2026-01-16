@@ -1,3 +1,9 @@
+---
+description: >-
+  Documents the legacy process previously used to incorporate upstream changes
+  from MySQL into the MariaDB server.
+---
+
 # Merging from MySQL (obsolete)
 
 {% include "../../../../.gitbook/includes/this-page-contains-backgrou....md" %}

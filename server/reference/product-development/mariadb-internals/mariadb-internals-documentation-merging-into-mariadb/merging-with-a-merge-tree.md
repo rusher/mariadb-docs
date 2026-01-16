@@ -1,3 +1,9 @@
+---
+description: >-
+  Explains the operational steps and commands required to execute a code merge
+  using a pre-configured merge tree.
+---
+
 # Merging with a Merge Tree
 
 {% include "../../../../.gitbook/includes/this-page-contains-backgrou....md" %}

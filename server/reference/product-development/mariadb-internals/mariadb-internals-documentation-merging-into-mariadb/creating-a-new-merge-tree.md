@@ -1,3 +1,9 @@
+---
+description: >-
+  Provides technical instructions on how to set up a new source tree
+  specifically for the purpose of merging external updates into MariaDB.
+---
+
 # Creating a New Merge Tree
 
 {% include "../../../../.gitbook/includes/this-page-contains-backgrou....md" %}

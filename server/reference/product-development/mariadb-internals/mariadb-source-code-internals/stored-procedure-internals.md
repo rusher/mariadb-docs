@@ -1,3 +1,9 @@
+---
+description: >-
+  Explores the internal implementation and execution flow of stored procedures,
+  including how they are parsed and stored by the server.
+---
+
 # Stored Procedure Internals
 
 {% include "../../../../.gitbook/includes/this-page-contains-backgrou....md" %}
