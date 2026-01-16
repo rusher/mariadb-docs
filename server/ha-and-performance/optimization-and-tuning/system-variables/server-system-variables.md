@@ -1350,13 +1350,16 @@ The suffix can be upper or lower-case.
 #### `log_warnings`
 
 * Description: Determines which additional warnings are logged. Setting to `0` disables additional warning logging. Note that this does not prevent all warnings, there is a core set of warnings that will always be written to the error log. The additional warnings are as follows:
+  * log\_warnings = 0
+    * No notes from the event scheduler, only warnings and errors (from MariaDB 10.11.16, 11.4.10, 11.8.6, 12.2.2)
   * log\_warnings >= 1
+    * Only startup and shutdown event scheduler notes (from MariaDB 10.11.16, 11.4.10, 11.8.6, 12.2.2)
     * [Event scheduler](../../../server-usage/triggers-events/event-scheduler/) information.
     * System signals.
     * Wrong usage of `--user`.
-    * Failed setrlimit() and mlockall().
+    * Failed `setrlimit()` and `mlockall()`.
     * Changed limits.
-    * Wrong values of lower\_case\_table\_names and stack\_size.
+    * Wrong values of `lower_case_table_names` and `stack_size`.
     * Wrong values for command line options.
     * Start log position and some master information when starting slaves.
     * Slave reconnects.
