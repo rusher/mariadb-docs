@@ -8,40 +8,30 @@ description: >-
 
 {% include "../../../../../.gitbook/includes/this-page-contains-backgrou....md" %}
 
-Here is a list of all functions in the non-blocking client API and their\
-parameters. Apart from operating in a non-blocking way, they all work exactly\
-the same as their blocking counterparts, so their exact semantics can be\
-obtained from the documentation of the normal client API.
+Here is a list of all functions in the non-blocking client API and their parameters. Apart from operating in a non-blocking way, they all work exactly the same as their blocking counterparts, so their exact semantics can be obtained from the documentation of the normal client API.
 
-The API also contains the following three functions which are used to get the\
-socket `fd` and `timeout` values when waiting for events to occur:
+The API also contains the following three functions which are used to get the socket `fd` and `timeout` values when waiting for events to occur:
 
-```
+```c
 my_socket mysql_get_socket(const MYSQL *mysql)
 ```
 
 Return the descriptor of the socket used for the connection.
 
-```
+```c
 unsigned int STDCALL mysql_get_timeout_value(const MYSQL *mysql)
 ```
 
-This should only be called when a `_start()` or `_cont()` function\
-returns a value with the `MYSQL_WAIT_TIMEOUT` flag set. In this case, it\
-returns the value, in seconds, after which a timeout has occured and the\
-application should call the appropriate `_cont()` function passing`MYSQL_WAIT_TIMEOUT` as the event that occured.
+This should only be called when a `_start()` or `_cont()` function returns a value with the `MYSQL_WAIT_TIMEOUT` flag set. In this case, it returns the value, in seconds, after which a timeout has occurred and the application should call the appropriate `_cont()` function passing`MYSQL_WAIT_TIMEOUT` as the event that occurred.
 
 This is used to handle connection and read timeouts.
 
-```
+```c
 unsigned int STDCALL mysql_get_timeout_value_ms(const MYSQL *mysql)
 ```
 
 Like `mysql_get_timeout_value()`, this should only be called when a `_start()` or\
-`_cont()` function returns a value with the `MYSQL_WAIT_TIMEOUT` flag set. In this\
-case, it returns the value, in milliseconds, after which a timeout has\
-occurred and the application should call the appropriate `_cont()` function\
-passing `MYSQL_WAIT_TIMEOUT` as the event that occurred.
+`_cont()` function returns a value with the `MYSQL_WAIT_TIMEOUT` flag set. In this case, it returns the value, in milliseconds, after which a timeout has occurred and the application should call the appropriate `_cont()` function passing `MYSQL_WAIT_TIMEOUT` as the event that occurred.
 
 The difference to `mysql_get_timeout_value()` is that this provides millisecond\
 resolution for timeouts, rather than just whole seconds. Internal timeouts can be in milliseconds.
