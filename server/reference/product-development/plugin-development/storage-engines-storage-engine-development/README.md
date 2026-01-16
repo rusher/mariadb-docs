@@ -28,14 +28,6 @@ This section contains background information, mostly aimed at engineers developi
 [engine-defined-new-tablefieldindex-attributes.md](engine-defined-new-tablefieldindex-attributes.md)
 {% endcontent-ref %}
 
-{% content-ref url="/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/LaTWe9ltpFvUfv0buwpT" %}
-[Broken link](/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/LaTWe9ltpFvUfv0buwpT)
-{% endcontent-ref %}
-
-{% content-ref url="/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/BpCg9gSJdAvLwSAc305O" %}
-[Broken link](/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/BpCg9gSJdAvLwSAc305O)
-{% endcontent-ref %}
-
 {% content-ref url="table-discovery.md" %}
 [table-discovery.md](table-discovery.md)
 {% endcontent-ref %}
