@@ -1,0 +1,53 @@
+name: Expand GitBook Aliases
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: write # Required to push changes back to the branch
+
+jobs:
+  expand-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }} # Explicitly checkout the PR branch
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Replace Aliases
+        run: |
+          # Define your mappings here
+          # Format: "Alias|URL"
+          declare -A mappings=(
+            ["{server}"]="https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV"
+            ["{galera}"]="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7"
+          )
+
+          # Loop through all markdown files in the repo
+          # We use xargs to handle file names with spaces correctly
+          find . -type f -name "*.md" -print0 | while IFS= read -r -d '' file; do
+            modified=false
+            
+            for alias in "${!mappings[@]}"; do
+              url="${mappings[$alias]}"
+              
+              # Check if the file contains the alias before attempting sed
+              if grep -Fq "$alias" "$file"; then
+                echo "Expanding $alias in $file..."
+                # Use sed to replace globally
+                # We use | as a delimiter to avoid issues with slashes in URLs
+                sed -i "s|$alias|$url|g" "$file"
+                modified=true
+              fi
+            done
+          done
+
+      - name: Commit and Push Changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "docs: expand GitBook link aliases [skip ci]"
+          branch: ${{ github.head_ref }}
+          file_pattern: "*.md"
