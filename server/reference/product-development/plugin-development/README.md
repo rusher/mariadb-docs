@@ -37,16 +37,16 @@ This section contains background information, mostly aimed at engineers developi
 [password-validation.md](password-validation.md)
 {% endcontent-ref %}
 
-{% content-ref url="information-schema-plugins-show-and-flush-statements.md" %}
-[information-schema-plugins-show-and-flush-statements.md](information-schema-plugins-show-and-flush-statements.md)
-{% endcontent-ref %}
-
 {% content-ref url="audit-plugin-development.md" %}
 [audit-plugin-development.md](audit-plugin-development.md)
 {% endcontent-ref %}
 
 {% content-ref url="authentication-plugin-development.md" %}
 [authentication-plugin-development.md](authentication-plugin-development.md)
+{% endcontent-ref %}
+
+{% content-ref url="information-schema-plugins-show-and-flush-statements.md" %}
+[information-schema-plugins-show-and-flush-statements.md](information-schema-plugins-show-and-flush-statements.md)
 {% endcontent-ref %}
 
 {% content-ref url="replication-and-cluster-plugin-development.md" %}
