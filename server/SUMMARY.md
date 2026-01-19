@@ -950,6 +950,7 @@
         * [Delayed Insert Connection Thread States](ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-states/delayed-insert-connection-thread-states.md)
         * [Delayed Insert Handler Thread States](ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-states/delayed-insert-handler-thread-states.md)
         * [Event Scheduler Thread States](ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-states/event-scheduler-thread-states.md)
+        * [Galera Cluster Thread States](ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-states/galera-cluster-thread-states.md)
         * [General Thread States](ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-states/general-thread-states.md)
         * [Master Thread States](ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-states/master-thread-states.md)
         * [Query Cache Thread States](ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-states/query-cache-thread-states.md)
