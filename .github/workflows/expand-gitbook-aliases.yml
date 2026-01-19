@@ -17,17 +17,16 @@ jobs:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
 
-      - name: Expand GitBook aliases
+      - name: Expand GitBook aliases (exclude README.md)
         run: |
           set -e
 
-          echo "Expanding GitBook aliases..."
+          echo "Expanding GitBook aliases (excluding README.md)..."
 
-          find . -type f -name "*.md" -print0 | xargs -0 sed -i \
+          find . -type f -name "*.md" ! -name "README.md" -print0 | xargs -0 sed -i \
             -e 's|{server}|https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV|g' \
             -e 's|{galera}|https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7|g'
 
-          echo "Git status after replacement:"
           git status --short
 
       - name: Commit changes if needed
