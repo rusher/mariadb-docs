@@ -11,34 +11,34 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Step A1 — Workflow triggered
-        run: |
-          echo "Workflow triggered"
-          echo "Event: ${{ github.event_name }}"
-          echo "PR branch: ${{ github.head_ref }}"
-          echo "Base branch: ${{ github.base_ref }}"
-
-      - name: Step A2 — Checkout PR branch
+      - name: Checkout PR branch
         uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
 
-      - name: Step A3 — Show checked-out commit
+      - name: Expand GitBook aliases
         run: |
-          echo "Current branch:"
-          git branch --show-current
+          set -e
 
-          echo "Latest commit:"
-          git log -1 --oneline
+          echo "Expanding GitBook aliases..."
 
-      - name: Step A4 — List changed markdown files
+          find . -type f -name "*.md" -print0 | xargs -0 sed -i \
+            -e 's|{server}|https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV|g' \
+            -e 's|{galera}|https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7|g'
+
+          echo "Git status after replacement:"
+          git status --short
+
+      - name: Commit changes if needed
         run: |
-          echo "Changed files in this PR:"
-          git diff --name-only origin/${{ github.base_ref }}...HEAD | grep '\.md$' || echo "No markdown files changed"
+          if git diff --quiet; then
+            echo "No alias replacements needed."
+            exit 0
+          fi
 
-      - name: Step B++ — Show only STEP B line
-        run: |
-          echo "Looking only for STEP B lines:"
-          grep -R -n "STEP B TEST" . || echo "❌ STEP B line not found"
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
 
+          git commit -am "docs: expand GitBook aliases"
+          git push
