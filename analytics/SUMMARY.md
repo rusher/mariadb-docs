@@ -68,7 +68,7 @@
       * [ColumnStore System Monitoring Configuration](mariadb-columnstore/management/columnstore-system/columnstore-system-monitoring-configuration.md)
       * [MariaDB ColumnStore Backup and Restore](mariadb-columnstore/management/columnstore-system/mariadb-columnstore-backup-and-restore/README.md)
         * [Backup and Restore for MariaDB ColumnStore 1.0.x](mariadb-columnstore/management/columnstore-system/mariadb-columnstore-backup-and-restore/backup-and-restore-for-mariadb-columnstore-10x.md)
-        * [Backup and Restore for MariaDB ColumnStore 1.1.0 onwards](mariadb-columnstore/management/columnstore-system/mariadb-columnstore-backup-and-restore/backup-and-restore-for-mariadb-columnstore-110-onwards.md)
+        * [Backup and Restore for MariaDB ColumnStore 1.1.0](mariadb-columnstore/management/columnstore-system/mariadb-columnstore-backup-and-restore/backup-and-restore-for-mariadb-columnstore-110.md)
     * [Node Maintenance for MariaDB Enterprise Columnstore](mariadb-columnstore/management/node-maintenance-for-mariadb-enterprise-columnstore/README.md)
       * [Adding a Node](mariadb-columnstore/management/node-maintenance-for-mariadb-enterprise-columnstore/add-a-node.md)
       * [Rejoining a Node](mariadb-columnstore/management/node-maintenance-for-mariadb-enterprise-columnstore/rejoin-a-node.md)

@@ -1,36 +1,14 @@
-# Backup and Restore for MariaDB ColumnStore 1.1.0 onwards
+# Backup and Restore for MariaDB ColumnStore 1.1.0
 
-## Backup and Restore for MariaDB ColumnStore 1.1.0 onwards
-
-1. [Backup and Restore package "Backup and Restore package"](backup-and-restore-for-mariadb-columnstore-110-onwards.md#backup-and-restore-package)
-2. [Installing MariaDB ColumnStore Tools package "Installing MariaDB ColumnStore Tools package"](backup-and-restore-for-mariadb-columnstore-110-onwards.md#installing-mariadb-columnstore-tools-package)
-3. [RPM "RPM"](backup-and-restore-for-mariadb-columnstore-110-onwards.md#rpm)
-4. [DEB "DEB"](backup-and-restore-for-mariadb-columnstore-110-onwards.md#deb)
-5. [BINARY "BINARY"](backup-and-restore-for-mariadb-columnstore-110-onwards.md#binary)
-6. [Backup Overview "Backup Overview"](backup-and-restore-for-mariadb-columnstore-110-onwards.md#backup-overview)
-7. [columnstoreBackup "columnstoreBackup"](backup-and-restore-for-mariadb-columnstore-110-onwards.md#columnstorebackup)
-8. [Backup Setup "Backup Setup"](backup-and-restore-for-mariadb-columnstore-110-onwards.md#backup-setup)
-9. [Running columnstoreBackup "Running columnstoreBackup"](backup-and-restore-for-mariadb-columnstore-110-onwards.md#running-columnstorebackup)
-10. [Backup Logging "Backup Logging"](backup-and-restore-for-mariadb-columnstore-110-onwards.md#backup-logging)
-11. [Backup Return Codes "Backup Return Codes"](backup-and-restore-for-mariadb-columnstore-110-onwards.md#backup-return-codes)
-12. [Backup Operation Notes "Backup Operation Notes"](backup-and-restore-for-mariadb-columnstore-110-onwards.md#backup-operation-notes)
-13. [columnstoreRestore "columnstoreRestore"](backup-and-restore-for-mariadb-columnstore-110-onwards.md#columnstorerestore)
-14. [Restore Setup "Restore Setup"](backup-and-restore-for-mariadb-columnstore-110-onwards.md#restore-setup)
-15. [Running columnstoreRestore "Running columnstoreRestore"](backup-and-restore-for-mariadb-columnstore-110-onwards.md#running-columnstorerestore)
-16. [Restore Logging "Restore Logging"](backup-and-restore-for-mariadb-columnstore-110-onwards.md#restore-logging)
-17. [Restore Return Codes "Restore Return Codes"](backup-and-restore-for-mariadb-columnstore-110-onwards.md#restore-return-codes)
-18. [Restore Operation Notes "Restore Operation Notes"](backup-and-restore-for-mariadb-columnstore-110-onwards.md#restore-operation-notes)
+## Backup and Restore for MariaDB ColumnStore 1.1.0
 
 ## Backup and Restore Package
 
-The Backup and Restore is part of the MariaDB ColumnStore Tools package.\
-It can be downloaded from:
-
-[tools-ax](https://mariadb.com/downloads/mariadb-ax/tools-ax)
+The Backup and Restore is part of the MariaDB ColumnStore Tools package. It can be downloaded here: [tools-ax](https://mariadb.com/downloads/mariadb-ax/tools-ax)
 
 ## Installing MariaDB ColumnStore Tools Package
 
-The package is available as rpm, deb and binary. Follow the instructions to install the associated package:
+The package is available as `rpm`, `deb`, and `binary`. Follow the instructions to install the associated package:
 
 ### RPM
 
@@ -61,7 +39,7 @@ The high level steps involved in performing a full backup of MariaDB ColumnStore
 
 ## ColumnStore Backup
 
-In MariaDB ColumnStore 1.1.0, the  `columnstoreBackup` tool is available to automate the backup/restore across MariaDB ColumnStore nodes.
+In MariaDB ColumnStore 1.1.0, the `columnstoreBackup` tool is available to automate the backup/restore across MariaDB ColumnStore nodes.
 
 {% hint style="info" %}
 `columnstoreBackup` tool is only for ColumnStore data backups. Other engines may not be fully backed up and data could be lost when restoring.
