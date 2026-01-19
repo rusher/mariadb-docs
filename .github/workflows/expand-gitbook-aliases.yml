@@ -1,0 +1,38 @@
+name: Expand GitBook Aliases
+
+on:
+  pull_request:
+
+permissions:
+  contents: write
+
+jobs:
+  expand-links:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Step A1 — Workflow triggered
+        run: |
+          echo "Workflow triggered"
+          echo "Event: ${{ github.event_name }}"
+          echo "PR branch: ${{ github.head_ref }}"
+          echo "Base branch: ${{ github.base_ref }}"
+
+      - name: Step A2 — Checkout PR branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+
+      - name: Step A3 — Show checked-out commit
+        run: |
+          echo "Current branch:"
+          git branch --show-current
+
+          echo "Latest commit:"
+          git log -1 --oneline
+
+      - name: Step A4 — List changed markdown files
+        run: |
+          echo "Changed files in this PR:"
+          git diff --name-only origin/${{ github.base_ref }}...HEAD | grep '\.md$' || echo "No markdown files changed"
