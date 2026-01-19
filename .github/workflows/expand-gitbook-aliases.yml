@@ -37,7 +37,8 @@ jobs:
           echo "Changed files in this PR:"
           git diff --name-only origin/${{ github.base_ref }}...HEAD | grep '\.md$' || echo "No markdown files changed"
 
-      - name: Step B+ — Show context around possible aliases
+      - name: Step B++ — Show only STEP B line
         run: |
-          echo "Searching with line numbers and context:"
-          grep -R -n -C 2 "server" . || echo "No 'server' substring found"
+          echo "Looking only for STEP B lines:"
+          grep -R -n "STEP B TEST" . || echo "❌ STEP B line not found"
+
