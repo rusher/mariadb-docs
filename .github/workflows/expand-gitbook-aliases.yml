@@ -1,3 +1,12 @@
+Yes, absolutely. Adding a link to your internal documentation is a great idea.
+
+The best way to do this is to add it to the **GitHub Job Summary**. This ensures that every time the action runs, the link appears prominently on the "Summary" page in GitHub, making it clickable for anyone checking the build.
+
+Here is the updated workflow. I have added a `📖 Help & Documentation` step that writes your Confluence link directly to the run summary.
+
+### Updated Workflow: `expand-links.yml`
+
+```yaml
 name: Expand GitBook Aliases
 
 on:
@@ -17,6 +26,13 @@ jobs:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
 
+      # 👇 NEW STEP: Adds a clickable link to the GitHub Action Summary UI
+      - name: 📖 Documentation
+        run: |
+          echo "### 🔗 Link Expander Documentation" >> $GITHUB_STEP_SUMMARY
+          echo "For a list of supported aliases and usage guide, please see:" >> $GITHUB_STEP_SUMMARY
+          echo "👉 [**Using Aliases in Pull Requests**](https://mariadbcorp.atlassian.net/wiki/spaces/DOCS/pages/3284140040/Pull+Requests#Using-Aliases-in-Pull-Requests)" >> $GITHUB_STEP_SUMMARY
+
       - name: Expand GitBook aliases (exclude README.md)
         run: |
           set -e
@@ -24,7 +40,7 @@ jobs:
           echo "Expanding GitBook aliases (excluding README.md)..."
 
           # Using | as delimiter to handle URL slashes cleanly
-          # Note: Trailing slashes have been removed from URLs to avoid double-slashes (e.g., //path)
+          # Note: Trailing slashes have been removed from URLs to avoid double-slashes
           find . -type f -name "*.md" ! -name "README.md" -print0 | xargs -0 sed -i \
             -e 's|{server}|https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV|g' \
             -e 's|{galera}|https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7|g' \
@@ -54,3 +70,5 @@ jobs:
 
           git commit -am "docs: expand GitBook aliases"
           git push
+
+```
