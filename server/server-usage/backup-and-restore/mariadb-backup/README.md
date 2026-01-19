@@ -81,6 +81,20 @@ This guide explains how to create and apply incremental backups with `mariadb-ba
 
 {% columns %}
 {% column %}
+{% content-ref url="point-in-time-recovery-pitr-mariadb-backup.md" %}
+[point-in-time-recovery-pitr-mariadb-backup.md](point-in-time-recovery-pitr-mariadb-backup.md)
+{% endcontent-ref %}
+
+
+{% endcolumn %}
+
+{% column %}
+Explains how to restore (recover) to a specific point in time. Point-in-time recovery is often referred to as PITR.
+{% endcolumn %}
+{% endcolumns %}
+
+{% columns %}
+{% column %}
 {% content-ref url="partial-backup-and-restore-with-mariadb-backup.md" %}
 [partial-backup-and-restore-with-mariadb-backup.md](partial-backup-and-restore-with-mariadb-backup.md)
 {% endcontent-ref %}

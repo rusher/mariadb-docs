@@ -58,6 +58,7 @@
       * [Full Backup and Restore (mariadb-backup)](server-usage/backup-and-restore/mariadb-backup/full-backup-and-restore-with-mariadb-backup.md)
       * [Incremental Backup and Restore (mariadb-backup)](server-usage/backup-and-restore/mariadb-backup/incremental-backup-and-restore-with-mariadb-backup.md)
       * [Partial Backup and Restore (mariadb-backup)](server-usage/backup-and-restore/mariadb-backup/partial-backup-and-restore-with-mariadb-backup.md)
+      * [Point-In-Time Recovery (PITR, mariadb-backup)](server-usage/backup-and-restore/mariadb-backup/point-in-time-recovery-pitr-mariadb-backup.md)
       * [Restoring Individual Databases From a Full Backup (mariadb-backup)](server-usage/backup-and-restore/mariadb-backup/individual-database-restores-with-mariadb-backup-from-full-backup.md)
       * [Restoring Individual Tables and Partitions (mariadb-backup)](server-usage/backup-and-restore/mariadb-backup/restoring-individual-tables-and-partitions-with-mariadb-backup.md)
       * [Setting up a Replica (mariadb-backup)](server-usage/backup-and-restore/mariadb-backup/setting-up-a-replica-with-mariadb-backup.md)
