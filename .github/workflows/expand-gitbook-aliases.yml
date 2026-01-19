@@ -36,3 +36,8 @@ jobs:
         run: |
           echo "Changed files in this PR:"
           git diff --name-only origin/${{ github.base_ref }}...HEAD | grep '\.md$' || echo "No markdown files changed"
+
+      - name: Step B+ — Show context around possible aliases
+        run: |
+          echo "Searching with line numbers and context:"
+          grep -R -n -C 2 "server" . || echo "No 'server' substring found"
