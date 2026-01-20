@@ -11,10 +11,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout PR branch
+      - name: Checkout PR
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.head_ref }}
           fetch-depth: 0
 
       - name: Expand GitBook aliases (exclude README.md)
@@ -38,7 +37,6 @@ jobs:
             -e 's|{release-notes}|https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb|g' \
             -e 's|{general-resources}|https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/WCInJQ9cmGjq1lsTG91E/about/readme|g'
 
-          echo "Git status after expansion:"
           git status --short
 
       - name: Commit changes if needed
