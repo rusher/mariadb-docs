@@ -41,7 +41,9 @@ reference_option:
 ```
 
 {% hint style="info" %}
-The `symbol` clause, if specified, is used in error messages and must be unique in the database.
+The `symbol` clause is used in error messages and must be unique per database, or, as of MariaDB 12.1, unique per table.
+
+The `symbol` clause is optional. If it isn't specified, MariaDB automatically assigns one.
 {% endhint %}
 
 If MariaDB automatically creates an index for the foreign key (because it does not exist and is not explicitly created), its name is `index_name`.
