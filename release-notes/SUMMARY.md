@@ -1537,6 +1537,7 @@
     * [MariaDB ColumnStore 25.10.1 Release Notes](columnstore/25.10/25.10.1.md)
     * [MariaDB ColumnStore 25.10.0 Release Notes](columnstore/25.10/25.10.0.md)
   * [MariaDB ColumnStore 23.10 Release Notes](columnstore/23.10/README.md)
+    * [MariaDB ColumnStore 23.10.8 Release Notes](columnstore/23.10/23.10.8.md)
     * [MariaDB ColumnStore 23.10.7 Release Notes](columnstore/23.10/23.10.7.md)
     * [MariaDB ColumnStore 23.10.6 Release Notes](columnstore/23.10/23.10.6.md)
     * [MariaDB ColumnStore 23.10.5 Release Notes](columnstore/23.10/23.10.5.md)
