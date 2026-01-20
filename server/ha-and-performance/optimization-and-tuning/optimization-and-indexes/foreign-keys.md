@@ -100,6 +100,10 @@ The allowed actions for `ON DELETE` and `ON UPDATE` are:
 
 Foreign key constraints can be disabled by setting the [foreign\_key\_checks](../system-variables/server-system-variables.md#foreign_key_checks) server system variable to `0`. This speeds up the insertion of large quantities of data.
 
+{% hint style="info" %}
+For detailed information about constraints, see [this page](../../../reference/sql-statements/data-definition/constraint.md).
+{% endhint %}
+
 ## Metadata
 
 The [REFERENTIAL\_CONSTRAINTS](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-referential_constraints-table.md) Information Schema table contains information about foreign keys:
@@ -139,7 +143,7 @@ The individual columns are listed in the [KEY\_COLUMN\_USAGE](../../../reference
 
 {% code expandable="true" %}
 ```sql
-MariaDB [information_schema]> SELECT * FROM KEY_COLUMN_USAGE LIMIT 2\G
+MariaDB [information_schema]> SELECT * FROM KEY_COLUMN_USAGE LIMIT 2 \G
 *************************** 1. row ***************************
            CONSTRAINT_CATALOG: def
             CONSTRAINT_SCHEMA: nation
@@ -197,7 +201,9 @@ Create Table: CREATE TABLE `countries` (
 
 ## Examples
 
-Let's see an example. We will create an `author` table and a `book` table. Both tables have a primary key called `id`. `book` also has a foreign key composed by a field called `author_id`, which refers to the `author` primary key. The foreign key constraint name is optional, but we'll specify it because we want it to appear in error messages: `fk_book_author`.
+### Creating and Using Foreign Keys
+
+In this example, we create an `author`  and a `book` table, both having a primary key called `id`. The `book` table also has a foreign key composed from a field called `author_id`, which refers to the `author` table primary key. The foreign key constraint name is optional, but we specify it because we want it to appear in error messages: `fk_book_author`.
 
 ```sql
 CREATE TABLE author (
@@ -216,7 +222,7 @@ CREATE TABLE book (
 ) ENGINE = InnoDB;
 ```
 
-Now, if we try to insert a book with a non-existing author, we will get an error:
+When trying to insert a book with a non-existing author, we get an error:
 
 ```sql
 INSERT INTO book (title, author_id) VALUES ('Necronomicon', 1);
@@ -225,9 +231,7 @@ ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint f
   REFERENCES `author` (`id`) ON DELETE CASCADE)
 ```
 
-The error is very descriptive.
-
-Now, let's try to properly insert two authors and their books:
+The error basically says that `author_id` is mandatory because otherwise the foreign key constraint is violated. So, let's insert two authors and their books:
 
 ```sql
 INSERT INTO author (name) VALUES ('Abdul Alhazred');
@@ -239,9 +243,9 @@ INSERT INTO book (title, author_id) VALUES
   ('The colour out of space', LAST_INSERT_ID());
 ```
 
-It worked!
+Those `INSERT` statements first add an author name to the `name` column of the author table, and the `id` column is automatically updated thanks to `AUTO_INCREMENT`. For the next `INSERT` statement (adding the book or books), we use the `LAST_INSERT_ID()` function, which uses that newly generated ID, filling it in for the `book` table.
 
-Now, let's delete the second author. When we created the foreign key, we specified `ON DELETE CASCADE`. This should propagate the deletion, and make the deleted author's books disappear:
+Now, let's delete the second author from the `author` table. When we created the foreign key, we specified `ON DELETE CASCADE`. This propagates the deletion to the `book` table, making the deleted author's books disappear, too:
 
 ```sql
 DELETE FROM author WHERE name = 'H.P. Lovecraft';
@@ -254,7 +258,7 @@ SELECT * FROM book;
 +----+--------------+-----------+
 ```
 
-We also specified `ON UPDATE RESTRICT`. This should prevent us from modifying an author's `id` (the column referenced by the foreign key) if a child row exists:
+We also specified `ON UPDATE RESTRICT`. This prevents modifying an author's `id` (the column referenced by the foreign key) if a child row exists:
 
 ```sql
 UPDATE author SET id = 10 WHERE id = 1;
@@ -263,8 +267,11 @@ ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constrai
   REFERENCES `author` (`id`) ON DELETE CASCADE)
 ```
 
-### REFERENCES
+### Referencing Keys in Tables
 
+This example demonstrates which keys to reference for foreign keys, and what happens when the wrong key (`not_key`) is referenced ([error 1005](../../../reference/error-codes/mariadb-error-codes-1000-to-1099/e1005.md)):
+
+{% code expandable="true" %}
 ```sql
 CREATE TABLE a(a_key INT PRIMARY KEY, not_key INT);
 
@@ -302,6 +309,7 @@ SELECT * FROM c;
 |       1 |
 +---------+
 ```
+{% endcode %}
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
