@@ -9,24 +9,25 @@ description: >-
 
 ## Overview
 
-A foreign key is a constraint which can be used to enforce data integrity. It is composed by a column (or a set of columns) in a table called the child table, which references to a column (or a set of columns) in a table called the parent table. If foreign keys are used, MariaDB performs some checks to enforce that some integrity rules are always enforced. For a more exhaustive explanation, see [Relational databases: Foreign Keys](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/database-theory/relational-databases-foreign-keys).
+A foreign key is a constraint which can be used to enforce data integrity. It is composed of a column or a set of columns in a table, called the _child table_, which references to a column or a set of columns in a table called the _parent table_. With foreign keys, MariaDB performs checks to enforce that integrity rules are always enforced. For a more exhaustive explanation, see [Relational databases: Foreign Keys](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/database-theory/relational-databases-foreign-keys).
 
+{% hint style="info" %}
 Foreign keys can only be used with storage engines that support them. The default [InnoDB](../../../server-usage/storage-engines/innodb/) supports foreign keys.
+{% endhint %}
 
+{% hint style="warning" %}
 [Partitioned tables](../../../server-usage/partitioning-tables/) cannot contain foreign keys, and cannot be referenced by a foreign key.
+{% endhint %}
 
 ## Syntax
 
-**Note:** Until [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), MariaDB accepts the shortcut format with a REFERENCES clause only in ALTER TABLE and CREATE TABLE statements, but that syntax does nothing. For example:
-
-```
+```sql
 CREATE TABLE b(for_key INT REFERENCES a(not_key));
 ```
 
-MariaDB simply parses it without returning any error or warning, for compatibility with other DBMS's. However, only the syntax described below creates foreign keys.\
-From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105), MariaDB will attempt to apply the constraint. See the [Examples](foreign-keys.md#references) below.
+MariaDB applies the constraint if possible. See the [Examples](foreign-keys.md#references) below.
 
-Foreign keys are created with [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table/). The definition must follow this syntax:
+Foreign keys are created with [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table/). The foreign key definition has this syntax:
 
 ```sql
 [CONSTRAINT [symbol]] FOREIGN KEY
@@ -39,61 +40,160 @@ reference_option:
     RESTRICT | CASCADE | SET NULL | NO ACTION | SET DEFAULT
 ```
 
+{% hint style="info" %}
 The `symbol` clause, if specified, is used in error messages and must be unique in the database.
+{% endhint %}
 
-The columns in the child table must be a BTREE (not HASH, RTREE, or FULLTEXT — see [SHOW INDEX](../../../reference/sql-statements/administrative-sql-statements/show/show-index.md)) index, or the leftmost part of a BTREE index. Index prefixes are not supported (thus, [TEXT](../../../reference/data-types/string-data-types/text.md) and [BLOB](../../../reference/data-types/string-data-types/blob.md) columns cannot be used as foreign keys). If MariaDB automatically creates an index for the foreign key (because it does not exist and is not explicitly created), its name will be `index_name`.
+If MariaDB automatically creates an index for the foreign key (because it does not exist and is not explicitly created), its name is `index_name`.
 
-The referenced columns in the parent table must be a an index or a prefix of an index.
+## Requirements and Limitations
 
-The foreign key columns and the referenced columns must be of the same type, or similar types. For integer types, the size and sign must also be the same.
+Foreign keys have the following requirements:
 
-Both the foreign key columns and the referenced columns can be [PERSISTENT](../../../reference/sql-statements/data-definition/create/generated-columns.md) columns. However, the ON UPDATE CASCADE, ON UPDATE SET NULL, ON DELETE SET NULL clauses are not allowed in this case.
+* Referenced columns in the parent table must be a an index or a prefix of an index.
+* Foreign key columns and referenced columns must be of the same type, or similar types. For integer types, the size and sign must also be the same.
+* Both foreign key columns and referenced columns can be [PERSISTENT](../../../reference/sql-statements/data-definition/create/generated-columns.md) columns. However, the `ON UPDATE CASCADE`, `ON UPDATE SET NULL`, `ON DELETE SET NULL` clauses are not allowed in this case.
+* The parent and the child table must use the same storage engine, and must not be `TEMPORARY` or partitioned tables. However, they can be the same table.
 
-The parent and the child table must use the same storage engine, and must not be `TEMPORARY` or partitioned tables. They can be the same table.
+Foreign keys in MariaDB have the following limitations:
+
+{% tabs %}
+{% tab title="Current" %}
+Foreign key names must be **unique per table**.
+{% endtab %}
+
+{% tab title="< 12.1" %}
+Foreign key names must be **unique per database**.
+{% endtab %}
+{% endtabs %}
+
+* Supported only by InnoDB.
+* Cannot be used with views.
+* The `SET DEFAULT` action is not supported.
+* Foreign key actions do not activate [triggers](../../../server-usage/triggers-events/triggers/).
+* If `ON UPDATE CASCADE` recurses to update the same table it has previously updated during the cascade, it acts like `RESTRICT`.
+* Indexed [generated columns](../../../reference/sql-statements/data-definition/create/generated-columns.md) (both `VIRTUAL` and `PERSISTENT`) are not supported as InnoDB foreign key indexes.
+* The columns in the child table must be a `BTREE` index (not `HASH`, `RTREE`, or `FULLTEXT` — see [SHOW INDEX](../../../reference/sql-statements/administrative-sql-statements/show/show-index.md)), or the leftmost part of a `BTREE` index.&#x20;
+* Index prefixes are not supported, which means that [TEXT](../../../reference/data-types/string-data-types/text.md) and [BLOB](../../../reference/data-types/string-data-types/blob.md) columns cannot be used as foreign keys.&#x20;
 
 ## Constraints
 
-If a foreign keys exists, each row in the child table must match a row in the parent table. Multiple child rows can match the same parent row. A child row _matches_ a parent row if all its foreign key values are identical to a parent row's values in the parent table. However, if at least one of the foreign key values is `NULL`, the row has no parents, but it is still allowed.
+If a foreign keys exists, each row in the child table must match a row in the parent table. Multiple child rows can match the same parent row. A child row _matches_ a parent row if all its foreign key values are identical to the row values in the parent table. However, if at least one of the foreign key values is `NULL`, the row has no parent, but it is still allowed.
 
-MariaDB performs certain checks to guarantee that the data integrity is enforced:
+MariaDB performs certain checks to guarantee that data integrity is enforced:
 
-* Trying to insert non-matching rows (or update matching rows in a way that makes them non-matching rows) in the child table produces a 1452 error ([SQLSTATE](../../../reference/sql-statements/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate.md) '23000').
+* Trying to insert non-matching rows (or update matching rows in a way that makes them non-matching rows) in the child table produces a [1452 error](../../../reference/error-codes/mariadb-error-codes-1400-to-1499/e1452.md) ([SQLSTATE](../../../reference/sql-statements/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate.md) `23000`).
 * When a row in the parent table is deleted and at least one child row exists, MariaDB performs an action which depends on the `ON DELETE` clause of the foreign key.
 * When a value in the column referenced by a foreign key changes and at least one child row exists, MariaDB performs an action which depends on the `ON UPDATE` clause of the foreign key.
-* Trying to drop a table that is referenced by a foreign key produces a 1217 error ([SQLSTATE](../../../reference/sql-statements/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate.md) '23000').
-* A [TRUNCATE TABLE](../../../reference/sql-statements/table-statements/truncate-table.md) against a table containing one or more foreign keys is executed as a [DELETE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md) without WHERE, so that the foreign keys are enforced for each row.
+* Trying to drop a table that is referenced by a foreign key produces a [1217 error](../../../reference/error-codes/mariadb-error-codes-1200-to-1299/e1217.md) ([SQLSTATE](../../../reference/sql-statements/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate.md) '23000').
+* A [TRUNCATE TABLE](../../../reference/sql-statements/table-statements/truncate-table.md) statement against a table containing one or more foreign keys is executed as a [DELETE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md) without a `WHERE` clause, so that the foreign keys are enforced for each row.
 
 The allowed actions for `ON DELETE` and `ON UPDATE` are:
 
-* `RESTRICT`: The change on the parent table is prevented. The statement terminates with a 1451 error ([SQLSTATE](../../../reference/sql-statements/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate.md) '2300'). This is the default behavior for both `ON DELETE` and `ON UPDATE`.
+* `RESTRICT`: The change on the parent table is prevented. The statement terminates with a [1451 error](../../../reference/error-codes/mariadb-error-codes-1400-to-1499/e1451.md) ([SQLSTATE](../../../reference/sql-statements/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate.md) '2300'). This is the default behavior for both `ON DELETE` and `ON UPDATE`.
 * `NO ACTION`: Synonym for `RESTRICT`.
-* `CASCADE`: The change is allowed and propagates on the child table. For example, if a parent row is deleted, the child row is also deleted; if a parent row's ID changes, the child row's ID will also change.
+* `CASCADE`: The change is allowed and propagates on the child table. For example, if a parent row is deleted, the child row is also deleted; if a parent row's ID changes, the child row's ID changes, too.
 * `SET NULL`: The change is allowed, and the child row's foreign key columns are set to `NULL`.
-* `SET DEFAULT`: Only worked with PBXT. Similar to `SET NULL`, but the foreign key columns were set to their default values. If default values do not exist, an error is produced.
+* `SET DEFAULT`: This clause is not supported.
 
-The delete or update operations triggered by foreign keys do not activate [triggers](../../../server-usage/triggers-events/triggers/) and are not counted in the [Com\_delete](../system-variables/server-status-variables.md#com_delete) and [Com\_update](../system-variables/server-status-variables.md#com_update) status variables.
+`DELETE` or `UPDATE` statements triggered by foreign keys do not activate [triggers](../../../server-usage/triggers-events/triggers/) and are not counted in the [Com\_delete](../system-variables/server-status-variables.md#com_delete) and [Com\_update](../system-variables/server-status-variables.md#com_update) status variables.
 
-Foreign key constraints can be disabled by setting the [foreign\_key\_checks](../system-variables/server-system-variables.md#foreign_key_checks) server system variable to 0. This speeds up the insertion of large quantities of data.
+Foreign key constraints can be disabled by setting the [foreign\_key\_checks](../system-variables/server-system-variables.md#foreign_key_checks) server system variable to `0`. This speeds up the insertion of large quantities of data.
 
 ## Metadata
 
-The [Information Schema](../../../reference/system-tables/information-schema/) [REFERENTIAL\_CONSTRAINTS](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-referential_constraints-table.md) table contains information about foreign keys. The individual columns are listed in the [KEY\_COLUMN\_USAGE](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-key_column_usage-table.md) table.
+The [REFERENTIAL\_CONSTRAINTS](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-referential_constraints-table.md) Information Schema table contains information about foreign keys:
 
-The InnoDB-specific Information Schema tables also contain information about the InnoDB foreign keys. The foreign key information is stored in the [INNODB\_SYS\_FOREIGN](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_foreign-table.md). Data about the individual columns are stored in [INNODB\_SYS\_FOREIGN\_COLS](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_foreign-table.md).
+{% code expandable="true" %}
+```sql
+MariaDB [information_schema]> SELECT * FROM REFERENTIAL_CONSTRAINTS \G
+*************************** 1. row ***************************
+       CONSTRAINT_CATALOG: def
+        CONSTRAINT_SCHEMA: nation
+          CONSTRAINT_NAME: countries_ibfk_1
+UNIQUE_CONSTRAINT_CATALOG: def
+ UNIQUE_CONSTRAINT_SCHEMA: nation
+   UNIQUE_CONSTRAINT_NAME: PRIMARY
+             MATCH_OPTION: NONE
+              UPDATE_RULE: RESTRICT
+              DELETE_RULE: RESTRICT
+               TABLE_NAME: countries
+    REFERENCED_TABLE_NAME: regions
+*************************** 2. row ***************************
+       CONSTRAINT_CATALOG: def
+        CONSTRAINT_SCHEMA: nation
+          CONSTRAINT_NAME: regions_ibfk_1
+UNIQUE_CONSTRAINT_CATALOG: def
+ UNIQUE_CONSTRAINT_SCHEMA: nation
+   UNIQUE_CONSTRAINT_NAME: PRIMARY
+             MATCH_OPTION: NONE
+              UPDATE_RULE: RESTRICT
+              DELETE_RULE: RESTRICT
+               TABLE_NAME: regions
+    REFERENCED_TABLE_NAME: continents
+...
+```
+{% endcode %}
 
-The most human-readable way to get information about a table's foreign keys sometimes is the [SHOW CREATE TABLE](../../../reference/sql-statements/administrative-sql-statements/show/show-create-table.md) statement.
+The individual columns are listed in the [KEY\_COLUMN\_USAGE](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-key_column_usage-table.md) table:
 
-## Limitations
+{% code expandable="true" %}
+```sql
+MariaDB [information_schema]> SELECT * FROM KEY_COLUMN_USAGE LIMIT 2\G
+*************************** 1. row ***************************
+           CONSTRAINT_CATALOG: def
+            CONSTRAINT_SCHEMA: nation
+              CONSTRAINT_NAME: PRIMARY
+                TABLE_CATALOG: def
+                 TABLE_SCHEMA: nation
+                   TABLE_NAME: countries
+                  COLUMN_NAME: country_id
+             ORDINAL_POSITION: 1
+POSITION_IN_UNIQUE_CONSTRAINT: NULL
+      REFERENCED_TABLE_SCHEMA: NULL
+        REFERENCED_TABLE_NAME: NULL
+       REFERENCED_COLUMN_NAME: NULL
+*************************** 2. row ***************************
+           CONSTRAINT_CATALOG: def
+            CONSTRAINT_SCHEMA: nation
+              CONSTRAINT_NAME: country_code2
+                TABLE_CATALOG: def
+                 TABLE_SCHEMA: nation
+                   TABLE_NAME: countries
+                  COLUMN_NAME: country_code2
+             ORDINAL_POSITION: 1
+POSITION_IN_UNIQUE_CONSTRAINT: NULL
+      REFERENCED_TABLE_SCHEMA: NULL
+        REFERENCED_TABLE_NAME: NULL
+       REFERENCED_COLUMN_NAME: NULL
+```
+{% endcode %}
 
-Foreign keys have the following limitations in MariaDB:
+The InnoDB-specific Information Schema tables also contain information about the InnoDB foreign keys. The foreign key information is stored in the [INNODB\_SYS\_FOREIGN](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_foreign-table.md) table. Data about the individual columns are stored in [INNODB\_SYS\_FOREIGN\_COLS](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_foreign-table.md).
 
-* Currently, foreign keys are only supported by InnoDB.
-* Cannot be used with views.
-* The `SET DEFAULT` action is not supported.
-* Foreign keys actions do not activate [triggers](../../../server-usage/triggers-events/triggers/).
-* If ON UPDATE CASCADE recurses to update the same table it has previously updated during the cascade, it acts like RESTRICT.
-* Indexed [generated columns](../../../reference/sql-statements/data-definition/create/generated-columns.md) (both VIRTUAL and PERSISTENT) are not supported as InnoDB foreign key indexes.
-* Prior to [MariaDB 12.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.1-rolling-releases/changes-and-improvements-in-mariadb-12.1), foreign key names are required to be unique per database. From MariaDB 12.1, foreign key names are only required to be unique per table.
+Another way of retrieving information about a table's foreign keys is the [SHOW CREATE TABLE](../../../reference/sql-statements/administrative-sql-statements/show/show-create-table.md) statement:
+
+{% code overflow="wrap" expandable="true" %}
+```sql
+MariaDB [nation]> SHOW CREATE TABLE countries \G
+*************************** 1. row ***************************
+       Table: countries
+Create Table: CREATE TABLE `countries` (
+  `country_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) DEFAULT NULL,
+  `area` decimal(10,2) NOT NULL,
+  `national_day` date DEFAULT NULL,
+  `country_code2` char(2) NOT NULL,
+  `country_code3` char(3) NOT NULL,
+  `region_id` int(11) NOT NULL,
+  PRIMARY KEY (`country_id`),
+  UNIQUE KEY `country_code2` (`country_code2`),
+  UNIQUE KEY `country_code3` (`country_code3`),
+  KEY `region_id` (`region_id`),
+  CONSTRAINT `countries_ibfk_1` FOREIGN KEY (`region_id`) REFERENCES `regions` (`region_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=240 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci
+```
+{% endcode %}
 
 ## Examples
 
