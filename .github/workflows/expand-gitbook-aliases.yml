@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout PR
+      - name: Checkout PR commit
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -37,9 +37,11 @@ jobs:
             -e 's|{release-notes}|https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb|g' \
             -e 's|{general-resources}|https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/WCInJQ9cmGjq1lsTG91E/about/readme|g'
 
+          echo "Git status after expansion:"
           git status --short
 
-      - name: Commit changes if needed
+      - name: Commit changes back to PR branch (PRs only)
+        if: github.event_name == 'pull_request'
         run: |
           if git diff --quiet; then
             echo "No alias replacements needed."
@@ -50,4 +52,6 @@ jobs:
           git config user.email "github-actions@github.com"
 
           git commit -am "docs: expand GitBook aliases"
-          git push
+
+          echo "Pushing changes back to PR branch: $GITHUB_HEAD_REF"
+          git push origin HEAD:$GITHUB_HEAD_REF
