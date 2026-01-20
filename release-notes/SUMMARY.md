@@ -1784,6 +1784,8 @@
       * [MySQL-wsrep 5.5.45-25.12 Release Notes](galera-cluster/mysql-wsrep/5.5/5.5.45-25.12.md)
       * [MySQL-wsrep 5.5.42-25.11 Release Notes](galera-cluster/mysql-wsrep/5.5/5.5.42-25.11.md)
   * [All Releases](galera-cluster/all-releases.md)
+* [Advanced Cluster Release Notes](advanced-cluster/README.md)
+  * [MariaDB Advanced Cluster Quickstart Guide](advanced-cluster/mariadb-advanced-cluster-quickstart-guide.md)
 * [Connectors Release Notes](connectors/README.md)
   * [Connector/C](connectors/c/README.md)
     * [Connector/C All Releases](connectors/c/all-releases.md)
