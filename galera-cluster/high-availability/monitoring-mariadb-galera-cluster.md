@@ -10,7 +10,7 @@ SHOW GLOBAL STATUS LIKE 'wsrep_%'
 
 The most fundamental aspect of a healthy cluster is [Quorum](understanding-quorum-monitoring-and-recovery.md#advanced-quorum-control). Quorum is a mechanism that ensures data consistency by requiring a majority of nodes to be online and in communication to form a Primary Component. Only the Primary Component will process transactions. This prevents ["split-brain" scenarios](understanding-quorum-monitoring-and-recovery.md#understanding-and-recovering-from-a-split-brain) where a network partition could otherwise lead to data conflicts.
 
-You can check the [cluster's integrity and Quorum status](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/galera-management) using these key variables. For a healthy cluster, the values for these variables must be identical on every node.
+You can check the cluster's integrity and Quorum status using these key variables. For a healthy cluster, the values for these variables must be identical on every node.
 
 | Parameter                  | Description                                                                                                    | Expected Value               |
 | -------------------------- | -------------------------------------------------------------------------------------------------------------- | ---------------------------- |
@@ -45,7 +45,7 @@ The value of `wsrep_local_state_comment` tells you exactly what a node is doing.
 
 ## Checking Replication Health
 
-These [status variables](../reference/galera-cluster-status-variables.md) can help identify performance issues and bottlenecks.&#x20;
+These [status variables](../reference/galera-cluster-status-variables.md) can help identify performance issues and bottlenecks.
 
 {% hint style="warning" %}
 Many status variables are differential and reset after each `FLUSH STATUS` command.
@@ -64,7 +64,7 @@ If the entire cluster shuts down or [loses Quorum](resetting-the-quorum-cluster-
 
 {% stepper %}
 {% step %}
-### Identify the Most Advanced Node
+#### Identify the Most Advanced Node
 
 The "most advanced" node is the one that contains the most recent data. You must bootstrap the cluster from this node to avoid any data loss.
 
@@ -74,7 +74,7 @@ The "most advanced" node is the one that contains the most recent data. You must
 {% endstep %}
 
 {% step %}
-#### Bootstrap the New Primary Component
+**Bootstrap the New Primary Component**
 
 Once you have identified the most advanced node, start the MariaDB service only on that node using a special bootstrap procedure using the command:
 
@@ -90,7 +90,7 @@ This node will come online and form a new Primary Component by itself, with a cl
 {% endstep %}
 
 {% step %}
-#### Start the Other Nodes
+**Start the Other Nodes**
 
 After the first node is successfully running as a new Primary Component, start the MariaDB service normally on all of the other nodes.
 
