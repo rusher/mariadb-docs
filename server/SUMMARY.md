@@ -1496,7 +1496,7 @@
         * [Subqueries](reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/subqueries/README.md)
           * [Subqueries With ALL](reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/subqueries/subqueries-and-all.md)
           * [Subqueries With ANY, SOME, and IN](reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/subqueries/subqueries-and-any.md)
-          * [Subqueries and EXISTS](reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/subqueries/subqueries-and-exists.md)
+          * [Subqueries With EXISTS](reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/subqueries/subqueries-and-exists.md)
           * [Subqueries With JOINs](reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/subqueries/subqueries-and-joins.md)
           * [Subqueries in a FROM Clause (Derived Tables)](reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/subqueries/subqueries-in-a-from-clause-derived-tables.md)
           * [Row Subqueries](reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/subqueries/subqueries-row-subqueries.md)
