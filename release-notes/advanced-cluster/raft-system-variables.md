@@ -15,8 +15,7 @@ Initial timeout for candidate waiting for votes during election (milliseconds). 
 
 | Property     | Value             |
 | ------------ | ----------------- |
-| Property     | Value             |
-| Command Line | <p><br></p>       |
+| Command Line |                   |
 | Scope        | Global            |
 | Dynamic      | No                |
 | Data Type    | Numeric (ms)      |
@@ -29,12 +28,11 @@ Data directory where to store replication logs and other node persistent state.
 
 | Property     | Value       |
 | ------------ | ----------- |
-| Property     | Value       |
-| Command Line | <p><br></p> |
+| Command Line |             |
 | Scope        | Global      |
 | Dynamic      | No          |
 | Data Type    | String      |
-| Range        | <p><br></p> |
+| Range        |             |
 | Default      | ./          |
 
 
@@ -45,8 +43,7 @@ Maximum size of single log file in bytes. When a log file reaches this size, a n
 
 | Property     | Value                                  |
 | ------------ | -------------------------------------- |
-| Property     | Value                                  |
-| Command Line | <p><br></p>                            |
+| Command Line |                                        |
 | Scope        | Global                                 |
 | Dynamic      | No                                     |
 | Data Type    | Numeric (Bytes)                        |
@@ -59,14 +56,13 @@ Maximum size of the in-memory event store buffer in bytes. Events are cached in 
 
 | Property     | Value                                    |
 | ------------ | ---------------------------------------- |
-| Command Line | <p><br></p>                              |
+| Command Line |                                          |
 | Scope        | Global                                   |
 | Dynamic      | No                                       |
 | Data Type    | Numeric (Bytes)                          |
 | Range        | 1048576 (1 MB) to 10485760000 (10000 MB) |
 | Default      | 32MB                                     |
 
-<br>
 
 ### raft-event-store-max-size
 
@@ -74,14 +70,13 @@ Maximum total size of the event store on disk in bytes. Older log files are purg
 
 | Property     | Value                                        |
 | ------------ | -------------------------------------------- |
-| Command Line | <p><br></p>                                  |
+| Command Line |                                              |
 | Scope        | Global                                       |
 | Dynamic      | No                                           |
 | Data Type    | Numeric (Bytes)                              |
 | Range        | 1048576 (1 MB) to 1048576000000 (1000000 MB) |
 | Default      | 512MB                                        |
 
-<br>
 
 #### raft-flow-control-drift-limit
 
@@ -89,14 +84,13 @@ Maximum index drift allowed between nodes before flow control throttling activat
 
 | Property     | Value           |
 | ------------ | --------------- |
-| Command Line | <p><br></p>     |
+| Command Line |                 |
 | Scope        | Global          |
 | Dynamic      | Yes             |
 | Data Type    | Numeric         |
 | Range        | 0 to 4294967295 |
 | Default      | 100             |
 
-<br>
 
 #### raft-flow-control-max-throttle-rate
 
@@ -104,14 +98,13 @@ Maximum request rate (requests per second) to sustain when flow control throttli
 
 | Property     | Value           |
 | ------------ | --------------- |
-| Command Line | <p><br></p>     |
+| Command Line |                 |
 | Scope        | Global          |
 | Dynamic      | Yes             |
 | Data Type    | Numeric         |
 | Range        | 0 to 4294967295 |
 | Default      | 100             |
 
-<br>
 
 #### raft-follower-timeout
 
@@ -119,14 +112,13 @@ Time follower waits without leader messages before starting election (millisecon
 
 | Property     | Value             |
 | ------------ | ----------------- |
-| Command Line | <p><br></p>       |
+| Command Line |                   |
 | Scope        | Global            |
 | Dynamic      | No                |
 | Data Type    | Numeric (ms)      |
 | Range        | 500 to 4294967295 |
 | Default      | 5000              |
 
-<br>
 
 #### raft-heartbeat-timeout
 
@@ -134,14 +126,13 @@ Interval at which leader sends heartbeat messages (milliseconds). Shorter interv
 
 | Property     | Value             |
 | ------------ | ----------------- |
-| Command Line | <p><br></p>       |
+| Command Line |                   |
 | Scope        | Global            |
 | Dynamic      | No                |
 | Data Type    | Numeric (ms)      |
 | Range        | 100 to 4294967295 |
 | Default      | 1000              |
 
-<br>
 
 #### raft-listen-port
 
@@ -149,14 +140,13 @@ Port to listen for incoming cluster connections.
 
 | Property     | Value          |
 | ------------ | -------------- |
-| Command Line | <p><br></p>    |
+| Command Line |                |
 | Scope        | Global         |
 | Dynamic      | No             |
 | Data Type    | Numeric (Port) |
 | Range        | 0 to 65535     |
 | Default      | 50002          |
 
-<br>
 
 #### raft-log-filter
 
@@ -164,14 +154,13 @@ In order to reduce amount of logging on DEBUG level, this filter can be used to 
 
 | Property     | Value                                    |
 | ------------ | ---------------------------------------- |
-| Command Line | <p><br></p>                              |
+| Command Line |                                          |
 | Scope        | Global                                   |
 | Dynamic      | Yes                                      |
 | Data Type    | String                                   |
-| Range        | <p><br></p>                              |
+| Range        |                                          |
 | Default      | admin,client,server,replication\_service |
 
-<br>
 
 #### raft-log-level
 
@@ -179,14 +168,13 @@ Verbosity level for logging. Supported values are ERROR, WARN, INFO and DEBUG. T
 
 | Property     | Value                    |
 | ------------ | ------------------------ |
-| Command Line | <p><br></p>              |
+| Command Line |                          |
 | Scope        | Global                   |
 | Dynamic      | Yes                      |
 | Data Type    | Enumeration              |
 | Range        | ERROR, WARN, INFO, DEBUG |
 | Default      | INFO                     |
 
-<br>
 
 #### raft-max-candidate-timeout
 
@@ -194,14 +182,13 @@ Maximum candidate timeout after exponential backoff (milliseconds). Limits how l
 
 | Property     | Value             |
 | ------------ | ----------------- |
-| Command Line | <p><br></p>       |
+| Command Line |                   |
 | Scope        | Global            |
 | Dynamic      | No                |
 | Data Type    | Numeric (ms)      |
 | Range        | 100 to 4294967295 |
 | Default      | 1500              |
 
-<br>
 
 #### raft-max-reconnect-attempts
 
@@ -209,14 +196,13 @@ Number of attempts to reconnect to the cluster after ending up in non-primary st
 
 | Property     | Value           |
 | ------------ | --------------- |
-| Command Line | <p><br></p>     |
+| Command Line |                 |
 | Scope        | Global          |
 | Dynamic      | Yes             |
 | Data Type    | Numeric         |
 | Range        | 1 to 4294967295 |
 | Default      | 5               |
 
-<br>
 
 #### raft-node-id
 
@@ -224,14 +210,13 @@ Unique node identifier. The identifier can be either a human-readable string up 
 
 | Property     | Value                                        |
 | ------------ | -------------------------------------------- |
-| Command Line | <p><br></p>                                  |
+| Command Line |                                              |
 | Scope        | Global                                       |
 | Dynamic      | No                                           |
 | Data Type    | String                                       |
 | Range        | Human-readable string (max 15 chars) or UUID |
 | Default      | auto                                         |
 
-<br>
 
 #### raft-node-weight
 
@@ -239,14 +224,13 @@ Node weight for replication and voting quorum. The default weight is 1, all node
 
 | Property     | Value       |
 | ------------ | ----------- |
-| Command Line | <p><br></p> |
+| Command Line |             |
 | Scope        | Global      |
 | Dynamic      | No          |
 | Data Type    | Numeric     |
 | Range        | 1 to 256    |
 | Default      | 1           |
 
-<br>
 
 #### raft-non-primary-timeout
 
@@ -254,14 +238,13 @@ Timeout after which the node is considered to be in non-primary state. If no rep
 
 | Property     | Value             |
 | ------------ | ----------------- |
-| Command Line | <p><br></p>       |
+| Command Line |                   |
 | Scope        | Global            |
 | Dynamic      | No                |
 | Data Type    | Numeric (seconds) |
 | Range        | 1 to 4294967295   |
 | Default      | 20                |
 
-<br>
 
 #### raft-session-timeout
 
@@ -269,14 +252,13 @@ Timeout after which session to replication system is considered expired if there
 
 | Property     | Value             |
 | ------------ | ----------------- |
-| Command Line | <p><br></p>       |
+| Command Line |                   |
 | Scope        | Global            |
 | Dynamic      | No                |
 | Data Type    | Numeric (seconds) |
 | Range        | 1 to 4294967295   |
 | Default      | 15                |
 
-<br>
 
 #### raft-sst-listen-port
 
@@ -284,14 +266,13 @@ Port to listen for SST requests.
 
 | Property     | Value          |
 | ------------ | -------------- |
-| Command Line | <p><br></p>    |
+| Command Line |                |
 | Scope        | Global         |
 | Dynamic      | No             |
 | Data Type    | Numeric (Port) |
 | Range        | 0 to 65535     |
 | Default      | 50001          |
 
-<br>
 
 #### raft-have-ssl
 
@@ -299,14 +280,13 @@ Indicates whether SSL/TLS is enabled for cluster communication. Possible values 
 
 | Property     | Value                           |
 | ------------ | ------------------------------- |
-| Command Line | <p><br></p>                     |
+| Command Line |                                 |
 | Scope        | Global                          |
 | Dynamic      | No                              |
 | Data Type    | Enumeration                     |
 | Range        | YES, NO, DISABLED, VERIFY\_PEER |
 | Default      | NO                              |
 
-<br>
 
 #### raft-ssl-key
 
@@ -314,14 +294,13 @@ Path to the SSL private key file in PEM format. This variable is read-only and m
 
 | Property     | Value       |
 | ------------ | ----------- |
-| Command Line | <p><br></p> |
+| Command Line |             |
 | Scope        | Global      |
 | Dynamic      | No          |
 | Data Type    | String      |
-| Range        | <p><br></p> |
+| Range        |             |
 | Default      | (empty)     |
 
-<br>
 
 #### raft-ssl-cert
 
@@ -329,14 +308,13 @@ Path to the SSL certificate file in PEM format. This variable is read-only and m
 
 | Property     | Value       |
 | ------------ | ----------- |
-| Command Line | <p><br></p> |
+| Command Line |             |
 | Scope        | Global      |
 | Dynamic      | No          |
 | Data Type    | String      |
-| Range        | <p><br></p> |
+| Range        |             |
 | Default      | (empty)     |
 
-<br>
 
 #### raft-ssl-ca
 
@@ -344,14 +322,13 @@ Path to the CA certificate file in PEM format used to verify peer certificates. 
 
 | Property     | Value       |
 | ------------ | ----------- |
-| Command Line | <p><br></p> |
+| Command Line |             |
 | Scope        | Global      |
 | Dynamic      | No          |
 | Data Type    | String      |
-| Range        | <p><br></p> |
+| Range        |             |
 | Default      | (empty)     |
 
-<br>
 
 #### raft-ssl-capath
 
@@ -359,14 +336,13 @@ Path to a directory containing CA certificate files in PEM format. This variable
 
 | Property     | Value       |
 | ------------ | ----------- |
-| Command Line | <p><br></p> |
+| Command Line |             |
 | Scope        | Global      |
 | Dynamic      | No          |
 | Data Type    | String      |
-| Range        | <p><br></p> |
+| Range        |             |
 | Default      | (empty)     |
 
-<br>
 
 #### raft-ssl-cipher
 
@@ -374,14 +350,13 @@ OpenSSL cipher list for TLS 1.2 and below. Uses OpenSSL cipher string format. Th
 
 | Property     | Value       |
 | ------------ | ----------- |
-| Command Line | <p><br></p> |
+| Command Line |             |
 | Scope        | Global      |
 | Dynamic      | No          |
 | Data Type    | String      |
-| Range        | <p><br></p> |
+| Range        |             |
 | Default      | (empty)     |
 
-<br>
 
 #### raft-ssl-crl
 
@@ -389,14 +364,13 @@ Path to the Certificate Revocation List (CRL) file. This variable is read-only a
 
 | Property     | Value       |
 | ------------ | ----------- |
-| Command Line | <p><br></p> |
+| Command Line |             |
 | Scope        | Global      |
 | Dynamic      | No          |
 | Data Type    | String      |
-| Range        | <p><br></p> |
+| Range        |             |
 | Default      | (empty)     |
 
-<br>
 
 #### raft-ssl-crlpath
 
@@ -404,14 +378,13 @@ Path to a directory containing Certificate Revocation List files. This variable 
 
 | Property     | Value       |
 | ------------ | ----------- |
-| Command Line | <p><br></p> |
+| Command Line |             |
 | Scope        | Global      |
 | Dynamic      | No          |
 | Data Type    | String      |
-| Range        | <p><br></p> |
+| Range        |             |
 | Default      | (empty)     |
 
-<br>
 
 #### raft-tls-version
 
@@ -419,14 +392,13 @@ Comma-separated list of allowed TLS protocol versions. Supported values include 
 
 | Property     | Value            |
 | ------------ | ---------------- |
-| Command Line | <p><br></p>      |
+| Command Line |                  |
 | Scope        | Global           |
 | Dynamic      | No               |
 | Data Type    | String           |
 | Range        | TLSv1.2, TLSv1.3 |
 | Default      | TLSv1.2,TLSv1.3  |
 
-<br>
 
 #### raft-ssl-ciphersuites
 
@@ -434,14 +406,13 @@ List of permitted TLS 1.3 ciphersuites. This is separate from raft\_ssl\_cipher 
 
 | Property     | Value       |
 | ------------ | ----------- |
-| Command Line | <p><br></p> |
+| Command Line |             |
 | Scope        | Global      |
 | Dynamic      | No          |
 | Data Type    | String      |
-| Range        | <p><br></p> |
+| Range        |             |
 | Default      | (empty)     |
 
-<br>
 
 #### raft-ssl-verify-depth
 
@@ -449,11 +420,10 @@ Maximum depth for certificate chain verification. This variable is read-only and
 
 | Property     | Value           |
 | ------------ | --------------- |
-| Command Line | <p><br></p>     |
+| Command Line |                 |
 | Scope        | Global          |
 | Dynamic      | No              |
 | Data Type    | Numeric         |
 | Range        | 0 to 4294967295 |
 | Default      | 9               |
 
-<br>
