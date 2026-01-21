@@ -29,10 +29,6 @@ layout:
 [singlenode-localstorage](singlenode-localstorage/)
 {% endcontent-ref %}
 
-{% content-ref url="singlenode-localstorage/" %}
-[singlenode-localstorage](singlenode-localstorage/)
-{% endcontent-ref %}
-
 {% content-ref url="multnode-localstorage/" %}
 [multnode-localstorage](multnode-localstorage/)
 {% endcontent-ref %}
