@@ -33,6 +33,10 @@ layout:
 [singlenode-localstorage](singlenode-localstorage/)
 {% endcontent-ref %}
 
+{% content-ref url="multnode-localstorage/" %}
+[multnode-localstorage](multnode-localstorage/)
+{% endcontent-ref %}
+
 {% content-ref url="single-node-s3/" %}
 [single-node-s3](single-node-s3/)
 {% endcontent-ref %}
