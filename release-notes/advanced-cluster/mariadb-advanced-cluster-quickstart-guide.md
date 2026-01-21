@@ -44,7 +44,7 @@ Install MariaDB Enterprise Server and the associated RAFT consensus provider on 
 
 {% stepper %}
 {% step %}
-### Download the Advanced Cluster Technical Preview tar archive
+#### Download the Advanced Cluster Technical Preview tar archive
 
 [https://mariadb.com/downloads/enterprise/advanced-cluster/](https://mariadb.com/downloads/enterprise/advanced-cluster/)
 
@@ -52,13 +52,13 @@ Download the correct version for your Linux Distribution
 {% endstep %}
 
 {% step %}
-### Uninstall MariaDB Enterprise
+#### Uninstall MariaDB Enterprise
 
 If you already have MariaDB Enterprise Server Installed you will need to uninstall it prior to installing the MariaDB Advanced Cluster technical preview packages
 {% endstep %}
 
 {% step %}
-### Install Advanced Cluster technical preview
+#### Install Advanced Cluster technical preview
 
 {% tabs %}
 {% tab title="RHEL 9 & 10" %}
@@ -69,7 +69,11 @@ sudo dnf install ./MariaDB-common* ./MariaDB-client* ./MariaDB-shared*
 sudo dnf install ./MariaDB-server* ./galera-enterprise-4* ./mariadb-raft*
 ```
 
-There are other packages included in the package tarball that you can optionally install, such as MariaDB-backup.
+{% hint style="info" %}
+The `galera-enterprise-4` package needs to be installed because of a dependency in the `MariaDB-server` package.
+{% endhint %}
+
+There are other packages included in the package tarball that you can optionally install, such as `MariaDB-backup`.
 {% endtab %}
 
 {% tab title="Debian & Ubuntu" %}
@@ -80,7 +84,11 @@ sudo apt install ./mariadb-common_* ./mariadb-client* ./libmysqlclient18_* ./lib
 sudo apt install ./mariadb-server* ./galera-enterprise-4_* ./mariadb-raft_*
 ```
 
-There are other packages included in the package tarball that you can optionally install, such as mariadb-backup.
+{% hint style="info" %}
+The `galera-enterprise-4` package needs to be installed because of a dependency in the `mariadb-server` package.
+{% endhint %}
+
+There are other packages included in the package tarball that you can optionally install, such as `mariadb-backup`.
 {% endtab %}
 {% endtabs %}
 {% endstep %}
@@ -91,10 +99,10 @@ There are other packages included in the package tarball that you can optionally
 Open the necessary ports on the firewall of each node to allow for both client connections and inter-node RAFT communication.
 
 | Port  | Protocol | Purpose                             |
-| ----- | --- | ----------------------------------- |
-| 3306  | TCP | Client connections to the database. |
-| 50001 | TCP | SST request listener                |
-| 50002 | TCP | RAFT server internal communication  |
+| ----- | -------- | ----------------------------------- |
+| 3306  | TCP      | Client connections to the database. |
+| 50001 | TCP      | SST request listener                |
+| 50002 | TCP      | RAFT server internal communication  |
 
 Example using UFW (Ubuntu/Debian):
 
@@ -147,7 +155,7 @@ wsrep_cluster_address="192.168.1.10,192.168.1.11,192.168.1.12"
 ```
 
 {% hint style="info" %}
-#### Important:
+**Important:**
 
 * raft\_node\_id: Must be a unique identifier for each node (e.g., "node1", "node2", "node3"). Only alphanumeric characters are allowed. The maximum length is 15.
 * wsrep\_cluster\_address: Must list all nodes in the cluster on every node's configuration file.
@@ -157,7 +165,7 @@ wsrep_cluster_address="192.168.1.10,192.168.1.11,192.168.1.12"
 
 ### Bootstrapping the First Node:
 
-Start MariaDB Enterprise Server on the first node with a special option to bootstrap the cluster. This node will form the cluster, become the initial leader, and other nodes will join it.&#x20;
+Start MariaDB Enterprise Server on the first node with a special option to bootstrap the cluster. This node will form the cluster, become the initial leader, and other nodes will join it.
 
 ```bash
 sudo systemctl stop mariadb
@@ -225,72 +233,74 @@ This confirms the strong synchronous replication and consistency provided by the
 
 ### RAFT System Variables
 
-| RAFT System Variable                  | Default     | Description                                                                                                                                                                                                                 |
-| ------------------------------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `raft-candidate-timeout`              | 200         | IInitial timeout for candidate waiting for votes during election (milliseconds). Uses exponential backoff up to raft\_max\_candidate\_timeout.                                                                              |
-| `raft-data-dir`                       | ./          | Data directory where to store replication logs and other node persistent state.                                                                                                                                             |
-| `raft-event-store-file-size`          | 128MB       | Maximum size of single log file in bytes. When a log file reaches this size, a new file is created.                                                                                                                         |
-| `raft-event-store-max-memory`         | 32MB        | Maximum size of the in-memory event store buffer in bytes. Events are cached in memory for faster access before being written to disk.                                                                                      |
-| `raft-event-store-max-size`           | 512MB       | Maximum total size of the event store on disk in bytes. Older log files are purged when this limit is exceeded.                                                                                                             |
-| `raft-flow-control-drift-limit`       | 100         | Maximum index drift allowed between nodes before flow control throttling activates. When the difference between the slowest and fastest node commit positions exceeds this limit, the leader begins throttling requests.    |
-| `raft-flow-control-max-throttle-rate` | 100         | Maximum request rate (requests per second) to sustain when flow control throttling is active. Lower values provide more aggressive throttling.                                                                              |
-| `raft-follower-timeout`               | 5000        | Time follower waits without leader messages before starting election (milliseconds).                                                                                                                                        |
-| `raft-heartbeat-timeout`              | 1000        | Interval at which leader sends heartbeat messages (milliseconds)                                                                                                                                                            |
-| `raft-listen-port`                    | 50002       | Port to listen for incoming cluster connections                                                                                                                                                                             |
-| `raft-log-filter`                     |   | In order to reduce amount of logging on DEBUG level, this filter can be used to select output from specific operations.                                                                                                     |
-| `raft-log-level`                      | INFO        | Verbosity level for logging. Supported values are ERROR, WARN, INFO and DEBUG.                                                                                                                                              |
-| `raft-max-candidate-timeout`          | 1500        | Maximum candidate timeout after exponential backoff (milliseconds).                                                                                                                                                         |
-| `raft-max-reconnect-attempts`         | 5           | Number of attempts to reconnect to the cluster after ending up in non-primary state                                                                                                                                         |
-| `raft-node-id`                        | auto        | Unique node identifier. The identifier can be either a human-readable string up to 15 characters long or a UUID.  The special value 'auto' is reserved for generating a UUID whenever the server starts from a clean state. |
-| `raft-non-primary-timeout`            | 20          | Timeout after which the node is considered to be in non-primary state. If no replication events appear in the log within this time period, the node will be considered to be in non-primary state (seconds).                |
-| `raft-session-timeout`                | 15          | Timeout after which session to replication system is considered expired if there is no activity. If the node cannot communicate with the leader within this time period, it will be evicted from the cluster (seconds).     |
-| `raft-sst-listen-port`                | 50001       | Port to listen for SST requests.                                                                                                                                                                                            |
+| RAFT System Variable                                                                                | Default | Description                                                                                                                                                                                                                |
+| --------------------------------------------------------------------------------------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [raft-candidate-timeout](raft-system-variables.md#raft-candidate-timeout)                           | 200     | IInitial timeout for candidate waiting for votes during election (milliseconds). Uses exponential backoff up to raft\_max\_candidate\_timeout.                                                                             |
+| [raft-data-dir](raft-system-variables.md#raft-data-dir)                                             | ./      | Data directory where to store replication logs and other node persistent state.                                                                                                                                            |
+| [raft-event-store-file-size](raft-system-variables.md#raft-event-store-file-size)                   | 128MB   | Maximum size of single log file in bytes. When a log file reaches this size, a new file is created.                                                                                                                        |
+| [raft-event-store-max-memory](raft-system-variables.md#raft-event-store-max-memory)                 | 32MB    | Maximum size of the in-memory event store buffer in bytes. Events are cached in memory for faster access before being written to disk.                                                                                     |
+| [raft-event-store-max-size](raft-system-variables.md#raft-event-store-max-size)                     | 512MB   | Maximum total size of the event store on disk in bytes. Older log files are purged when this limit is exceeded.                                                                                                            |
+| [raft-flow-control-drift-limit](raft-system-variables.md#raft-flow-control-drift-limit)             | 100     | Maximum index drift allowed between nodes before flow control throttling activates. When the difference between the slowest and fastest node commit positions exceeds this limit, the leader begins throttling requests.   |
+| [raft-flow-control-max-throttle-rate](raft-system-variables.md#raft-flow-control-max-throttle-rate) | 100     | Maximum request rate (requests per second) to sustain when flow control throttling is active. Lower values provide more aggressive throttling.                                                                             |
+| [raft-follower-timeout](raft-system-variables.md#raft-follower-timeout)                             | 5000    | Time follower waits without leader messages before starting election (milliseconds).                                                                                                                                       |
+| [raft-heartbeat-timeout](raft-system-variables.md#raft-heartbeat-timeout)                           | 1000    | Interval at which leader sends heartbeat messages (milliseconds)                                                                                                                                                           |
+| [raft-listen-port](raft-system-variables.md#raft-listen-port)                                       | 50002   | Port to listen for incoming cluster connections                                                                                                                                                                            |
+| [raft-log-filter](raft-system-variables.md#raft-log-filter)                                         |         | In order to reduce amount of logging on DEBUG level, this filter can be used to select output from specific operations.                                                                                                    |
+| [raft-log-level](raft-system-variables.md#raft-log-level)                                           | INFO    | Verbosity level for logging. Supported values are ERROR, WARN, INFO and DEBUG.                                                                                                                                             |
+| [raft-max-candidate-timeout](raft-system-variables.md#raft-max-candidate-timeout)                   | 1500    | Maximum candidate timeout after exponential backoff (milliseconds).                                                                                                                                                        |
+| [raft-max-reconnect-attempts](raft-system-variables.md#raft-max-reconnect-attempts)                 | 5       | Number of attempts to reconnect to the cluster after ending up in non-primary state                                                                                                                                        |
+| [raft-node-id](raft-system-variables.md#raft-node-id)                                               | auto    | Unique node identifier. The identifier can be either a human-readable string up to 15 characters long or a UUID. The special value 'auto' is reserved for generating a UUID whenever the server starts from a clean state. |
+| [raft-non-primary-timeout](raft-system-variables.md#raft-non-primary-timeout)                       | 20      | Timeout after which the node is considered to be in non-primary state. If no replication events appear in the log within this time period, the node will be considered to be in non-primary state (seconds).               |
+| [raft-session-timeout](raft-system-variables.md#raft-session-timeout)                               | 15      | Timeout after which session to replication system is considered expired if there is no activity. If the node cannot communicate with the leader within this time period, it will be evicted from the cluster (seconds).    |
+| [raft-sst-listen-port](raft-system-variables.md#raft-sst-listen-port)                               | 50001   | Port to listen for SST requests.                                                                                                                                                                                           |
+
+#### RAFT System Variables: SSL
 
 SSL is enabled by default for all Raft Cluster connections. If the certificate information is not provided, a self-signed certificate is created at startup. Notice that `VERIFY_PEER` cannot be used with self-signed certificates.
 
-| RAFT System Variable  | Default         | Description                                                                                                                                                                                                   |
-| --------------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| raft-have-ssl         | YES             | Indicates whether SSL/TLS is enabled for cluster communication. Possible values are YES, NO, DISABLED, or VERIFY\_PEER. This is a read-only variable that reflects the current SSL state                      |
-| raft-ssl-key          |       | Path to the SSL private key file in PEM format. This variable is read-only and must be set at server startup.                                                                                                 |
-| raft-ssl-cert         |       | Path to the SSL certificate file in PEM format. This variable is read-only and must be set at server startup.                                                                                                 |
-| raft-ssl-ca           |       | Path to the CA certificate file in PEM format used to verify peer certificates. This variable is read-only and must be set at server startup.                                                                 |
-| raft-ssl-capath       |       | Path to a directory containing CA certificate files in PEM format. This variable is read-only and must be set at server startup.                                                                              |
-| raft-ssl-cipher       |       | OpenSSL cipher list for TLS 1.2 and below. Uses OpenSSL cipher string format. This variable is read-only and must be set at server startup.                                                                   |
-| raft-ssl-ciphersuites |       | List of permitted TLS 1.3 ciphersuites. This is separate from `raft_ssl_cipher` which applies to earlier TLS versions. This variable is read-only and must be set at server startup.          |
-| raft-ssl-crl          |       | Path to the Certificate Revocation List (CRL) file. This variable is read-only and must be set at server startup.                                                                                             |
-| raft-ssl-crlpath      |       | Path to a directory containing Certificate Revocation List files. This variable is read-only and must be set at server startup.                                                                               |
-| raft-ssl-verify-depth | 9               | Maximum depth for certificate chain verification. This variable is read-only and must be set at server startup.                                                                                               |
-| raft-tls-version      | TLSv1.2,TLSv1.3 | Comma-separated list of allowed TLS protocol versions. Supported values include TLSv1.2 and TLSv1.3. Default includes both TLSv1.2 and TLSv1.3. This variable is read-only and must be set at server startup. |
+| RAFT System Variable                                                    | Default         | Description                                                                                                                                                                                                   |
+| ----------------------------------------------------------------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [raft-have-ssl](raft-system-variables.md#raft-have-ssl)                 | YES             | Indicates whether SSL/TLS is enabled for cluster communication. Possible values are YES, NO, DISABLED, or VERIFY\_PEER. This is a read-only variable that reflects the current SSL state                      |
+| [raft-ssl-key](raft-system-variables.md#raft-ssl-key)                   |                 | Path to the SSL private key file in PEM format. This variable is read-only and must be set at server startup.                                                                                                 |
+| [raft-ssl-cert](raft-system-variables.md#raft-ssl-cert)                 |                 | Path to the SSL certificate file in PEM format. This variable is read-only and must be set at server startup.                                                                                                 |
+| [raft-ssl-ca](raft-system-variables.md#raft-ssl-ca)                     |                 | Path to the CA certificate file in PEM format used to verify peer certificates. This variable is read-only and must be set at server startup.                                                                 |
+| [raft-ssl-capath](raft-system-variables.md#raft-ssl-capath)             |                 | Path to a directory containing CA certificate files in PEM format. This variable is read-only and must be set at server startup.                                                                              |
+| [raft-ssl-cipher](raft-system-variables.md#raft-ssl-cipher)             |                 | OpenSSL cipher list for TLS 1.2 and below. Uses OpenSSL cipher string format. This variable is read-only and must be set at server startup.                                                                   |
+| [raft-ssl-ciphersuites](raft-system-variables.md#raft-ssl-ciphersuites) |                 | List of permitted TLS 1.3 ciphersuites. This is separate from `raft_ssl_cipher` which applies to earlier TLS versions. This variable is read-only and must be set at server startup.                          |
+| [raft-ssl-crl](raft-system-variables.md#raft-ssl-crl)                   |                 | Path to the Certificate Revocation List (CRL) file. This variable is read-only and must be set at server startup.                                                                                             |
+| [raft-ssl-crlpath](raft-system-variables.md#raft-ssl-crlpath)           |                 | Path to a directory containing Certificate Revocation List files. This variable is read-only and must be set at server startup.                                                                               |
+| [raft-ssl-verify-depth](raft-system-variables.md#raft-ssl-verify-depth) | 9               | Maximum depth for certificate chain verification. This variable is read-only and must be set at server startup.                                                                                               |
+| [raft-tls-version](raft-system-variables.md#raft-tls-version)           | TLSv1.2,TLSv1.3 | Comma-separated list of allowed TLS protocol versions. Supported values include TLSv1.2 and TLSv1.3. Default includes both TLSv1.2 and TLSv1.3. This variable is read-only and must be set at server startup. |
 
 ### RAFT Status Variables
 
 | RAFT Status Variable                     | Description                                                                                                                     |
 | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | `raft_current_log_index`                 | Index of the last processed replication event from the replication log.                                                         |
-| `raft_current_leader_node_id`            | The node ID corresponding to current leader as reported by local Leader Tracker.                                   |
+| `raft_current_leader_node_id`            | The node ID corresponding to current leader as reported by local Leader Tracker.                                                |
 | `raft_node_id`                           | The node identifier currently used by the local server.                                                                         |
-| `raft_flow_control_active`               | Boolean denoting whether the flow control is currently active. The value is updated only on Leader.                |
-| `raft_flow_control_requested`            | Number of times the flow control has been requested. The value is updated only on Leader.                          |
-| `raft_flow_control_queue_length`         | Number of requests currently queued in flow control. The value is updated only on Leader.                          |
+| `raft_flow_control_active`               | Boolean denoting whether the flow control is currently active. The value is updated only on Leader.                             |
+| `raft_flow_control_requested`            | Number of times the flow control has been requested. The value is updated only on Leader.                                       |
+| `raft_flow_control_queue_length`         | Number of requests currently queued in flow control. The value is updated only on Leader.                                       |
 | `raft_flow_control_last_committed_drift` | The drift between minimum and maximum of last committed log indices reported by the nodes. The value is updated only on Leader. |
 | `raft_event_store_disk_total_bytes`      | Total size in bytes of the event store on disk.                                                                                 |
 | `raft_event_store_disk_bytes_written`    | Cumulative number of bytes written to the event store disk files since the Raft server process started.                         |
 | `raft_event_store_memory_bytes`          | Current amount of memory (in bytes) used by the in-memory portion of the event store.                                           |
-| `raft_event_store_first_index`           | Log index of the oldest entry that is still retained in the event store.                                           |
+| `raft_event_store_first_index`           | Log index of the oldest entry that is still retained in the event store.                                                        |
 | `raft_event_store_last_index`            | Log index of the most recent entry persisted in the event store.                                                                |
 
 ### RAFT Information Schema Tables
 
-| RAFT Information Schema Table   | Description                                                                           |
-| -------------------------- | ------------------------------------------------------------------------------------- |
-| `RAFT_CERT_FAILURES`       | Displays meta data from limited set of write set certification failures. |
-| `RAFT_CLUSTER_CONNECTIONS` | Displays connections between cluster nodes and processes.                             |
-| `RAFT_TIMERS`              | Displays active timers on the node.                                                   |
-| `RAFT_RPC_SENT`            | Displays counts of sent RPC messages by type.                                         |
+| RAFT Information Schema Table | Description                                                              |
+| ----------------------------- | ------------------------------------------------------------------------ |
+| `RAFT_CERT_FAILURES`          | Displays meta data from limited set of write set certification failures. |
+| `RAFT_CLUSTER_CONNECTIONS`    | Displays connections between cluster nodes and processes.                |
+| `RAFT_TIMERS`                 | Displays active timers on the node.                                      |
+| `RAFT_RPC_SENT`               | Displays counts of sent RPC messages by type.                            |
 
 ### WSREP System Variables
 
-MariaDB Advanced Cluster configuration primarily relies on the [WSREP System Variables](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables). However, the `wsrep_provider_options` and `wsrep_ssl_mode` variables are an exception, as they are  superseded by the RAFT System Variables for configuring the cluster.
+MariaDB Advanced Cluster configuration primarily relies on the [WSREP System Variables](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables). However, the `wsrep_provider_options` and `wsrep_ssl_mode` variables are an exception, as they are superseded by the RAFT System Variables for configuring the cluster.
 
 ### WSREP Status Variables
 
@@ -300,7 +310,7 @@ MariaDB Advanced Cluster configuration primarily relies on the [WSREP System Var
 | `wsrep_apply_waits`             | Number of times a prior transaction had to be waited before applying a write set.                                                                                                                                     |
 | `wsrep_cert_deps_distance`      | Average distance between the highest and the lowest sequence numbers that can possibly be applied in parallel, or the potential degree of parallelization.                                                            |
 | `wsrep_cert_interval`           | Average number of transactions received while a transaction replicates.                                                                                                                                               |
-| `wsrep_cluster_capabilities`    |                                                                                                                                                                                                             |
+| `wsrep_cluster_capabilities`    |                                                                                                                                                                                                                       |
 | `wsrep_cluster_conf_id`         | Total number of cluster membership changes that have taken place.                                                                                                                                                     |
 | `wsrep_cluster_size`            | Number of nodes currently in the cluster.                                                                                                                                                                             |
 | `wsrep_cluster_state_uuid`      | UUID state of the cluster. If it matches the value in wsrep\_local\_state\_uuid, the local and cluster nodes are in sync.                                                                                             |
@@ -316,7 +326,7 @@ MariaDB Advanced Cluster configuration primarily relies on the [WSREP System Var
 | `wsrep_local_state`             | Internal Galera Cluster FSM state number.                                                                                                                                                                             |
 | `wsrep_local_state_comment`     | Human-readable explanation of the state.                                                                                                                                                                              |
 | `wsrep_local_state_uuid`        | The node's UUID state. If it matches the value in wsrep\_cluster\_state\_uuid, the local and cluster nodes are in sync.                                                                                               |
-| `wsrep_provider_capabilities`   |                                                                                                                                                                                                             |
+| `wsrep_provider_capabilities`   |                                                                                                                                                                                                                       |
 | `wsrep_provider_name`           | The name of the provider. The value is “raft" when Raft plugin is enabled.                                                                                                                                            |
 | `wsrep_provider_vendor`         | The vendor string.                                                                                                                                                                                                    |
 | `wsrep_provider_version`        | The version number of the Raft wsrep provider                                                                                                                                                                         |
