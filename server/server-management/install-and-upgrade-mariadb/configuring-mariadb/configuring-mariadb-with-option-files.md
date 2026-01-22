@@ -403,6 +403,10 @@ mariadbd --debug-no-sync
 mariadbd --debug_no_sync
 ```
 
+{% hint style="info" %}
+In option files, however, you must omit the leading double-dash (`--`).
+{% endhint %}
+
 This is only different when referring to system variables at runtime. Here, only underscores can be used, for example:
 
 ```sql
