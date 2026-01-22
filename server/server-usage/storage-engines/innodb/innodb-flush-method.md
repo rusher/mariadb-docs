@@ -31,7 +31,7 @@ The old default setting `innodb_flush_method=fsync` disables write-through and e
 
 The MariaDB Server 10.6 default setting `innodb_flush_method=O_DIRECT`  leaves the new Boolean options at their default values. On Microsoft Windows, this option is also known as `unbuffered` and `async_unbuffered`.
 
-The unsafe setting [`innodb_flush_method`](innodb-system-variables.md#innodb_flush_method)`=O_DIRECT_NO_FSYNC` is treated like `O_DIRECT`. You can disable any use of `fdatasync()` or `fsync()` system calls, but that means you lose all crash-safety guarantees. To do that, set `debug_no_sync=ON`. Starting with MariaDB Server 11.0, this unsafe parameter  affects InnoDB as well.
+The unsafe setting [`innodb_flush_method`](innodb-system-variables.md#innodb_flush_method)`=O_DIRECT_NO_FSYNC` is treated like `O_DIRECT`. You can disable any use of `fdatasync()` or `fsync()` system calls, but that means you lose all crash-safety guarantees. To do that, set [`debug-no-sync`](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#debug-no-sync)`=ON`. Starting with MariaDB Server 11.0, this unsafe parameter  affects InnoDB as well.
 
 ## Behavior Change in MariaDB 10.6
 
