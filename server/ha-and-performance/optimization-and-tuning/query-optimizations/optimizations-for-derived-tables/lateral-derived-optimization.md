@@ -1,14 +1,20 @@
+---
+description: >-
+  Documents Lateral Derived Optimization, also referred to as Split Grouping
+  Optimization or Split Materialized Optimization.
+---
+
 # Lateral Derived Optimization
 
-MariaDB supports the *Lateral Derived* optimization, also referred to as *Split Grouping Optimization* or *Split Materialized Optimization* in some sources.
+MariaDB supports the _Lateral Derived_ optimization, also referred to as _Split Grouping Optimization_ or _Split Materialized Optimization_.
 
 ## Description
 
-The optimization's use cases are:
+The optimization use cases are:
 
-- The query uses a derived table (or a `VIEW`, or a non-recursive CTE).
-- The derived table/View/CTE has a `GROUP BY` operation as its top-level operation.
-- The query only needs data from a few `GROUP BY` groups.
+* The query uses a derived table (or a `VIEW`, or a non-recursive CTE).
+* The derived table, view, or [CTE](../../../../reference/sql-statements/data-manipulation/selecting-data/common-table-expressions/) has a `GROUP BY` operation as its top-level operation.
+* The query only needs data from a few `GROUP BY` groups.
 
 Example: A `VIEW` that computes totals for each customer in October:
 
@@ -42,7 +48,7 @@ Before Lateral Derived optimization, MariaDB executed the query as follows:
 
 The `EXPLAIN` looked like this:
 
-```
+```sql
 +------+-------------+------------+-------+---------------+-----------+---------+---------------------------+-------+--------------------------+
 | id   | select_type | table      | type  | possible_keys | key       | key_len | ref                       | rows  | Extra                    |
 +------+-------------+------------+-------+---------------+-----------+---------+---------------------------+-------+--------------------------+
@@ -58,8 +64,8 @@ Lateral Derived Optimization addresses this case. It turns the computation of `O
 
 The query plan looks as follows:
 
-1. Scan table `customer` and find `customer_id` for Customer#1 and Customer#2.
-2. For each customer_id, compute the October totals, for this specific customer.
+1. Scan table `customer` and find `customer_id` for `Customer#1` and `Customer#2`.
+2. For each `customer_id`, compute the October totals, for this specific customer.
 
 The `EXPLAIN` output looks like this:
 
@@ -73,7 +79,7 @@ The `EXPLAIN` output looks like this:
 +------+-----------------+------------+-------+---------------+-----------+---------+---------------------------+------+--------------------------+
 ```
 
-Note the line with `id=2`: select_type is `LATERAL DERIVED`. And table `customer` uses ref access referring to `customer.customer_id`, which is normally not allowed for derived tables.
+Note the line with `id=2`: select\_type is `LATERAL DERIVED`. And table `customer` uses ref access referring to `customer.customer_id`, which is normally not allowed for derived tables.
 
 In `EXPLAIN FORMAT=JSON` output, the optimization is shown like this:
 
@@ -93,25 +99,27 @@ Note the `"lateral": 1` member.
 
 Lateral Derived is enabled by default. The optimizer makes a cost-based decision whether the optimization should be used.
 
-If you need to disable the optimization, it has an [optimizer_switch](../optimizer-switch.md) flag. It can be disabled like this:
+If you need to disable the optimization, it has an [optimizer\_switch](../optimizer-switch.md) flag. It can be disabled like this:
 
 ```sql
 SET optimizer_switch='split_materialized=off'
 ```
 
-{% tabs %} {% tab title="Current" %} From MariaDB 12.1, it is possible to enable or disable the optimization with an optimizer hint, [SPLIT_MATERLIZED or NO_SPLIT_MATERIALIZED](../../optimizer-hints/#split_materialized-x-and-no_split_materialized-x).
+{% tabs %}
+{% tab title="Current" %}
+It is possible to enable or disable the optimization with an optimizer hint, [SPLIT\_MATERLIZED or NO\_SPLIT\_MATERIALIZED](../../optimizer-hints/expanded-optimizer-hints.md#split_materialized-x-and-no_split_materialized-x).
 
 For example, by default, this table and query makes use of the optimization:
 
-`CREATE TABLE t1 ( n1 INT(10) NOT NULL, n2 INT(10) NOT NULL, c1 CHAR(1) NOT NULL, KEY c1 (c1), KEY n1_c1_n2 (n1,c1,n2) ) ENGINE=innodb CHARSET=latin1;`
-
-`INSERT INTO t1 VALUES (0, 2, 'a'), (1, 3, 'a');`
-
-`INSERT INTO t1 SELECT seq+1,seq+2,'c' FROM seq_1_to_1000;`
-
-`ANALYZE TABLE t1;`
-
-`EXPLAIN SELECT t1.n1 FROM t1, (SELECT n1, n2 FROM t1 WHERE c1 = 'a' GROUP BY n1) AS t WHERE t.n1 = t1.n1 AND t.n2 = t1.n2 AND c1 = 'a' GROUP BY n1\G`
+{% code overflow="wrap" %}
+```sql
+CREATE TABLE t1 ( n1 INT(10) NOT NULL, n2 INT(10) NOT NULL, c1 CHAR(1) NOT NULL, KEY c1 (c1), KEY n1_c1_n2 (n1,c1,n2) ) ENGINE=innodb CHARSET=latin1;
+INSERT INTO t1 VALUES (0, 2, 'a'), (1, 3, 'a');
+INSERT INTO t1 SELECT seq+1,seq+2,'c' FROM seq_1_to_1000;
+ANALYZE TABLE t1;
+EXPLAIN SELECT t1.n1 FROM t1, (SELECT n1, n2 FROM t1 WHERE c1 = 'a' GROUP BY n1) AS t WHERE t.n1 = t1.n1 AND t.n2 = t1.n2 AND c1 = 'a' GROUP BY n1\G
+```
+{% endcode %}
 
 ```sql
 *************************** 1\. row ***************************
@@ -187,18 +195,18 @@ possible_keys: c1
          rows: 2
         Extra: Using index condition; Using where; Using temporary; Using filesort
 ```
-
 {% endtab %}
 
-{% tab title="<12.1" %} No [optimizer hint](../../optimizer-hints/) is available. {% endtab %} {% endtabs %}
+{% tab title="< 12.1" %}
+No such optimizer hint is available.
+{% endtab %}
+{% endtabs %}
 
 ## References
 
-- Jira task: [MDEV-13369](https://jira.mariadb.org/browse/MDEV-13369)
-- Commit: [b14e2b044b](https://github.com/MariaDB/server/commit/b14e2b044b)
+* Jira task: [MDEV-13369](https://jira.mariadb.org/browse/MDEV-13369)
+* Commit: [b14e2b044b](https://github.com/MariaDB/server/commit/b14e2b044b)
 
-<sub>
-  <em>This page is licensed: CC BY-SA / Gnu FDL</em>
-</sub>
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}
