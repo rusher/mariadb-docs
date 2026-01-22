@@ -17,6 +17,7 @@
       * [Building MaxScale From Source](maxscale-management/installation-and-configuration/building-maxscale-from-source.md)
       * [Installing MaxScale Using a Tarball](maxscale-management/installation-and-configuration/installing-maxscale-using-a-tarball.md)
       * [MaxScale Configuration Guide](maxscale-management/deployment/installation-and-configuration/maxscale-configuration-guide.md)
+      * [Deploy MaxScale with Docker](maxscale-management/deployment/installation-and-configuration/deploy-maxscale-with-docker.md)
     * [Upgrading MaxScale](maxscale-management/deployment/upgrading-maxscale/README.md)
       * [Upgrade to MaxScale 25.01](maxscale-management/deployment/upgrading-maxscale/upgrade-to-maxscale-25.01.md)
     * [MaxScale MaxGUI Guide](maxscale-management/deployment/maxscale-maxgui-guide.md)
