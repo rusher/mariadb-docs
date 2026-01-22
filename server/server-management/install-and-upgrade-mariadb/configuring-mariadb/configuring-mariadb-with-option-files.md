@@ -388,15 +388,35 @@ skip_external_locking
 
 ## Dashes and Underscores
 
-Dashes (`-`) and underscores (`_`) in option names are interchangeable.
+Dashes (`-`) and underscores (`_`) **in option names** are interchangeable. Both variants can be used, for example:
 
-{% hint style="info" %}
-However, options _not_ specified in option files but rather as startup options on the command line must use dashes – underscore characters don't work here. Example:
+```ini
+[mariadbd]
+debug-no-sync
+debug_no_sync
+```
 
-`mariadbd --my-variable` is valid syntax.
+The same is true for specifying **options on the command line**, for example:
 
-`mariadbd --my_variable` is invalid.
-{% endhint %}
+```bash
+mariadbd --debug-no-sync
+mariadbd --debug_no_sync
+```
+
+This is only different when referring to system variables at runtime. Here, only underscores can be used, for example:
+
+```sql
+MariaDB [(none)]> SELECT @debug_no_sync;
++----------------+
+| @debug_no_sync |
++----------------+
+| NULL           |
++----------------+
+1 row in set (0.002 sec)
+
+MariaDB [(none)]> SELECT @debug-no-sync;
+ERROR 1054 (42S22): Unknown column 'no' in 'SELECT'
+```
 
 If an option is not explicitly set, the server or client uses the default value for that option.
 
