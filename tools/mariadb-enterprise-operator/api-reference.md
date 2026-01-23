@@ -1,7 +1,4 @@
-
-# API Reference
-
-## Packages
+# Packages
 - [enterprise.mariadb.com/v1alpha1](#enterprisemariadbcomv1alpha1)
 
 
@@ -418,6 +415,7 @@ ConnectionTemplate defines a template to customize Connection objects.
 _Appears in:_
 - [ConnectionSpec](#connectionspec)
 - [ExternalMariaDBSpec](#externalmariadbspec)
+- [MariaDBMaxScaleSpec](#mariadbmaxscalespec)
 - [MariaDBSpec](#mariadbspec)
 - [MaxScaleSpec](#maxscalespec)
 
@@ -1247,6 +1245,38 @@ MariaDB is the Schema for the mariadbs API. It is used to define MariaDB cluster
 | `spec` _[MariaDBSpec](#mariadbspec)_ |  |  |  |
 
 
+#### MariaDBMaxScaleSpec
+
+
+
+MariaDBMaxScaleSpec defines a reduced version of MaxScale to be used with the current MariaDB.
+
+
+
+_Appears in:_
+- [MariaDBSpec](#mariadbspec)
+
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `enabled` _boolean_ | Enabled is a flag to enable a MaxScale instance to be used with the current MariaDB. |  |  |
+| `image` _string_ | Image name to be used by the MaxScale instances. The supported format is `<image>:<tag>`.<br />Only MariaDB official images are supported. |  |  |
+| `imagePullPolicy` _[PullPolicy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.35/#pullpolicy-v1-core)_ | ImagePullPolicy is the image pull policy. One of `Always`, `Never` or `IfNotPresent`. If not defined, it defaults to `IfNotPresent`. |  | Enum: [Always Never IfNotPresent] <br /> |
+| `services` _[MaxScaleService](#maxscaleservice) array_ | Services define how the traffic is forwarded to the MariaDB servers. |  |  |
+| `monitor` _[MaxScaleMonitor](#maxscalemonitor)_ | Monitor monitors MariaDB server instances. |  |  |
+| `admin` _[MaxScaleAdmin](#maxscaleadmin)_ | Admin configures the admin REST API and GUI. |  |  |
+| `config` _[MaxScaleConfig](#maxscaleconfig)_ | Config defines the MaxScale configuration. |  |  |
+| `auth` _[MaxScaleAuth](#maxscaleauth)_ | Auth defines the credentials required for MaxScale to connect to MariaDB. |  |  |
+| `metrics` _[MaxScaleMetrics](#maxscalemetrics)_ | Metrics configures metrics and how to scrape them. |  |  |
+| `tls` _[MaxScaleTLS](#maxscaletls)_ | TLS defines the PKI to be used with MaxScale. |  |  |
+| `connection` _[ConnectionTemplate](#connectiontemplate)_ | Connection provides a template to define the Connection for MaxScale. |  |  |
+| `replicas` _integer_ | Replicas indicates the number of desired instances. |  |  |
+| `podDisruptionBudget` _[PodDisruptionBudget](#poddisruptionbudget)_ | PodDisruptionBudget defines the budget for replica availability. |  |  |
+| `updateStrategy` _[StatefulSetUpdateStrategy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.35/#statefulsetupdatestrategy-v1-apps)_ | UpdateStrategy defines the update strategy for the StatefulSet object. |  |  |
+| `kubernetesService` _[ServiceTemplate](#servicetemplate)_ | KubernetesService defines a template for a Kubernetes Service object to connect to MaxScale. |  |  |
+| `guiKubernetesService` _[ServiceTemplate](#servicetemplate)_ | GuiKubernetesService define a template for a Kubernetes Service object to connect to MaxScale's GUI. |  |  |
+| `requeueInterval` _[Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.35/#duration-v1-meta)_ | RequeueInterval is used to perform requeue reconciliations. |  |  |
+
+
 #### MariaDBRef
 
 
@@ -1331,6 +1361,7 @@ _Appears in:_
 | `replication` _[Replication](#replication)_ | Replication configures high availability via replication. This feature is still in alpha, use Galera if you are looking for a more production-ready HA. |  |  |
 | `galera` _[Galera](#galera)_ | Galera configures high availability via Galera. |  |  |
 | `maxScaleRef` _[ObjectReference](#objectreference)_ | MaxScaleRef is a reference to a MaxScale resource to be used with the current MariaDB.<br />Providing this field implies delegating high availability tasks such as primary failover to MaxScale. |  |  |
+| `maxScale` _[MariaDBMaxScaleSpec](#mariadbmaxscalespec)_ | MaxScale is the MaxScale specification that defines the MaxScale resource to be used with the current MariaDB.<br />When enabling this field, MaxScaleRef is automatically set. |  |  |
 | `replicas` _integer_ | Replicas indicates the number of desired instances. | 1 |  |
 | `replicasAllowEvenNumber` _boolean_ | disables the validation check for an odd number of replicas. | false |  |
 | `port` _integer_ | Port where the instances will be listening for connections. | 3306 |  |
@@ -1392,6 +1423,7 @@ MaxScaleAdmin configures the admin REST API and GUI.
 
 
 _Appears in:_
+- [MariaDBMaxScaleSpec](#mariadbmaxscalespec)
 - [MaxScaleSpec](#maxscalespec)
 
 | Field | Description | Default | Validation |
@@ -1409,6 +1441,7 @@ MaxScaleAuth defines the credentials required for MaxScale to connect to MariaDB
 
 
 _Appears in:_
+- [MariaDBMaxScaleSpec](#mariadbmaxscalespec)
 - [MaxScaleSpec](#maxscalespec)
 
 | Field | Description | Default | Validation |
@@ -1442,6 +1475,7 @@ MaxScaleConfig defines the MaxScale configuration.
 
 
 _Appears in:_
+- [MariaDBMaxScaleSpec](#mariadbmaxscalespec)
 - [MaxScaleSpec](#maxscalespec)
 
 | Field | Description | Default | Validation |
@@ -1498,6 +1532,7 @@ MaxScaleMetrics defines the metrics for a Maxscale.
 
 
 _Appears in:_
+- [MariaDBMaxScaleSpec](#mariadbmaxscalespec)
 - [MaxScaleSpec](#maxscalespec)
 
 | Field | Description | Default | Validation |
@@ -1516,6 +1551,7 @@ MaxScaleMonitor monitors MariaDB server instances
 
 
 _Appears in:_
+- [MariaDBMaxScaleSpec](#mariadbmaxscalespec)
 - [MaxScaleSpec](#maxscalespec)
 
 | Field | Description | Default | Validation |
@@ -1582,6 +1618,7 @@ Services define how the traffic is forwarded to the MariaDB servers.
 
 
 _Appears in:_
+- [MariaDBMaxScaleSpec](#mariadbmaxscalespec)
 - [MaxScaleSpec](#maxscalespec)
 
 | Field | Description | Default | Validation |
@@ -1657,6 +1694,7 @@ TLS defines the PKI to be used with MaxScale.
 
 
 _Appears in:_
+- [MariaDBMaxScaleSpec](#mariadbmaxscalespec)
 - [MaxScaleSpec](#maxscalespec)
 
 | Field | Description | Default | Validation |
@@ -2127,6 +2165,7 @@ PodDisruptionBudget is the Pod availability bundget for a MariaDB
 
 
 _Appears in:_
+- [MariaDBMaxScaleSpec](#mariadbmaxscalespec)
 - [MariaDBSpec](#mariadbspec)
 - [MaxScaleSpec](#maxscalespec)
 
@@ -2776,6 +2815,7 @@ ServiceTemplate defines a template to customize Service objects.
 
 
 _Appears in:_
+- [MariaDBMaxScaleSpec](#mariadbmaxscalespec)
 - [MariaDBSpec](#mariadbspec)
 - [MaxScaleSpec](#maxscalespec)
 
