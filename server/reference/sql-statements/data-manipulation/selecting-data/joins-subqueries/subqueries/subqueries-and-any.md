@@ -1,99 +1,159 @@
 ---
 description: >-
   Compare a value against any result from a subquery. The ANY (or SOME) operator
-  returns TRUE if the comparison holds for at least one row.
+  returns TRUE if the comparison holds for at least one row. IN can be used for
+  =ANY.
 ---
 
-# Subqueries and ANY
-
-[Subqueries](./) using the ANY keyword will return `true` if the comparison returns `true` for at least one row returned by the subquery.
+# Subqueries With ANY, SOME, and IN
 
 ## Syntax
 
-The required syntax for an `ANY` or `SOME` quantified comparison is:
+`SOME` is a synonym for `ANY`.  `IN` is a synonym for `= ANY`.
 
 ```sql
 scalar_expression comparison_operator ANY <Table subquery>
-```
-
-Or:
-
-```sql
 scalar_expression comparison_operator SOME <Table subquery>
+scalar_expression IN <Table subquery>
 ```
 
 * `scalar_expression` may be any expression that evaluates to a single value.
 * `comparison_operator` may be any one of `=`, `>`, `<`, `>=`, `<=`, `<>` or `!=`.
 
-`ANY` returns:
+`ANY` or `SOME` returns:
 
-* `TRUE` if the comparison operator returns `TRUE` for at least one row returned by the Table subquery.
-* `FALSE` if the comparison operator returns `FALSE` for all rows returned by the Table subquery, or Table subquery has zero rows.
-* `NULL` if the comparison operator returns `NULL` for at least one row returned by the Table subquery and doesn't returns `TRUE` for any of them, or if scalar\_expression returns `NULL`.
-
-`SOME` is a synonym for `ANY`, and `IN` is a synonym for `= ANY` .
+* `TRUE` if the comparison operator returns `TRUE` for at least one row returned by the table subquery.
+* `FALSE` if the comparison operator returns `FALSE` for all rows returned by the table subquery, or if the table subquery has no rows.
+* `NULL` if the comparison operator returns `NULL` for at least one row returned by the table subquery and doesn't returns `TRUE` for any of them, or if `scalar_expression` returns `NULL`.
 
 ## Examples
 
-```sql
-CREATE TABLE sq1 (num TINYINT);
+The subsequent examples use these tables:
 
+```sql
+CREATE TABLE sq1 (num1 TINYINT);
 CREATE TABLE sq2 (num2 TINYINT);
-
 INSERT INTO sq1 VALUES(100);
-
 INSERT INTO sq2 VALUES(40),(50),(120);
+```
 
-SELECT * FROM sq1 WHERE num > ANY (SELECT * FROM sq2);
+### Subquery With `ANY`
+
+```sql
+SELECT * FROM sq1 WHERE num1 > ANY (SELECT * FROM sq2);
 +------+
-| num  |
+| num1 |
 +------+
 |  100 |
 +------+
 ```
 
-`100` is greater than two of the three values, and so the expression evaluates as true.
+`100` is greater than two of the three values, and so the expression evaluates to `true`.
 
-SOME is a synonym for ANY:
+### Subquery With `SOME`
+
+`SOME` is a synonym for `ANY`.
 
 ```sql
-SELECT * FROM sq1 WHERE num < SOME (SELECT * FROM sq2);
+SELECT * FROM sq1 WHERE num1 > SOME (SELECT * FROM sq2);
 +------+
-| num  |
+| num1 |
 +------+
 |  100 |
 +------+
 ```
 
-`IN` is a synonym for `= ANY`, and here there are no matches, so no results are returned:
+`100` is greater than two of the three values, and so the expression evaluates to `true`.
+
+### Subquery With `IN`
+
+`IN` is a synonym for `= ANY`.
 
 ```sql
-SELECT * FROM sq1 WHERE num IN (SELECT * FROM sq2);
+SELECT * FROM sq1 WHERE num1 IN (SELECT * FROM sq2);
 Empty set (0.00 sec)
 ```
 
-```sql
-INSERT INTO sq2 VALUES(100);
-Query OK, 1 row affected (0.05 sec)
+The only value of `100` in `sq1` is not in the list of values of `sq2`.
 
-SELECT * FROM sq1 WHERE num <> ANY (SELECT * FROM sq2);
+Adding a value to `sq1` that matches one of the values in `sq2` gives a match, though:
+
+```sql
+INSERT INTO sq1 VALUES(50);
+SELECT * FROM sq1 WHERE num1 IN (SELECT * FROM sq2);
 +------+
-| num  |
+| num1 |
++------+
+|   50 |
++------+
+```
+
+Since they're synonyms, `=ALL` returns the same result:
+
+```sql
+SELECT * FROM sq1 WHERE num1 = ANY (SELECT * FROM sq2);
++------+
+| num1 |
++------+
+|   50 |
++------+
+```
+
+### Subquery With `NOT IN`
+
+After inserting `50` into `sq1`, the tables contain these values now:
+
+* `sq1` in the `num1` column: `50`, `100`.
+* `sq2` in the `num2` column: `40`, `50`, `120`.
+
+```sql
+SELECT * FROM sq1 WHERE num1 NOT IN (SELECT * FROM sq2);
++------+
+| num1 |
 +------+
 |  100 |
 +------+
 ```
 
-Reading this query, the results may be counter-intuitive. It may seem to read as `SELECT * FROM` sq1 `WHERE` num does not match any results in sq2. Since it does match 100, it could seem that the results are incorrect. However, the query returns a result if the match does not match any _of_ sq2. Since `100` already does not match `40`, the expression evaluates to true immediately, regardless of the 100's matching. It may be more easily readable to use `SOME` in a case such as this:
+The value of `100` is not present in `sq2`.
 
 ```sql
-SELECT * FROM sq1 WHERE num <> SOME (SELECT * FROM sq2);
+SELECT * FROM sq2 WHERE num2 NOT IN (SELECT * FROM sq1);
 +------+
-| num  |
+| num2 |
 +------+
-|  100 |
+|   40 |
+|  120 |
 +------+
 ```
+
+The values of `40` and `120` are not present in `sq1`.
+
+### Subquery With `NOT IN` Versus `<> ANY`
+
+`IN` and `=ANY` are synonyms, but `NOT IN` and `<>ANY` aren't. Compare these queries:
+
+```sql
+SELECT * FROM sq2 WHERE num2 NOT IN (SELECT * FROM sq1);
++------+
+| num2 |
++------+
+|   40 |
+|  120 |
++------+
+SELECT * FROM sq2 WHERE num2 <> ANY (SELECT * FROM sq1);
++------+
+| num2 |
++------+
+|   40 |
+|   50 |
+|  120 |
++------+
+```
+
+The first query returns all values in `sq2` that are **not present in `sq1`**.
+
+The second query returns all values in `sq2` unless they're **only present in `sq1` but not in `sq2`**.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

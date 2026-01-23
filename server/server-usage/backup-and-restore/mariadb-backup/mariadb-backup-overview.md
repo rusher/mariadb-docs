@@ -39,6 +39,16 @@ MariaDB Backup does **not** support some additional features.
 {% endtab %}
 {% endtabs %}
 
+## Backup Types
+
+mariadb-backup supports various type of backups (and restores from those backups), documented on separate pages:
+
+* [Full backup and restore](full-backup-and-restore-with-mariadb-backup.md)
+* [Incremental backup and restore](incremental-backup-and-restore-with-mariadb-backup.md)
+* [Partial backup and restore](partial-backup-and-restore-with-mariadb-backup.md)
+* Restoring [individual databases](individual-database-restores-with-mariadb-backup-from-full-backup.md), [tables, and partitions](restoring-individual-tables-and-partitions-with-mariadb-backup.md)
+* [Point-in-time recovery (PITR)](point-in-time-recovery-pitr-mariadb-backup.md)
+
 ## Installing `mariadb-backup`
 
 ### Installing on Linux

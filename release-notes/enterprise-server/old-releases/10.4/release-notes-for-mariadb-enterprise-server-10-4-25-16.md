@@ -1,44 +1,44 @@
 # Release Notes for MariaDB Enterprise Server 10.4.25-16
 
-MariaDB Enterprise Server 10.4.25-16 is a maintenance release of [MariaDB Enterprise Server](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb-enterprise-server/README.md) 10.4. This release includes a variety of fixes.
+MariaDB Enterprise Server 10.4.25-16 is a maintenance release of [MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-enterprise-server/mariadb-enterprise-server-upgrade-paths/upgrades/mariadb-enterprise-server-10.4). This release includes a variety of fixes.
 
 MariaDB Enterprise Server 10.4.25-16 was released on 2022-06-13.
 
 ## Fixed Security Vulnerabilities
 
-| CVE (with [cve.org](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-4/cve.org) link) | CVSS base score |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
-| [CVE-2022-27458](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27458)                                                                                               | 7.5             |
-| [CVE-2022-27457](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27457)                                                                                               | 7.5             |
-| [CVE-2022-27456](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27456)                                                                                               | 7.5             |
-| [CVE-2022-27455](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27455)                                                                                               | 7.5             |
-| [CVE-2022-27452](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27452)                                                                                               | 7.5             |
-| [CVE-2022-27451](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27451)                                                                                               | 7.5             |
-| [CVE-2022-27449](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27449)                                                                                               | 7.5             |
-| [CVE-2022-27448](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27448)                                                                                               | 7.5             |
-| [CVE-2022-27447](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27447)                                                                                               | 7.5             |
-| [CVE-2022-27446](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27446)                                                                                               | 7.5             |
-| [CVE-2022-27445](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27445)                                                                                               | 7.5             |
-| [CVE-2022-27444](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27444)                                                                                               | 7.5             |
-| [CVE-2022-27387](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27387)                                                                                               | 7.5             |
-| [CVE-2022-27386](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27386)                                                                                               | 7.5             |
-| [CVE-2022-27384](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27384)                                                                                               | 7.5             |
-| [CVE-2022-27383](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27383)                                                                                               | 7.5             |
-| [CVE-2022-27382](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27382)                                                                                               | 7.5             |
-| [CVE-2022-27381](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27381)                                                                                               | 7.5             |
-| [CVE-2022-27380](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27380)                                                                                               | 7.5             |
-| [CVE-2022-27379](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27379)                                                                                               | 7.5             |
-| [CVE-2022-27378](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27378)                                                                                               | 7.5             |
-| [CVE-2022-27377](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27377)                                                                                               | 7.5             |
-| [CVE-2022-27376](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27376)                                                                                               | 7.5             |
-| [CVE-2022-21451](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-21451)                                                                                               | 7.5             |
-| [CVE-2022-32088](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32088)                                                                                               | 6.5             |
-| [CVE-2022-32087](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32087)                                                                                               | 6.5             |
-| [CVE-2022-32086](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32086)                                                                                               | 6.5             |
-| [CVE-2022-32085](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32085)                                                                                               | 6.5             |
-| [CVE-2022-32083](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32083)                                                                                               | 6.5             |
-| [CVE-2021-46669](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-46669)                                                                                               | 6.5             |
-| [CVE-2022-21427](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-21427)                                                                                               | 4.9             |
+| CVE (with [cve.org](https://cve.mitre.org/) link)                               | CVSS base score |
+| ------------------------------------------------------------------------------- | --------------- |
+| [CVE-2022-27458](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27458) | 7.5             |
+| [CVE-2022-27457](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27457) | 7.5             |
+| [CVE-2022-27456](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27456) | 7.5             |
+| [CVE-2022-27455](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27455) | 7.5             |
+| [CVE-2022-27452](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27452) | 7.5             |
+| [CVE-2022-27451](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27451) | 7.5             |
+| [CVE-2022-27449](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27449) | 7.5             |
+| [CVE-2022-27448](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27448) | 7.5             |
+| [CVE-2022-27447](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27447) | 7.5             |
+| [CVE-2022-27446](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27446) | 7.5             |
+| [CVE-2022-27445](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27445) | 7.5             |
+| [CVE-2022-27444](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27444) | 7.5             |
+| [CVE-2022-27387](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27387) | 7.5             |
+| [CVE-2022-27386](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27386) | 7.5             |
+| [CVE-2022-27384](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27384) | 7.5             |
+| [CVE-2022-27383](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27383) | 7.5             |
+| [CVE-2022-27382](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27382) | 7.5             |
+| [CVE-2022-27381](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27381) | 7.5             |
+| [CVE-2022-27380](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27380) | 7.5             |
+| [CVE-2022-27379](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27379) | 7.5             |
+| [CVE-2022-27378](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27378) | 7.5             |
+| [CVE-2022-27377](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27377) | 7.5             |
+| [CVE-2022-27376](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27376) | 7.5             |
+| [CVE-2022-21451](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-21451) | 7.5             |
+| [CVE-2022-32088](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32088) | 6.5             |
+| [CVE-2022-32087](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32087) | 6.5             |
+| [CVE-2022-32086](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32086) | 6.5             |
+| [CVE-2022-32085](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32085) | 6.5             |
+| [CVE-2022-32083](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32083) | 6.5             |
+| [CVE-2021-46669](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-46669) | 6.5             |
+| [CVE-2022-21427](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-21427) | 4.9             |
 
 ## Backported Features
 
@@ -88,7 +88,7 @@ MariaDB Enterprise Server 10.4.25-16 was released on 2022-06-13.
 * When a stored procedure executes a query that results in a mergeable derived table, the server can crash with a segmentation fault when the stored procedure is called twice in the same session. ([MDEV-27212](https://jira.mariadb.org/browse/MDEV-27212))
   * Querying views can result in mergeable derived tables.
   * Using subqueries with outer references can result mergeable derived tables.
-* When [ANALYZE FORMAT=JSON](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-4/ANALYZE/README.md) is executed with a query that contains a subquery, the server can crash. ([MDEV-28268](https://jira.mariadb.org/browse/MDEV-28268))
+* When [ANALYZE FORMAT=JSON](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/analyze-format-json) is executed with a query that contains a subquery, the server can crash. ([MDEV-28268](https://jira.mariadb.org/browse/MDEV-28268))
 * When a query using a window function with an `OVER (PARTITION BY ..)` or `OVER (ORDER BY ..)` clause is executed, the server can crash with a segmentation fault. ([MDEV-19398](https://jira.mariadb.org/browse/MDEV-19398))
   * If the query also uses `WITH ROLLUP`, this crash is more likely.
   * If the query's `OVER (PARTITION BY ..)` or `OVER (ORDER BY ..)` clause uses an aggregate function, this crash is more likely.
@@ -107,31 +107,31 @@ MariaDB Enterprise Server 10.4.25-16 was released on 2022-06-13.
 
 ### Can result in unexpected behavior
 
-* When [OPTIMIZE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table) is executed on a sequence, the server raises an [ER\_BINLOG\_UNSAFE\_STATEMENT warning](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-4/broken-reference/README.md), even if [binlog\_format](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) is set to `ROW` or `MIXED`. ([MDEV-24617](https://jira.mariadb.org/browse/MDEV-24617))
-  * The warning can appear in the [MariaDB Error Log](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/error/README.md) as the following:`[Warning] Unsafe statement written to the binary log using statement format since BINLOG_FORMAT = STATEMENT. Statement is unsafe because it uses a system function that may return a different value on the slave Statement: OPTIMIZE TABLE SEQUENCE_NAME`
-* When an [UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/update) or [DELETE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/delete) statement uses an [OR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/operators/logical-operators/or) clause, the server raises an [ER\_UPDATE\_WITHOUT\_KEY\_IN\_SAFE\_MODE error](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-4/broken-reference/README.md). ([MDEV-18304](https://jira.mariadb.org/browse/MDEV-18304))
+* When [OPTIMIZE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table) is executed on a sequence, the server raises an [ER\_BINLOG\_UNSAFE\_STATEMENT warning](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/error-codes/mariadb-error-codes-1500-to-1599/e1592), even if [binlog\_format](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) is set to `ROW` or `MIXED`. ([MDEV-24617](https://jira.mariadb.org/browse/MDEV-24617))
+  * The warning can appear in the [MariaDB Error Log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/error-codes/mariadb-error-code-reference) as the following:`[Warning] Unsafe statement written to the binary log using statement format since BINLOG_FORMAT = STATEMENT. Statement is unsafe because it uses a system function that may return a different value on the slave Statement: OPTIMIZE TABLE SEQUENCE_NAME`
+* When an [UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/update) or [DELETE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/delete) statement uses an [OR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/operators/logical-operators/or) clause, the server raises an [ER\_UPDATE\_WITHOUT\_KEY\_IN\_SAFE\_MODE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/error-codes/mariadb-error-codes-1100-to-1199/e1175) error. ([MDEV-18304](https://jira.mariadb.org/browse/MDEV-18304))
   * The error can appear on the client as the following:`You are using safe update mode and you tried to update a table without a WHERE that uses a KEY column`
 * When an [UPDATE statement](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/update) uses a subquery inside an [IN()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/operators/comparison-operators/in) clause, the optimizer could incorrectly choose to perform a full table scan (with `type: ALL`) when a range scan (with `type: range`) would be more efficient. ([MDEV-22377](https://jira.mariadb.org/browse/MDEV-22377))
 * When a table contains multiple [ENUM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/enum) columns with identical values, the values could become corrupt if multi-byte character sets are used. ([MDEV-28078](https://jira.mariadb.org/browse/MDEV-28078))
-* When [DECIMAL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/decimal) columns are read from [information\_schema.PROCESSLIST](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-processlist-table), the server could incorrectly raise an [ER\_BAD\_DATA warning](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-4/broken-reference/README.md). ([MDEV-28131](https://jira.mariadb.org/browse/MDEV-28131))
+* When [DECIMAL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/decimal) columns are read from [information\_schema.PROCESSLIST](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-processlist-table), the server could incorrectly raise an [ER\_BAD\_DATA warning](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/error-codes/mariadb-error-codes-1900-to-1999/e1918). ([MDEV-28131](https://jira.mariadb.org/browse/MDEV-28131))
   * The warning can appear on the client as the following after executing [SHOW WARNINGS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-warnings): `Encountered illegal value '' when converting to DECIMAL`
 
-With [sql\_mode=ORACLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/sql_mode), the parser allows functions to be called using `PACKAGE_NAME.FUNCTION_NAME()`, but the parser raises a [ER\_PARSE\_ERROR error](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-4/broken-reference/README.md) if the function is called using `DATABASE_NAME.PACKAGE_NAME.FUNCTION_NAME()`. ([MDEV-28166](https://jira.mariadb.org/browse/MDEV-28166))
+With [sql\_mode=ORACLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/sql_mode), the parser allows functions to be called using `PACKAGE_NAME.FUNCTION_NAME()`, but the parser raises a [ER\_PARSE\_ERROR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/error-codes/mariadb-error-codes-1000-to-1099/e1064) error if the function is called using `DATABASE_NAME.PACKAGE_NAME.FUNCTION_NAME()`. ([MDEV-28166](https://jira.mariadb.org/browse/MDEV-28166))
 
-* When a view is used to update multiple rows of a [temporal table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/temporal-tables) in a single [UPDATE statement](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/update), the server incorrectly raises a [ER\_WARN\_VIEW\_WITHOUT\_KEY warning](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-4/broken-reference/README.md). ([MDEV-22973](https://jira.mariadb.org/browse/MDEV-22973))
+* When a view is used to update multiple rows of a [temporal table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/temporal-tables) in a single [UPDATE statement](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/update), the server incorrectly raises a [ER\_WARN\_VIEW\_WITHOUT\_KEY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/error-codes/mariadb-error-codes-1300-to-1399/e1355) warning. ([MDEV-22973](https://jira.mariadb.org/browse/MDEV-22973))
   * The warning can appear on the client as the following after executing [SHOW WARNINGS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-warnings): `View being updated does not have complete key of underlying table in it`
 * When using [mariadb-binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog) with [--raw](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog/mariadb-binlog-options#options) and [--stop-never](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog/mariadb-binlog-options#options), events from the primary server's currently active log file are not written to their respective log file specified by [--result-file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog/mariadb-binlog-options#options). ([MDEV-14608](https://jira.mariadb.org/browse/MDEV-14608))
 * When a prepared statement is used to execute [EXPLAIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain), a different query plan can be returned on the second execution. ([MDEV-19631](https://jira.mariadb.org/browse/MDEV-19631))
 * When [slave\_compressed\_protocol](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) is enabled with semi-synchronous replication, the numbering on packet headers can become out of sync between the primary and replica servers, but the inconsistency does not have any negative impact with release builds of MariaDB Enterprise Server. ([MDEV-25580](https://jira.mariadb.org/browse/MDEV-25580))
 * The server and MariaDB Enterprise Backup can raise unnecessary warnings about tablespace IDs in some scenarios. ([MDEV-27343](https://jira.mariadb.org/browse/MDEV-27343))
   * The warning can appear as the following: `InnoDB: Allocated tablespace ID TABLESPACE_ID for DATABASE_NAME/TABLE_NAME, old maximum was 0`
-  * This warning can be written to standard output (stdout) when preparing a backup with [MariaDB Enterprise Backup](../../10-4/broken-reference/).
-  * This warning can be written to the [MariaDB Error Log](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/error/README.md) when InnoDB performs crash recovery at startup.
-* With MariaDB Enterprise Cluster, the joiner node fails to complete an SSwhen [innodb\_log\_group\_home\_dir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_log_group_home_dir) specifies a directory different than [server-system-variables/#datadir##datadir##](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#datadir). ([MDEV-27740](https://jira.mariadb.org/browse/MDEV-27740))
+  * This warning can be written to standard output (stdout) when preparing a backup with [MariaDB Enterprise Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-enterprise-backup).
+  * This warning can be written to the [MariaDB Error Log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/error-codes/mariadb-error-code-reference) when InnoDB performs crash recovery at startup.
+* With MariaDB Enterprise Cluster, the joiner node fails to complete an SSwhen [innodb\_log\_group\_home\_dir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_log_group_home_dir) specifies a directory different than [server-system-variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#datadir). ([MDEV-27740](https://jira.mariadb.org/browse/MDEV-27740))
 * When a non-partitioned table using the `DATA DIRECTORY` clause is converted to a partitioned table, the DATA DIRECTORY clause is silently ignored, and the partitioned table is moved to the default directory. ([MDEV-27065](https://jira.mariadb.org/browse/MDEV-27065))
-* Starting with this release, the server will raise the [WARN\_OPTION\_IGNORED warning](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-4/broken-reference/README.md).
+* Starting with this release, the server will raise the [WARN\_OPTION\_IGNORED](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/error-codes/mariadb-error-codes-1600-to-1699/e1618) warning.
 * When a table contains an invisible column, [mariadb-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump) does not produce the correct [CREATE TABLE statement](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-table) in the backup file. ([MDEV-28253](https://jira.mariadb.org/browse/MDEV-28253))
-* When a Spider table is queried using `IF(COUNT() ..)`, the server can raise an [ER\_BAD\_FIELD\_ERROR error](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-4/broken-reference/README.md). ([MDEV-25116](https://jira.mariadb.org/browse/MDEV-25116))
+* When a Spider table is queried using `IF(COUNT() ..)`, the server can raise an [ER\_BAD\_FIELD\_ERROR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/error-codes/mariadb-error-codes-1000-to-1099/e1054) error. ([MDEV-25116](https://jira.mariadb.org/browse/MDEV-25116))
 * With MariaDB Enterprise Cluster, State Snapshot Transfers (SSTs) can fail on the donor nodwhen binary logs are enabled. ([MDEV-26201](https://jira.mariadb.org/browse/MDEV-26201))
 * With MariaDB Enterprise Cluster, when [wsrep\_node\_address](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_node_address) contains an IPv6 address and [wsrep\_sst\_receive\_address](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_sst_receive_address) is set to the default value of `AUTO`, State Snapshot Transfers (SST) can fail. ([MDEV-26171](https://jira.mariadb.org/browse/MDEV-26171))
 * With [temporal tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/temporal-tables), replication can break if a system versioned table has been created on the replica via mariadb-dump, if the original table was altered before. ([MDEV-28254](https://jira.mariadb.org/browse/MDEV-28254))
@@ -142,8 +142,8 @@ With [sql\_mode=ORACLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-ma
 * Missing binlog data for `INSERT .. ON DUPLICATE KEY UPDATE` ([MDEV-28310](https://jira.mariadb.org/browse/MDEV-28310))
 * `mariadb-backup` prepare fails for incremental backups if a new schema is created after full backup. ([MDEV-28446](https://jira.mariadb.org/browse/MDEV-28446))
 * Optimizer uses all partitions during an UPDATE and ignores partitioning filters. ([MDEV-28246](https://jira.mariadb.org/browse/MDEV-28246))
-* When [INSERT .. ON DUPLICATE KEY UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/insert) is executed and [binlog\_format](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables#binlog_format) is set to `MIXED`, the server raises an [ER\_BINLOG\_UNSAFE\_STATEMENT warning](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-4/broken-reference/README.md) even though the statement is written to the binary log in row-based format. ([MDEV-21810](https://jira.mariadb.org/browse/MDEV-21810))
-  * The warning can appear in the [MariaDB Error Log](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/error/README.md) as the following: `<<sql>>`\[Warning] Unsafe statement written to the binary log using statement format since BINLOG\_FORMAT = STATEMENT. INSERT... ON DUPLICATE KEY UPDATE on a table with more than one UNIQUE KEY is unsafe Statement: INSERT INTO TABLE\_NAME VALUES (..) ON DUPLICATE KEY UPDATE KEY\_NAME = KEY\_VALUE<\</sql\* >>
+* When [INSERT .. ON DUPLICATE KEY UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/insert) is executed and [binlog\_format](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables#binlog_format) is set to `MIXED`, the server raises an [ER\_BINLOG\_UNSAFE\_STATEMENT warning](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/error-codes/mariadb-error-codes-1500-to-1599/e1592) even though the statement is written to the binary log in row-based format. ([MDEV-21810](https://jira.mariadb.org/browse/MDEV-21810))
+  * The warning can appear in the [MariaDB Error Log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/error-codes/mariadb-error-code-reference) as the following: `<<sql>>`\[Warning] Unsafe statement written to the binary log using statement format since BINLOG\_FORMAT = STATEMENT. INSERT... ON DUPLICATE KEY UPDATE on a table with more than one UNIQUE KEY is unsafe Statement: INSERT INTO TABLE\_NAME VALUES (..) ON DUPLICATE KEY UPDATE KEY\_NAME = KEY\_VALUE<\</sql\* >>
 * When `INSERT .. ON DUPLICATE KEY UPDATE` is executed and `binlog_row_image` is set to `FULL`, the server does not write unchanged columns to the binary log. ([MDEV-21810](https://jira.mariadb.org/browse/MDEV-21810))
 * Crash recovery fails if the configured server ID does not match the server ID in the crashed data directory. (MENT-1535)
 * PAM v2 plugin (`auth_pam`) produces zombie processes. (MENT-1443)
@@ -197,7 +197,7 @@ After upgrade, `mysql.plugin` table has an entry for Semi-sync Replication, thou
 
 ## Platforms
 
-In alignment with the [enterprise lifecycle](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/~/changes/32/mariadb-enterprise-server-release-notes/enterprise-server-lifecycle), MariaDB Enterprise Server 10.4.25-16 is provided for:
+In alignment with the [enterprise lifecycle](../../enterprise-server-lifecycle.md), MariaDB Enterprise Server 10.4.25-16 is provided for:
 
 * CentOS 7 (x86\_64)
 * Debian 10 (x86\_64, ARM64)
@@ -209,15 +209,15 @@ In alignment with the [enterprise lifecycle](https://app.gitbook.com/o/diTpXxF5W
 * SUSE Linux Enterprise Server 15 (x86\_64, ARM64)
 * Ubuntu 20.04 (x86\_64, ARM64)
 
-Some components of MariaDB Enterprise Server might not support all platforms. For additional information, see [MariaDB Corporation Engineering Policies".](https://mariadb.com/engineering-policies).
+Some components of MariaDB Enterprise Server might not support all platforms. For additional information, see [MariaDB Corporation Engineering Policies](https://mariadb.com/engineering-policies).
 
 ## Installation Instructions
 
 * [MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/single-node-topologies/enterprise-server)
-* [Enterprise Cluster Topology with MariaDB Enterprise Server ](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)[10](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology)[.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)
+* [Enterprise Cluster Topology with MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)
 * [Primary/Replica Topology with MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/primary-replica)
-* [Enterprise Spider Sharded Topology with MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/sharded-mariadb-enterprise-spider-topology)
-* [Enterprise Spider Federated Topology with MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology)
+* [Enterprise Spider Sharded Topology with MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/mariadb-enterprise-spider-topologies/sharded-mariadb-enterprise-spider-topology)
+* [Enterprise Spider Federated Topology with MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology)
 
 ## Upgrade Instructions
 

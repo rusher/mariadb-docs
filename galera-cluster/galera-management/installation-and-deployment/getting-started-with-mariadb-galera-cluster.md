@@ -85,13 +85,13 @@ To install MariaDB Galera Cluster with `zypper`, follow the instructions at [Ins
 
 ### Installing MariaDB Galera Cluster with a Binary Tarball
 
-To install MariaDB Galera Cluster with a binary tarball, follow the instructions at [Installing MariaDB Binary Tarballs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-binary-tarballs).
+To install MariaDB Galera Cluster with a binary tarball, follow the instructions at [Installing MariaDB Binary Tarballs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-binary-tarballs).
 
 To make the location of the `libgalera_smm.so` library in binary tarballs more similar to its location in other packages, the library is now found at `lib/galera/libgalera_smm.so` in the binary tarballs, and there is a symbolic link in the `lib` directory that points to it.
 
 ### Installing MariaDB Galera Cluster from Source
 
-To install MariaDB Galera Cluster by compiling it from source, you will have to compile both MariaDB Server and the Galera wsrep provider library. For some information on how to do this, see the pages at [Installing Galera From Source](advanced-installation-from-source/installing-galera-from-source.md). The pages at [Compiling MariaDB From Source](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source) and [Galera Cluster Documentation: Building Galera Cluster for MySQL](https://galeracluster.com/library/documentation/install-mysql-src.html#building-galera-cluster-for-mysql) may also be helpful.
+To install MariaDB Galera Cluster by compiling it from source, you will have to compile both MariaDB Server and the Galera wsrep provider library. For some information on how to do this, see the pages at [Installing Galera From Source](advanced-installation-from-source/installing-galera-from-source.md). The pages at [Compiling MariaDB From Source](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/compiling-mariadb-from-source) and Galera Cluster Documentation: Building Galera Cluster for MySQL may also be helpful.
 
 ## Configuring MariaDB Galera Cluster
 
