@@ -2,29 +2,6 @@
 
 This guide illustrates, step by step, how to update to `25.10.4` from previous versions. This guide only applies if you are updating from a version prior to `25.10.x`, otherwise you may upgrade directly (see [Helm](https://mariadb.com/docs/tools/mariadb-enterprise-operator/installation/helm#updates) and [OpenShift](https://mariadb.com/docs/tools/mariadb-enterprise-operator/installation/openshift#updates) docs)
 
-As part of the `25.10.4` LTS update we have removed the embedded `MaxScale` in the `MariaDB` resource in favor of `maxScaleRef`:
-```diff
-apiVersion: enterprise.mariadb.com/v1alpha1
-kind: MariaDB
-metadata:
-  name: mariadb
-spec:
-+  maxScaleRef:
-+     name: mariadb-maxscale
--  # Provision a MaxScale instance and set 'spec.maxScaleRef' automatically.
--  maxScale:
--    enabled: true
--    connection:
--      secretName: mxs-repl-conn
--      port: 3306
--    metrics:
--      enabled: true
-```
-Instead of embedding `MaxScale` in `MariaDB`, clients should create `MaxScale` as a separate resource and reference it in `MariaDB`. Read [MaxScale Docs](../topologies/maxscale.md).
-
-- If you are already using `maxScaleRef`, then no further actions are needed. If you are relying on the embedded `maxScale` field, then you can check out [this guide](../migrations/migrate-embedded-maxscale-to-maxscale-resource.md)
-
-
 - The Galera data-plane must be updated to the `25.10.4` version. You must set `updateStrategy.autoUpdateDataPlane=true` in your `MariaDB` resources before updating the operator. Then, once updated, the operator will also be updating the data-plane based on its version:
 ```diff
 apiVersion: enterprise.mariadb.com/v1alpha1
