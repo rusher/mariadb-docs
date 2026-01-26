@@ -175,7 +175,7 @@ SELECT * FROM t1 LEFT JOIN t2 ON t1.a = t2.a LEFT JOIN t3 ON t2.a = t3.a
 SELECT * FROM t1, t2, t3 WHERE t1.a = t2.a(+) AND t2.a = t3.a(+)
 ```
 
-To "rewrite" a join query using the `(+)` syntax, use [EXPLAIN EXTENDED](../../../administrative-sql-statements/analyze-and-explain-statements/explain.md#explain-extended) (the last line is an approximation at using the "regular" `LEFT JOIN` or `RIGHT JOIN` syntax):
+To "rewrite" a join query using the `(+)` syntax, use [EXPLAIN EXTENDED](../../../administrative-sql-statements/analyze-and-explain-statements/explain.md#explain-extended) (the last line is an approximation at using the "regular" `LEFT JOIN` syntax):
 
 {% code overflow="wrap" %}
 ```sql
