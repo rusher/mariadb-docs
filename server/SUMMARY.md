@@ -328,6 +328,7 @@
         * [SPIDER\_DIRECT\_SQL](server-usage/storage-engines/spider/spider-functions/spider_direct_sql.md)
         * [SPIDER\_FLUSH\_TABLE\_MON\_CACHE](server-usage/storage-engines/spider/spider-functions/spider_flush_table_mon_cache.md)
       * [Spider FAQ](server-usage/storage-engines/spider/spider-faq.md)
+    * [VIDEX Storage Engine](server-usage/storage-engines/videx-storage-engine.md)
     * [Converting Tables from MyISAM to InnoDB](server-usage/storage-engines/converting-tables-from-myisam-to-innodb.md)
     * [Machine Learning with MindsDB](server-usage/storage-engines/machine-learning-with-mindsdb.md)
     * [Legacy Storage Engines](server-usage/storage-engines/legacy-storage-engines/README.md)
