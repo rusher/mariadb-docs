@@ -173,15 +173,28 @@ SELECT * FROM t1, t2 WHERE t1.a(+) = t2.b;
 
 The table whose columns are marked with the `(+)` operator in a subexpression (a part of the `WHERE` clause divided by `AND`) are the **inner part** of the expression. A table whose columns are not marked with the operator belong to the **outer part**.
 
+Example for a single subexpression within a `WHERE` clause:
+
+```sql
+... WHERE t1.a = t2.a(+)
+```
+
+Example for two subexpressions within a `WHERE` clause – here, `t1.a = t2.a(+)` is the inner part, and `t2.a = t3.a(+)` is the outer part:
+
+```sql
+... WHERE t1.a = t2.a(+) AND t2.a = t3.a(+)
+```
+
 The following limitations apply:
 
 * The `(+)` operator can only be used in a `WHERE` clause.
 * The `(+)` operator can only be applied to a table column, and the column should be from the local `SELECT`, not from an outer `SELECT`.
 * The `(+)` operator cannot be used with other `JOIN` methods – it must be a comma-separated list in the `FROM` clause.
 
-When the `WHERE` clause is split into subexpressions by `AND`, the following limitations apply to each subexpression:
+When the `WHERE` clause is split into subexpressions by `AND`, `(+)` cannot be used.
 
-* `(+)` cannot be used.
+...
+
 * `(+)` cannot be used on the right side of an `IN` clause.
 * `(+)` cannot be used in row operations.
 * `(+)` cannot be used when two or more tables are on one side of and marked with the `(+)` operator and some are not.
