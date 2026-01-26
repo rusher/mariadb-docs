@@ -15,16 +15,6 @@ Run the following commands as root unless indicated otherwise.
 
 {% stepper %}
 {% step %}
-### Prepare the backup.
-
-Prepare the backup as you normally would for a [full](full-backup-and-restore-with-mariadb-backup.md) or [incremental](incremental-backup-and-restore-with-mariadb-backup.md) backup:
-
-```bash
-mariabackup --prepare --target-dir=/data/backups/full
-```
-{% endstep %}
-
-{% step %}
 ### Find the binary log position to restore to.
 
 When MariaDB Backup runs on a MariaDB Server with binary logs is enabled (which is a prerequisite for PITR), it stores binary log information in the `xtrabackup_binlog_info` file. Consult this file to find the name of the binary log position to use. In the following example, the log position is 321.
@@ -48,22 +38,12 @@ datadir=/var/lib/mysql_new
 {% endstep %}
 
 {% step %}
-### Restore to the new data directory.
+### Restore the backup.
 
-Restore from the backup to the new data directory:
+Restore from the backup [as explained here](full-backup-and-restore-with-mariadb-backup.md).
 
 ```bash
 mariabackup --copy-back --target-dir=/data/backups/full
-```
-{% endstep %}
-
-{% step %}
-### Change the owner to the system user.
-
-Change the owner to the MariaDB Server system user:
-
-```bash
-chown -R mysql:mysql /var/lib/mysql_new
 ```
 {% endstep %}
 
@@ -78,7 +58,7 @@ systemctl start mariadb
 {% endstep %}
 
 {% step %}
-### Create a script using mysqlbinlog.
+### Create and run a script using mysqlbinlog.
 
 Use the mysqlbinlog utility to create an SQL script, using the binary log file in the _old_ data directory, the start position in the `xtrabackup_binlog_info` file, and the date and time you want to restore to. Issue the following command _as a regular user_:
 
@@ -87,16 +67,6 @@ $ mysqlbinlog --start-position=321 \
       --stop-datetime="2019-06-28 12:00:00" \
       /var/lib/mysql/mariadb-node4.00001 \
       > mariadb-binlog.sql
-```
-{% endstep %}
-
-{% step %}
-### Restore the backup.
-
-Run the binary log SQL to restore the databases. Issue the following command _as a regular user_:
-
-```bash
-mysql -u root -p < mariadb-binlog.sql
 ```
 {% endstep %}
 {% endstepper %}
