@@ -1,7 +1,7 @@
 ---
 description: >-
   The MEMORY storage engine stores tables in RAM for fast access, but data is
-  lost upon server restart
+  lost upon server restart.
 ---
 
 # MEMORY
