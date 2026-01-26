@@ -169,6 +169,40 @@ and
 SELECT * FROM t1, t2 WHERE t1.a(+) = t2.b;
 ```
 
+#### Limitations
+
+The table whose columns are marked with the `(+)` operator in a subexpression (a part of the `WHERE` clause divided by `AND`) are the **inner part** of the expression. A table whose columns are not marked with the operator belong to the **outer part**.
+
+The following limitations apply:
+
+* The `(+)` operator can only be used in a `WHERE` clause.
+* The `(+)` operator can only be applied to a table column, and the column should be from the local `SELECT`, not from an outer reference.
+* The `(+)` operator cannot be used with other `JOIN` methods – it must be a comma-separated list in the `FROM` clause.
+
+When the `WHERE` clause is split into subexpressions by `AND`, the following limitations apply to each subexpression:
+
+* `OR` cannot be used.
+* `OR` cannot be used on the right side of an `IN` clause.
+* `OR` cannot be used in row operations.
+* `OR` cannot be used when two or more tables are on one side of and marked with the `(+)` operator and some are not.
+
+The `(+)` operator cannot create loops (or cycles) of dependence, where the same table appears on both sides of the operator in one expression, or through a chain of expressions.
+
+#### Error Codes
+
+The following errors may occur when not adhering to the `(+)` operator limitations or for other reasons:
+
+* `ER_INVALID_USE_OF_ORA_JOIN`
+* `ER_INVALID_USE_OF_ORA_JOIN_OUTER_REF`
+* `ER_INVALID_USE_OF_ORA_JOIN_WRONG_FUNC`
+* `ER_INVALID_USE_OF_ORA_JOIN_ONE_TABLE`
+* `ER_INVALID_USE_OF_ORA_JOIN_CYCLE`
+
+You can find examples of the errors by error code in
+
+* `mysql-test/suite/compat/oracle/t/ora_outer_join.test`
+* `mysql-test/suite/compat/oracle/t/ora_outer_join_err.test`
+
 #### Caveats
 
 **Outer join operators**
@@ -176,8 +210,8 @@ SELECT * FROM t1, t2 WHERE t1.a(+) = t2.b;
 Outer join operators can occur only in the `WHERE` clause. The `WHERE` clause\
 can consist of one predicate[^1], or of multiple predicates connected with `AND`. Each of the predicates can reference:
 
-* only one outer-joined table (that is, the "`INNER`" table) (all references to its columns have an "outer join operator");
-* zero, one, or more "`OUTER`" tables (without an outer join operator).
+* only one outer-joined table (that is, the inner table) (all references to its columns have an "outer join operator");
+* zero, one, or more outer tables (without an outer join operator).
 
 If a query uses [outer join operators](#user-content-fn-2)[^2], the `FROM` clause must be a simple comma-separated list of tables (denoting inner join operations):
 
@@ -195,7 +229,7 @@ Here, all tables used by `outer_join_predicates` are moved to the left (which is
 
 **Predicates**
 
-A predicate that refers to an `INNER` table and `OUTER` table dictates that the `INNER` table is joined with an outer join operation.
+A predicate that refers to an `INNER` table and `OUTER` table dictates that the `INNER` table is joined with an outer join operation.&#x20;
 
 A predicate that only refers to an `INNER` table (like `t1.col(+)=124`) is added to the table's `ON` expression, provided there is another predicate that dictates that the inner table is joined with outer join operation (otherwise, the predicate remains in the `WHERE` clause and a warning is issued).
 
