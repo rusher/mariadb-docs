@@ -274,11 +274,11 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 
 #### `binlog_row_metadata`
 
-* Description: Controls the format used for binlog metadata logging.
+* Description: Controls the format used for binlog metadata logging – *value* is one of the following:
   * `NO_LOG`: No metadata is logged (default).
   * `MINIMAL`: Only metadata required by a replica is logged.
   * `FULL`: All metadata is logged.
-* Command line: `--binlog-row-metadata=value`
+* Command line: `--binlog-row-metadata=*value*`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `enum`
