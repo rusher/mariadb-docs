@@ -176,15 +176,15 @@ The table whose columns are marked with the `(+)` operator in a subexpression (a
 The following limitations apply:
 
 * The `(+)` operator can only be used in a `WHERE` clause.
-* The `(+)` operator can only be applied to a table column, and the column should be from the local `SELECT`, not from an outer reference.
+* The `(+)` operator can only be applied to a table column, and the column should be from the local `SELECT`, not from an outer `SELECT`.
 * The `(+)` operator cannot be used with other `JOIN` methods – it must be a comma-separated list in the `FROM` clause.
 
 When the `WHERE` clause is split into subexpressions by `AND`, the following limitations apply to each subexpression:
 
-* `OR` cannot be used.
-* `OR` cannot be used on the right side of an `IN` clause.
-* `OR` cannot be used in row operations.
-* `OR` cannot be used when two or more tables are on one side of and marked with the `(+)` operator and some are not.
+* `(+)` cannot be used.
+* `(+)` cannot be used on the right side of an `IN` clause.
+* `(+)` cannot be used in row operations.
+* `(+)` cannot be used when two or more tables are on one side of and marked with the `(+)` operator and some are not.
 
 The `(+)` operator cannot create loops (or cycles) of dependence, where the same table appears on both sides of the operator in one expression, or through a chain of expressions.
 
