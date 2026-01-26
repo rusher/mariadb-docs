@@ -145,13 +145,11 @@ This feature is available from MariaDB 12.1.
 
 #### Overview
 
-When [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/sql_modeoracle) is active, the Oracle-style `+` syntax can be used. For example, the following two queries are identical:
+When [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/sql_modeoracle) is active, the Oracle-style `(+)`  syntax can be used. For example, the following two queries are identical:
 
 ```sql
 SELECT * FROM t1 LEFT JOIN t2 ON t1.a = t2.b;
 ```
-
-and
 
 ```sql
 SELECT * FROM t1, t2 WHERE t1.a = t2.b(+);
@@ -163,15 +161,50 @@ Similarly, the following two queries are identical:
 SELECT * FROM t1 RIGHT JOIN t2 ON t1.a = t2.b;
 ```
 
-and
-
 ```sql
 SELECT * FROM t1, t2 WHERE t1.a(+) = t2.b;
 ```
 
+With more than two tables, these two queries are identical:
+
+```sql
+SELECT * FROM t1 LEFT JOIN t2 ON t1.a = t2.a LEFT JOIN t3 ON t2.a = t3.a
+```
+
+```sql
+SELECT * FROM t1, t2, t3 WHERE t1.a = t2.a(+) AND t2.a = t3.a(+)
+```
+
+To "rewrite" a join query using the `(+)` syntax, use [EXPLAIN EXTENDED](../../../administrative-sql-statements/analyze-and-explain-statements/explain.md#explain-extended) (the last line is an approximation at using the "regular" `LEFT JOIN` syntax):
+
+{% code overflow="wrap" %}
+```sql
+EXPLAIN EXTENDED
+    SELECT * FROM t1, t2, t3 WHERE t1.a = t2.a(+) AND t2.a = t3.a(+);
+id	select_type	table	type	possible_keys	key	key_len	ref	rows	filtered	Extra
+1	SIMPLE	t1	ALL	NULL	NULL	NULL	NULL	3	100.00	
+1	SIMPLE	t2	ALL	NULL	NULL	NULL	NULL	3	100.00	Using where; Using join buffer (flat, BNL join)
+1	SIMPLE	t3	ALL	NULL	NULL	NULL	NULL	3	100.00	Using where; Using join buffer (incremental, BNL join)
+Warnings:
+Note	1003	select "test"."t1"."a" AS "a","test"."t2"."a" AS "a","test"."t3"."a" AS "a" from "test"."t1" left join "test"."t2" on("test"."t2"."a" = "test"."t1"."a") left join "test"."t3" on("test"."t3"."a" = "test"."t2"."a") where 1
+```
+{% endcode %}
+
 #### Limitations
 
 The table whose columns are marked with the `(+)` operator in a subexpression (a part of the `WHERE` clause divided by `AND`) are the **inner part** of the expression. A table whose columns are not marked with the operator belong to the **outer part**.
+
+Example for a single subexpression within a `WHERE` clause:
+
+```sql
+... WHERE t1.a = t2.a(+)
+```
+
+Example for two subexpressions within a `WHERE` clause – here, `t1.a = t2.a(+)` is the inner part, and `t2.a = t3.a(+)` is the outer part:
+
+```sql
+... WHERE t1.a = t2.a(+) AND t2.a = t3.a(+)
+```
 
 The following limitations apply:
 
@@ -179,9 +212,10 @@ The following limitations apply:
 * The `(+)` operator can only be applied to a table column, and the column should be from the local `SELECT`, not from an outer `SELECT`.
 * The `(+)` operator cannot be used with other `JOIN` methods – it must be a comma-separated list in the `FROM` clause.
 
-When the `WHERE` clause is split into subexpressions by `AND`, the following limitations apply to each subexpression:
+When the `WHERE` clause is split into subexpressions by `AND`, `(+)` cannot be used.
 
-* `(+)` cannot be used.
+...
+
 * `(+)` cannot be used on the right side of an `IN` clause.
 * `(+)` cannot be used in row operations.
 * `(+)` cannot be used when two or more tables are on one side of and marked with the `(+)` operator and some are not.
