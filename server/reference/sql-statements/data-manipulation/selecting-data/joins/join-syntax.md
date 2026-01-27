@@ -215,7 +215,7 @@ Example of two subexpressions within a `WHERE` clause – here, `t1.a = t2.a(+)`
 "Rewritten" as a "regular" join, that clause looks like this:
 
 ```sql
-... FROM t1 left join t2 ON (t1.a = t2.a) WHERE t2.a = 42
+... FROM t1 LEFT JOIN t2 ON (t1.a = t2.a) WHERE t2.a = 42
 ```
 
 The following limitations apply:
@@ -223,16 +223,11 @@ The following limitations apply:
 * The `(+)` operator can only be used in a `WHERE` clause.
 * The `(+)` operator can only be applied to a table column, and the column should be from the local `SELECT`, not from an outer `SELECT`.
 * The `(+)` operator cannot be used with other `JOIN` methods – it must be a comma-separated list in the `FROM` clause.
-
-When the `WHERE` clause is split into subexpressions by `AND`, `(+)` cannot be used.
-
-...
-
-* `(+)` cannot be used on the right side of an `IN` clause.
-* `(+)` cannot be used in row operations.
-* `(+)` cannot be used when two or more tables are on one side of and marked with the `(+)` operator and some are not.
-
-The `(+)` operator cannot create loops (or cycles) of dependence, where the same table appears on both sides of the operator in one expression, or through a chain of expressions.
+* When the `WHERE` clause is split into subexpressions by `AND`, `(+)` cannot be used.
+* The `(+)` operator cannot be used on the right side of an `IN` function.
+* The `(+)` operator cannot be used in row operations.
+* The `(+)` operator cannot be used when two or more tables are on one side of and marked with the `(+)` operator and some are not.
+* The `(+)` operator cannot create loops (or cycles) of dependence, where the same table appears on both sides of the operator in one expression, or through a chain of expressions.
 
 #### Error Codes
 
