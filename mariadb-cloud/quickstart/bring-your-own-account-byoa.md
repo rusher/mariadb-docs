@@ -107,11 +107,11 @@ Customers on the PowerPlus tier can deploy Galera Clusters for synchronous multi
 
 ```mermaid
 graph TD
-    %% Styles
-    classDef node fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
-    classDef sync fill:#ffffff,stroke:#01579b,stroke-width:2px,stroke-dasharray: 5 5;
+    %% Global Styles: Bold fonts and thick borders for readability
+    classDef node fill:#e1f5fe,stroke:#01579b,stroke-width:3px,color:#01579b,font-size:16px,font-weight:bold;
+    classDef external fill:#f5f5f5,stroke:#616161,stroke-width:2px,font-size:16px;
 
-    App[Customer Application]
+    App[Customer Application]:::external
 
     subgraph Galera_Cluster ["MariaDB Galera Cluster (PowerPlus)"]
         direction TB
@@ -119,17 +119,18 @@ graph TD
         N2[("Node 2<br/>(Primary)")]:::node
         N3[("Node 3<br/>(Primary)")]:::node
         
-        %% Synchronous Replication
-        N1 <==>|Sync Repl| N2
-        N2 <==>|Sync Repl| N3
-        N3 <==>|Sync Repl| N1
+        %% Synchronous Replication with thick lines
+        N1 <==>|"Sync Repl"| N2
+        N2 <==>|"Sync Repl"| N3
+        N3 <==>|"Sync Repl"| N1
     end
 
-    App -->|Writes| N1
-    App -.->|Failover Write| N2
-    
-    %% Note
-    style Galera_Cluster fill:#f3e5f5,stroke:#4a148c,stroke-dasharray: 5 5
+    %% Connection styling
+    App ==>|"Writes"| N1
+    App -.->|"Failover Write"| N2
+
+    %% Subgraph styling
+    style Galera_Cluster fill:#f3e5f5,stroke:#4a148c,stroke-width:2px,stroke-dasharray: 5 5,color:#4a148c
 ```
 
 ### Who is eligible for BYOA?
@@ -184,29 +185,3 @@ For the Tech Preview (Jan 2026), onboarding is a guided process.
 1. Contact Sales: Submit a request via the MariaDB Cloud Portal or contact your account representative to validate eligibility.
 2. Onboarding: Our support team will provide the necessary IAM/Service Principal templates and guide you through the account linking process.
 3. Deploy: Once linked, "Bring Your Own Account" will appear as a deployment target in your Create Service wizard.
-
-```mermaid
-sequenceDiagram
-    participant Admin as Customer Admin
-    participant Portal as MariaDB Portal
-    participant Cloud as Customer Azure/AWS
-    participant Sales as MariaDB Sales
-
-    Admin->>Portal: Request BYOA Enablement
-    Portal->>Sales: Notify for Qualification (Tier Check)
-    Sales-->>Portal: Approve Request
-    
-    rect rgb(240, 248, 255)
-    note right of Admin: Account Linking Phase
-    Portal->>Admin: Generate IaC Template (Terraform/ARM)
-    Admin->>Cloud: Apply Template (Create Role/SP)
-    Cloud-->>Portal: Validate Permissions & Establish Trust
-    end
-    
-    rect rgb(255, 250, 240)
-    note right of Admin: Deployment Phase
-    Admin->>Portal: Create Service (Select BYOA Region)
-    Portal->>Cloud: Provision VPC, VMs, Storage
-    Cloud-->>Admin: Resources Ready
-    end
-```
