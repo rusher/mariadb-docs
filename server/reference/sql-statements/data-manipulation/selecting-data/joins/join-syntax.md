@@ -194,16 +194,28 @@ Note	1003	select "test"."t1"."a" AS "a","test"."t2"."a" AS "a","test"."t3"."a" A
 
 The table whose columns are marked with the `(+)` operator in a subexpression (a part of the `WHERE` clause divided by `AND`) are the **inner part** of the expression. A table whose columns are not marked with the operator belong to the **outer part**.
 
-Example for a single subexpression within a `WHERE` clause:
+Example of a single subexpression within a `WHERE` clause:
 
 ```sql
 ... WHERE t1.a = t2.a(+)
 ```
 
-Example for two subexpressions within a `WHERE` clause – here, `t1.a = t2.a(+)` is the inner part, and `t2.a = t3.a(+)` is the outer part:
+Example of two subexpressions within a `WHERE` clause – here, both `t1.a = t2.a(+)`  and `t2.a = t3.a(+)` are inner parts, because both contain a `(+)` operator:
 
 ```sql
 ... WHERE t1.a = t2.a(+) AND t2.a = t3.a(+)
+```
+
+Example of two subexpressions within a `WHERE` clause – here, `t1.a = t2.a(+)` is the inner part (because of the `(+)` operator), and `t2.a = 42` is the outer part (it doesn't have a `(+)` operator:
+
+```sql
+... WHERE t1.a = t2.a(+) AND t2.a = 42
+```
+
+"Rewritten" as a "regular" join, that clause looks like this:
+
+```sql
+... FROM t1 left join t2 ON (t1.a = t2.a) WHERE t2.a = 42
 ```
 
 The following limitations apply:
