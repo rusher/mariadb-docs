@@ -59,7 +59,7 @@ A good bug report consists of:
 6. If the bug is about server producing wrong query results: the actual result (what you are getting), the expected result (what you think should be produced instead), and, unless it is obvious, the reason why you think the current result is wrong.
 7. If the bug about a performance problem, e.g. a certain query is slower on one version than on another, output of `EXPLAIN EXTENDED <query>` on both servers. If its a `SELECT` query use [analyze-format-json ANALYZE FORMAT=JSON](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/analyze-format-json).
 8. A test case or some other way to repeat the bug. This should preferably be in plain SQL or in mysqltest format. See mysqltest/README for information about this.
-9. If it's impossible to do a test case, then providing us with a [backtrace information](../../../development-articles/debugging-mariadb/how-to-produce-a-full-stack-trace-for-mariadbd.md) would be of great help.
+9. If it's impossible to do a test case, then providing us with a [backtrace information](/broken/pages/yt4NDbw3wL7QsDjQtA0H) would be of great help.
 
 ### JIRA Fields
 
@@ -86,7 +86,7 @@ Some project names include:
 
 #### Type
 
-Feature requests are not the same as bug reports. Specify a `New feature` type for feature requests in [Jira](../../../development-articles/general-info/tools/jira.md), and a `Bug` type for bug reports. Like with the project field, choosing a wrong type will put the request to the wrong queue and can delay its processing, but eventually it will be noticed and amended.
+Feature requests are not the same as bug reports. Specify a `New feature` type for feature requests in [Jira](/broken/pages/8H2QW24PZkCSvuwPkQtB), and a `Bug` type for bug reports. Like with the project field, choosing a wrong type will put the request to the wrong queue and can delay its processing, but eventually it will be noticed and amended.
 
 See also [plans for next release](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/community/community/bug-tracking/broken-reference/README.md) for things that we are considering to have in the next MariaDB release.
 
@@ -148,7 +148,7 @@ If the bug affects Percona server and not MySQL, it should go to [Percona Launch
 
 #### Getting a Stack Trace with Details
 
-See the article [How to produce a stack trace from a core file](../../../development-articles/debugging-mariadb/how-to-produce-a-full-stack-trace-for-mariadbd.md).
+See the article [How to produce a stack trace from a core file](/broken/pages/yt4NDbw3wL7QsDjQtA0H).
 
 #### Extracting a Portion of a Binary Log
 

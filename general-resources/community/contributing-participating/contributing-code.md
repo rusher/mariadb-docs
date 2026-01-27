@@ -8,7 +8,7 @@ General information about contributing to MariaDB (for developers and non-develo
 
 There are many open development projects for MariaDB which you can contribute to (in addition to any ideas you may have yourself).
 
-* We are using [JIRA](../../development-articles/general-info/tools/jira.md) to manage the MariaDB project. Go to [jira.mariadb.org](https://jira.mariadb.org) and click on "Projects" to get to the MariaDB project. Browse around the [unresolved and unassigned](https://jira.mariadb.org/secure/IssueNavigator.jspa?reset=true\&jqlQuery=project+%3D+MDEV+AND+resolution+%3D+Unresolved+AND+assignee+is+EMPTY+ORDER+BY+priority+DESC\&mode=hide) issues to see if there is something that interests you. Some issues have sponsors and you can be paid for doing them!
+* We are using [JIRA](/broken/pages/8H2QW24PZkCSvuwPkQtB) to manage the MariaDB project. Go to [jira.mariadb.org](https://jira.mariadb.org) and click on "Projects" to get to the MariaDB project. Browse around the [unresolved and unassigned](https://jira.mariadb.org/secure/IssueNavigator.jspa?reset=true\&jqlQuery=project+%3D+MDEV+AND+resolution+%3D+Unresolved+AND+assignee+is+EMPTY+ORDER+BY+priority+DESC\&mode=hide) issues to see if there is something that interests you. Some issues have sponsors and you can be paid for doing them!
 * A list of [beginner friendly](https://jira.mariadb.org/issues/?jql=resolution%20%3D%20Unresolved%20AND%20labels%20%3D%20beginner-friendly%20ORDER%20BY%20updated%20DESC) tasks is also available.
 * Check the [development plans](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/community/contributing-participating/broken-reference/README.md) for the next MariaDB version.
 * Join [maria-developers](https://lists.mariadb.org/postorius/lists/developers.lists.mariadb.org/) and ask for suggestions of tasks you could do. Please include your programming experience and your knowledge of the MariaDB source and how much you know about using MySQL/MariaDB with the email so that we know which tasks we can suggest to you.
@@ -16,7 +16,7 @@ There are many open development projects for MariaDB which you can contribute to
 * Join MariaDB's Zulip instance at [mariadb.zulipchat.com](https://mariadb.zulipchat.com) and ask for suggestions.
 * Join #/maria on [IRC](https://github.com/mariadb-corporation/docs-server/blob/test/en/irc/README.md) and ask for suggestions.
 
-If you have your own ideas, please submit them to [JIRA](../../development-articles/general-info/tools/jira.md) so other MariaDB developers can comment on them and suggest how to implement them. You can of course also use the [maria-developers](https://lists.mariadb.org/postorius/lists/developers.lists.mariadb.org/) list for this.
+If you have your own ideas, please submit them to [JIRA](/broken/pages/8H2QW24PZkCSvuwPkQtB) so other MariaDB developers can comment on them and suggest how to implement them. You can of course also use the [maria-developers](https://lists.mariadb.org/postorius/lists/developers.lists.mariadb.org/) list for this.
 
 ## What to Expect From a MariaDB Server Developer
 
