@@ -14,49 +14,21 @@ A BYOA environment is a secure, isolated set of resources within your own cloud 
 
 ```mermaid
 flowchart LR
-    %% Styles
-    classDef maria fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
-    classDef cust fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#bf360c
-    classDef network fill:#ffffff,stroke:#e65100,stroke-width:2px,stroke-dasharray: 5 5
-    classDef app fill:#f5f5f5,stroke:#616161,stroke-width:1px
+    %% Simplified diagram focusing on the 4 steps
+    classDef step fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
+    classDef resource fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#bf360c
 
-    %% MariaDB Side (Left)
-    subgraph MariaDB ["MariaDB Cloud (Control Plane)"]
-        direction TB
-        Orch[("Orchestration &<br/>Management Service")]:::maria
-        Monitor[("Monitoring &<br/>Backups")]:::maria
+    subgraph Steps ["Operational Workflow"]
+        direction LR
+        S1["1. Account Linking<br/>(IAM Handshake)"]:::step
+        S2["2. Provisioning<br/>(VM Creation)"]:::step
+        S3["3. Management<br/>(Patching/Health)"]:::step
+        S4["4. Connectivity<br/>(Private Access)"]:::step
     end
-
-    %% Customer Side (Right)
-    subgraph Customer ["Your Cloud Account (AWS / Azure / GCP)"]
-        IAM[("1. Account Linking<br/>(IAM Role / Service Principal)")]:::cust
-        
-        subgraph VPC ["Your VPC / VNet (Secure Network)"]
-            direction LR
-            Resources[("2. Resource Provisioning<br/>(VMs, Storage, Networking)")]:::cust
-            
-            subgraph DB_Stack ["Database & Proxy"]
-                direction TB
-                Bastion["Secure Proxy"]:::cust
-                DB[("Database Service")]:::cust
-            end
-            
-            App[("Your Application")]:::app
-        end
-    end
-
-    %% Flows
-    Orch -- "Trusts" --> IAM
-    IAM -.->|Allows Creation of| Resources
-    Resources --- DB_Stack
-
-    %% Management Flow
-    Orch == "3. Management (Patching/Health)" ==> Bastion
-    Bastion --> DB
-    DB -.->|Metrics| Monitor
-
-    %% Connectivity Flow
-    App -- "4. Connectivity (Private/Low Latency)" --> DB
+    
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
 ```
 
 1. Account Linking: You authorize MariaDB Cloud to access your specific cloud subscription via a secure IAM role or Service Principal with least-privilege permissions.
@@ -70,58 +42,47 @@ The following diagram illustrates how the MariaDB Control Plane securely manages
 
 ```mermaid
 flowchart LR
-    %% Define color styles for visual separation
-    classDef controlPlane fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1;
-    classDef dataPlane fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#bf360c;
-    classDef networkBoundary fill:#ffffff,stroke:#ff9800,stroke-width:2px,stroke-dasharray: 5 5,color:#e65100;
-    classDef user fill:#f5f5f5,stroke:#616161,stroke-width:1px;
+    %% Styles similar to Aiven: High contrast, clean blocks
+    classDef control fill:#e3f2fd,stroke:#0d47a1,stroke-width:2px,color:#0d47a1;
+    classDef data fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#bf360c;
+    classDef network fill:#ffffff,stroke:#e65100,stroke-width:2px,stroke-dasharray: 5 5;
+    classDef external fill:#f5f5f5,stroke:#616161,stroke-width:1px;
 
-    User["Customer User (DevOps/DBA)"]:::user
-    App["Customer Application"]:::user
+    %% Actors
+    User([Customer DevOps]):::external
+    App([Your Application]):::external
 
-    %% MariaDB Cloud Control Plane
-    subgraph MariaDB_CP ["MariaDB Cloud (Control Plane)"]
-        direction TB
-        Portal["Portal UI & API"]:::controlPlane
-        Orchestrator["Orchestration Service"]:::controlPlane
-        Monitoring["Monitoring & Alerts"]:::controlPlane
+    %% MariaDB Cloud
+    subgraph CP ["MariaDB Control Plane"]
+        Portal[Portal & API]:::control
+        Orch[Orchestrator]:::control
+        Mon[Monitoring]:::control
     end
 
-    %% Customer Cloud Account Data Plane
-    subgraph Customer_Account ["Customer Cloud Account (Data Plane)"]
-        IAM["Cross-Account IAM Role / Service Principal"]:::dataPlane
+    %% Customer Cloud
+    subgraph Cloud ["Your Cloud Account (AWS/Azure)"]
+        IAM[IAM Role]:::data
         
-        subgraph VPC ["Customer VPC / VNet (Network Boundary)"]
-            direction TB
-            Bastion["Secure Proxy / Bastion"]:::dataPlane
-            DB["Database Nodes (VMs)"]:::dataPlane
-            Storage[("Persistent Storage & Backups")]:::dataPlane
+        subgraph VPC ["Your Private VPC"]
+            Bastion[Secure Bastion]:::data
+            DB[Database Node]:::data
+            Storage[(Storage)]:::data
         end
     end
 
-    %% Main Flows
-    User -->|"Manages Service"| Portal
-    App -->|"Connects Privately"| DB
+    %% Connections
+    User -->|"1. Manage"| Portal
+    Portal --> Orch
+    Orch -->|"2. Provision"| IAM
+    IAM -.->|Create| VPC
+    
+    %% Fixed line below: Added quotes around label
+    Orch ==>|"3. Manage (TLS)"| Bastion
+    Bastion <--> DB
+    DB -.->|Metrics| Mon
+    DB <--> Storage
 
-    %% Control Plane Interactions
-    Portal --> Orchestrator
-    Orchestrator -->|"Provisions Resources via API"| IAM
-    IAM -.->|"Grants specific permissions to"| VPC
-
-    %% Secure Management Path - Fixed Syntax Here
-    Orchestrator ==>|"Secure Management Tunnel (TLS)"| Bastion
-    Bastion <-->|"Management tasks"| DB
-
-    %% Observability Flow
-    DB -.->|"Sends Metrics & Logs"| Monitoring
-
-    %% Data Residency
-    DB <-->|"Reads/Writes Data"| Storage
-
-    %% Apply styles to subgraphs
-    class MariaDB_CP controlPlane;
-    class Customer_Account dataPlane;
-    class VPC networkBoundary;
+    App -->|"4. Connect"| DB
 ```
 
 ### Why use BYOA?
