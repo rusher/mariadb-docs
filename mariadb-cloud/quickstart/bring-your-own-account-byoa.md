@@ -151,28 +151,33 @@ The BYOA setup splits your costs into two separate components. This model ensure
 
 ```mermaid
 flowchart LR
-    %% Styles
-    classDef money fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
-    classDef invoice fill:#fff9c4,stroke:#fbc02d,stroke-width:2px,stroke-dasharray: 5 5;
+    %% Styles: Bold fonts, thick borders, distinct colors for clarity
+    classDef maria fill:#e8f5e9,stroke:#2e7d32,stroke-width:3px,color:#1b5e20,font-size:16px,font-weight:bold;
+    classDef cloud fill:#fff9c4,stroke:#fbc02d,stroke-width:3px,color:#f57f17,font-size:16px,font-weight:bold;
+    classDef customer fill:#f5f5f5,stroke:#616161,stroke-width:2px,color:#212121,font-size:16px,font-weight:bold;
 
-    Customer((Customer Organization))
+    Customer((Customer Organization)):::customer
 
     subgraph MariaDB_Bill ["Invoice 1: MariaDB Cloud"]
         direction TB
-        M_Fees[("Management Fees<br/>Support (Remote DBA)<br/>Software Licenses")]:::invoice
+        M_Fees[("Management Fees<br/>Support (Remote DBA)<br/>Software Licenses")]:::maria
     end
 
     subgraph Cloud_Bill ["Invoice 2: Cloud Provider (AWS/Azure)"]
         direction TB
-        C_Infra[("Compute (VMs)<br/>Storage (IOPS/Disk)<br/>Data Transfer")]:::invoice
+        C_Infra[("Compute (VMs)<br/>Storage (IOPS/Disk)<br/>Data Transfer")]:::cloud
     end
 
-    %% Flows
-    Customer -->|Pays Service Fees| MariaDB_Bill
-    Customer -->|Pays Infrastructure Costs| Cloud_Bill
+    %% Flows with thick arrows
+    Customer ==>|"Pays Service Fees"| M_Fees
+    Customer ==>|"Pays Infrastructure Costs"| C_Infra
 
-    %% Benefit Annotation - Fixed Syntax Here (Added quotes around label)
-    Cloud_Bill -.->|"Apply committed spend<br/>(e.g., EDP / MACC)"| Customer
+    %% Benefit Annotation
+    C_Infra -.->|"Apply committed spend<br/>(e.g., EDP / MACC)"| Customer
+
+    %% Subgraph text styling
+    style MariaDB_Bill fill:#ffffff,stroke:#2e7d32,stroke-width:2px,color:#2e7d32
+    style Cloud_Bill fill:#ffffff,stroke:#fbc02d,stroke-width:2px,color:#f9a825
 ```
 
 1. MariaDB Cloud Invoice: You receive a bill from MariaDB for the management fee, software licensing, and support.
