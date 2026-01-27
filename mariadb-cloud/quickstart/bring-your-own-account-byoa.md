@@ -42,47 +42,54 @@ The following diagram illustrates how the MariaDB Control Plane securely manages
 
 ```mermaid
 flowchart LR
-    %% Styles similar to Aiven: High contrast, clean blocks
-    classDef control fill:#e3f2fd,stroke:#0d47a1,stroke-width:2px,color:#0d47a1;
-    classDef data fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#bf360c;
-    classDef network fill:#ffffff,stroke:#e65100,stroke-width:2px,stroke-dasharray: 5 5;
-    classDef external fill:#f5f5f5,stroke:#616161,stroke-width:1px;
+    %% Global Graph Settings: Bold styles for "Aiven-like" readability
+    classDef control fill:#e3f2fd,stroke:#1565c0,stroke-width:3px,color:#0d47a1,font-size:16px,font-weight:bold;
+    classDef data fill:#fff3e0,stroke:#ef6c00,stroke-width:3px,color:#e65100,font-size:16px,font-weight:bold;
+    classDef external fill:#f5f5f5,stroke:#616161,stroke-width:2px,font-size:15px;
 
     %% Actors
     User([Customer DevOps]):::external
     App([Your Application]):::external
 
-    %% MariaDB Cloud
+    %% MariaDB Cloud Control Plane
     subgraph CP ["MariaDB Control Plane"]
-        Portal[Portal & API]:::control
-        Orch[Orchestrator]:::control
-        Mon[Monitoring]:::control
+        direction TB
+        Portal["Portal & API"]:::control
+        Orch["Orchestrator"]:::control
+        Mon["Monitoring"]:::control
     end
 
-    %% Customer Cloud
+    %% Customer Cloud Account
     subgraph Cloud ["Your Cloud Account (AWS/Azure)"]
-        IAM[IAM Role]:::data
+        direction TB
+        IAM["IAM Role / SP"]:::data
         
         subgraph VPC ["Your Private VPC"]
-            Bastion[Secure Bastion]:::data
-            DB[Database Node]:::data
-            Storage[(Storage)]:::data
+            direction TB
+            Bastion["Secure Bastion"]:::data
+            DB["Database Node"]:::data
+            Storage[("Storage")]:::data
         end
     end
 
-    %% Connections
-    User -->|"1. Manage"| Portal
-    Portal --> Orch
-    Orch -->|"2. Provision"| IAM
-    IAM -.->|Create| VPC
+    %% Connections - Using thick lines for visibility
+    User ==>|"1. Manage"| Portal
+    Portal ==> Orch
+    Orch ==>|"2. Provision"| IAM
+    IAM -.->|"Creates"| VPC
     
-    %% Fixed line below: Added quotes around label
-    Orch ==>|"3. Manage (TLS)"| Bastion
-    Bastion <--> DB
-    DB -.->|Metrics| Mon
-    DB <--> Storage
+    %% Secure Tunnel
+    Orch ===>|"3. Manage (TLS)"| Bastion
+    Bastion <==> DB
+    DB -.->|"Metrics"| Mon
+    DB <==> Storage
 
-    App -->|"4. Connect"| DB
+    App ==>|"4. Connect"| DB
+    
+    %% Subgraph Styling for clarity
+    style CP fill:#f0f8ff,stroke:#1565c0,stroke-width:2px,color:#0d47a1
+    style Cloud fill:#fff8e1,stroke:#ef6c00,stroke-width:2px,color:#e65100
+    style VPC fill:#ffffff,stroke:#ef6c00,stroke-width:2px,stroke-dasharray: 5 5
 ```
 
 ### Why use BYOA?
