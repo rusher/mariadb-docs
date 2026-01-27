@@ -239,40 +239,10 @@ The following errors may occur when not adhering to the `(+)` operator limitatio
 * `ER_INVALID_USE_OF_ORA_JOIN_ONE_TABLE`
 * `ER_INVALID_USE_OF_ORA_JOIN_CYCLE`
 
-You can find examples of the errors by error code in
+You can find examples of the errors by error code in these files (which are [available on GitHub](https://github.com/MariaDB/server/tree/main/mysql-test/suite/compat/oracle/t)):
 
 * `mysql-test/suite/compat/oracle/t/ora_outer_join.test`
 * `mysql-test/suite/compat/oracle/t/ora_outer_join_err.test`
-
-#### Caveats
-
-**Outer join operators**
-
-Outer join operators can occur only in the `WHERE` clause. The `WHERE` clause\
-can consist of one predicate[^1], or of multiple predicates connected with `AND`. Each of the predicates can reference:
-
-* only one outer-joined table (that is, the inner table) (all references to its columns have an "outer join operator");
-* zero, one, or more outer tables (without an outer join operator).
-
-If a query uses [outer join operators](#user-content-fn-2)[^2], the `FROM` clause must be a simple comma-separated list of tables (denoting inner join operations):
-
-```sql
-FROM t1, t2, ..., tN
-```
-
-If an outer join operators dictates that a table `t_j` is joined with an outer join, the `FROM` clause looks like this:
-
-```sql
-FROM (t1, ..., tbl) LEFT JOIN t_j ON outer_join_predicates, ... tN
-```
-
-Here, all tables used by `outer_join_predicates` are moved to the left (which is in order because an inner join is commutative).
-
-**Predicates**
-
-A predicate that refers to an `INNER` table and `OUTER` table dictates that the `INNER` table is joined with an outer join operation.&#x20;
-
-A predicate that only refers to an `INNER` table (like `t1.col(+)=124`) is added to the table's `ON` expression, provided there is another predicate that dictates that the inner table is joined with outer join operation (otherwise, the predicate remains in the `WHERE` clause and a warning is issued).
 
 ## Examples
 
@@ -292,7 +262,3 @@ SELECT left_tbl.*
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}
-
-[^1]: A predicate is a condition that specifies how rows from two or more tables are matched together, forming the basis for the join operation.
-
-[^2]: An outer join operator is used to return all rows from one or both tables involved in the join, including those that do not have matching rows in the other table.
