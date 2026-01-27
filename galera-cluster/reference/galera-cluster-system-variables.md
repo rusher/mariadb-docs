@@ -284,14 +284,14 @@ This variable is documented in detail here:
   * `REPLICATE_MYISAM`: Whether or not DML updates for a [MyISAM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/myisam-storage-engine) tables will be replicated. This functionality is experimental and should not be relied upon in production systems.
   * `REQUIRED_PRIMARY_KEY`: Table should have PRIMARY KEY defined.
   * `STRICT_REPLICATION`: Same as the old [wsrep\_strict\_ddl](galera-cluster-system-variables.md#wsrep_strict_ddl) setting.
-  * `SKIP_APPLIER_FK_CHECKS_IN_IST`: When this operation mode is set, and the node is processing IST or catch-up, appliers skip FK[^1] checking. See [this page for details](../high-availability/rapid-node-recovery-with-ist-and-the-gcache.md#skipping-foreign-key-checks).\
+  * `APPLIER_SKIP_FK_CHECKS_IN_IST`: When this operation mode is set, and the node is processing IST or catch-up, appliers skip FK[^1] checking. See [this page for details](../high-availability/rapid-node-recovery-with-ist-and-the-gcache.md#skipping-foreign-key-checks).\
     This flag is available from MariaDB 12.0.
 * Command line: `--wsrep-mode=value`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: Enumeration
 * Default Value: (Empty)
-* Valid Values: `SKIP_APPLIER_FK_CHECKS_IN_IST`,  `BINLOG_ROW_FORMAT_ONLY`, `DISALLOW_LOCAL_GTID`, `REQUIRED_PRIMARY_KEY`, `REPLICATE_ARIA`, `REPLICATE_MYISAM` and `STRICT_REPLICATION`&#x20;
+* Valid Values: `APPLIER_SKIP_FK_CHECKS_IN_IST`,  `BINLOG_ROW_FORMAT_ONLY`, `DISALLOW_LOCAL_GTID`, `REQUIRED_PRIMARY_KEY`, `REPLICATE_ARIA`, `REPLICATE_MYISAM` and `STRICT_REPLICATION`&#x20;
 * Introduced: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/10.6/10.6.0)
 
 #### `wsrep_mysql_replication_bundle`

@@ -35,7 +35,7 @@ However, during node joining, in IST and latter catch-up period, the node is sti
 To address that issue, you can relax FK checks for appliers during IST and catch-up periods. The relaxed FK check mode is configurable by [setting this flag](../reference/galera-cluster-system-variables.md#wsrep_mode):
 
 ```
-wsrep_mode=SKIP_APPLIER_FK_CHECKS_IN_IST
+wsrep_mode=APPLIER_SKIP_FK_CHECKS_IN_IST
 ```
 
 When this operation mode is set, and the node is processing IST or catch-up, appliers skip FK checking.
@@ -128,7 +128,7 @@ $$
 required\_cachesize = write\_rate \times desired\_time\_window\_in\_seconds
 $$
 
-* $$\text{Example: } 20346 \text{ bytes/sec} \times 7200 \text{ sec} \approx 146,491,200 \text{ bytes (or } \sim\text{140MiB)}$$&#x20;
+* $$\text{Example: } 20346 \text{ bytes/sec} \times 7200 \text{ sec} \approx 146,491,200 \text{ bytes (or } \sim\text{140MiB)}$$
 
 In this example, a `gcache.size` of 140M would allow a node to be down for 2 hours and still rejoin using IST.
 {% endstep %}

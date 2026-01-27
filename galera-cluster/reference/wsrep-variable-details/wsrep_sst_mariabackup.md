@@ -19,28 +19,28 @@ The `wsrep_sst_mariadbbackup` script parses the following options:
 ***
 
 * `sockopt` (socket options)
-  * Description: Allows additional socket options to be passed to the underlying network communication. This could include settings for TCP buffers, keep-alives, or other network-related tunables to optimize the transfer performance.
+  * Description: Allows additional socket options to be passed to the underlying network communication. This includes settings for TCP buffers, keep-alives, or other network-related tunables to optimize transfer performance.
 
 ***
 
 * `progress`
-  * Description: Likely controls whether progress information about the SST is displayed or logged. Setting this could enable visual indicators or detailed log entries about the transfer's advancement.
+  * Description: Controls whether progress information about the SST is displayed or logged. Enabling this option provides visual indicators or detailed log entries about the transfer's advancement.
 
 ***
 
 * `ttime` (time)
   * Default: `0`
-  * Description: Possibly a timeout value in seconds for certain operations during the SST, or a flag related to timing the transfer. A value of `0` might indicate no timeout or that timing is handled elsewhere.
+  * Description: A timeout value in seconds for certain operations during the SST, or a flag related to timing the transfer. A value of `0` indicates no timeout or that timing is handled elsewhere.
 
 ***
 
 * `cpat`
-  * Description: Appears to be related to a "copy pattern" or specific path handling during the SST. Its exact function would depend on how the `wsrep_sst_mariabackup` script uses this pattern for file or directory management.
+  * Description: Related to a "copy pattern" or specific path handling during the SST. Its function depends on how the `wsrep_sst_mariabackup` script uses this pattern for file or directory management.
 
 ***
 
 * `scomp` (compressor)
-  * Description: Specifies the compression utility to be used on the data stream before transfer. Common values could include `gzip`, `pigz`, `lz4`, or `qpress`, which reduce the data size for faster transmission over the network.
+  * Description: Specifies the compression utility to be used on the data stream before transfer. Common values include `gzip`, `pigz`, `lz4`, or `qpress`, which reduce the data size for faster transmission over the network.
 
 ***
 
@@ -50,19 +50,21 @@ The `wsrep_sst_mariadbbackup` script parses the following options:
 ***
 
 * `rlimit` (resource limit)
-  * Description: Potentially sets resource limits for the `mariabackup` process during the SST. This could include limits on CPU usage, memory, or file descriptors, preventing the SST from consuming excessive resources and impacting the server's performance.
+  * Description: Sets a maximum data transfer rate for State Snapshot Transfers (SST) in which the node serves as a donor. The `rlimit` parameter accepts any value supported by the `pv` utility’s `--rate-limit` option. Note that using this option requires `progress` to be specified and the `pv` utility to be installed on the system.
 
 ***
 
 * `uextra` (use-extra)
   * Default: `0`
-  * Description: A boolean flag (0 or 1) that likely indicates whether to use extra or advanced features/parameters during the SST. The specific "extra" features would be determined by the `mariabackup` implementation.
+  * Description: Controls the SST connection method that `mariabackup` uses to connect to the local MariaDB server.  By default _(_`uextra=0`_),_ mariabackup connects through the standard database por&#x74;_._ When `uextra=1` is enabled, the connection attempts to use either:
+    * The unix socket (if available), or&#x20;
+    * The extra\_port (if specified in MariaDB server settings).
 
 ***
 
 * `speciald` (sst-special-dirs)
   * Default: `1`
-  * Description: A boolean flag (0 or 1) that likely controls whether `mariabackup` should handle special directories (e.g., `innodb_log_group_home_dir`, `datadir`) in a specific way during the SST, rather than just copying them as regular files. This is important for maintaining data consistency.
+  * Description: A boolean flag that controls whether `mariabackup` handles  special directories (e.g., `innodb_log_group_home_dir`, `datadir`) in a specific way during the SST, rather than just copying them as regular files. This is important for maintaining data consistency.
 
 ***
 
@@ -74,13 +76,13 @@ The `wsrep_sst_mariadbbackup` script parses the following options:
 
 * `ssyslog` (sst-syslog)
   * Default: `0`
-  * Description: A boolean flag (0 or 1) that likely controls whether SST-related messages should be logged to syslog. This can be useful for centralized logging and monitoring of Galera cluster events.
+  * Description: A boolean flag (0 or 1) that controls whether SST-related messages should be logged to syslog. This can be useful for centralized logging and monitoring of Galera cluster events.
 
 ***
 
 * `sstlogarchive` (sst-log-archive)
   * Default: `1`
-  * Description: A boolean flag (0 or 1) that likely determines whether SST logs should be archived. Archiving logs helps in post-mortem analysis and troubleshooting of SST failures.
+  * Description: A boolean flag (0 or 1) that determines whether SST logs should be archived. Archiving logs helps in post-mortem analysis and troubleshooting of SST failures.
 
 ***
 
