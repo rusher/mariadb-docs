@@ -1,7 +1,8 @@
 ---
 description: >-
-  An overview of changes, improvements, and what's new in MariaDB Community
-  Server 10.6
+  Official MariaDB 10.6 release notes: atomic DDL (CREATE/ALTER/DROP),
+  JSON_TABLE syntax, ROWNUM Oracle mode, utf8→utf8mb3 alias, and
+  old_mode=utf8mb4.
 ---
 
 # MariaDB 10.6 Changes & Improvements

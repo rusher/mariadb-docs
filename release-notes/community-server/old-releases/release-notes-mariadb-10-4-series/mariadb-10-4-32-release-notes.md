@@ -1,3 +1,9 @@
+---
+description: >-
+  Official MariaDB 10.4.32 release notes: InnoDB ROW_FORMAT=COMPRESSED fixes,
+  optimizer crashes, replication seconds_behind_master, Galera 26.4.16 update.
+---
+
 # MariaDB 10.4.32 Release Notes
 
 The most recent release of [MariaDB 10.4](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series) is:[**MariaDB 10.4.34**](mariadb-10-4-34-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.4.34/)

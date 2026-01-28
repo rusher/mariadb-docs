@@ -1,7 +1,7 @@
 ---
 description: >-
-  An overview of changes, improvements, and what's new in MariaDB Community
-  Server 10.11
+  Official MariaDB 10.11 release notes: password_reuse_check plugin, GTID-based
+  CHANGE MASTER defaults, mariadb-binlog --gtid-strict-mode, ALTER TABLE fixes.
 ---
 
 # MariaDB 10.11 Changes & Improvements
