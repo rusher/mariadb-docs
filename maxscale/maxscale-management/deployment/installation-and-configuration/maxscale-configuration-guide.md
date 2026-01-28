@@ -1,8 +1,8 @@
 ---
 description: >-
-  Explore the complete reference for configuring MariaDB MaxScale, covering core
-  concepts, server objects, monitors services, listeners, and parameter
-  management for optimal database routing.
+  Complete MariaDB MaxScale configuration guide. Complete reference for
+  listeners, servers, monitors, routers, and SSL settings with comprehensive
+  examples and.
 ---
 
 # MaxScale Configuration Guide
