@@ -1,5 +1,7 @@
 ---
-description: Release notes for MariaDB Enterprise and Community Server and other products
+description: >-
+  Complete MariaDB release notes. Complete version history with new features,
+  changes, security updates, and upgrade considerations for production use.
 ---
 
 # MariaDB Release Notes
