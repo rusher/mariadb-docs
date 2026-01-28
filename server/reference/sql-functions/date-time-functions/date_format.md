@@ -1,7 +1,8 @@
 ---
 description: >-
-  Format a date according to a pattern. This function converts a date value into
-  a specific string format using specifiers like %Y, %m, and %d.
+  Complete DATE_FORMAT reference for MariaDB. Complete function guide with
+  syntax, parameters, return values, and usage examples with comprehensive
+  examples.
 ---
 
 # DATE\_FORMAT

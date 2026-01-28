@@ -1,7 +1,7 @@
 ---
 description: >-
-  Learn how to configure character sets and collations at the server, table, and
-  column levels to ensure correct data handling.
+  Complete Setting Character Sets and Collations data type guide for MariaDB.
+  Complete reference for syntax, valid values, storage requirements, and range.
 ---
 
 # Setting Character Sets and Collations

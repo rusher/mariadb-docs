@@ -1,7 +1,7 @@
 ---
 description: >-
-  Modify table structures. This guide covers adding columns, changing data
-  types, managing indexes, and other schema changes for existing tables.
+  Complete ALTER TABLE guide for MariaDB. Complete syntax for modifying columns,
+  indexes, constraints, and table properties with comprehensive examples and.
 ---
 
 # ALTER TABLE

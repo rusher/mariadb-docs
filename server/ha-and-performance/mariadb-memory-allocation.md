@@ -1,8 +1,8 @@
 ---
 description: >-
-  Understand MariaDB Server memory allocation. This section explains how memory
-  is managed, key configuration parameters, and strategies for optimizing memory
-  usage for enhanced performance.
+  Complete MariaDB performance optimization guide. Complete reference for query
+  tuning, indexing strategies, and configuration improvements for production
+  use.
 ---
 
 # MariaDB Memory Allocation

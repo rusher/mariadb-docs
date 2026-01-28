@@ -1,7 +1,7 @@
 ---
 description: >-
-  Remove specific rows from a table. This statement deletes records that match a
-  specified condition, ensuring data cleanup and maintenance.
+  Complete guide to deleting data in MariaDB. Complete DELETE syntax with WHERE
+  filtering, JOIN operations, and safety considerations for production use.
 ---
 
 # DELETE

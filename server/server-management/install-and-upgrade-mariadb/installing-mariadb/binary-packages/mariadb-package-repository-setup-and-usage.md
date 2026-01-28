@@ -1,5 +1,7 @@
 ---
-description: Instructions on configuring and using the MariaDB package repository.
+description: >-
+  Complete guide to MariaDB package repositories. Complete setup instructions
+  for APT, YUM, Zypper with GPG keys and configurations for production use.
 ---
 
 # MariaDB Package Repository Setup and Usage

@@ -1,7 +1,7 @@
 ---
 description: >-
-  Add an index to an existing table. This statement improves query performance
-  by creating a data structure for rapid lookups on specific columns.
+  Complete reference for CREATE INDEX in MariaDB. Complete syntax guide with all
+  options, clauses, and practical examples with comprehensive examples and best.
 ---
 
 # CREATE INDEX

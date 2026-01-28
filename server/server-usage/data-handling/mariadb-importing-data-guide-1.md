@@ -1,8 +1,7 @@
 ---
 description: >-
-  Learn to import data into MariaDB with LOAD DATA INFILE and mariadb-import.
-  This guide covers bulk loading, handling duplicates, and converting foreign
-  data formats.
+  Complete Importing Data into MariaDB guide for MariaDB. Complete reference
+  documentation for implementation, configuration, and usage for production use.
 ---
 
 # Importing Data into MariaDB

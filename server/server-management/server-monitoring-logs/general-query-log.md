@@ -1,8 +1,7 @@
 ---
 description: >-
-  Describes the General Query Log, a comprehensive record of every query and
-  connection event received by the server, useful for auditing and debugging but
-  potentially high-volume.
+  Complete General Query Log guide for MariaDB. Complete reference documentation
+  for implementation, configuration, and usage with comprehensive examples.
 ---
 
 # General Query Log

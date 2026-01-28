@@ -1,7 +1,7 @@
 ---
 description: >-
-  Learn how to configure MariaDB to accept remote connections by adjusting the
-  bind-address and setting up appropriate user privileges.
+  Complete Configuring MariaDB for Remote Client Access Guide guide for MariaDB.
+  Complete resource with setup instructions, configuration, usage examples, and.
 ---
 
 # Configuring MariaDB for Remote Client Access Guide

@@ -1,7 +1,7 @@
 ---
 description: >-
-  Learn the various parameters and options for connecting to a MariaDB server
-  using the command-line client and other tools.
+  Complete Connecting to MariaDB Server guide for MariaDB. Complete reference
+  documentation for implementation, configuration, and usage for production use.
 ---
 
 # Connecting to MariaDB Server

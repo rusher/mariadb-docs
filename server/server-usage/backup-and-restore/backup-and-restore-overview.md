@@ -1,7 +1,7 @@
 ---
 description: >-
-  This guide provides an introduction to the various backup and restore methods
-  available in MariaDB, helping you choose the right strategy for your data.
+  Complete MariaDB backup and recovery guide. Complete resource for backup
+  methods, mariabackup usage, scheduling, and restoration for production use.
 ---
 
 # Backup and Restore Overview

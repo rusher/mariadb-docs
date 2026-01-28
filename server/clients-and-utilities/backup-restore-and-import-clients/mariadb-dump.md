@@ -1,3 +1,9 @@
+---
+description: >-
+  Complete MariaDB backup and recovery guide. Complete resource for backup
+  methods, mariabackup usage, scheduling, and restoration for production use.
+---
+
 # mariadb-dump
 
 The `mariadb-dump` client is a backup program originally written by Igor Romanenko.

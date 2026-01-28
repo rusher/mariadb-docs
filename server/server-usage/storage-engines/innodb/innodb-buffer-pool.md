@@ -1,7 +1,8 @@
 ---
 description: >-
-  A comprehensive guide to the InnoDB Buffer Pool, the key memory area for
-  caching data and indexes, including configuration and resizing tips.
+  Complete InnoDB Buffer Pool guide for MariaDB. Complete reference
+  documentation for implementation, configuration, and usage with comprehensive
+  examples and.
 ---
 
 # InnoDB Buffer Pool

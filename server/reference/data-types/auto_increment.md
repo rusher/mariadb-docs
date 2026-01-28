@@ -1,7 +1,8 @@
 ---
 description: >-
-  Automatically generate unique identities for new rows. This attribute is
-  commonly used for primary keys to ensure sequential numbering.
+  Complete AUTO_INCREMENT data type guide for MariaDB. Complete reference for
+  syntax, valid values, storage requirements, and range limits for production
+  use.
 ---
 
 # AUTO\_INCREMENT

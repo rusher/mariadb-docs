@@ -1,7 +1,7 @@
 ---
 description: >-
-  Details on configuring MariaDB clients to connect securely, and how to enforce
-  TLS for specific user accounts using the `REQUIRE SSL` clause.
+  Complete MariaDB security guide. Complete resource for user management, access
+  control, SSL/TLS encryption, and audit policies with comprehensive examples.
 ---
 
 # Securing Connections for Client and Server

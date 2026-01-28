@@ -1,8 +1,7 @@
 ---
 description: >-
-  Review the full syntax for SQL joins in MariaDB. This guide details the
-  structure of table references, index hints, and various join types supported
-  in SELECT, UPDATE, and DELETE statements.
+  Complete reference for JOIN Syntax in MariaDB. Complete syntax guide with all
+  options, clauses, and practical examples with comprehensive examples and best.
 ---
 
 # JOIN Syntax

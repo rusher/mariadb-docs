@@ -1,7 +1,7 @@
 ---
 description: >-
-  Diagnose common connection errors such as access denied or server not found,
-  with step-by-step solutions for network and privilege issues.
+  Complete Troubleshooting Connection Issues Guide guide for MariaDB. Complete
+  resource with setup instructions, configuration, usage examples, and best.
 ---
 
 # Troubleshooting Connection Issues Guide

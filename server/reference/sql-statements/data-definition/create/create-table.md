@@ -1,7 +1,7 @@
 ---
 description: >-
-  Define a new table structure. This fundamental command specifies columns, data
-  types, indexes, and storage engine options for storing data.
+  Complete guide to creating tables in MariaDB. Complete CREATE TABLE syntax for
+  data types, constraints, indexes, and storage engines for production use.
 ---
 
 # CREATE TABLE

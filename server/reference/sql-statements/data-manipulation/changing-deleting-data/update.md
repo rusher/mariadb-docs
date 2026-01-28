@@ -1,7 +1,7 @@
 ---
 description: >-
-  Modify existing data in a table. This statement changes the values of
-  specified columns in rows that match a given condition.
+  Complete UPDATE statement guide for MariaDB. Complete syntax reference with
+  WHERE conditions, JOIN operations, and multi-table updates for production use.
 ---
 
 # UPDATE

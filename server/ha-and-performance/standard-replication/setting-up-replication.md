@@ -1,8 +1,7 @@
 ---
 description: >-
-  Follow this step-by-step guide to configure standard replication. Learn how to
-  prepare the primary, configure the replica, and establish a connection for
-  data synchronization.
+  Complete guide to MariaDB replication setup. Complete walkthrough for
+  primary-replica topology with binary logging and GTID configuration.
 ---
 
 # Setting Up Replication

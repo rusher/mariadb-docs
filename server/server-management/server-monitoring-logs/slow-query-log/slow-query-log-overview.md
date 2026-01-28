@@ -1,8 +1,7 @@
 ---
 description: >-
-  Explains how to enable and configure the slow query log to identify queries
-  that take longer than a specified time (`long_query_time`) or don't use
-  indexes.
+  Complete Slow Query Log Overview guide for MariaDB. Complete reference
+  documentation for implementation, configuration, and usage for production use.
 ---
 
 # Slow Query Log Overview

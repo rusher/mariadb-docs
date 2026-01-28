@@ -1,8 +1,8 @@
 ---
 description: >-
-  A foreign key is a database constraint that references columns in a parent
-  table to enforce data integrity in a child table. When used, MariaDB checks to
-  maintain these integrity rules.
+  Complete MariaDB performance optimization guide. Complete reference for query
+  tuning, indexing strategies, and configuration improvements for production
+  use.
 ---
 
 # Foreign Keys

@@ -1,7 +1,7 @@
 ---
 description: >-
-  The CREATE PROCEDURE statement defines a new stored procedure, specifying its
-  name, parameters (IN, OUT, INOUT), and the SQL statements it executes.
+  Complete CREATE PROCEDURE guide for MariaDB. Complete reference documentation
+  for implementation, configuration, and usage with comprehensive examples and.
 ---
 
 # CREATE PROCEDURE

@@ -1,7 +1,7 @@
 ---
 description: >-
-  Store timestamp values. This type stores the number of seconds since the Unix
-  Epoch, with a range from '1970-01-01' to '2038-01-19' in UTC.
+  Complete TIMESTAMP data type guide for MariaDB. Complete reference for syntax,
+  valid values, storage requirements, and range limits for production use.
 ---
 
 # TIMESTAMP

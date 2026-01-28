@@ -1,8 +1,8 @@
 ---
 description: >-
-  Browse the reference for system variables that control replication behavior
-  and binary logging. Use these settings to tune performance and behavior on
-  primaries and replicas.
+  Complete Replication and Binary Log System Variables reference for MariaDB.
+  Complete guide for configuration values, scope settings, and performance
+  impact.
 ---
 
 # Replication and Binary Log System Variables
@@ -274,7 +274,7 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 
 #### `binlog_row_metadata`
 
-* Description: Controls the format used for binlog metadata logging – *value* is one of the following:
+* Description: Controls the format used for binlog metadata logging – _value_ is one of the following:
   * `NO_LOG`: No metadata is logged (default).
   * `MINIMAL`: Only metadata required by a replica is logged.
   * `FULL`: All metadata is logged.
@@ -333,7 +333,7 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 
 #### `expire_logs_days`
 
-* Description: Number of days after which the [binary log](../../server-management/server-monitoring-logs/binary-log/) can be automatically removed. By default, 0, or no automatic removal. When using [replication](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md), should always be set higher than the maximum lag by any replica. Removals take place when the server starts up, when the binary log is flushed, when the next binary log is created after the previous one reaches the maximum size, or when running [PURGE BINARY LOGS](../../reference/sql-statements/administrative-sql-statements/purge-binary-logs.md). Units are whole days (integer) until [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-1060-release-notes), or 1/1000000 precision (double) from [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/10.6/10.6.1). Starting from [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/10.6/10.6.1), `expire_logs_days` and [binlog\_expire\_logs\_seconds](replication-and-binary-log-system-variables.md#binlog_expire_logs_seconds) are forms of aliases, such that changes to one automatically reflect in the other. Some container configs explicitly set `expire_logs_days` to 10, rather than leave it as the default, zero.
+* Description: Number of days after which the [binary log](../../server-management/server-monitoring-logs/binary-log/) can be automatically removed. By default, 0, or no automatic removal. When using [replication](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md), should always be set higher than the maximum lag by any replica. Removals take place when the server starts up, when the binary log is flushed, when the next binary log is created after the previous one reaches the maximum size, or when running [PURGE BINARY LOGS](../../reference/sql-statements/administrative-sql-statements/purge-binary-logs.md). Units are whole days (integer) until [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/10.6/10.6.0), or 1/1000000 precision (double) from [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/10.6/10.6.1). Starting from [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/10.6/10.6.1), `expire_logs_days` and [binlog\_expire\_logs\_seconds](replication-and-binary-log-system-variables.md#binlog_expire_logs_seconds) are forms of aliases, such that changes to one automatically reflect in the other. Some container configs explicitly set `expire_logs_days` to 10, rather than leave it as the default, zero.
 * Command line: `--expire-logs-days=#`
 * Scope: Global
 * Dynamic: Yes

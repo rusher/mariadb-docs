@@ -1,3 +1,10 @@
+---
+description: >-
+  Complete MariaDB performance optimization guide. Complete reference for query
+  tuning, indexing strategies, and configuration improvements for production
+  use.
+---
+
 # OPTIMIZE TABLE
 
 ## Syntax

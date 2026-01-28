@@ -1,8 +1,8 @@
 ---
 description: >-
-  Modify existing user accounts. Learn how to change authentication plugins,
-  expire passwords, lock accounts, and adjust resource limits for specific
-  users.
+  Complete ALTER USER guide for MariaDB. Complete syntax for modifying
+  authentication, passwords, and account security settings with comprehensive
+  examples and.
 ---
 
 # ALTER USER

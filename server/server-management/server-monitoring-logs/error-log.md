@@ -1,8 +1,7 @@
 ---
 description: >-
-  Details the Error Log, which captures critical server errors, warnings, and
-  startup/shutdown messages, and explains how to configure its verbosity and
-  output destination (file or syslog).
+  Complete Error Log guide for MariaDB. Complete reference documentation for
+  implementation, configuration, and usage with comprehensive examples and best.
 ---
 
 # Error Log

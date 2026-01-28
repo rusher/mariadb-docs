@@ -1,3 +1,10 @@
+---
+description: >-
+  Complete MariaDB command-line client guide. Complete reference for server
+  connections, query execution, data import, and batch processing for production
+  use.
+---
+
 # mariadb Command-Line Client
 
 `mariadb` is a simple SQL shell with GNU readline capabilities.

@@ -1,9 +1,8 @@
 ---
 description: >-
-  Documentation for server system variables that control the server's
-  configuration and behavior (e.g., `max_connections`,
-  `innodb_buffer_pool_size`), which can often be set dynamically or in
-  configurat
+  Complete server system variables reference for MariaDB. Complete guide for
+  connection handling, caching, logging, and performance tuning for production
+  use.
 ---
 
 # Server System Variables

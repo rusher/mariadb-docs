@@ -1,7 +1,8 @@
 ---
 description: >-
-  This page lists the system variables available for configuring InnoDB's
-  behavior, performance, buffers, and logs.
+  Complete guide to InnoDB system variables for MariaDB. Complete reference for
+  buffer pool, I/O tuning, transaction settings, and optimization for production
+  use.
 ---
 
 # InnoDB System Variables

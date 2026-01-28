@@ -1,7 +1,8 @@
 ---
 description: >-
-  Convert a value to a specific data type. This function explicitly converts a
-  value from one type to another, such as string to integer.
+  Complete CAST reference for MariaDB. Complete function guide with syntax,
+  parameters, return values, and usage examples with comprehensive examples and
+  best.
 ---
 
 # CAST

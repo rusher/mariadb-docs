@@ -1,7 +1,8 @@
 ---
 description: >-
-  Delete one or more user accounts. Understand how to remove users and their
-  associated privileges from the database system safely.
+  Complete DROP statement reference for MariaDB. Complete guide for safely
+  removing database objects with CASCADE options with comprehensive examples and
+  best.
 ---
 
 # DROP USER

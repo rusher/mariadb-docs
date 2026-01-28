@@ -1,7 +1,8 @@
 ---
 description: >-
-  Assign privileges and roles. Learn the syntax to give users or roles
-  permission to access databases, tables, and execute specific commands.
+  Complete privilege management guide for MariaDB. Complete GRANT syntax for
+  database, table, and column permissions with roles with comprehensive examples
+  and.
 ---
 
 # GRANT

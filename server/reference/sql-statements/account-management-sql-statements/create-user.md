@@ -1,7 +1,7 @@
 ---
 description: >-
-  Create new database accounts. This guide covers the syntax for defining users,
-  setting authentication methods, and establishing initial resource limits.
+  Complete guide to creating MariaDB user accounts. Complete CREATE USER syntax
+  for authentication methods and password policies with comprehensive examples.
 ---
 
 # CREATE USER

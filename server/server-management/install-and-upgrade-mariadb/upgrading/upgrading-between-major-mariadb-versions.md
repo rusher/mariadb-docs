@@ -1,8 +1,7 @@
 ---
 description: >-
-  General instructions for performing major version upgrades (e.g., 10.3 to
-  10.4) on Linux, covering repository updates, backup recommendations, and using
-  `mariadb-upgrade`.
+  Complete MariaDB upgrade guide. Complete migration reference with version
+  compatibility, backup procedures, and rollback strategies for production use.
 ---
 
 # Upgrading Between Major MariaDB Versions

@@ -1,7 +1,7 @@
 ---
 description: >-
-  Learn how to configure MariaDB using option files (my.cnf/my.ini), including
-  file locations, syntax, and command-line overrides.
+  Complete guide to MariaDB option files. Complete my.cnf reference with
+  configuration groups, parameter syntax, and file hierarchy for production use.
 ---
 
 # Configuring MariaDB with Option Files

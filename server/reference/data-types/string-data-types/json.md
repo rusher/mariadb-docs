@@ -1,7 +1,8 @@
 ---
 description: >-
-  JSON document storage. While often implemented as an alias for LONGTEXT, this
-  type includes automatic validation to ensure valid JSON format.
+  Complete JSON Data Type data type guide for MariaDB. Complete reference for
+  syntax, valid values, storage requirements, and range limits for production
+  use.
 ---
 
 # JSON Data Type

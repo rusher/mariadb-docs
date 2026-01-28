@@ -1,7 +1,7 @@
 ---
 description: >-
-  An introduction to the mariadb-backup utility, detailing its features,
-  installation process, and support for hot online backups of InnoDB tables.
+  Complete MariaDB backup and recovery guide. Complete resource for backup
+  methods, mariadb-backup usage, scheduling, and restoration for production use.
 ---
 
 # mariadb-backup Overview

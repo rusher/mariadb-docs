@@ -1,7 +1,7 @@
 ---
 description: >-
-  Step-by-step instructions for installing MariaDB on Windows using the MSI
-  installer, covering service configuration and security settings.
+  Complete MariaDB installation guide. Complete setup instructions for Linux,
+  Windows, and macOS with configuration and verification for production use.
 ---
 
 # Installing MariaDB MSI Packages on Windows

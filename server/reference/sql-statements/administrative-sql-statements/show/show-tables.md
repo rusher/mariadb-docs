@@ -1,7 +1,7 @@
 ---
 description: >-
-  List tables in a database. This statement displays the names of all
-  non-temporary tables in the current or specified database.
+  Complete guide to listing tables in MariaDB. Complete SHOW TABLES syntax
+  reference with LIKE patterns, WHERE conditions, and filtering options.
 ---
 
 # SHOW TABLES
