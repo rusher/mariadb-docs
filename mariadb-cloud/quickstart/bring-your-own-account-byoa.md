@@ -8,6 +8,53 @@ Bring Your Own Account (BYOA) allows large enterprises to deploy fully managed M
 
 With BYOA, the Control Plane (UI, API, Monitoring) remains in MariaDB Cloud, while the Data Plane (Compute, Storage, Backups) resides entirely in your cloud account.
 
+```mermaid
+flowchart LR
+    %% BIG BLOCK STYLE - Aiven-like Visibility
+    %% ---------------------------------------------------------
+    classDef control fill:#e3f2fd,stroke:#1565c0,stroke-width:4px,color:#0d47a1,font-size:18px,font-weight:bold,rx:5,ry:5,min-width:180px,padding:15px;
+    classDef data fill:#fff3e0,stroke:#e65100,stroke-width:4px,color:#bf360c,font-size:18px,font-weight:bold,rx:5,ry:5,min-width:180px,padding:15px;
+    classDef external fill:#f5f5f5,stroke:#616161,stroke-width:2px,font-size:18px,font-weight:bold,min-width:150px;
+
+    %% Actors
+    User([DevOps Team]):::external
+    App([Application]):::external
+
+    %% 1. CONTROL PLANE (Left)
+    subgraph MariaDB_Cloud ["MariaDB Control Plane"]
+        direction TB
+        Portal["Portal & API"]:::control
+        Orch["Orchestrator"]:::control
+    end
+
+    %% 2. DATA PLANE (Right)
+    subgraph Customer_Cloud ["Your Cloud Account"]
+        direction TB
+        IAM["IAM Role"]:::data
+        
+        subgraph VPC ["Your Private VPC"]
+            direction TB
+            Bastion["Secure Bastion"]:::data
+            DB["Database Node"]:::data
+        end
+    end
+
+    %% CONNECTIONS (Thick & Clear)
+    User ==>|"1. Request"| Portal
+    Portal ==>|"2. Trigger"| Orch
+    
+    Orch ==>|"3. Provision"| IAM
+    IAM -.->|"Create"| VPC
+    
+    Orch ===>|"4. Manage (TLS)"| Bastion
+    Bastion <==> DB
+
+    App ==>|"5. Connect"| DB
+    
+    %% Spacer to force width
+    Portal ~~~ Orch
+```
+
 ## How it works
 
 A BYOA environment is a secure, isolated set of resources within your own cloud provider account (Azure, AWS, or Google Cloud) that is managed by MariaDB Cloud.
@@ -36,61 +83,7 @@ flowchart LR
 3. Management: MariaDB Cloud monitors health, performs backups, and applies patches automatically, just like a standard managed service.
 4. Connectivity: Your applications connect to the database locally within your cloud network (VPC/VNet), ensuring low latency and high security without exposing data to the public internet.
 
-#### Architecture Diagram
 
-The following diagram illustrates how the MariaDB Control Plane securely manages resources inside your cloud account without ever extracting your data.
-
-```mermaid
-flowchart LR
-    %% Global Graph Settings: Bold styles for "Aiven-like" readability
-    classDef control fill:#e3f2fd,stroke:#1565c0,stroke-width:3px,color:#0d47a1,font-size:16px,font-weight:bold;
-    classDef data fill:#fff3e0,stroke:#ef6c00,stroke-width:3px,color:#e65100,font-size:16px,font-weight:bold;
-    classDef external fill:#f5f5f5,stroke:#616161,stroke-width:2px,font-size:15px;
-
-    %% Actors
-    User([Customer DevOps]):::external
-    App([Your Application]):::external
-
-    %% MariaDB Cloud Control Plane
-    subgraph CP ["MariaDB Control Plane"]
-        direction TB
-        Portal["Portal & API"]:::control
-        Orch["Orchestrator"]:::control
-        Mon["Monitoring"]:::control
-    end
-
-    %% Customer Cloud Account
-    subgraph Cloud ["Your Cloud Account (AWS/Azure)"]
-        direction TB
-        IAM["IAM Role / SP"]:::data
-        
-        subgraph VPC ["Your Private VPC"]
-            direction TB
-            Bastion["Secure Bastion"]:::data
-            DB["Database Node"]:::data
-            Storage[("Storage")]:::data
-        end
-    end
-
-    %% Connections - Using thick lines for visibility
-    User ==>|"1. Manage"| Portal
-    Portal ==> Orch
-    Orch ==>|"2. Provision"| IAM
-    IAM -.->|"Creates"| VPC
-    
-    %% Secure Tunnel
-    Orch ===>|"3. Manage (TLS)"| Bastion
-    Bastion <==> DB
-    DB -.->|"Metrics"| Mon
-    DB <==> Storage
-
-    App ==>|"4. Connect"| DB
-    
-    %% Subgraph Styling for clarity
-    style CP fill:#f0f8ff,stroke:#1565c0,stroke-width:2px,color:#0d47a1
-    style Cloud fill:#fff8e1,stroke:#ef6c00,stroke-width:2px,color:#e65100
-    style VPC fill:#ffffff,stroke:#ef6c00,stroke-width:2px,stroke-dasharray: 5 5
-```
 
 ### Why use BYOA?
 
