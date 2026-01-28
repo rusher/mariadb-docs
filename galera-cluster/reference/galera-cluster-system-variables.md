@@ -1,3 +1,9 @@
+---
+description: >-
+  Complete Galera Cluster System Variables reference for MariaDB. Complete guide
+  for configuration values, scope settings, and performance impact.
+---
+
 # Galera Cluster System Variables
 
 This page documents system variables related to Galera Cluster. For options that are not system variables, see [Galera Options](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd-options#galera-cluster-options). See [Server System Variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables) for a complete list of system variables and instructions on setting them. Also see the [Full list of MariaDB options, system and status variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables).

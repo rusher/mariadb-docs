@@ -1,3 +1,9 @@
+---
+description: >-
+  Complete MariaDB installation guide. Complete setup instructions for Linux,
+  Windows, and macOS with configuration and verification for production use.
+---
+
 # Getting Started with MariaDB Galera Cluster
 
 The most recent release of [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) is: [**MariaDB 10.11.11**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/10.11/10.11.11) Stable (GA) [Download Now](https://mariadb.com/downloads/), [_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.11.11/)
