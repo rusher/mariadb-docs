@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 # Bring Your Own Account (BYOA)
 
 Bring Your Own Account (BYOA) allows large enterprises to deploy fully managed MariaDB Cloud databases directly within their own public cloud infrastructure. This deployment model offers the operational simplicity of a managed service while satisfying strict requirements for data sovereignty, compliance, and cloud cost optimization.
