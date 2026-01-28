@@ -626,16 +626,12 @@ See the [pool documentation](pool-datasource-implementation.md) for pool configu
 
 #### **rewriteBatchedStatements**
 
-{% hint style="warning" %}
-Upgrade Warning: This option is ignored in Connector/J versions 3.0.0 through 3.5.5.
-
-* Behavior Change: In versions 3.0.0–3.5.5 (or when this option is disabled), the driver uses the `COM_STMT_BULK`protocol. This protocol returns the last generated ID for a batch, whereas `rewriteBatchedStatements=true` (in 2.7.x and 3.5.6+) returns the first generated ID.
-* Recommendation: If your application relies on `getGeneratedKeys()` returning the first ID of a batch, you mustupgrade to version 3.5.6+ and explicitly enable this option.
-{% endhint %}
-
 * Description: For insert queries, rewrite batchedStatement to execute in a single executeQuery.
-  * example: 'insert into ab (i) values (?)' with first batch values = 1, second = 2 will be rewritten as 'insert into ab (i) values (1), (2)'.
-  * When enabled, the `useServerPrepStmts` option will be forced to false
+  * Example: `'insert into ab (i) values (?)'` with first batch values = 1, second = 2 will be rewritten as `'insert into ab (i) values (1), (2)'`.
+  * **Upgrade Warning:** This option is **ignored** in Connector/J versions 3.0.0 through 3.5.5.
+  * **Behavior Change (Generated Keys):** In versions 3.0.0–3.5.5 (or when this option is disabled), the driver uses the `COM_STMT_BULK` protocol. This protocol returns the **last** generated ID for a batch, whereas `rewriteBatchedStatements=true` (in 2.7.x and 3.5.6+) returns the **first** generated ID. If your application relies on `getGeneratedKeys()` returning the first ID, you **must** upgrade to version 3.5.6+ and enable this option.
+  * **Behavior Change (Error Handling):** Rewriting inserts into a single statement changes atomicity. If one row in the rewritten batch fails (e.g., duplicate key), the **entire batch** chunk fails. Standard batching might allow partial success or provide distinct error codes for specific rows.
+  * When enabled, the `useServerPrepStmts` option will be forced to false.
 * Data Type: `boolean`
 * Default Value: `false`
 * Introduced: since 1.1.8, on 3 version since 3.5.6
