@@ -1,8 +1,8 @@
 ---
 description: >-
-  Understand the syntax and usage of constraints in table definitions. This
-  guide covers primary keys, foreign keys, unique, and check constraints to
-  enforce data integrity.
+  Complete constraints reference: PRIMARY KEY, FOREIGN KEY, UNIQUE, and CHECK
+  syntax in CREATE/ALTER TABLE, ON DELETE/UPDATE actions, TABLE_CONSTRAINTS
+  table.
 ---
 
 # CONSTRAINT

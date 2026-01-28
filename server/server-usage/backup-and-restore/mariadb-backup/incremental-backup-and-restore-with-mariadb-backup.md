@@ -1,7 +1,8 @@
 ---
 description: >-
-  This guide explains how to create and apply incremental backups with
-  mariadb-backup, saving storage space and reducing backup time.
+  Complete mariadb-backup incremental guide: --backup/--prepare syntax, LSN
+  xtrabackup_checkpoints, --incremental-basedir, and --copy-back/--move-back
+  restore.
 ---
 
 # Incremental Backup and Restore (mariadb-backup)

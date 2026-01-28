@@ -1,8 +1,7 @@
 ---
 description: >-
-  Define a stored function. This command creates a routine that accepts
-  parameters, executes logic, and returns a single value for use in SQL
-  expressions.
+  Complete CREATE FUNCTION reference: OR REPLACE/IF NOT EXISTS, DEFINER/SQL
+  SECURITY clauses, RETURNS type, DETERMINISTIC/NO SQL characteristics.
 ---
 
 # CREATE FUNCTION

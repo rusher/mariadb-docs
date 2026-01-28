@@ -1,3 +1,10 @@
+---
+description: >-
+  Complete mariadb-import reference: load tables from text files,
+  --fields-terminated-by delimiter, --local file option, and --parallel/-j
+  processing.
+---
+
 # mariadb-import
 
 `mariadb-import` loads tables from text files in various formats.
@@ -74,7 +81,7 @@ First delete all rows from table.
 
 #### `--dir`=_directory_
 
-Restore all tables from backup directory created using [mariadb-dump --dir](mariadb-dump.md). This option is available from  MariaDB 11.6.
+Restore all tables from backup directory created using [mariadb-dump --dir](mariadb-dump.md). This option is available from MariaDB 11.6.
 
 #### `--fields-terminated-by`=_string_
 
@@ -126,7 +133,7 @@ Do not restore the specified table. To specify more than one table to ignore, us
 
 #### `--innodb-optimize-keys`
 
-Create secondary indexes after data load, which speeds up loading (InnoDB only). Defaults to on; use \
+Create secondary indexes after data load, which speeds up loading (InnoDB only). Defaults to on; use\
 `--skip-innodb-optimize-keys` to disable. This option is available from MariaDB 11.8.
 
 #### `--lines-terminated-by`=_string_

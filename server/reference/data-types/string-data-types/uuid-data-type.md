@@ -1,7 +1,7 @@
 ---
 description: >-
-  Universally Unique Identifier data type. This type is optimized for storing
-  128-bit UUID values efficiently.
+  Official UUID data type reference: 128-bit storage optimization, CAST from
+  CHAR/VARCHAR/BINARY types, RFC4122 string format, and UUIDv6/v7 support.
 ---
 
 # UUID Data Type

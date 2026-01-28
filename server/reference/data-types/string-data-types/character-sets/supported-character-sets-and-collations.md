@@ -1,7 +1,8 @@
 ---
 description: >-
-  View a comprehensive list of the character sets and collations available in
-  MariaDB database, including their default properties and maximum lengths.
+  Complete character sets reference: SHOW CHARACTER SET command,
+  information_schema.CHARACTER_SETS/COLLATIONS tables, NO PAD queries, and ci/cs
+  flags.
 ---
 
 # Supported Character Sets and Collations

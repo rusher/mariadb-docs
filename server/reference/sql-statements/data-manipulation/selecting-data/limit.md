@@ -1,7 +1,8 @@
 ---
 description: >-
-  Restrict the number of rows returned. This clause specifies the maximum number
-  of records to return and can optionally set an offset.
+  Complete LIMIT clause reference: LIMIT n, LIMIT offset,row_count, LIMIT
+  row_count OFFSET offset syntax, ORDER BY result handling, and UPDATE
+  replication safety.
 ---
 
 # LIMIT

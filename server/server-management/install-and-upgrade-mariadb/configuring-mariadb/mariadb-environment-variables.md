@@ -1,7 +1,7 @@
 ---
 description: >-
-  Reference for environment variables that affect MariaDB configuration, such as
-  MYSQL_HOME and LD_PRELOAD, and how they interact with option files.
+  Complete MariaDB environment variables: MYSQL_HOME, LD_PRELOAD, my.cnf search
+  path precedence, and interaction with option files/command-line options.
 ---
 
 # MariaDB Environment Variables

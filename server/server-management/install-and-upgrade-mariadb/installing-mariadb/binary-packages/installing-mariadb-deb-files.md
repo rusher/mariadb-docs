@@ -1,7 +1,7 @@
 ---
 description: >-
-  Step-by-step instructions for installing MariaDB on Debian, covering service
-  configuration and security settings.
+  Complete .deb installation guide: add repo via mariadb_repo_setup, import GPG
+  keys, apt install mariadb-server galera-4, and APT configuration.
 ---
 
 # Installing MariaDB .deb Files

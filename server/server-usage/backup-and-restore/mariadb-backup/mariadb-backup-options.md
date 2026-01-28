@@ -1,7 +1,7 @@
 ---
 description: >-
-  A comprehensive reference for all command-line options available in
-  mariadb-backup, covering backup, prepare, and restore operations.
+  Complete mariadb-backup options: --backup/--target-dir, --prepare/--apply-log,
+  --copy-back/--move-back, and --incremental-basedir/--incremental-dir syntax.
 ---
 
 # mariadb-backup Options

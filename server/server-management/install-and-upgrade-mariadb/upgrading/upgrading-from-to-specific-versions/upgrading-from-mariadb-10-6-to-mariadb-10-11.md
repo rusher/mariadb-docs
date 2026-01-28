@@ -1,7 +1,7 @@
 ---
 description: >-
-  Detailed upgrade path from 10.6 to 10.11, including changes in InnoDB
-  defaults, new system variables, and the transition to a new release series.
+  Complete MariaDB 10.6 to 10.11 upgrade: repository config, apt-get/yum/zypper
+  remove+install, my.cnf option changes, and run mariadb-upgrade.
 ---
 
 # Upgrading from MariaDB 10.6 to MariaDB 10.11

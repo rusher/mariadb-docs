@@ -1,3 +1,10 @@
+---
+description: >-
+  Complete mysql_secure_installation guide: renamed to
+  mariadb-secure-installation in 10.5, Linux symlink access, Windows alternate
+  binary, security setup.
+---
+
 # mysql\_secure\_installation
 
 {% hint style="info" %}

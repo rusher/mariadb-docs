@@ -1,4 +1,13 @@
+---
+description: >-
+  Complete CHANGE MASTER TO reference: MASTER_HOST/PORT/USER/PASSWORD syntax,
+  MASTER_LOG_FILE/POS options, MASTER_USE_GTID configuration, and MASTER_SSL
+  settings.
+---
+
 # CHANGE MASTER TO
+
+
 
 {% hint style="info" %}
 The terms _master_ and _slave_ have historically been used in replication, and MariaDB has begun the process of adding _primary_ and _replica_ synonyms. The old terms will continue to be used to maintain backward compatibility - see [MDEV-18777](https://jira.mariadb.org/browse/MDEV-18777) to follow progress on this effort.

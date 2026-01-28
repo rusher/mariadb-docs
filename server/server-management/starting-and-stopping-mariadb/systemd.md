@@ -1,7 +1,7 @@
 ---
 description: >-
-  A comprehensive guide to managing MariaDB with systemd, including unit file
-  customization, startup timeouts, and handling multiple instances.
+  Complete MariaDB systemd reference: mariadb.service/mariadb@.service units,
+  systemctl commands, TimeoutStartSec/EXTEND_TIMEOUT_USEC, and drop-in configs.
 ---
 
 # systemd (Linux)

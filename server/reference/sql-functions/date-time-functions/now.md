@@ -1,7 +1,8 @@
 ---
 description: >-
-  Return the current date and time. This function returns the current timestamp
-  as a value in 'YYYY-MM-DD HH:MM:SS' or YYYYMMDDHHMMSS format.
+  Complete NOW() function reference: NOW([precision]) and CURRENT_TIMESTAMP
+  synonyms, TIMESTAMP vs DATETIME types, timezone/DST handling, and fractional
+  seconds.
 ---
 
 # NOW

@@ -1,5 +1,7 @@
 ---
-description: Generated columns can be virtual or persistent (stored).
+description: >-
+  Complete generated columns reference: VIRTUAL vs PERSISTENT/STORED syntax,
+  CREATE/ALTER TABLE, index/foreign key constraints, sql_mode consistency.
 ---
 
 # Generated Columns

@@ -1,7 +1,7 @@
 ---
 description: >-
-  Exact fixed-point number. DECIMAL(M,D) stores values with M total digits and D
-  decimal places, preventing rounding errors common with floating-point types.
+  Complete DECIMAL type reference: DECIMAL(M,D) syntax, precision limits (M≤65,
+  D≤38), SIGNED/UNSIGNED/ZEROFILL options, and rounding behavior.
 ---
 
 # DECIMAL

@@ -1,7 +1,8 @@
 ---
 description: >-
-  Delete one or more tables. This command removes the table definitions and all
-  stored data permanently, and can also delete temporary tables.
+  Complete DROP TABLE syntax: TEMPORARY, IF EXISTS, WAIT/NOWAIT,
+  RESTRICT/CASCADE options, metadata locks, atomic DROP, and replication
+  behavior.
 ---
 
 # DROP TABLE

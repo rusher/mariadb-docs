@@ -1,8 +1,8 @@
 ---
 description: >-
-  Best practices for configuring MariaDB server variables like
-  `innodb_buffer_pool_size`, `aria_pagecache_buffer_size`, and `thread_handling`
-  to maximize resource utilization on dedicated servers.
+  Complete MariaDB performance tuning: innodb_buffer_pool_size,
+  aria_pagecache_buffer_size, thread_handling configuration, and SHOW GLOBAL
+  STATUS monitoring.
 ---
 
 # Configuring MariaDB for Optimal Performance

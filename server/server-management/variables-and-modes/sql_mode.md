@@ -1,8 +1,8 @@
 ---
 description: >-
-  Details the `sql_mode` system variable, which defines the strictness of SQL
-  syntax and validation (e.g., `STRICT_TRANS_TABLES`, `ANSI_QUOTES`), enabling
-  emulation of other database behaviors.
+  Complete SQL_MODE reference: set via SET/SET GLOBAL/--sql-mode, view
+  @@SQL_MODE, STRICT_TRANS_TABLES, ANSI_QUOTES, TRADITIONAL, and database
+  emulation.
 ---
 
 # SQL\_MODE

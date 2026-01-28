@@ -1,7 +1,8 @@
 ---
 description: >-
-  View the status of replication threads. This statement displays critical
-  metrics like log positions and error status for the replica.
+  Complete SHOW REPLICA STATUS: FOR CHANNEL/connection_name syntax, SHOW ALL
+  REPLICAS option, thread states (Slave_IO/SQL_Running), and lag/log/GTID
+  fields.
 ---
 
 # SHOW REPLICA STATUS

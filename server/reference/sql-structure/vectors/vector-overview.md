@@ -1,3 +1,9 @@
+---
+description: >-
+  Official MariaDB Vector reference: VECTOR(n) data type, VECTOR INDEX (M,
+  DISTANCE=euclidean|cosine), VEC_FromText() inserts, VEC_DISTANCE() queries.
+---
+
 # Vector Overview
 
 {% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/pBQsCgBA6SJpi0m3pZuk/" %}
@@ -22,7 +28,7 @@ CREATE TABLE v (
 );
 ```
 
-The distance function used to build the vector index can be `euclidean` (the default) or `cosine`. An additional option, `M`, can be used to configure the vector index. Larger values mean slower `SELECT`  and `INSERT` statements, larger index size and higher memory consumption but more accurate results. The valid range is from `3` to `200`.
+The distance function used to build the vector index can be `euclidean` (the default) or `cosine`. An additional option, `M`, can be used to configure the vector index. Larger values mean slower `SELECT` and `INSERT` statements, larger index size and higher memory consumption but more accurate results. The valid range is from `3` to `200`.
 
 ```sql
 CREATE TABLE embeddings (
@@ -131,7 +137,7 @@ SELECT id FROM v
 ```
 
 {% hint style="info" %}
-There is no function for *dot product* (also called *inner product*) distance available in many other vector databases. Dot product is not a proper distance measure (for example, vector's closest match is not necessarily itself) and is only used for performance reasons, because it is often faster than cosine or euclidean and produces the same results if vectors are normalized. In MariaDB optimized implementation euclidean and cosine measures are the fastest, and dot product, if implemented, would not provide any performance benefits. Use euclidean or cosine (they are equally fast) for normalized vectors.
+There is no function for _dot product_ (also called _inner product_) distance available in many other vector databases. Dot product is not a proper distance measure (for example, vector's closest match is not necessarily itself) and is only used for performance reasons, because it is often faster than cosine or euclidean and produces the same results if vectors are normalized. In MariaDB optimized implementation euclidean and cosine measures are the fastest, and dot product, if implemented, would not provide any performance benefits. Use euclidean or cosine (they are equally fast) for normalized vectors.
 {% endhint %}
 
 ## System Variables

@@ -1,8 +1,8 @@
 ---
 description: >-
-  Understand how Global Transaction IDs (GTIDs) track replication events. Learn
-  to use GTIDs for simplified failover, easier topology changes, and crash-safe
-  replication.
+  Complete GTID replication reference: CHANGE MASTER
+  master_use_gtid=current_pos|slave_pos, gtid_slave_pos table (InnoDB), START
+  SLAVE UNTIL master_gtid_pos.
 ---
 
 # Global Transaction ID

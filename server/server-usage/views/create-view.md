@@ -1,7 +1,8 @@
 ---
 description: >-
-  Details the CREATE VIEW statement, including syntax for defining views,
-  security context (DEFINER vs INVOKER), and optional algorithms.
+  Complete CREATE VIEW reference: OR REPLACE/IF NOT EXISTS,
+  ALGORITHM=MERGE|TEMPTABLE|UNDEFINED, DEFINER/CURRENT_USER, and SQL SECURITY
+  DEFINER|INVOKER.
 ---
 
 # CREATE VIEW

@@ -1,3 +1,9 @@
+---
+description: >-
+  Complete EXPLAIN statement reference: SELECT/UPDATE/DELETE syntax, EXTENDED
+  and PARTITIONS options, FORMAT=JSON output, EXPLAIN FOR CONNECTION usage.
+---
+
 # EXPLAIN
 
 ## Syntax

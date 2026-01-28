@@ -1,8 +1,7 @@
 ---
 description: >-
-  Guide to using the `openssl` command-line tool to generate a Certificate
-  Authority (CA) key, server private key, and self-signed X509 certificate for
-  testing or internal use.
+  Complete OpenSSL TLS certificate guide: generate CA key/cert and server
+  key/CSR, sign X509 with openssl x509 -CA/-CAkey, and verify certificates.
 ---
 
 # Certificate Creation with OpenSSL

@@ -1,8 +1,7 @@
 ---
 description: >-
-  Introduction to MariaDB's transparent data-at-rest encryption architecture,
-  which supports pluggable key management and per-table or per-tablespace
-  encryption for InnoDB and Aria engines.
+  Complete Data-at-Rest Encryption overview: InnoDB/Aria tablespace encryption,
+  innodb_encrypt_log=1, encrypt_tmp_files=ON, and key plugin rotation.
 ---
 
 # Data-at-Rest Encryption Overview
