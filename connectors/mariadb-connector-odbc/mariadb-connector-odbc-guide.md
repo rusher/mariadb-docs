@@ -1,7 +1,8 @@
 ---
 description: >-
-  Complete About MariaDB Connector/ODBC guide for MariaDB. Complete resource for
-  installation, configuration, query execution, and integration.
+  Complete Connector/ODBC setup guide: Windows ODBC Administrator,
+  odbcinst.ini/odbc.ini configuration, isql DSN testing, and DSN-less connection
+  strings.
 ---
 
 # About MariaDB Connector/ODBC
