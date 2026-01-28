@@ -1,3 +1,9 @@
+---
+description: >-
+  Complete MariaDB Connector/J guide for Java. Complete JDBC driver reference
+  for connections, prepared statements, and transactions for production use.
+---
+
 # About MariaDB Connector/J Guide
 
 ## What is MariaDB Connector/J?
@@ -23,7 +29,7 @@ MariaDB Connector/J releases older than 1.2.0 may be compatible with server vers
 To determine which MariaDB Connector/J release series would be best to use for each Java version, please see the following table:
 
 | Java Version(s)                            | Recommended MariaDB Connector/J Release Series                                | JDBC Version |
-| ------------------------------------------ | ----------------------------------------------------------------------------- |--------------|
+| ------------------------------------------ | ----------------------------------------------------------------------------- | ------------ |
 | Java 25, Java 21, Java 17, Java 11, Java 8 | MariaDB Connector/J 3.5, 3.4, 3.3\[[1](about-mariadb-connector-j.md#_note-0)] | JDBC 4.5     |
 | Java 17, Java 11, Java 8                   | MariaDB Connector/J 2.7                                                       | JDBC 4.2     |
 
@@ -306,7 +312,7 @@ more information on [Using TLS/SSL with MariaDB java connector](using-tls-ssl-wi
 
 #### **fallbackToSystemKeyStore**
 
-* Description: keystoreXXX options are used to permit mutual authentication. When keystore option is not specified, this setting determines the connector's behavior: if set to false, not using any keystore; if set to true, the connector will follow standard Java convention and use the trust store defined by the "javax.net.ssl.trustStore" system property. 
+* Description: keystoreXXX options are used to permit mutual authentication. When keystore option is not specified, this setting determines the connector's behavior: if set to false, not using any keystore; if set to true, the connector will follow standard Java convention and use the trust store defined by the "javax.net.ssl.trustStore" system property.
 * Data Type: `boolean`
 * Default Value: `false`
 * Introduced: 3.3.2
@@ -317,7 +323,6 @@ more information on [Using TLS/SSL with MariaDB java connector](using-tls-ssl-wi
 * Data Type: `boolean`
 * Default Value: `false`
 * Introduced: 3.3.2
-
 
 #### **disableSslHostnameVerification**
 

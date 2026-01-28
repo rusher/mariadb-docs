@@ -1,3 +1,9 @@
+---
+description: >-
+  Complete About MariaDB Connector/ODBC guide for MariaDB. Complete resource for
+  installation, configuration, query execution, and integration.
+---
+
 # About MariaDB Connector/ODBC
 
 [Download MariaDB Connector/ODBC](https://mariadb.com/downloads/#connectors)
