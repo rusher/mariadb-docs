@@ -118,7 +118,7 @@ The [S3](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-eng
 * Server crashes when [MariaDB Enterprise Audit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin) is active and audit log file rotation is triggered. (MENT-1207)
 * Server crashes while executing query with a CTE that is used at least twice and that references an embedded recursive CTE. ([MDEV-26108](https://jira.mariadb.org/browse/MDEV-26108))
 * Possible crash with transactions having changes for tables with no primary key to apply in parallel, when using MariaDB Enterprise Cluster. ([MDEV-25551](https://jira.mariadb.org/browse/MDEV-25551))
-* Server crashes when executing [CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-table) to create a [Spider](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/spider) table with a `COMMENT` value that does not contain embedded double quotes. ([MDEV-26139](https://jira.mariadb.org/browse/MDEV-26139))
+* Server crashes when executing [CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/tables/create-table) to create a [Spider](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/spider) table with a `COMMENT` value that does not contain embedded double quotes. ([MDEV-26139](https://jira.mariadb.org/browse/MDEV-26139))
 * Server crashes when a client connects during shutdown. ([MDEV-18353](https://jira.mariadb.org/browse/MDEV-18353))
 * Server crashes while concurrently executing [DROP TRIGGER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-trigger). ([MDEV-25651](https://jira.mariadb.org/browse/MDEV-25651))
 * Server hangs on Windows when [mariadb-upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/deployment-tools/mariadb-upgrade) is executed and then the server is stopped. (MENT-1300)
@@ -128,7 +128,7 @@ The [S3](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-eng
 
 ### Can result in unexpected behavior
 
-* When [CREATE OR REPLACE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-table) fails after dropping the table, the `DROP TABLE` operation is not written into the binary log. ([MDEV-25595](https://jira.mariadb.org/browse/MDEV-25595))
+* When [CREATE OR REPLACE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/tables/create-table) fails after dropping the table, the `DROP TABLE` operation is not written into the binary log. ([MDEV-25595](https://jira.mariadb.org/browse/MDEV-25595))
 * The [SHOW GRANTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-grants) statement does not quote role names properly for `DEFAULT ROLE`. ([MDEV-26080](https://jira.mariadb.org/browse/MDEV-26080))
 * The [innochecksum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/administrative-tools/innochecksum) utility reports errors for freed pages. ([MDEV-25361](https://jira.mariadb.org/browse/MDEV-25361))
 * When an unknown column is referenced in the `WHERE` clause of a recursive CTE, the query sometimes succeeds instead of failing with an [ER\_BAD\_FIELD\_ERROR](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-5/broken-reference/README.md). ([MDEV-26189](https://jira.mariadb.org/browse/MDEV-26189))

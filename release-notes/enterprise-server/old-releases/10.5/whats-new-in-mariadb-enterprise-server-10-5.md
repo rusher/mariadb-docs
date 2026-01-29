@@ -92,7 +92,7 @@ MariaDB Enterprise Server 10.5 includes many significant improvements to the [In
   * It reduces semaphore contention in several areas to help the system perform better under high concurrency:
   * It reduces semaphore contention when accessing the buffer pool.
   * It removes the ability to configure multiple buffer pool instances, since it does not reduce contention.
-  * It reduces semaphore contention when executing [DROP TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-table) statements.
+  * It reduces semaphore contention when executing [DROP TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/tables/drop-table) statements.
   * It uses table metadata locks instead of internal InnoDB semaphores for certain background operations.
   * It adds instrumentation that informs the server's thread pool about semaphore waits, so that the thread pool can let other client connections perform work while a client connection is waiting on a semaphore.
 * It improves performance in several areas:
@@ -911,7 +911,7 @@ MariaDB Enterprise Server 10.5 improves support for [Temporal Data Tables](https
 
 MariaDB Enterprise Server 10.5 improves SQL functionality in several areas:
 
-* It changes the behavior of the [DROP TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-table) statement to forcefully drop the table, even if the storage engine can't find the table.
+* It changes the behavior of the [DROP TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/tables/drop-table) statement to forcefully drop the table, even if the storage engine can't find the table.
 * It changes the behavior of the [ANALYZE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/table-statements/analyze-table) statement, so that it no longer flushes the table definition cache, so that it performs better under concurrency.
 * It changes the behavior of the [ANALYZE](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/ANALYZE/README.md) statement to SHOW the time spent checking the WHERE clause.
 * It adds support for [INSERT ... RETURNING](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/insert) statements.
@@ -927,13 +927,13 @@ MariaDB Enterprise Server 10.5 improves SQL functionality in several areas:
 * It adds support for the `VISIBLE` option in index definitions, which can be needed to import dumps from MySQL.
 * It adds support for the `WITHOUT OVERLAP` option in index definitions that are defined for [application-time period tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/temporal-tables/application-time-periods).
 * It adds support for the `STARTS` option for system-versioned tables that are partitioned on an interval of `SYSTEM_TIME`.
-* It adds support for the [JSON\_ARRAYAGG()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/special-functions/json-functions/json_arrayagg) function.
-* It adds support for the [JSON\_OBJECTAGG()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/special-functions/json-functions/json_objectagg) function.
+* It adds support for the [JSON\_ARRAYAGG()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/aggregate-functions/json_arrayagg) function.
+* It adds support for the [JSON\_OBJECTAGG()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/aggregate-functions/json_objectagg) function.
 * It adds support for the `RELEASE_ALL_LOCKS()` function.
 * It adds support for the [OVERLAPS()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/geometry-constructors/geometry-relations/overlaps) function.
 * It adds support for a new Data Type API, so that plugins can define custom data types.
 * It adds support for the [INET6](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/inet6) data type, which can be used to represent IPv4 and IPv6 addresses.
-* It changes the way that [TIMESTAMP](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/date-and-time-data-types/timestamp), [DATETIME](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/date-and-time-data-types/datetime), and [TIME](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/date-and-time-data-types/time) columns that use the pre-[MariaDB 10.0](../../../community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) format are displayed in the output of [SHOW CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-create-table) and [DESCRIBE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/describe) and in the value of the [information\_schema.COLUMNS.COLUMN\_TYPE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema) column. Columns using the older format will have a comment that says `/* mariadb-5.3 */`.
+* It changes the way that [TIMESTAMP](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/date-and-time-data-types/timestamp), [DATETIME](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/date-and-time-data-types/datetime), and [TIME](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/date-and-time-data-types/time) columns that use the pre-[MariaDB 10.0](../../../community-server/old-releases/10.0/changes-improvements-in-mariadb-10-0.md) format are displayed in the output of [SHOW CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-create-table) and [DESCRIBE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/describe) and in the value of the [information\_schema.COLUMNS.COLUMN\_TYPE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema) column. Columns using the older format will have a comment that says `/* mariadb-5.3 */`.
 
 ## Security
 

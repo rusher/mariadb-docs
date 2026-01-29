@@ -33,7 +33,7 @@ MariaDB Enterprise Server 10.4.18-11 was released on 2021-03-15.
 
 ### Can result in a hang or crash
 
-* Possible segfault on [CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-table) with explicit `FTS_DOC_ID_INDEX` using multiple fields. ([MDEV-24403](https://jira.mariadb.org/browse/MDEV-24403))
+* Possible segfault on [CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/tables/create-table) with explicit `FTS_DOC_ID_INDEX` using multiple fields. ([MDEV-24403](https://jira.mariadb.org/browse/MDEV-24403))
 * Server crashes upon attempt to update view through second execution of a stored procedure. ([MDEV-16940](https://jira.mariadb.org/browse/MDEV-16940))
 * [CREATE-VIEWCREATE VIEW](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/views/create-view) containing [WITH](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/common-table-expressions/with) clause can crash. ([MDEV-22781](https://jira.mariadb.org/browse/MDEV-22781))
 * Possible crash for a query using recursive CTE without having a default schema defined. ([MDEV-24019](https://jira.mariadb.org/browse/MDEV-24019))

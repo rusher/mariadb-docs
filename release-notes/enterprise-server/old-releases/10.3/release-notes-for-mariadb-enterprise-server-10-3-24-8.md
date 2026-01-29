@@ -14,7 +14,7 @@ MariaDB Enterprise Server 10.3.24-8 was released on 2020-09-08.
 
 * Limit [innodb\_encryption\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_encryption_threads) to 255 ([MDEV-22258](https://jira.mariadb.org/browse/MDEV-22258))
 * Minimum value of [max\_sort\_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#max_sort_length) raised to 8 (previously 4), so fixed-size data types like [DOUBLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/double) and [BIGINT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/bigint) are not truncated for lower values of [max\_sort\_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#max_sort_length). ([MDEV-22715](https://jira.mariadb.org/browse/MDEV-22715))
-* Backport from MariaDB Server 10.5.4 improvements to [DROP TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-table) for InnoDB. (MENT-636)
+* Backport from MariaDB Server 10.5.4 improvements to [DROP TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/tables/drop-table) for InnoDB. (MENT-636)
 * Backport option [tls\_version](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#tls_version) from MariaDB Server 10.4. (MENT-581)
 
 ## Issues Fixed
@@ -40,7 +40,7 @@ MariaDB Enterprise Server 10.3.24-8 was released on 2020-09-08.
 * Crash with Prepared Statement with a ? parameter inside a re-used CTE. ([MDEV-22779](https://jira.mariadb.org/browse/MDEV-22779))
 * MariaDB could crash after changing the `query_cache` size. ([MDEV-5924](https://jira.mariadb.org/browse/MDEV-5924))
 * Crash in `CREATE TABLE AS SELECT` when the precision of the returning type `= 0` ([MDEV-22502](https://jira.mariadb.org/browse/MDEV-22502))
-* [ENUM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/enum) or [SET](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/set-commands/set) in a [CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-table) statement, which has a `0x00` byte in one of the values, could crash the server. ([MDEV-22111](https://jira.mariadb.org/browse/MDEV-22111))
+* [ENUM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/enum) or [SET](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/set-commands/set) in a [CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/tables/create-table) statement, which has a `0x00` byte in one of the values, could crash the server. ([MDEV-22111](https://jira.mariadb.org/browse/MDEV-22111))
 * [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) recovery can block server startup. (MENT-915)
 
 ### Can result in unexpected behavior

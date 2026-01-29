@@ -71,7 +71,7 @@ This release of MariaDB Enterprise Server includes features backported from Mari
 
 ### Can result in unexpected behavior
 
-* When [CREATE OR REPLACE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-table) fails after dropping the table, the `DROP TABLE` operation is not written into the binary log. ([MDEV-25595](https://jira.mariadb.org/browse/MDEV-25595))
+* When [CREATE OR REPLACE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/tables/create-table) fails after dropping the table, the `DROP TABLE` operation is not written into the binary log. ([MDEV-25595](https://jira.mariadb.org/browse/MDEV-25595))
 * The [SHOW GRANTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-grants) statement does not quote role names properly for the `DEFAULT ROLE`. ([MDEV-26080](https://jira.mariadb.org/browse/MDEV-26080))
 * The [innochecksum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/administrative-tools/innochecksum) utility reports errors for freed pages. ([MDEV-25361](https://jira.mariadb.org/browse/MDEV-25361))
 * When an unknown column is referenced in the `WHERE` clause of a recursive CTE, the query sometimes succeeds instead of failing with an [ER\_BAD\_FIELD\_ERROR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/error-codes/mariadb-error-codes-1000-to-1099/e1054). ([MDEV-26189](https://jira.mariadb.org/browse/MDEV-26189))

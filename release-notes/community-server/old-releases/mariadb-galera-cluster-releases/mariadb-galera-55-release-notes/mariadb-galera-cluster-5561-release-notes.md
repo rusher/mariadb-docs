@@ -7,7 +7,7 @@ The most recent [MariaDB Galera Cluster 5.5](https://github.com/mariadb-corporat
 **Release date:** 3 Aug 2018
 
 MariaDB Galera Cluster 5.5.61 is a [_**Stable**_](../../../about/release-criteria.md) (GA)\
-release. It is a merge of [MariaDB 5.5.61](../../release-notes-mariadb-5-5-series/mariadb-5561-release-notes.md) and [Galera Cluster](https://codership.com/content/using-galera-cluster) with\
+release. It is a merge of [MariaDB 5.5.61](../../5.5/5.5.61.md) and [Galera Cluster](https://codership.com/content/using-galera-cluster) with\
 additional bug fixes.
 
 Various articles about MariaDB Galera Cluster, including [known limitations](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/mariadb-galera-cluster-known-limitations) and [how to get started](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/installation-and-deployment/getting-started-with-mariadb-galera-cluster) are\
@@ -27,7 +27,7 @@ available in the [**Galera**](https://github.com/mariadb-corporation/docs-releas
   * [CVE-2018-3058](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-3058)
   * [CVE-2018-3066](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-3066)
 
-See the [MariaDB 5.5.61 Release Notes](../../release-notes-mariadb-5-5-series/mariadb-5561-release-notes.md) for more\
+See the [MariaDB 5.5.61 Release Notes](../../5.5/5.5.61.md) for more\
 information on fixes in this version.
 
 ## Changelog
