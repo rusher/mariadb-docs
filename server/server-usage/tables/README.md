@@ -51,8 +51,8 @@ This guide explains various methods for copying tables between MariaDB databases
 
 {% columns %}
 {% column %}
-{% content-ref url="/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/ayjSQDm8lYIOpCT55s9x" %}
-[Broken link](/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/ayjSQDm8lYIOpCT55s9x)
+{% content-ref url="../../reference/sql-statements/data-definition/alter/alter-table/" %}
+[alter-table](../../reference/sql-statements/data-definition/alter/alter-table/)
 {% endcontent-ref %}
 
 
@@ -65,8 +65,8 @@ Complete `ALTER TABLE` guide for MariaDB. Complete syntax for modifying columns,
 
 {% columns %}
 {% column %}
-{% content-ref url="/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/H0wupcZWb57cM51PWVwD" %}
-[Broken link](/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/H0wupcZWb57cM51PWVwD)
+{% content-ref url="../../reference/sql-statements/data-definition/create/create-table.md" %}
+[create-table.md](../../reference/sql-statements/data-definition/create/create-table.md)
 {% endcontent-ref %}
 
 
@@ -79,8 +79,8 @@ Complete guide to creating tables in MariaDB. Complete `CREATE TABLE` syntax for
 
 {% columns %}
 {% column %}
-{% content-ref url="/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/yLiYJmE9JH6c5bQ2QOTp" %}
-[Broken link](/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/yLiYJmE9JH6c5bQ2QOTp)
+{% content-ref url="../../reference/sql-statements/data-definition/drop/drop-table.md" %}
+[drop-table.md](../../reference/sql-statements/data-definition/drop/drop-table.md)
 {% endcontent-ref %}
 
 
@@ -93,8 +93,8 @@ Complete `DROP TABLE` syntax: `TEMPORARY`, `IF EXISTS`, `WAIT/NOWAIT`, `RESTRICT
 
 {% columns %}
 {% column %}
-{% content-ref url="/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/ifA4oRo232vPEyEnTcJn" %}
-[Broken link](/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/ifA4oRo232vPEyEnTcJn)
+{% content-ref url="../../reference/data-types/" %}
+[data-types](../../reference/data-types/)
 {% endcontent-ref %}
 
 
@@ -135,8 +135,8 @@ Discover how to create and manage views in MariaDB to simplify complex queries, 
 
 {% columns %}
 {% column %}
-{% content-ref url="/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/up8NR9Js7RvKvzCkdJGd" %}
-[Broken link](/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/up8NR9Js7RvKvzCkdJGd)
+{% content-ref url="../storage-engines/" %}
+[storage-engines](../storage-engines/)
 {% endcontent-ref %}
 
 
