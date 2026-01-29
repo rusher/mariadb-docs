@@ -135,39 +135,131 @@ For environments sensitive to performance changes or requiring zero downtime, th
 {% step %}
 ### Introduce Replica
 
-Provision a new server with MariaDB Enterprise Server 11.4. Configure this server as a Replica of your existing 10.6 Primary server.
+Provision a new server with MariaDB Enterprise Server 11.4 and configure it as a Replica of your existing 10.6 Primary server.
+
+1. **Perform Backup on Primary (10.6)**: Use `mariadb-backup` to create a consistent, non-blocking physical backup.
+
+```bash
+# On the 10.6 Primary
+sudo mariadb-backup --backup \
+    --user=backup_user \
+    --password=backup_password \
+    --target-dir=/data/backup/preupgrade_backup
+```
+
+2. **Prepare the Backup**: Prepare the backup to ensure consistency (this can be done on the Primary or the Replica).
+
+```bash
+sudo mariadb-backup --prepare \
+    --target-dir=/data/backup/preupgrade_backup
+```
+
+3. **Restore on Replica (11.4)**: Transfer the backup to the new 11.4 server, stop the service, and restore.
+
+```bash
+# On the 11.4 Replica
+sudo systemctl stop mariadb
+
+# Ensure datadir is empty
+sudo rm -rf /var/lib/mysql/*
+
+# Restore backup
+sudo mariadb-backup --copy-back \
+    --target-dir=/data/backup/preupgrade_backup
+
+# Fix permissions
+sudo chown -R mysql:mysql /var/lib/mysql
+```
+
+4. **Start and Configure Replication:** Start the 11.4 server and configure it to replicate from the 10.6 Primary.
+
+```bash
+sudo systemctl start mariadb
+```
+
+Log in to the 11.4 Replica and enable replication. (Note: Ensure `server_id` is unique in `my.cnf`).
+
+```sql
+-- On the 11.4 Replica
+-- Set the GTID position (found in the xtrabackup_binlog_info file from the backup)
+SET GLOBAL gtid_slave_pos = '0-1-12345'; -- Replace with your actual GTID
+
+CHANGE MASTER TO
+    MASTER_HOST='10.6._primary_ip',
+    MASTER_USER='replication_user',
+    MASTER_PASSWORD='replication_password',
+    MASTER_USE_GTID=slave_pos;
+
+START SLAVE;
+```
+{% endstep %}
+
+{% step %}
+#### Validate and Compare (Recommended)
+
+To proactively catch performance regressions caused by the optimizer rewrite, use MaxScale with the Diff Router(Enterprise feature).
+
+1. Configure MaxScale Ensure your MaxScale `maxscale.cnf` defines both the existing service (routing to 10.6) and the new 11.4 server definition.
+2. Create the Diff Service Use `maxctrl` to create a "Diff" service that compares the output of your existing production server against the new 11.4 replica.
+
+{% code overflow="wrap" %}
+```bash
+# Syntax: maxctrl call command diff create <NewDiffServiceName> <ExistingService> <ReferenceServer> <TargetServer>
+
+maxctrl call command diff create DiffService ReadWriteService Primary10.6 Replica11.4
+```
+{% endcode %}
+
+3\. Analyze Results MaxScale will generate JSON reports in its log directory (e.g., `/var/lib/maxscale/diff/`). Analyze these files to identify queries that return different results or have significantly higher latency on the 11.4 server.
+{% endstep %}
+
+{% step %}
+#### Shift Read Traffic
+
+Gradually migrate read-only traffic to the 11.4 replica.
+
+Update MaxScale Routing If using MaxScale, you can adjust the server weights or maintenance modes to direct read traffic.
+
+```bash
+# Put the 10.6 replicas into maintenance mode or lower their weight
+maxctrl set server Primary10.6 maintenance
+```
 
 {% hint style="info" %}
-_See "Backward Replication Compatibility" in Part 3 for requirements._
+Alternatively, update your application connection strings to point to the 11.4 Replica's IP for reporting modules.
 {% endhint %}
 {% endstep %}
 
 {% step %}
-### Validate and Compare (Recommended)
+#### Promote to Primary
 
-To identify potential performance regressions caused by the optimizer rewrite:
+Once the 11.4 replica has been validated under load, promote it to be the Primary node.
 
-1. Deploy a MaxScale server (or use an existing instance) configured with the Diff Router (an Enterprise feature).
-2. Route traffic to both the existing 10.6 replicas and the new 11.4 replica simultaneously.
-3. Generate reports comparing the query results and execution times. Flag and investigate any queries that are notably slower on 11.4.
+1. Stop Replication on 11.4 Replica
+
+```sql
+-- On the 11.4 Replica
+STOP SLAVE;
+RESET SLAVE ALL;
+```
+
+2. Enable Writes on 11.4 New Primary
+
+```sql
+SET GLOBAL read_only=0;
+```
+
+3. Direct Traffic Update MaxScale or your application configuration to point to the new 11.4 Primary.
 {% endstep %}
 
 {% step %}
-### Shift Read Traffic
+#### Shift Application Traffic
 
-Once validated, gradually move read-only traffic and reporting workloads to the 11.4 replica. Monitor the server for stability and performance.
-{% endstep %}
+Direct your application traffic to the new 11.4 Primary. Ensure you perform a `mariadb-upgrade` on the new Primary if it hasn't been run yet (though `mariadb-backup` restore usually preserves the old system tables, running upgrade is a safety step to ensure system tables are fully compatible with 11.4).
 
-{% step %}
-### Promote to Primary
-
-After verifying the stability of the 11.4 replica under load, schedule a maintenance window to promote the 11.4 server to be the Primary.
-{% endstep %}
-
-{% step %}
-### Shift Application Traffic
-
-Move the remaining application traffic to the new 11.4 Primary.
+```bash
+sudo mariadb-upgrade
+```
 {% endstep %}
 {% endstepper %}
 
