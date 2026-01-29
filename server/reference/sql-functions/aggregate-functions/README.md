@@ -9,8 +9,8 @@ description: >-
 
 {% columns %}
 {% column %}
-{% content-ref url="/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/7OzYtaOKMdsJ7aXR9DHU" %}
-[Broken link](/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/7OzYtaOKMdsJ7aXR9DHU)
+{% content-ref url="../../../server-usage/stored-routines/stored-functions/stored-aggregate-functions.md" %}
+[stored-aggregate-functions.md](../../../server-usage/stored-routines/stored-functions/stored-aggregate-functions.md)
 {% endcontent-ref %}
 
 
@@ -121,8 +121,8 @@ Complete `GROUP_CONCAT` reference for MariaDB. Complete function guide with synt
 
 {% columns %}
 {% column %}
-{% content-ref url="/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/bU1rea0dLs7nGHafcZJV" %}
-[Broken link](/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/bU1rea0dLs7nGHafcZJV)
+{% content-ref url="../special-functions/json-functions/json_arrayagg.md" %}
+[json\_arrayagg.md](../special-functions/json-functions/json_arrayagg.md)
 {% endcontent-ref %}
 
 
@@ -135,8 +135,8 @@ Aggregate values into a JSON array. This function aggregates a result set column
 
 {% columns %}
 {% column %}
-{% content-ref url="/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/PIEiJD6L9TM0iundFfPq" %}
-[Broken link](/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/PIEiJD6L9TM0iundFfPq)
+{% content-ref url="../special-functions/json-functions/json_objectagg.md" %}
+[json\_objectagg.md](../special-functions/json-functions/json_objectagg.md)
 {% endcontent-ref %}
 
 
