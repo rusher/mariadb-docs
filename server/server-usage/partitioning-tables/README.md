@@ -51,8 +51,8 @@ Discover administrative tasks for managing partitions, such as adding, dropping,
 
 {% columns %}
 {% column %}
-{% content-ref url="/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/KP44ybZw9g2yKOcElKEH" %}
-[Broken link](/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/KP44ybZw9g2yKOcElKEH)
+{% content-ref url="partitioning-types/partitioning-types-overview.md" %}
+[partitioning-types-overview.md](partitioning-types/partitioning-types-overview.md)
 {% endcontent-ref %}
 
 
