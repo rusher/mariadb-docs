@@ -73,7 +73,7 @@ and you will not be able to create partitions.
 
 It is possible to create a new partitioned table using [CREATE TABLE](../../reference/sql-statements/data-definition/create/create-table.md).
 
-[ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/) allows one to:
+[ALTER TABLE](<../../reference/sql-statements/data-definition/alter/alter-table/README (1).md>) allows one to:
 
 * Partition an existing table;
 * Remove partitions from a partitioned table (with all data in the partition);
@@ -125,7 +125,7 @@ You can work around this by using REORGANIZE PARTITION to split the partition in
 COALESCE PARTITION number
 ```
 
-[ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/) is used to reduce the number of `HASH` or `KEY` partitions by the specified number. For example, given the following table with 5 partitions:
+[ALTER TABLE](<../../reference/sql-statements/data-definition/alter/alter-table/README (1).md>) is used to reduce the number of `HASH` or `KEY` partitions by the specified number. For example, given the following table with 5 partitions:
 
 ```sql
 CREATE OR REPLACE TABLE t1 (v1 INT)
@@ -150,7 +150,7 @@ CONVERT PARTITION partition_name TO TABLE tbl_name
 CONVERT TABLE normal_table TO partition_definition
 ```
 
-[ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/) can be used to convert partitions in an existing table to a standalone table:
+[ALTER TABLE](<../../reference/sql-statements/data-definition/alter/alter-table/README (1).md>) can be used to convert partitions in an existing table to a standalone table:
 
 ```sql
 CREATE OR REPLACE TABLE t1 (
@@ -257,7 +257,7 @@ CONVERT TABLE normal_table TO partition_definition [{WITH | WITHOUT} VALIDATION]
 
 `WITH VALIDATION` will result in the validation being performed, and is the default behaviour.
 
-An alternative to convert partitions to tables is to use [ALTER TABLE EXCHANGE PARTITION](../../reference/sql-statements/data-definition/alter/alter-table/#exchange-partition). This requires having to manually do the following steps:
+An alternative to convert partitions to tables is to use [ALTER TABLE EXCHANGE PARTITION](<../../reference/sql-statements/data-definition/alter/alter-table/README (1).md#exchange-partition>). This requires having to manually do the following steps:
 
 1. Create an empty table with the same structure as the partition.
 2. Exchange the table with the partition.
@@ -374,7 +374,7 @@ CREATE TABLE: CREATE TABLE `t1` (
 DROP PARTITION [IF EXISTS] partition_names
 ```
 
-[ALTER TABLE DROP PARTITION ](../../reference/sql-statements/data-definition/alter/alter-table/#drop-partition)can be used to drop specific partitions (and discard all data within the specified partitions) for [RANGE](partitioning-types/range-partitioning-type.md) and [LIST](partitioning-types/list-partitioning-type.md) partitions. It cannot be used on [HASH](partitioning-types/hash-partitioning-type.md) or [KEY](partitioning-types/key-partitioning-type.md) partitions. To rather remove all partitioning, while leaving the data unaffected, see [Removing Partitioning](partitioning-overview.md#removing-partitioning).
+[ALTER TABLE DROP PARTITION ](<../../reference/sql-statements/data-definition/alter/alter-table/README (1).md#drop-partition>)can be used to drop specific partitions (and discard all data within the specified partitions) for [RANGE](partitioning-types/range-partitioning-type.md) and [LIST](partitioning-types/list-partitioning-type.md) partitions. It cannot be used on [HASH](partitioning-types/hash-partitioning-type.md) or [KEY](partitioning-types/key-partitioning-type.md) partitions. To rather remove all partitioning, while leaving the data unaffected, see [Removing Partitioning](partitioning-overview.md#removing-partitioning).
 
 ```sql
 CREATE OR REPLACE TABLE t1 (
@@ -536,7 +536,7 @@ Query OK, 0 rows affected (0.048 sec)
 REMOVE PARTITIONING
 ```
 
-[ALTER TABLE REMOVE PARTITIONING](../../reference/sql-statements/data-definition/alter/alter-table/#remove-partitioning) removes all partitioning from the table, while leaving the data unaffected. To rather drop a particular partition (and discard all of its data), see [Dropping Partitions](partitioning-overview.md#dropping-partitions).
+[ALTER TABLE REMOVE PARTITIONING](<../../reference/sql-statements/data-definition/alter/alter-table/README (1).md#remove-partitioning>) removes all partitioning from the table, while leaving the data unaffected. To rather drop a particular partition (and discard all of its data), see [Dropping Partitions](partitioning-overview.md#dropping-partitions).
 
 ```sql
 ALTER TABLE t1 REMOVE PARTITIONING;
@@ -645,7 +645,7 @@ ALTER TABLE t1 REORGANIZE PARTITION p3 INTO (
 
 ### Renaming Partitions
 
-The [ALTER TABLE REORGANIZE PARTITION](../../reference/sql-statements/data-definition/alter/alter-table/#reorganize-partition) statement can also be used for renaming partitions. Note that this creates a copy of the partition:
+The [ALTER TABLE REORGANIZE PARTITION](<../../reference/sql-statements/data-definition/alter/alter-table/README (1).md#reorganize-partition>) statement can also be used for renaming partitions. Note that this creates a copy of the partition:
 
 ```sql
 CREATE OR REPLACE TABLE t1 (
@@ -673,7 +673,7 @@ TRUNCATE PARTITION partition_names
 
 `[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) ... TRUNCATE PARTITION`
 
-[ALTER TABLE TRUNCATE PARTITION](../../reference/sql-statements/data-definition/alter/alter-table/#truncate-partition) removes all data from the specified partition/s, leaving the table and partition structure unchanged. Partitions don't need to be contiguous:
+[ALTER TABLE TRUNCATE PARTITION](<../../reference/sql-statements/data-definition/alter/alter-table/README (1).md#truncate-partition>) removes all data from the specified partition/s, leaving the table and partition structure unchanged. Partitions don't need to be contiguous:
 
 ```sql
 CREATE OR REPLACE TABLE t1 (
@@ -810,7 +810,7 @@ See also: [Using CONNECT - Partitioning and Sharding](../storage-engines/connect
 
 ## See Also
 
-* [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/)
+* [ALTER TABLE](<../../reference/sql-statements/data-definition/alter/alter-table/README (1).md>)
 * [INFORMATION\_SCHEMA.PARTITIONS](../../reference/system-tables/information-schema/information-schema-tables/information-schema-partitions-table.md) contains information about existing partitions.
 * [Partition Maintenance](partition-maintenance.md) for suggestions on using partitions
 

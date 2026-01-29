@@ -14,7 +14,7 @@ Ignored indexes are indexes that are visible and maintained, but which are not u
 
 ## Syntax
 
-By default, an index is not ignored. One can mark existing index as ignored (or not ignored) with an [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table/) statement:
+By default, an index is not ignored. One can mark existing index as ignored (or not ignored) with an [ALTER TABLE](<../../../reference/sql-statements/data-definition/alter/alter-table/README (1).md>) statement:
 
 ```sql
 ALTER TABLE table_name ALTER {KEY|INDEX} [IF EXISTS] key_name [NOT] IGNORED;

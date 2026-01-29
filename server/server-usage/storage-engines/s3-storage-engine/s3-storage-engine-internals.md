@@ -16,11 +16,11 @@ The S3 engine uses it's own page cache, modified to be able to handle reading bl
 
 ## ALTER TABLE
 
-[ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table/) will first create a local table in the normal Aria on disk format and then move both index and data to S3 in buckets of `S3_BLOCK_SIZE`. The .frm file is also copied to S3 for discovery to support discovery for other MariaDB servers. You can also use `ALTER TABLE` to change the structure of an S3 table.
+[ALTER TABLE](<../../../reference/sql-statements/data-definition/alter/alter-table/README (1).md>) will first create a local table in the normal Aria on disk format and then move both index and data to S3 in buckets of `S3_BLOCK_SIZE`. The .frm file is also copied to S3 for discovery to support discovery for other MariaDB servers. You can also use `ALTER TABLE` to change the structure of an S3 table.
 
 ## Partitioning Tables
 
-S3 tables can also be used with [Partitioning tables](../../partitioning-tables/). All [ALTER PARTITION](../../../reference/sql-statements/data-definition/alter/alter-table/) operations are supported except:
+S3 tables can also be used with [Partitioning tables](../../partitioning-tables/). All [ALTER PARTITION](<../../../reference/sql-statements/data-definition/alter/alter-table/README (1).md>) operations are supported except:
 
 * `REBUILD PARTITION`
 * `TRUNCATE PARTITION`

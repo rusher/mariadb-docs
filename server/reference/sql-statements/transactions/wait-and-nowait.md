@@ -30,7 +30,7 @@ The lock wait timeout can be explicitly set in the statement by using either `WA
 ## See Also
 
 * [Query Limits and Timeouts](../../../ha-and-performance/optimization-and-tuning/query-optimizations/query-limits-and-timeouts.md)
-* [ALTER TABLE](../data-definition/alter/alter-table/)
+* [ALTER TABLE](<../data-definition/alter/alter-table/README (1).md>)
 * [CREATE INDEX](../data-definition/create/create-index.md)
 * [DROP INDEX](../data-definition/drop/drop-index.md)
 * [DROP TABLE](../data-definition/drop/drop-table.md)

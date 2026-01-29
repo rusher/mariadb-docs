@@ -39,7 +39,7 @@ By default, `OPTIMIZE TABLE` statements are written to the [binary log](../../..
 can use`[ALTER TABLE](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) ... OPTIMIZE PARTITION`\
 to optimize one or more partitions.
 
-You can use `OPTIMIZE TABLE` to reclaim the unused space and to defragment the data file. With other storage engines, `OPTIMIZE TABLE` does nothing by default, and returns this message: " The storage engine for the table doesn't support optimize". However, if the server has been started with the `--skip-new` option, `OPTIMIZE TABLE` is linked to [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table/), and recreates the table. This operation frees the unused space and updates index statistics.
+You can use `OPTIMIZE TABLE` to reclaim the unused space and to defragment the data file. With other storage engines, `OPTIMIZE TABLE` does nothing by default, and returns this message: " The storage engine for the table doesn't support optimize". However, if the server has been started with the `--skip-new` option, `OPTIMIZE TABLE` is linked to [ALTER TABLE](<../../../reference/sql-statements/data-definition/alter/alter-table/README (1).md>), and recreates the table. This operation frees the unused space and updates index statistics.
 
 The [Aria](../../../server-usage/storage-engines/aria/) storage engine supports [progress reporting](/broken/spaces/WCInJQ9cmGjq1lsTG91E/pages/KgSCnuNXCMSK6rHfTpO5) for this statement.
 

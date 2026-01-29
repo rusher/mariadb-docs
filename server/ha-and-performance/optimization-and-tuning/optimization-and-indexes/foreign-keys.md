@@ -27,7 +27,7 @@ CREATE TABLE b(for_key INT REFERENCES a(not_key));
 
 MariaDB applies the constraint if possible. See the [Examples](foreign-keys.md#references) below.
 
-Foreign keys are created with [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table/). The foreign key definition has this syntax:
+Foreign keys are created with [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](<../../../reference/sql-statements/data-definition/alter/alter-table/README (1).md>). The foreign key definition has this syntax:
 
 ```sql
 [CONSTRAINT [symbol]] FOREIGN KEY

@@ -65,12 +65,12 @@ To get data back to a 'normal' table, you can do:
 ALTER TABLE s3_table ENGINE=INNODB
 ```
 
-## New Options for [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table/)
+## New Options for [ALTER TABLE](<../../../reference/sql-statements/data-definition/alter/alter-table/README (1).md>)
 
 * `S3_BLOCK_SIZE` : Set to 4M as default. This is the block size for all index and data pages stored in S3.
 * `COMPRESSION_ALGORITHM` : Set to 'none' as default. Which compression algorithm to use for block stored in S3. Options are: `none` or `zlib`.
 
-[ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table/) can be used on S3 tables as normal to add columns or change column definitions.
+[ALTER TABLE](<../../../reference/sql-statements/data-definition/alter/alter-table/README (1).md>) can be used on S3 tables as normal to add columns or change column definitions.
 
 ## mariadbd Startup Options for S3
 
@@ -174,7 +174,7 @@ The main benefit of storing things in an S3 compatible storage is that the cost 
 
 ## Operations Allowed on S3 Tables
 
-* [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table/) S3 supports all types, keys and other options that are supported by the [Aria](../aria/aria-storage-engine.md) engine. One can also perform [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table/) on an S3 table to add or modify columns etc.
+* [ALTER TABLE](<../../../reference/sql-statements/data-definition/alter/alter-table/README (1).md>) S3 supports all types, keys and other options that are supported by the [Aria](../aria/aria-storage-engine.md) engine. One can also perform [ALTER TABLE](<../../../reference/sql-statements/data-definition/alter/alter-table/README (1).md>) on an S3 table to add or modify columns etc.
 * [DROP TABLE](../../../reference/sql-statements/data-definition/drop/drop-table.md)
 * [SELECT](../../../reference/sql-statements/data-manipulation/selecting-data/select.md) Any SELECT operations you can perform on a normal table should work with an S3 table.
 * [SHOW TABLES](../../../reference/sql-statements/administrative-sql-statements/show/show-tables.md) will show all tables that exist in the current defined S3 location.
@@ -231,9 +231,9 @@ it is very unlikely that they can become corrupted. The only known way an S3 tab
 * [mysql-test-run](../../../clients-and-utilities/testing-tools/mariadb-test/) doesn't by default test the S3 engine as we can't embed AWS keys into mysql-test-run.
 * Replicas should not access S3 tables while they are ALTERed! This is because there is no locking implemented to S3 between servers. However, after a table (either the original S3 table or the partitioned S3 table) is changed on the primary, the replica will notice this on the next access and update its local definition.
 
-### Limitations in [ALTER .. PARTITION](../../../reference/sql-statements/data-definition/alter/alter-table/)
+### Limitations in [ALTER .. PARTITION](<../../../reference/sql-statements/data-definition/alter/alter-table/README (1).md>)
 
-All [ALTER PARTITION](../../../reference/sql-statements/data-definition/alter/alter-table/) operations are supported on S3 partitioning tables except:
+All [ALTER PARTITION](<../../../reference/sql-statements/data-definition/alter/alter-table/README (1).md>) operations are supported on S3 partitioning tables except:
 
 * REBUILD PARTITION
 * TRUNCATE PARTITION

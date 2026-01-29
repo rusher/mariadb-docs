@@ -40,7 +40,7 @@ To remove the encryption of those tables,
 
 * Set the `aria_encrypt_tables` variable to `OFF`;
 * Leave the configuration for the encryption keys in place (otherwise, you cannot decrypt tables!);
-* Run the following [ALTER TABLE](../../../../../reference/sql-statements/data-definition/alter/alter-table/) statement for each encrypted table.
+* Run the following [ALTER TABLE](<../../../../../reference/sql-statements/data-definition/alter/alter-table/README (1).md>) statement for each encrypted table.
 
 ```sql
 ALTER TABLE test.aria_table ENGINE = Aria ROW_FORMAT = PAGE;

@@ -22,7 +22,7 @@ Examples are available in the MariaDB Server source code, at `mysql-test/suite/p
 
 ### Adding and Removing Time Periods
 
-The [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table/) statement now supports syntax for adding and removing time periods from a table. To add a period, use the `ADD PERIOD` clause:
+The [ALTER TABLE](<../../sql-statements/data-definition/alter/alter-table/README (1).md>) statement now supports syntax for adding and removing time periods from a table. To add a period, use the `ADD PERIOD` clause:
 
 ```sql
 CREATE OR REPLACE TABLE rooms (
@@ -185,7 +185,7 @@ The `UPDATE FOR PORTION` statement has the following limitations:
 This clause is available from MariaDB 10.5.3.
 {% endhint %}
 
- `WITHOUT OVERLAPS` allows to create an index specifying that application time periods should not overlap. An index constrained by `WITHOUT OVERLAPS` is required to be either a primary key or a unique index.
+`WITHOUT OVERLAPS` allows to create an index specifying that application time periods should not overlap. An index constrained by `WITHOUT OVERLAPS` is required to be either a primary key or a unique index.
 
 Take the following example, an application time period table for a booking system:
 

@@ -34,7 +34,7 @@ CREATE TABLE `Employees` (
 );
 ```
 
-You cannot create a primary key with the [CREATE INDEX](../../reference/sql-statements/data-definition/create/create-index.md) command. If you do want to add one after the table has already been created, use [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/), for example:
+You cannot create a primary key with the [CREATE INDEX](../../reference/sql-statements/data-definition/create/create-index.md) command. If you do want to add one after the table has already been created, use [ALTER TABLE](<../../reference/sql-statements/data-definition/alter/alter-table/README (1).md>), for example:
 
 ```sql
 ALTER TABLE Employees ADD PRIMARY KEY(ID);
@@ -81,7 +81,7 @@ CREATE TABLE `Employees` (
 );
 ```
 
-Unique keys can also be added after the table is created with the [CREATE INDEX](../../reference/sql-statements/data-definition/create/create-index.md) command, or with the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/) command, for example:
+Unique keys can also be added after the table is created with the [CREATE INDEX](../../reference/sql-statements/data-definition/create/create-index.md) command, or with the [ALTER TABLE](<../../reference/sql-statements/data-definition/alter/alter-table/README (1).md>) command, for example:
 
 ```sql
 ALTER TABLE Employees ADD UNIQUE `EmpCode`(`Employee_Code`);

@@ -56,7 +56,7 @@ Used to create a new table, which is where your data is actually stored.
 
 {% columns %}
 {% column %}
-[**ALTER TABLE**](../reference/sql-statements/data-definition/alter/alter-table/)
+[**ALTER TABLE**](<../reference/sql-statements/data-definition/alter/alter-table/README (1).md>)
 {% endcolumn %}
 
 {% column %}

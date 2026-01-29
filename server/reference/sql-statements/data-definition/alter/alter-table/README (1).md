@@ -127,7 +127,7 @@ Executing the `ALTER TABLE` statement generally requires at least the [ALTER](..
 
 ## Online DDL
 
-Online DDL is supported with the [ALGORITHM](./#algorithm) and [LOCK](./#lock) clauses.
+Online DDL is supported with the [ALGORITHM](<README (1).md#algorithm>) and [LOCK](<README (1).md#lock>) clauses.
 
 See [InnoDB Online DDL Overview](../../../../../server-usage/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-overview.md) for more information on online DDL with [InnoDB](../../../../../server-usage/storage-engines/innodb/).
 
@@ -147,7 +147,7 @@ This statement is equivalent to the following:
 ALTER TABLE ... LOCK=NONE;
 ````
 
-See the [LOCK](./#lock) alter specification for more information.
+See the [LOCK](<README (1).md#lock>) alter specification for more information.
 
 ## WAIT/NOWAIT
 
@@ -240,7 +240,7 @@ ALTER TABLE x DROP COLUMN a;
 
 The reason is that dropping column `a` would result in the new constraint that all values in column `b` be unique. In order to drop the column, an explicit `DROP PRIMARY KEY` and `ADD PRIMARY KEY` would be required.
 
-MariaDB supports instant DROP COLUMN. DROP COLUMN of an indexed column would imply [DROP INDEX](../../drop/drop-index.md) (and in the case of a non-UNIQUE multi-column index, possibly ADD INDEX). These will not be allowed with [ALGORITHM=INSTANT](./#algorithm), but unlike prior versions, they can be allowed with [ALGORITHM=NOCOPY](./#algorithm)
+MariaDB supports instant DROP COLUMN. DROP COLUMN of an indexed column would imply [DROP INDEX](../../drop/drop-index.md) (and in the case of a non-UNIQUE multi-column index, possibly ADD INDEX). These will not be allowed with [ALGORITHM=INSTANT](<README (1).md#algorithm>), but unlike prior versions, they can be allowed with [ALGORITHM=NOCOPY](<README (1).md#algorithm>)
 
 `RESTRICT` and `CASCADE` are allowed to make porting from other database systems easier. In MariaDB, they do nothing.
 
@@ -388,7 +388,7 @@ ADD CONSTRAINT is_balanced
     CHECK((debit_amount + credit_amount) = 0);
 ```
 
-The `constraint_name` is optional. If you don't provide one in the `ALTER TABLE` statement, MariaDB auto-generates a name for you. This is done so that you can remove it later using [DROP CONSTRAINT](./#drop-constraint) clause.
+The `constraint_name` is optional. If you don't provide one in the `ALTER TABLE` statement, MariaDB auto-generates a name for you. This is done so that you can remove it later using [DROP CONSTRAINT](<README (1).md#drop-constraint>) clause.
 
 You can disable all constraint expression checks by setting the variable [check\_constraint\_checks](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#check_constraint_checks) to `OFF`. You may find this useful when loading a table that violates some constraints that you want to later find and fix in SQL.
 
@@ -418,7 +418,7 @@ ALTER TABLE table_name
 DROP CONSTRAINT constraint_name;
 ```
 
-When you add a constraint to a table, whether through a [CREATE TABLE](../../create/create-table.md#constraint-expressions) or [ALTER TABLE...ADD CONSTRAINT](./#add-constraint) statement, you can either set a `constraint_name` yourself, or allow MariaDB to auto-generate one for you. To view constraints on a table, query [information\_schema.TABLE\_CONSTRAINTS](../../../../system-tables/information-schema/information-schema-tables/information-schema-table_constraints-table.md). For instance,
+When you add a constraint to a table, whether through a [CREATE TABLE](../../create/create-table.md#constraint-expressions) or [ALTER TABLE...ADD CONSTRAINT](<README (1).md#add-constraint>) statement, you can either set a `constraint_name` yourself, or allow MariaDB to auto-generate one for you. To view constraints on a table, query [information\_schema.TABLE\_CONSTRAINTS](../../../../system-tables/information-schema/information-schema-tables/information-schema-table_constraints-table.md). For instance,
 
 ```sql
 CREATE TABLE t (
@@ -638,7 +638,7 @@ This algorithm is very inefficient, but it is generic, so it works for all stora
 
 If `ALGORITHM=COPY` is specified, then the copy algorithm will be used even if it is not necessary. This can result in a lengthy table copy. If multiple [ALTER TABLE](<README (1).md>) operations are required that each require the table to be rebuilt, then it is best to specify all operations in a single [ALTER TABLE](<README (1).md>) statement, so that the table is only rebuilt once.
 
-\{% tabs %\} \{% tab title="Current" %\} `ALTER TABLE` can perform most operations with `ALGORITHM=COPY`, `LOCK=NONE`. See [LOCK=NONE](./#none). \{% endtab %\}
+\{% tabs %\} \{% tab title="Current" %\} `ALTER TABLE` can perform most operations with `ALGORITHM=COPY`, `LOCK=NONE`. See [LOCK=NONE](<README (1).md#none>). \{% endtab %\}
 
 \{% tab title="< 11.2" %\} `ALTER TABLE` cannot perform operations with `ALGORITHM=COPY`, `LOCK=NONE`. \{% endtab %\} \{% endtabs %\}
 
@@ -698,7 +698,7 @@ Different storage engines support different locking strategies for different ope
 
 If the `LOCK` clause is not explicitly set, then the operation uses `LOCK=DEFAULT`.
 
-[ALTER ONLINE TABLE](./#alter-online-table) is equivalent to `LOCK=NONE`. Therefore, the [ALTER ONLINE TABLE](./#alter-online-table) statement can be used to ensure that your `ALTER TABLE` operation allows all concurrent DML.
+[ALTER ONLINE TABLE](<README (1).md#alter-online-table>) is equivalent to `LOCK=NONE`. Therefore, the [ALTER ONLINE TABLE](<README (1).md#alter-online-table>) statement can be used to ensure that your `ALTER TABLE` operation allows all concurrent DML.
 
 See [InnoDB Online DDL Overview: LOCK](../../../../../server-usage/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-overview.md#supported-alter-locking-strategies) for information on how the `LOCK` clause affects InnoDB.
 
@@ -717,7 +717,7 @@ Stage: 1 of 2 'copy to tmp table'    46% of stage
 
 The progress report is also shown in the output of the [SHOW PROCESSLIST](../../../administrative-sql-statements/show/show-processlist.md) statement and in the contents of the [information\_schema.PROCESSLIST](../../../../system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) table.
 
-See [Progress Reporting](./#progress-reporting) for more information.
+See [Progress Reporting](<README (1).md#progress-reporting>) for more information.
 
 ## Aborting ALTER TABLE Operations
 

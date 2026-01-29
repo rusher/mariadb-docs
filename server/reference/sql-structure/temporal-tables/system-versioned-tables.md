@@ -47,7 +47,7 @@ SELECT x, ROW_START, ROW_END FROM t;
 
 ### Adding or Removing System Versioning To/From a Table
 
-An existing table can be [altered](../../sql-statements/data-definition/alter/alter-table/) to enable system versioning for it.
+An existing table can be [altered](<../../sql-statements/data-definition/alter/alter-table/README (1).md>) to enable system versioning for it.
 
 ```sql
 CREATE TABLE t(
@@ -580,7 +580,7 @@ A number of system variables are related to system-versioned tables:
 
 #### system\_versioning\_alter\_history
 
-* Description: SQL:2011 does not allow [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table/) on system-versioned tables. When this variable is set to `ERROR`, an attempt to alter a system-versioned table will result in an error. When this variable is set to `KEEP`, `ALTER TABLE` will be allowed, but the history will become incorrect — querying historical data will show the new table structure. This mode is still useful, for example, when adding new columns to a table. Note that if historical data contains or would contain nulls, attempting to `ALTER` these columns to be `NOT NULL` will return an error (or warning if [strict\_mode](../../../server-management/variables-and-modes/sql_mode.md#strict-mode) is not set).
+* Description: SQL:2011 does not allow [ALTER TABLE](<../../sql-statements/data-definition/alter/alter-table/README (1).md>) on system-versioned tables. When this variable is set to `ERROR`, an attempt to alter a system-versioned table will result in an error. When this variable is set to `KEEP`, `ALTER TABLE` will be allowed, but the history will become incorrect — querying historical data will show the new table structure. This mode is still useful, for example, when adding new columns to a table. Note that if historical data contains or would contain nulls, attempting to `ALTER` these columns to be `NOT NULL` will return an error (or warning if [strict\_mode](../../../server-management/variables-and-modes/sql_mode.md#strict-mode) is not set).
 * Command line: `--system-versioning-alter-history=value`
 * Scope: Global, Session
 * Dynamic: Yes

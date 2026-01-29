@@ -51,8 +51,8 @@ This guide explains various methods for copying tables between MariaDB databases
 
 {% columns %}
 {% column %}
-{% content-ref url="../../reference/sql-statements/data-definition/alter/alter-table/" %}
-[alter-table](../../reference/sql-statements/data-definition/alter/alter-table/)
+{% content-ref url="../../reference/sql-statements/data-definition/alter/alter-table/README (1).md" %}
+[README (1).md](<../../reference/sql-statements/data-definition/alter/alter-table/README (1).md>)
 {% endcontent-ref %}
 
 

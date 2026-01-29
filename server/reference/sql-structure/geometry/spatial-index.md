@@ -23,7 +23,7 @@ exact-value lookups, but not for range scans.
 
 For more information on indexing spatial columns, see [CREATE INDEX](../../sql-statements/data-definition/create/create-index.md).
 
-To drop spatial indexes, use [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table/) or [DROP INDEX](../../sql-statements/data-definition/drop/drop-index.md):
+To drop spatial indexes, use [ALTER TABLE](<../../sql-statements/data-definition/alter/alter-table/README (1).md>) or [DROP INDEX](../../sql-statements/data-definition/drop/drop-index.md):
 
 ```sql
 ALTER TABLE geom DROP INDEX g;
