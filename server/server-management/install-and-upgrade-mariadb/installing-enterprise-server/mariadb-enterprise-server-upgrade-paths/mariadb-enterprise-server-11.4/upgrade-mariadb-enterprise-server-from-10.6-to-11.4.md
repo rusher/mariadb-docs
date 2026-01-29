@@ -7,6 +7,21 @@ This guide provides two strategies:
 1. Standard In-Place Upgrade: The direct procedure for upgrading an existing node.
 2. Staged Rollout (Recommended for Mission-Critical Systems): A low-risk approach using replication and validation.
 
+```mermaid
+%%{init: {'theme': 'neutral'} }%%
+mindmap
+  root((**Upgrade Path**<br/>MariaDB 10.6 to 11.4))
+    (**Strategy 1: Standard**<br/>In-Place Upgrade)
+      1. Preparation<br/>(Backup & Repo Config)
+      2. Software Swap<br/>(Uninstall 10.6 -> Install 11.4)
+      3. Configuration<br/>(Remove incompatible variables)
+      4. Finalization<br/>(Run mariadb-upgrade)
+    (**Strategy 2: Mission-Critical**<br/>Staged Rollout)
+      1. Introduction<br/>(Add 11.4 Replica)
+      2. Validation<br/>(Test with MaxScale Diff Router)
+      3. Cutover<br/>(Promote 11.4 to Primary)
+```
+
 Prerequisite: [Review What's New in MariaDB Enterprise Server 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/enterprise-server/about/mariadb-enterprise-server-differences/differences-in-mariadb-enterprise-server-11.4).
 
 ## Part 1: Standard In-Place Upgrade Process
