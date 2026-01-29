@@ -22,7 +22,7 @@ Examples are available in the MariaDB Server source code, at `mysql-test/suite/p
 
 ### Adding and Removing Time Periods
 
-The [ALTER TABLE](<../../sql-statements/data-definition/alter/alter-table/README (1).md>) statement now supports syntax for adding and removing time periods from a table. To add a period, use the `ADD PERIOD` clause:
+The [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table/) statement now supports syntax for adding and removing time periods from a table. To add a period, use the `ADD PERIOD` clause:
 
 ```sql
 CREATE OR REPLACE TABLE rooms (

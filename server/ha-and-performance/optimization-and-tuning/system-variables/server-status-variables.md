@@ -189,7 +189,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Com_alter_table`
 
-* Description: Number of [ALTER TABLE](<../../../reference/sql-statements/data-definition/alter/alter-table/README (1).md>) commands executed.
+* Description: Number of [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table/) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 

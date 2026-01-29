@@ -226,7 +226,7 @@ See [Server System Variables](../../../ha-and-performance/optimization-and-tunin
 
 #### `aria_sort_buffer_size`
 
-* Description: The buffer that is allocated when sorting the index when doing a [REPAIR](../../../reference/sql-statements/table-statements/repair-table.md) or when creating indexes with [CREATE INDEX](../../../reference/sql-statements/data-definition/create/create-index.md) or [ALTER TABLE](<../../../reference/sql-statements/data-definition/alter/alter-table/README (1).md>).
+* Description: The buffer that is allocated when sorting the index when doing a [REPAIR](../../../reference/sql-statements/table-statements/repair-table.md) or when creating indexes with [CREATE INDEX](../../../reference/sql-statements/data-definition/create/create-index.md) or [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table/).
 * Command line: `--aria-sort-buffer-size=#`
 * Scope: Global, Session
 * Dynamic: Yes

@@ -7,7 +7,7 @@ description: >-
 
 # CONSTRAINT
 
-MariaDB supports constraints at table level, using [CREATE TABLE](create/create-table.md) or [ALTER TABLE](<alter/alter-table/README (1).md>) statements.
+MariaDB supports constraints at table level, using [CREATE TABLE](create/create-table.md) or [ALTER TABLE](alter/alter-table/) statements.
 
 ## Syntax
 
@@ -162,7 +162,7 @@ Before a row is inserted or updated, all constraints are evaluated in the order 
 CREATE TABLE t1 (a INT CHECK (a>2), b INT CHECK (b>2), CONSTRAINT a_greater CHECK (a>b));
 ```
 
-If you use the `CONSTRAINT [constraint_name] CHECK (expression)` format and don't give a name to the constraint, the constraint gets an automatically generated name. This is done so that you can later delete it with [ALTER TABLE DROP _constraint_](<alter/alter-table/README (1).md>).
+If you use the `CONSTRAINT [constraint_name] CHECK (expression)` format and don't give a name to the constraint, the constraint gets an automatically generated name. This is done so that you can later delete it with [ALTER TABLE DROP _constraint_](alter/alter-table/).
 
 You can disable all constraint expression checks by setting the [check\_constraint\_checks](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#check_constraint_checks) variable to `OFF`. This is useful for example when loading a table that violates some constraints that you want to later find and fix in SQL.
 

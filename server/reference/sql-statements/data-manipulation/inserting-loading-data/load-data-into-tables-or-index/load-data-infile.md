@@ -125,7 +125,7 @@ Using [mariadb-import](../../../../../clients-and-utilities/backup-restore-and-i
 
 ### Indexing
 
-In cases where the storage engine supports [ALTER TABLE... DISABLE KEYS](<../../../data-definition/alter/alter-table/README (1).md#enable-disable-keys>) statements ([MyISAM](../../../../../server-usage/storage-engines/myisam-storage-engine/) and [Aria](../../../../../server-usage/storage-engines/aria/)), the `LOAD DATA INFILE` statement automatically disables indexes during the execution.
+In cases where the storage engine supports [ALTER TABLE... DISABLE KEYS](../../../data-definition/alter/alter-table/#enable-disable-keys) statements ([MyISAM](../../../../../server-usage/storage-engines/myisam-storage-engine/) and [Aria](../../../../../server-usage/storage-engines/aria/)), the `LOAD DATA INFILE` statement automatically disables indexes during the execution.
 
 ## Examples
 

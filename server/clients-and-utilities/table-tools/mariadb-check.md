@@ -169,7 +169,7 @@ Using one `--verbose` option will give you more information about what mariadb-c
 
 Using two `--verbose` options will also give you connection information.
 
-If you use three `--verbose` options you will also get, on stdout, all [ALTER](<../../reference/sql-statements/data-definition/alter/alter-table/README (1).md>), [RENAME](../../reference/sql-statements/data-definition/rename-table.md), and [CHECK](../../server-usage/storage-engines/myrocks/myrocks-and-check-table.md) commands that mariadb-check executes.
+If you use three `--verbose` options you will also get, on stdout, all [ALTER](../../reference/sql-statements/data-definition/alter/alter-table/), [RENAME](../../reference/sql-statements/data-definition/rename-table.md), and [CHECK](../../server-usage/storage-engines/myrocks/myrocks-and-check-table.md) commands that mariadb-check executes.
 
 #### Sequence storage engine
 

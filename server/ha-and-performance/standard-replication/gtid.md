@@ -221,7 +221,7 @@ such as InnoDB. When MariaDB is first installed (or upgraded to 10.0.2+) the\
 table is created using the default storage engine - which itself defaults to\
 InnoDB. If there is a need to change the storage engine for this table (to\
 make it transactional on a system configured with [MyISAM](../../server-usage/storage-engines/myisam-storage-engine/) as the default\
-storage engine, for example), use [ALTER TABLE](<../../reference/sql-statements/data-definition/alter/alter-table/README (1).md>):
+storage engine, for example), use [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/):
 
 `ALTER TABLE mysql.gtid_slave_pos ENGINE = InnoDB`
 

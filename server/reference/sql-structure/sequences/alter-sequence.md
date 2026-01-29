@@ -76,7 +76,7 @@ SHOW CREATE SEQUENCE s1;
 
 `ALTER SEQUENCE` will take a full table lock of the sequence object during its (brief) operation. This ensures that `ALTER SEQUENCE` is replicated correctly. If you only want to set the next sequence value to a higher value than current, then you should use [SETVAL()](sequence-functions/setval.md) instead, as this is not blocking.
 
-If you want to change the storage engine or sequence comment, or rename the sequence, you can use [ALTER TABLE](<../../sql-statements/data-definition/alter/alter-table/README (1).md>) for this.
+If you want to change the storage engine or sequence comment, or rename the sequence, you can use [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table/) for this.
 
 ### See Also
 
@@ -87,7 +87,7 @@ If you want to change the storage engine or sequence comment, or rename the sequ
 * [PREVIOUS VALUE FOR](sequence-functions/previous-value-for-sequence_name.md)
 * [SETVAL()](sequence-functions/setval.md). Set next value for the sequence.
 * [AUTO INCREMENT](../../data-types/auto_increment.md)
-* [ALTER TABLE](<../../sql-statements/data-definition/alter/alter-table/README (1).md>)
+* [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table/)
 * [Information Schema SEQUENCES Table](../../system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

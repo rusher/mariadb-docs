@@ -94,7 +94,7 @@ You may also find rows committed since the scan originally started.
 
 ### Other Limitations
 
-* If you do an [ALTER TABLE](<../../../sql-statements/data-definition/alter/alter-table/README (1).md>), all your `HANDLER`s for that table are automatically closed.
+* If you do an [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table/), all your `HANDLER`s for that table are automatically closed.
 * If you do an `ALTER TABLE` for a table that is used by some other connection with `HANDLER`, the `ALTER TABLE` query waits for the `HANDLER` to be closed.
 * For `HASH` keys, you must use all key parts when searching for a row.
 * For `HASH` keys, you can't do a key scan of all values. You can only find all rows with the same key value.

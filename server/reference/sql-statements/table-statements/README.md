@@ -37,8 +37,8 @@ Access the reference for `ALTER` statements. This section lists commands to modi
 
 {% columns %}
 {% column %}
-{% content-ref url="../data-definition/alter/alter-table/README (1).md" %}
-[README (1).md](<../data-definition/alter/alter-table/README (1).md>)
+{% content-ref url="../data-definition/alter/alter-table/" %}
+[alter-table](../data-definition/alter/alter-table/)
 {% endcontent-ref %}
 
 

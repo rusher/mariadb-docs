@@ -37,7 +37,7 @@ It is recommended to make a [backup](../../server-usage/backup-and-restore/) of 
 In most cases, `mariadb-upgrade` should just take a few seconds. The main work of `mariadb-upgrade` is to:
 
 * Update the system tables in the `mysql` database to the latest version (normally just add new fields to a few tables).
-* Check that all tables are up to date (runs [CHECK TABLE table\_name FOR UPGRADE](../../reference/sql-statements/table-statements/check-table.md)). For tables that are not up to date, runs [ALTER TABLE table\_name FORCE](<../../reference/sql-statements/data-definition/alter/alter-table/README (1).md>) on the table to update it. A table is not up to date in the following cases:
+* Check that all tables are up to date (runs [CHECK TABLE table\_name FOR UPGRADE](../../reference/sql-statements/table-statements/check-table.md)). For tables that are not up to date, runs [ALTER TABLE table\_name FORCE](../../reference/sql-statements/data-definition/alter/alter-table/) on the table to update it. A table is not up to date in the following cases:
   * The table uses an index for which there has been a [collation](../../reference/data-types/string-data-types/character-sets/) change (rare).
   * A format change in the storage engine requires an update (very rare).
 
@@ -224,7 +224,7 @@ User for login if not current user.
 
 #### -v, --verbose
 
-Display more output about the process, using it twice will print connection arguments; using it 3 times will print out all [CHECK](../../reference/sql-statements/table-statements/check-table.md), [RENAME](../../reference/sql-statements/data-definition/rename-table.md) and [ALTER TABLE](<../../reference/sql-statements/data-definition/alter/alter-table/README (1).md>) commands used during the check phase; using it 4 times will also write out all [mariadb-check](../table-tools/mariadb-check.md) commands used.
+Display more output about the process, using it twice will print connection arguments; using it 3 times will print out all [CHECK](../../reference/sql-statements/table-statements/check-table.md), [RENAME](../../reference/sql-statements/data-definition/rename-table.md) and [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/) commands used during the check phase; using it 4 times will also write out all [mariadb-check](../table-tools/mariadb-check.md) commands used.
 
 #### -V, --version
 
@@ -277,7 +277,7 @@ The following options relate to how MariaDB command line tools handles option fi
 ## Differences Between mysql\_upgrade in MariaDB and MySQL
 
 * MariaDB converts long [table names](../../reference/sql-structure/sql-language-structure/identifier-names.md) properly.
-* MariaDB converts [InnoDB](../../server-usage/storage-engines/innodb/) tables (no need to do a dump/restore or [ALTER TABLE](<../../reference/sql-statements/data-definition/alter/alter-table/README (1).md>)).
+* MariaDB converts [InnoDB](../../server-usage/storage-engines/innodb/) tables (no need to do a dump/restore or [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/)).
 * MariaDB converts old archive tables to the new 5.1 format.
 * `mysql_upgrade --verbose` runs `mariadb-check --verbose`, so that you get more information of what is happening. Running with 3 times --verbose prints out all `CHECK`, `RENAME` and `ALTER TABLE` statements executed.
 * The [mysql.event table](../../reference/system-tables/the-mysql-database-tables/mysql-event-table.md) is upgraded live. There is no need to restart the server to use events if the event table has changed.

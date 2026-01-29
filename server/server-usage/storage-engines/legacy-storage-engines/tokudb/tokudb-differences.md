@@ -19,7 +19,7 @@ On this page we list all the known differences between the TokuDB from [Tokutek]
 
 ## Features missing in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 
-* No online [ALTER TABLE](<../../../../reference/sql-statements/data-definition/alter/alter-table/README (1).md>).
+* No online [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/).
   * All alter table that changes data or indexes requires a table copy.
 * No online [OPTIMIZE TABLE](../../../../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md).
 * No `INSERT NOAR` or `UPDATE NOAR` commands.
@@ -28,7 +28,7 @@ On this page we list all the known differences between the TokuDB from [Tokutek]
 
 ## Features missing in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
 
-[MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) (starting from 10.0.5) has online [ALTER TABLE](<../../../../reference/sql-statements/data-definition/alter/alter-table/README (1).md>). So the features missing are:
+[MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) (starting from 10.0.5) has online [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/). So the features missing are:
 
 * No `INSERT NOAR` or `UPDATE NOAR` commands.
   * We are working with Tokutek to improve this feature before adding it to MariaDB.

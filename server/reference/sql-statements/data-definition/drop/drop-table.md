@@ -83,7 +83,7 @@ Set the lock wait timeout. See [WAIT and NOWAIT](../../transactions/wait-and-now
 {% endtab %}
 
 {% tab title="< 10.6" %}
-if the [mariadbd process](../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) is killed during an [ALTER TABLE](<../alter/alter-table/README (1).md>), you may find a table named #sql-... in your data directory. These temporary tables will always be deleted automatically.
+if the [mariadbd process](../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) is killed during an [ALTER TABLE](../alter/alter-table/), you may find a table named #sql-... in your data directory. These temporary tables will always be deleted automatically.
 
 If you want to delete one of these tables explicitly you can do so by using the following syntax:
 
@@ -138,7 +138,7 @@ Beware that `DROP TABLE` can drop both tables and [sequences](../../../sql-struc
 ## See Also
 
 * [CREATE TABLE](../create/create-table.md)
-* [ALTER TABLE](<../alter/alter-table/README (1).md>)
+* [ALTER TABLE](../alter/alter-table/)
 * [SHOW CREATE TABLE](../../administrative-sql-statements/show/show-create-table.md)
 * [DROP SEQUENCE](../../../sql-structure/sequences/drop-sequence.md)
 * Variable [slave-ddl-exec-mode](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md).

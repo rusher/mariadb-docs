@@ -41,7 +41,7 @@ By default, `ANALYZE TABLE` statements are written to the [binary log](../../../
 {% endtab %}
 {% endtabs %}
 
-`ANALYZE TABLE` is also supported for partitioned tables. You can use [`ALTER TABLE`](<../data-definition/alter/alter-table/README (1).md#analyze-partition>) `... ANALYZE PARTITION` to analyze one or more partitions.
+`ANALYZE TABLE` is also supported for partitioned tables. You can use [`ALTER TABLE`](../data-definition/alter/alter-table/#analyze-partition) `... ANALYZE PARTITION` to analyze one or more partitions.
 
 The [Aria](../../../server-usage/storage-engines/aria/) storage engine supports [progress reporting](../administrative-sql-statements/show/show-processlist.md) for the `ANALYZE TABLE` statement.
 
