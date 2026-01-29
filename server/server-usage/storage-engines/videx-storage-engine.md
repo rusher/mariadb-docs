@@ -6,6 +6,10 @@ description: >-
 
 # VIDEX Storage Engine
 
+{% hint style="info" %}
+This storage engine is available from MariaDB 12.3.
+{% endhint %}
+
 This document explains how to install and use **VIDEX** with MariaDB, including:
 
 * Installing/enabling the **VIDEX plugin** in MariaDB.
@@ -67,8 +71,6 @@ mariadb -h<TARGET_HOST> -P<TARGET_PORT> -u<TARGET_USER> -p<TARGET_PASS> \
 
 ## Install and Enable the VIDEX Plugin
 
-### Verify the Engine
-
 Connect to your MariaDB instance and check whether the `VIDEX` engine is available:
 
 ```sql
@@ -76,28 +78,6 @@ SHOW ENGINES
 ```
 
 If you see a row for `VIDEX` with `SUPPORT` as `YES` or `DEFAULT`, the engine is available.
-
-### Build-Time Enablement
-
-If `VIDEX` is not present, build MariaDB with VIDEX enabled. The MariaDB server PR[^1] that introduces VIDEX is [here](https://github.com/MariaDB/server/pull/4217). Key dependencies and options are:
-
-* Dependencies:
-  * `libcurl` (HTTP client)
-  * `zlib` (compression)
-* CMake options:
-  * `-DPLUGIN_VIDEX=YES` (enable plugin)
-  * `-DPLUGIN_VIDEX=STATIC` (static)
-  * `-DPLUGIN_VIDEX=DYNAMIC` (dynamic)
-
-Example build configuration:
-
-```bash
-cmake -DPLUGIN_VIDEX=YES \
-      -DCMAKE_CXX_COMPILER=/usr/bin/clang++ \
-      -G Ninja --fresh \
-      -S /path/to/mariadb \
-      -B /path/to/build
-```
 
 ## Install and Run VIDEX-Server in Docker
 
@@ -297,5 +277,3 @@ Compare the output between Step 3 and Step 4.
 
 1. `videx-sync` can be time-consuming on large schemas, because it needs to collect metadata/statistics. The metadata collection method is extensible; the VIDEX source repository also discusses lighter-weight sampling approaches.
 2. Networking matters. Since `VIDEX-Server` is often in a container, `localhost/127.0.0.1` may not refer to what you expect. The routable IP is recommended for reachability, as it ensures that both _MariaDB-VIDEX_ and the container can reach it.
-
-[^1]: Pull Request (in GitHub)
