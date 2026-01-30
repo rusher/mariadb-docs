@@ -521,6 +521,7 @@
     * [Downgrading MariaDB](server-management/install-and-upgrade-mariadb/downgrading-between-major-versions-of-mariadb.md)
     * [Migrating to MariaDB](server-management/install-and-upgrade-mariadb/migrating-to-mariadb/README.md)
       * [Differences Between MariaDB and Other DBMSs](server-management/install-and-upgrade-mariadb/migrating-to-mariadb/differences-between-mariadb-and-other-dbmss.md)
+      * [DDL Export](server-management/install-and-upgrade-mariadb/migrating-to-mariadb/ddl-export.md)
       * [Migrating to MariaDB from MySQL](server-management/install-and-upgrade-mariadb/migrating-to-mariadb/moving-from-mysql/README.md)
         * [Upgrading from MySQL to MariaDB](server-management/install-and-upgrade-mariadb/migrating-to-mariadb/moving-from-mysql/upgrading-from-mysql-to-mariadb.md)
         * [Migration from MySQL Galera Cluster to MariaDB Galera Cluster using Replication](server-management/install-and-upgrade-mariadb/migrating-to-mariadb/moving-from-mysql/migration-from-mysql-to-mariadb-cluster-using-replication.md)
