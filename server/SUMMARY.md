@@ -1331,6 +1331,7 @@
         * [SET GLOBAL SQL\_SLAVE\_SKIP\_COUNTER](reference/sql-statements/administrative-sql-statements/replication-statements/set-global-sql_slave_skip_counter.md)
         * [SET NAMES](reference/data-types/string-data-types/character-sets/set-names.md)
         * [SET PASSWORD](reference/sql-statements/account-management-sql-statements/set-password.md)
+        * [SET PATH](reference/sql-statements/administrative-sql-statements/set-commands/set-path.md)
         * [SET SQL\_LOG\_BIN](reference/sql-statements/administrative-sql-statements/set-commands/set-sql_log_bin.md)
         * [SET ROLE](reference/sql-statements/account-management-sql-statements/set-role.md)
         * [SET STATEMENT](reference/sql-statements/administrative-sql-statements/set-commands/set-statement.md)
