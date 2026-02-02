@@ -18,7 +18,7 @@ This page covers DDL[^1] export instructions for several database management sys
 
 ## Oracle Database
 
-There are two basic ways of getting a schema from Oracle, with different features and advantages. The instructions here are based on **Oracle 11.2**. In old versions of Oracle, there was no `SCHEMAS` parameter, and instead only a single schema to export was specified with an `OWNER` parameter.
+There are two basic ways of getting a schema from Oracle, with different features and advantages. The instructions here are based on **Oracle 11.2**. In old versions of Oracle, there was no `SCHEMAS` parameter; instead, only a single schema to export was specified with an `OWNER` parameter.
 
 ### **Using Oracle Data Pump**
 
@@ -112,7 +112,7 @@ When done, run this script through the Oracle `SQL*Plus` utility. You can run th
 $ sqlplus -S app/app @exp.sql > schema.sql
 ```
 
-To export all schemas using this method, excluding known system schemas, here is a slightly different SQL script is used, `expall.sql`:
+To export all schemas using this method, excluding known system schemas, a slightly different SQL script is used, `expall.sql`:
 
 {% code expandable="true" %}
 ```plsql
@@ -168,9 +168,88 @@ $ sqlplus -S / as sysdba @expall.sql > schema.sql
 
 ## Microsoft SQL Server
 
+For most existing SQL server environments, admin work is done using the GUI tool SQL server Management Studio (SSMS). Use the generate scripts option in SSMS: See [this documentation](https://docs.microsoft.com/en-us/sql/ssms/scripting/generate-scripts-sql-server-management-studio?view=sql-server-ver15) for more details.
+
+Command-line options exist – the SQL server team released a Python-based tool called `mssql-scripter`. Examples of usage are in [this document](https://cloudblogs.microsoft.com/sqlserver/2017/05/17/try-new-sql-server-command-line-tools-to-generate-t-sql-scripts-and-monitor-dynamic-management-views/). Full `mssql-scripter` [usage options are listed here](https://github.com/microsoft/mssql-scripter/blob/dev/doc/usage_guide.md).
+
 ## MySQL
 
+Due to the similarities between MySQL and MariaDB, we are able to also assess server configurations. Due to this, there are two dump files uploaded.
+
+Use `mysqldump` with the connection information to back up your databases on the existing MySQL Server:
+
+```shellscript
+mysqldump --user db_user --password \
+--host localhost \
+--no-data \
+--events \
+--routines \
+--triggers \
+-r mydump.sql \
+--all-databases
+```
+
+You can also choose to export only select databases:
+
+```bash
+mysqldump --user user_db --password \
+--host localhost \
+--no-data \
+--events \
+--routines \
+--triggers \
+-r mydump.sql \
+--databases mydb1 mydb2 …
+```
+
+Optionally, you can upload your configuration variables to find differences between your MySQL and MariaDB server configurations. Run this command:
+
+{% code overflow="wrap" %}
+```bash
+mysql --user db_user --password --host localhost -e "SHOW GLOBAL VARIABLES;" > variables.log
+```
+{% endcode %}
+
 ## IBM DB2
+
+Log on to the DB2 server with a user that has `SELECT` privileges on the system catalog tables. In some specific cases, additional grants might be required, such as `SYSADM`, `SYSCTRL`, `SYSMAINT`, `SYSMON`, and `DBADM`. For our specific requirements, the `SELECT` privilege on system catalog tables suffices, though.
+
+{% hint style="info" %}
+In case of problems, request the DBA to export the schema DDL.
+{% endhint %}
+
+The following list gives examples of various extract options available when extracting DDL from a DB2 server.
+
+* Generate the DDL script for all the objects created by user `foo` in `world` database:
+  * `-d` defines the database/alias of the database that you want to extract.
+  * `-u` defines the user name you want to export objects of.
+  * `-e` is used to export all the possible objects including tables, stored procedures, aliases, triggers, etc.
+  * `-o ddl_export.sql` represents the output file.
+  * This is the complete command:\
+    `$ db2look -d world -u foo -e -o ddl_export.sql`&#x20;
+* Generate the DDL script for objects in a particular schema:
+  * `-d` defines the database/alias of the database that you want to extract.
+  * `-u` defines the user name we want to export objects of.
+  * `-z` defines the schema name.
+  * `-e` is used to export all the possible objects including tables, stored procedures, aliases, triggers, etc.
+  * `-o ddl_export.sql` represents the output file name.
+  * This is the complete command:\
+    `$ db2look -d world -u foo -z globe -e -o ddl_export.sql`&#x20;
+* Generate the DDL script of all the objects regardless of the user they are created with. This is the one most of the exports will be done with, for the sake of completion of the DDL script:
+  * `-d` defines the database/alias of the database that you want to extract.
+  * `-a` is used to extract objects for all users on the particular database.
+  * `-o ddl_export.sql` represents the output file name.
+  * `-e` is used to export all the possible objects including tables, stored procedures, aliases, triggers, etc.
+  * This is the complete command:\
+    `$ db2look -d world -a -e -o ddl_export.sql`
+
+The `db2look` command arguments mentioned before work for all DB2 versions starting from DB2 9.7 to 11.5, but for specifics details, refer to the following DB2 pages:
+
+* 9.7 - [db2look - DB2 statistics and DDL extraction tool command](https://www.ibm.com/support/knowledgecenter/SSEPGG_9.7.0/com.ibm.db2.luw.admin.cmd.doc/doc/r0002051.html)
+* 10.5 - [db2look - DB2 statistics and DDL extraction tool command](https://www.ibm.com/support/knowledgecenter/SSEPGG_10.5.0/com.ibm.db2.luw.admin.cmd.doc/doc/r0002051.html)
+* 11.5 - [db2look - Db2 statistics and DDL extraction tool command](https://www.ibm.com/support/knowledgecenter/SSEPGG_11.5.0/com.ibm.db2.luw.admin.cmd.doc/doc/r0002051.html)
+
+
 
 [^1]: **DDL (Data Definition Language)** is the part of SQL used to **define and change the structure of database objects**.
 
