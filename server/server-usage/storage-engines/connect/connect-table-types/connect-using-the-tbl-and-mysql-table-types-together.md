@@ -1,12 +1,8 @@
 ---
-description: The CONNECT storage engine has been deprecated.
+description: The CONNECT storage engine.
 ---
 
 # CONNECT - Using the TBL and MYSQL Table Types Together
-
-{% hint style="warning" %}
-This storage engine has been deprecated.
-{% endhint %}
 
 Used together, these types lift all the limitations of the [FEDERATED](../../legacy-storage-engines/federated-storage-engine.md) and [MERGE](../../merge.md) engines.
 
