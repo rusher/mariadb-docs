@@ -1,10 +1,10 @@
 # Google Summer of Code 2026
 
-In 2026, we are again participating in the [Google Summer of Code](https://summerofcode.withgoogle.com/). We, joined with the [MariaDB Foundation](https://www.mariadb.org), believe we are making a better database that remains application compatible with MySQL. We also work on making LGPL connectors (currently [C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c), [C++](https://mariadb.com/kb/en/mariadb-connector-c%2B%2B), [ODBC](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc), [Java](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j), [Node.js](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/nodejs-connector/README.md)) and on [MariaDB Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera/README.md), which allows you to scale your reads & writes. And we have [MariaDB ColumnStore](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/mariadb-columnstore/README.md), which is a columnar storage engine, designed to process petabytes of data with real-time response to analytical queries.
+In 2026, we are again participating in the [Google Summer of Code](https://summerofcode.withgoogle.com/). We, joined with the [MariaDB Foundation](https://www.mariadb.org), believe we are making a better database that remains application-compatible with MySQL. We also work on making LGPL connectors (currently [C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c), [C++](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-cpp), [ODBC](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc), [Java](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j), [Node.js](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs)) and on [MariaDB Galera Cluster](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/), which allows you to scale your reads & writes. And we have [MariaDB ColumnStore](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/mariadb-columnstore), which is a columnar storage engine, designed to process petabytes of data with real-time response to analytical queries.
 
 ## Where to Start
 
-Please join us on [Zulip](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/irc-chat-servers-and-zulip-instance/README.md) to mingle with the community. You should also subscribe to the [developers mailing list](https://lists.mariadb.org/postorius/lists/developers.lists.mariadb.org) (this is the main list where we discuss development - there are also [other mailing lists](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/community/contributing-participating/google-summers-of-code/broken-reference/README.md)).
+Please join us on [Zulip](https://mariadb.zulipchat.com/) to mingle with the community. You should also subscribe to the [developers mailing list](https://lists.mariadb.org/postorius/lists/developers.lists.mariadb.org) (this is the main list where we discuss development - there are also [other mailing lists](../../joining-the-community.md#mailing-lists)).
 
 To improve your chances of being accepted, it is a good idea to submit a pull request with a bug fix to the server.
 
@@ -47,7 +47,6 @@ This project is to implement this algorithm and benchmark it using ann-benchmark
 **Skills needed:** C++, Python\
 **Mentors:** Sergei Golubchik
 
-
 #### [MDEV-33411](https://jira.mariadb.org/browse/MDEV-33411) OPTIMIZE TABLE for graph indexes
 
 **Full-time project 350h**
@@ -57,17 +56,17 @@ Bulk insert into mHNSW index. There are various optimizations we can implement w
 **Skills needed:** C++\
 **Mentors:** Sergei Golubchik
 
-#### [MDEV-31342](https://jira.mariadb.org/browse/MDEV-31342) I_S optimization: avoid temp table
+#### [MDEV-31342](https://jira.mariadb.org/browse/MDEV-31342) I\_S optimization: avoid temp table
 
 **Part-time project 175h** or can be combined with MDEV-31535 for a Full-time project 350h
 
-Currently information_schema tables work like:
+Currently information\_schema tables work like:
 
-1. prepare information_schema table
-   - this creates a temporary table
-2. call the information_schema implementation code
-   - it sets values using `Field::store()` and calls `schema_table_store_record()` per row
-   - `schema_table_store_record()` uses `handler::ha_write_row()` to store the row in he temporary table
+1. prepare information\_schema table
+   * this creates a temporary table
+2. call the information\_schema implementation code
+   * it sets values using `Field::store()` and calls `schema_table_store_record()` per row
+   * `schema_table_store_record()` uses `handler::ha_write_row()` to store the row in he temporary table
 3. when the temporary table is filled with data, it's used in the query.
 
 For queries like `SELECT f1, f2, ... FROM INFORMATION_SCHEMA.tbl` the above adds a lot of overhead. The server can recognize that case, not create a temporary table in the step 1. And modify `schema_table_store_record()` to send results directly to the client.
@@ -75,13 +74,14 @@ For queries like `SELECT f1, f2, ... FROM INFORMATION_SCHEMA.tbl` the above adds
 **Skills needed:** C++\
 **Mentors:** Oleksandr Byelkin
 
-#### [MDEV-31535](https://jira.mariadb.org/browse/MDEV-31535) optimize directory listing for information_schema tables based on privileges
+#### [MDEV-31535](https://jira.mariadb.org/browse/MDEV-31535) optimize directory listing for information\_schema tables based on privileges
 
 **Part-time project 175h** or can be combined with MDEV-31342 for a Full-time project 350h
 
 Usually when `INFORMATION_SCHEMA.TABLES` (or any other table that is implemented via `get_all_tables()` function) is queried, it creates a list of all schemas first, then for every schema it creates a list of all files in that schema.
 
 In certain cases the above is optimized:
+
 * when a specific table is requested via `TABLE_SCHEMA=xxx AND TABLE_NAME=yyy` in the `WHERE` clase — in this case only that one table is opened
 * when a specific schema is requested via `TABLE_SCHEMA=xxx` — tables for only that schema are listed, the list of all schemas is not created
 * when privileges only allow access to certain schemas — the list of all schemas is created, but tables are listed only for those schemas that pass the privilege check
@@ -89,10 +89,11 @@ In certain cases the above is optimized:
 Note that in the last case the server still creates a list of all schemas. This can be expensive, if there're thousands of them and the privileges only allow access to one specific schema. It makes sense to treat this case as if the schema name was explicitly specified on the `WHERE` clause. Almost, because the user will also have access to the `INFORMATION_SCHEMA` itself, but it's already treated specially anyway.
 
 That is:
+
 * if the user does not have global grants that allow to see all schemas, then
 * for every schema-level (and table-level?) grant:
   * if the schema name is not a pattern (does not contain wildcards), directly append this schema name to the list, if the schema exists
-* append "INFORMATION_SCHEMA"
+* append "INFORMATION\_SCHEMA"
 
 if the above isn't true — fallback to the directory listing.
 
@@ -104,10 +105,12 @@ if the above isn't true — fallback to the directory listing.
 **Full-time project 350h**
 
 Add support for the syntax like
+
 ```sql
 CALL proc(param3 => 10, param5 => "foo");
 SELECT func(param2 => 3.1415);
 ```
+
 not explicitly mentioned parameters get their default values.
 
 **Skills needed:** C++\
@@ -133,12 +136,11 @@ Implement this syntax sugar in MariaDB for MySQL compatibility
 **Skills needed:** C++\
 **Mentors:** Rucha Deodhar
 
-
 #### [MDEV-38591](https://jira.mariadb.org/browse/MDEV-38591) MEMBER OF json operator
 
 **Part-time project 175h** or can be combined with MDEV-13594 for a Full-time project 350h
 
-Implement {{MEMBER OF}} operator for MySQL compatibility.
+Implement \{{MEMBER OF\}} operator for MySQL compatibility.
 
 **Skills needed:** C++\
 **Mentors:** Rucha Deodhar
