@@ -34,4 +34,5 @@ SELECT '{"a": 42}' IS JSON OBJECT;
 
 ## See Also
 
-* IS JSON
+* [IS JSON (Comparison Operator)](../../../sql-structure/operators/comparison-operators/is-json.md) for details, including syntax and examples.
+

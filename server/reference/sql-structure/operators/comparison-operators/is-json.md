@@ -160,7 +160,7 @@ SELECT '{"a": 42, "a":1}' IS JSON WITH UNIQUE KEYS;
 
 ## **See Also**
 
-* [IS Operator](https://mariadb.com/docs/server/reference/sql-structure/operators/comparison-operators/is)
-* JSON\_VALID()
-* JSON Data Type
-* JSON\_TYPE
+* [IS Operator](is.md)
+* [JSON\_VALID()](../../../sql-functions/special-functions/json-functions/json_valid.md)
+* [JSON Data Type](../../../data-types/string-data-types/json.md)
+* [JSON\_TYPE](../../../sql-functions/special-functions/json-functions/json_type.md)
