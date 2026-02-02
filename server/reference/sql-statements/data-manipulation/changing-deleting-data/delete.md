@@ -66,7 +66,7 @@ WITH [RECURSIVE] table_reference [(columns_list)] AS  (
 DELETE FROM non_cte_table expression
 ```
 
-* `non_cte_table` is a table not used in the CTE or CTEs (common table expression).
+* `non_cte_table` is a table not defined by a CTE (common table expression).
 * `expression` is a `WHERE` clause or a `USING`/`WHERE` clause.
 * Supporting CTEs with `DELETE` is an extension of the SQL standard, similar to how MySQL does it.
 * With `DELETE`, CTEs are read-only, like other derived tables – you cannot delete rows from tables in the CTE expression.

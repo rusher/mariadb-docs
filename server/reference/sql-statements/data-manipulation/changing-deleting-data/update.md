@@ -46,7 +46,7 @@ WITH [RECURSIVE] table_reference [(columns_list)] AS  (
 UPDATE non_cte_table expression
 ```
 
-* `non_cte_table` is a table not used in the CTE or CTEs (common table expression).
+* `non_cte_table` is a table not defined by a CTE (common table expression).
 * `expression` is a `WHERE` clause.
 * Supporting CTEs with `UPDATE` is an extension of the SQL standard, similar to how MySQL does it.
 * With `UPDATE`, CTEs are read-only, like other derived tables – you cannot update columns from tables in the CTE expression.
