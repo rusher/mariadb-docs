@@ -227,6 +227,31 @@ Example output showing the problem:
 
       Ensure this doesn't break other intended anonymous access, if any.
 
+## MariaDB Authentication Video <a href="#see-also" id="see-also"></a>
+
+{% columns %}
+{% column %}
+{% embed url="https://www.youtube.com/watch?v=aWFG4uLbimM" %}
+MariaDB authentication from MariaDB 10.4
+{% endembed %}
+{% endcolumn %}
+
+{% column %}
+In this video tutorial, the MariaDB team explains the fundamental changes to the security model introduced in version 10.4, specifically regarding how the `root` user and local connections are handled.
+
+#### Core Topics Covered:
+
+* The "No Password" Default: Explains why, in MariaDB 10.4 and later, the `root` user does not have a password by default on many Linux distributions.
+* Unix Socket Authentication: A walkthrough of the `unix_socket` plugin. This plugin allows the OS-level `root` user to log in to the MariaDB `root` account without a password, as security is verified by the operating system identity.
+* The `mysql.global_priv` table: Introduction of the new table that replaces the old `mysql.user` table for storing privileges, and how this change simplifies managing multiple authentication methods for a single user.
+* Switching Authentication Methods: Practical steps on how to move from socket-based authentication back to traditional password-based authentication (using the `mysql_native_password` plugin) if your environment requires it.
+
+#### Key Takeaway for Troubleshooting:
+
+If you are receiving an Access Denied error while trying to log in as `root` despite using a password you believe is correct, the video demonstrates that your server is likely expecting Unix Socket authentication. In this case, you should use `sudo mariadb` rather than `mariadb -u root -p`.
+{% endcolumn %}
+{% endcolumns %}
+
 ## See Also <a href="#see-also" id="see-also"></a>
 
 * [CREATE USER](../reference/sql-statements/account-management-sql-statements/create-user.md)
