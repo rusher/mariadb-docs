@@ -201,7 +201,7 @@ Starting with MariaDB 10.4, the default security model for Linux installations u
 {% hint style="warning" %}
 Do not use this as a permanent solution.
 
-Rather than that, use it as a one-off, to be able to connect to the MariaDB Server at all. Once logged in, create a proper user, like `'myuser'@'localhost'`, or even `'myadmin'@'localhost'`. Then, [grant](../reference/sql-statements/account-management-sql-statements/grant.md) the necessary privileges to that user. An administrative user, comparable to `root`, should have privileges to access every object in your database, but running this query:
+Rather than that, use it as a one-off, to be able to connect to the MariaDB Server at all. Once logged in, create a proper user, like `'myuser'@'localhost'`, or even `'myadmin'@'localhost'`. Then, [grant](../reference/sql-statements/account-management-sql-statements/grant.md) the necessary privileges to that user. An administrative user, comparable to `root`, should have privileges to access every object in your database, by running this query:
 
 `GRANT ALL ON *.* to 'myadmin'@'localhost' IDENTIFIED BY '(your_password)' WITH GRANT OPTION`
 
