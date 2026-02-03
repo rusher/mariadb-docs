@@ -182,6 +182,34 @@ You cannot connect to a running server because the root (or other administrative
       ```
   6. Stop the server, and restart it normally (without `--skip-grant-tables`).
 
+{% hint style="info" %}
+Before doing this, particularly if you cannot connect to a freshly installed MariaDB server, see if the next solution can solve your problem.
+{% endhint %}
+
+#### Quick Fix: Access Denied for 'root'@'localhost'?
+
+Starting with MariaDB 10.4, the default security model for Linux installations uses the `unix_socket` authentication plugin. This means the MariaDB `root` user is tied to your system's `root` user.
+
+* **The Problem:** If you try to connect using `mariadb -u root -p`, the server may reject you because it is looking for your operating system identity, not a password.
+*   **The Solution:** Instead of a password, use `sudo`:
+
+    ```bash
+    sudo mariadb
+    ```
+* **Why this works:** The server recognizes you have `sudo` (administrative) privileges on the machine and automatically logs you into the MariaDB `root` account without requiring a separate database password.
+
+{% hint style="warning" %}
+Do not use this as a permanent solution.
+
+Rather than that, use it as a one-off, to be able to connect to the MariaDB Server at all. Once logged in, create a proper user, like `'myuser'@'localhost'`, or even `'myadmin'@'localhost'`. Then, [grant](../reference/sql-statements/account-management-sql-statements/grant.md) the necessary privileges to that user. An administrative user, comparable to `root`, should have privileges to access every object in your database, but running this query:
+
+`GRANT ALL ON *.* to 'myadmin'@'localhost' IDENTIFIED BY '(your_password)' WITH GRANT OPTION`
+
+When done, log out, then log in again, using your newly created user. This is now possible without using the `sudo` workaround:
+
+`mariadb --user myadmin --password` (specify _your\_password_ when prompted)
+{% endhint %}
+
 ## `localhost` vs. `%` Wildcard Host Issues
 
 ### Symptoms
