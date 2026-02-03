@@ -2,7 +2,6 @@
 description: >-
   Learn how to export SQL DDL to MariaDB from database management systems like
   Oracle Database, Microsoft SQL Server, MySQL, and IBM DB2.
-hidden: true
 ---
 
 # DDL Export
