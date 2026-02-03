@@ -148,9 +148,15 @@ There are a number of system variables used for vectors. See [Vector System Vari
 
 MariaDB Vector is integrated in several frameworks, see [Vector Framework Integrations](vector-framework-integrations.md).
 
+{% embed url="https://www.youtube.com/shorts/VrG8H53KJZY" %}
+What exactly is a vector in AI and RAG (1 minute • 2026)
+{% endembed %}
+
 ## See Also
 
-* [Get to know MariaDB’s Rocket-Fast Native Vector Search - Sergei Golubchyk](https://www.youtube.com/watch?v=gNyzcy_6qJM) (video)
+* [Everything you need to know to start building apps with AI and RAG](https://youtu.be/ZlLV7rda9GY) (video • 40 minutes • 2026)
+* [What exactly is a vector in AI and RAG?](https://www.youtube.com/shorts/VrG8H53KJZY) (video • 1 minute • 2026)
+* [Get to know MariaDB’s Rocket-Fast Native Vector Search - Sergei Golubchyk](https://www.youtube.com/watch?v=gNyzcy_6qJM) (video • 37 minutes • 2025)
 * [MariaDB Vector, a new Open Source vector database that you are already familiar by Sergei Golubchik](https://www.youtube.com/watch?v=r9af4bvF7jI) (video)
 * [AI first applications with MariaDB Vector - Vicentiu Ciorbaru](https://www.youtube.com/watch?v=vp126N1QOws) (video)
 * [MariaDB Vector: A storage engine for LLMs - Kaj Arnö and Jonah Harris](https://www.youtube.com/watch?v=3y-yWoH-CF8) (video)
