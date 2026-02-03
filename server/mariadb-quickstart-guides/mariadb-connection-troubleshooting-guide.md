@@ -227,13 +227,13 @@ Example output showing the problem:
 
       Ensure this doesn't break other intended anonymous access, if any.
 
-#### See Also <a href="#see-also" id="see-also"></a>
+## See Also <a href="#see-also" id="see-also"></a>
 
-* [CREATE USER](https://mariadb.com/docs/server/reference/sql-statements/account-management-sql-statements/create-user)
-* [GRANT](https://mariadb.com/docs/server/reference/sql-statements/account-management-sql-statements/grant)
-* [Authentication](https://mariadb.com/docs/server/security/user-account-management/authentication-from-mariadb-10-4)
-* [Authentication from MariaDB 10 4 video tutorial](https://www.youtube.com/watch?v=aWFG4uLbimM)
-* [Error 1698: Access denied for user](https://mariadb.com/docs/server/reference/error-codes/mariadb-error-codes-1600-to-1699/e1698)
+* [CREATE USER](../reference/sql-statements/account-management-sql-statements/create-user.md)
+* [GRANT](../reference/sql-statements/account-management-sql-statements/grant.md)
+* [Authentication](../security/user-account-management/authentication-from-mariadb-10-4.md)
+* [Authentication from MariaDB 10 4](https://www.youtube.com/watch?v=aWFG4uLbimM) (video • 20 minutes • 2020)
+* [Error 1698: Access denied for user](../reference/error-codes/mariadb-error-codes-1600-to-1699/e1698.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
