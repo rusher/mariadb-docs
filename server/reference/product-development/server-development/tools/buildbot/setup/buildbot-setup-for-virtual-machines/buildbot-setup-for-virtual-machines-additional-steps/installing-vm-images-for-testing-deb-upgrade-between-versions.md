@@ -22,7 +22,7 @@ versions, it is still useful to test upgrades from different versions on\
 different platforms, to increase coverage a bit.
 
 The bulk of the images were installed with the following two loops, using\
-packages from the OurDelta repository for [MariaDB 5.1.42](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-1-series/mariadb-5142-release-notes), which was the one\
+packages from the OurDelta repository for [MariaDB 5.1.42](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/5.1/5.1.42), which was the one\
 available from there at the time of installation.
 
 ```

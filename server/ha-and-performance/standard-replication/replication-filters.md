@@ -19,7 +19,7 @@ MariaDB provides options that can be used on a [replication primary](replication
 
 ### Binary Log Filter Options
 
-The following options are available, and they are evaluated in the order that they are listed below. If there are conflicting settings, _binlog\_do\_db_ prevails. Before [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes), they are only available as options; from [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes) they are also available as system variables.
+The following options are available, and they are evaluated in the order that they are listed below. If there are conflicting settings, _binlog\_do\_db_ prevails. Before [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/11.2/11.2.0), they are only available as options; from [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/11.2/11.2.0) they are also available as system variables.
 
 #### `binlog_do_db`
 

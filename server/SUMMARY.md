@@ -40,7 +40,7 @@
     * [String Functions](server-usage/basics/mariadb-string-functions-guide-1.md)
   * [Connecting](server-usage/connecting/README.md)
     * [Connecting to MariaDB Server](server-usage/connecting/mariadb-connecting-guide-1.md)
-    * [Fixing Connection Issues](server-usage/connecting/mariadb-connection-troubleshooting-guide-1.md)
+    * [Connection Issues Guide](mariadb-quickstart-guides/mariadb-connection-troubleshooting-guide.md)
     * [Remote Client Access](server-usage/connecting/mariadb-remote-connection-guide-1.md)
   * [Data Handling](server-usage/data-handling/README.md)
     * [Adding and Changing Data in MariaDB](server-usage/data-handling/mariadb-adding-and-changing-data-guide.md)

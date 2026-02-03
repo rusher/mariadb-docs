@@ -1,7 +1,8 @@
 ---
 description: >-
   Complete Troubleshooting Connection Issues Guide guide for MariaDB. Complete
-  resource with setup instructions, configuration, usage examples, and best.
+  resource with setup instructions, configuration, usage examples, and best
+  practices.
 ---
 
 # Troubleshooting Connection Issues Guide

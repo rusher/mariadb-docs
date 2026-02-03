@@ -82,12 +82,12 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 `mariadbd-safe` reads options from the following [option groups](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
-| Group            | Description                                                                                                                                                                                                                                    |
-| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| \[mysqld\_safe]  | Options read by mysqld\_safe, which includes both MariaDB Server and MySQL Server.                                                                                                                                                             |
-| \[safe\_mysqld]  | Options read by mysqld\_safe, which includes both MariaDB Server and MySQL Server.                                                                                                                                                             |
-| \[mariadbd-safe] | Options read by mariadbd\_safe\_safe from MariaDB Server. Available starting with [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes). |
-| \[mariadb-safe]  | Options read by mysqld\_safe from MariaDB Server. Deprecated, please avoid using this.                                                                                                                                                         |
+| Group            | Description                                                                                                                                                                                   |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| \[mysqld\_safe]  | Options read by mysqld\_safe, which includes both MariaDB Server and MySQL Server.                                                                                                            |
+| \[safe\_mysqld]  | Options read by mysqld\_safe, which includes both MariaDB Server and MySQL Server.                                                                                                            |
+| \[mariadbd-safe] | Options read by mariadbd\_safe\_safe from MariaDB Server. Available starting with [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/10.4/10.4.6). |
+| \[mariadb-safe]  | Options read by mysqld\_safe from MariaDB Server. Deprecated, please avoid using this.                                                                                                        |
 
 The `[safe_mariadbd]` option group is primarily supported for backward compatibility. You should rename such option groups to `[mariadbd-safe]` in MariaDB installations to prevent breakage in the future if this compatibility is removed.
 

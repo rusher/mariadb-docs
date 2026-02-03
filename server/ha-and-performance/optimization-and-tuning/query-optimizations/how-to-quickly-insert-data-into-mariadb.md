@@ -79,7 +79,7 @@ You will also get [progress reporting](/broken/spaces/WCInJQ9cmGjq1lsTG91E/pages
 
 ### mariadb-import
 
-You can import many files in parallel with [mariadb-import](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-import.md) (`mysqlimport` before [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105)). For example:
+You can import many files in parallel with [mariadb-import](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-import.md) (`mysqlimport` before [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/10.5/what-is-mariadb-105)). For example:
 
 ```
 mariadb-import --use-threads=10 database text-file-name [text-file-name...]

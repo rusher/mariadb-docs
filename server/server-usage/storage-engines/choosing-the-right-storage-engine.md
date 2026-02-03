@@ -15,7 +15,7 @@ A high-level overview of the main reasons for choosing a particular storage engi
 * [InnoDB](innodb/) is a good general transaction storage engine, and the best choice in most cases. It is the default storage engine.
 * [Aria](aria/), MariaDB's more modern improvement on [MyISAM](myisam-storage-engine/), has a small footprint and allows for easy copying between systems.
 * [MyISAM](myisam-storage-engine/) has a small footprint and allows for easy copying between systems. MyISAM is MySQL's oldest storage engine. There is usually little reason to use it except for legacy purposes. Aria is MariaDB's more modern improvement.
-* [XtraDB](innodb/) is no longer available. It was a performance-enhanced fork of InnoDB and was MariaDB's default engine until [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1).
+* [XtraDB](innodb/) is no longer available. It was a performance-enhanced fork of InnoDB and was MariaDB's default engine until [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/10.1/changes-improvements-in-mariadb-10-1).
 
 ### Scaling, Partitioning
 

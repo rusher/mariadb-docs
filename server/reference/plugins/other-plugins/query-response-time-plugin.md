@@ -267,7 +267,7 @@ It is **not** possible to specify flushing read and/or write statements with the
 * Data Type: `enum`
 * Default Value: `GLOBAL`
 * Valid Values: `GLOBAL`, `ON`, `OFF`
-* Introduced: [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115)
+* Introduced: [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/11.5/what-is-mariadb-115)
 
 ### `query_response_time_stats`
 

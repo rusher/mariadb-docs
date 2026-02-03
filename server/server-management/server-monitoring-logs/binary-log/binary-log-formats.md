@@ -58,7 +58,7 @@ If you need to execute non-deterministic statements, then it is safer to use mix
 
 Note that some tables, like temporary tables created in row mode, does not support statement based logging (as the data is not in the binary log). Any statement that uses a table that does not support statement logging will use row based logging. This is to ensure that the data on master and the slave are consistent.
 
-Statement-based logging was the default prior to [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes) and before. [Mixed logging](binary-log-formats.md#mixed-logging) is now the default.
+Statement-based logging was the default prior to [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/10.2/10.2.4) and before. [Mixed logging](binary-log-formats.md#mixed-logging) is now the default.
 
 ### Mixed Logging
 

@@ -17,7 +17,7 @@ If you don't want to run MariaDB as yourself, then you should create a `mysql` u
 
 ## Using cmake
 
-[MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and above is compiled using _cmake_.
+[MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/5.5/changes-improvements-in-mariadb-5-5) and above is compiled using _cmake_.
 
 It is recommended to create a build directory **beside** your source directory
 
