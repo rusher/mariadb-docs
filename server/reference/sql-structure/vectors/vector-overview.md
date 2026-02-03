@@ -150,9 +150,26 @@ MariaDB Vector is integrated in several frameworks, see [Vector Framework Integr
 
 ## What is a Vector?
 
+{% columns %}
+{% column %}
 {% embed url="https://www.youtube.com/shorts/VrG8H53KJZY" %}
 What exactly is a vector in AI and RAG (1 minute • 2026)
 {% endembed %}
+{% endcolumn %}
+
+{% column %}
+{% hint style="info" %}
+**Video summary**
+
+* A vector (an _embedding_) is an ordered list of numbers.
+* AI models map content (like text) into vectors.
+* Similar meanings end up close together in vector space.
+* RAG and semantic search retrieve relevant items by finding the nearest vectors.
+{% endhint %}
+
+
+{% endcolumn %}
+{% endcolumns %}
 
 ## See Also
 
