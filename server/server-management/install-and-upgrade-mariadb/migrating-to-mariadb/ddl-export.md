@@ -174,9 +174,9 @@ Command-line options exist – the SQL server team released a Python-based tool 
 
 ## MySQL
 
-Due to the similarities between MySQL and MariaDB, we are able to also assess server configurations. Due to this, there are two dump files uploaded.
+Due to the similarities between MySQL and MariaDB, we are able to assess server configurations, too, for different types of `mysqldump` exports (`--all-databases` and `--databases`` `_`list-of-databases`_).
 
-Use `mysqldump` with the connection information to back up your databases on the existing MySQL Server:
+Use `mysqldump` with the connection information to back up all your databases on the existing MySQL Server:
 
 ```shellscript
 mysqldump --user db_user --password \
