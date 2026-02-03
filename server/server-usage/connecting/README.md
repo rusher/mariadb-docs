@@ -37,8 +37,8 @@ Complete Connecting to MariaDB Server guide for MariaDB. Complete reference docu
 
 {% columns %}
 {% column %}
-{% content-ref url="/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/1rR9CBc9BDXxw1JOWUDs" %}
-[Broken link](/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/1rR9CBc9BDXxw1JOWUDs)
+{% content-ref url="../../mariadb-quickstart-guides/mariadb-connection-troubleshooting-guide.md" %}
+[mariadb-connection-troubleshooting-guide.md](../../mariadb-quickstart-guides/mariadb-connection-troubleshooting-guide.md)
 {% endcontent-ref %}
 
 
