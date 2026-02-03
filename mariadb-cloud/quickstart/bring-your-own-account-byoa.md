@@ -90,38 +90,6 @@ BYOA is designed for enterprise organizations with specific regulatory or infras
 * Network Security: Database nodes are deployed into a private VPC/VNet. You can enforce your own security group rules, routing policies, and network isolation without complex peering arrangements.
 * Advanced Workloads (PowerPlus): Enables the PowerPlus tier, allowing for advanced topologies like Galera Clusters to run in your own environment.
 
-#### Galera Cluster Topology (PowerPlus Exclusive)
-
-Customers on the PowerPlus tier can deploy Galera Clusters for synchronous multi-primary replication and zero data loss failover.
-
-```mermaid
-graph TD
-    %% Global Styles: Bold fonts and thick borders for readability
-    classDef node fill:#e1f5fe,stroke:#01579b,stroke-width:3px,color:#01579b,font-size:16px,font-weight:bold;
-    classDef external fill:#f5f5f5,stroke:#616161,stroke-width:2px,font-size:16px;
-
-    App[Customer Application]:::external
-
-    subgraph Galera_Cluster ["MariaDB Galera Cluster (PowerPlus)"]
-        direction TB
-        N1[("Node 1<br/>(Primary)")]:::node
-        N2[("Node 2<br/>(Primary)")]:::node
-        N3[("Node 3<br/>(Primary)")]:::node
-        
-        %% Synchronous Replication with thick lines
-        N1 <==>|"Sync Repl"| N2
-        N2 <==>|"Sync Repl"| N3
-        N3 <==>|"Sync Repl"| N1
-    end
-
-    %% Connection styling
-    App ==>|"Writes"| N1
-    App -.->|"Failover Write"| N2
-
-    %% Subgraph styling
-    style Galera_Cluster fill:#f3e5f5,stroke:#4a148c,stroke-width:2px,stroke-dasharray: 5 5,color:#4a148c
-```
-
 ### Who is eligible for BYOA?
 
 BYOA is an enterprise-grade feature with specific commercial and technical prerequisites:
