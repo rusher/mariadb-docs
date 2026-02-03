@@ -176,10 +176,14 @@ What exactly is a vector in AI and RAG (1 minute • 2026)
 * [Everything you need to know to start building apps with AI and RAG](https://youtu.be/ZlLV7rda9GY) (video • 40 minutes • 2026)
 * [What exactly is a vector in AI and RAG?](https://www.youtube.com/shorts/VrG8H53KJZY) (video • 1 minute • 2026)
 * [Get to know MariaDB’s Rocket-Fast Native Vector Search - Sergei Golubchyk](https://www.youtube.com/watch?v=gNyzcy_6qJM) (video • 37 minutes • 2025)
-* [MariaDB Vector, a new Open Source vector database that you are already familiar by Sergei Golubchik](https://www.youtube.com/watch?v=r9af4bvF7jI) (video)
-* [AI first applications with MariaDB Vector - Vicentiu Ciorbaru](https://www.youtube.com/watch?v=vp126N1QOws) (video)
-* [MariaDB Vector: A storage engine for LLMs - Kaj Arnö and Jonah Harris](https://www.youtube.com/watch?v=3y-yWoH-CF8) (video)
-* [Try RAG with MariaDB Vector on your own MariaDB data!](https://mariadb.org/rag-with-mariadb-vector/)
+* [MariaDB Vector, a new Open Source vector database that you are already familiar by Sergei Golubchik](https://www.youtube.com/watch?v=r9af4bvF7jI) (video • 27 minutes • 2025)
+* [AI first applications with MariaDB Vector - Vicentiu Ciorbaru](https://www.youtube.com/watch?v=vp126N1QOws) (video • 22 minutes • 2025)
+* [MariaDB Vector: A storage engine for LLMs - Kaj Arnö and Jonah Harris](https://www.youtube.com/watch?v=3y-yWoH-CF8) (video • 12 minutes • 2025)
+* [Try RAG with MariaDB Vector on your own MariaDB data!](https://mariadb.org/rag-with-mariadb-vector/) (blog post • 5 minutes • 2024)
+  * The post, written by Robert Silén, explains how to build a Retrieval-Augmented Generation (RAG) system using MariaDB's native vector storage. It covers:
+    1. Preparation: Setting up a MariaDB 11.7+ environment and creating a table with the `VECTOR` data type.
+    2. Indexing: Using OpenAI's embedding model to vectorize documentation and store it in MariaDB.
+    3. Search & Generation: Performing a nearest-neighbor search (`VEC_DISTANCE_EUCLIDEAN`) to find relevant context for a user's question and feeding that context into an LLM for an accurate response.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
