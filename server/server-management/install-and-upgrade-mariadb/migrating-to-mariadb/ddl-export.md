@@ -210,6 +210,8 @@ mysql --user db_user --password --host localhost -e "SHOW GLOBAL VARIABLES;" > v
 ```
 {% endcode %}
 
+The `variables.log` file can be used for offline comparison between MySQL and MariaDB, to identify any differences.
+
 ## IBM DB2
 
 Log on to the DB2 server with a user that has `SELECT` privileges on the system catalog tables. In some specific cases, additional grants might be required, such as `SYSADM`, `SYSCTRL`, `SYSMAINT`, `SYSMON`, and `DBADM`. For our specific requirements, the `SELECT` privilege on system catalog tables suffices, though.
