@@ -64,15 +64,15 @@ routine_body:
 
 ## Description
 
-Creates a [stored procedure](./). By default, a routine is associated with the default database. To associate the routine explicitly with a given database, specify the name as db\_name.sp\_name when you create it.
+Creates a [stored procedure](./). By default, a routine is associated with the default database. To associate the routine explicitly with a given database, specify the name as `db_name.sp_name` when you create it.
 
-When the routine is invoked, an implicit ` USE`` `` `_`db_name`_ is performed (and undone when the routine terminates). The causes the routine to have the given default database while it executes. USE statements within stored routines are disallowed.
+When the routine is invoked, an implicit `USE`` `_`db_name`_ is performed (and undone when the routine terminates). The causes the routine to have the given default database while it executes. `USE` statements within stored routines are disallowed.
 
 When a stored procedure has been created, you invoke it by using the `CALL` statement (see [CALL](../../../reference/sql-statements/stored-routine-statements/call.md)).
 
 To execute the `CREATE PROCEDURE` statement, it is necessary to have the `CREATE ROUTINE` privilege. By default, MariaDB automatically grants the `ALTER ROUTINE` and `EXECUTE` privileges to the routine creator. See also [Stored Routine Privileges](../stored-functions/stored-routine-privileges.md).
 
-The `DEFINER` and SQL SECURITY clauses specify the security context to be used when checking access privileges at routine execution time, as described [here](../stored-functions/stored-routine-privileges.md). Requires the [SET USER](../../../reference/sql-statements/account-management-sql-statements/grant.md#set-user) privilege.
+The `DEFINER` and `SQL SECURITY` clauses specify the security context to be used when checking access privileges at routine execution time, as described [here](../stored-functions/stored-routine-privileges.md). Requires the [SET USER](../../../reference/sql-statements/account-management-sql-statements/grant.md#set-user) privilege.
 
 If the routine name is the same as the name of a built-in SQL function, you must use a space between the name and the following parenthesis when defining the routine, or a syntax error occurs. This is also true when you invoke the routine later. For this reason, we suggest that it is better to avoid re-using the names of existing SQL functions for your own stored routines.
 
