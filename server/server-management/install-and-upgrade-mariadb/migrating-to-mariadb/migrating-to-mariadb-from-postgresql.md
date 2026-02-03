@@ -123,7 +123,7 @@ PostgreSQL's [functions](https://www.postgresql.org/docs/current/sql-createfunct
 {% columns %}
 {% column %}
 {% embed url="https://www.youtube.com/watch?v=l_5AgRPTa54" %}
-MariaDB and PostgreSQL: A technical deep-dive into how they differ
+MariaDB and PostgreSQL: A technical deep-dive into how they differ (54 minutes • 2024)
 {% endembed %}
 {% endcolumn %}
 
@@ -146,6 +146,7 @@ The video emphasizes that because MariaDB is a multi-engine database, connection
 ## See Also
 
 * [Set up and configure PostgreSQL ODBC drivers for the MySQL Workbench Migration Wizard](https://mysqlworkbench.org/2012/11/set-up-and-configure-postgresql-odbc-drivers-for-the-mysql-workbench-migration-wizard/)
+* [MariaDB and PostgreSQL: A technical deep-dive into how they differ](https://youtu.be/l_5AgRPTa54) (54 minutes • 2024)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
