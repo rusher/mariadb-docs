@@ -148,6 +148,8 @@ There are a number of system variables used for vectors. See [Vector System Vari
 
 MariaDB Vector is integrated in several frameworks, see [Vector Framework Integrations](vector-framework-integrations.md).
 
+## What is a Vector?
+
 {% embed url="https://www.youtube.com/shorts/VrG8H53KJZY" %}
 What exactly is a vector in AI and RAG (1 minute • 2026)
 {% endembed %}
