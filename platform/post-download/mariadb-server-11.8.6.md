@@ -18,7 +18,7 @@
 ## Release History
 
 * The prior release in this series was [MariaDB 11.8.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/11.8/11.8.5), released on 14 Nov 2025
-* This release ([MariaDB 11.8.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/11.8/11.8.5)) was released on 4 Feb 2026
+* This release ([MariaDB 11.8.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/11.8/11.8.6)) was released on 4 Feb 2026
 
 {% include "../.gitbook/includes/most-recent-11.8.md" %}
 
