@@ -42,13 +42,13 @@ row-based logging for the statement. Some cases of this are:
 * [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table/) of a table using a storage engine that stores data remotely, such as the [S3 storage engine](../../../server-usage/storage-engines/s3-storage-engine/), to another storage engine.
 * One is using [SEQUENCEs](../../../reference/sql-structure/sequences/) in the statement or the [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) definition.
 
-In certain cases, a statement may not be deterministic, and therefore not safe for [replication](../../../ha-and-performance/standard-replication/). If MariaDB determines that an unsafe statement has been executed, then it will issue a warning. For example:
+In certain cases, a statement may not be deterministic, and therefore not safe for [replication](../../../ha-and-performance/standard-replication/). If MariaDB determines that an unsafe statement has been executed, it issues a warning like this:
 
+{% code overflow="wrap" %}
 ```
-[Warning] Unsafe statement written to the binary log using statement format since 
-  BINLOG_FORMAT = STATEMENT. The statement is unsafe because it uses a LIMIT clause. 
-  This is unsafe because the set of rows included cannot be predicted.
+[Warning] Unsafe statement written to the binary log using statement format since BINLOG_FORMAT = STATEMENT. The statement is unsafe because it uses a LIMIT clause. This is unsafe because the set of rows included cannot be predicted.
 ```
+{% endcode %}
 
 See [Unsafe Statements for Statement-based Replication](../../../ha-and-performance/standard-replication/unsafe-statements-for-statement-based-replication.md) for more information.
 
@@ -78,9 +78,31 @@ If you want to be able to see the original query that was logged, you can enable
 
 This mode can be enabled by setting the [binlog\_format](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_format) system variable to `ROW`.
 
+{% hint style="warning" %}
+When the primary server (master) writes a transaction to the binary log that exceeds the  [`max_allowed_packet`](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_allowed_packet) size, replication breaks, issuing an error like this:
+
+`Last_IO_Error: Got fatal error 1236 from master when reading data from binary log: 'log event entry exceeded max_allowed_packet; Increase max_allowed_packet on master; the first event 'mariadb-bin.109824' at 4, the last event read from 'mariadb-bin.109825' at 15113554, the last byte read from 'mariadb-bin.109825' at 15113573.'`
+
+When that happens, the only way to recover is by manually extracting the transaction from the primary server's binary log, and manually applying it to the replica server.
+
+**This issue has been addressed in MariaDB 12.3**, and is described in the following.
+{% endhint %}
+
+### Splitting Transactions
+
+{% hint style="info" %}
+This functionality is available from MariaDB 12.3.
+{% endhint %}
+
+The maximum value of the  [`max_allowed_packet`](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_allowed_packet) system variable is 1GB. It can be set to smaller values, but not values bigger than that. For row-based replication, this means that a transaction bigger than the configured variable value cannot be written to the primary server's binary log. As a consequence, replication breaks. (See the warning above.)
+
+To overcome this limitation (and breakage), a variable named [`binlog_row_event_fragment_threshold`](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_row_event_fragment_threshold) can be configured. The value should obviously be smaller than the value of `max_allowed_packet`.
+
+Once configured, the primary (master) server behaves differently when encountering large transactions: When writing a transaction to the binary log that exceeds `binlog_row_event_fragment_threshold`, it splits up the transaction event into smaller chunks. (Those chunks have a type of `Partial_rows_log_event`.) None of those chunks exceed the value of the variable, and so replica servers can read binary log entries without issues.
+
 ### Caveats of Row-Based Logging
 
-When using row base logging, some statement works different on the master.
+When using row-based logging, some statements work different on the master.
 
 * `DELETE FROM`` `_`table_name`_
   * In row-based mode, the table always uses deletion row-by-row, which can take a long time if the table is big. It can also use a lot of space in the binary log.

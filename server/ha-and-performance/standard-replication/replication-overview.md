@@ -7,6 +7,8 @@ description: >-
 
 # Replication Overview
 
+## Overview
+
 Replication is a feature allowing the contents of one or more servers (called primaries) to be mirrored on one or more servers (called replicas).
 
 You can exert control over which data to replicate. All databases, one or more databases, or tables within a database can each be selectively replicated.
@@ -16,6 +18,14 @@ The main mechanism used in replication is the [binary log](../../server-manageme
 A replica server keeps track of the position in the primary's binlog of the last event applied on the replica. This allows the replica server to re-connect and resume from where it left off after replication has been temporarily stopped. It also allows a replica to disconnect, be cloned and then have the new replica resume replication from the same primary.
 
 Primaries and replicas do not need to be in constant communication with each other. It's quite possible to take servers offline or disconnect from the network, and when they come back, replication will continue where it left off.
+
+## Replication Formats
+
+There are three kinds of replication format – essentially, they're binary log formats, and therefore documented on this page: [Binary Log Formats](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md):
+
+* Statement-based replication (SBR)
+* Row-based replication (RBR)
+* Mixed replication
 
 ## Replication Uses
 

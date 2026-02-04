@@ -12,7 +12,7 @@ The terms _master_ and _slave_ have historically been used in replication, and M
 
 Getting [replication](./) working involves steps on both the master server/s and steps on the replica server/s.
 
-## Setting up a Replication Replica with MariaDB-Backup
+## Setting up a Replica with mariadb-backup
 
 If you want to use [mariadb-backup](../../server-usage/backup-and-restore/mariadb-backup/) to set up a replication replica, review the information under [Setting up a Replication Replica with MariaDB-Backup](../../server-usage/backup-and-restore/mariadb-backup/setting-up-a-replica-with-mariadb-backup.md).
 

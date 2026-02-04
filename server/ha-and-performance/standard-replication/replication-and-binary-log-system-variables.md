@@ -11,13 +11,21 @@ description: >-
 The terms _master_ and _slave_ have historically been used in replication, and MariaDB has begun the process of adding _primary_ and _replica_ synonyms. The old terms will continue to be used to maintain backward compatibility - see [MDEV-18777](https://jira.mariadb.org/browse/MDEV-18777) to follow progress on this effort.
 {% endhint %}
 
+## Overview
+
 This page lists system variables that are related to [binary logging](../../server-management/server-monitoring-logs/binary-log/) and [replication](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md).
 
 See [Server System Variables](../optimization-and-tuning/system-variables/server-system-variables.md) for a complete list of system variables and instructions on setting them, as well as [System variables for global transaction ID](gtid.md#system-variables-for-global-transaction-id).
 
 Also see [mariadbd replication options](../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#replication-and-binary-logging-options) for related options that are not system variables (such as [binlog\_do\_db](../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#-binlog-do-db) and [binlog\_ignore\_db](../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#-binlog-ignore-db)).
 
-Starting with MariaDB 12.3, the following variables serve as the global default for the corresponding `MASTER_*` option in the `CHANGE MASTER TO` statement. The value is inherited from this system variable when the user enters the `DEFAULT` keyword for that option.&#x20;
+## Global Defaults
+
+{% hint style="info" %}
+This functionality is available from MariaDB 12.3.
+{% endhint %}
+
+The following variables serve as the global default for the corresponding `MASTER_*` option in the `CHANGE MASTER TO` statement. The value is inherited from this system variable when the user enters the `DEFAULT` keyword for that option.&#x20;
 
 * [replication\_connect\_retry](replication-and-binary-log-system-variables.md#replication_connect_retry)
 * [replication\_retry\_count](replication-and-binary-log-system-variables.md#replication_retry_count)
@@ -35,7 +43,7 @@ Starting with MariaDB 12.3, the following variables serve as the global default 
 
 For more details, see [CHANGE MASTER TO](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md).
 
-See also the [Full list of MariaDB options, system and status variables](../../reference/full-list-of-mariadb-options-system-and-status-variables.md).
+## Variable Descriptions
 
 #### `auto_increment_increment`
 
@@ -254,14 +262,23 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 
 #### `binlog_optimize_thread_scheduling`
 
-* Description: Run fast part of group commit in a single thread, to optimize kernel thread scheduling. On by default. Disable to run each transaction in group commit in its own thread, which can be slower at very high concurrency. This option is mostly for testing one algorithm versus another, and it should not normally be necessary to change it. Deprecated in [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/11.7/what-is-mariadb-117), as the option was initially added to provide a safe alternative for the newly added binlog group commit logic, such that when 0, it would disable a leader thread\
-  from performing the binlog write for all transactions that are a part of the group commit. Problems related to the binlog group commit optimization are expected to be addressed by now, so the option has been deprecated and will be removed in future.
+* Description: Run fast part of group commit in a single thread, to optimize kernel thread scheduling. On by default. Disable to run each transaction in group commit in its own thread, which can be slower at very high concurrency. This option is mostly for testing one algorithm versus another, and it should not normally be necessary to change it. Deprecated in [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/11.7/what-is-mariadb-117), as the option was initially added to provide a safe alternative for the newly added binlog group commit logic, such that when `0`, it would disable a leader thread from performing the binlog write for all transactions that are a part of the group commit. Problems related to the binlog group commit optimization are expected to be addressed by now, so the option has been deprecated and will be removed in future.
 * Command line: `--binlog-optimize-thread-scheduling` or `--skip-binlog-optimize-thread-scheduling`
 * Scope: Global
 * Dynamic: No
 * Data Type: `boolean`
 * Default Value: `ON`
 * Deprecated: [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/11.7/what-is-mariadb-117)
+
+#### `binlog_row_event_fragment_threshold`&#x20;
+
+* Description: When a `Rows_log_event` exceeds this threshold, it is fragmented into multiple `Partial_rows_log_event` events in the binary log, each of it configured to maximum size. That is, all `Partial_rows_log_event` events up to the last in the group have this configured maximum size, and the last event takes the remaining size. This is relevant for events that would surpass the `slave_max_allowed_packet` length when sending to the replica, and thereby a sensible value would reflect the slave's configured `slave_max_allowed_packet` size.
+* Command line: `--binlog-row-event-fragment-threshold`
+* Scope: Global
+* Dynamic: Yes
+* Data Type: `INT unsigned`
+* Default Value: 1GB
+* Introduced: MariaDB 12.3
 
 #### `binlog_row_event_max_size`
 
@@ -1184,7 +1201,11 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `10000`
-* Range: `0` to `4294967295`
+* Range: `0` to `4294967295`&#x20;
+
+## See Also
+
+* [Full list of MariaDB options, system and status variables](../../reference/full-list-of-mariadb-options-system-and-status-variables.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
