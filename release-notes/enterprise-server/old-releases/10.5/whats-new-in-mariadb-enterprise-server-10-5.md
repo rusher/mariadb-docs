@@ -6,6 +6,14 @@ description: >-
 
 # What's New in MariaDB Enterprise Server 10.5?
 
+{% hint style="info" %}
+#### Technical Compatibility Reference
+
+This guide provides an overview of new features and improvements across the series. For major version upgrades, which involve significant architectural changes, users should consult the [Compatibility and Breaking Changes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-enterprise-server/mariadb-enterprise-server-upgrade-paths/upgrades/mariadb-enterprise-server-10.5/compatibility-and-breaking-changes-for-mariadb-enterprise-server-10.5) guide.
+
+The Compatibility guide includes critical technical insights found through engineering audits and support cases. It covers essential [pre-upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-enterprise-server/mariadb-enterprise-server-upgrade-paths/upgrades/mariadb-enterprise-server-10.5/upgrade-to-mariadb-enterprise-server-10.5#critical-pre-upgrade-requirements) shutdown requirements and details platform-specific configuration path changes for Debian and Ubuntu.
+{% endhint %}
+
 MariaDB Enterprise Server 10.5 introduces the new features listed below.
 
 ## Notable Features
@@ -67,6 +75,16 @@ MariaDB Enterprise Server 10.5 uses the "MariaDB" name in more places:
 | mysqlhotcopy                  | mariadb-hotcopy                                                                                                                         |
 | mysqltest                     | mariadb-test                                                                                                                            |
 | mysqltest\_embedded           | mariadb-test-embedded                                                                                                                   |
+
+{% hint style="info" %}
+#### Process Identity and Monitoring
+
+The server's main process identity is now `mariadbd`, replacing the legacy `mysql*` commands, though symbolic links have been provided for compatibility. When using `systemd` or `mariadbd-safe`, the server appears as `mariadbd` in system process tools.
+
+**Critical Impact**
+
+Any monitoring scripts, health checks, or high-availability (HA) tools using `ps`, `pidof`, or `pgrep` to find a `mysqld` process will become ineffective after the upgrade. Update these tools to search for `mariadbd` instead.Privileges Comparison
+{% endhint %}
 
 ### Packaging
 
@@ -137,9 +155,31 @@ MariaDB Enterprise Server 10.5 contains several enhancements to the [S3 storage 
 * The S3 storage engine supports partitioning.
 * The S3 storage engine supports replication.
 
+{% hint style="info" %}
+#### Plugin Support and Repositories Update
+
+Starting with MariaDB Enterprise Server 10.5, some plugins like the CONNECT storage engine have been moved from the main Enterprise repository to an "unsupported" repository. To ensure these engines function during or after an upgrade, you need to enable the "unsupported" repository by including the `--include-unsupported` flag in the `mariadb_es_repo_setup` script. Without this flag, the plugin library (`ha_connect.so`) will be unavailable, resulting in "Unknown storage engine" errors for existing tables.
+{% endhint %}
+
 ## Privileges Comparison ES10.4 and ES10.5.8-5
 
 MariaDB Enterprise Server 10.5 adds privileges that allow operations that previously required the [SUPER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#super). The following table is a summary of the **changes** between MariaDB Enterprise Server 10.4 and MariaDB Enterprise Server 10.5.8-5. More specific detail is found in [MariaDB Replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication), and in [MariaDB Reference](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb/README.md).
+
+{% hint style="info" %}
+### Administrative Automation and Privilege Audits
+
+#### Transition to Granular Roles in Version 10.5
+
+The shift from broad privileges like SUPER and REPLICATION CLIENT to more specific roles in version 10.5 can affect current administrative automations.
+
+#### Replication Monitoring
+
+External monitoring tools, such as MaxScale MariaDB Monitor, now require the REPLICA MONITOR or BINLOG MONITOR privilege. This allows them to execute status commands like `SHOW REPLICA STATUS`.
+
+#### Manual Verification Recommended
+
+Upgrading to version 10.5.8-5 or later will generally modify these privileges automatically for existing users. However, it is advisable to manually verify these privileges to prevent disruptions in third-party monitoring services.
+{% endhint %}
 
 ### [BINLOG ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-admin)
 
