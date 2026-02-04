@@ -18,7 +18,7 @@ CREATE
     [characteristic ...] routine_body
 
 proc_parameter:
-    [ OUT | INOUT ] param_name type |
+    [ OUT | INOUT | IN OUT] param_name type |
     [ IN ] param_name type [DEFAULT value or expression]
 
 type:
@@ -34,6 +34,8 @@ characteristic:
 routine_body:
     Valid SQL procedure statement
 ```
+
+The `IN OUT` parameter works only in Oracle mode.
 {% endtab %}
 
 {% tab title="< 11.8" %}
