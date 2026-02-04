@@ -18,7 +18,8 @@ CREATE
     [characteristic ...] routine_body
 
 proc_parameter:
-    [ IN | OUT | INOUT ] param_name type [DEFAULT value or expression]
+    [ OUT | INOUT ] param_name type |
+    [ IN ] param_name type [DEFAULT value or expression]
 
 type:
     Any valid MariaDB data type

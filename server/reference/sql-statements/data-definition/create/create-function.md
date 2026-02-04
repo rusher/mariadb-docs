@@ -18,7 +18,8 @@ CREATE [OR REPLACE]
     [RETURN SYS_REFCURSOR]
 
 func_parameter:
-    [ IN | OUT | INOUT | IN OUT ]  param_name type
+    [ OUT | INOUT | IN OUT ] param_name type |
+    [ IN ] param_name type [DEFAULT value or expression]
 
 type:
     Any valid MariaDB data type
