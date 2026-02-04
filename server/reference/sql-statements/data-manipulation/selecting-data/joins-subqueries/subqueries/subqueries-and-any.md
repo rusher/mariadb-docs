@@ -21,7 +21,7 @@ scalar_expression comparison_operator SOME <Table subquery>
 {% hint style="info" %}
 #### About IN
 
-Although `IN` functions similarly to `= ANY`, it is documented separately due to unique optimization characteristics. Refer to "Subqueries with IN" for more details.
+Although `IN` functions similarly to `= ANY`, it is documented separately due to unique optimization characteristics. Refer to [Subqueries with IN and NOT IN](../../subqueries/subqueries-with-in-and-not-in.md) for more details.
 {% endhint %}
 
 `ANY` or `SOME` returns:
@@ -71,8 +71,8 @@ SELECT * FROM sq1 WHERE num1 > SOME (SELECT * FROM sq2);
 
 ### See Also
 
-* [Subqueries with IN](https://www.google.com/search?q=/path/to/subqueries-with-in)
-* [Subqueries with ALL](https://www.google.com/search?q=/path/to/subqueries-with-all)
+* [Subqueries with IN](../../subqueries/subqueries-with-in-and-not-in.md)
+* [Subqueries with ALL](subqueries-and-all.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
