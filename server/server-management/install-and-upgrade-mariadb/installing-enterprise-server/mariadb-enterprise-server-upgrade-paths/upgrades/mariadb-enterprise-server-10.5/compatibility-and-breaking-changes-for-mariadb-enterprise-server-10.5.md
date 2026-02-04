@@ -1,5 +1,13 @@
 # Compatibility and Breaking Changes for MariaDB Enterprise Server 10.5
 
+{% hint style="info" %}
+## Guide Overview
+
+This page acts as a technical reference, highlighting the logical impacts, architectural changes, and potential breaking points when upgrading to MariaDB Enterprise Server 10.5. It focuses on technical issues identified through customer support and engineering audits. This guide aims to supplement the comprehensive feature summaries available in the [_What's New_ in MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/enterprise-server/old-releases/10.5/whats-new-in-mariadb-enterprise-server-10-5) page for MariaDB Enterprise Server 10.5.
+
+For a full rundown of new features and overall improvements, users should consult the _What's New_ guide. Note that for better clarity and accessibility, the technical specifics here may be integrated into the _What's New_ guide in future documentation updates.
+{% endhint %}
+
 ### Architectural Changes
 
 #### Binary and Process Renaming
