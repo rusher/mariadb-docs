@@ -35,7 +35,7 @@ routine_body:
     Valid SQL procedure statement
 ```
 
-The `IN OUT` parameter works only in Oracle mode.
+The `IN OUT` parameter works only in [Oracle mode](create-procedure.md#oracle-mode).
 {% endtab %}
 
 {% tab title="< 11.8" %}
