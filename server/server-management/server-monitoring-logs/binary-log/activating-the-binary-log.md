@@ -1,14 +1,16 @@
 ---
 description: >-
-  Instructions for enabling the binary log using the `--log-bin` option and
+  Instructions for enabling the binary log using the --log-bin option and
   configuring the log file basename and index file.
 ---
 
 # Activating the Binary Log
 
-To enable binary logging, start the server with the `[--log-bin [=name](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md)]` option.
+## Overview
 
-If you specify a filename with an extension (for example `.log`), the extension will be silently ignored.
+To enable binary logging, start the server with the [--log-bin](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#log_bin) option.
+
+If you specify a filename with an extension (for example `.log`), the extension is silently ignored.
 
 If you don't provide a name (which can, optionally, include an absolute path), the default is `datadir/log-basename-bin`, `datadir/mysql-bin` or `datadir/mariadb-bin` (the latter two if [--log-basename](../../starting-and-stopping-mariadb/mariadbd-options.md#log-basename) is not specified, and dependent on server version). `Datadir` is determined by the value of the [datadir](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir) system variable.
 
