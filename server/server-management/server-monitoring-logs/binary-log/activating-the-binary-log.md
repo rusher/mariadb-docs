@@ -78,7 +78,7 @@ Variable_name: log_bin_basename
 ```
 {% endcode %}
 
-* `/opt/homebrew/var/mysql/` is the storage location.
+* `/opt/homebrew/var/mysql/` is the **storage location**.
 * `c525d37c-b2ff-4543-b06f-87012d142d44-bin` is the **basename** of the binary log files.
 
 ## Log File Organization
