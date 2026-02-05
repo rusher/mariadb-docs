@@ -1864,6 +1864,7 @@
       * [TIMESTAMP](reference/sql-functions/date-time-functions/timestamp-function.md)
       * [TIMESTAMPADD](reference/sql-functions/date-time-functions/timestampadd.md)
       * [TIMESTAMPDIFF](reference/sql-functions/date-time-functions/timestampdiff.md)
+      * [TO\_DATE](reference/sql-functions/date-time-functions/to_date.md)
       * [TO\_DAYS](reference/sql-functions/date-time-functions/to_days.md)
       * [TO\_SECONDS](reference/sql-functions/date-time-functions/to_seconds.md)
       * [TRUNC](reference/sql-functions/date-time-functions/trunc.md)

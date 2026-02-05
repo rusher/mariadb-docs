@@ -19,12 +19,14 @@ Formats the date value according to the format string.
 
 The language used for the names is controlled by the value of the [lc\_time\_names](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#lc_time_names) system variable. See [server locale](../../data-types/string-data-types/character-sets/internationalization-and-localization/server-locale.md) for more on the supported locales.
 
-The options that can be used by DATE\_FORMAT(), as well as its inverse [STR\_TO\_DATE](str_to_date.md)() and the [FROM\_UNIXTIME()](from_unixtime.md) function, are:
+### Date Formatting Options
+
+The options that can be used by `DATE_FORMAT()`, as well as its inverse [STR\_TO\_DATE](str_to_date.md)() and the [FROM\_UNIXTIME()](from_unixtime.md) function, are:
 
 | Option | Description                                                                                                                                                                                      |
 | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | %a     | Short weekday name in current locale (Variable [lc\_time\_names](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#lc_time_names)).                |
-| %b     | Short form month name in current locale. For locale en\_US this is one of: Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov or Dec.                                                                   |
+| %b     | Short form month name in current locale. For locale `en_US` this is one of: Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, or Dec.                                                       |
 | %c     | Month with 1 or 2 digits.                                                                                                                                                                        |
 | %D     | Day with English suffix 'th', 'nd', 'st' or 'rd''. (1st, 2nd, 3rd...).                                                                                                                           |
 | %d     | Day with 2 digits.                                                                                                                                                                               |
@@ -109,7 +111,7 @@ SELECT DATE_FORMAT('2006-06-00', '%d');
 +---------------------------------+
 ```
 
-Optionally, the locale can be explicitly specified as the third DATE\_FORMAT() argument. Doing so makes the function independent from the session settings, and the three argument version of DATE\_FORMAT() can be used in virtual indexed and persistent [generated-columns](../../sql-statements/data-definition/create/generated-columns.md):
+Optionally, the locale can be explicitly specified as the third `DATE_FORMAT()` argument. Doing so makes the function independent from the session settings, and the three argument version of `DATE_FORMAT()` can be used in virtual indexed and persistent [generated-columns](../../sql-statements/data-definition/create/generated-columns.md):
 
 ```sql
 SELECT DATE_FORMAT('2006-01-01', '%W', 'el_GR');
@@ -118,6 +120,17 @@ SELECT DATE_FORMAT('2006-01-01', '%W', 'el_GR');
 +------------------------------------------+
 | Κυριακή                                  |
 +------------------------------------------+
+```
+
+Format the current date and time in German date-time format:
+
+```sql
+SELECT DATE_FORMAT(NOW(),'%W, %e. %M %Y, %k:%i Uhr (%Z)','de_DE');
++------------------------------------------------------------+
+| DATE_FORMAT(NOW(),'%W, %e. %M %Y, %k:%i Uhr (%Z)','de_DE') |
++------------------------------------------------------------+
+| Donnerstag, 5. Februar 2026, 20:50 Uhr (CET)               |
++------------------------------------------------------------+
 ```
 
 {% hint style="info" %}
