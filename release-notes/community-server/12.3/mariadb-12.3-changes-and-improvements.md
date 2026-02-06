@@ -21,6 +21,7 @@ MariaDB 12.3 is a [long term release](../about/release-model.md), maintained unt
 * SQL Standard `IS JSON` predicate ([MDEV-37072](https://jira.mariadb.com/browse/MDEV-37072))
 * Allow `UPDATE`/`DELETE` to read from a CTE ([MDEV-37220](https://jira.mariadb.com/browse/MDEV-37220))
 * Basic XML data type ([MDEV-37261](https://jira.mariadb.com/browse/MDEV-37261))
+* Support for cursors on prepared statements ([MDEV-33830](https://jira.mariadb.org/browse/MDEV-33830))
 
 ### Replication
 
@@ -36,8 +37,8 @@ MariaDB 12.3 is a [long term release](../about/release-model.md), maintained unt
 
 ## List of All MariaDB 12.3 Releases
 
-| Date        | Release              | Status  | Release Notes              | Changelog                                 |
-| ----------- | -------------------- | ------- | -------------------------- | ----------------------------------------- |
-| 22 Dec 2025 | MariaDB 12.3 Preview | Preview |                            |                                           |
+| Date        | Release              | Status  | Release Notes | Changelog |
+| ----------- | -------------------- | ------- | ------------- | --------- |
+| 22 Dec 2025 | MariaDB 12.3 Preview | Preview |               |           |
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
