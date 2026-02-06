@@ -179,6 +179,12 @@ The following deprecated features have been removed:
 * [wsrep\_load\_data\_splitting](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_load_data_splitting) ([MariaDB 11.5](../old-releases/11.5/what-is-mariadb-115.md))
 * [integer latches in OQGraph](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/oqgraph-storage-engine/oqgraph-overview) (and the related [oqgraph\_allow\_create\_integer\_latch](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/oqgraph-system-and-status-variables#oqgraph_allow_create_integer_latch) variable). ([MariaDB 11.5](../old-releases/11.5/what-is-mariadb-115.md))
 
+### Security Vulnerabilities Fixed in MariaDB 11.8
+
+For a complete list of security vulnerabilities (CVEs) fixed across all versions of MariaDB, see the [Security Vulnerabilities Fixed in MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security) page.
+
+* [CVE-2026-21968](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-21968): [MariaDB 11.8.4](11.8.4.md)
+
 ## List of All [MariaDB 11.8](what-is-mariadb-118.md) Releases
 
 | Date        | Release        | Status      | Release Notes              | Changelog                                 |
