@@ -9,23 +9,23 @@ description: MariaDB ColumnStore and CMAPI release notes
 {% endcontent-ref %}
 
 {% content-ref url="23.10/" %}
-[23.10](23.10/)
+[23.10](23.10)
 {% endcontent-ref %}
 
 {% content-ref url="23.02/" %}
-[23.02](23.02/)
+[23.02](23.02)
 {% endcontent-ref %}
 
 {% content-ref url="22.08/" %}
-[22.08](22.08/)
+[22.08](22.08)
 {% endcontent-ref %}
 
 {% content-ref url="cmapi/" %}
-[cmapi](cmapi/)
+[cmapi](cmapi)
 {% endcontent-ref %}
 
 {% content-ref url="old-releases/" %}
-[old-releases](old-releases/)
+[old-releases](old-releases)
 {% endcontent-ref %}
 
 {% content-ref url="all-releases.md" %}
