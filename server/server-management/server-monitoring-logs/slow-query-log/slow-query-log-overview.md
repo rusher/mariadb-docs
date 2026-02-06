@@ -288,7 +288,7 @@ min_examined_row_limit=100000
 
 By default, the slow query log logs administrative statements. To disable that, remove `admin` from the [log\_slow\_filter](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_filter) system variable. Alternatively, set the [log\_slow\_admin\_statements](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_admin_statements) system variable to `OFF`. The slow query log considers the following statements administrative: [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table/), [ANALYZE TABLE](../../../reference/sql-statements/table-statements/analyze-table.md), [CHECK TABLE](../../../reference/sql-statements/table-statements/check-table.md), [CREATE INDEX](../../../reference/sql-statements/data-definition/create/create-index.md), [DROP INDEX](../../../reference/sql-statements/data-definition/drop/drop-index.md), [OPTIMIZE TABLE](../../../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md), and [REPAIR TABLE](../../../reference/sql-statements/table-statements/repair-table.md). This also includes [ALTER SEQUENCE](../../../reference/sql-structure/sequences/alter-sequence.md) statements.
 
-You can dynamically enable this feature using a [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session) statement and setting it for just the current connection with LOCAL. Some examples:
+You can dynamically enable this feature using a [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session) statement and setting it for just the current connection with `LOCAL`. Some examples:
 
 ```sql
 SET SESSION log_slow_filter=replace(@@log_slow_filter,"admin","");
@@ -309,7 +309,7 @@ log_slow_admin_statements=ON
 
 ## Enabling the Slow Query Log for Specific Criteria
 
-It is possible to enable logging to the slow query log for queries that meet specific criteria by configuring the [log\_slow\_filter](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_filter) system variable. It can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+It is possible to enable logging to the slow query log for queries that meet specific criteria by configuring the [log\_slow\_filter](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_filter) system variable. It can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session):
 
 {% code overflow="wrap" %}
 ```sql
@@ -317,11 +317,10 @@ SET GLOBAL log_slow_filter='filesort,filesort_on_disk,tmp_table,tmp_table_on_dis
 ```
 {% endcode %}
 
-It can also be set in a server [option group](../../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+{% include "../../../.gitbook/includes/to-make-this-permanent-con....md" %}
 
 ```ini
 [mariadb]
-...
 log_output=FILE
 slow_query_log
 slow_query_log_file=slow-queries.log
@@ -352,7 +351,7 @@ log_slow_rate_limit=5
 
 ## Configuring the Verbosity
 
-There are a few optional pieces of information that can be included in the slow query log for each query. This optional information can be included by configuring the [log\_slow\_verbosity](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_verbosity) system variable. It can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+There are a few optional pieces of information that can be included in the slow query log for each query. This optional information can be included by configuring the [log\_slow\_verbosity](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_verbosity) system variable. It can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session):
 
 ```sql
 SET GLOBAL log_slow_verbosity='full';
