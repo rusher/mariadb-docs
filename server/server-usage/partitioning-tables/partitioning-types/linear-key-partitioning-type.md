@@ -8,11 +8,13 @@ description: >-
 
 ## Syntax
 
-
 ```sql
-LINEAR PARTITION BY KEY ([column_names])
+PARTITION BY LINEAR KEY [ALGORITHM={MYSQL51|MYSQL55|BASE31|CRC32C|XXH32|XXH3}]
+([column_names])
 [PARTITIONS (number_of_partitions)]
 ```
+
+For a description of the different `ALGORITHM` types, see [KEY Partitioning](key-partitioning-type.md).
 
 ## Description
 
