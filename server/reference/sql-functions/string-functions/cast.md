@@ -31,6 +31,7 @@ The type can be one of the following values:
 * [UNSIGNED \[INTEGER\]](../../data-types/numeric-data-types/integer.md)
 * [TIME](../../data-types/date-and-time-data-types/time.md)
 * [VARCHAR](../../data-types/string-data-types/varchar.md)
+* [XMLTYPE](../../data-types/string-data-types/xmltype.md) (Available starting with MariaDB 12.3)
 
 The main difference between `CAST` and [CONVERT()](convert.md) is that [CONVERT(expr,type)](convert.md) is ODBC syntax, while `CAST(expr as type)` and [CONVERT(... USING ...)](convert.md) are SQL92 syntax.
 

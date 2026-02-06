@@ -2240,6 +2240,7 @@
       * [VARCHAR](reference/data-types/string-data-types/varchar.md)
       * [VARCHAR2](reference/data-types/string-data-types/varchar2.md)
       * [VARCHARACTER](reference/data-types/string-data-types/varcharacter.md)
+      * [XMLTYPE](reference/data-types/string-data-types/xmltype.md)
       * [Character Sets and Collations](reference/data-types/string-data-types/character-sets/README.md)
         * [Character Set and Collation Overview](reference/data-types/string-data-types/character-sets/character-set-and-collation-overview.md)
         * [Setting Character Sets and Collations](reference/data-types/string-data-types/character-sets/setting-character-sets-and-collations.md)
