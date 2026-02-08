@@ -326,7 +326,16 @@ For more details, see [CHANGE MASTER TO](../../reference/sql-statements/administ
 * Data Type: `numeric`
 * Default Value: `32768`
 * Range - 32 bit: `4096` to `4294967295`
-* Range - 64 bit: `4096` to `18446744073709547520`
+* Range - 64 bit: `4096` to `18446744073709547520`&#x20;
+
+#### `binlog_storage_engine`&#x20;
+
+* Description: Specifies the storage engine that manages the binary log.
+* Command line: `--binlog-storage-engine=name`&#x20;
+* Scope: Global
+* Dynamic: No (requires server restart)
+* Data type: `enum`&#x20;
+* Default Value: `OFF`&#x20;
 
 #### `create_tmp_table_binlog_formats`
 
@@ -375,6 +384,15 @@ For more details, see [CHANGE MASTER TO](../../reference/sql-statements/administ
 * Dynamic: Yes
 * Data Type: `string`
 * Related variables: [init\_connect](../optimization-and-tuning/system-variables/server-system-variables.md#init_connect)
+
+#### `innodb_binlog_state_interval`
+
+* Description: The interval (in bytes) between writing GTID state records into the binary log.
+* Command line: `--innodb-binlog-state-interval=#`
+* Scope: Global
+* Dynamic: Yes
+* Data Type: `numeric`
+* Default Value: 104857600 (100MB)
 
 #### `log_bin`
 
