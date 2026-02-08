@@ -1,3 +1,10 @@
+---
+description: >-
+  MariaDB 12.3 introduces a new binary log implementation that stores binlog
+  events directly into InnoDB-managed tablespaces instead of separate flat files
+  on disk.
+---
+
 # InnoDB-Based Binary Log
 
 ## Description
@@ -20,12 +27,13 @@ The InnoDB-based binlog offers two key performance advantages:
 
 ## Comparison: Traditional vs. New Binlog
 
-| File Extension  | `.idx`, `.index` files                                     | `.ibb`                                |
+| Feature         | Traditional Binlog                                         | New InnoDB-Based Binlog               |
 | --------------- | ---------------------------------------------------------- | ------------------------------------- |
+| File Extension  | `.idx`, `.index` files                                     | `.ibb`                                |
 | Crash Safety    | Needs `sync_binlog=1`                                      | Native / Inherited from InnoDB engine |
 | Commit Protocol | Two-Phase Commit (Slow)                                    | Integrated (Fast)                     |
 | Positioning     | Filename/Offset or [Global Transaction ID](gtid.md) (GTID) | GTID Only                             |
-| Pre-allocation  | No                                                         | Yes (Size fixed to `max_binlog_size`) |
+| File Allocation | Incremental                                                | Pre-allocated (`max_binlog_size`)     |
 
 ## When to Use InnoDb-Based Binlogs
 
