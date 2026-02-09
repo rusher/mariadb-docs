@@ -168,6 +168,35 @@ If the `mysql` database is edited indirectly, statement logging is used regardle
 
 `CREATE TABLE ... SELECT` can use a combination of logging formats. The [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) portion of the statement is logged using statement-based logging, while the [SELECT](../../../reference/sql-statements/data-manipulation/selecting-data/select.md) portion is logged according to the value of `binlog_format`.
 
+### Metadata Field Definitions (mariadb-binlog Output)
+
+When using the mariadb-binlog utility to view the binary log, events are presented with a standardized header and specific metadata tags. Understanding these is essential for building replication monitors or audit tools.
+
+**Event Header Template:** `# at {Position}` `#YYMMDD HH:MM:SS server id {ID} end_log_pos {Pos} CRC32 {Value} {Event_Type}: ...`
+
+| Field             | Component               | Description                                                                                                               |
+| ----------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| **Timestamp**     | `YYMMDD HH:MM:SS`       | The time the event was recorded on the originating server.                                                                |
+| **Server ID**     | `Unsigned Integer`      | The unique ID of the server where the event originated. This matches the `server_id` used in General and Slow Query logs. |
+| **end\_log\_pos** | `Unsigned Integer`      | The byte offset (position) of the _next_ event in the log file.                                                           |
+| **Thread ID**     | `at {ID}`               | (Positional) The connection identifier that executed the statement. Matches `Thread ID` in other logs.                    |
+| **GTID**          | `Domain-ServerID-SeqNo` | Global Transaction ID (e.g., `0-1-100`). Uniquely identifies a transaction across a replication topology.                 |
+| **Xid**           | `Unsigned Integer`      | The internal transaction ID used for 2-Phase Commit (2PC) between storage engines (e.g., InnoDB) and the binary log.      |
+| **cid**           | `Unsigned Integer`      | Group Commit ID. Transactions with the same `cid` were flushed to disk in the same group.                                 |
+
+#### Impact of Configuration on Log Structure
+
+The structure and verbosity of `ROW` events are significantly altered by several system variables:
+
+* **binlog\_row\_image**:
+  * `FULL`: Logs all columns for both the "before" and "after" images.
+  * `MINIMAL`: Logs only the changed columns in the after image and identifying columns (PK/Unique) in the before image. Parsers must handle variable column counts per event.
+* **binlog\_row\_metadata**:
+  * `MINIMAL`: Only logs data.
+  * `FULL`: Includes column names and data types in the log. This is essential for parsers to decode the log without querying the live database schema.
+* **encrypt\_binlog**:
+  * If `ON`, events are encrypted on disk. `mariadb-binlog` will only display plain-text metadata if it has access to the encryption keys.
+
 ## See Also
 
 * [Setting up replication](../../../ha-and-performance/standard-replication/setting-up-replication.md)
