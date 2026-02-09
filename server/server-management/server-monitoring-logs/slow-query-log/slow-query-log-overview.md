@@ -116,6 +116,33 @@ slow_query_log
 slow_query_log_file=slow-queries.log
 ```
 
+#### Parsing Specification (File Format)
+
+When logging to a file, the Slow Query Log uses a multi-line format. Parsers must identify the start of a record and correctly separate the header metadata from the SQL query payload.
+
+**Record Start Indicator:** Every log entry begins with the literal string: `# User@Host:`
+
+**Header Specification:** The metadata section consists of several lines starting with a hash (`#`). These fields should be mapped as follows:
+
+| Line  | Component Template                                | Key Fields                                              |
+| ----- | ------------------------------------------------- | ------------------------------------------------------- |
+| **1** | `# User@Host: {User}[{User}] @ {Host} [{IP}]`     | `User`, `Host`, `IP`                                    |
+| **2** | `# Thread_id: {ID} Schema: {DB} QC_hit: {No/Yes}` | `Thread ID`, `Schema`, `QC_hit`                         |
+| **3** | `# Query_time: {Float} Lock_time: {Float} ...`    | `Query_time`, `Lock_time`, `Rows_sent`, `Rows_examined` |
+
+**SQL Payload:** The lines following the `#` headers contain the raw SQL statement.
+
+* **Note:** The SQL query can span multiple lines.
+* **Termination:** The record ends when the next `# User@Host:` indicator is encountered or the file ends.
+
+**Parsing Example for Tool Developers**
+
+A standard parser regex should look for the following sequence:
+
+1. **Start:** `^# User@Host: .*`
+2. **Metadata Capture:** Capture all lines starting with `#` until a line without a `#` is reached.
+3. **Query Capture:** Everything from the first non-`#` line until the next record start.
+
 ### Table Logging
 
 The slow query log can either be written to the [slow\_log](../../../reference/system-tables/the-mysql-database-tables/mysql-slow_log-table.md) table in the [mysql](../../../reference/system-tables/the-mysql-database-tables/) database by setting the [log\_output](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_output) system variable to `TABLE`. It can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:

@@ -368,6 +368,27 @@ or
   3a069644682e336e445039e48baae9693f9a08ee as process 50774
 ```
 
+### Formal Specification
+
+For modern MariaDB versions (10.1.5 and later), the standard file-based error log follows this strict anatomy:
+
+**Template:** `YYYY-MM-DD HH:MM:SS ThreadID [Level] Message`
+
+| Field | Component | Data Type          | Description                                                           |
+| ----- | --------- | ------------------ | --------------------------------------------------------------------- |
+| **1** | Timestamp | `DateTime`         | Formatted as `YYYY-MM-DD HH:MM:SS`.                                   |
+| **2** | Thread ID | `Unsigned Integer` | The internal connection ID. System messages use `0`.                  |
+| **3** | Level     | `String`           | Enclosed in brackets. Valid values: `[Note]`, `[Warning]`, `[Error]`. |
+| **4** | Message   | `String`           | The actual descriptive text of the event.                             |
+
+**Deviations and Anomalies**
+
+Parsers should account for the following scenarios where the log structure may deviate:
+
+* **Galera SST Logs:** When a Galera Cluster node performs a State Snapshot Transfer (SST), messages from external scripts (like `rsync` or `mariabackup`) are piped directly into the error log. These lines often lack the `ThreadID` and `[Level]` prefix.
+* **Crash Stack Traces:** Following a server crash, MariaDB writes a multi-line stack trace. This consists of a header line followed by multiple lines of hex offsets and function names (e.g., `handle_fatal_signal (sig=11)`). These do not follow the standard single-line format.
+* **Syslog Format:** If logging to syslog, the standard MariaDB prefix is replaced or preceded by the system's own header: `Month Day HH:MM:SS Hostname Ident[PID]: [Level] Message`
+
 ## Rotating the Error Log on Unix and Linux
 
 Unix and Linux distributions offer the [logrotate](https://linux.die.net/man/8/logrotate) utility, which makes it very easy to rotate log files. See [Rotating Logs on Unix and Linux](rotating-logs-on-unix-and-linux.md) for more information on how to use this utility to rotate the error log.
