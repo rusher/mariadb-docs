@@ -75,6 +75,21 @@ Each separated by a space or : as above
 | Error\_code   | OS error, MariaDB storage engine code (120-199) or MariaDB internal error code (1000-) | 5.5.22  |
 | Query         | Query text                                                                             | 5.5.22  |
 
+### **Formal Specification**
+
+The SQL Error Log Plugin collects errors sent to clients. Depending on the version and configuration (`sql_error_log_with_db_and_thread_info`), the log follows a positional space-delimited format.
+
+Modern Template (MariaDB 11.4+ with Full Info): `Time Thread_id User Database_name Type Error_code: Error_message : Query`
+
+| Time           | `YYYY-MM-DD hh-mm-ss` | Timestamp of the error.                                                    |
+| -------------- | --------------------- | -------------------------------------------------------------------------- |
+| Thread\_id     | `Unsigned Integer`    | Standardized: Thread ID. Matches the `Thread ID` in all other server logs. |
+| User           | `String`              | The login user and client host/IP.                                         |
+| Database\_name | `String`              | The selected database or `NULL`.                                           |
+| Type           | `ERROR` or `WARNING`  | Severity level of the message.                                             |
+| Error\_code    | `Integer`             | MariaDB or OS error code.                                                  |
+| Query          | `String`              | The literal SQL query text.                                                |
+
 ## Example of Logs
 
 ```
