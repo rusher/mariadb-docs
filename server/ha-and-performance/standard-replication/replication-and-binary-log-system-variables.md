@@ -1179,7 +1179,9 @@ For more details, see [CHANGE MASTER TO](../../reference/sql-statements/administ
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `0`
-* Range: `0` to `4294967295`
+* Range: `0` to `4294967295`&#x20;
+
+**Note**: When you enable the [InnoDB-based Binary Log](innodb-based-binary-log.md) (`--binary-storage-engine=innodb`), the `sync_binlog` option is ignored. Instead, the durability of the binary log is controlled by `--innodb-flush-log-at-trx-commit`, which applies to both InnoDB data and binary log writes.
 
 #### `sync_master_info`
 
