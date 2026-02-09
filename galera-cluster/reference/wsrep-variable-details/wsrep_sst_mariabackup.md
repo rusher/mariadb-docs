@@ -6,15 +6,15 @@ The `wsrep_sst_mariabackup` script handles the actual data transfer and processi
 
 The `wsrep_sst_mariadbbackup` script parses the following options:
 
-* `sfmt` (streamfmt)
+* `streamfmt` (sfmt)
   * Default: `mbstream`
-  * Description: Defines the streaming format used by `mariabackup` for the SST. `mbstream` indicates that `mariabackup` will output a continuous stream of data. Other potential values (though not explicitly shown as defaults) might be related to different backup methods or tools.
+  * Description: Defines the streaming format used by `mariabackup` for the SST. `mbstream` indicates that `mariabackup` will output a continuous stream of data.
 
 ***
 
-* `tfmt` (transferfmt)
+* `transferfmt` (tfmt)
   * Default: `socat`
-  * Description: Specifies the transfer format or utility used to move the data stream from the donor to the joiner node. `socat` is a common command-line tool for data transfer, often used for setting up various network connections.
+  * Description: Specifies the transfer format or utility used to move the data stream from the donor to the joiner node. `socat` is the standard tool used for this purpose.
 
 ***
 
@@ -28,9 +28,9 @@ The `wsrep_sst_mariadbbackup` script parses the following options:
 
 ***
 
-* `ttime` (time)
+* `time` (ttime)
   * Default: `0`
-  * Description: A timeout value in seconds for certain operations during the SST, or a flag related to timing the transfer. A value of `0` indicates no timeout or that timing is handled elsewhere.
+  * Description: When set to 1, logs the time spent on specific operations during the SST process to help with performance analysis. Specifies a space-separated list of extra files or directories to copy from the donor to the joiner node during the SST.
 
 ***
 
@@ -39,12 +39,12 @@ The `wsrep_sst_mariadbbackup` script parses the following options:
 
 ***
 
-* `scomp` (compressor)
+* `compressor` (scomp)
   * Description: Specifies the compression utility to be used on the data stream before transfer. Common values include `gzip`, `pigz`, `lz4`, or `qpress`, which reduce the data size for faster transmission over the network.
 
 ***
 
-* `sdecomp` (decompressor)
+* `decompressor` (sdecomp)
   * Description: Specifies the decompression utility to be used on the receiving end (joiner node) to decompress the data stream that was compressed by `scomp`. It should correspond to the `scomp` setting.
 
 ***
@@ -54,7 +54,7 @@ The `wsrep_sst_mariadbbackup` script parses the following options:
 
 ***
 
-* `uextra` (use-extra)
+* &#x20;`use-extra` (uextra)
   * Default: `0`
   * Description: Controls the SST connection method that `mariabackup` uses to connect to the local MariaDB server.  By default _(_`uextra=0`_),_ mariabackup connects through the standard database por&#x74;_._ When `uextra=1` is enabled, the connection attempts to use either:
     * The unix socket (if available), or&#x20;
@@ -62,30 +62,47 @@ The `wsrep_sst_mariadbbackup` script parses the following options:
 
 ***
 
-* `speciald` (sst-special-dirs)
+* `sst-special-dirs` (speciald)
   * Default: `1`
   * Description: A boolean flag that controls whether `mariabackup` handles  special directories (e.g., `innodb_log_group_home_dir`, `datadir`) in a specific way during the SST, rather than just copying them as regular files. This is important for maintaining data consistency.
 
 ***
 
-* `stimeout` (sst-initial-timeout)
+* `sst-initial-timeout` (stimeout)
   * Default: `300`
-  * Description: Sets an initial timeout in seconds for the SST process. If the SST doesn't make progress or complete within this initial period, it might be aborted.
+  * Description: Sets an initial timeout in seconds for the SST process. If the SST operation does not establish a connection or make progress within this period, it will be aborted.
 
 ***
 
-* `ssyslog` (sst-syslog)
+* `sst-syslog` (ssyslog)
   * Default: `0`
   * Description: A boolean flag (0 or 1) that controls whether SST-related messages should be logged to syslog. This can be useful for centralized logging and monitoring of Galera cluster events.
 
 ***
 
-* `sstlogarchive` (sst-log-archive)
+* `sst-log-archive` (sstlogarchive)
   * Default: `1`
   * Description: A boolean flag (0 or 1) that determines whether SST logs should be archived. Archiving logs helps in post-mortem analysis and troubleshooting of SST failures.
 
 ***
 
-* `sstlogarchivedir` (sst-log-archive-dir)
+* `sst-log-archive-dir` (sstlogarchivedir)
   * Description: Specifies the directory where SST logs should be archived if `sstlogarchive` is enabled.
 
+### Example
+
+#### Set in Configuration File
+
+To configure `wsrep_sst_mariabackup` options, add them to the `[sst]` group in your configuration file:
+
+{% code overflow="wrap" %}
+```ini
+[sst] 
+streamfmt=mbstream 
+transferfmt=socat 
+compressor=lz4 
+decompressor=lz4 
+sst-initial-timeout=600 
+sst-log-archive=1
+```
+{% endcode %}
