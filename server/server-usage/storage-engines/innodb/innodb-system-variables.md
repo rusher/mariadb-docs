@@ -1192,7 +1192,9 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Dynamic: Yes
 * Data Type: `enumeration`
 * Default Value: `1`
-* Valid Values: `0`, `1`, `2` or `3`
+* Valid Values: `0`, `1`, `2` or `3`&#x20;
+
+**Note**: When the [InnoDB-based Binary Log](../../../ha-and-performance/standard-replication/innodb-based-binary-log.md) is enabled (`--binary-storage-engine=innodb`), this option manages the durability of commits for both binlog files and InnoDB table data. Also, in this configuration, there is no separate binlog `fsync` step and no two-phase commit between InnoDB and the binary log.
 
 #### `innodb_flush_method`
 

@@ -112,7 +112,9 @@ In semisynchronous replication, there are two potential points at which the prim
 The wait point is configured by the [rpl\_semi\_sync\_master\_wait\_point](semisynchronous-replication.md#rpl_semi_sync_master_wait_point) system variable. The supported values are:
 
 * `AFTER_SYNC`
-* `AFTER_COMMIT`
+* `AFTER_COMMIT`&#x20;
+
+> When using the [InnoDB-based Binary Log](innodb-based-binary-log.md) (`--binary-storage-engine=innodb`), the `AFTER_SYNC` wait point is not supported. Only `AFTER_COMMIT` is available, since the traditional two-phase commit between the binary log and the InnoDB storage engine is no longer used.
 
 It can be set dynamically with [SET GLOBAL](../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
@@ -128,7 +130,12 @@ It can also be set in a server [option group](../../server-management/install-an
 rpl_semi_sync_master_wait_point=AFTER_SYNC
 ```
 
-When this variable is set to `AFTER_SYNC`, the primary performs the following steps:
+When this variable is set to `AFTER_SYNC`, the primary performs the following steps:<br>
+
+```
+> [!IMPORTANT] The wait point is only supported with the traditional binlog implementation and not available when the the 
+InnoDB-based Binary Log is enabled.
+```
 
 1. Prepares the transaction in the storage engine.
 2. Syncs the transaction to the [binary log](../../server-management/server-monitoring-logs/binary-log/).
