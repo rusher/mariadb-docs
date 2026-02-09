@@ -130,12 +130,10 @@ It can also be set in a server [option group](../../server-management/install-an
 rpl_semi_sync_master_wait_point=AFTER_SYNC
 ```
 
-When this variable is set to `AFTER_SYNC`, the primary performs the following steps:<br>
+When this variable is set to `AFTER_SYNC`, the primary performs the following steps:
 
-```
-[IMPORTANT] The wait point is only supported with the traditional binlog implementation and not available when the the 
-InnoDB-based Binary Log is enabled.
-```
+> The `AFTER_SYNC` wait point is only supported with the traditional binlog implementation and is not available when the the> \
+> InnoDB-based Binary Log is enabled.
 
 1. Prepares the transaction in the storage engine.
 2. Syncs the transaction to the [binary log](../../server-management/server-monitoring-logs/binary-log/).
