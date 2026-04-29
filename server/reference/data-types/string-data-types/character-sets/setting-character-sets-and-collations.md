@@ -481,10 +481,13 @@ The shift to `utf8mb4` and UCA-based collations provides several benefits:
 
 Before upgrading, please be aware of the following technical implications:
 
+* The storage overhead for `CHAR(N)` indeed significantly increases. The server reserved `N` bytes for a `CHAR(N) CHARACTER SET latin1` column in every record. Now it must reserve `N*4` bytes for a `CHAR(N) CHARACTER SET utf8mb4` column, and fill the unused bytes with trailing spacing.&#x20;
+* The storage overhead for a `VARCHAR(N)` is not really palpable because the server only stores actual strings without padding. West European languages mostly use basic ASCII letters, only rarely accented letters. For example, for German, the letter use statistics is here: [https://www.sttmedia.com/characterfrequency-german](https://www.sttmedia.com/characterfrequency-german). After switching from latin1 to utf8mb4, only accented letters need more storage, but since they're making up only for a small portion, the overall growth is insignificant.
+* The previous two points indicate that it might be worthwhile to consider switching from `CHAR` to `VARCHAR` columns.
 * Replication Impact: Because `utf8mb4_uca1400_ai_ci` was not available in earlier versions, replication from MariaDB 11.8 to MariaDB 10.6 will fail unless the server is configured to use the old defaults.
-* Storage Overhead: Using `utf8mb4` may increase storage requirements for `CHAR` and `VARCHAR` columns, particularly for data containing non-ASCII characters.
+* Storage Overhead: Using `utf8mb4` may increase storage requirements for `CHAR` and `VARCHAR` columns, particularly for data containing non-ASCII characters. This is particularly true when table columns contain `latin1` code points outside of the ASCII range.
 * Performance: Some comparison operations may be slower with the new collation compared to the fixed-width `latin1_swedish_ci` collation.
-* Application Compatibility: Some applications that rely on `latin1` behavior may require updates to function correctly with the new defaults.
+* Application Compatibility: Some applications that rely on `latin1` behavior may require updates to function correctly with the new defaults. Problems can occur because a `latin1` column can always compare to a binary string, while a `utf8mb4` column cannot (at least not always), because not every binary string is a well-formed `utf8mb4` string. A workaround is to cast the `utf8mb4` column to `BINARY` before doing a comparison.
 
 ### Restoring Old Defaults
 
