@@ -603,6 +603,7 @@
       * [MariaDB Enterprise Server Docker Official Image Environment Variables](server-management/automated-mariadb-deployment-and-administration/docker-and-mariadb/mariadb-server-docker-official-image-environment-variables.md)
       * [Setting Up a LAMP Stack with Docker Compose](server-management/automated-mariadb-deployment-and-administration/docker-and-mariadb/setting-up-a-lamp-stack-with-docker-compose.md)
       * [Using Healthcheck](server-management/automated-mariadb-deployment-and-administration/docker-and-mariadb/using-healthcheck-sh.md)
+      * [MariaDB Enterprise Container Image Configuration Reference](server-management/automated-mariadb-deployment-and-administration/docker-and-mariadb/mariadb-enterprise-container-image-configuration-reference.md)
     * [Kubernetes and MariaDB](server-management/automated-mariadb-deployment-and-administration/kubernetes-and-mariadb/README.md)
       * [Kubernetes Operators for MariaDB](server-management/automated-mariadb-deployment-and-administration/kubernetes-and-mariadb/kubernetes-operators-for-mariadb.md)
       * [Kubernetes Overview for MariaDB Users](server-management/automated-mariadb-deployment-and-administration/kubernetes-and-mariadb/kubernetes-overview-for-mariadb-users.md)
