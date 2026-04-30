@@ -67,6 +67,7 @@ This list includes all features since the previous long-term release, [MariaDB 1
 
 ### InnoDB
 
+* **Behavioral change:** [innodb\_snapshot\_isolation](https://mariadb.com/docs/server/server-usage/storage-engines/innodb/innodb-system-variables#innodb_snapshot_isolation) system variable now defaults to `ON`, previously was `OFF` ([MDEV-35124](https://jira.mariadb.org/browse/MDEV-35124)). This changes the behavior of [repeatable reads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/set-commands/set-transaction#repeatable-read).
 * Fix [innodb-adaptive-hash-index](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_adaptive_hash_index) scalability with multiple threads ([MDEV-35049](https://jira.mariadb.org/browse/MDEV-35049))
 
 ### Backup and Restore

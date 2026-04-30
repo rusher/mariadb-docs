@@ -40,6 +40,10 @@ MariaDB 12.3 is a [long term release](../about/release-model.md), maintained unt
 
 * The Galera package dependency has been removed from server packages and the Galera package is no longer included in the MariaDB repositories ([MDEV-38744](https://jira.mariadb.org/browse/MDEV-38744))
 
+### InnoDB
+
+**Behavioral change:** [innodb\_snapshot\_isolation](https://mariadb.com/docs/server/server-usage/storage-engines/innodb/innodb-system-variables#innodb_snapshot_isolation) system variable now defaults to `ON`, previously was `OFF` ([MDEV-35124](https://jira.mariadb.org/browse/MDEV-35124)). This changes the behavior of [repeatable reads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/set-commands/set-transaction#repeatable-read).
+
 ## List of All MariaDB 12.3 Releases
 
 | Date        | Release              | Status  | Release Notes              | Changelog                                 |
