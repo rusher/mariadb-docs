@@ -48,99 +48,98 @@ The following schema features are not supported:
 
 Compatibility is tiered based on the level of automated support provided between the engines.
 
-| **Compatibility Tier** | **Data Types**                                                                                               |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------ |
-| Native Compatible      | `INT`, `BIGINT`, `SMALLINT`, `DECIMAL`, `NUMERIC`, `FLOAT`, `DOUBLE`, `CHAR`, `VARCHAR`, `DATE`, `TIMESTAMP` |
-| Rewrite Compatible     | `TEXT`, `BOOLEAN`, `TINYINT(1)`, `DATETIME`, `TIME`, `JSON`, `ENUM`, `SET`, `UUID`                           |
-| MariaDB Only           | `BLOB`, `BINARY`, `VARBINARY`, `TINYBLOB`, `Spatial types` (Geometry, Point, etc.)                           |
+| **Compatibility Tier** | **Data Types**                                                                                                                                         |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Native Compatible      | `INT`, `BIGINT`, `SMALLINT`, `DECIMAL`, `NUMERIC`, `FLOAT`, `DOUBLE`, `CHAR`, `VARCHAR`, `DATE`, `TIMESTAMP`, `BIT`, `ENUM`, `SET`, and `Binary types` |
+| Rewrite Compatible     | `TEXT`, `BOOLEAN`, `TINYINT(1)`, `DATETIME`, `TIME`, `JSON`, `ENUM`, `SET`, `UUID`                                                                     |
+| MariaDB Only           | `BLOB`, `BINARY`, `VARBINARY`, `TINYBLOB`, `Spatial types` (Geometry, Point, etc.)                                                                     |
 
 ### 1. Detailed Schema Mapping (CREATE TABLE)
 
 The following details how MariaDB types are interpreted by Exasol during automated schema replication .
 
-| **MariaDB Data type** | **Exasol Expected**      | **Exasol Actual**  | **Comment**                                 |
-| --------------------- | ------------------------ | ------------------ | ------------------------------------------- |
-| `INT`                 | —                        | `DECIMAL(18,0)`    | Expected wider type?                        |
-| `BIGINT`              | `DECIMAL(36,0)`          | `DECIMAL(36,0)`    | ✅                                           |
-| `SMALLINT`            | `DECIMAL(5,0)`           | `DECIMAL(9,0)`     | ⚠️ mismatch                                 |
-| `MEDIUMINT`           | `DECIMAL(8,0)`           | `DECIMAL(18,0)`    | ⚠️ mismatch                                 |
-| `SERIAL`              | `DECIMAL(36,0) IDENTITY` | —                  | ❌ syntax error (IDENTIFIER\_PART)           |
-| `INT UNSIGNED`        | `DECIMAL(10,0)`          | `DECIMAL(18,0)`    | ⚠️ mismatch                                 |
-| `DECIMAL(10, 4)`      | `DECIMAL(10, 4)`         | `DECIMAL(10,4)`    | ✅                                           |
-| `NUMERIC(15, 2)`      | `DECIMAL(15, 2)`         | `DECIMAL(15,2)`    | ✅                                           |
-| `FLOAT`               | `FLOAT`                  | `DOUBLE`           | ⚠️ mismatch                                 |
-| `DOUBLE`              | `DOUBLE`                 | `DOUBLE`           | ✅                                           |
-| `DOUBLE PRECISION`    | `DOUBLE PRECISION`       | `DOUBLE`           | ❓ mismatch?                                 |
-| `REAL`                | `DOUBLE PRECISION`       | `DOUBLE`           | ❓ mismatch?                                 |
-| `TINYINT(1)`          | `DECIMAL(3,0)`           | `DECIMAL(3,0)`     | ✅                                           |
-| `BOOLEAN`             | `BOOLEAN`                | `BOOLEAN`          | ✅                                           |
-| `BIT`                 | —                        | —                  | Not supported                               |
-| `CHAR(10)`            | `CHAR(10)`               | `CHAR(10)`         | ✅                                           |
-| `VARCHAR(255)`        | `VARCHAR(255)`           | `VARCHAR(255)`     | ✅                                           |
-| `NCHAR(12)`           | `CHAR(12)`               | `CHAR(12)`         | ✅                                           |
-| `NVARCHAR(200)`       | `VARCHAR(200)`           | `VARCHAR(200)`     | ✅                                           |
-| `ENUM('A', 'B', 'C')` | `VARCHAR(500)`           | —                  | ❌ Error: Character cannot be cast to String |
-| `SET('X', 'Y', 'Z')`  | `VARCHAR(500)`           | —                  | ❌ Error: Character cannot be cast to String |
-| `JSON`                | `VARCHAR(2000000)`       | `VARCHAR(2000000)` | ✅                                           |
-| `TINYTEXT`            | `VARCHAR(255)`           | `VARCHAR(255)`     | ✅                                           |
-| `TEXT`                | `VARCHAR(65535)`         | `VARCHAR(65535)`   | ✅                                           |
-| `MEDIUMTEXT`          | `VARCHAR(2000000)`       | `VARCHAR(2000000)` | ✅                                           |
-| `LONGTEXT`            | `VARCHAR(2000000)`       | `VARCHAR(2000000)` | ✅                                           |
-| `TINYBLOB`            | —                        | —                  | ❌ Syntax error: unexpected IDENTIFIER\_PART |
-| `BLOB`                | —                        | —                  | Not supported                               |
-| `MEDIUMBLOB`          | —                        | —                  | ❌ Syntax error: unexpected IDENTIFIER\_PART |
-| `LONGBLOB`            | —                        | —                  | ❌ Syntax error: unexpected IDENTIFIER\_PART |
-| `VARBINARY(255)`      | —                        | —                  | ❌ Syntax error: unexpected IDENTIFIER\_PART |
-| `BINARY(16)`          | —                        | —                  | ❌ Syntax error: unexpected BINARY\_         |
-| `DATE`                | `DATE`                   | `DATE`             | ✅                                           |
-| `DATETIME`            | `TIMESTAMP`              | `TIMESTAMP(3)`     | ⚠️ mismatch                                 |
-| `DATETIME(6)`         | —                        | `TIMESTAMP(6)`     | ❓                                           |
-| `TIME`                | `TIMESTAMP`              | `TIMESTAMP(3)`     | ⚠️ mismatch                                 |
-| `TIME(6)`             | —                        | `TIMESTAMP(6)`     | ❓                                           |
-| `TIMESTAMP`           | `TIMESTAMP`              | `TIMESTAMP(3)`     | ⚠️ mismatch                                 |
-| `YEAR(4)`             | `DECIMAL(4,0)`           | `DECIMAL(18,0)`    | ⚠️ mismatch                                 |
-| `INET6`               | —                        | —                  | 🛑 Debezium Fatal Crash                     |
-| `UUID`                | —                        | —                  | 🛑 Debezium Fatal Crash                     |
-| `XMLTYPE`             | —                        | —                  | 🛑 Debezium Fatal Crash                     |
+| **MariaDB Data type** | **Exasol Expected**                  | **Exasol Actual**                    | **Comment**                       |
+| --------------------- | ------------------------------------ | ------------------------------------ | --------------------------------- |
+| `INT`                 | —                                    | `DECIMAL(18,0)`                      | Expected wider type?              |
+| `BIGINT`              | `DECIMAL(36,0)`                      | `DECIMAL(36,0)`                      | ✅                                 |
+| `SMALLINT`            | `DECIMAL(5,0)`                       | `DECIMAL(9,0)`                       | ⚠️ mismatch                       |
+| `MEDIUMINT`           | `DECIMAL(8,0)`                       | `DECIMAL(18,0)`                      | ⚠️ mismatch                       |
+| `SERIAL`              | `DECIMAL(36,0) IDENTITY`             | —                                    | ❌ syntax error (IDENTIFIER\_PART) |
+| `INT UNSIGNED`        | `DECIMAL(10,0)`                      | `DECIMAL(18,0)`                      | ⚠️ mismatch                       |
+| `DECIMAL(10, 4)`      | `DECIMAL(10, 4)`                     | `DECIMAL(10,4)`                      | ✅                                 |
+| `NUMERIC(15, 2)`      | `DECIMAL(15, 2)`                     | `DECIMAL(15,2)`                      | ✅                                 |
+| `FLOAT`               | `FLOAT`                              | `DOUBLE`                             | ⚠️ mismatch                       |
+| `DOUBLE`              | `DOUBLE`                             | `DOUBLE`                             | ✅                                 |
+| `DOUBLE PRECISION`    | `DOUBLE PRECISION`                   | `DOUBLE`                             | ❓ mismatch?                       |
+| `REAL`                | `DOUBLE PRECISION`                   | `DOUBLE`                             | ❓ mismatch?                       |
+| `TINYINT(1)`          | `DECIMAL(3,0)`                       | `DECIMAL(3,0)`                       | ✅                                 |
+| `BOOLEAN`             | `BOOLEAN`                            | `BOOLEAN`                            | ✅                                 |
+| `BIT`                 | `DECIMAL(36,0)`                      | `DECIMAL(36,0)`                      | ✅                                 |
+| `CHAR(10)`            | `CHAR(10)`                           | `CHAR(10)`                           | ✅                                 |
+| `VARCHAR(255)`        | `VARCHAR(255)`                       | `VARCHAR(255)`                       | ✅                                 |
+| `NCHAR(12)`           | `CHAR(12)`                           | `CHAR(12)`                           | ✅                                 |
+| `NVARCHAR(200)`       | `VARCHAR(200)`                       | `VARCHAR(200)`                       | ✅                                 |
+| `ENUM('A', 'B', 'C')` | `VARCHAR(500)`                       | `VARCHAR(65535)`                     | ✅                                 |
+| `SET('X', 'Y', 'Z')`  | `VARCHAR(500)`                       | `VARCHAR(65535)`                     | ✅                                 |
+| `JSON`                | `VARCHAR(2000000)`                   | `VARCHAR(2000000)`                   | ✅                                 |
+| `TINYTEXT`            | `VARCHAR(255)`                       | `VARCHAR(255)`                       | ✅                                 |
+| `TEXT`                | `VARCHAR(65535)`                     | `VARCHAR(65535)`                     | ✅                                 |
+| `MEDIUMTEXT`          | `VARCHAR(2000000)`                   | `VARCHAR(2000000)`                   | ✅                                 |
+| `LONGTEXT`            | `VARCHAR(2000000)`                   | `VARCHAR(2000000)`                   | ✅                                 |
+| `TINYBLOB`            | <p><code>VARCHAR(255)</code><br></p> | <p><code>VARCHAR(255)</code><br></p> | ✅                                 |
+| `BLOB`                | `VARCHAR(65535)`                     | `VARCHAR(65535)`                     | ✅                                 |
+| `MEDIUMBLOB`          | `VARCHAR(2000000)`                   | `VARCHAR(2000000)`                   | ✅                                 |
+| `LONGBLOB`            | `VARCHAR(2000000)`                   | `VARCHAR(2000000)`                   | ✅                                 |
+| `VARBINARY(255)`      | `VARCHAR(255)`                       | `VARCHAR(255)`                       | ✅                                 |
+| `BINARY(16)`          | `CHAR(16)`                           | `CHAR(16)`                           | ✅                                 |
+| `DATE`                | `DATE`                               | `DATE`                               | ✅                                 |
+| `DATETIME`            | `TIMESTAMP`                          | `TIMESTAMP(3)`                       | ⚠️ mismatch                       |
+| `DATETIME(6)`         | `TIMESTAMP(6)`                       | `TIMESTAMP(6)`                       | ✅                                 |
+| `TIME`                | `TIMESTAMP`                          | `TIMESTAMP(3)`                       | ⚠️ mismatch                       |
+| `TIME(6)`             | `TIMESTAMP(6)`                       | `TIMESTAMP(6)`                       | ✅                                 |
+| `TIMESTAMP`           | `TIMESTAMP`                          | `TIMESTAMP(3)`                       | ⚠️ mismatch                       |
+| `TIMESTAMP(6)`        | `TIMESTAMP(6)`                       | `TIMESTAMP(6)`                       | ✅                                 |
+| `YEAR(4)`             | `DECIMAL(4,0)`                       | `DECIMAL(18,0)`                      | ⚠️ mismatch                       |
+| `INET6`               | —                                    | —                                    | 🛑 Debezium Fatal Crash           |
+| `UUID`                | —                                    | —                                    | 🛑 Debezium Fatal Crash           |
+| `XMLTYPE`             | —                                    | —                                    | 🛑 Debezium Fatal Crash           |
 
 ### 2. Data Value Replication Results (INSERT)
 
 Precision shifts and engine-specific behaviors during transfer .
 
-| **Data Type**      | **MariaDB Value**          | **Exasol Value**           | **Comment**                               |
-| ------------------ | -------------------------- | -------------------------- | ----------------------------------------- |
-| `INT`              | `42`                       | `42`                       | ✅                                         |
-| `SMALLINT`         | `32767`                    | `32767`                    | ✅                                         |
-| `MEDIUMINT`        | `8388607`                  | `8388607`                  | ✅                                         |
-| `INT UNSIGNED`     | `3000000000`               | `3000000000`               | ✅                                         |
-| `BIGINT`           | `9223372036854775807`      | `9223372036854775807`      | ✅                                         |
-| `DECIMAL(10, 4)`   | `1234.5678`                | `1234,5678`                | ✅                                         |
-| `NUMERIC(15, 2)`   | `99999.99`                 | `99999,99`                 | ✅                                         |
-| `FLOAT`            | `3.14159`                  | `3,14159012`               | ❌ Precision distortion                    |
-| `DOUBLE`           | `2.718281828459`           | `2,71828183`               | ❌ Precision distortion                    |
-| `DOUBLE PRECISION` | `123456.7890123`           | `123456,789`               | ❌ Precision distortion                    |
-| `REAL`             | `-9876.54321`              | `-9876,54297`              | ❌ Precision distortion                    |
-| `TINYINT(1)`       | `1`                        | `1`                        | ✅                                         |
-| `BOOLEAN`          | `1`                        | `1`                        | ✅                                         |
-| `CHAR(10)`         | `'test'` (len=4)           | `'test '` (len=10)         | ❌ Right-padded with spaces                |
-| `VARCHAR(255)`     | `'Hello World...'`(len=19) | `'Hello World...'`(len=19) | ✅                                         |
-| `NCHAR(12)`        | `'Привет'` (len=6)         | `'Привет'` (len=12)        | ❌ Right-padded                            |
-| `NVARCHAR(200)`    | `'Extended Unicode...'`    | `'Extended Unicode...'`    | ✅                                         |
-| `DATE`             | `2023-10-25`               | `2023-10-25`               | ✅                                         |
-| `TIMESTAMP`        | `... 14:30:00`             | `... 13:30:00.000`         | ❌ Time/Precision discrepancy              |
-| `DATETIME`         | `... 14:30:00`             | `... 13:30:00.000`         | ❌ Time/Precision discrepancy              |
-| `DATETIME(6)`      | `... 14:30:00.123456`      | `... 14:30:00.123456`      | ✅                                         |
-| `TIME`             | `14:30:00`                 | —                          | ❌ Error: Cannot cast DECIMAL to TIMESTAMP |
-| `TIME(6)`          | `14:30:00.987654`          | —                          | ❌ Error: Cannot cast DECIMAL to TIMESTAMP |
-| `TIMESTAMP(6)`     | `... 14:30:00.555555`      | `... 13:30:00.555555`      | ❌ Time shift discrepancy                  |
-| `YEAR(4)`          | `2024`                     | `2024`                     | ✅                                         |
-| `JSON`             | `{"key": "value"}`         | `{"key": "value"}`         | ✅                                         |
-| `TINYTEXT`         | `'tiny text data'`         | `'tiny text data'`         | ✅                                         |
-| `MEDIUMTEXT`       | `'medium text data'`       | `'medium text data'`       | ✅                                         |
-| `TEXT`             | `'standard text data'`     | `'standard text data'`     | ✅                                         |
-| `LONGTEXT`         | `'long text data'`         | `'long text data'`         | ✅                                         |
-
-***
+| **Data Type**      | **MariaDB Value**          | **Exasol Value**           | **Comment**                  |
+| ------------------ | -------------------------- | -------------------------- | ---------------------------- |
+| `INT`              | `42`                       | `42`                       | ✅                            |
+| `SMALLINT`         | `32767`                    | `32767`                    | ✅                            |
+| `MEDIUMINT`        | `8388607`                  | `8388607`                  | ✅                            |
+| `INT UNSIGNED`     | `3000000000`               | `3000000000`               | ✅                            |
+| `BIGINT`           | `9223372036854775807`      | `9223372036854775807`      | ✅                            |
+| `DECIMAL(10, 4)`   | `1234.5678`                | `1234,5678`                | ✅                            |
+| `NUMERIC(15, 2)`   | `99999.99`                 | `99999,99`                 | ✅                            |
+| `FLOAT`            | `3.14159`                  | `3,14159012`               | ❌ Precision distortion       |
+| `DOUBLE`           | `2.718281828459`           | `2,71828183`               | ❌ Precision distortion       |
+| `DOUBLE PRECISION` | `123456.7890123`           | `123456,789`               | ❌ Precision distortion       |
+| `REAL`             | `-9876.54321`              | `-9876,54297`              | ❌ Precision distortion       |
+| `TINYINT(1)`       | `1`                        | `1`                        | ✅                            |
+| `BOOLEAN`          | `1`                        | `1`                        | ✅                            |
+| `CHAR(10)`         | `'test'` (len=4)           | `'test '` (len=10)         | ❌ Right-padded with spaces   |
+| `VARCHAR(255)`     | `'Hello World...'`(len=19) | `'Hello World...'`(len=19) | ✅                            |
+| `NCHAR(12)`        | `'Привет'` (len=6)         | `'Привет'` (len=12)        | ❌ Right-padded               |
+| `NVARCHAR(200)`    | `'Extended Unicode...'`    | `'Extended Unicode...'`    | ✅                            |
+| `DATE`             | `2023-10-25`               | `2023-10-25`               | ✅                            |
+| `TIMESTAMP`        | `... 14:30:00`             | `... 13:30:00.000`         | ❌ Time/Precision discrepancy |
+| `DATETIME`         | `... 14:30:00`             | `... 13:30:00.000`         | ❌ Time/Precision discrepancy |
+| `DATETIME(6)`      | `... 14:30:00.123456`      | `... 14:30:00.123456`      | ✅                            |
+| `TIME`             | `14:30:00`                 | `14:30:00`                 | ✅ Replicates as TIMESTAMP(3) |
+| `TIME(6)`          | `14:30:00.987654`          | `...`                      | ✅ Replicates as TIMESTAMP(6) |
+| `TIMESTAMP(6)`     | `... 14:30:00.555555`      | `... 13:30:00.555555`      | ❌ Time shift discrepancy     |
+| `YEAR(4)`          | `2024`                     | `2024`                     | ✅                            |
+| `JSON`             | `{"key": "value"}`         | `{"key": "value"}`         | ✅                            |
+| `TINYTEXT`         | `'tiny text data'`         | `'tiny text data'`         | ✅                            |
+| `MEDIUMTEXT`       | `'medium text data'`       | `'medium text data'`       | ✅                            |
+| `TEXT`             | `'standard text data'`     | `'standard text data'`     | ✅                            |
+| `LONGTEXT`         | `'long text data'`         | `'long text data'`         | ✅                            |
 
 ## IV. Semantic Logic & NULL Behavior
 
