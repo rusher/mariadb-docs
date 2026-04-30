@@ -25,7 +25,7 @@ level:
    | SERIALIZABLE
 ```
 
-## Description
+## Overview
 
 This statement sets the transaction isolation level or the transaction access mode globally, for the current session, or for the next transaction:
 
@@ -35,7 +35,7 @@ This statement sets the transaction isolation level or the transaction access mo
 
 A change to the global default isolation level requires the [SUPER](../account-management-sql-statements/grant.md#super) privilege. Any session is free to change its session isolation level (even in the middle of a transaction), or the isolation level for its next transaction.
 
-### Isolation Level
+## Isolation Level
 
 To set the global default isolation level at server startup, use the [--transaction-isolation=level](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#tx_isolation) option on the command line or in an option file. Values of level for this option use dashes rather than spaces, so the allowable values are [READ\_UNCOMMITTED](set-transaction.md#read-uncommitted),[READ-COMMITTED](set-transaction.md#read-committed), [REPEATABLE-READ](set-transaction.md#repeatable-read), or [SERIALIZABLE](set-transaction.md#serializable). For example, to set the default isolation level to `REPEATABLE READ`, use these lines in the `[mariadb]` section of an option file:
 
@@ -60,20 +60,19 @@ SELECT @@GLOBAL.transaction_isolation, @@tx_isolation;
 
 InnoDB supports each of the translation isolation levels described here using different locking strategies. The default level is`REPEATABLE READ`. For additional information about InnoDB record-level locks and how it uses them to execute various types of statements, see [InnoDB Lock Modes](../../../server-usage/storage-engines/innodb/innodb-lock-modes.md), and [innodb-locks-set.html](https://dev.mysql.com/doc/refman/en/innodb-locks-set.html).
 
-### Isolation Levels
+## Isolation Levels
 
 The following sections describe how MariaDB supports the different transaction levels.
 
 {% include "../../../.gitbook/includes/with-both-read-uncommitted-....md" %}
 
-#### READ UNCOMMITTED
+### READ UNCOMMITTED
 
-`SELECT` statements are performed in a non-locking fashion, but a possible earlier version of a row might be used. Thus, using this isolation level, such reads are not consistent. This is also called a "dirty\
-read". Otherwise, this isolation level works like`READ COMMITTED`.
+`SELECT` statements are performed in a non-locking fashion, but a possible earlier version of a row might be used. Thus, using this isolation level, such reads are not consistent. This is also called a "dirty read". Otherwise, this isolation level works like`READ COMMITTED`.
 
 {% include "../../../.gitbook/includes/with-both-read-uncommitted-....md" %}
 
-#### READ COMMITTED
+### READ COMMITTED
 
 A somewhat Oracle-like isolation level with respect to consistent (non-locking) reads: Each consistent read, even within the same transaction, sets and reads its own fresh snapshot. See [innodb-consistent-read.html](https://dev.mysql.com/doc/refman/en/innodb-consistent-read.html).
 
@@ -85,14 +84,14 @@ duplicate-key checking. Also, record locks for non-matching rows are released af
 {% endhint %}
 
 {% hint style="info" %}
-Rows that don't match are not being locked in a so called semiconsistent read. This means you might see only a partially consistent read when the transaction isolation level is `READ COMMITTED` or `READ UNCOMMITTED`.&#x20;
+Rows that don't match are not being locked in a so called semiconsistent read. This means you might see only a partially consistent read when the transaction isolation level is `READ COMMITTED` or `READ UNCOMMITTED`.
 
 (A semiconsistent read applies to `UPDATE` and `DELETE` statements. Those statements skip locked rows, provided the version in the current read does not match the `WHERE` condition. Also, if the latest version of a record was successfully locked, but found not to match the condition, the lock is released.)
 {% endhint %}
 
-#### REPEATABLE READ
+### REPEATABLE READ
 
-This is the default isolation level for InnoDB. For consistent reads, there is an important difference from the `READ COMMITTED` isolation level: All consistent reads within the same transaction read the\
+**This is the default isolation level for InnoDB.** For consistent reads, there is an important difference from the `READ COMMITTED` isolation level: All consistent reads within the same transaction read the\
 snapshot established by the first read. This convention means that if you issue several plain (non-locking) `SELECT` statements within the same transaction, these `SELECT` statements are consistent\
 also with respect to each other. See [innodb-consistent-read.html](https://dev.mysql.com/doc/refman/en/innodb-consistent-read.html).
 
@@ -110,13 +109,30 @@ For other search conditions, InnoDB locks the index range scanned, using gap loc
 
 This is the minimum isolation level for non-distributed [XA transactions](xa-transactions.md).
 
-#### SERIALIZABLE
+#### Snapshot Isolation and DML Operations
+
+{% hint style="info" %}
+This behavior is available from MariaDB 11.6.2 and 12.3.
+{% endhint %}
+
+The [`innodb_snapshot_isolation`](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_snapshot_isolation) system variable is enabled by default. This introduces a stricter enforcement of `REPEATABLE READ` for `UPDATE` and `DELETE` statements:<br>
+
+* **Conflict Detection:** If an `UPDATE` or `DELETE` attempts to modify a row that has been changed by a concurrent transaction since your snapshot was established, the operation is rejected.
+* [**ER\_CHECKREAD**](../../error-codes/mariadb-error-codes-1000-to-1099/e1020.md) **(1020):** This rejection triggers error `ER_CHECKREAD`. The revised error message suggests that the user should try restarting the transaction.
+* **Automatic Rollback:** Unlike a simple statement error, `ER_CHECKREAD` is treated similarly to a deadlock: **the entire transaction is rolled back**.
+* **Purpose:** This prevents the transaction from switching to "current-read" mode for that row, which would otherwise allow the transaction to observe concurrent changes it did not make, violating the pure repeatable read invariant.
+
+#### Traditional Locking Behavior
+
+If `innodb_snapshot_isolation` is disabled (set to `OFF`), InnoDB follows traditional behavior where locking reads (`SELECT ... FOR UPDATE`), `UPDATE`, and `DELETE` statements read the latest committed version of rows. In this mode, subsequent non-locking `SELECT` statements for those same rows also return the current version rather than the snapshot version, which can lead to non-repeatable read anomalies.
+
+### SERIALIZABLE
 
 This level is like `REPEATABLE READ`, but InnoDB implicitly converts all plain `SELECT` statements to [SELECT ... LOCK IN SHARE MODE](../data-manipulation/selecting-data/select.md#lock-in-share-mode-and-for-update-clauses) if [autocommit](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#autocommit) is disabled. If autocommit is enabled, the `SELECT` is its own transaction. It therefore is known to be read only and can be serialized if performed as a consistent (non-locking) read and need not block for other transactions. (This means that to force a plain `SELECT` to block if other transactions have modified the selected rows, you should disable autocommit.)
 
 Distributed [XA transactions](xa-transactions.md) should always use this isolation level.
 
-#### innodb\_snapshop\_isolation
+### innodb\_snapshop\_isolation
 
 {% tabs %}
 {% tab title="Current" %}
