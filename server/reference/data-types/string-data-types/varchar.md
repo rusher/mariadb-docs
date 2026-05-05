@@ -140,14 +140,27 @@ INSERT INTO varchar_example VALUES
 ERROR 1406 (22001): Data too long for column 'example' at row 1
 ```
 
+## Storage on Disk
+
+`VARCHAR` is a standard variable-length data type. `VARCHAR` values are stored **in-table (in-row)**, where the actual string data is part of the table record. &#x20;
+
+Each value is stored as a one-byte or two-byte length prefix followed by the data. The length prefix specifies the number of bytes contained in the value.
+
+This differs from `TEXT` and `BLOB` data types, which are typically stored **off-row**, with only a pointer stored in the table record.
+
+> **Note:** References to multiple buffers for `VARCHAR` specify internal memory usage for table operations. This does not indicate that `VARCHAR` values are stored in memory rather than on disk.
+
+The exact storage behavior may vary depending on the storage engine. For the specific byte-calculation formulas and limits, see [Data Type Storage Requirements](../data-type-storage-requirements.md).
+
 ## Truncation
 
 * Depending on whether or not [strict sql mode](../../../server-management/variables-and-modes/sql_mode.md#strict-mode) is set, you will either get a warning or an error if you try to insert a string that is too long into a `VARCHAR` column. If the extra characters are spaces, the spaces that can't fit will be removed, and you will always get a warning, regardless of the [sql mode](../../../server-management/variables-and-modes/sql_mode.md) setting.
 
 ## Difference Between VARCHAR and TEXT
 
-* `VARCHAR` columns can be fully indexed. [TEXT](text.md) columns can only be indexed over a specified length.
-* Using [TEXT](text.md) or [BLOB](blob.md) in a [SELECT](../../sql-statements/data-manipulation/selecting-data/select.md) query that uses temporary tables for storing intermediate results will force the temporary table to be disk-based (using the [Aria storage engine](../../../server-usage/storage-engines/aria/aria-storage-engine.md) instead of the [memory storage engine](../../../server-usage/storage-engines/memory-storage-engine.md), which is a bit slower. This is not that bad, as the [Aria storage engine](../../../server-usage/storage-engines/aria/aria-storage-engine.md) caches the rows in memory. To get the benefit of this, one should ensure that the [aria\_pagecache\_buffer\_size](../../../server-usage/storage-engines/aria/aria-system-variables.md#aria_pagecache_buffer_size) variable is big enough to hold most of the row and index data for temporary tables.
+* **Indexing differences**: `VARCHAR` columns can be fully indexed. [TEXT](text.md) columns can only be indexed over a specified length.
+* **Temporary table behavior**: Using [TEXT](text.md) or [BLOB](blob.md) in a [SELECT](../../sql-statements/data-manipulation/selecting-data/select.md) query that uses temporary tables for storing intermediate results will force the temporary table to be disk-based (using the [Aria storage engine](../../../server-usage/storage-engines/aria/aria-storage-engine.md) instead of the [memory storage engine](../../../server-usage/storage-engines/memory-storage-engine.md), which is a bit slower. This is not that bad, as the [Aria storage engine](../../../server-usage/storage-engines/aria/aria-storage-engine.md) caches the rows in memory. To get the benefit of this, one should ensure that the [aria\_pagecache\_buffer\_size](../../../server-usage/storage-engines/aria/aria-system-variables.md#aria_pagecache_buffer_size) variable is big enough to hold most of the row and index data for temporary tables.
+* **Storage characteristics**: Although both can overflow, `TEXT` is primarily designed for off-page storage, beginning with a pointer in the main row. In contrast, `VARCHAR` is optimized to remain in-page and only overflows when row size limits necessitate it.
 
 ## Oracle Mode
 
