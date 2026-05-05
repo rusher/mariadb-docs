@@ -16,7 +16,7 @@ This guide provides the universal workflow for building MariaDB Server from sour
 
 {% stepper %}
 {% step %}
-#### Prepare Your Environment
+**Prepare Your Environment**
 
 Before you begin, your system must have the necessary compilers, build tools, and library headers.
 
@@ -24,7 +24,7 @@ Before you begin, your system must have the necessary compilers, build tools, an
 {% endstep %}
 
 {% step %}
-#### Obtain the Source Code
+**Obtain the Source Code**
 
 Decide whether you need the latest development branch or a specific stable release.
 
@@ -47,7 +47,7 @@ Decide whether you need the latest development branch or a specific stable relea
 {% endstep %}
 
 {% step %}
-#### Configure the Build (CMake)
+**Configure the Build (CMake)**
 
 MariaDB uses out-of-source builds to keep the source tree clean. This is where you define installation paths and features.
 
@@ -66,7 +66,7 @@ MariaDB uses out-of-source builds to keep the source tree clean. This is where y
 {% endstep %}
 
 {% step %}
-#### Compile
+**Compile**
 
 Once configured, use the CMake build tool to compile the binaries. Using the `--parallel` flag speeds this up by using multiple CPU cores.
 
@@ -102,7 +102,7 @@ Without a number, modern CMake automatically picks an appropriate number of jobs
 {% endstep %}
 
 {% step %}
-#### Install and Initialize
+**Install and Initialize**
 
 After a successful build, you must prepare the data directory and system tables before the server can start.
 
@@ -124,7 +124,7 @@ After a successful build, you must prepare the data directory and system tables 
 {% endstep %}
 
 {% step %}
-#### Start and Verify
+**Start and Verify**
 
 Launch the server and check that it is responsive.
 
@@ -135,7 +135,7 @@ Launch the server and check that it is responsive.
 {% endstep %}
 
 {% step %}
-#### Test the Build
+**Test the Build**
 
 Before putting your fresh build into production, verify it against the official test suite. MariaDB includes [MTR (MariaDB Test Run)](../../../../clients-and-utilities/testing-tools/mariadb-test/) for this purpose.
 
@@ -156,7 +156,7 @@ Before putting your fresh build into production, verify it against the official 
 {% endstep %}
 
 {% step %}
-#### After Building
+**After Building**
 
 After successfully building MariaDB from source, additional tasks can be found under [Post-Build](compiling-mariadb-from-source-the-master-guide.md#post-build).
 {% endstep %}
@@ -508,3 +508,9 @@ MariaDB uses [CPack](https://cmake.org/cmake/help/latest/module/CPack.html) (par
     cpack -G TGZ   # For a generic binary tarball
     ```
 3. Result: You will find a file like `mariadb-11.x.x-linux-x86_64.deb` in your build directory, which can be installed via `dpkg -i` or `rpm -ivh`.
+
+## See Also
+
+A compiling guide aimed at developers & contributors is [available here](https://mariadb.org/get-involved/getting-started-for-developers/get-code-build-test/). It was last updated in 2025. The reading time is 8-10 minutes. Quick summary:
+
+> This guide provides a comprehensive technical walkthrough for developers looking to contribute to MariaDB Server. It covers hardware prerequisites (2GB+ RAM, 4 cores), source code acquisition via GitHub forks, and the build process using CMake and Ninja. Key sections explain how to configure debug builds, execute parallel testing using the mysql-test-run (MTR) framework, and initialize the database from the build directory for local development. It emphasizes using specific branches for features (main) versus bug fixes (earliest maintained branch).
