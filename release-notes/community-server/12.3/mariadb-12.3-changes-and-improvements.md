@@ -35,7 +35,6 @@ MariaDB 12.3 is a [long term release](../about/release-model.md), maintained unt
 * Implement Oracle [TO\_NUMBER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/numeric-functions/to_number) function ([MDEV-20022](https://jira.mariadb.org/browse/MDEV-20022))
 * Implement Oracle [TRUNC](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/date-time-functions/trunc) function ([MDEV-20023](https://jira.mariadb.org/browse/MDEV-20023))
 
-
 ### Performance improvements <a href="#performance-improvements" id="performance-improvements"></a>
 
 * Segmented key cache for [Aria storage engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/aria) ([MDEV-24](https://jira.mariadb.org/browse/MDEV-24))
@@ -90,7 +89,7 @@ New [GIS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure
 * find\_order\_in\_list mismatch when order item needs fixing() ([MDEV-36607](https://jira.mariadb.org/browse/MDEV-36607))
 * If the join\_condition is specified via USING (column\_list), the query plan depends on the sequence of tables in the query ([MDEV-36592](https://jira.mariadb.org/browse/MDEV-36592))
 * Optimizations for GROUP/ORDER BY can make use of indexes on virtual columns ([MDEV-36132](https://jira.mariadb.org/browse/MDEV-36132))
-* Include definitions of tables and views in the [optimizer trace](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/mariadb-internals-documentation-query-optimizer/mariadb-internals-documentation-optimizer-trace) ([MDEV-36483](https://jira.mariadb.org/browse/MDEV-36483))
+* Include definitions of tables and views in the [optimizer trace](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizer/optimizer-trace) ([MDEV-36483](https://jira.mariadb.org/browse/MDEV-36483))
   * [optimizer\_record\_context](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#optimizer_record_context) system variable.
 * Join optimizer is now able to infer that derived table with GROUP BY clause has distinct GROUP BY columns ([MDEV-36321](https://jira.mariadb.org/browse/MDEV-36321))
 
@@ -107,16 +106,16 @@ New [GIS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure
   * [SEMIJOIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimizer-hints#semijoin-and-no_semijoin)
   * [SUBQUERY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimizer-hints#subquery-hint)
 * Add support for join order hints ([MDEV-34870](https://jira.mariadb.org/browse/MDEV-34870))
-  * JOIN\_FIXED\_ORDER similar to existing STRAIGHT\_JOIN hint
-  * JOIN\_ORDER to apply the specified table order
-  * JOIN\_PREFIX to hint what tables should be first in the join
-  * JOIN\_SUFFIX to hint what tables should be last in the join
+  * [JOIN\_FIXED\_ORDER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimizer-hints/expanded-optimizer-hints#join_fixed_order) similar to existing STRAIGHT\_JOIN hint
+  * [JOIN\_ORDER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimizer-hints/expanded-optimizer-hints#join_order) to apply the specified table order
+  * [JOIN\_PREFIX](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimizer-hints/expanded-optimizer-hints#join_prefix) to hint what tables should be first in the join
+  * [JOIN\_SUFFIX](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimizer-hints/expanded-optimizer-hints#join_suffix) to hint what tables should be last in the join
 * Add support for the [MAX\_EXECUTION\_TIME](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimizer-hints#max_execution_time) hint ([MDEV-34860](https://jira.mariadb.org/browse/MDEV-34860))
 * [Optimizer hints](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimizer-hints): [\[NO\_\]JOIN\_INDEX](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimizer-hints#join_index-and-no_join_index), [\[NO\_\]GROUP\_INDEX](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimizer-hints#group_index-and-no_group_index), [\[NO\_\]ORDER\_INDEX](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimizer-hints#order_index-and-no_order_index), [\[NO\_\]INDEX](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimizer-hints#index-and-no_index) ([MDEV-35856](https://jira.mariadb.org/browse/MDEV-35856))
 * [Optimizer hints](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimizer-hints): [\[NO\_\]SPLIT\_MATERIALIZED](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimizer-hints#split_materialized-x-and-no_split_materialized-x) ([MDEV-36092](https://jira.mariadb.org/browse/MDEV-36092))
 * [Optimizer hints](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimizer-hints): [\[NO\_\]DERIVED\_CONDITION\_PUSHDOWN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimizer-hints#derived_condition_pushdown-and-no_derived_condition_pushdown), [\[NO\_\]MERGE ](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimizer-hints#merge-and-no_merge)([MDEV-36106](https://jira.mariadb.org/browse/MDEV-36106))
-* [Optimizer hint](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimizer-hints): \[NO\_]ROWID\_FILTER ([MDEV-36089](https://jira.mariadb.org/browse/MDEV-36089)),
-* [Optimizer hint](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimizer-hints): \[NO\_]INDEX\_MERGE ([MDEV-36125](https://jira.mariadb.org/browse/MDEV-36125))
+* [Optimizer hint](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimizer-hints): [\[NO\_\]ROWID\_FILTER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimizer-hints/index-level-hints#rowid_filter-no_rowid_filter) ([MDEV-36089](https://jira.mariadb.org/browse/MDEV-36089)),
+* [Optimizer hint](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimizer-hints): [\[NO\_\]INDEX\_MERGE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimizer-hints/index-level-hints#index_merge-no_index_merge) ([MDEV-36125](https://jira.mariadb.org/browse/MDEV-36125))
 * [Optimizer hints](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimizer-hints): Implicit query block names ([MDEV-37511](https://jira.mariadb.org/browse/MDEV-37511))
 
 ### Replication
@@ -161,7 +160,7 @@ New [GIS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure
 
 ### Galera
 
-* The Galera package dependency has been removed from server packages and the Galera package is no longer included in the MariaDB repositories ([MDEV-38744](https://jira.mariadb.org/browse/MDEV-38744))
+* The Galera package dependency has been removed from server packages ([MDEV-38744](https://jira.mariadb.org/browse/MDEV-38744))
 
 ### InnoDB
 
@@ -170,6 +169,7 @@ New [GIS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure
 ### Variables
 
 For a list of all new variables added since MariaDB 11.8, see:
+
 * [System Variables Added in MariaDB 12.0](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-12.0)
 * [System Variables Added in MariaDB 12.1](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-12.1)
 
