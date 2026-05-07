@@ -261,15 +261,13 @@ For a complete list of security vulnerabilities (CVE) fixed across all versions 
 
 ## Available Versions <a href="#available-versions" id="available-versions"></a>
 
-* [MariaDB Enterprise Server 11.8.5-2](11.8.5-2.md)
-* [MariaDB Enterprise Server 11.8.3-1](11.8.3-1.md)
-* MariaDB Enterprise Server 11.8.2-0 Tech Preview
+{% include "../../.gitbook/includes/all-releases-es-11.8.md" %}
 
 See also: [All MariaDB Enterprise Releases](../all-releases.md)
 
 ## Installation Instructions <a href="#installation-instructions" id="installation-instructions"></a>
 
-* [Deploy MariaDB Enterprise with Repositories](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage)
+* [Deploy MariaDB Enterprise with Repositories](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/mariadb-package-repository-setup-and-usage)
 * [Deploy MariaDB Enterprise with Package Tarballs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/package-tarballs)
 * [Deploy MariaDB Enterprise with Docker](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/automated-mariadb-deployment-and-administration/docker-and-mariadb/deploy-mariadb-enterprise-server-with-docker)
 
