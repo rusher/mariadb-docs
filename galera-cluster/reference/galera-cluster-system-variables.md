@@ -474,12 +474,14 @@ More details can be found on this page:
 
 #### `wsrep_slave_FK_checks`
 
-* Description: If set to ON (the default), the applier replica thread performs foreign key constraint checks.
+* Description: Controls whether the applier replica thread performs foreign key constraint checks. Deactivated and deprecated in MariaDB 10.11.17, 11.4.11, 11.8.7, and 12.3.2. Setting the variable to `ON` or `OFF` no longer has any effect as the variable has become a NOOP; Galera will always behave as if it were set to `ON` starting with these versions. This change ensures data consistency in clusters with cascading relations, as MariaDB does not replicate cascaded changes and instead relies on local foreign key checks on replicas to reproduce the cascade. Disabling these checks leads to massive data inconsistency across all replicas, which can subsequently result in a master node abort.
 * Command line: `--wsrep-slave-FK-checks[={0|1}]`
-* Scope: Global
-* Dynamic: Yes
-* Data Type: Boolean
-* Default Value: ON
+* Scope: Global&#x20;
+* Dynamic: Yes&#x20;
+* Data Type: boolean&#x20;
+* Default Value: `ON`
+* Valid Values: `ON`, `OFF`
+* Deprecated: MariaDB 10.11.17, 11.4.11, 11.8.7, 12.3.2
 
 #### `wsrep_slave_threads`
 
