@@ -1,7 +1,5 @@
 ---
-description: >-
-  Step-by-step instructions for deploying the Enterprise Manager Server,
-  including standard online setups and air-gapped installation procedures.
+description: Step-by-step instructions for deploying the Enterprise Manager Server.
 ---
 
 # Installing MariaDB Enterprise Manager
