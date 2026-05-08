@@ -549,6 +549,7 @@
         * [Moving Data Between SQL Server and MariaDB](server-management/install-and-upgrade-mariadb/migrating-to-mariadb/migrating-to-mariadb-from-sql-server/moving-data-between-sql-server-and-mariadb.md)
         * [Repairing MariaDB Tables for SQL Server Users](server-management/install-and-upgrade-mariadb/migrating-to-mariadb/migrating-to-mariadb-from-sql-server/repairing-mariadb-tables-for-sql-server-users.md)
         * [Setting Up MariaDB for Testing for SQL Server Users](server-management/install-and-upgrade-mariadb/migrating-to-mariadb/migrating-to-mariadb-from-sql-server/setting-up-mariadb-for-testing-for-sql-server-users.md)
+      * [Migrating From MariaDB RDS to MariaDB Cloud](server-management/install-and-upgrade-mariadb/migrating-to-mariadb/migrating-from-mariadb-rds-to-mariadb-cloud.md)
     * [MariaDB on Amazon RDS](server-management/install-and-upgrade-mariadb/mariadb-on-amazon-rds.md)
     * [Automated Deployment & Administration](server-management/automated-mariadb-deployment-and-administration/README.md)
   * [Starting & Stopping](server-management/starting-and-stopping-mariadb/README.md)

@@ -79,7 +79,7 @@ sudo journalctl -u mariadb -n 1000 --no-pager | grep ERROR
 
 {% stepper %}
 {% step %}
-### Create the key file.
+#### Create the key file.
 
 In this step, we create a key file that fulfills basic requirements. It contains only one unencrypted key, which is good enough to perform the rest of the steps. It is highly recommended, though, to use multiple keys, and to encrypt the key files. See [Creating the Key File](key-management-and-encryption-plugins/file-key-management-encryption-plugin.md#creating-the-key-file).
 
@@ -109,7 +109,7 @@ echo $(echo -n "1;" ; openssl rand -hex 32) | sudo tee -a /etc/mysql/encryption/
 {% endstep %}
 
 {% step %}
-### Install and enable a key management plugin.
+#### Install and enable a key management plugin.
 
 Add the following to your configuration file (for instance, `my.cnf`), then restart the server so the changes take effect:
 
@@ -129,7 +129,7 @@ For details about file name, file key, and encryption algorithm, see [File Key M
 {% endstep %}
 
 {% step %}
-### Enable encryption.
+#### Enable encryption.
 
 You can encrypt a number of database objects by setting the respective variables:
 
@@ -164,12 +164,12 @@ SET GLOBAL encrypt_tmp_disk_tables = ON; -- for Aria temporary tables
 {% endcode %}
 
 {% hint style="info" %}
-Particularly InnoDB has more encryption options. You can fine-tune the encryption, for instance, configure encryption threads.  Those details are covered [on this page](innodb-encryption/innodb-enabling-encryption.md).
+Particularly InnoDB has more encryption options. You can fine-tune the encryption, for instance, configure encryption threads. Those details are covered [on this page](innodb-encryption/innodb-enabling-encryption.md).
 {% endhint %}
 {% endstep %}
 
 {% step %}
-### Verify encryption is turned on.
+#### Verify encryption is turned on.
 
 Make sure that the global encryption you configured is turned on, by issuing this statement:
 
@@ -214,7 +214,7 @@ If you determine that encryption is no longer necessary, you can revert the syst
 
 {% stepper %}
 {% step %}
-### Decrypt tables.
+#### Decrypt tables.
 
 Disable global encryption at the storage engine level by issuing these statements. Note that some variables cannot be turned off at runtime – they have to be removed from the server configuration (for instance, `my.cnf`), and require a server restart:
 
@@ -232,7 +232,7 @@ Any per-table encryption for InnoDB tables explicitly created with `ENCRYPTED=YE
 {% endstep %}
 
 {% step %}
-### Disable log and temp encryption.
+#### Disable log and temp encryption.
 
 Update your configuration file (`my.cnf`) to stop encrypting Aria and InnoDB tables, as well as new logs and temporary files:
 
@@ -247,7 +247,7 @@ encrypt_tmp_disk_tables = OFF
 {% endstep %}
 
 {% step %}
-### Monitor decryption progress.
+#### Monitor decryption progress.
 
 You must wait for the background threads to finish decrypting data pages before removing the keys. Monitor the status for InnoDB tables via the Information Schema (there's no built-in way to monitor the status for Aria tables):
 
@@ -263,7 +263,7 @@ A restore from an encrypted backup isn't possible after removing the keys.
 {% endstep %}
 
 {% step %}
-### Remove the key management plugin.
+#### Remove the key management plugin.
 
 Only after all tables and logs are confirmed as unencrypted should you uninstall the encryption plugin and remove its configuration from your `my.cnf` file. For instance, if you're using the [File Key Management Encryption Plugin](key-management-and-encryption-plugins/file-key-management-encryption-plugin.md), uninstall it:
 
@@ -285,7 +285,7 @@ plugin_load_add = file_key_management
 {% endstep %}
 
 {% step %}
-### Verify encryption is turned off.
+#### Verify encryption is turned off.
 
 Use [the same SQL statement shown above](data-at-rest-encryption-tde-fundamentals.md#verify-encryption-is-turned-on) to verify encryption is turned off.
 {% endstep %}
@@ -366,7 +366,7 @@ SELECT * FROM sensitive_accounts_aria;
 
 ### Manual Control: Disabling Encryption
 
-If you need to exempt a specific table from the global encryption policy, use the `ENCRYPTED` attribute.&#x20;
+If you need to exempt a specific table from the global encryption policy, use the `ENCRYPTED` attribute.
 
 {% hint style="info" %}
 This is only possible for InnoDB tables.
@@ -374,7 +374,7 @@ This is only possible for InnoDB tables.
 
 #### Decrypting the Tables
 
-Decrypting tables is done with an `ALTER TABLE` statement. For InnoDB tables, you can do this while global InnoDB table encryption is turned on.&#x20;
+Decrypting tables is done with an `ALTER TABLE` statement. For InnoDB tables, you can do this while global InnoDB table encryption is turned on.
 
 {% hint style="info" %}
 For Aria tables, you can only do this when global Aria table encryption is turned off.
