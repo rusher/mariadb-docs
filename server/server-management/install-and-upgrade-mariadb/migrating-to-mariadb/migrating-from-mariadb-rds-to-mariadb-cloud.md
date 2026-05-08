@@ -60,7 +60,7 @@ MariaDB [(none)]> SHOW VARIABLES LIKE 'binlog_format';
 * Verify settings: Issue the same `SHOW VARIABLES` statements as in the previous step.
 * Enable connectivity: Add `0.0.0.0/0` (temporarily), the _DMS Public IP_, or your _NAT Gateway EIP_ to the MariaDB Cloud _IP Allowlist_.
 
-<img src="../../../.gitbook/assets/unknown (11).png" alt="Several IPs are whitelisted, including 13.205.232.134/32 labeled as AWS DMS, and 172.168.55.21/32 labeled as APP SERVER." height="246" width="417">
+<div align="left"><img src="../../../.gitbook/assets/unknown (11).png" alt="Several IPs are whitelisted, including 13.205.232.134/32 labeled as AWS DMS, and 172.168.55.21/32 labeled as APP SERVER." height="246" width="417"></div>
 
 {% hint style="info" %}
 Note on Serverless: Unlike Provisioned instances, MariaDB Serverless creates temporary Elastic Network Interfaces (ENIs) in your subnets. These ENIs lack default Public IPs and cannot reach the internet via an Internet Gateway. A NAT Gateway in your VPC is required.
