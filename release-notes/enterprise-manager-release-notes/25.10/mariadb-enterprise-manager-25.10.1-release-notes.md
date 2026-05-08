@@ -26,5 +26,4 @@ This document describes the changes in release 25.10.1, when compared to the pre
 
 * Enterprise Manager is delivered as a suite of container images (via MariaDB Enterprise Docker Registry).
 * Agent is delivered via the `mema-agent` OS package via RPM/DEB packages (via MariaDB Enterprise Tools repository).
-* Air-gapped installation is supported by exporting and transferring the images and configuration archive to the target environment.
 
