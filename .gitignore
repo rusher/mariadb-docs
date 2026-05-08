@@ -11,3 +11,6 @@
 
 # CLion project files
 .idea
+
+# AI local files
+CLAUDE.md
