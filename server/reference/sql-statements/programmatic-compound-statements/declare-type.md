@@ -167,9 +167,97 @@ END;
 /
 ```
 
+## RECORD Types
+
+In `sql_mode=ORACLE`, the `TYPE ... IS RECORD` statement allows you to define a user-defined data structure consisting of one or more fields.&#x20;
+
+Previously, TYPE-defined `RECORD` types could only be used in local program blocks and not in routine parameters or function `RETURN` clauses.
+
+### **Syntax**
+
+```sql
+TYPE record_type_name IS RECORD (
+    field_name data_type [NOT NULL] [DEFAULT expr],
+    ...
+);
+```
+
+* `record_type_name` is the name of the new record type.
+* Each `field_name` is a named attribute of the record.
+* Each `field_type` is a valid MariaDB data type or anchored type (`%TYPE`, `%ROWTYPE`).
+
+### RECORD Types in Routine Parameters and Function RETURN
+
+Starting with MariaDB 13.0.1, custom types defined with `DECLARE TYPE` (including `RECORD` and `REF CURSOR`) can be used as:
+
+* Parameters of stored procedures and functions
+* `RETURN` types of stored functions
+
+Earlier, the use of a `RECORD` type in these contexts was prohibited by the MariaDB grammar and resulted in:
+
+```
+ERROR 4161 (HY000): Unknown data type
+```
+
+This change improves compatibility with Oracle PL/SQL, especially for private helper routines inside packages and for `REF CURSOR` usage.
+
+### Using RECORDs in Routine Parameters
+
+Starting with MariaDB 13.0.1, stored procedures within the same package can use a `RECORD` type declared inside the package body as a parameter.
+
+```sql
+SET sql_mode=ORACLE;
+DELIMITER $$
+CREATE OR REPLACE PACKAGE pkg1 AS
+  PROCEDURE p1();
+END;
+CREATE OR REPLACE PACKAGE BODY pkg1 AS
+  TYPE rec0_t IS RECORD (a INT, b VARCHAR(2), c INT);
+  PROCEDURE private_p1(p0 rec0_t) AS
+  BEGIN
+    NULL;
+  END;
+  PROCEDURE p1 AS
+  BEGIN
+    CALL private_p1(a0);
+  END;
+END;
+$$
+DELIMITER ;
+```
+
+### Using RECORDs as a Function Return Type
+
+A `RECORD` type declared inside a package body can also be used as the return type for a stored function inside the same package.
+
+```sql
+SET sql_mode=ORACLE;
+DELIMITER $$
+CREATE OR REPLACE PACKAGE pkg1 AS
+  PROCEDURE p1();
+END;
+CREATE OR REPLACE PACKAGE BODY pkg1 AS
+  TYPE rec0_t IS RECORD (a INT, b VARCHAR(2), c INT);
+  FUNCTION private_f1() RETURN rec0_t AS
+  BEGIN
+    RETURN NULL;
+  END;
+  PROCEDURE p1() AS
+  BEGIN
+    DO private_f1();
+  END;
+END;
+$$
+DELIMITER ;
+```
+
+### Limitation
+
+This feature is available in Oracle SQL mode. To enable it, run `SET sql_mode=ORACLE` before executing the package code.
+
 ## REF CURSOR Types
 
-MariaDB supports Oracle-compatible `REF CURSOR` type declarations as a part of the `DECLARE TYPE` statement. A `REF CURSOR` is a cursor variable that can refer to a query result set and be passed across program blocks, such as stored procedures or functions.&#x20;
+MariaDB supports Oracle-compatible `REF CURSOR` type declarations as a part of the `DECLARE TYPE` statement. A `REF CURSOR` is a cursor variable that can refer to a query result set and be passed across program blocks, such as stored procedures or functions.
 
 `REF CURSOR` types must be specified with a `TYPE` declaration before any variables of that type can be declared. It can be defined as weak or strong based on whether a return type is specified.
 
@@ -249,7 +337,7 @@ BEGIN
 END;
 ```
 
-#### RETURN `record_variable%TYPE`&#x20;
+#### RETURN `record_variable%TYPE`
 
 The cursor's return type is determined from a defined variable using the `%TYPE` attribute. At the time of declaration, the cursor inherits the type of the variable's row structure.
 
@@ -285,7 +373,7 @@ BEGIN
 END;
 ```
 
-#### RETURN `table_or_view%ROWTYPE`&#x20;
+#### RETURN `table_or_view%ROWTYPE`
 
 Using `%ROWTYPE`, the return type of the cursor is directly linked to a table or view row structure. This cursor variable can only be used with queries that return all columns from the referenced table or view in the same sequence.
 
@@ -307,7 +395,7 @@ BEGIN
 END;
 ```
 
-#### RETURN `cursor_variable%ROWTYPE`&#x20;
+#### RETURN `cursor_variable%ROWTYPE`
 
 The cursor's return type is derived from another `REF CURSOR` variable using `%ROWTYPE`. This allows for the connection of cursor type declarations, so that a second cursor inherits its structure from a previously specified cursor variable.
 
@@ -346,3 +434,5 @@ The `RETURN` clause must refer to a specific record type, not another `REF CURSO
 * [DECLARE CURSOR](programmatic-compound-statements-cursors/declare-cursor.md)
 * [DECLARE Variable](declare-variable.md)
 * [Oracle Mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/sql_modeoracle)
+* [CREATE FUNCTION](../data-definition/create/create-function.md)
+* [CREATE PROCEDURE](../../../server-usage/stored-routines/stored-procedures/create-procedure.md)
