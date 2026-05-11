@@ -66,6 +66,7 @@
       * [Files Backed Up by mariadb-backup](server-usage/backup-and-restore/mariadb-backup/files-backed-up-by-mariadb-backup.md)
       * [Files Created by mariadb-backup](server-usage/backup-and-restore/mariadb-backup/files-created-by-mariadb-backup.md)
       * [Using Encryption and Compression Tools With mariadb-backup](server-usage/backup-and-restore/mariadb-backup/using-encryption-and-compression-tools-with-mariadb-backup.md)
+      * [Encrypted Files Backup (mariadb-backup)](server-usage/backup-and-restore/mariadb-backup/encrypted-files-backup-mariadb-backup.md)
       * [How mariadb-backup Works](server-usage/backup-and-restore/mariadb-backup/how-mariadb-backup-works.md)
       * [mariadb-backup and BACKUP STAGE](server-usage/backup-and-restore/mariadb-backup/mariadb-backup-and-backup-stage-commands.md)
       * [mariadb-backup SST Method](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/high-availability/state-snapshot-transfers-ssts-in-galera-cluster/mariadb-backup-sst-method)
