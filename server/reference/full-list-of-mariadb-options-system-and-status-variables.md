@@ -575,7 +575,7 @@ description: >-
 * [in\_transaction](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#in_transaction)
 * [init\_connect](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#init_connect)
 * [init\_file](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#init_file)
-* \--[init-rpl-role](../server-management/starting-and-stopping-mariadb/mariadbd-options.md#init-rpl-role)
+* \--[init-rpl-role](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#init-rpl-role)
 * [init\_slave](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)
 * \--[innodb](../server-management/starting-and-stopping-mariadb/mariadbd-options.md#innodb)
 * [innodb\_adaptive\_checkpoint](../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_checkpoint)

@@ -34,7 +34,6 @@ SELECT plugin_name, plugin_library, @@plugin_dir FROM information_schema.plugins
 
 Once `mariadb-backup` knows that `file_key_management` is used, it queries the server for details, like the location of the key file, and which encryption algorithm is used:
 
-{% code overflow="wrap" %}
 ```sql
 SHOW VARIABLES LIKE 'file_key_management%';                                                                 +------------------------------------------+------------------------------------------------+
 | Variable_name                            | Value                                          |
@@ -46,7 +45,6 @@ SHOW VARIABLES LIKE 'file_key_management%';                                     
 | file_key_management_use_pbkdf2           | 0                                              |
 +------------------------------------------+------------------------------------------------+
 ```
-{% endcode %}
 
 `mariadb-backup` uses that information to calculate the checksums of `.ibd` files/pages, and to decrypt the redo log for further information.
 

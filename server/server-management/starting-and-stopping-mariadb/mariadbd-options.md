@@ -235,20 +235,6 @@ The following options are related to [replication](../../server-usage/storage-en
 * Command line: `--flashback`
 * Description: Setup the server to use flashback. This enables the [binary log](../server-monitoring-logs/binary-log/) and sets `binlog_format=ROW`.
 
-#### `--init-rpl-role`
-
-* Command line: `--init-rpl-role=name`
-*   Description: Sets the replication role for the server.
-
-    In older versions of MariaDB, a primary server configured with both `rpl_semi_sync_master_enabled=1` and `rpl_semi_sync_slave_enabled=1` could experience data loss after a restart. Upon recovery, the primary might truncate its binary log, dropping transactions that replicas had already received and executed. This caused the replica's `gtid_slave_pos` to be ahead of the primary's `gtid_binlog_pos`, leading to an error state.
-
-    Starting with MariaDB 10.6.19, MariaDB 10.11.9, MariaDB 11.1.6, MariaDB 11.2.5, MariaDB 11.4.3, and MariaDB 11.5.2, the condition for binary log truncation during semi-synchronous recovery has changed:
-
-    * Preventing Data Loss: If you restart a primary server and do not set `--init-rpl-role` to `SLAVE`, the server will not truncate transactions required by the replicas.
-    * Requirements: This protection allows you to keep both `rpl_semi_sync_master_enabled` and `rpl_semi_sync_slave_enabled` active on a primary to ensure no transactions are lost during a restart.
-* Default value: `MASTER`
-* Valid values: `MASTER` or `SLAVE`
-
 #### `--log-basename`
 
 * Command line: `--log-basename=name`
