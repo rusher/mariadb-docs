@@ -58,7 +58,7 @@ MariaDB [(none)]> SHOW VARIABLES LIKE 'binlog_format';
 * Create database: Log into MariaDB Cloud and run `CREATE DATABASE db_name;`.
 * Create user (optional): Use the default user to create additional users with privileges (for instance, users in RDS, `dms_admin` etc.), setting the Allowed Host to `%` or to the specific IP of your DMS instance.
 * Verify settings: Issue the same `SHOW VARIABLES` statements as in the previous step.
-* Enable connectivity: Add `0.0.0.0/0` (temporarily), the _DMS Public IP_, or your _NAT Gateway EIP_ to the MariaDB Cloud _IP Allowlist_.
+* Enable connectivity: Open the MariaDB Cloud allowlist during setup, narrow it to the _NAT Gateway EIP_ (or _DMS Public IP_) before go-live.
 
 <div align="left"><img src="../../../.gitbook/assets/unknown (11).png" alt="Several IPs are whitelisted, including 13.205.232.134/32 labeled as AWS DMS, and 172.168.55.21/32 labeled as APP SERVER." height="246" width="417"></div>
 
