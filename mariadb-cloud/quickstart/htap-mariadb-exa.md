@@ -19,11 +19,14 @@ The MariaDB Exa layout separates transactional and analytical workloads so heavy
 ### Simplified technical view
 
 ```mermaid
+---
+title: Simplified MariaDB Exa HTAP Architecture (Technical View)
+---
 graph TD
     %% Row 1: Access & Routing
     subgraph Routing_Layer [Access & Routing]
         App[Application Clients] --- Port["Port 3310"]
-        Port --> MS("<b>MaxScale</b><br/>All writes to Primary;<br/>OLTP reads load balance;<br/>Analytical queries to Exa")
+        Port --> MS(Maxscale<br/>All writes to Primary;<br/>OLTP reads load balance<br/>to MariaDB cluster;<br/>All Analytical queries<br/>goto MariaDB Exa)
     end
 
     %% Row 2: Storage & Sync
@@ -56,30 +59,38 @@ graph TD
 
 ### Core components
 
-**MaxScale smart router**\
+#### **MaxScale smart router**
+
 The entry point on **port 3310**. It acts as the routing layer: sends writes to the primary and splits reads between MariaDB Server (InnoDB) and the MariaDB Exa engine based on workload and performance characteristics.
 
-**MariaDB Server**\
+#### **MariaDB Server**
+
 The **OLTP** (online transactional processing) engine. All write operations and point lookups run here.
 
-**MariaDB Exa (analytical engine)**\
+#### **MariaDB Exa (analytical engine)**
+
 A high-performance, in-memory **columnar** database for **OLAP** (online analytical processing) workloads.
 
-**Debezium CDC**\
+#### **Debezium CDC**
+
 An out-of-band, asynchronous pipeline that reads MariaDB binary logs and streams changes into the MariaDB Exa side of the topology.
 
 ### Data propagation and consistency
 
-**Write path**\
+#### **Write path**
+
 All writes (`INSERT`, `UPDATE`, `DELETE`) go to the MariaDB **primary** on **port 3306**.
 
-**Asynchronous replication**\
+#### **Asynchronous replication**
+
 Data reaches Exa through the binary log and Debezium CDC. That path is **out of band** and **asynchronous** relative to the transactional database.
 
-**Replication lag**\
+#### **Replication lag**
+
 Under heavy write load, the CDC pipeline can build a backlog. Lag is typically on the order of **seconds** but can reach **several minutes** during spikes.
 
-**No causal reads across engines**\
+#### **No causal reads across engines**
+
 The intelligent router is **not lag-aware** and does **not** guarantee read-your-own-writes between MariaDB and Exa. For immediate consistency on data you just wrote, use the **MariaDB transactional ports** (see [Connectivity and smart routing](htap-mariadb-exa.md#connectivity-and-smart-routing)).
 
 ## Launching a MariaDB Exa HTAP cluster
@@ -154,6 +165,12 @@ MaxScale **strips constants** from the query so it can recognize a **pattern**â€
 
 The **first** time a pattern appears, MaxScale **executes** the query on **both** MariaDB Enterprise Server and MariaDB Exa **simultaneously**.
 
+The Racing Logic:
+
+1. Discovery: For a new query pattern, MaxScale fires the query at both engines.
+2. Evaluation: MaxScale tracks the execution time for both.
+3. Optimization: The "loser" query is killed to save resources, and the "winner" is cached as the preferred route for that pattern.
+
 ### First responder wins
 
 Whichever engine **returns first** for that pattern is recorded; later queries with the **same** pattern are sent to that **cached** winner until routing state is refreshed or invalidated. The running query on the losing engine is immediately cancelled.
@@ -174,6 +191,10 @@ Author application SQL in the **MariaDB dialect**. The intelligent router perfor
 If the application must **immediately** see data just written (for example, right after a profile update), connect on **port 3306**. Use **port 3310** for dashboards, exploration, and **heavy analytics** where small CDC lag is acceptable.
 
 ## Known issues and limitations
+
+{% hint style="info" %}
+Deep Dive: For a full list of supported SQL functions, detailed data type mappings, and logic differences, see our [Limitations & Compatibility Reference](https://www.google.com/search?q=limitations.md) page.&#x20;
+{% endhint %}
 
 **SQL dialect** The translation layer does not provide 100% support of the MariaDB SQL dialect. Some MariaDB data types, functions, and syntax structures are not supported on ports 3310 & 3311.
 
