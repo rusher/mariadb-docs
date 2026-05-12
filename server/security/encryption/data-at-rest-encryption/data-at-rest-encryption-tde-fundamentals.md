@@ -35,6 +35,11 @@ MariaDB provides flexible control over what is encrypted, though support and req
 * Binary Logs: MariaDB can encrypt binary logs and relay logs to protect the replication pipeline. See [Managing Binary Log Encryption](managing-binary-log-encryption.md).
 * Temporary Files: Internal on-disk temporary files can be encrypted by setting `encrypt_tmp_files=ON`.
 
+{% hint style="info" %}
+**Enterprise Server** provides encryption for **Galera Cluster** via GCache.\
+How GCache encryption is enabled and disabled is detailed [on this page](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/readme/mariadb-galera-cluster-usage-guide#data-in-transit-encryption).
+{% endhint %}
+
 ## Limitations
 
 The following elements are not encrypted by the MariaDB server:
@@ -79,7 +84,7 @@ sudo journalctl -u mariadb -n 1000 --no-pager | grep ERROR
 
 {% stepper %}
 {% step %}
-#### Create the key file.
+**Create the key file.**
 
 In this step, we create a key file that fulfills basic requirements. It contains only one unencrypted key, which is good enough to perform the rest of the steps. It is highly recommended, though, to use multiple keys, and to encrypt the key files. See [Creating the Key File](key-management-and-encryption-plugins/file-key-management-encryption-plugin.md#creating-the-key-file).
 
@@ -109,7 +114,7 @@ echo $(echo -n "1;" ; openssl rand -hex 32) | sudo tee -a /etc/mysql/encryption/
 {% endstep %}
 
 {% step %}
-#### Install and enable a key management plugin.
+**Install and enable a key management plugin.**
 
 Add the following to your configuration file (for instance, `my.cnf`), then restart the server so the changes take effect:
 
@@ -129,7 +134,7 @@ For details about file name, file key, and encryption algorithm, see [File Key M
 {% endstep %}
 
 {% step %}
-#### Enable encryption.
+**Enable encryption.**
 
 You can encrypt a number of database objects by setting the respective variables:
 
@@ -169,7 +174,7 @@ Particularly InnoDB has more encryption options. You can fine-tune the encryptio
 {% endstep %}
 
 {% step %}
-#### Verify encryption is turned on.
+**Verify encryption is turned on.**
 
 Make sure that the global encryption you configured is turned on, by issuing this statement:
 
@@ -214,7 +219,7 @@ If you determine that encryption is no longer necessary, you can revert the syst
 
 {% stepper %}
 {% step %}
-#### Decrypt tables.
+**Decrypt tables.**
 
 Disable global encryption at the storage engine level by issuing these statements. Note that some variables cannot be turned off at runtime – they have to be removed from the server configuration (for instance, `my.cnf`), and require a server restart:
 
@@ -232,7 +237,7 @@ Any per-table encryption for InnoDB tables explicitly created with `ENCRYPTED=YE
 {% endstep %}
 
 {% step %}
-#### Disable log and temp encryption.
+**Disable log and temp encryption.**
 
 Update your configuration file (`my.cnf`) to stop encrypting Aria and InnoDB tables, as well as new logs and temporary files:
 
@@ -247,7 +252,7 @@ encrypt_tmp_disk_tables = OFF
 {% endstep %}
 
 {% step %}
-#### Monitor decryption progress.
+**Monitor decryption progress.**
 
 You must wait for the background threads to finish decrypting data pages before removing the keys. Monitor the status for InnoDB tables via the Information Schema (there's no built-in way to monitor the status for Aria tables):
 
@@ -263,7 +268,7 @@ A restore from an encrypted backup isn't possible after removing the keys.
 {% endstep %}
 
 {% step %}
-#### Remove the key management plugin.
+**Remove the key management plugin.**
 
 Only after all tables and logs are confirmed as unencrypted should you uninstall the encryption plugin and remove its configuration from your `my.cnf` file. For instance, if you're using the [File Key Management Encryption Plugin](key-management-and-encryption-plugins/file-key-management-encryption-plugin.md), uninstall it:
 
@@ -285,7 +290,7 @@ plugin_load_add = file_key_management
 {% endstep %}
 
 {% step %}
-#### Verify encryption is turned off.
+**Verify encryption is turned off.**
 
 Use [the same SQL statement shown above](data-at-rest-encryption-tde-fundamentals.md#verify-encryption-is-turned-on) to verify encryption is turned off.
 {% endstep %}
