@@ -8,24 +8,29 @@ description: >-
 
 ## Overview
 
-If you are looking to set up MariaDB Server, it is often easiest to use a repository. MariaDB Foundation has a repository configuration tool and MariaDB Corporation provides two convenient shell scripts to configure access to their MariaDB Package Repositories:
+If you are looking to set up MariaDB Server, it is often easiest to use a repository. MariaDB Corporation provides two convenient shell scripts to configure access to their MariaDB Package Repositories:
 
 * `mariadb_es_repo_setup` for MariaDB Enterprise Server, which can be downloaded from:
   * [https://dlm.mariadb.com/enterprise-release-helpers/mariadb\_es\_repo\_setup](https://dlm.mariadb.com/enterprise-release-helpers/mariadb_es_repo_setup)
 * `mariadb_repo_setup` for MariaDB Community Server, which can be downloaded from:
   * [https://r.mariadb.com/downloads/mariadb\_repo\_setup](https://r.mariadb.com/downloads/mariadb_repo_setup)
 
-## Using MariaDB Foundation's Repository Configuration Tool
+{% hint style="info" %}
+## Using the MariaDB Foundation's Repository Configuration Tool
 
-Visit [https://mariadb.org/download/?t=repo-config](https://mariadb.org/download/?t=repo-config) and follow the instructions from there. It will ask for your Linux distribution, desired MariaDB version, and the mirror to use, and will show what files to edit and what commands to run to configure a repository.
+Another option for MariaDB Community Server is to use the MariaDB Foundation's repository configuration tool. Visit [https://mariadb.org/download/?t=repo-config](https://mariadb.org/download/?t=repo-config) and follow the instructions from there. It will ask for your Linux distribution, desired MariaDB version, and the mirror to use, and will show what files to edit and what commands to run to configure a Community Server repository.
+{% endhint %}
 
 ## Using MariaDB Corporation's Repository Setup Scripts
 
-Alternatively, you can run a convenient shell script that will automatically configure a repository for you.
+MariaDB Corporation provides two convenient shell scripts that will automatically configure the appropriate repositories for you. These scripts are:
+
+* `mariadb_es_repo_setup` for MariaDB Enterprise Server
+* `mariadb_repo_setup` for MariaDB Community Server
 
 ### Download and Verify the Script
 
-The repository setup script can be downloaded and verified in the following way:
+The scripts can be downloaded and verified in the following ways:
 
 {% tabs %}
 {% tab title="mariadb_es_repo_setup" %}
@@ -59,11 +64,13 @@ echo "${checksum} mariadb_repo_setup" | sha256sum -c -
 
 {% hint style="info" %}
 Checksums of the various releases of the MariaDB Corporation's repository setup scripts can be found in the [Versions](mariadb-package-repository-setup-and-usage.md#versions) section at the bottom of this page. Substitute `${checksum}` in the example above with the checksum of the version of the script you are using.
+
+The version number is a date and can be found by running the script with the `--version` option, or by opening the script in a text editor and looking at line 4, `version="..."`.
 {% endhint %}
 
 ### Prerequisites
 
-For the script to work, the `curl` package needs to be installed on your system. Additionally, on Debian and Ubuntu, the `apt-transport-https` package needs to be installed. The script will check if these are installed and let you know before it attempts to create the repository configuration on your system.
+For the scripts to work, the `curl` package needs to be installed on your system. Additionally, on Debian and Ubuntu, the `apt-transport-https` package needs to be installed. The script will check if these are installed and let you know before it attempts to create the repository configuration on your system.
 
 They can be installed on your system as follows:
 
@@ -90,7 +97,7 @@ sudo zypper install curl
 
 ### Run the Script
 
-After the script is downloaded, you need to run it with `root` user permissions. This is normally accomplished by using the `sudo` command:
+After the script you are using is downloaded, you need to run it with `root` user permissions. This is normally accomplished by using the `sudo` command:
 
 {% tabs %}
 {% tab title="mariadb_es_repo_setup" %}
@@ -129,40 +136,79 @@ sudo ./mariadb_repo_setup
 
 ## Repositories
 
-The script will set up different repositories in a single repository configuration file.
+The script will set up different repositories in a single [repository configuration file](mariadb-package-repository-setup-and-usage.md#platform-specific-behavior).
 
+{% tabs %}
+{% tab title="mariadb_es_repo_setup default repositories" %}
 The default repositories set up by `mariadb_es_repo_setup` are:
 
 * MariaDB Enterprise Server Repository
-  * A MariaDB Enterprise Server Debug Repository (Ubuntu only)
+  * A MariaDB Enterprise Server Debug Repository _(Ubuntu only)_
 * MariaDB Enterprise MaxScale Repository
 * MariaDB Enterprise Tools Repository
 * MariaDB Tools Repository
+{% endtab %}
 
+{% tab title="mariadb_repo_setup default repositories" %}
 The default repositories set up by `mariadb_repo_setup` are:
 
 * MariaDB Community Server Repository
-* MariaDB Community Server Debug Repository (Ubuntu only)
+  * A MariaDB Community Server Debug Repository _(Ubuntu only)_
 * MariaDB MaxScale Repository
 * MariaDB Tools Repository
+{% endtab %}
+{% endtabs %}
 
 {% hint style="info" %}
 Ubuntu needs a separate debug repository for MariaDB Server debug packages. Other Linux distributions include the debug packages in the main repository. Debug packages should normally only be installed for specific purposes under the direction of a qualified support engineer.
 {% endhint %}
 
-### MariaDB Community Server Repository
+### MariaDB Community & Enterprise Server Repositories
 
-The **MariaDB Community Server Repository** contains software packages related to MariaDB Server, including the server itself, [clients and utilities](../../clients-and-utilities/), [client libraries](../../clients-and-utilities/server-client-software/client-libraries/), [plugins](../../reference/plugins/), and [mariadb-backup](../../server-usage/backup-and-restore/mariadb-backup/mariadb-backup-overview.md).
+The **MariaDB Community Server** and **MariaDB Enterprise Server** repositories contain software packages related to MariaDB Server, including: the server itself, [clients and utilities](../../clients-and-utilities/), [client libraries](../../clients-and-utilities/server-client-software/client-libraries/), [plugins](../../reference/plugins/), and [mariadb-backup](../../server-usage/backup-and-restore/mariadb-backup/mariadb-backup-overview.md).
 
-The binaries in MariaDB Corporation's **MariaDB Repository** are identical to the binaries in MariaDB Foundation's MariaDB Repository that is configured with the [MariaDB Foundation's Repository Configuration Tool](https://mariadb.org/download/?t=repo-config).
+{% hint style="info" %}
+The binaries in MariaDB Corporation's **MariaDB Community Server Repository** are identical to the binaries in the MariaDB Foundation's MariaDB Repository that is configured with the [MariaDB Foundation's Repository Configuration Tool](https://mariadb.org/download/?t=repo-config).
+{% endhint %}
 
-By default, the `mariadb_repo_setup` script will configure your system to install from the `12.rolling` repository, which contains the latest stable version of MariaDB Community server.
+By default, the scripts will install the latest stable version of MariaDB:
 
-The `mariadb_es_repo_setup` script will set up the current latest stable version of MariaDB Enterprise Server.
+* `mariadb_repo_setup`  will configure your system to install the latest stable version of MariaDB Community server
+* `mariadb_es_repo_setup` script will set up your system to install the latest stable version of MariaDB Enterprise Server.
 
-If you would like to stick to a specific release series, then you will need to either manually edit the repository configuration file to point to that specific version or series, or run the MariaDB Package Repository setup script again using the `--mariadb-server-version` option. For example, if you wanted to specifically use the 11.4 series, you would do: `--mariadb-server-version=11.4`.
+If you would like to stick to a specific release series, see [--mariadb-server-version](mariadb-package-repository-setup-and-usage.md#mariadb-server-version), below.
 
-If you do not want to configure the **MariaDB Repository** on your system, for example, if you are setting up a server just running MariaDB MaxScale, then you can use the `--skip-server` option to prevent the setup script from configuring the server repository.
+If you do not want to configure the **MariaDB Repository** on your system, for example, if you are setting up a server just running MariaDB MaxScale, then you can use the `--skip-server` option to prevent the script from configuring the server repository.
+
+#### Output an example MariaDB Server repository configuration
+
+To output just the MariaDB repository configuration to standard output (stdout), do the following:
+
+{% tabs %}
+{% tab title="Output an example Enterprise Server repo" %}
+To display an example MariaDB Enterprise Server repository configuration, you can run the `mariadb_es_repo_setup` script with the following options:
+
+```bash
+./mariadb_es_repo_setup --token=$token --skip-check-installed --skip-enterprise-tools --skip-tools --skip-maxscale --verbose
+```
+
+{% hint style="info" %}
+For more verbose output, use the `--verbose` option (`mariadb_es_repo_setup` only)
+{% endhint %}
+{% endtab %}
+
+{% tab title="Output an example Community Server repo" %}
+To display an example MariaDB Community Server repository configuration, you can run the `mariadb_repo_setup` script with the following options:
+
+```bash
+./mariadb_repo_setup --skip-check-installed --skip-tools --skip-maxscale --write-to-stdout
+```
+{% endtab %}
+{% endtabs %}
+
+You may also want to use the `--os-type`, `--os-version`, and `--arch`  options if you are running the script on a machine running a different operating system and/or processor architecture than the machine the configuration will be used on. If you want to specify a specific MariaDB version or series, then also use the `--mariadb-server-version` option.&#x20;
+
+Descriptions for all of these options are found in the [Options](mariadb-package-repository-setup-and-usage.md#options) section, below.
 
 ### MariaDB MaxScale Repository
 
@@ -188,7 +234,7 @@ sudo rpm --import https://supplychain.mariadb.com/MariaDB-Enterprise-GPG-KEY-202
 
 The **MariaDB MaxScale Repository** contains software packages related to [MariaDB MaxScale](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/).
 
-By default, the script will configure your system to install from the repository of the _latest_ GA version of MariaDB MaxScale. When a new major GA release occurs, the repository will automatically switch to the new version. If instead you would like to stay on a particular version, you will need to manually edit the repository configuration file and change '`latest`' to the version you want (e.g., '`6.1`') or run the MariaDB Package Repository setup script again, specifying the particular version or series you want.
+By default, the script will configure your system to install from the repository of the _latest_ GA version of MariaDB MaxScale. When a new major GA release occurs, the repository will automatically switch to the new version. If instead you would like to stay on a particular version, you will need to manually edit the [repository configuration file](mariadb-package-repository-setup-and-usage.md#platform-specific-behavior) and change '`latest`' to the version you want (e.g., '`6.1`') or run the MariaDB Package Repository setup script again, specifying the particular version or series you want.
 
 Older versions of the MariaDB Package Repository setup script would configure a specific MariaDB MaxScale series in the repository (i.e., `24.02`), so if you used the script in the past to set up your repository and want MariaDB MaxScale to automatically use the latest GA version, then change `24.02` or whatever version it is set to in the repository configuration to `latest`. Or download the current version of the setup script and re-run it to set up the repository again.
 
@@ -215,28 +261,32 @@ To provide options to the script, you must tell your script to expect them by ex
 curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | sudo bash -s -- --help
 ```
 
-| Option                        | Description                                                                                                                                                                                       |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `--help`                      | Display a usage message and exit                                                                                                                                                                  |
-| `--mariadb-server-version=`   | Override the default MariaDB Server version. By default, the script will use '11.rolling'                                                                                                         |
-| `--mariadb-maxscale-version=` | Override the default MariaDB MaxScale version. By default, the script will use 'latest'                                                                                                           |
-| `--os-type=`                  | Override detection of OS type. Acceptable values include debian, ubuntu, rhel, and sles                                                                                                           |
-| `--os-version=`               | Override detection of OS version. Acceptable values depend on the OS type you specify                                                                                                             |
-| `--skip-key-import`           | Skip importing GPG signing keys                                                                                                                                                                   |
-| `--skip-maxscale`             | Skip the 'MaxScale' repository                                                                                                                                                                    |
-| `--skip-server`               | Skip the 'MariaDB Server' repository                                                                                                                                                              |
-| `--skip-tools`                | Skip the 'Tools' repository                                                                                                                                                                       |
-| `--skip-verify`               | Skip verification of MariaDB Server versions. Use with caution, as this can lead to an invalid repository configuration file being created                                                        |
-| `--skip-check-installed`      | Skip tests for required prerequisites for this script                                                                                                                                             |
-| `--skip-eol-check`            | Skip tests for versions that are past their EOL date                                                                                                                                              |
-| `--skip-os-eol-check`         | Skip tests for operating system versions past the EOL date                                                                                                                                        |
-| `--write-to-stdout`           | Write output to stdout instead of to the OS's repository configuration file. This will also skip importing GPG public keys and updating the package cache on platforms where that behavior exists |
+| Option                        | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--apply`                     | `mariadb_es_repo_setup` only. Write the repository configuration to the appropriate file, import the GPG public keys used by the repositories, and update the package cache.  The default behavior of `mariadb_es_repo_setup`  is to output the repository configuration to stdout. See [--apply and --write-to-stdout](mariadb-package-repository-setup-and-usage.md#apply-and-write-to-stdout) for more information on this option                       |
+| `--help`                      | Display a usage message and exit                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `--mariadb-server-version=`   | Override the default MariaDB Server version. See [--mariadb-server-version](mariadb-package-repository-setup-and-usage.md#mariadb-server-version) for more information on this option                                                                                                                                                                                                                                                                      |
+| `--mariadb-maxscale-version=` | Override the default MariaDB MaxScale version. See [--mariadb-maxscale-version](mariadb-package-repository-setup-and-usage.md#mariadb-maxscale-version) for more information on this option                                                                                                                                                                                                                                                                |
+| `--os-type=`                  | Override detection of OS type. Acceptable values include `debian`, `ubuntu`, `rhel`, and `sles`. See [--ostype and --os-version](mariadb-package-repository-setup-and-usage.md#os-type-and-os-version) for more information on this option                                                                                                                                                                                                                 |
+| `--os-version=`               | Override detection of OS version. Acceptable values depend on the OS type you specify, including: `8`, `9`, or `10` for RHEL; `bookworm` or `trixie` for Debian; and `jammy` or `noble` for Ubuntu.  See [--ostype and --os-version](mariadb-package-repository-setup-and-usage.md#os-type-and-os-version) for more information on this option                                                                                                             |
+| `--skip-key-import`           | Skip importing GPG signing keys, _**not recommended**_                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `--skip-maxscale`             | Skip the 'MaxScale' repository                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| `--skip-server`               | Skip the 'MariaDB Server' repository (either Community or Enterprise depending on the script you are using)                                                                                                                                                                                                                                                                                                                                                |
+| `--skip-tools`                | Skip the 'Tools' repository                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| `--skip-enterprise-tools`     | Skip the 'Enterprise Tools" repository (`mariadb_es_repo_setup` only)                                                                                                                                                                                                                                                                                                                                                                                      |
+| `--skip-verify`               | Skip verification of MariaDB Server versions. Use with caution, as this can lead to an invalid [repository configuration file](mariadb-package-repository-setup-and-usage.md#platform-specific-behavior) being created, sometimes useful for testing                                                                                                                                                                                                       |
+| `--skip-check-installed`      | Skip tests for required prerequisites for this script, useful if generating the config on a different machine                                                                                                                                                                                                                                                                                                                                              |
+| `--skip-eol-check`            | Skip tests for versions that are past their EOL date                                                                                                                                                                                                                                                                                                                                                                                                       |
+| `--skip-os-eol-check`         | Skip tests for operating system versions past the EOL date                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `--token`                     | `mariadb_es_repo_setup` only. Your MariaDB Enterprise Repository token. This is required for `mariadb_es_repo_setup` to work. The token is not required for `mariadb_repo_setup` or for MariaDB Community Server repositories. See [Run the Script: mariadb\_es\_repo\_setup](mariadb-package-repository-setup-and-usage.md#mariadb_es_repo_setup-1) for more information.                                                                                 |
+| `--verbose`                   | `mariadb_es_repo_setup` only. Be more verbose when running by displaying \[info] messages about what the script is doing. `mariadb_repo_setup` always runs in verbose mode, so it does not have this option.                                                                                                                                                                                                                                               |
+| `--write-to-stdout`           | `mariadb_repo_setup` only. Write output to stdout instead of to the OS's [repository configuration file](mariadb-package-repository-setup-and-usage.md#platform-specific-behavior). This will also skip importing GPG public keys and updating the package cache on platforms where that behavior exists. See [--apply and --write-to-stdout](mariadb-package-repository-setup-and-usage.md#apply-and-write-to-stdout) for more information on this option |
 
 ### `--mariadb-server-version`
 
-By default, the script will configure your system to install from the repository of the latest GA version of MariaDB. If a new major GA release occurs and you would like to upgrade to it, then you will need to either manually edit the repository configuration file to point to the new version or run the MariaDB Package Repository setup script again.
+By default, the script will configure your system to install from the repository of the latest GA version of MariaDB. If a new major GA release occurs and you would like to upgrade to it, then you will need to either manually edit the [repository configuration file](mariadb-package-repository-setup-and-usage.md#platform-specific-behavior) to point to the new version or run the script again.
 
-The script can also configure your system to install from the repository of a different version of MariaDB if you use the `--mariadb-server-version` option.
+The script can also configure your system to install from the repository of a different version of MariaDB by using the `--mariadb-server-version` option.
 
 #### Usage Example
 
@@ -282,7 +332,7 @@ The following MariaDB Enterprise Server versions are currently supported:
 
 * `10.6`
 * `11.4`
-* `11.8`
+* `11.8` (default)
 {% endtab %}
 
 {% tab title="MariaDB Community Server" %}
@@ -296,7 +346,7 @@ The following MariaDB Community Server versions are currently supported:
 * `mariadb-11.rc`
 * `mariadb-12.1`
 * `mariadb-12.2`
-* `mariadb-12.rolling`
+* `mariadb-12.rolling` (default)
 * `mariadb-12.rc`
 {% endtab %}
 {% endtabs %}
@@ -310,7 +360,7 @@ If you want to pin the repository of a specific minor release, such as [MariaDB 
 {% hint style="info" %}
 Note: MariaDB Enterprise Server version numbers include a '_release_' suffix that differs from MariaDB Community Server version numbers, e.g. `-2` for MariaDB Enterprise Server `11.8.5-2` whereas the equivalent MariaDB Community Server release is just `11.8.5`. This suffix is required when specifying the full Enterprise Server version number.
 
-To get a list of all MariaDB Enterprise Server releases, see the [Enterprise Server - All Releases](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/enterprise-server/all-releases) page. The Version column in the tables on that page list the version numbers of every MariaDB Enterprise Server release.
+To see a list of all MariaDB Enterprise Server releases, see the [Enterprise Server - All Releases](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/enterprise-server/all-releases) page. The Version column in the tables on that page list the version numbers of every MariaDB Enterprise Server release.
 {% endhint %}
 
 See the [Usage Example - MariaDB Enterprise Server](mariadb-package-repository-setup-and-usage.md#mariadb-enterprise-server) section above for an example of pinning the repository to a specific version.
@@ -320,7 +370,7 @@ See the [Usage Example - MariaDB Enterprise Server](mariadb-package-repository-s
 If you want to pin the repository of a specific minor release, such as [MariaDB Community Server 11.8.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/11.8/11.8.5), then you need to specify the complete release version, e.g. `mariadb-11.8.5`. This may be helpful if you want to avoid upgrades. However, avoiding upgrades is not recommended, since minor maintenance releases may contain important bug fixes and fixes for security vulnerabilities.
 
 {% hint style="info" %}
-To get a list of all MariaDB Community Server releases, see the [Community Server - All Releases](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/all-releases) page. The Version column in the tables on that page list the version numbers of every MariaDB Community Server release.
+To see a list of all MariaDB Community Server releases, see the [Community Server - All Releases](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/all-releases) page. The Version column in the tables on that page list the version numbers of every MariaDB Community Server release.
 {% endhint %}
 
 See the [Usage Example - MariaDB Community Server](mariadb-package-repository-setup-and-usage.md#mariadb-community-server) section above for an example of pinning the repository to a specific version.
@@ -332,7 +382,7 @@ See the [Usage Example - MariaDB Community Server](mariadb-package-repository-se
 By default, the script will configure your system to install from the repository of the latest GA version of MariaDB MaxScale.
 
 If you would like to pin the repository to a specific version of MariaDB MaxScale, then you will need\
-to either manually edit the repository configuration file to point to the desired version or use the `--mariadb-maxscale-version` option.
+to either manually edit the [repository configuration file](mariadb-package-repository-setup-and-usage.md#platform-specific-behavior) to point to the desired version or use the `--mariadb-maxscale-version` option.
 
 For example, to configure your system to install from the repository of MariaDB MaxScale 6.1, that would be:
 
@@ -378,9 +428,13 @@ For example, to manually set the `--os-type` and `--os-version` to RHEL 10, you 
 curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | sudo bash -s -- --os-type=rhel --os-version=10
 ```
 
-### `--write-to-stdout`
+### `--apply` and `--write-to-stdout`
 
-The `--write-to-stdout` option will prevent the script from modifying anything on the system. The repository configuration will not be written to the repository configuration file. Instead, it will be printed to standard output. That allows the configuration to be reviewed, redirected elsewhere, consumed by another script, or used in some other way.
+The `mariadb_repo_setup` and `mariadb_es_repo_setup` scripts generally behave the same but there are some key differences. One of the major ones relates to the options `--apply` and `--write-to-stdout`.
+
+The `--apply` option is only for `mariadb_es_repo_setup`. It directs the script to apply the changes to the system, including creating the [repository configuration file](mariadb-package-repository-setup-and-usage.md#platform-specific-behavior), importing the repository GPG keys, and updating the package cache.  `mariadb_repo_setup` does this by default, so it does not have the `--apply` option and instead has the `--write-to-stdout` option to flip the behavior.
+
+The `--write-to-stdout` option is only for `mariadb_repo_setup`. It will prevent the script from modifying anything on the system. The repository configuration will not be written to the [repository configuration file](mariadb-package-repository-setup-and-usage.md#platform-specific-behavior), GPG keys will not be imported, and the package cache will not be updated. Instead, the repository configuration will be printed to standard output (stdout). This allows the configuration to be reviewed, redirected elsewhere, consumed by another script, or used in some other way. `mariadb_es_repo_setup` does this by default, so it does not have the `--write-to-stdout` option, and instead has the `--apply` option to flip the behavior.
 
 The `--write-to-stdout` option automatically enables `--skip-key-import`.
 
@@ -390,7 +444,11 @@ For example:
 curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | sudo bash -s -- --write-to-stdout
 ```
 
+Both scripts will ignore unknown options so it is safe to, for example, always pass `--apply` to both scripts so that their behavior is the same.
+
 ## Platform-Specific Behavior
+
+Locations of the repository configuration file the scripts will create on various Linux distributions and other tasks the scripts do on those distributions.
 
 {% tabs %}
 {% tab title="RHEL" %}
