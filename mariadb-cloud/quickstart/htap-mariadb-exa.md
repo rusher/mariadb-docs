@@ -19,39 +19,39 @@ The MariaDB Exa layout separates transactional and analytical workloads so heavy
 ### Simplified technical view
 
 ```mermaid
----
-title: Simplified MariaDB Exa HTAP Architecture (Technical View)
----
-graph LR
-    %% Node Definitions
-    App[Application Clients]
-    Port["Port 3310"]
-    
-    MS("Maxscale<br/>All writes to Primary;<br/>OLTP reads load balance<br/>to MariaDB cluster;<br/>All Analytical queries<br/>goto MariaDB Exa")
-    
-    DB_Primary["MariaDB Primary + replicas<br/>--------------<br/>Binlog Dump (from Primary)"]
-    
-    CDC("CDC using Debezium<br/>(async)")
-    
-    EXA["MariaDB Exa<br/>in memory columnar"]
+graph TD
+    %% Row 1: Access & Routing
+    subgraph Routing_Layer [Access & Routing]
+        App[Application Clients] --- Port["Port 3310"]
+        Port --> MS("<b>MaxScale</b><br/>All writes to Primary;<br/>OLTP reads load balance;<br/>Analytical queries to Exa")
+    end
 
-    %% Connections
-    App --- Port
-    Port --> MS
-    
-    MS -->|"Writes & OLTP Reads"| DB_Primary
-    MS -->|"Analytical Queries"| EXA
-    
-    %% CDC Flow
-    DB_Primary ==> CDC
-    CDC == "CDC Feed (Async)" ==> EXA
+    %% Row 2: Storage & Sync
+    subgraph Engine_Layer [Storage & Analytics]
+        direction LR
+        DB_Primary["<b>MariaDB Primary + replicas</b><br/>(Binlog Source)"]
+        
+        %% CDC Flow (Middle of Row 2)
+        DB_Primary ==> CDC("<b>CDC using Debezium</b><br/>(Async)")
+        
+        CDC == "CDC Feed (Async)" ==> EXA["<b>MariaDB Exa</b><br/>in memory columnar"]
+    end
+
+    %% Connections between Rows
+    MS -.->|"Writes & OLTP Reads"| DB_Primary
+    MS -.->|"Analytical Queries"| EXA
 
     %% Styling
     classDef redNode fill:#fff,stroke:#cc0000,stroke-width:2px,color:#cc0000;
     class CDC redNode;
     
+    %% Red lines for CDC flow
+    linkStyle 3 stroke:#cc0000,stroke-width:2px;
     linkStyle 4 stroke:#cc0000,stroke-width:2px;
-    linkStyle 5 stroke:#cc0000,stroke-width:2px;
+    
+    %% Style subgraphs to be subtle
+    style Routing_Layer fill:#f9f9f9,stroke:#ddd,stroke-dasharray: 5 5
+    style Engine_Layer fill:#fff,stroke:#ddd
 ```
 
 ### Core components
