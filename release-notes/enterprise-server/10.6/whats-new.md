@@ -134,6 +134,10 @@ Enhanced compatibility with Sybase SQL Anywhere through \[sql\_mode=EXTENDED\_AL
 
 ## Backported Features
 
+[MariaDB Enterprise Server 10.6.8-4](10.6.8-4.md)
+
+{% include "../../.gitbook/includes/backports-10.6.8-4.md" %}
+
 [MariaDB Enterprise Server 10.6.9-5](10.6.9-5.md)
 
 {% include "../../.gitbook/includes/backports-10.6.9-5.md" %}
