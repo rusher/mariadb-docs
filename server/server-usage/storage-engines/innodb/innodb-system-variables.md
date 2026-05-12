@@ -490,14 +490,15 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 #### `innodb_buffer_pool_size_max`
 
 {% hint style="danger" %}
-`innodb_buffer_pool_size_max` is a **read-only** variable. If not specified at startup, it defaults to the initial `innodb_buffer_pool_size`, which effectively disables upward dynamic resizing at runtime (attempts to increase size will result in Warning 1292).
+`innodb_buffer_pool_size_max` is a **read-only** variable. If not specified at startup, it defaults to the initial `innodb_buffer_pool_size`, which effectively disables upward dynamic resizing at runtime (attempts to increase size results in _Warning 1292_).
 {% endhint %}
 
 {% hint style="warning" %}
 Automatic upward dynamic resizing is not yet implemented ([MDEV-36197](https://jira.mariadb.org/browse/MDEV-36197)). This variable currently serves only as a pre-allocated virtual address ceiling for **manual** resizing operations.
 {% endhint %}
 
-* Description: Maximum `innodb_buffer_pool_size` value.
+* Description: Maximum `innodb_buffer_pool_size` value. On 64-bit systems other than IBM AIX, the default is 8 TiB, and the minimum 8 MiB. On other systems, the default and minimum are `0`, and the value `0` is replaced with the initial `innodb_buffer_pool_size` rounded up to the allocation unit (2 MiB or 8 MiB). The maximum value is 4GiB-2MiB on 32-bit systems and 16EiB-8MiB on 64-bit systems. This maximum is likely to be limited further by the operating system.\
+  On 64-bit systems, while the default maximum is 8 TiB, the actual available address space may be restricted by operating system limits (such as [`RLIMIT_AS`](#user-content-fn-2)[^2]) or specific hardware architectures. If MariaDB is unable to allocate the default 8 TiB of virtual address space at startup, it  automatically attempts to fall back to a 128 GiB limit to ensure the server can still start. (128 GiB is often chosen as a fallback because it’s a safe value that almost any modern 64-bit Linux kernel/CPU can handle without special configuration, while still being plenty large for the vast majority of database workloads.)
 * Command line: `--innodb-buffer-pool-size-max=#`
 * Scope: Global
 * Dynamic: No
@@ -1201,7 +1202,7 @@ Automatic upward dynamic resizing is not yet implemented ([MDEV-36197](https://j
 #### `innodb_flush_log_at_trx_commit`
 
 * Description: Set to `1`, along with [sync\_binlog=1](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) for the greatest level of fault tolerance. The value of [innodb\_use\_global\_flush\_log\_at\_trx\_commit](innodb-system-variables.md#innodb_use_global_flush_log_at_trx_commit) determines whether this variable can be reset with a `SET` statement or not.
-  * `1` The default, the log buffer is written to the [InnoDB redo log](innodb-redo-log.md) file and a flush to disk performed after each transaction. This is required for full ACID[^2] compliance.
+  * `1` The default, the log buffer is written to the [InnoDB redo log](innodb-redo-log.md) file and a flush to disk performed after each transaction. This is required for full ACID[^3] compliance.
   * `0` Nothing is done on commit; rather the log buffer is written and flushed to the [InnoDB redo log](innodb-redo-log.md) once a second. This gives better performance, but a server crash can erase the last second of transactions.
   * `2` The log buffer is written to the [InnoDB redo log](innodb-redo-log.md) after each commit, but flushing takes place every [innodb\_flush\_log\_at\_timeout](innodb-system-variables.md#innodb_flush_log_at_timeout) seconds (by default once a second). Performance is slightly better, but a OS or power outage can cause the last second's transactions to be lost.
   * `3` Emulates [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/5.5/changes-improvements-in-mariadb-5-5) [group commit](../../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md) (3 syncs per group commit). See [Binlog group commit and innodb\_flush\_log\_at\_trx\_commit](binary-log-group-commit-and-innodb-flushing-performance.md). This option has not been working correctly since 10.2 and may be removed in future, see [1873](https://github.com/MariaDB/server/pull/1873).
@@ -2907,7 +2908,9 @@ Automatic upward dynamic resizing is not yet implemented ([MDEV-36197](https://j
 
 [^1]: NUMA (Non-Uniform Memory Access): A hardware architecture where a processor accesses its own local memory faster than non-local memory, requiring database optimization for efficiency.
 
-[^2]: ACID compliance refers to a set of properties—Atomicity, Consistency, Isolation, and Durability—that ensure database transactions are processed reliably and maintain data integrity.\
+[^2]: RLIMIT\_AS stands for Resource Limit: Address Space. It is one of the "ulimits" (user limits) that a system administrator can set to prevent a single process from going rogue.
+
+[^3]: ACID compliance refers to a set of properties—Atomicity, Consistency, Isolation, and Durability—that ensure database transactions are processed reliably and maintain data integrity.\
     Atomicity guarantees that a transaction is treated as a single, indivisible unit, where all operations succeed or the entire transaction is rolled back.\
     Consistency ensures that a transaction brings the database from one valid state to another, adhering to all defined rules and constraints.\
     Isolation mandates that concurrent transactions do not interfere with each other, preserving data accuracy during simultaneous operations.\
