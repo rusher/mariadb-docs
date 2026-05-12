@@ -367,10 +367,9 @@ Also see [mariadbd replication options](../../server-management/starting-and-sto
 
     * Preventing Data Loss: If you restart a primary server and do not set `--init-rpl-role` to `SLAVE`, the server will not truncate transactions required by the replicas.
     * Requirements: This protection allows you to keep both `rpl_semi_sync_master_enabled` and `rpl_semi_sync_slave_enabled` active on a primary to ensure no transactions are lost during a restart.
-* As of MariaDB 13.0.1, the value of this variable can be queried with `SHOW VARIABLES LIKE 'init_rpl_role'` or `SELECT @@init_rpl_role` ([MDEV-38202](https://jira.mariadb.org/browse/MDEV-38202)).
 * Default value: `MASTER`
 * Valid values: `MASTER` or `SLAVE`&#x20;
-* Introduced (as a variable): MariaDB 13.0.1 (prior, it was only an option you could set in a [configuration file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md))
+* Introduced (as a variable): MariaDB 13.0.1 (prior, it was only an option you could set in a [configuration file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md)). The variable can be queried with `SHOW VARIABLES LIKE 'init_rpl_role'` or `SELECT @@init_rpl_role` ([MDEV-38202](https://jira.mariadb.org/browse/MDEV-38202)).
 
 #### `init_slave`
 
