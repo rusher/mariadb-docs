@@ -154,6 +154,16 @@ Enhanced compatibility with Sybase SQL Anywhere through \[sql\_mode=EXTENDED\_AL
 
 {% include "../../.gitbook/includes/backports-10.6.16-11.md" %}
 
+[MariaDB Enterprise Server 10.6.19-15](10.6.19-15.md)
+
+{% include "../../.gitbook/includes/backports-10.6.19-15.md" %}
+
+[MariaDB Enterprise Server 10.6.20-16](10.6.20-16.md)
+
+{% include "../../.gitbook/includes/backports-10.6.20-16.md" %}
+
+
+
 [MariaDB Enterprise Server 10.6.24-20](10.6.24-20.md)
 
 {% include "../../.gitbook/includes/backports-10.6.24-20.md" %}

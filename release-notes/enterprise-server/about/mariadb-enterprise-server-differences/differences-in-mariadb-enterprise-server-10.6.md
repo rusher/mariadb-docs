@@ -31,8 +31,8 @@ In addition to this there are Enterprise Features and some backported features. 
 
 ## **Backported Features**
 
-* [mariadb-dump option --as-of](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump#options) to dump data as of a given time for system versioned tables
-* JSON functions
+* [mariadb-dump option --as-of](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump#options) to dump data as of a given time for [system versioned tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/temporal-tables/system-versioned-tables)
+* [JSON functions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/special-functions/json-functions)
   * [JSON\_NORMALIZE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/special-functions/json-functions/json_normalize)
   * [JSON\_EQUALS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/special-functions/json-functions/json_equals)
   * [JSON\_OVERLAPS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/special-functions/json-functions/json_overlaps)
@@ -43,18 +43,18 @@ In addition to this there are Enterprise Features and some backported features. 
   * [JSON\_KEY\_VALUE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/special-functions/json-functions/json_key_value)
 * [Password Reuse Prevention Plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/password-validation-plugins/password-reuse-check-plugin)
 * [Datatype Plugin UUID](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/uuid-data-type)
-* CONVERT\_PARTITION / CONVERT\_TABLE
-* Option for SQL thread to limit maximum execution time per query
+* [CONVERT\_PARTITION / CONVERT\_TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/partitioning-tables/partitioning-overview)
+* [Option for SQL thread to limit maximum execution time per query](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/query-limits-and-timeouts)
 * Allow [innodb\_undo\_tablespaces](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_undo_tablespaces) to be changed after database creation
-* Make the optimizer handle `UCASE(varchar_col)=...`
-* Easier way to retrieve all users that have privileges on a specific table
+* [Make the optimizer handle `UCASE(varchar_col)=...`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/sargable-upper)
+* [Easier way to retrieve all users who have privileges on a specific table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-table_privileges-table)
 * Make [s3\_debug](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/s3-storage-engine/s3-storage-engine-system-variables#s3_debug) dynamic
 * Add timezone information to [DATE\_FORMAT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/date-time-functions/date_format)
 * [Autoshrink](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces#decreasing-the-size) option for `innodb_data_file_path` system variable
-* New, Detailed Replication Lag Representation
-* New Information Schema Table For Password Related Data
-* GTID binlog events now include the thread ID
-* **Software Bill of Materials (SBOM)** JSON file generates in the downloads archive.
+* [New, Detailed Replication Lag Representation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/delayed-replication)
+* [New Information Schema Table For Password Related Data](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-users-table)
+* [GTID binlog events now include the thread ID](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log/binary-log-formats)
+* [**Software Bill of Materials (SBOM)** ](../sbom.md)JSON file generates in the downloads archive.
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
