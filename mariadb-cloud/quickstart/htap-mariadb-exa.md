@@ -7,7 +7,9 @@ icon: chart-mixed
 MariaDB Exa adds **hybrid transactional/analytical processing (HTAP)** to MariaDB Cloud. You get MariaDB for **OLTP** and the in-memory **columnar** MariaDB Exa engine (powered by Exasol) behind one intelligent entry point—without standing up a separate analytics database, ETL pipelines, or custom CDC wiring.
 
 {% hint style="warning" %}
-**Technical preview** — HTAP using MariaDB Exa is not intended for production. It is available from May 2026 on **Power** and **PowerPlus** tiers only.
+**Technical preview**
+
+HTAP using MariaDB Exa is not intended for production use. This feature is available on Power and PowerPlus tiers only.
 {% endhint %}
 
 ## Architecture overview
@@ -16,35 +18,69 @@ The MariaDB Exa layout separates transactional and analytical workloads so heavy
 
 ### Simplified technical view
 
-![Simplified MariaDB Exa HTAP architecture: application clients connect on port 3310 to MaxScale; writes and OLTP reads go to MariaDB primary and replicas; analytical queries go to in-memory columnar MariaDB Exa; binlog feeds async CDC using Debezium into Exa](htap-exa-architecture.png)
+```mermaid
+---
+title: Simplified MariaDB Exa HTAP Architecture (Technical View)
+---
+graph LR
+    %% Node Definitions
+    App[Application Clients]
+    Port["Port 3310"]
+    
+    MS("Maxscale<br/>All writes to Primary;<br/>OLTP reads load balance<br/>to MariaDB cluster;<br/>All Analytical queries<br/>goto MariaDB Exa")
+    
+    DB_Primary["MariaDB Primary + replicas<br/>--------------<br/>Binlog Dump (from Primary)"]
+    
+    CDC("CDC using Debezium<br/>(async)")
+    
+    EXA["MariaDB Exa<br/>in memory columnar"]
+
+    %% Connections
+    App --- Port
+    Port --> MS
+    
+    MS -->|"Writes & OLTP Reads"| DB_Primary
+    MS -->|"Analytical Queries"| EXA
+    
+    %% CDC Flow
+    DB_Primary ==> CDC
+    CDC == "CDC Feed (Async)" ==> EXA
+
+    %% Styling
+    classDef redNode fill:#fff,stroke:#cc0000,stroke-width:2px,color:#cc0000;
+    class CDC redNode;
+    
+    linkStyle 4 stroke:#cc0000,stroke-width:2px;
+    linkStyle 5 stroke:#cc0000,stroke-width:2px;
+```
 
 ### Core components
 
-**MaxScale smart router**  
+**MaxScale smart router**\
 The entry point on **port 3310**. It acts as the routing layer: sends writes to the primary and splits reads between MariaDB Server (InnoDB) and the MariaDB Exa engine based on workload and performance characteristics.
 
-**MariaDB Server**  
+**MariaDB Server**\
 The **OLTP** (online transactional processing) engine. All write operations and point lookups run here.
 
-**MariaDB Exa (analytical engine)**  
+**MariaDB Exa (analytical engine)**\
 A high-performance, in-memory **columnar** database for **OLAP** (online analytical processing) workloads.
 
-**Debezium CDC**  
+**Debezium CDC**\
 An out-of-band, asynchronous pipeline that reads MariaDB binary logs and streams changes into the MariaDB Exa side of the topology.
 
 ### Data propagation and consistency
 
-**Write path**  
+**Write path**\
 All writes (`INSERT`, `UPDATE`, `DELETE`) go to the MariaDB **primary** on **port 3306**.
 
-**Asynchronous replication**  
+**Asynchronous replication**\
 Data reaches Exa through the binary log and Debezium CDC. That path is **out of band** and **asynchronous** relative to the transactional database.
 
-**Replication lag**  
+**Replication lag**\
 Under heavy write load, the CDC pipeline can build a backlog. Lag is typically on the order of **seconds** but can reach **several minutes** during spikes.
 
-**No causal reads across engines**  
-The intelligent router is **not lag-aware** and does **not** guarantee read-your-own-writes between MariaDB and Exa. For immediate consistency on data you just wrote, use the **MariaDB transactional ports** (see [Connectivity and smart routing](#connectivity-and-smart-routing)).
+**No causal reads across engines**\
+The intelligent router is **not lag-aware** and does **not** guarantee read-your-own-writes between MariaDB and Exa. For immediate consistency on data you just wrote, use the **MariaDB transactional ports** (see [Connectivity and smart routing](htap-mariadb-exa.md#connectivity-and-smart-routing)).
 
 ## Launching a MariaDB Exa HTAP cluster
 
@@ -56,7 +92,7 @@ The intelligent router is **not lag-aware** and does **not** guarantee read-your
 4. In the topology step, choose **MariaDB Server With Replicas**.
 5. Turn **on** **Launch Exa Analytics node (HTAP)**. The control is labeled **TECH PREVIEW** in the launch flow.
 
-![MariaDB Cloud launch flow: Provisioned tab, MariaDB Server With Replicas selected, Launch Exa Analytics node (HTAP) toggle on](portal-launch-exa-htap-toggle.png)
+![MariaDB Cloud launch flow: Provisioned tab, MariaDB Server With Replicas selected, Launch Exa Analytics node (HTAP) toggle on](../.gitbook/assets/portal-launch-exa-htap-toggle.png)
 
 6. Under **Configuration**, select your cloud provider and region.
 7. Under **Sizing**, pick an instance size. **The cluster is homogeneous:** the OLTP **primary**, **replicas**, and the **Exa** node all use the **same** instance size you select. With Exa enabled, only **high-memory** instance types are shown—size RAM for both transactional load and your analytical working set.
@@ -65,7 +101,7 @@ The intelligent router is **not lag-aware** and does **not** guarantee read-your
 
 ### Via MariaDB Cloud REST API
 
-For **API keys**, client IP **allow list**, checking service **`ready`** status, and fetching **credentials**, follow [Launch DB using the REST API](../quickstart/launch-db-using-the-rest-api.md). The [MariaDB Cloud REST API reference](../reference/rest-api-reference.md) and [API docs](https://apidocs.skysql.com/) cover the full request model.
+For **API keys**, client IP **allow list**, checking service **`ready`** status, and fetching **credentials**, follow [Launch DB using the REST API](launch-db-using-the-rest-api.md). The [MariaDB Cloud REST API reference](../reference/rest-api-reference.md) and [API docs](https://apidocs.skysql.com/) cover the full request model.
 
 **HTAP / Exa flag** — On `POST /provisioning/v1/services`, set **`"analytics": true`**. That provisions the Exa analytics node (same idea as **Launch Exa Analytics node (HTAP)** in the portal) on top of the replicated **es-replica** topology. The `architecture` field supports only `amd64` as value, any other input will result into your service failing to start. Other fields match your **Power** or **PowerPlus** tier, provider, region, and sizing; use **high-memory** sizes when Exa is enabled, consistent with the portal.
 
@@ -93,22 +129,22 @@ curl --location 'https://api.skysql.com/provisioning/v1/services' \
 }'
 ```
 
-After the service is **ready**, use the service response (or the same steps as the quickstart) for hostnames and ports, and map them to [Connectivity and smart routing](#connectivity-and-smart-routing) (**3306** / **3307** / **3310** / **3311**).
+After the service is **ready**, use the service response (or the same steps as the quickstart) for hostnames and ports, and map them to [Connectivity and smart routing](htap-mariadb-exa.md#connectivity-and-smart-routing) (**3306** / **3307** / **3310** / **3311**).
 
 ## Connectivity and smart routing
 
 MariaDB Cloud exposes dedicated ports so you can choose **how** each client connects: strict transactional access, read-only replicas, intelligent routing, or direct analytical access.
 
-| Port | Service type | Target engine and use case |
-| ---- | ------------ | -------------------------- |
-| **3306** | Transactional (read-write) | Standard read/write to MariaDB. Use for OLTP and when you need **read-your-own-writes** on the transactional engine. Reads are load balanced across all OLTP servers.|
-| **3307** | Transactional (read-only) | Read-only traffic across MariaDB **replicas** (load balanced). |
-| **3310** | Intelligent router | **Smart router** entry point. Sends work to the engine (MariaDB or Exa) the router selects for efficiency. |
-| **3311** | Direct Exa | Connect directly to the **analytical engine**, bypassing router logic, using the MariaDB protocol. |
+| Port     | Service type               | Target engine and use case                                                                                                                                            |
+| -------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **3306** | Transactional (read-write) | Standard read/write to MariaDB. Use for OLTP and when you need **read-your-own-writes** on the transactional engine. Reads are load balanced across all OLTP servers. |
+| **3307** | Transactional (read-only)  | Read-only traffic across MariaDB **replicas** (load balanced).                                                                                                        |
+| **3310** | Intelligent router         | **Smart router** entry point. Sends work to the engine (MariaDB or Exa) the router selects for efficiency.                                                            |
+| **3311** | Direct Exa                 | Connect directly to the **analytical engine**, bypassing router logic, using the MariaDB protocol.                                                                    |
 
 ## How smart routing (port 3310) works
 
-On **port 3310**, MaxScale chooses an engine using **racing**: it learns which backend answers each *query pattern* fastest and routes repeat traffic accordingly.
+On **port 3310**, MaxScale chooses an engine using **racing**: it learns which backend answers each _query pattern_ fastest and routes repeat traffic accordingly.
 
 ### Canonicalization
 
@@ -120,7 +156,7 @@ The **first** time a pattern appears, MaxScale **executes** the query on **both*
 
 ### First responder wins
 
-Whichever engine **returns first** for that pattern is recorded; later queries with the **same** pattern are sent to that **cached** winner until routing state is refreshed or invalidated. The running query on the losing engine is immediately cancelled. 
+Whichever engine **returns first** for that pattern is recorded; later queries with the **same** pattern are sent to that **cached** winner until routing state is refreshed or invalidated. The running query on the losing engine is immediately cancelled.
 
 ### Automatic translation
 
@@ -128,25 +164,24 @@ The router applies **syntax translation** and **type coercion** from the MariaDB
 
 ## Developer guidelines
 
-**Supported connectors**  
+**Supported connectors**\
 Use **standard MariaDB or MySQL-compatible** client libraries and connectors only.
 
-**SQL dialect**  
+**SQL dialect**\
 Author application SQL in the **MariaDB dialect**. The intelligent router performs translation for the analytical path where needed.
 
-**Handling lag**  
+**Handling lag**\
 If the application must **immediately** see data just written (for example, right after a profile update), connect on **port 3306**. Use **port 3310** for dashboards, exploration, and **heavy analytics** where small CDC lag is acceptable.
 
 ## Known issues and limitations
 
-**SQL dialect**
-The translation layer does not provide 100% support of the MariaDB SQL dialect. Some MariaDB data types, functions, and syntax structures are not supported on ports 3310 & 3311.
+**SQL dialect** The translation layer does not provide 100% support of the MariaDB SQL dialect. Some MariaDB data types, functions, and syntax structures are not supported on ports 3310 & 3311.
 
-**DDL replication**  
+**DDL replication**\
 `RENAME TABLE` and `DROP DATABASE` are **not** replicated through the CDC currently; you may need **manual** steps to keep MariaDB and Exa aligned after such DDL.
 
-**Case sensitivity**  
+**Case sensitivity**\
 MariaDB Exa may use **case-insensitive** identifier matching by default; **result column labels** can still appear in **uppercase** even when the query uses mixed or lowercase names.
 
-**Deterministic aggregates**  
+**Deterministic aggregates**\
 For functions such as `GROUP_CONCAT`, add an explicit **`ORDER BY`** inside the aggregate (where supported) so ordering is stable if different engines evaluate the plan differently.
