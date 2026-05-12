@@ -59,9 +59,9 @@ MariaDB 12.3 is a [long term release](../about/release-model.md), maintained unt
 
 * Comparison [ROW](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/row)(stored\_func(),1)=ROW(1,1) erroneously called stored\_func() twice per row. It led to a performance degradation, as well as to a double execution of the possible stored function side effects. ([MDEV-36322](https://jira.mariadb.org/browse/MDEV-36322))
 
-### Galera <a href="#galera" id="galera"></a>
+### MariaDB Cluster (Galera) <a href="#galera" id="galera"></a>
 
-* In [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/), needless foreign key checks during Incremental State Transfers are now avoided ([MDEV-34822](https://jira.mariadb.org/browse/MDEV-34822))
+* In [MariaDB Cluster (Galera)](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/), needless foreign key checks during Incremental State Transfers are now avoided ([MDEV-34822](https://jira.mariadb.org/browse/MDEV-34822))
 
 ### GIS <a href="#gis" id="gis"></a>
 
@@ -158,7 +158,7 @@ New [GIS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure
 
 ## Notable Items
 
-### Galera
+### MariaDB Cluster (Galera)
 
 * The Galera package dependency has been removed from server packages ([MDEV-38744](https://jira.mariadb.org/browse/MDEV-38744))
 
