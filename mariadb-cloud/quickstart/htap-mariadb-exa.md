@@ -185,7 +185,7 @@ The router applies **syntax translation** and **type coercion** from the MariaDB
 Use **standard MariaDB or MySQL-compatible** client libraries and connectors only.
 
 **SQL dialect**\
-Author application SQL in the **MariaDB dialect**. The intelligent router performs translation for the analytical path where needed.
+Author application SQL in the [**MariaDB dialect**](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/mariadb-exa/limitations#v.-sql-syntax-differences). The intelligent router performs translation for the analytical path where needed.
 
 **Handling lag**\
 If the application must **immediately** see data just written (for example, right after a profile update), connect on **port 3306**. Use **port 3310** for dashboards, exploration, and **heavy analytics** where small CDC lag is acceptable.
@@ -206,3 +206,6 @@ MariaDB Exa may use **case-insensitive** identifier matching by default; **resul
 
 **Deterministic aggregates**\
 For functions such as `GROUP_CONCAT`, add an explicit **`ORDER BY`** inside the aggregate (where supported) so ordering is stable if different engines evaluate the plan differently.
+
+**Empty Strings**\
+MariaDB Exa interprets an empty string (`''`) as a `NULL` value.
