@@ -2,7 +2,7 @@
 
 Billing is associated with a MariaDB Cloud ID.
 
-For pricing information, see [Pricing](https://mariadb.com/pricing/).
+For pricing information, see [Pricing](../reference/pricing.md).
 
 ## **Usage Information**
 

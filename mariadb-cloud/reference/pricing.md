@@ -6,6 +6,8 @@ Pricing shown within the MariaDB Cloud interface is an estimate of the cost of u
 
 The cost shown is not a quote and does not guarantee the cost for your actual use of MariaDB Cloud services.
 
+Current general pricing information can be found at [https://mariadb.com/pricing/](https://mariadb.com/pricing/)
+
 ## Estimated Pricing
 
 The cost estimate may vary from your actual costs for several reasons, including:
