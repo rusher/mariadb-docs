@@ -8,7 +8,7 @@ description: >-
 
 {% include "../../.gitbook/includes/latest-11-8.md" %}
 
-[MariaDB 11.8](what-is-mariadb-118.md) is a long-term release, maintained until June 2028.
+MariaDB 11.8 is a long-term release, maintained until June 2028.
 
 This list includes all features since the previous long-term release, [MariaDB 11.4](../11.4/what-is-mariadb-114.md) (those introduced in the [MariaDB 11.5](../old-releases/11.5/what-is-mariadb-115.md), [MariaDB 11.6](../old-releases/11.6/what-is-mariadb-116.md) and [MariaDB 11.7](../old-releases/11.7/what-is-mariadb-117.md) rolling releases, and in MariaDB 11.8).
 
