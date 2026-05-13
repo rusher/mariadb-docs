@@ -13,6 +13,10 @@ description: >-
 As of MariaDB 12.3, you can manually rotate keys and flush the cache without restarting the server. See [Key Rotation and Cache Flushing](hashicorp-key-management-plugin.md#key-rotation-and-cache-flushing) for details.
 {% endhint %}
 
+{% hint style="info" %}
+The configured Vault token requires specific read-only permissions. See [Required Vault Token Permissions](hashicorp-key-management-plugin.md#required-vault-token-permissions) for details to prevent authorization failures during plugin initialization.
+{% endhint %}
+
 The Hashicorp Key Management Pugin is used to implement encryption using keys stored in the Hashicorp Vault KMS. For more information, see [Hashicorp Vault and MariaDB](../../../../server-management/automated-mariadb-deployment-and-administration/hashicorp-vault-and-mariadb.md), and for how to install Vault, see [Install Vault](https://www.vaultproject.io/docs/install), as well as [MySQL/MariaDB Database Secrets Engine](https://developer.hashicorp.com/vault/docs/secrets/databases/mysql-maria).
 
 The current version of this plugin implements the following features:
@@ -130,7 +134,36 @@ The plugin supports the following parameters, which must be set in advance and c
 #### `hashicorp-key-management-check-kv-version`
 
 * Description: This parameter enables ("on", this is the default value) or disables ("off") checking the kv storage version during plugin initialization. The plugin requires storage to be version 2 or older in order for it to work properly.
+* When this option is enabled, the configured Vault token must also have read access to the `sys/mounts/my_vault/tune` endpoint, allowing the plugin to determine the kv storage version. See [Required Vault Token Permissions](hashicorp-key-management-plugin.md#required-vault-token-permissions) for details.
 * Command line: `--[loose-]hashicorp-key-management-check-kv-version="on"|"off"`
+
+## Required Vault Token Permissions
+
+The token provided through `hashicorp-key-management-token` must have the following Vault access privileges.
+
+Given a `hashicorp-key-management-vault-url` of [`http://vault-server/v1/my_vault`](http://vault-server/v1/my_vault), the token requires:
+
+<table><thead><tr><th>Value Path</th><th width="211.22216796875">Access Required</th><th>Condition</th></tr></thead><tbody><tr><td><code>my_vault/data</code></td><td>read</td><td>Always required</td></tr><tr><td><code>sys/mounts/my_vault/tune</code></td><td>read</td><td>Required unless <code>hashicorp-key-management-check-kv-version</code> is set to <code>off</code></td></tr></tbody></table>
+
+**Note**: During plugin initialization, the kv storage version is verified using the `sys/mounts/my_vault/tune` path. Most configurations require this permission because `hashicorp-key-management-check-kv-version` is set to `on` by default.
+
+### Example Minimal Vault Policy for Read-Only Access
+
+The following example provides a minimal Vault policy that grants the required privileges:
+
+```sql
+path "my_vault/data/*" {
+  capabilities = ["read"]
+}
+
+path "sys/mounts/my_vault/tune" {
+  capabilities = ["read"]
+}
+```
+
+Replace `my_vault` with the path segment of your `hashicorp-key-management-vault-url` configuration.
+
+This ensures that the plugin does not require additional permissions to access encryption keys or verify the kv storage version.
 
 ## Key Rotation and Cache Flushing
 
