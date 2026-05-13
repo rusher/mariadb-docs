@@ -34,7 +34,7 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
 
 ## Backported Features
 
-[MariaDB Enterprise Server 11.8.5-2](11.8.5-2.md)
+### [MariaDB Enterprise Server 11.8.5-2](11.8.5-2.md)
 
 {% include "../../.gitbook/includes/backports-11.8.5-2-and-11.4.9-6.md" %}
 

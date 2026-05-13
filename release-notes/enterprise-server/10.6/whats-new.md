@@ -134,41 +134,39 @@ Enhanced compatibility with Sybase SQL Anywhere through \[sql\_mode=EXTENDED\_AL
 
 ## Backported Features
 
-[MariaDB Enterprise Server 10.6.8-4](10.6.8-4.md)
+### [MariaDB Enterprise Server 10.6.8-4](10.6.8-4.md)
 
 {% include "../../.gitbook/includes/backports-10.6.8-4.md" %}
 
-[MariaDB Enterprise Server 10.6.9-5](10.6.9-5.md)
+### [MariaDB Enterprise Server 10.6.9-5](10.6.9-5.md)
 
 {% include "../../.gitbook/includes/backports-10.6.9-5.md" %}
 
-[MariaDB Enterprise Server 10.6.11-6](10.6.11-6.md)
+### [MariaDB Enterprise Server 10.6.11-6](10.6.11-6.md)
 
 {% include "../../.gitbook/includes/backports-10.6.11-6.md" %}
 
-[MariaDB Enterprise Server 10.6.12-7](10.6.12-7.md)
+### [MariaDB Enterprise Server 10.6.12-7](10.6.12-7.md)
 
 {% include "../../.gitbook/includes/backports-10.6.12-7.md" %}
 
-[MariaDB Enterprise Server 10.6.15-10](10.6.15-10.md)
+### [MariaDB Enterprise Server 10.6.15-10](10.6.15-10.md)
 
 {% include "../../.gitbook/includes/backports-10.6.15-10.md" %}
 
-[MariaDB Enterprise Server 10.6.16-11](10.6.16-11.md)
+### [MariaDB Enterprise Server 10.6.16-11](10.6.16-11.md)
 
 {% include "../../.gitbook/includes/backports-10.6.16-11.md" %}
 
-[MariaDB Enterprise Server 10.6.19-15](10.6.19-15.md)
+### [MariaDB Enterprise Server 10.6.19-15](10.6.19-15.md)
 
 {% include "../../.gitbook/includes/backports-10.6.19-15.md" %}
 
-[MariaDB Enterprise Server 10.6.20-16](10.6.20-16.md)
+### [MariaDB Enterprise Server 10.6.20-16](10.6.20-16.md)
 
 {% include "../../.gitbook/includes/backports-10.6.20-16.md" %}
 
-
-
-[MariaDB Enterprise Server 10.6.24-20](10.6.24-20.md)
+### [MariaDB Enterprise Server 10.6.24-20](10.6.24-20.md)
 
 {% include "../../.gitbook/includes/backports-10.6.24-20.md" %}
 
