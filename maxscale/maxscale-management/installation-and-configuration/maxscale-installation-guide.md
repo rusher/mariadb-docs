@@ -13,7 +13,7 @@ We recommend to install MaxScale on a separate server, to ensure that there can 
 
 ### Install MariaDB MaxScale From MariaDB Repositories
 
-The recommended approach is to use [the MariaDB package repository](../../../server/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md) to install MaxScale. After enabling the repository by following the instructions, MaxScale can be installed with the following commands.
+The recommended approach is to use [the MariaDB package repository](../../../server/server-management/install-and-upgrade-mariadb/mariadb-package-repository-setup-and-usage.md) to install MaxScale. After enabling the repository by following the instructions, MaxScale can be installed with the following commands.
 
 * For RHEL/Rocky Linux/Alma Linux, use `dnf install maxscale`.
 * For Debian and Ubuntu, run `apt update` followed by `apt install maxscale`.
