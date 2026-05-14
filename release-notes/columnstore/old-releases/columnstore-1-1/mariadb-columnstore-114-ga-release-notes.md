@@ -41,7 +41,7 @@ For general "how to questions" ask questions [here](https://app.gitbook.com/o/di
 * [MCOL-1262](https://jira.mariadb.org/browse/MCOL-1262) - PDI CS naming conventions support
 * [MCOL-1280](https://jira.mariadb.org/browse/MCOL-1280) - MCSAPI C++ documentation, example incorrect
 * [MCOL-1285](https://jira.mariadb.org/browse/MCOL-1285) - Adapter can't recognize database schema with capital letters
-* [MCOL-1317](https://jira.mariadb.org/browse/MCOL-1317) - Columnstore Cluster Tester tool does not check the availability of all ports needed to mcs operations
+* [MCOL-1317](https://jira.mariadb.org/browse/MCOL-1317) - ColumnStore Cluster Tester tool does not check the availability of all ports needed to mcs operations
 * [MCOL-1321](https://jira.mariadb.org/browse/MCOL-1321) - bulk write sdk python bindings does not support status out param in setColumn
 * [MCOL-1323](https://jira.mariadb.org/browse/MCOL-1323) - cpimport Splitter has incorrect SIGPIPE mapping
 * [MCOL-1179](https://jira.mariadb.org/browse/MCOL-1179) - Pentaho Data Integration / Kettle - Bulk API Java Binding
@@ -49,7 +49,7 @@ For general "how to questions" ask questions [here](https://app.gitbook.com/o/di
 * [MCOL-1283](https://jira.mariadb.org/browse/MCOL-1283) - Try to pack/load the shared bulk write sdk library in/from jar to ease installation process
 * [MCOL-1296](https://jira.mariadb.org/browse/MCOL-1296) - Add debug output as an API option
 * [MCOL-1312](https://jira.mariadb.org/browse/MCOL-1312) - PDI version number - include git
-* [MCOL-1318](https://jira.mariadb.org/browse/MCOL-1318) - Columnstore Cluster Tester tool is evaluating Failure if Firewall Services or SELINUX are enabled
+* [MCOL-1318](https://jira.mariadb.org/browse/MCOL-1318) - ColumnStore Cluster Tester tool is evaluating Failure if Firewall Services or SELINUX are enabled
 * [MCOL-1264](https://jira.mariadb.org/browse/MCOL-1264) - List of manual tests performed
 * [MCOL-1319](https://jira.mariadb.org/browse/MCOL-1319) - Merge [MariaDB 10.2.14](../../../community-server/old-releases/10.2/10.2.14.md)
 * [MCOL-1333](https://jira.mariadb.org/browse/MCOL-1333) - Document that .tar.gz of RPM files is needed for addModule command

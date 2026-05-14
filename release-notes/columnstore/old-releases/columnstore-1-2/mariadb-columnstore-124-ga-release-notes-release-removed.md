@@ -21,7 +21,7 @@ For general "how to questions" ask questions [here](https://app.gitbook.com/o/di
 
 * [MCOL-537](https://jira.mariadb.org/browse/MCOL-537) - Some compiler warnings need fixing
 * [MCOL-1495](https://jira.mariadb.org/browse/MCOL-1495) - Memory leak in WriteEngineServ
-* [MCOL-1951](https://jira.mariadb.org/browse/MCOL-1951) - Crash when MySQL aggregate UDF is called against Columnstore table
+* [MCOL-1951](https://jira.mariadb.org/browse/MCOL-1951) - Crash when MySQL aggregate UDF is called against ColumnStore table
 * [MCOL-1984](https://jira.mariadb.org/browse/MCOL-1984) - SystemConfig / WaitPeriod change lost during upgrade
 * [MCOL-2001](https://jira.mariadb.org/browse/MCOL-2001) - mscadmin redistributeData parameters are not accepted as suggested by the help information.
 * [MCOL-2035](https://jira.mariadb.org/browse/MCOL-2035) - Some regr\_\* tests aren't deterministic so comparisons are iffy. RANK()
@@ -35,7 +35,7 @@ For general "how to questions" ask questions [here](https://app.gitbook.com/o/di
 * [MCOL-3268](https://jira.mariadb.org/browse/MCOL-3268) - javamcsapi compatibility test fails
 * [MCOL-3293](https://jira.mariadb.org/browse/MCOL-3293) - UPDATE performance improvement contribution - Contributed by ABS Global
 * [MCOL-3296](https://jira.mariadb.org/browse/MCOL-3296) - ctrl+c sometimes leaves DMLProc in bad state
-* [MCOL-3307](https://jira.mariadb.org/browse/MCOL-3307) - Non-Columnstore Window function causes debug assert
+* [MCOL-3307](https://jira.mariadb.org/browse/MCOL-3307) - Non-ColumnStore Window function causes debug assert
 * [MCOL-3311](https://jira.mariadb.org/browse/MCOL-3311) - regression test212 logs integer expression expected error
 * [MCOL-3318](https://jira.mariadb.org/browse/MCOL-3318) - RPM warnings appear when installing ColumnStore's MariaDB Server
 * [MCOL-593](https://jira.mariadb.org/browse/MCOL-593) - support columnstore tables as slaves to innodb master tables

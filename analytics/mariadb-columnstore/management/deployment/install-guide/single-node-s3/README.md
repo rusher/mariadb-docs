@@ -1,6 +1,6 @@
 ---
 description: >-
-  Single-node MariaDB Enterprise ColumnStore deployment with S3-compatible
+  Single-node MariaDB ColumnStore deployment with S3-compatible
   object storage on Enterprise Server and MaxScale, including bulk data import
   and OLAP-ready configuration.
 
@@ -10,16 +10,16 @@ description: >-
 
 ## Overview
 
-| <ul><li>Enterprise Server 10.5</li><li>Enterprise Server 10.6</li><li>Enterprise Server 11.4</li></ul> | ![](../../../../../.gitbook/assets/es-columnstore-topology-s3-no-title.png) | <p><strong>Columnar storage engine with S3-compatible object storage</strong></p><ul><li>Highly available</li><li>Automatic failover via MaxScale and CMAPI</li><li>Scales read via MaxScale</li><li>Bulk data import</li><li>Enterprise Server 10.5, Enterprise ColumnStore 5, MaxScale 2.5</li><li>Enterprise Server 10.6, Enterprise ColumnStore 23.02, MaxScale 22.08</li></ul> |
+| <ul><li>Enterprise Server 10.5</li><li>Enterprise Server 10.6</li><li>Enterprise Server 11.4</li></ul> | ![](../../../../../.gitbook/assets/es-columnstore-topology-s3-no-title.png) | <p><strong>Columnar storage engine with S3-compatible object storage</strong></p><ul><li>Highly available</li><li>Automatic failover via MaxScale and CMAPI</li><li>Scales read via MaxScale</li><li>Bulk data import</li><li>Enterprise Server 10.5, ColumnStore 5, MaxScale 2.5</li><li>Enterprise Server 10.6, ColumnStore 23.02, MaxScale 22.08</li></ul> |
 | ------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
-This procedure describes the deployment of the ColumnStore Object Storage topology with MariaDB Enterprise Server 10.5, MariaDB Enterprise ColumnStore 5, and MariaDB MaxScale 2.5.
+This procedure describes the deployment of the ColumnStore Object Storage topology with MariaDB Enterprise Server 10.5, MariaDB ColumnStore 5, and MariaDB MaxScale 2.5.
 
-MariaDB Enterprise ColumnStore 5 is a columnar storage engine for MariaDB Enterprise Server 10.5. Enterprise ColumnStore is suitable for Online Analytical Processing (OLAP) workloads.
+MariaDB ColumnStore 5 is a columnar storage engine for MariaDB Enterprise Server 10.5. ColumnStore is suitable for Online Analytical Processing (OLAP) workloads.
 
 This procedure has 9 steps, which are executed in sequence.
 
-This procedure represents basic product capability and deploys 3 Enterprise ColumnStore nodes and 1 MaxScale node.
+This procedure represents basic product capability and deploys 3 ColumnStore nodes and 1 MaxScale node.
 
 This page provides an overview of the topology, requirements, and deployment procedures.
 
@@ -51,22 +51,22 @@ The following components are deployed during this procedure:
 
 ### MariaDB Enterprise Server Components
 
-<table><thead><tr><th width="305.2591552734375" valign="top">Component</th><th valign="top">Description</th></tr></thead><tbody><tr><td valign="top"><a href="../../../../architecture/columnstore-storage-engine-overview.md">MariaDB Enterprise ColumnStore</a></td><td valign="top"><ul><li>Columnar storage engine</li><li>Highly available</li><li>Optimized for Online Analytical Processing (OLAP) workloads</li><li>Scalable query execution</li><li><a href="https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/columnstore/cmapi">Cluster Management API (CMAPI)</a> provides a REST API for multi-node administration</li></ul></td></tr></tbody></table>
+<table><thead><tr><th width="305.2591552734375" valign="top">Component</th><th valign="top">Description</th></tr></thead><tbody><tr><td valign="top"><a href="../../../../architecture/columnstore-storage-engine-overview.md">MariaDB ColumnStore</a></td><td valign="top"><ul><li>Columnar storage engine</li><li>Highly available</li><li>Optimized for Online Analytical Processing (OLAP) workloads</li><li>Scalable query execution</li><li><a href="https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/columnstore/cmapi">Cluster Management API (CMAPI)</a> provides a REST API for multi-node administration</li></ul></td></tr></tbody></table>
 
 ### MariaDB MaxScale Components
 
-<table><thead><tr><th width="242.4443359375">Component</th><th>Description</th></tr></thead><tbody><tr><td>Listener</td><td>Listens for client connections to MaxScale then passes them to the router service</td></tr><tr><td>MariaDB Monitor</td><td>Tracks changes in the state of MariaDB Enterprise Servers.</td></tr><tr><td>Read Connection Router</td><td>Routes connections from the listener to any available Enterprise ColumnStore node</td></tr><tr><td>Read/Write Split Router</td><td>Routes read operations from the listener to any available Enterprise ColumnStore node, and routes write operations from the listener to a specific server that MaxScale uses as the primary server</td></tr><tr><td>Server Module</td><td>Connection configuration in MaxScale to an Enterprise ColumnStore node</td></tr></tbody></table>
+<table><thead><tr><th width="242.4443359375">Component</th><th>Description</th></tr></thead><tbody><tr><td>Listener</td><td>Listens for client connections to MaxScale then passes them to the router service</td></tr><tr><td>MariaDB Monitor</td><td>Tracks changes in the state of MariaDB Enterprise Servers.</td></tr><tr><td>Read Connection Router</td><td>Routes connections from the listener to any available ColumnStore node</td></tr><tr><td>Read/Write Split Router</td><td>Routes read operations from the listener to any available ColumnStore node, and routes write operations from the listener to a specific server that MaxScale uses as the primary server</td></tr><tr><td>Server Module</td><td>Connection configuration in MaxScale to an ColumnStore node</td></tr></tbody></table>
 
 ## Topology
 
 <figure><img src="../../../../../.gitbook/assets/es-columnstore-topology-s3-no-title.png" alt=""><figcaption></figcaption></figure>
 
-The MariaDB Enterprise ColumnStore topology with Object Storage delivers production analytics with high availability, fault tolerance, and limitless data storage by leveraging S3-compatible storage.
+The MariaDB ColumnStore topology with Object Storage delivers production analytics with high availability, fault tolerance, and limitless data storage by leveraging S3-compatible storage.
 
 The topology consists of:
 
 * One or more MaxScale nodes
-* An odd number of ColumnStore nodes (minimum of 3) running ES, Enterprise ColumnStore, and CMAPI
+* An odd number of ColumnStore nodes (minimum of 3) running ES, ColumnStore, and CMAPI
 
 The MaxScale nodes:
 
@@ -83,7 +83,7 @@ The ColumnStore nodes:
 
 ## Requirements
 
-These requirements are for the ColumnStore Object Storage topology when deployed with MariaDB Enterprise Server 10.5, MariaDB Enterprise ColumnStore 5, and MariaDB MaxScale 2.5.
+These requirements are for the ColumnStore Object Storage topology when deployed with MariaDB Enterprise Server 10.5, MariaDB ColumnStore 5, and MariaDB MaxScale 2.5.
 
 * Node Count
 * Operating System
@@ -100,11 +100,11 @@ These requirements are for the ColumnStore Object Storage topology when deployed
 ### Node Count
 
 * MaxScale nodes, 1 or more are required.
-* Enterprise ColumnStore nodes, 3 or more are required for high availability. You should always have an odd number of nodes in a multi-node ColumnStore deployment to avoid split brain scenarios.
+* ColumnStore nodes, 3 or more are required for high availability. You should always have an odd number of nodes in a multi-node ColumnStore deployment to avoid split brain scenarios.
 
 ### Operating System
 
-In alignment to the [enterprise lifecycle](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/enterprise-server/about/enterprise-server-lifecycle), the ColumnStore Object Storage topology with MariaDB Enterprise Server 10.5, MariaDB Enterprise ColumnStore 5, and MariaDB MaxScale 2.5 is provided for:
+In alignment to the [enterprise lifecycle](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/enterprise-server/about/enterprise-server-lifecycle), the ColumnStore Object Storage topology with MariaDB Enterprise Server 10.5, MariaDB ColumnStore 5, and MariaDB MaxScale 2.5 is provided for:
 
 * CentOS Linux 7 (x86\_64)
 * Debian 10 (x86\_64)
@@ -115,18 +115,18 @@ In alignment to the [enterprise lifecycle](https://app.gitbook.com/s/aEnK0ZXmUbJ
 
 ### Minimum Hardware Requirements
 
-MariaDB Enterprise ColumnStore's minimum hardware requirements are not intended for production environments, but the minimum hardware requirements can be appropriate for development and test environments. For production environments, see the [recommended hardware requirements](./#recommended-hardware-requirements) instead.
+MariaDB ColumnStore's minimum hardware requirements are not intended for production environments, but the minimum hardware requirements can be appropriate for development and test environments. For production environments, see the [recommended hardware requirements](./#recommended-hardware-requirements) instead.
 
 The minimum hardware requirements are:
 
 | Component                   | CPU      | Memory |
 | --------------------------- | -------- | ------ |
 | MaxScale node               | 4+ cores | 4+ GB  |
-| Enterprise ColumnStore node | 4+ cores | 4+ GB  |
+| ColumnStore node | 4+ cores | 4+ GB  |
 
-MariaDB Enterprise ColumnStore will refuse to start if the system has less than 3 GB of memory.
+MariaDB ColumnStore will refuse to start if the system has less than 3 GB of memory.
 
-If Enterprise ColumnStore is started on a system with less memory, the following error message will be written to the ColumnStore system log called crit.log:
+If ColumnStore is started on a system with less memory, the following error message will be written to the ColumnStore system log called crit.log:
 
 ```
 Apr 30 21:54:35 a1ebc96a2519 PrimProc[1004]: 35.668435 |0|0|0| C 28 CAL0000: Error total memory available is less than 3GB.

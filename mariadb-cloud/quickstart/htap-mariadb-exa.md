@@ -193,7 +193,7 @@ If the application must **immediately** see data just written (for example, righ
 ## Known issues and limitations
 
 {% hint style="info" %}
-Deep Dive: For a full list of supported SQL functions, detailed data type mappings, and logic differences, see our [Limitations & Compatibility Reference](https://www.google.com/search?q=limitations.md) page.&#x20;
+Deep Dive: For a full list of supported SQL functions, detailed data type mappings, and logic differences, see our [Limitations & Compatibility Reference](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/mariadb-exa/limitations) page.&#x20;
 {% endhint %}
 
 **SQL dialect** The translation layer does not provide 100% support of the MariaDB SQL dialect. Some MariaDB data types, functions, and syntax structures are not supported on ports 3310 & 3311.

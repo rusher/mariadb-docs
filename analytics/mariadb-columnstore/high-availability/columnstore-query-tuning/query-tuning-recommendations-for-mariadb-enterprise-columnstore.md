@@ -1,17 +1,17 @@
 ---
 description: >-
-  Query tuning recommendations for MariaDB Enterprise ColumnStore: select only
+  Query tuning recommendations for MariaDB ColumnStore: select only
   required columns, avoid large single-threaded ORDER BY and LIMIT sorts, and
   follow analytical best practices.
 ---
 
 # Query Tuning Recommendations
 
-When tuning queries for MariaDB Enterprise ColumnStore, there are some important details to consider.
+When tuning queries for MariaDB ColumnStore, there are some important details to consider.
 
 ## Avoid Selecting Unnecessary Columns
 
-Enterprise ColumnStore only reads the columns that are necessary to resolve a query.
+ColumnStore only reads the columns that are necessary to resolve a query.
 
 For example, the following query selects every column in the table:
 
@@ -107,9 +107,9 @@ When the decimal overflow check fails, MariaDB Enterprise ColumnStore raises an 
 
 ## User-Defined Aggregate Function (UDAF) C++ API
 
-MariaDB Enterprise ColumnStore supports Enterprise Server's standard User-Defined Function (UDF) API. However, UDFs developed using that API cannot be executed in a distributed manner.
+MariaDB ColumnStore supports Enterprise Server's standard User-Defined Function (UDF) API. However, UDFs developed using that API cannot be executed in a distributed manner.
 
-To support distributed execution of custom SQL, MariaDB Enterprise ColumnStore supports a Distributed User Defined Aggregate Functions (UDAF) C++ API:
+To support distributed execution of custom SQL, MariaDB ColumnStore supports a Distributed User Defined Aggregate Functions (UDAF) C++ API:
 
 * The Distributed User Defined Aggregate Functions (UDAF) C++ API allows anyone to create aggregate functions of arbitrary complexity for distributed execution in the ColumnStore storage engine.
 * These functions can also be used as Analytic (Window) functions just like any built-in aggregate function.

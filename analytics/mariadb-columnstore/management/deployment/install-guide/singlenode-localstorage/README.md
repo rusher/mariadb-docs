@@ -1,6 +1,6 @@
 ---
 description: >-
-  Single-node MariaDB Enterprise ColumnStore deployment with local storage:
+  Single-node MariaDB ColumnStore deployment with local storage:
   minimal-footprint topology suitable for development and small production
   OLAP workloads, including data import.
 layout:
@@ -21,9 +21,9 @@ layout:
 
 # Single-Node Localstorage
 
-This procedure describes the deployment of the **Single-Node Enterprise ColumnStore** topology with Local storage.
+This procedure describes the deployment of the **Single-Node ColumnStore** topology with Local storage.
 
-MariaDB Enterprise ColumnStore is a columnar storage engine for MariaDB Enterprise Server 10.6. Enterprise ColumnStore is best suited for Online Analytical Processing (OLAP) workloads.
+MariaDB ColumnStore is a columnar storage engine for MariaDB Enterprise Server 10.6. ColumnStore is best suited for Online Analytical Processing (OLAP) workloads.
 
 This procedure has 5 steps, which are executed in sequence.
 
@@ -35,7 +35,7 @@ Please read and understand this procedure before executing.
 
 ## Procedure Steps
 
-<table><thead><tr><th width="117.148193359375">Step</th><th>Description</th></tr></thead><tbody><tr><td>Step 1</td><td><a href="step-1-prepare-systems-for-enterprise-columnstore-nodes.md">Prepare System for Enterprise ColumnStore</a></td></tr><tr><td>Step 2</td><td><a href="step-2-install-enterprise-columnstore.md">Install Enterprise ColumnStore</a></td></tr><tr><td>Step 3</td><td><a href="step-3-start-and-configure-enterprise-columnstore.md">Start and Configure Enterprise ColumnStore</a></td></tr><tr><td>Step 4</td><td><a href="step-4-test-enterprise-columnstore.md">Test Enterprise ColumnStore</a></td></tr><tr><td>Step 5</td><td><a href="step-5-bulk-import-of-data.md">Bulk Import Data to Enterprise ColumnStore</a></td></tr></tbody></table>
+<table><thead><tr><th width="117.148193359375">Step</th><th>Description</th></tr></thead><tbody><tr><td>Step 1</td><td><a href="step-1-prepare-systems-for-enterprise-columnstore-nodes.md">Prepare System for ColumnStore</a></td></tr><tr><td>Step 2</td><td><a href="step-2-install-enterprise-columnstore.md">Install ColumnStore</a></td></tr><tr><td>Step 3</td><td><a href="step-3-start-and-configure-enterprise-columnstore.md">Start and Configure ColumnStore</a></td></tr><tr><td>Step 4</td><td><a href="step-4-test-enterprise-columnstore.md">Test ColumnStore</a></td></tr><tr><td>Step 5</td><td><a href="step-5-bulk-import-of-data.md">Bulk Import Data to ColumnStore</a></td></tr></tbody></table>
 
 ## Support
 
@@ -49,15 +49,15 @@ The following components are deployed during this procedure:
 
 #### MariaDB Enterprise Server Components
 
-<table><thead><tr><th width="283" valign="top">Component</th><th valign="top">Description</th></tr></thead><tbody><tr><td valign="top"><a href="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/rBEU9juWLfTDcdwF3Q14/">MariaDB Enterprise ColumnStore</a></td><td valign="top"><ul><li>Columnar Storage Engine</li><li>Optimized for Online Analytical Processing (OLAP) workloads</li></ul></td></tr></tbody></table>
+<table><thead><tr><th width="283" valign="top">Component</th><th valign="top">Description</th></tr></thead><tbody><tr><td valign="top"><a href="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/rBEU9juWLfTDcdwF3Q14/">MariaDB ColumnStore</a></td><td valign="top"><ul><li>Columnar Storage Engine</li><li>Optimized for Online Analytical Processing (OLAP) workloads</li></ul></td></tr></tbody></table>
 
 ## Topology
 
 <figure><img src="../../../../../.gitbook/assets/ent-col-single-node-topology-local-no-title.png" alt=""><figcaption></figcaption></figure>
 
-The Single-Node Enterprise ColumnStore topology provides support for Online Analytical Processing (OLAP) workloads to MariaDB Enterprise Server.
+The Single-Node ColumnStore topology provides support for Online Analytical Processing (OLAP) workloads to MariaDB Enterprise Server.
 
-The Enterprise ColumnStore node:
+The ColumnStore node:
 
 * Receives queries from the application
 * Executes queries
@@ -65,11 +65,11 @@ The Enterprise ColumnStore node:
 
 ### High Availability
 
-Single-Node Enterprise ColumnStore does not provide high availability (HA) for Online Analytical Processing (OLAP). If you would like to deploy Enterprise ColumnStore with high availability, see [Enterprise ColumnStore with Shared Local storage](./).
+Single-Node ColumnStore does not provide high availability (HA) for Online Analytical Processing (OLAP). If you would like to deploy ColumnStore with high availability, see [ColumnStore with Shared Local storage](./).
 
 ## Requirements
 
-These requirements are for the Single-Node Enterprise ColumnStore, when deployed with MariaDB Enterprise Server 10.6 and MariaDB Enterprise ColumnStore 23.10.
+These requirements are for the Single-Node ColumnStore, when deployed with MariaDB Enterprise Server 10.6 and MariaDB ColumnStore 23.10.
 
 ### Operating System
 
@@ -85,17 +85,17 @@ These requirements are for the Single-Node Enterprise ColumnStore, when deployed
 
 ### Minimum Hardware Requirements
 
-MariaDB Enterprise ColumnStore's minimum hardware requirements are not intended for production environments, but the minimum hardware requirements can be appropriate for development and test environments. For production environments, see the [recommended hardware requirements](./#recommended-hardware-requirements) instead.
+MariaDB ColumnStore's minimum hardware requirements are not intended for production environments, but the minimum hardware requirements can be appropriate for development and test environments. For production environments, see the [recommended hardware requirements](./#recommended-hardware-requirements) instead.
 
 The minimum hardware requirements are:
 
 | Component                   | CPU      | Memory |
 | --------------------------- | -------- | ------ |
-| Enterprise ColumnStore node | 4+ cores | 16+ GB |
+| ColumnStore node | 4+ cores | 16+ GB |
 
-MariaDB Enterprise ColumnStore will refuse to start if the system has less than 3 GB of memory.
+MariaDB ColumnStore will refuse to start if the system has less than 3 GB of memory.
 
-If Enterprise ColumnStore is started on a system with less memory, the following error message will be written to the ColumnStore system log called `crit.log`:
+If ColumnStore is started on a system with less memory, the following error message will be written to the ColumnStore system log called `crit.log`:
 
 ```
 Apr 30 21:54:35 a1ebc96a2519 PrimProc[1004]: 35.668435 |0|0|0| C 28 CAL0000: Error total memory available is less than 3GB.
@@ -137,9 +137,9 @@ The `systemctl` command is used to start and stop the MariaDB Enterprise Server 
 
 ### Next Step
 
-Navigation in the Single-Node Enterprise ColumnStore topology with Local storage deployment procedure:
+Navigation in the Single-Node ColumnStore topology with Local storage deployment procedure:
 
-* Next: Step 1: Install MariaDB Enterprise ColumnStore 23.10.
+* Next: Step 1: Install MariaDB ColumnStore 23.10.
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

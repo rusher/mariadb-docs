@@ -2,7 +2,7 @@
 description: >-
   Configure MariaDB ColumnStore to perform cross-engine joins with
   non-ColumnStore tables (InnoDB, MyISAM) by setting CrossEngineSupport
-  connection details in Columnstore.xml.
+  connection details in ColumnStore.xml.
 hidden: true
 ---
 
@@ -14,7 +14,7 @@ MariaDB ColumnStore allows ColumnStore tables to be joined with non-ColumnStore 
 
 To enable this process, the section in `Columnstore.xml` is configured with connection information.
 
-The following is an example entry in the Columnstore.XML configuration file to gain access to joined tables, Single Server MariaDB ColumnStore install. The Host needs to be either `127.0.0.1` or `localhost`:
+The following is an example entry in the ColumnStore.XML configuration file to gain access to joined tables, Single Server MariaDB ColumnStore install. The Host needs to be either `127.0.0.1` or `localhost`:
 
 ```xml
 <CrossEngineSupport>
@@ -39,13 +39,13 @@ For version 1.2.0 onwards, the additional options in the section are supported t
 
 This change must be made while the ColumnStore server is down. In a multi-node deployment, the change must be made on the PrimProc[^1] node only as this is replicated to other instances upon restart.
 
-Read up on how to make changes via the command line to `Columnstore.xml`: [on this page](../columnstore-system/columnstore-configuration-file-update-and-distribution.md).
+Read up on how to make changes via the command line to `ColumnStore.xml`: [on this page](../columnstore-system/columnstore-configuration-file-update-and-distribution.md).
 
 ## Troubleshooting
 
 **ERROR 1815 (HY000): Internal error: IDB-8001: CrossEngineSupport section in Columnstore.xml is not properly configured**
 
-* Confirm that `Columnstore.xml` was correctly updated on pm1 and the server restarted.
+* Confirm that `ColumnStore.xml` was correctly updated on pm1 and the server restarted.
 
 **ERROR 1815 (HY000): Internal error: fatal error in drizzle\_con\_connect() (23)(23)**
 

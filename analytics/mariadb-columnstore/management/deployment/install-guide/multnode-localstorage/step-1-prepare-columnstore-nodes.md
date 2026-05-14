@@ -8,7 +8,7 @@ description: 'Step 1: Prepare ColumnStore Nodes'
 
 This page details step 1 of the 9-step procedure "[Multnode Localstorage](./)".
 
-This step prepares systems to host MariaDB Enterprise Server and MariaDB Enterprise ColumnStore.
+This step prepares systems to host MariaDB Enterprise Server and MariaDB ColumnStore.
 
 {% include "../../../../../.gitbook/includes/the-instructions-were-teste....md" %}
 
@@ -16,11 +16,11 @@ Interactive commands are detailed. Alternatively, the described operations can b
 
 ## Optimize Linux Kernel Parameters
 
-MariaDB Enterprise ColumnStore performs best with Linux kernel optimizations.
+MariaDB ColumnStore performs best with Linux kernel optimizations.
 
-On each server to host an Enterprise ColumnStore node, optimize the kernel:
+On each server to host an ColumnStore node, optimize the kernel:
 
-1. Set the relevant kernel parameters in a sysctl configuration file. To ensure proper change management, use an Enterprise ColumnStore-specific configuration file.\
+1. Set the relevant kernel parameters in a sysctl configuration file. To ensure proper change management, use an ColumnStore-specific configuration file.\
    \
    Create `a /etc/sysctl.d/90-mariadb-enterprise-columnstore.conf file`:
 

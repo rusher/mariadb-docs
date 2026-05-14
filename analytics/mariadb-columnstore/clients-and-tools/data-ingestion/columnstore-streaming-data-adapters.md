@@ -89,7 +89,7 @@ test	t2
 
 #### Automated Table Creation on ColumnStore
 
-You can have the adapter automatically create the tables on the ColumnStore instance with the -an option. In this case, the user used for cross-engine queries will be used to create the table (the values in `Columnstore.CrossEngineSupport`). This user requires `CREATE` privileges on all streamed databases and tables.
+You can have the adapter automatically create the tables on the ColumnStore instance with the -an option. In this case, the user used for cross-engine queries will be used to create the table (the values in `ColumnStore.CrossEngineSupport`). This user requires `CREATE` privileges on all streamed databases and tables.
 
 #### Data Transformation Mode
 
@@ -103,7 +103,7 @@ This mode is not as fast as the append-only mode and might not be suitable for h
 
 Download and install both [MaxScale](https://mariadb.com/downloads/mariadb-tx/maxscale) and [ColumnStore](https://mariadb.com/downloads/mariadb-ax).
 
-Copy the Columnstore.xml file from `/usr/local/mariadb/columnstore/etc/Columnstore.xml` from one of the ColumnStore PrimProc[^1] nodes to the server where the adapter is installed.
+Copy the Columnstore.xml file from `/usr/local/mariadb/columnstore/etc/ColumnStore.xml` from one of the ColumnStore PrimProc[^1] nodes to the server where the adapter is installed.
 
 Configure MaxScale according to the [CDC tutorial](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-archive/archive/mariadb-maxscale-21-06).
 
@@ -187,9 +187,9 @@ Both configurations can be set in each block’s settings tab.
 
 The database connection configuration follows PDI’s default schema.
 
-By default, the plugin tries to use ColumnStore's default configuration _`/usr/local/mariadb/columnstore/etc/Columnstore.xml`_ to connect to the ColumnStore instance through the `Bulk Write SDK`. In addition, individual paths or variables can be used too.
+By default, the plugin tries to use ColumnStore's default configuration _`/usr/local/mariadb/columnstore/etc/ColumnStore.xml`_ to connect to the ColumnStore instance through the `Bulk Write SDK`. In addition, individual paths or variables can be used too.
 
-Information on how to prepare the `Columnstore.xml` configuration file can be found here.
+Information on how to prepare the `ColumnStore.xml` configuration file can be found here.
 
 ### Usage
 

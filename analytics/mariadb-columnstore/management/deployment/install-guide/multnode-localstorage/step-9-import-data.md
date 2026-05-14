@@ -8,7 +8,7 @@ description: 'Step 9: Import Data'
 
 This page details step 9 of the 9-step procedure "Deploy ColumnStore Shared Local Storage Topology".
 
-This step bulk imports data to Enterprise ColumnStore.
+This step bulk imports data to ColumnStore.
 
 {% include "../../../../../.gitbook/includes/the-instructions-were-teste....md" %}
 

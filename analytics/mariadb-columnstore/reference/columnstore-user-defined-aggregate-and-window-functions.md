@@ -9,7 +9,7 @@ description: >-
 
 ## Introduction
 
-Starting with MariaDB ColumnStore 1.1, the ability to create and use user-defined aggregate and window functions is supported in addition to scalar functions. With Columnstore 1.2, multiple parameters are supported. A C++ SDK is provided, as well as 3 reference examples that provide additional functions that may be of general use:
+Starting with MariaDB ColumnStore 1.1, the ability to create and use user-defined aggregate and window functions is supported in addition to scalar functions. With ColumnStore 1.2, multiple parameters are supported. A C++ SDK is provided, as well as 3 reference examples that provide additional functions that may be of general use:
 
 * **median—mathematical median**, equivalent to percentile\_cont(0.5).
 * **avg\_mode—mathematical mode**, i.e., the most frequent value in the set.

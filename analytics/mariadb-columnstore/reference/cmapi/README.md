@@ -1,17 +1,17 @@
 ---
 description: >-
-  CMAPI is the REST API for administering MariaDB Enterprise ColumnStore in
+  CMAPI is the REST API for administering MariaDB ColumnStore in
   multi-node topologies, accessed with curl or any standard REST client and
   authenticated via x-api-key.
 ---
 
 # CMAPI
 
-**CMAPI** is a REST API for administering MariaDB Enterprise ColumnStore in multi-node topologies.
+**CMAPI** is a REST API for administering MariaDB ColumnStore in multi-node topologies.
 
-Reference material is available for MariaDB Enterprise ColumnStore.
+Reference material is available for MariaDB ColumnStore.
 
-MariaDB Enterprise ColumnStore is included with MariaDB Enterprise Server.
+MariaDB ColumnStore is included with MariaDB Enterprise Server.
 
 ## Clients
 
@@ -21,7 +21,7 @@ CMAPI examples throughout the documentation use `curl` as the REST client. The e
 
 ## Endpoint
 
-The endpoint for CMAPI contains the hostname and port for the primary node running Enterprise ColumnStore, `/cmapi/`, the CMAPI API version (`0.4.0`), and a action-specific endpoint path.
+The endpoint for CMAPI contains the hostname and port for the primary node running ColumnStore, `/cmapi/`, the CMAPI API version (`0.4.0`), and a action-specific endpoint path.
 
 Example: `https://mcs1:8640/cmapi/0.4.0/cluster/node`
 
@@ -53,7 +53,7 @@ The API key is stored in `/etc/columnstore/cmapi_server.conf`.
 
 ### Generate an API Key
 
-The API key is a shared secret that can be used to add nodes to multi-node Enterprise ColumnStore. The API key can be any string, but it is recommended to use a long, random string. The API key should be stored securely and kept confidential.
+The API key is a shared secret that can be used to add nodes to multi-node ColumnStore. The API key can be any string, but it is recommended to use a long, random string. The API key should be stored securely and kept confidential.
 
 For example, to create a random 256-bit API key using `openssl rand`:
 

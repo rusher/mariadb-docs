@@ -11,7 +11,7 @@ A number of system configuration variables exist to allow fine tuning of the sys
 
 The configuration parameters are maintained in the `/etc/Columnstore.xml` file. In a multiple server deployment these should only be edited on the PM1 server as this will be automatically replicated to other servers by the system. A system restart will be required for the configuration change to take affect.
 
-Convenience utility programs _getConfig_ and _setConfig_ are available to safely update the Columnstore.xml without needing to be comfortable with editing XML files. The -h argument will display usage information.
+Convenience utility programs _getConfig_ and _setConfig_ are available to safely update the ColumnStore.xml without needing to be comfortable with editing XML files. The -h argument will display usage information.
 
 ## Memory Management
 

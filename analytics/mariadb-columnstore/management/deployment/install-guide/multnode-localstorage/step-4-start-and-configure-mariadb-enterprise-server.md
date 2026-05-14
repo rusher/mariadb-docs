@@ -8,17 +8,17 @@ description: 'Step 4: Start and Configure MariaDB Enterprise Server'
 
 This page details step 4 of the 9-step procedure "Deploy ColumnStore Shared Local Storage Topology".
 
-This step starts and configures MariaDB Enterprise Server, and MariaDB Enterprise ColumnStore.
+This step starts and configures MariaDB Enterprise Server, and MariaDB ColumnStore.
 
 {% include "../../../../../.gitbook/includes/the-instructions-were-teste....md" %}
 
 Interactive commands are detailed. Alternatively, the described operations can be performed using automation.
 
-## Stop the Enterprise ColumnStore Services
+## Stop the ColumnStore Services
 
 The installation process might have started some of the ColumnStore services. The services should be stopped prior to making configuration changes.
 
-1. On each Enterprise ColumnStore node, stop the MariaDB Enterprise Server service:
+1. On each ColumnStore node, stop the MariaDB Enterprise Server service:
 
 ```bash
 $ sudo systemctl stop mariadb

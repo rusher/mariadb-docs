@@ -1,7 +1,7 @@
 ---
 description: >-
   Load delimited data files from S3-compatible cloud object storage into
-  MariaDB Enterprise ColumnStore using the columnstore_info.load_from_s3
+  MariaDB ColumnStore using the columnstore_info.load_from_s3
   stored procedure, available from CS 23.02.
 ---
 
@@ -9,11 +9,11 @@ description: >-
 
 ## Overview
 
-MariaDB Enterprise ColumnStore includes a stored procedure called `columnstore_info.load_from_s3`, which can load data from a plain-text file containing delimiter-separated values (such as `CSV or TSV`) stored on S3-compatible cloud object storage.
+MariaDB ColumnStore includes a stored procedure called `columnstore_info.load_from_s3`, which can load data from a plain-text file containing delimiter-separated values (such as `CSV or TSV`) stored on S3-compatible cloud object storage.
 
 ## Compatibility
 
-Available from MariaDB Enterprise ColumnStore 23.02.
+Available from MariaDB ColumnStore 23.02.
 
 ## System Variables
 

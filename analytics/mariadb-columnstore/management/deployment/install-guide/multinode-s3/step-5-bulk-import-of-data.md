@@ -7,9 +7,9 @@ hidden: true
 
 ## Overview
 
-This page details step 5 of a 5-step procedure for deploying Single-Node Enterprise ColumnStore with Object storage.
+This page details step 5 of a 5-step procedure for deploying Single-Node ColumnStore with Object storage.
 
-This step bulk imports data to Enterprise ColumnStore.
+This step bulk imports data to ColumnStore.
 
 {% include "../../../../../.gitbook/includes/the-instructions-were-teste....md" %}
 
@@ -78,7 +78,7 @@ $ mariadb --quick \
 
 ## Next Step
 
-Navigation in the Single-Node Enterprise ColumnStore topology with Object storage deployment procedure:
+Navigation in the Single-Node ColumnStore topology with Object storage deployment procedure:
 
 This page was step 5 of 5.
 

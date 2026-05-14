@@ -31,10 +31,10 @@ Below is list of some of the bugs and issues fixed. For the complete list please
 * [MCOL-254](https://jira.mariadb.org/browse/MCOL-254): ColumnStore is limited to two columns in a GROUP BY statement
 * [MCOL-67](https://jira.mariadb.org/browse/MCOL-67): config.log and possibly other autoconf artifacts are in source control
 * [MCOL-69](https://jira.mariadb.org/browse/MCOL-69): autotools based build process does not work
-* [MCOL-151](https://jira.mariadb.org/browse/MCOL-151): Columnstore engine not available after reboot
+* [MCOL-151](https://jira.mariadb.org/browse/MCOL-151): ColumnStore engine not available after reboot
 * [MCOL-39](https://jira.mariadb.org/browse/MCOL-39): console command "getSystemConfig" return API for some parameter names
 * [MCOL-59](https://jira.mariadb.org/browse/MCOL-59): name change of Calpont.xml files
-* [MCOL-71](https://jira.mariadb.org/browse/MCOL-71): Problem changing the MariaDB release version in Columnstore build
+* [MCOL-71](https://jira.mariadb.org/browse/MCOL-71): Problem changing the MariaDB release version in ColumnStore build
 * [MCOL-113](https://jira.mariadb.org/browse/MCOL-113): install\_calpont\_mysql.sh returns function not found errors on a new installation
 * [MCOL-138](https://jira.mariadb.org/browse/MCOL-138): postConfigure mentions MySQL
 * [MCOL-139](https://jira.mariadb.org/browse/MCOL-139): MariaDB ColumnStore version confusion
@@ -44,7 +44,7 @@ Below is list of some of the bugs and issues fixed. For the complete list please
 
 ## Upgrade workaround
 
-With the fixing of [MCOL-59](https://jira.mariadb.org/browse/MCOL-59), the MariaDB Columnstore Platform Configuration file name has changed between 1.0.1 and 1.0.2. So if you have a 1.0.0 or 1.0.1 system and you want to upgrade to 1.0.2, you will need to do the following as part of the upgrade process. If you decide to reinstall 1.0.2 from scratch, this is isn’t required.
+With the fixing of [MCOL-59](https://jira.mariadb.org/browse/MCOL-59), the MariaDB ColumnStore Platform Configuration file name has changed between 1.0.1 and 1.0.2. So if you have a 1.0.0 or 1.0.1 system and you want to upgrade to 1.0.2, you will need to do the following as part of the upgrade process. If you decide to reinstall 1.0.2 from scratch, this is isn’t required.
 
 For details on how to execute the workaround please see [upgrading-mariadb-columnstore-from-102-to-103](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/columnstore/columnstore-1-0/broken-reference/README.md)
 
@@ -66,7 +66,7 @@ There are some known security issues. They are listed [here](https://app.gitbook
 * [MCOL-45](https://jira.mariadb.org/browse/MCOL-45) : CREATE PROCEDURE fails.
   * Do not use stored procedure with this Alpha version [MCOL-16](https://jira.mariadb.org/browse/MCOL-16): LOAD DATA INFILE into datetime columns, data got saturated.
   * Do not use LOAD DATA INFILE when importing data into datetime columns
-  * Use cpimport to bulk load data into MariaDB Columnstore instead. cpimports works correctly for datetime columns as well.
+  * Use cpimport to bulk load data into MariaDB ColumnStore instead. cpimports works correctly for datetime columns as well.
   * INSERT INTO works for datetime columns
 * [MCOL-49](https://jira.mariadb.org/browse/MCOL-49): Drop table does not work if the PM node runs out of space.
 * [MCOL-259](https://jira.mariadb.org/browse/MCOL-259): After starting MariaDB ColumnStore Service, if queries start within few nano-seconds, queries fail with “At least one DBRoot required for that query is offline“ message

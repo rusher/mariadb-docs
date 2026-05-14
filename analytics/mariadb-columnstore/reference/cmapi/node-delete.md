@@ -1,6 +1,6 @@
 ---
 description: >-
-  The CMAPI node DELETE endpoint removes a MariaDB Enterprise ColumnStore node
+  The CMAPI node DELETE endpoint removes a MariaDB ColumnStore node
   from the cluster via HTTPS DELETE with x-api-key authentication.
 ---
 
@@ -12,7 +12,7 @@ See [CMAPI](./) for detail on REST API endpoint, required headers, and other ava
 
 ## Description
 
-Upon successful `node` DELETE call CMAPI configures MariaDB Enterprise ColumnStore to remove the specified node.
+Upon successful `node` DELETE call CMAPI configures MariaDB ColumnStore to remove the specified node.
 
 Call made via HTTPS `DELETE`, with authentication via shared secret using the `x-api-key` header.
 

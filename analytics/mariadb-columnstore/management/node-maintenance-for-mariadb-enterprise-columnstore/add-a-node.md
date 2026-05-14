@@ -1,14 +1,14 @@
 ---
-description: Adding a Node to MariaDB Enterprise ColumnStore
+description: Adding a Node to MariaDB ColumnStore
 ---
 
 # Adding a Node
 
-To add a new node to Enterprise ColumnStore, perform the following procedure.
+To add a new node to ColumnStore, perform the following procedure.
 
-## Deploying Enterprise ColumnStore
+## Deploying ColumnStore
 
-Before you can add a node to Enterprise ColumnStore, confirm that the Enterprise ColumnStore software has been deployed on the node in the desired topology.
+Before you can add a node to ColumnStore, confirm that the ColumnStore software has been deployed on the node in the desired topology.
 
 For additional information, see "[Topologies](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies)".
 

@@ -1,6 +1,6 @@
 ---
 description: >-
-  Backup and restore for MariaDB Enterprise ColumnStore on shared local
+  Backup and restore for MariaDB ColumnStore on shared local
   storage (NFS): MariaDB data directory via MariaDB Backup, the Storage
   Manager directory, and each DB Root directory.
 ---
@@ -9,19 +9,19 @@ description: >-
 
 ## Overview
 
-MariaDB Enterprise ColumnStore supports backup and restore. If Enterprise ColumnStore uses shared local storage for the DB Root directories, the DB Root directories and the MariaDB data directory must be backed up separately.
+MariaDB ColumnStore supports backup and restore. If ColumnStore uses shared local storage for the DB Root directories, the DB Root directories and the MariaDB data directory must be backed up separately.
 
 ## Recovery Planning
 
-MariaDB Enterprise ColumnStore supports multiple [storage options](../../architecture/columnstore-storage-architecture.md#storage-options).
+MariaDB ColumnStore supports multiple [storage options](../../architecture/columnstore-storage-architecture.md#storage-options).
 
-This page discusses how to backup and restore Enterprise ColumnStore when it uses [shared local storage](../../architecture/columnstore-architectural-overview.md#shared-local-storage) (such as NFS) for the [DB Root directories](../../architecture/columnstore-storage-architecture.md#db-root-directories).
+This page discusses how to backup and restore ColumnStore when it uses [shared local storage](../../architecture/columnstore-architectural-overview.md#shared-local-storage) (such as NFS) for the [DB Root directories](../../architecture/columnstore-storage-architecture.md#db-root-directories).
 
-Any file can become corrupt due to hardware issues, crashes, power loss, and other reasons. If the Enterprise ColumnStore data or metadata become corrupt, Enterprise ColumnStore could become unusable, resulting in data loss.
+Any file can become corrupt due to hardware issues, crashes, power loss, and other reasons. If the ColumnStore data or metadata become corrupt, ColumnStore could become unusable, resulting in data loss.
 
-If Enterprise ColumnStore is your [system of record](backup-and-restore-with-mariadb-enterprise-columnstore.md#system-of-record), it should be backed up regularly.
+If ColumnStore is your [system of record](backup-and-restore-with-mariadb-enterprise-columnstore.md#system-of-record), it should be backed up regularly.
 
-If Enterprise ColumnStore uses [shared local storage](../../architecture/columnstore-architectural-overview.md#shared-local-storage) for the [DB Root directories](../../architecture/columnstore-storage-architecture.md#db-root-directories), the following items must be backed up:
+If ColumnStore uses [shared local storage](../../architecture/columnstore-architectural-overview.md#shared-local-storage) for the [DB Root directories](../../architecture/columnstore-storage-architecture.md#db-root-directories), the following items must be backed up:
 
 * The MariaDB Data directory is backed up using [MariaDB Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup)
 * The [Storage Manager directory](../../architecture/columnstore-storage-architecture.md#storage-manager-directory) must be backed up

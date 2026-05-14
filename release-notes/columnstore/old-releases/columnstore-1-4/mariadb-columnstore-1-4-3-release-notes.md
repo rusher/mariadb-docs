@@ -95,7 +95,7 @@ In alignment to the MariaDB Corporation Engineering Policy, MariaDB ColumnStore 
 * SUSE Linux Enterprise Server 15
 * SUSE Linux Enterprise Server 12
 
-**Note:** MariaDB Enterprise ColumnStore 1.4 is no longer supported. If you would like to deploy Enterprise ColumnStore, please use MariaDB Enterprise ColumnStore 5 or later. For installation and upgrade instructions, see "Deploy".
+**Note:** MariaDB ColumnStore 1.4 is no longer supported. If you would like to deploy ColumnStore, please use MariaDB ColumnStore 5 or later. For installation and upgrade instructions, see "Deploy".
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

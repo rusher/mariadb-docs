@@ -1,6 +1,6 @@
 ---
 description: >-
-  Multi-node MariaDB Enterprise ColumnStore deployment with S3 object storage:
+  Multi-node MariaDB ColumnStore deployment with S3 object storage:
   HA topology with three or more nodes, MaxScale routing, CMAPI cluster
   management, and bulk data import.
 
@@ -8,12 +8,12 @@ description: >-
 
 # Multi-Node S3
 
-This procedure describes the deployment of a Multi-Node Enterprise ColumnStore topology with Object Storage (S3). This High Availability (HA) configuration delivers production-grade analytics with fault tolerance and scalable storage by leveraging S3-compatible object storage for data and a distributed proxy layer.
+This procedure describes the deployment of a Multi-Node ColumnStore topology with Object Storage (S3). This High Availability (HA) configuration delivers production-grade analytics with fault tolerance and scalable storage by leveraging S3-compatible object storage for data and a distributed proxy layer.
 
 The topology consists of:
 
 * One or more MariaDB MaxScale nodes to monitor health and route queries.
-* An odd number of ColumnStore nodes (minimum of 3) running MariaDB Enterprise Server, Enterprise ColumnStore, and the Cluster Management API (CMAPI).
+* An odd number of ColumnStore nodes (minimum of 3) running MariaDB Enterprise Server, ColumnStore, and the Cluster Management API (CMAPI).
 * S3-compatible object storage for data.
 * Shared local storage (e.g., NFS, EBS Multi-Attach) for the Storage Manager metadata directory.
 
@@ -25,15 +25,15 @@ The topology consists of:
 {% step %}
 ### Prepare ColumnStore Nodes
 
-MariaDB Enterprise ColumnStore performs best with specific Linux kernel optimizations. Perform these actions on each ColumnStore node.
+MariaDB ColumnStore performs best with specific Linux kernel optimizations. Perform these actions on each ColumnStore node.
 
 #### Optimize Linux Kernel Parameters
 
-MariaDB Enterprise ColumnStore performs best with Linux kernel optimizations.
+MariaDB ColumnStore performs best with Linux kernel optimizations.
 
-On each server to host an Enterprise ColumnStore node, optimize the kernel:
+On each server to host an ColumnStore node, optimize the kernel:
 
-1. Set the relevant kernel parameters in a sysctl configuration file. To ensure proper change management, use an Enterprise ColumnStore-specific configuration file.
+1. Set the relevant kernel parameters in a sysctl configuration file. To ensure proper change management, use an ColumnStore-specific configuration file.
 
 Create a `/etc/sysctl.d/90-mariadb-enterprise-columnstore.conf` file:
 

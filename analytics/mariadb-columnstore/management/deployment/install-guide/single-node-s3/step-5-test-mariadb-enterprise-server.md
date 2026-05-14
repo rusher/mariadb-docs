@@ -8,7 +8,7 @@ description: 'Step 5: Test MariaDB Enterprise Server'
 
 This page details step 5 of the 9-step procedure "Deploy ColumnStore Object Storage Topology".
 
-This step tests MariaDB Enterprise Server and MariaDB Enterprise ColumnStore.
+This step tests MariaDB Enterprise Server and MariaDB ColumnStore.
 
 {% include "../../../../../.gitbook/includes/the-instructions-were-teste....md" %}
 
@@ -16,9 +16,9 @@ Interactive commands are detailed. Alternatively, the described operations can b
 
 ## Test S3 Connection
 
-MariaDB Enterprise ColumnStore 23.10 includes a `testS3Connection` command to test the S3 configuration, permissions, and connectivity.
+MariaDB ColumnStore 23.10 includes a `testS3Connection` command to test the S3 configuration, permissions, and connectivity.
 
-This action is performed **on each Enterprise ColumnStore node**.
+This action is performed **on each ColumnStore node**.
 
 Test the S3 configuration by executing the following:
 

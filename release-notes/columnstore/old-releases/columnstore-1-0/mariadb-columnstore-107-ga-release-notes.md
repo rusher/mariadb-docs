@@ -33,7 +33,7 @@ For general "how to questions" ask questions [here](https://app.gitbook.com/o/di
 * [MCOL-467](https://jira.mariadb.org/browse/MCOL-467) - replication setup issues when adding modules in combined setup
 * [MCOL-470](https://jira.mariadb.org/browse/MCOL-470) - merge server 10.1.20 code
 * [MCOL-475](https://jira.mariadb.org/browse/MCOL-475) - Error in script /usr/local/mariadb/columnstore/bin/rsync.sh
-* [MCOL-476](https://jira.mariadb.org/browse/MCOL-476) - postConfigure refers to 'Columnstore' instead of 'ColumnStore' as the product
+* [MCOL-476](https://jira.mariadb.org/browse/MCOL-476) - postConfigure refers to 'ColumnStore' instead of 'ColumnStore' as the product
 * [MCOL-477](https://jira.mariadb.org/browse/MCOL-477) - can't reset autoincrement values
 * [MCOL-481](https://jira.mariadb.org/browse/MCOL-481) - Add prompt to disable/enable mysql replication in postConfigure
 * [MCOL-483](https://jira.mariadb.org/browse/MCOL-483) - Error in shell script

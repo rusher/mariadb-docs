@@ -1,15 +1,15 @@
 ---
 description: >-
-  Query statistics log MariaDB Enterprise ColumnStore execution metrics
+  Query statistics log MariaDB ColumnStore execution metrics
   (memory, I/O, cache) to infinidb_querystats; disabled by default and exposed
   via SHOW WARNINGS and calGetStats().
 ---
 
-# Query Statistics for MariaDB Enterprise ColumnStore
+# Query Statistics for MariaDB ColumnStore
 
 ### Description
 
-In MariaDB Enterprise ColumnStore, Query statistics (query stats) offer comprehensive metrics about query execution. These statistics log execution metrics, including memory usage, I/O, cache activity, and processing mode. They can be used to optimize ColumnStore workloads, identify bottlenecks, and evaluate query performance.
+In MariaDB ColumnStore, Query statistics (query stats) offer comprehensive metrics about query execution. These statistics log execution metrics, including memory usage, I/O, cache activity, and processing mode. They can be used to optimize ColumnStore workloads, identify bottlenecks, and evaluate query performance.
 
 > By default, query statistics are disabled. The setup and privileges described on this page are only required when this feature is explicitly enabled.
 
@@ -27,7 +27,7 @@ When query statistics are enabled:
 
 Before enabling query statistics, ensure the following requirements are met:
 
-* MariaDB Enterprise ColumnStore is installed and operational
+* MariaDB ColumnStore is installed and operational
 * Cross-engine join support is configured. The utility user (cross-engine join user) must exist. For setup instructions, see [Configuring ColumnStore Cross-Engine Joins](../../management/managing-columnstore-database-environment/configuring-columnstore-cross-engine-joins.md).
 
 #### Enable Query Statistics

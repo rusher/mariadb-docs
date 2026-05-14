@@ -1,13 +1,13 @@
 ---
 description: >-
-  Upgrade a multi-node MariaDB Enterprise ColumnStore cluster from 6 to 23.10,
+  Upgrade a multi-node MariaDB ColumnStore cluster from 6 to 23.10,
   with MaxScale-based replica maintenance mode, controlled service stops, and
   per-node upgrade steps.
 ---
 
-# Upgrade Multi-Node MariaDB Enterprise ColumnStore from 6 to 23.10
+# Upgrade Multi-Node MariaDB ColumnStore from 6 to 23.10
 
-These instructions detail the upgrade from **MariaDB Enterprise ColumnStore 6** to **MariaDB Enterprise ColumnStore 23.10** in a **Multi-Node** topology on a range of [supported Operating Systems](https://mariadb.com/engineering-policies/).
+These instructions detail the upgrade from **MariaDB ColumnStore 6** to **MariaDB ColumnStore 23.10** in a **Multi-Node** topology on a range of [supported Operating Systems](https://mariadb.com/engineering-policies/).
 
 ## Set Replicas to Maintenance Mode
 
@@ -260,7 +260,7 @@ If you temporarily disabled the [gtid\_strict\_mode](https://app.gitbook.com/s/S
 
 This action is performed **on each ColumnStore node**.
 
-After upgrading, it is recommended to confirm the Enterprise ColumnStore version on each ColumnStore node. Connect to the node using [MariaDB Client](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client) and query the `Columnstore_version` status variable with [SHOW GLOBAL STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-status):
+After upgrading, it is recommended to confirm the Enterprise ColumnStore version on each ColumnStore node. Connect to the node using [MariaDB Client](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client) and query the `ColumnStore_version` status variable with [SHOW GLOBAL STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-status):
 
 ```sql
 SHOW GLOBAL STATUS LIKE 'Columnstore_version';

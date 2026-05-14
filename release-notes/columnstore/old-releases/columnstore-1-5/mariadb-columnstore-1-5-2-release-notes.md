@@ -76,7 +76,7 @@ MariaDB ColumnStore 1.5.2 was released on 2020-06-24. It is the first release in
 
 ## Platforms
 
-In alignment to the MariaDB Corporation Engineering Policy, MariaDB Enterprise ColumnStore 1.5.3 is provided for:
+In alignment to the MariaDB Corporation Engineering Policy, MariaDB ColumnStore 1.5.3 is provided for:
 
 * Red Hat Enterprise Linux 8
 * Red Hat Enterprise Linux 7
@@ -90,7 +90,7 @@ In alignment to the MariaDB Corporation Engineering Policy, MariaDB Enterprise C
 * SUSE Linux Enterprise Server 15
 * SUSE Linux Enterprise Server 12
 
-**Note:** MariaDB Enterprise ColumnStore 1.5 has been superseded by MariaDB Enterprise ColumnStore 5 in MariaDB Enterprise Server 10.5.
+**Note:** MariaDB ColumnStore 1.5 has been superseded by MariaDB ColumnStore 5 in MariaDB Enterprise Server 10.5.
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

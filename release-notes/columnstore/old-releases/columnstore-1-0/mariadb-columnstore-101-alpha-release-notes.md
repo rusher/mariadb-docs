@@ -59,7 +59,7 @@ There are some known security issues. They are listed here
 * [MCOL-45](https://jira.mariadb.org/browse/MCOL-45) : CREATE PROCEDURE fails.
   * Do not use stored procedure with this Alpha version [MCOL-16](https://jira.mariadb.org/browse/MCOL-16): LOAD DATA INFILE into datetime columns, data got saturated.
   * Do not use LOAD DATA INFILE when importing data into datetime columns
-  * Use cpimport to bulk load data into MariaDB Columnstore instead. cpimports works correctly for datetime columns as well.
+  * Use cpimport to bulk load data into MariaDB ColumnStore instead. cpimports works correctly for datetime columns as well.
   * INSERT INTO works for datetime columns
 * [MCOL-49](https://jira.mariadb.org/browse/MCOL-49): Drop table does not work if the PM node runs out of space.
 * [MCOL-58](https://jira.mariadb.org/browse/MCOL-58): Non-Root install does not work in this release

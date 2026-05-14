@@ -121,19 +121,6 @@ For systemd installation, the mariadb.service file will need to be copied from t
 cp support-files/systemd/mariadb.service /usr/lib/systemd/system/mariadb.service
 ```
 
-Note that, by default, the `/usr/` directory is write protected by systemd, though, so when having the data directory in `/usr/local/mysql/data` as per the instructions above, you also need to make that directory writable. You can do so by adding an extra service include file:
-
-```bash
-mkdir /etc/systemd/system/mariadb.service.d/
-
-cat > /etc/systemd/system/mariadb.service.d/datadir.conf <<EOF
-[Service]
-ReadWritePaths=/usr/local/mysql/data
-EOF
-
-systemctl daemon-reload
-```
-
 After this, you can start the service using this command:
 
 ```bash

@@ -1,6 +1,6 @@
 ---
 description: >-
-  Multi-node MariaDB Enterprise ColumnStore deployment with shared local
+  Multi-node MariaDB ColumnStore deployment with shared local
   storage: cluster topology, Enterprise Server installation, MaxScale routing,
   and bulk data import procedures.
 layout:
@@ -25,15 +25,15 @@ layout:
 
 | Software Version                                                                                       | Diagram                                                                            | Features                                                                                                                                                                                                                                                                                                                                                           |
 | ------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| <ul><li>Enterprise Server 10.5</li><li>Enterprise Server 10.6</li><li>Enterprise Server 11.4</li></ul> | ![](<../../../../../.gitbook/assets/es-columnstore-topology-nfs-no-title (1).png>) | <p>Columnar storage engine with S3-compatible object storage</p><ul><li>Highly available</li><li>Automatic failover via MaxScale and CMAPI</li><li>Scales read via MaxScale</li><li>Bulk data import</li><li>Enterprise Server 10.5, Enterprise ColumnStore 5, MaxScale 2.5</li><li>Enterprise Server 10.6, Enterprise ColumnStore 23.02, MaxScale 22.08</li></ul> |
+| <ul><li>Enterprise Server 10.5</li><li>Enterprise Server 10.6</li><li>Enterprise Server 11.4</li></ul> | ![](<../../../../../.gitbook/assets/es-columnstore-topology-nfs-no-title (1).png>) | <p>Columnar storage engine with S3-compatible object storage</p><ul><li>Highly available</li><li>Automatic failover via MaxScale and CMAPI</li><li>Scales read via MaxScale</li><li>Bulk data import</li><li>Enterprise Server 10.5, ColumnStore 5, MaxScale 2.5</li><li>Enterprise Server 10.6, ColumnStore 23.02, MaxScale 22.08</li></ul> |
 
-This procedure describes the deployment of the ColumnStore Shared Local Storage topology with MariaDB Enterprise Server 10.5, MariaDB Enterprise ColumnStore 5, and MariaDB MaxScale 2.5.
+This procedure describes the deployment of the ColumnStore Shared Local Storage topology with MariaDB Enterprise Server 10.5, MariaDB ColumnStore 5, and MariaDB MaxScale 2.5.
 
-MariaDB Enterprise ColumnStore 5 is a columnar storage engine for MariaDB Enterprise Server 10.5. Enterprise ColumnStore is suitable for Online Analytical Processing (OLAP) workloads.
+MariaDB ColumnStore 5 is a columnar storage engine for MariaDB Enterprise Server 10.5. ColumnStore is suitable for Online Analytical Processing (OLAP) workloads.
 
 This procedure has 9 steps, which are executed in sequence.
 
-This procedure represents basic product capability and deploys 3 Enterprise ColumnStore nodes and 1 MaxScale node.
+This procedure represents basic product capability and deploys 3 ColumnStore nodes and 1 MaxScale node.
 
 This page provides an overview of the topology, requirements, and deployment procedures.
 
@@ -55,20 +55,20 @@ The following components are deployed during this procedure:
 
 ### MariaDB Enterprise Server Components
 
-<table><thead><tr><th width="281">Component</th><th>Description</th></tr></thead><tbody><tr><td><a href="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/rBEU9juWLfTDcdwF3Q14/">MariaDB Enterprise ColumnStore</a></td><td>• Columnar storage engine • Highly available • Optimized for Online Analytical Processing (OLAP) workloads • Scalable query execution • Cluster Management API (CMAPI) provides a REST API for multi-node administration.</td></tr></tbody></table>
+<table><thead><tr><th width="281">Component</th><th>Description</th></tr></thead><tbody><tr><td><a href="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/rBEU9juWLfTDcdwF3Q14/">MariaDB ColumnStore</a></td><td>• Columnar storage engine • Highly available • Optimized for Online Analytical Processing (OLAP) workloads • Scalable query execution • Cluster Management API (CMAPI) provides a REST API for multi-node administration.</td></tr></tbody></table>
 
 ### MariaDB MaxScale Components
 
-<table><thead><tr><th width="218">Component</th><th>Description</th></tr></thead><tbody><tr><td>Listener</td><td>Listens for client connections to MaxScale then passes them to the router service</td></tr><tr><td>MariaDB Monitor</td><td>Tracks changes in the state of MariaDB Enterprise Servers.</td></tr><tr><td>Read Connection Router</td><td>Routes connections from the listener to any available Enterprise ColumnStore node</td></tr><tr><td>Read/Write Split Router</td><td>Routes read operations from the listener to any available Enterprise ColumnStore node, and routes write operations from the listener to a specific server that MaxScale uses as the primary server</td></tr><tr><td>Server Module</td><td>Connection configuration in MaxScale to an Enterprise ColumnStore node</td></tr></tbody></table>
+<table><thead><tr><th width="218">Component</th><th>Description</th></tr></thead><tbody><tr><td>Listener</td><td>Listens for client connections to MaxScale then passes them to the router service</td></tr><tr><td>MariaDB Monitor</td><td>Tracks changes in the state of MariaDB Enterprise Servers.</td></tr><tr><td>Read Connection Router</td><td>Routes connections from the listener to any available ColumnStore node</td></tr><tr><td>Read/Write Split Router</td><td>Routes read operations from the listener to any available ColumnStore node, and routes write operations from the listener to a specific server that MaxScale uses as the primary server</td></tr><tr><td>Server Module</td><td>Connection configuration in MaxScale to an ColumnStore node</td></tr></tbody></table>
 
 ## Topology
 
-The MariaDB Enterprise ColumnStore topology with Object Storage delivers production analytics with high availability, fault tolerance, and limitless data storage by leveraging S3-compatible storage.
+The MariaDB ColumnStore topology with Object Storage delivers production analytics with high availability, fault tolerance, and limitless data storage by leveraging S3-compatible storage.
 
 The topology consists of:
 
 * One or more MaxScale nodes
-* An odd number of ColumnStore nodes (minimum of 3) running ES, Enterprise ColumnStore, and CMAPI
+* An odd number of ColumnStore nodes (minimum of 3) running ES, ColumnStore, and CMAPI
 
 The MaxScale nodes:
 
@@ -84,7 +84,7 @@ The ColumnStore nodes:
 
 ## Requirements
 
-These requirements are for the ColumnStore Object Storage topology when deployed with MariaDB Enterprise Server 10.5, MariaDB Enterprise ColumnStore 5, and MariaDB MaxScale 2.5.
+These requirements are for the ColumnStore Object Storage topology when deployed with MariaDB Enterprise Server 10.5, MariaDB ColumnStore 5, and MariaDB MaxScale 2.5.
 
 * Node Count
 * Operating System
@@ -101,11 +101,11 @@ These requirements are for the ColumnStore Object Storage topology when deployed
 ### Node Count
 
 * MaxScale nodes, 1 or more are required.
-* Enterprise ColumnStore nodes, 3 or more are required for high availability. You should always have an odd number of nodes in a multi-node ColumnStore deployment to avoid split brain scenarios.
+* ColumnStore nodes, 3 or more are required for high availability. You should always have an odd number of nodes in a multi-node ColumnStore deployment to avoid split brain scenarios.
 
 ### Operating System
 
-In alignment to the [enterprise lifecycle](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/enterprise-server/enterprise-server-lifecycle), the ColumnStore Object Storage topology with MariaDB Enterprise Server 10.5, MariaDB Enterprise ColumnStore 5, and MariaDB MaxScale 2.5 is provided for:
+In alignment to the [enterprise lifecycle](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/enterprise-server/enterprise-server-lifecycle), the ColumnStore Object Storage topology with MariaDB Enterprise Server 10.5, MariaDB ColumnStore 5, and MariaDB MaxScale 2.5 is provided for:
 
 * CentOS Linux 7 (x86\_64)
 * Debian 10 (x86\_64)
@@ -116,18 +116,18 @@ In alignment to the [enterprise lifecycle](https://app.gitbook.com/s/aEnK0ZXmUbJ
 
 ### Minimum Hardware Requirements
 
-MariaDB Enterprise ColumnStore's minimum hardware requirements are not intended for production environments, but the minimum hardware requirements can be appropriate for development and test environments. For production environments, see the recommended hardware requirements instead.
+MariaDB ColumnStore's minimum hardware requirements are not intended for production environments, but the minimum hardware requirements can be appropriate for development and test environments. For production environments, see the recommended hardware requirements instead.
 
 The minimum hardware requirements are:
 
 | Component                   | CPU      | Memory |
 | --------------------------- | -------- | ------ |
 | MaxScale node               | 4+ cores | 4+ GB  |
-| Enterprise ColumnStore node | 4+ cores | 4+ GB  |
+| ColumnStore node | 4+ cores | 4+ GB  |
 
-MariaDB Enterprise ColumnStore will refuse to start if the system has less than 3 GB of memory.
+MariaDB ColumnStore will refuse to start if the system has less than 3 GB of memory.
 
-If Enterprise ColumnStore is started on a system with less memory, the following error message will be written to the ColumnStore system log called crit.log:
+If ColumnStore is started on a system with less memory, the following error message will be written to the ColumnStore system log called crit.log:
 
 ```
 Apr 30 21:54:35 a1ebc96a2519 PrimProc[1004]: 35.668435 |0|0|0| C 28 CAL0000: Error total memory available is less than 3GB.
@@ -284,15 +284,15 @@ Log filenames and locations may be overridden in the server configuration. The d
 | [General Query Log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/general-query-log) | [general\_log\_file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#general_log_file)                                         | `<hostname>.log`      |
 | [Binary Log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log)               | [log\_bin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables#log_bin)                                      | `<hostname>-bin`      |
 
-### Enterprise ColumnStore Service Management
+### ColumnStore Service Management
 
 The systemctl command is used to start and stop the ColumnStore service.
 
 <table><thead><tr><th width="232.962890625">Operation</th><th>Command</th></tr></thead><tbody><tr><td>Start</td><td><code>sudo systemctl start mariadb-columnstore</code></td></tr><tr><td>Stop</td><td><code>sudo systemctl stop mariadb-columnstore</code></td></tr><tr><td>Restart</td><td><code>sudo systemctl restart mariadb-columnstore</code></td></tr><tr><td>Enable during startup</td><td><code>sudo systemctl enable mariadb-columnstore</code></td></tr><tr><td>Disable during startup</td><td><code>sudo systemctl disable mariadb-columnstore</code></td></tr><tr><td>Status</td><td><code>sudo systemctl status mariadb-columnstore</code></td></tr></tbody></table>
 
-In the ColumnStore Object Storage topology, the mariadb-columnstore service should not be enabled. The CMAPI service restarts Enterprise ColumnStore as needed, so it does not need to start automatically upon reboot.
+In the ColumnStore Object Storage topology, the mariadb-columnstore service should not be enabled. The CMAPI service restarts ColumnStore as needed, so it does not need to start automatically upon reboot.
 
-### Enterprise ColumnStore CMAPI Service Management
+### ColumnStore CMAPI Service Management
 
 The systemctl command is used to start and stop the CMAPI service.
 
