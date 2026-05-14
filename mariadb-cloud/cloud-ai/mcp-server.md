@@ -1,8 +1,8 @@
 ---
 description: >-
   MariaDB Cloud MCP Server lets AI tools like Cursor, Claude Desktop, and VS
-  Code Copilot interact with Cloud databases via the Model Context Protocol
-  for natural-language operations.
+  Code Copilot interact with Cloud databases via the Model Context Protocol for
+  natural-language operations.
 ---
 
 # MariaDB Cloud MCP Server
@@ -42,12 +42,10 @@ The MariaDB Cloud MCP Server is perfect for:
 
 ## Getting Started with MariaDB Cloud's MCP Server
 
-It's easy to get up and running with the MariaDB Cloud MCP Server. Follow these simple steps to begin your journey:
+It's easy to get up and running with the MariaDB Cloud MCP Server. Follow these simple steps to 1begin your journey:
 
-1. **Sign Up for MariaDB Cloud:** First, you'll need a MariaDB Cloud account to get your **API key**. Visit [app.skysql.com](https://app.skysql.com/) to sign up. It only takes a few seconds, and we offer a forever-free developer serverless tier that requires no credit card.
-2. **Deploy the MCP Server:** You have two main options for deploying the MCP Server:
-   * **Via Smithery.ai (Recommended for ease of use):** Access the MariaDB Cloud MCP Server directly on [Smithery.ai](https://smithery.ai/). Follow the instructions provided there to connect the server with popular AI IDEs such as Claude, Cursor, Windsurf, and others, using your API key. Smithery.ai makes the setup process much smoother.
-   * **Via Our GitHub Repository:** Alternatively, the MariaDB Cloud MCP Server is also available on our [GitHub repository](https://github.com/skysqlinc/skysql-mcp). If you prefer a more manual setup, you can clone the repository and follow the instructions in its README.
+1. **Sign Up for MariaDB Cloud:** First, you'll need a MariaDB Cloud account to get your **API key**. Visit [https://id.mariadb.com](https://id.mariadb.com) to sign up. It only takes a few seconds, and we offer a forever-free developer serverless tier that requires no credit card.
+2. **Deploy the MCP Server:** The MariaDB Cloud MCP Server is available on our [GitHub repository](https://github.com/skysqlinc/skysql-mcp). You can clone the repository and follow the instructions in its README to manually set up the server.
 
 Once your MCP Server is set up, you can start using AI Agents.
 
