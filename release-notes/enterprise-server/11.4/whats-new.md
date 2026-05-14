@@ -1033,7 +1033,7 @@ MAX_MEMORY_USED: 392544
 
 For a complete list of security vulnerabilities (CVE) fixed across all versions of MariaDB Enterprise Server, see the [Security Vulnerabilities Fixed in MariaDB Enterprise Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/cve/enterprise-server) page.
 
-| CVE ID (with cve.org link)                                        | CVSS base score | Enterprise Server 11.4 Release |
+| CVE ID (with cve.org link)                                        | CVSS base score (v3.1) | Enterprise Server 11.4 Release |
 | ----------------------------------------------------------------- | --------------- | ------------------------------ |
 | [CVE-2026-21968](https://www.cve.org/CVERecord?id=CVE-2026-21968) | 6.5             | [11.4.9-6](11.4.9-6.md)        |
 | [CVE-2025-30693](https://www.cve.org/CVERecord?id=CVE-2025-30693) | 5.5             | [11.4.7-4](11.4.7-4.md)        |
