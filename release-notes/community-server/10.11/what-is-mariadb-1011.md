@@ -174,14 +174,14 @@ The following deprecated variables have been removed ([MariaDB 10.10](../old-rel
 
 For a complete list of security vulnerabilities (CVEs) fixed across all versions of MariaDB Community Server, see the [Security Vulnerabilities Fixed in MariaDB Community Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/cve/community-server) page.
 
-| CVE ID (with cve.org link)                                                      | CVSS base score | Community Server 10.11 Release  |
+| CVE ID (with cve.org link)                                                      | CVSS base score (v3.1) | Community Server 10.11 Release  |
 | ------------------------------------------------------------------------------- | --------------- | ------------------------------- |
 | [CVE-2026-44173](https://www.cve.org/CVERecord?id=CVE-2026-44173)               | 5.0             | [MariaDB 10.11.17](10.11.17.md) |
 | [CVE-2026-44172](https://www.cve.org/CVERecord?id=CVE-2026-44172)               | 5.0             | [MariaDB 10.11.17](10.11.17.md) |
 | [CVE-2026-44171](https://www.cve.org/CVERecord?id=CVE-2026-44171)               | 6.3             | [MariaDB 10.11.17](10.11.17.md) |
 | [CVE-2026-44170](https://www.cve.org/CVERecord?id=CVE-2026-44170)               | 5.0             | [MariaDB 10.11.17](10.11.17.md) |
 | [CVE-2026-44168](https://www.cve.org/CVERecord?id=CVE-2026-44168)               | 8.0             | [MariaDB 10.11.17](10.11.17.md) |
-| [CVE-2026-3494](https://www.cve.org/CVERecord?id=CVE-2026-3494)                 | 5.3             | [MariaDB 10.11.16](10.11.16.md) |
+| [CVE-2026-3494](https://www.cve.org/CVERecord?id=CVE-2026-3494)                 | 4.3             | [MariaDB 10.11.16](10.11.16.md) |
 | [CVE-2026-34303](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-34303) | 6.5             | [MariaDB 10.11.16](10.11.16.md) |
 | [CVE-2026-21968](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-21968) | 6.5             | [MariaDB 10.11.15](10.11.15.md) |
 | [CVE-2025-13699](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-13699) | 7.0             | [MariaDB 10.11.15](10.11.15.md) |

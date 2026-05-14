@@ -161,7 +161,7 @@ From [MariaDB 11.4.5](11.4.5.md):
 
 For a complete list of security vulnerabilities (CVEs) fixed across all versions of MariaDB Community Server, see the [Security Vulnerabilities Fixed in MariaDB Community Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/cve/community-server) page.
 
-| CVE ID (with cve.org link)                                                      | CVSS base score | Community Server 11.4 Release |
+| CVE ID (with cve.org link)                                                      | CVSS base score (v3.1) | Community Server 11.4 Release |
 | ------------------------------------------------------------------------------- | --------------- | ----------------------------- |
 | [CVE-2026-44173](https://www.cve.org/CVERecord?id=CVE-2026-44173)               | 5.0             | [MariaDB 11.4.11](11.4.11.md) |
 | [CVE-2026-44172](https://www.cve.org/CVERecord?id=CVE-2026-44172)               | 5.0             | [MariaDB 11.4.11](11.4.11.md) |
@@ -169,7 +169,7 @@ For a complete list of security vulnerabilities (CVEs) fixed across all versions
 | [CVE-2026-44170](https://www.cve.org/CVERecord?id=CVE-2026-44170)               | 5.0             | [MariaDB 11.4.11](11.4.11.md) |
 | [CVE-2026-44169](https://www.cve.org/CVERecord?id=CVE-2026-44169)               | 4.3             | [MariaDB 11.4.11](11.4.11.md) |
 | [CVE-2026-44168](https://www.cve.org/CVERecord?id=CVE-2026-44168)               | 8.0             | [MariaDB 11.4.11](11.4.11.md) |
-| [CVE-2026-3494](https://www.cve.org/CVERecord?id=CVE-2026-3494)                 | 5.3             | [MariaDB 11.4.10](11.4.10.md) |
+| [CVE-2026-3494](https://www.cve.org/CVERecord?id=CVE-2026-3494)                 | 4.3             | [MariaDB 11.4.10](11.4.10.md) |
 | [CVE-2026-32710](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32710) | 8.6             | [MariaDB 11.4.10](11.4.10.md) |
 | [CVE-2026-35549](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-35549) | 6.5             | [MariaDB 11.4.10](11.4.10.md) |
 | [CVE-2026-34303](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-34303) | 6.5             | [MariaDB 11.4.10](11.4.10.md) |
