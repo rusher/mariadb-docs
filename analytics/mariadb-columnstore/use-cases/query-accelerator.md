@@ -14,12 +14,12 @@ Query Accelerator works only in **ColumnStore 25.10.0** and with **MariaDB Enter
 
 ## What is Query Accelerator
 
-Query Accelerator allows MariaDB to use ColumnStore to execute queries that are otherwise executed by InnoDB. Under the hood, Columnstore:
+Query Accelerator allows MariaDB to use ColumnStore to execute queries that are otherwise executed by InnoDB. Under the hood, ColumnStore:
 
 * receives a query;
 * searches for applicable Engine Independent statistics for InnoDB table index column;
 * applies RBO[^1] rule to transform its InnoDB tables into a number of `UNION` queries over non-overlapping ranges of a suitable InnoDB table index;
-* retrieves the data in parallel from MariaDB, and runs it using Columnstore runtime.
+* retrieves the data in parallel from MariaDB, and runs it using ColumnStore runtime.
 
 ## Queries Benefitting From Query Accelerator
 

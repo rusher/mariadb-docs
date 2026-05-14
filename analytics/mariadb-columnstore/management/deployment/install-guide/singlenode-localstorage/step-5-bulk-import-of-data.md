@@ -6,9 +6,9 @@ description: 'Step 5: Bulk Import of Data'
 
 ## Overview
 
-This page details step 5 of a 5-step procedure for deploying [Single-Node Enterprise ColumnStore with Local storage](./).
+This page details step 5 of a 5-step procedure for deploying [Single-Node ColumnStore with Local storage](./).
 
-This step bulk imports data to Enterprise ColumnStore.
+This step bulk imports data to ColumnStore.
 
 {% include "../../../../../.gitbook/includes/the-instructions-were-teste....md" %}
 
@@ -77,7 +77,7 @@ $ mariadb --quick \
 
 ## Next Step
 
-Navigation in the Single-Node Enterprise ColumnStore topology with Local storage deployment procedure:
+Navigation in the Single-Node ColumnStore topology with Local storage deployment procedure:
 
 This page was step 5 of 5.
 

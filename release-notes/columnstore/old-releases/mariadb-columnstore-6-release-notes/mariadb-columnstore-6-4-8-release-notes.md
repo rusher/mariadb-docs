@@ -2,9 +2,9 @@
 
 ## Overview
 
-[MariaDB Enterprise ColumnStore](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb-columnstore/README.md) 6.4.8 is a maintenance release of [MariaDB Enterprise ColumnStore](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb-columnstore/README.md) . MariaDB ColumnStore is a columnar storage engine included with MariaDB Enterprise Server and MariaDB Community Server 10.6, 10.11, and 11.0. This is a release in the ColumnStore 6 series.
+[MariaDB ColumnStore](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb-columnstore/README.md) 6.4.8 is a maintenance release of [MariaDB ColumnStore](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb-columnstore/README.md) . MariaDB ColumnStore is a columnar storage engine included with MariaDB Enterprise Server and MariaDB Community Server 10.6, 10.11, and 11.0. This is a release in the ColumnStore 6 series.
 
-MariaDB Enterprise ColumnStore 6.4.8 was released on 2024-02-07. This release is of General Availability (GA) maturity.
+MariaDB ColumnStore 6.4.8 was released on 2024-02-07. This release is of General Availability (GA) maturity.
 
 This release of MariaDB ColumnStore is included with MariaDB Community Server 10.11.7 and MariaDB Community Server 10.6.17
 

@@ -1,15 +1,15 @@
 ---
-description: 'Step 2: Install Enterprise ColumnStore'
+description: 'Step 2: Install ColumnStore'
 hidden: true
 ---
 
-# Step 2: Install Enterprise ColumnStore
+# Step 2: Install ColumnStore
 
 ## Overview
 
-This page details step 2 of a 5-step procedure for deploying Single-Node Enterprise ColumnStore with Object storage.
+This page details step 2 of a 5-step procedure for deploying Single-Node ColumnStore with Object storage.
 
-This step installs MariaDB Enterprise Server and MariaDB Enterprise ColumnStore.
+This step installs MariaDB Enterprise Server and MariaDB ColumnStore.
 
 {% include "../../../../../.gitbook/includes/the-instructions-were-teste....md" %}
 
@@ -31,7 +31,7 @@ Substitute your token for `CUSTOMER_DOWNLOAD_TOKEN` when configuring the package
 
 ## Set Up Repository
 
-1. On each Enterprise ColumnStore node, install the prerequisites for downloading the software from the Web.\
+1. On each ColumnStore node, install the prerequisites for downloading the software from the Web.\
    Install on CentOS / RHEL (YUM):
 
 ```bash
@@ -117,11 +117,11 @@ $ sudo apt install mariadb-server \
 
 ## Next Step
 
-Navigation in the Single-Node Enterprise ColumnStore topology with Object storage deployment procedure:
+Navigation in the Single-Node ColumnStore topology with Object storage deployment procedure:
 
 This page was step 2 of 5.
 
-[Next: Step 3: Start and Configure MariaDB Enterprise ColumnStore.](step-4-test-enterprise-columnstore.md)
+[Next: Step 3: Start and Configure MariaDB ColumnStore.](step-4-test-enterprise-columnstore.md)
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

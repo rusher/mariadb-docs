@@ -17,7 +17,7 @@ Upon successful `status` call CMAPI returns JSON payload containing detailed inf
 
 Call made via HTTPS `GET`, with authentication via shared secret using the `x-api-key` header.
 
-Bash alias `mcsStatus` is available starting with Enterprise ColumnStore 5.5.2.
+Bash alias `mcsStatus` is available starting with ColumnStore 5.5.2.
 
 ## Examples
 

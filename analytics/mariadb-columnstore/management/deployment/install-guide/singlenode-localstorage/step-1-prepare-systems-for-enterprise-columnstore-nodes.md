@@ -1,14 +1,14 @@
 ---
-description: 'Step 1: Prepare Systems for Enterprise ColumnStore Nodes'
+description: 'Step 1: Prepare Systems for ColumnStore Nodes'
 ---
 
-# Step 1: Prepare Systems for Enterprise ColumnStore Nodes
+# Step 1: Prepare Systems for ColumnStore Nodes
 
 ## Overview
 
-This page details step 1 of a 5-step procedure for deploying [Single-Node Enterprise ColumnStore with Local storage](./).
+This page details step 1 of a 5-step procedure for deploying [Single-Node ColumnStore with Local storage](./).
 
-This step prepares the system to host MariaDB Enterprise Server and MariaDB Enterprise ColumnStore.
+This step prepares the system to host MariaDB Enterprise Server and MariaDB ColumnStore.
 
 {% include "../../../../../.gitbook/includes/the-instructions-were-teste....md" %}
 
@@ -16,11 +16,11 @@ Interactive commands are detailed. Alternatively, the described operations can b
 
 ## Optimize Linux Kernel Parameters
 
-MariaDB Enterprise ColumnStore performs best with Linux kernel optimizations.
+MariaDB ColumnStore performs best with Linux kernel optimizations.
 
-On each server to host an Enterprise ColumnStore node, optimize the kernel:
+On each server to host an ColumnStore node, optimize the kernel:
 
-1. Set the relevant kernel parameters in a sysctl configuration file. To ensure proper change management, use an Enterprise ColumnStore-specific configuration file.
+1. Set the relevant kernel parameters in a sysctl configuration file. To ensure proper change management, use an ColumnStore-specific configuration file.
 
 Create a `/etc/sysctl.d/90-mariadb-enterprise-columnstore.conf` file:
 
@@ -146,11 +146,11 @@ $ sudo localedef -i en_US -f UTF-8 en_US.UTF-8
 
 ## Next Step
 
-Navigation in the Single-Node Enterprise ColumnStore topology with Local storage deployment procedure:
+Navigation in the Single-Node ColumnStore topology with Local storage deployment procedure:
 
 This page was step 1 of 5.
 
-[Next: Step 2: Install MariaDB Enterprise ColumnStore.](step-2-install-enterprise-columnstore.md)
+[Next: Step 2: Install MariaDB ColumnStore.](step-2-install-enterprise-columnstore.md)
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

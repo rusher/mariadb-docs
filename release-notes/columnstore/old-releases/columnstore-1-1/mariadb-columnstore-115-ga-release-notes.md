@@ -37,13 +37,13 @@ For general "how to questions" ask questions [here](https://app.gitbook.com/o/di
 * [MCOL-1403](https://jira.mariadb.org/browse/MCOL-1403) - Trailing whitespace in CHAR/VARCHAR break string matches - Revisited
 * [MCOL-1405](https://jira.mariadb.org/browse/MCOL-1405) - Mysqld PID is missed in the output of mcsadmin getSystemInfo
 * [MCOL-1406](https://jira.mariadb.org/browse/MCOL-1406) - Cannot create pv\_facts table in develop
-* [MCOL-1408](https://jira.mariadb.org/browse/MCOL-1408) - Columnstore table unable to accept writes after thousands of commits via Bulk SDK
+* [MCOL-1408](https://jira.mariadb.org/browse/MCOL-1408) - ColumnStore table unable to accept writes after thousands of commits via Bulk SDK
 * [MCOL-1430](https://jira.mariadb.org/browse/MCOL-1430) - CDC Connector v2.2.5-1 unable to connect to MaxScale
 * [MCOL-1440](https://jira.mariadb.org/browse/MCOL-1440) - rename the data-adapter kettle package to match the others
 * [MCOL-1444](https://jira.mariadb.org/browse/MCOL-1444) - mcsapi's dataconvert-decimal fails for Ubuntu 18.04
 * [MCOL-1455](https://jira.mariadb.org/browse/MCOL-1455) - mariadb-columnstore-kafka-adapters has been deprecated - remove from building
 * [MCOL-1460](https://jira.mariadb.org/browse/MCOL-1460) - Build for Kettle adapter is not created
-* [MCOL-1463](https://jira.mariadb.org/browse/MCOL-1463) - Columnstore provided udf median()/avg\_mode() not working
+* [MCOL-1463](https://jira.mariadb.org/browse/MCOL-1463) - ColumnStore provided udf median()/avg\_mode() not working
 * [MCOL-1179](https://jira.mariadb.org/browse/MCOL-1179) - Pentaho Data Integration / Kettle - Bulk API Java Binding
 * [MCOL-1232](https://jira.mariadb.org/browse/MCOL-1232) - Spark connector - support different ColumnStore configurations
 * [MCOL-1259](https://jira.mariadb.org/browse/MCOL-1259) - ColumnStore Data-Adapters needs a top level cmake for building all Data-Adapters

@@ -41,13 +41,13 @@ Although multiple topologies are listed on this page, the listed topologies are 
 
 | Diagram                                                                   | Features                                                                                                                                                                                                                                                                                                                                                               |
 | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ![](<../../.gitbook/assets/es-columnstore-topology-nfs-no-title (1).png>) | <p><strong>Columnar storage engine with shared local storage</strong></p><ul><li>Highly available</li><li>Automatic failover via MaxScale and CMAPI</li><li>Scales reads via MaxScale</li><li>Bulk data import</li><li>Enterprise Server, Enterprise ColumnStore, MaxScale</li><li>Optional <a href="columnstore-read-replicas.md">Read Replica topology</a></li></ul> |
+| ![](<../../.gitbook/assets/es-columnstore-topology-nfs-no-title (1).png>) | <p><strong>Columnar storage engine with shared local storage</strong></p><ul><li>Highly available</li><li>Automatic failover via MaxScale and CMAPI</li><li>Scales reads via MaxScale</li><li>Bulk data import</li><li>Enterprise Server, ColumnStore, MaxScale</li><li>Optional <a href="columnstore-read-replicas.md">Read Replica topology</a></li></ul> |
 
 ### ColumnStore Object Storage Topology
 
 | Diagram                                                            | Features                                                                                                                                                                                                                                                                                     |
 | ------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ![](../../.gitbook/assets/es-columnstore-topology-s3-no-title.png) | <p><strong>Columnar storage engine with S3-compatible object storage</strong></p><ul><li>Highly available</li><li>Automatic failover via MaxScale and CMAPI</li><li>Scales reads via MaxScale</li><li>Bulk data import</li><li>Enterprise Server, Enterprise ColumnStore, MaxScale</li></ul> |
+| ![](../../.gitbook/assets/es-columnstore-topology-s3-no-title.png) | <p><strong>Columnar storage engine with S3-compatible object storage</strong></p><ul><li>Highly available</li><li>Automatic failover via MaxScale and CMAPI</li><li>Scales reads via MaxScale</li><li>Bulk data import</li><li>Enterprise Server, ColumnStore, MaxScale</li></ul> |
 
 ## Hybrid Workloads
 
@@ -55,7 +55,7 @@ Although multiple topologies are listed on this page, the listed topologies are 
 
 | Diagram                                                                 | Features                                                                                                                                                                                                                                                              |
 | ----------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ![](../../.gitbook/assets/es-columnstore-htap-topology-s3-no-title.png) | <ul><li>Single-stack hybrid transactional/analytical workloads</li><li>ColumnStore for analytics with scalable S3-compatible object storage</li><li>InnoDB for transactions• Cross-engine JOINs</li><li>Enterprise Server, Enterprise ColumnStore, MaxScale</li></ul> |
+| ![](../../.gitbook/assets/es-columnstore-htap-topology-s3-no-title.png) | <ul><li>Single-stack hybrid transactional/analytical workloads</li><li>ColumnStore for analytics with scalable S3-compatible object storage</li><li>InnoDB for transactions• Cross-engine JOINs</li><li>Enterprise Server, ColumnStore, MaxScale</li></ul> |
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

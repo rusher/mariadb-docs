@@ -1,6 +1,6 @@
 ---
 description: >-
-  Backup and restore for MariaDB Enterprise ColumnStore on S3 object storage:
+  Backup and restore for MariaDB ColumnStore on S3 object storage:
   MariaDB data directory via mariadb-backup, the S3 bucket via vendor
   snapshot, and the Storage Manager directory.
 ---
@@ -9,19 +9,19 @@ description: >-
 
 ## Overview
 
-MariaDB Enterprise ColumnStore supports backup and restore. If Enterprise ColumnStore uses [S3-compatible object storage](../../architecture/columnstore-architectural-overview.md#s3-compatible-object-storage) for data and shared local storage for the [Storage Manager directory](../../architecture/columnstore-storage-architecture.md#storage-manager-directory), the S3 bucket, the Storage Manager directory, and the MariaDB data directory must be backed up separately.
+MariaDB ColumnStore supports backup and restore. If ColumnStore uses [S3-compatible object storage](../../architecture/columnstore-architectural-overview.md#s3-compatible-object-storage) for data and shared local storage for the [Storage Manager directory](../../architecture/columnstore-storage-architecture.md#storage-manager-directory), the S3 bucket, the Storage Manager directory, and the MariaDB data directory must be backed up separately.
 
 ## Recovery Planning
 
-MariaDB Enterprise ColumnStore supports multiple [storage options](../../architecture/columnstore-storage-architecture.md#storage-options).
+MariaDB ColumnStore supports multiple [storage options](../../architecture/columnstore-storage-architecture.md#storage-options).
 
-This page discusses how to backup and restore Enterprise ColumnStore when it uses [S3-compatible object storage](../../architecture/columnstore-architectural-overview.md#s3-compatible-object-storage) for data and shared local storage (such as NFS) for the [Storage Manager directory](../../architecture/columnstore-storage-architecture.md#storage-manager-directory).
+This page discusses how to backup and restore ColumnStore when it uses [S3-compatible object storage](../../architecture/columnstore-architectural-overview.md#s3-compatible-object-storage) for data and shared local storage (such as NFS) for the [Storage Manager directory](../../architecture/columnstore-storage-architecture.md#storage-manager-directory).
 
-Any file can become corrupt due to hardware issues, crashes, power loss, and other reasons. If the Enterprise ColumnStore data or metadata become corrupt, Enterprise ColumnStore could become unusable, resulting in data loss.
+Any file can become corrupt due to hardware issues, crashes, power loss, and other reasons. If the ColumnStore data or metadata become corrupt, ColumnStore could become unusable, resulting in data loss.
 
-If Enterprise ColumnStore is your [system of record](backup-and-restore-with-mariadb-enterprise-columnstore.md#system-of-record), it should be backed up regularly.
+If ColumnStore is your [system of record](backup-and-restore-with-mariadb-enterprise-columnstore.md#system-of-record), it should be backed up regularly.
 
-If Enterprise ColumnStore uses S3-compatible object storage for data and shared local storage for the [Storage Manager directory](../../architecture/columnstore-storage-architecture.md#storage-manager-directory), the following items must be backed up:
+If ColumnStore uses S3-compatible object storage for data and shared local storage for the [Storage Manager directory](../../architecture/columnstore-storage-architecture.md#storage-manager-directory), the following items must be backed up:
 
 * The MariaDB Data directory is backed up using [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup).
 * The S3 bucket must be backed up using the vendor's snapshot procedure.

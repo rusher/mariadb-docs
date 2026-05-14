@@ -8,7 +8,7 @@ description: 'Step 3: Install MariaDB Enterprise Server'
 
 This page details step 3 of the 9-step procedure "Deploy ColumnStore Shared Local Storage Topology".
 
-This step installs MariaDB Enterprise Server, MariaDB Enterprise ColumnStore, CMAPI, and dependencies.
+This step installs MariaDB Enterprise Server, MariaDB ColumnStore, CMAPI, and dependencies.
 
 {% include "../../../../../.gitbook/includes/the-instructions-were-teste....md" %}
 
@@ -30,7 +30,7 @@ Substitute your token for `CUSTOMER_DOWNLOAD_TOKEN` when configuring the package
 
 ## Set Up Repository
 
-1. On each Enterprise ColumnStore node, install the prerequisites for downloading the software from the Web.\
+1. On each ColumnStore node, install the prerequisites for downloading the software from the Web.\
    Install on CentOS / RHEL (YUM):
 
 ```bash

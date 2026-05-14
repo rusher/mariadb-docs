@@ -13,7 +13,7 @@ See [CMAPI](./) for detail on REST API endpoint, required headers, and other ava
 
 ## Description
 
-Upon successful `start` call CMAPI connects to each MariaDB Enterprise ColumnStore node and performs start-up.
+Upon successful `start` call CMAPI connects to each MariaDB ColumnStore node and performs start-up.
 
 Call made via HTTPS `PUT`, with authentication via shared secret using the `x-api-key` header.
 
@@ -23,7 +23,7 @@ JSON data required for this call:
 | --------- | ---------------------------------------------------------------------- |
 | `timeout` | Maximum time in seconds to wait for completion of `add-node` operation |
 
-Bash alias `mcsStart` is available starting with Enterprise ColumnStore 5.5.2.
+Bash alias `mcsStart` is available starting with ColumnStore 5.5.2.
 
 ## Examples
 

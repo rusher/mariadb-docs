@@ -8,7 +8,7 @@ description: 'Step 2: Configure Shared Local Storage'
 
 This page details step 2 of the 9-step procedure "Deploy ColumnStore Object Storage Topology".
 
-This step configures shared local storage on systems hosting Enterprise ColumnStore.
+This step configures shared local storage on systems hosting ColumnStore.
 
 {% include "../../../../../.gitbook/includes/the-instructions-were-teste....md" %}
 
@@ -16,7 +16,7 @@ Interactive commands are detailed. Alternatively, the described operations can b
 
 ## Directories for Shared Local Storage
 
-In a ColumnStore Object Storage topology, MariaDB Enterprise ColumnStore requires the Storage Manager directory to be located on shared local storage.
+In a ColumnStore Object Storage topology, MariaDB ColumnStore requires the Storage Manager directory to be located on shared local storage.
 
 The Storage Manager directory is at the following path:
 
@@ -40,7 +40,7 @@ For additional information, see "[Shared Local Storage Options](step-2-configure
 
 EBS is a high-performance block-storage service for AWS (Amazon Web Services). EBS Multi-Attach allows an EBS volume to be attached to multiple instances in AWS. Only clustered file systems, such as GFS2, are supported.
 
-For Enterprise ColumnStore deployments in AWS:
+For ColumnStore deployments in AWS:
 
 * EBS Multi-Attach is a recommended option for the Storage Manager directory.
 * Amazon S3 storage is the recommended option for data.
@@ -60,7 +60,7 @@ For deployments in AWS:
 
 Filestore is high-performance, fully managed storage for GCP (Google Cloud Platform).
 
-For Enterprise ColumnStore deployments in GCP:
+For ColumnStore deployments in GCP:
 
 * Filestore is the recommended option for the Storage Manager directory.
 * Google Object Storage (S3-compatible) is the recommended option for data.
@@ -74,7 +74,7 @@ For more information, see "[Recommended Storage Options](../../../../architectur
 
 ### Install GlusterFS
 
-**On each Enterprise ColumnStore node**, install GlusterFS.
+**On each ColumnStore node**, install GlusterFS.
 
 Install on CentOS / RHEL 8 (YUM):
 
@@ -219,7 +219,7 @@ $ sudo mount -a
 
 ## Configure Network File System (NFS)
 
-NFS is a distributed file system. NFS is available in most Linux distributions. If NFS is used for an Enterprise ColumnStore deployment, the storage must be mounted with the sync option to ensure that each node flushes its changes immediately.
+NFS is a distributed file system. NFS is available in most Linux distributions. If NFS is used for an ColumnStore deployment, the storage must be mounted with the sync option to ensure that each node flushes its changes immediately.
 
 For on-premises deployments:
 

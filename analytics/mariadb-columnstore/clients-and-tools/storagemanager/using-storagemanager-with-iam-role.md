@@ -9,7 +9,7 @@ description: >-
 
 ## AWS IAM Role Configuration
 
-From Columnstore 5.5.2, you can use AWS IAM roles in order to connect to S3 buckets without explicitly entering credentials into the `storagemanager.cnf` config file.
+From ColumnStore 5.5.2, you can use AWS IAM roles in order to connect to S3 buckets without explicitly entering credentials into the `storagemanager.cnf` config file.
 
 You need to modify the IAM role of your Amazon EC2 instance to allow for this. Please follow the AWS [documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html) before beginning this process.
 

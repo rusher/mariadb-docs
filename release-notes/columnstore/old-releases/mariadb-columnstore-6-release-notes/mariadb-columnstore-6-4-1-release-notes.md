@@ -2,11 +2,11 @@
 
 ## Overview
 
-[MariaDB Enterprise ColumnStore](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb-columnstore/README.md) 6.4.1 is a maintenance release of [MariaDB Enterprise ColumnStore](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb-columnstore/README.md) . MariaDB Enterprise ColumnStore is a columnar storage engine included with MariaDB Enterprise Server. This is the fifth release in the Enterprise ColumnStore 6 series.
+[MariaDB ColumnStore](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb-columnstore/README.md) 6.4.1 is a maintenance release of [MariaDB ColumnStore](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb-columnstore/README.md) . MariaDB ColumnStore is a columnar storage engine included with MariaDB Enterprise Server. This is the fifth release in the ColumnStore 6 series.
 
-MariaDB Enterprise ColumnStore 6.4.1 was released on 2022-07-12. This release is of General Availability (GA) maturity.
+MariaDB ColumnStore 6.4.1 was released on 2022-07-12. This release is of General Availability (GA) maturity.
 
-This release of MariaDB Enterprise ColumnStore is included with MariaDB Enterprise Server 10.6.8-4.
+This release of MariaDB ColumnStore is included with MariaDB Enterprise Server 10.6.8-4.
 
 ## Notable Changes
 
@@ -42,7 +42,7 @@ This release of MariaDB Enterprise ColumnStore is included with MariaDB Enterpri
 
 ## Platforms
 
-In alignment with the [enterprise lifecycle](../../../enterprise-server/enterprise-server-lifecycle.md), MariaDB Enterprise ColumnStore 6.4.1 is provided for:
+In alignment with the [enterprise lifecycle](../../../enterprise-server/enterprise-server-lifecycle.md), MariaDB ColumnStore 6.4.1 is provided for:
 
 * CentOS 7 (x86\_64)
 * Debian 10 (x86\_64)

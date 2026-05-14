@@ -282,7 +282,7 @@ where querytype='INSERT SELECT' and starttime >= now() - interval 12 hour;
 
 ## See Also
 
-* [Query Statistics for MariaDB Enterprise ColumnStore](columnstore-query-tuning/query-statistics-for-mariadb-enterprise-columnstore.md)
+* [Query Statistics for MariaDB ColumnStore](columnstore-query-tuning/query-statistics-for-mariadb-enterprise-columnstore.md)
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

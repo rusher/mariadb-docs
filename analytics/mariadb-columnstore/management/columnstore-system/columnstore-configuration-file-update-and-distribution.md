@@ -1,7 +1,7 @@
 ---
 description: >-
   Update and distribute MariaDB ColumnStore configuration files: edit
-  Columnstore.xml on PM1, then run mcsadmin distributeconfigfile to propagate
+  ColumnStore.xml on PM1, then run mcsadmin distributeconfigfile to propagate
   changes to other nodes.
 ---
 

@@ -1,13 +1,13 @@
 ---
 description: >-
-  MCS backup and restore CLI for MariaDB Enterprise ColumnStore: full and
+  MCS backup and restore CLI for MariaDB ColumnStore: full and
   incremental backups across local, shared, and S3 storage with compression,
   parallelism, and DBRM workflows.
 ---
 
 # MCS Backup and Restore Commands
 
-This page documents how to create and restore MariaDB Enterprise ColumnStore backups using the `mcs` CLI.
+This page documents how to create and restore MariaDB ColumnStore backups using the `mcs` CLI.
 
 The `mcs backup` and `mcs restore` commands support the same workflows as the `mcs_backup_manager.sh` script, including:
 

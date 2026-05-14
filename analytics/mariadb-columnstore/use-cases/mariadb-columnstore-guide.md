@@ -26,7 +26,7 @@ It is designed for big data scaling to process petabytes of data, linear scalabi
 
 Links:
 
-* [MariaDB Columnstore Blogs](https://mariadb.com/resources/blog/tag/columnstore/).
+* [MariaDB ColumnStore Blogs](https://mariadb.com/resources/blog/tag/columnstore/).
 * A Google Group exists for MariaDB ColumnStore that can be used to discuss ideas and issues and communicate with the community: Send email to mariadb-columnstore@googlegroups.com or use the [forum interface](https://groups.google.com/forum/#!forum/mariadb-columnstore)
 * Bugs can be reported in MariaDB Jira: [jira.mariadb.org](https://jira.mariadb.org) (see [Reporting Bugs](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/community/community/bug-tracking/reporting-bugs)). Please file bugs under the MCOL project and include the output from the [support utility](../management/system-troubleshooting-mariadb-columnstore.md) if possible.
 

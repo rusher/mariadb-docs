@@ -1,23 +1,23 @@
 ---
-description: 'Step 3: Start and Configure Enterprise ColumnStore'
+description: 'Step 3: Start and Configure ColumnStore'
 hidden: true
 ---
 
-# Step 3: Start and Configure Enterprise ColumnStore
+# Step 3: Start and Configure ColumnStore
 
 ## Overview
 
-This page details step 3 of a 5-step procedure for deploying [Single-Node Enterprise ColumnStore with Object storage](broken-reference/).
+This page details step 3 of a 5-step procedure for deploying [Single-Node ColumnStore with Object storage](broken-reference/).
 
-This step starts and configures MariaDB Enterprise Server and MariaDB Enterprise ColumnStore.
+This step starts and configures MariaDB Enterprise Server and MariaDB ColumnStore.
 
 {% include "../../../../../.gitbook/includes/the-instructions-were-teste....md" %}
 
 Interactive commands are detailed. Alternatively, the described operations can be performed using automation.
 
-## Configure Enterprise ColumnStore
+## Configure ColumnStore
 
-Mandatory system variables and options for Single-Node Enterprise ColumnStore include:
+Mandatory system variables and options for Single-Node ColumnStore include:
 
 <table><thead><tr><th width="342">Connector</th><th>MariaDB Connector/R2DBC</th></tr></thead><tbody><tr><td><a href="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_server">character_set_server</a></td><td>Set this system variable to <code>utf8</code></td></tr><tr><td><a href="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#collation_server">collation_server</a></td><td>Set this system variable to <code>utf8_general_ci</code></td></tr><tr><td><a href="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/rBEU9juWLfTDcdwF3Q14/mariadb-columnstore/clients-and-tools/data-import/mariadb-enterprise-columnstore-data-loading-with-insert-select.md#batch-insert-mode">loose-columnstore_use_import_for_batchinsert</a></td><td>Set this system variable to <code>ALWAYS</code> to always use <code>cpimport</code> for <a href="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md">LOAD DATA INFILE</a> and <a href="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/insert-select.md">INSERT...SELECT</a> statements.</td></tr></tbody></table>
 
@@ -201,11 +201,11 @@ For information on how to create a profile, see [How to create an AppArmor Profi
 
 ## Next Step
 
-Navigation in the Single-Node Enterprise ColumnStore topology with Object storage deployment procedure:
+Navigation in the Single-Node ColumnStore topology with Object storage deployment procedure:
 
 This page was step 3 of 5.
 
-[Next: Step 4: Test MariaDB Enterprise ColumnStore.](step-4-test-enterprise-columnstore.md)
+[Next: Step 4: Test MariaDB ColumnStore.](step-4-test-enterprise-columnstore.md)
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

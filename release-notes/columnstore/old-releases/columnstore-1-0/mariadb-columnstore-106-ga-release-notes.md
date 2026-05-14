@@ -28,7 +28,7 @@ For general "how to questions" ask questions [here](https://app.gitbook.com/o/di
 * [MCOL-406](https://jira.mariadb.org/browse/MCOL-406) - Stored procedures required for I\_S tables
 * [MCOL-420](https://jira.mariadb.org/browse/MCOL-420) - Add alias for cpimport in columnstoreAlias
 * [MCOL-421](https://jira.mariadb.org/browse/MCOL-421) - system upgrade install fails when a mysql root password is set
-* [MCOL-422](https://jira.mariadb.org/browse/MCOL-422) - Amazon AMI single-server Columnstore didn't restart on a stop/start
+* [MCOL-422](https://jira.mariadb.org/browse/MCOL-422) - Amazon AMI single-server ColumnStore didn't restart on a stop/start
 * [MCOL-424](https://jira.mariadb.org/browse/MCOL-424) - cross engine subquery losing where clause causing incorrect results
 * [MCOL-430](https://jira.mariadb.org/browse/MCOL-430) - invalid null date values for cross engine join query
 * [MCOL-433](https://jira.mariadb.org/browse/MCOL-433) - Small row results can cause CrossEngine buffer underflow

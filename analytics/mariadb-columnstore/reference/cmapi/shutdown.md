@@ -1,6 +1,6 @@
 ---
 description: >-
-  The CMAPI shutdown endpoint shuts down MariaDB Enterprise ColumnStore on
+  The CMAPI shutdown endpoint shuts down MariaDB ColumnStore on
   every cluster node via HTTPS PUT with x-api-key authentication.
 ---
 
@@ -12,7 +12,7 @@ See [CMAPI](./) for detail on REST API endpoint, required headers, and other ava
 
 ## Description
 
-Upon successful `shutdown` call CMAPI connects to each MariaDB Enterprise ColumnStore node and performs shut down.
+Upon successful `shutdown` call CMAPI connects to each MariaDB ColumnStore node and performs shut down.
 
 Call made via HTTPS `PUT`, with authentication via shared secret using the `x-api-key` header.
 
@@ -22,7 +22,7 @@ JSON data required for this call:
 | --------- | ---------------------------------------------------------------------- |
 | `timeout` | Maximum time in seconds to wait for completion of `add-node` operation |
 
-Bash alias `mcsShutdown` is available starting with Enterprise ColumnStore 5.5.2.
+Bash alias `mcsShutdown` is available starting with ColumnStore 5.5.2.
 
 ## Examples
 

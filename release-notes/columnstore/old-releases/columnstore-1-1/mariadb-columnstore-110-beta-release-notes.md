@@ -58,11 +58,11 @@ For general "how to questions" ask questions [here](https://app.gitbook.com/o/di
 * [MCOL-663](https://jira.mariadb.org/browse/MCOL-663) - Restarting installation fails if installed on secondary interface
 * [MCOL-664](https://jira.mariadb.org/browse/MCOL-664) - TEXT columns need to support the same functions as VARCHAR
 * [MCOL-675](https://jira.mariadb.org/browse/MCOL-675) - calsettrace(1) can cause a mysqld crash
-* [MCOL-677](https://jira.mariadb.org/browse/MCOL-677) - Columnstore executes join on incompatible types
+* [MCOL-677](https://jira.mariadb.org/browse/MCOL-677) - ColumnStore executes join on incompatible types
 * [MCOL-686](https://jira.mariadb.org/browse/MCOL-686) - Using BETWEEN together with date functions in WHERE clause 100x slower than InfiniDB
 * [MCOL-702](https://jira.mariadb.org/browse/MCOL-702) - multi node package install with non login su won't start
 * [MCOL-703](https://jira.mariadb.org/browse/MCOL-703) - postConfigure should check for local rpm / bins existing
-* [MCOL-729](https://jira.mariadb.org/browse/MCOL-729) - Columnstore Cluster Test Tool - add check for mariadb-libs base install
+* [MCOL-729](https://jira.mariadb.org/browse/MCOL-729) - ColumnStore Cluster Test Tool - add check for mariadb-libs base install
 * [MCOL-787](https://jira.mariadb.org/browse/MCOL-787) - run command to create system tables after startsystem
 * [MCOL-799](https://jira.mariadb.org/browse/MCOL-799) - INSERT...SELECT with window functions fail
 * [MCOL-819](https://jira.mariadb.org/browse/MCOL-819) - mysqld not shutdown by shutdownsystem commands, sometimes

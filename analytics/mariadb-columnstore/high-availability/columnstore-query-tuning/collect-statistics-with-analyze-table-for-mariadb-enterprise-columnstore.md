@@ -9,11 +9,11 @@ description: >-
 
 ## Overview
 
-In MariaDB Enterprise ColumnStore 6, the [ExeMgr process](../../architecture/mariadb-enterprise-columnstore-query-evaluation.md#exemgr-processfacility) uses optimizer statistics in its query planning process.
+In MariaDB ColumnStore 6, the [ExeMgr process](../../architecture/mariadb-enterprise-columnstore-query-evaluation.md#exemgr-processfacility) uses optimizer statistics in its query planning process.
 
 ColumnStore uses the optimizer statistics to add support for queries that contain circular inner joins.
 
-In Enterprise ColumnStore 5 and before, ColumnStore would raise the following error when a query containing a circular inner join was executed:
+In ColumnStore 5 and before, ColumnStore would raise the following error when a query containing a circular inner join was executed:
 
 ```sql
 ERROR 1815 (HY000): Internal error: IDB-1003: Circular joins are not supported.
@@ -27,9 +27,9 @@ Enterprise ColumnStore's optimizer statistics can be collected for ColumnStore t
 [[analyze-table|ANALYZE TABLE]] columnstore_tab;
 ```
 
-Enterprise ColumnStore's optimizer statistics are not updated automatically. To update the optimizer statistics for a ColumnStore table, [ANALYZE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/table-statements/analyze-table) must be re-executed.
+ColumnStore's optimizer statistics are not updated automatically. To update the optimizer statistics for a ColumnStore table, [ANALYZE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/table-statements/analyze-table) must be re-executed.
 
-Enterprise ColumnStore does not implement an interface to show optimizer statistics.
+ColumnStore does not implement an interface to show optimizer statistics.
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

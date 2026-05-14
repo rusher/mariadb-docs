@@ -52,7 +52,7 @@ description: >-
 
 #### columnstore\_max\_allowed\_in\_values
 
-* Sets the maximum number of values that can be used in an IN predicate on a Columnstore table. This limit helps to prevent performance issues caused by queries with a large number of IN values.
+* Sets the maximum number of values that can be used in an IN predicate on a ColumnStore table. This limit helps to prevent performance issues caused by queries with a large number of IN values.
 * Scope: global, session
 * Data type: [numeric](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/numeric)
 * Default value: 10000
@@ -60,7 +60,7 @@ description: >-
 
 #### columnstore\_max\_pm\_join\_result\_count
 
-* Sets the maximum number of rows that can be returned by a parallel merge join on a Columnstore table. This limit helps to prevent memory issues caused by joins that return a large number of rows.
+* Sets the maximum number of rows that can be returned by a parallel merge join on a ColumnStore table. This limit helps to prevent memory issues caused by joins that return a large number of rows.
 * Scope: global, session
 * Data type: [numeric](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/numeric)
 * Default value: 1000000
@@ -267,7 +267,7 @@ Disk-based joins enable such queries to use disk for intermediate join data in c
 Disk-based joins does not include aggregation and DML joins.
 {% endhint %}
 
-The following variables in the `HashJoin` element in the `Columnstore.xml` configuration file relate to disk-based joins. `Columnstore.xml` resides in `/usr/local/mariadb/columnstore/etc/`.
+The following variables in the `HashJoin` element in the `ColumnStore.xml` configuration file relate to disk-based joins. `ColumnStore.xml` resides in `/usr/local/mariadb/columnstore/etc/`.
 
 * AllowDiskBasedJoin – Option to use disk-based joins. Valid values are Y (enabled) or N (disabled). Default is disabled.
 * TempFileCompression – Option to use compression for disk join files. Valid values are Y (use compressed files) or N (use non-compressed files).

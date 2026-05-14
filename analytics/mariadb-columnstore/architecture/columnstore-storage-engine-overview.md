@@ -9,9 +9,9 @@ description: >-
 
 ## Overview
 
-MariaDB Enterprise ColumnStore integrates with MariaDB Enterprise Server using the ColumnStore storage engine plugin. The ColumnStore storage engine plugin enables MariaDB Enterprise Server to interact with ColumnStore tables.
+MariaDB ColumnStore integrates with MariaDB Enterprise Server using the ColumnStore storage engine plugin. The ColumnStore storage engine plugin enables MariaDB Enterprise Server to interact with ColumnStore tables.
 
-For deployment instructions and available documentation, see "MariaDB Enterprise ColumnStore."
+For deployment instructions and available documentation, see "MariaDB ColumnStore."
 
 The ColumnStore storage engine has the following features:
 

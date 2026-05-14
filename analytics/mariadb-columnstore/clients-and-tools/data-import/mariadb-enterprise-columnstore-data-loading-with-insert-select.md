@@ -1,6 +1,6 @@
 ---
 description: >-
-  MariaDB Enterprise ColumnStore translates INSERT INTO .. SELECT into a
+  MariaDB ColumnStore translates INSERT INTO .. SELECT into a
   cpimport bulk load when batch insert mode is on and the statement runs
   outside a transaction.
 ---
@@ -9,7 +9,7 @@ description: >-
 
 ## Overview
 
-MariaDB Enterprise ColumnStore automatically translates `INSERT INTO .. SELECT FROM ..` statements into bulk data loads. By default, it translates the statement into a bulk data load that uses `cpimport.bin`, which is an internal wrapper around the `cpimport` tool.
+MariaDB ColumnStore automatically translates `INSERT INTO .. SELECT FROM ..` statements into bulk data loads. By default, it translates the statement into a bulk data load that uses `cpimport.bin`, which is an internal wrapper around the `cpimport` tool.
 
 ## Intended Use Cases
 
@@ -19,20 +19,20 @@ You are loading data into a ColumnStore table by querying one or more local tabl
 
 ## Batch Insert Mode
 
-MariaDB Enterprise ColumnStore enables batch insert mode by default.
+MariaDB ColumnStore enables batch insert mode by default.
 
-When batch insert mode is enabled, MariaDB Enterprise ColumnStore has special handling for [INSERT INTO .. SELECT FROM ..](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/insert) statements.
+When batch insert mode is enabled, MariaDB ColumnStore has special handling for [INSERT INTO .. SELECT FROM ..](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/insert) statements.
 
-Enterprise ColumnStore uses the following rules:
+ColumnStore uses the following rules:
 
-* If the statement is executed outside of a transaction, Enterprise ColumnStore loads the data using `cpimport`, which is a command-line utility that is designed to efficiently load data in bulk. Enterprise ColumnStore executes `cpimport` using a wrapper called cpimport.bin.
-* If the statement is executed inside of a transaction, Enterprise ColumnStore loads the data using the DML interface, which is slower.
+* If the statement is executed outside of a transaction, ColumnStore loads the data using `cpimport`, which is a command-line utility that is designed to efficiently load data in bulk. ColumnStore executes `cpimport` using a wrapper called cpimport.bin.
+* If the statement is executed inside of a transaction, ColumnStore loads the data using the DML interface, which is slower.
 
-Batch insert mode can be disabled by setting the columnstore\_use\_import\_for\_batchinsert system variable to OFF. When batch insert mode is disabled, Enterprise ColumnStore executes the statements using the DML interface, which is slower.
+Batch insert mode can be disabled by setting the columnstore\_use\_import\_for\_batchinsert system variable to OFF. When batch insert mode is disabled, ColumnStore executes the statements using the DML interface, which is slower.
 
 ## Locking
 
-MariaDB Enterprise ColumnStore requires a write metadata lock (MDL) on the table when a bulk data load is performed with cpimport.
+MariaDB ColumnStore requires a write metadata lock (MDL) on the table when a bulk data load is performed with cpimport.
 
 When a bulk data load is running:
 

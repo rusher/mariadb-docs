@@ -50,7 +50,7 @@ MariaDB Enterprise Server 11.4.9-6 is a Stable (GA) maintenance release of [Mari
 * Assertion \`!waiting' failed in TP\_connection\_generic::wait\_begin ([MDEV-37860](https://jira.mariadb.org/browse/MDEV-37860))
 * mysql-test/mtr --cursor main.func\_json fails ([MDEV-37864](https://jira.mariadb.org/browse/MDEV-37864))
 * disable\_index\_merge\_plans causes SELECT data loss when more than 100 ORs ([MDEV-37913](https://jira.mariadb.org/browse/MDEV-37913))
-* Columnstore rdo depends on GenError ([MDEV-37921](https://jira.mariadb.org/browse/MDEV-37921))
+* ColumnStore rdo depends on GenError ([MDEV-37921](https://jira.mariadb.org/browse/MDEV-37921))
 * Merge applicable changes from InnoDB 8.4.7 ([MDEV-37922](https://jira.mariadb.org/browse/MDEV-37922))
 * very long query cannot be killed quickly ([MDEV-37938](https://jira.mariadb.org/browse/MDEV-37938))
 * Item\_func\_hex doesn't check for max\_allowed\_packet ([MDEV-37947](https://jira.mariadb.org/browse/MDEV-37947))

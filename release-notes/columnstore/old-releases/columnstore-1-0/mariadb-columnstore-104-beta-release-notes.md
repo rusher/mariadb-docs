@@ -33,7 +33,7 @@ Below is list of some of the bugs and issues fixed. A number of regression test 
 * [MCOL-115](https://jira.mariadb.org/browse/MCOL-115) - Auto rollback is not occur when update caused a version-buffer-full error (autocommit=1)
 * [MCOL-176](https://jira.mariadb.org/browse/MCOL-176) - DIV operator crashes PrimProc
 * [MCOL-251](https://jira.mariadb.org/browse/MCOL-251) - does columnstore need to issue snmp traps?
-* [MCOL-285](https://jira.mariadb.org/browse/MCOL-285) - Columnstore is few times slower than InfiniDB for DBT3 query #1
+* [MCOL-285](https://jira.mariadb.org/browse/MCOL-285) - ColumnStore is few times slower than InfiniDB for DBT3 query #1
 * [MCOL-287](https://jira.mariadb.org/browse/MCOL-287) - CPImport performance slowdown by 27% or more from a1.0.1 to 1.0.2
 * [MCOL-289](https://jira.mariadb.org/browse/MCOL-289) - test001 bug2954.sql fails
 * [MCOL-290](https://jira.mariadb.org/browse/MCOL-290) - decomsrv app reporting incorrect state
