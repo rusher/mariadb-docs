@@ -7,6 +7,10 @@ description: >-
 
 # Analytics
 
+{% hint style="info" %}
+MariaDB ColumnStore and MariaDB Exa are exclusive to MariaDB Enterprise Server.
+{% endhint %}
+
 ## MariaDB ColumnStore
 
 For fast, ad hoc analytics at scale, MariaDB ColumnStore is a powerful columnar database that can be deployed as a standalone analytics solution or integrated with MariaDB Enterprise Server to act as a powerful query accelerator. It stores data in a columnar format and can be distributed across a cluster of servers, allowing it to execute complex queries in parallel on petabytes of data.
