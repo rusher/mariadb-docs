@@ -24,11 +24,11 @@ SET GLOBAL innodb_log_archive=ON;
 
 When archiving is active, the server creates files in the data directory using the naming convention `ib_`_`lsn`_`.log`, where _lsn_ is a 16-character hexadecimal value identifying the log sequence number that maps to file offset `0x3000` (12288) — the start of record payload within each file.
 
-### File format
+### File Format
 
 Each archive log file has a 12 KiB header. Completed checkpoints in the file are recorded in this header as 64-bit big-endian offsets to a `FILE_MODIFY` / `FILE_CHECKPOINT` mini-transaction within the file. With `innodb_encrypt_log=OFF`, the header can hold up to 1536 checkpoint slots; if a file produces more checkpoints than that, further checkpoints overwrite the last slot until the next log file is started.
 
-### Technical constraints
+### Technical Constraints
 
 * **Log file size:** When `innodb_log_archive` is `ON`, changes to [`innodb_log_file_size`](innodb-system-variables.md#innodb_log_file_size) take effect when the current log file fills up and a new file is created. There is no special upper bound on `innodb_log_file_size` in this mode.
 * **Encryption:** While `innodb_log_archive` is `ON`, [`innodb_encrypt_log`](innodb-system-variables.md#innodb_encrypt_log) and related encryption parameters cannot be changed. Each `ib_`_`lsn`_`.log` file must use the same encryption parameters. To change encryption, set `innodb_log_archive=OFF` and restart the server — this permanently discards the archived log history.
