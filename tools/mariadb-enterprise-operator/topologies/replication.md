@@ -30,7 +30,7 @@ spec:
 **Note**:&#x20;
 
 * The operator’s admission webhook requires `spec.storage`**.** If it is not provided, an error will occur indicating that either `storage.size` or `storage.volumeClaimTemplate` must be specified. For storage configuration options, see [Storage](../storage.md).
-* The `imagePullSecrets` field is required to pull MariaDB Enterprise images from a private registry. See [Customer access to docker.mariadb.com](../docker-images.md) for setup instructions. &#x20;
+* The `imagePullSecrets` field is required to pull MariaDB Enterprise images from a private registry. See [Customer access to docker.mariadb.com](../customer-access-to-docker-mariadb-com.md) for setup instructions. &#x20;
 
 After applying the previous CR, the operator will provision a replication cluster with one primary and two replicas. The operator will take care of setting up replication, configuring the replication user and monitoring the replication status:
 
