@@ -24,7 +24,6 @@
     * [Configuring Auto-Eviction](galera-management/configuration/configuring-auto-eviction.md)
     * [Using the Notification Command (wsrep\_notify\_cmd)](galera-management/configuration/using-the-notification-command-wsrep_notify_cmd.md)
     * [Galera Arbitrator Daemon (garbd)](galera-management/configuration/galera-arbitrator-daemon-garbd.md)
-    * [Page 1](galera-management/configuration/page-1.md)
   * [General Operations](galera-management/general-operations/README.md)
     * [Performing Schema Upgrades in Galera Cluster](galera-management/general-operations/performing-schema-upgrades-in-galera-cluster.md)
     * [Managing Sequences in Galera Cluster](galera-management/general-operations/managing-sequences-in-galera-cluster.md)

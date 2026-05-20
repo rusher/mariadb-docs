@@ -41,7 +41,11 @@ graph TD
     style Node2 fill:#fff3cd,stroke:#ffc107,stroke-width:2px,color:#111
 ```
 
-Galera Arbitrator serves two purposes: When you have an even number of nodes, it functions as an odd node, to avoid split-brain situations. It can also request a consistent application state snapshot, which is useful in making backups.
+Galera Arbitrator serves two purposes: When you have an even number of nodes, it functions as an odd node, to avoid split-brain situations. It can also request a consistent application state snapshot, which is useful in making backups.&#x20;
+
+{% hint style="info" %}
+The arbitrator is not included in cluster flow control calculations, and it does not require a dedicated server; it can be co-hosted on a machine running other applications, provided it has stable network connectivity.
+{% endhint %}
 
 If one datacenter fails or loses its WAN (Wide Area Network) connection, the node that sees the arbitrator—and by extension sees clients—continues operation.
 
@@ -145,10 +149,18 @@ GALERA_GROUP="example_wsrep_cluster"
 GALERA_OPTIONS="socket.ssl=yes;socket.ssl_cert=/etc/galera/cert/cert.pem;socket.ssl_key=/$"
 
 # Log file for garbd. Optional, by default logs to syslog
+# Note: Deprecated for systemd-based systems (like CentOS 7+); use journalctl to query garbd logs.
+# LOG_FILE="/var/log/garbd.log"
 LOG_FILE="/var/log/garbd.log"
 ```
 
 To make use of this configuration file, it must be placed in the directory where your specific Linux distribution looks for service configurations. There is no universal standard location for this directory; it varies by distribution, though it is typically found inside `/etc` under at least one sub-directory.
+
+{% hint style="warning" %}
+**Configuration Setup**
+
+Many default package installations include a line reading `# REMOVE THIS AFTER CONFIGURATION` at the top of the file. Ensure this placeholder line is removed or commented out before attempting to initialize the service.
+{% endhint %}
 
 Common locations include:
 
@@ -164,13 +176,20 @@ Once the configuration file is in place, you can start the `garb` service for th
 {% tabs %}
 {% tab title="systems using init" %}
 ```bash
+# For Debian/Ubuntu distributions:
+# service garbd start
+# service garbd status
+
+# For RHEL/CentOS distributions:
 # service garb start
+# service garb status
 ```
 {% endtab %}
 
 {% tab title="systems running systemd" %}
 ```bash
 # systemctl start garb
+# systemctl status garb
 ```
 {% endtab %}
 {% endtabs %}
