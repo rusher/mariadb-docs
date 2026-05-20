@@ -580,9 +580,12 @@ See this page for more information about this variable:
 #### **`wsrep_sst_tmp_dir`**&#x20;
 
 * Description: Specifies a temporary directory that, when `wsrep_sst_method=mariabackup` is in use, is used to stage incoming SST data on the joiner node. When set, `mariadb-backup` sends the SST payload into `<wsrep_sst_tmp_dir>/.sst/` instead of the default `<datadir>/.sst/`. Data is transferred from the temporary directory to `datadir` after the backup is ready. When the cluster has tables defined with the `DATA DIRECTORY` clause and their data files are bigger than the datadir's available space, this is beneficial. The directory must have enough free space to meet the entire SST payload, not overlap with the `datadir`, and exist before MariaDB is started. See [mariadb-backup SST method](../high-availability/state-snapshot-transfers-ssts-in-galera-cluster/mariadb-backup-sst-method.md).&#x20;
-* Command line: `--wsrep-sst-tmp-dir=path`&#x20;
+* Command line: `--wsrep-sst-tmp-dir=value`&#x20;
 * Scope: Global
-* Introduced: MariaDB 13.0
+* Dynamic: No
+* Data Type: String
+* Default Value: Empty
+* Introduced: MariaDB 13.0 ([MDEV-29909](https://jira.mariadb.org/browse/MDEV-29909) Fix Version is 13.1)&#x20;
 
 #### `wsrep_start_position`
 
