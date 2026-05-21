@@ -750,7 +750,6 @@
       * [MaxScale 21.06 Galera Monitor](maxscale-archive/archive/mariadb-maxscale-21-06/mariadb-maxscale-2106-maxscale-21-06-monitors/mariadb-maxscale-2106-maxscale-2106-galera-monitor.md)
       * [MaxScale 21.06 MariaDB Monitor](maxscale-archive/archive/mariadb-maxscale-21-06/mariadb-maxscale-2106-maxscale-21-06-monitors/mariadb-maxscale-2106-maxscale-2106-mariadb-monitor.md)
       * [MaxScale MariaDB Monitor Usage](maxscale-archive/archive/mariadb-maxscale-21-06/mariadb-maxscale-2106-maxscale-21-06-monitors/maxscale-mariadb-monitor-usage/README.md)
-        * [Xpand Monitor](maxscale-archive/archive/mariadb-maxscale-21-06/mariadb-maxscale-2106-maxscale-21-06-monitors/maxscale-mariadb-monitor-usage/maxscale-mariadb-monitor-usage-xpand-monitor.md)
         * [Understanding Monitors in MaxScale](maxscale-archive/archive/mariadb-maxscale-21-06/mariadb-maxscale-2106-maxscale-21-06-monitors/maxscale-mariadb-monitor-usage/understanding-monitors-in-maxscale.md)
         * [Aurora Monitor](maxscale-archive/archive/mariadb-maxscale-21-06/mariadb-maxscale-2106-maxscale-21-06-monitors/maxscale-mariadb-monitor-usage/maxscale-mariadb-monitor-usage-aurora-monitor/README.md)
           * [Designing for MaxScale's Aurora Monitor](maxscale-archive/archive/mariadb-maxscale-21-06/mariadb-maxscale-2106-maxscale-21-06-monitors/maxscale-mariadb-monitor-usage/maxscale-mariadb-monitor-usage-aurora-monitor/designing-for-maxscales-aurora-monitor.md)
