@@ -174,7 +174,22 @@ Consult the documentation for your specific operating system distribution to ver
 Once the configuration file is in place, you can start the `garb` service for these systems.
 
 {% tabs %}
+{% tab title="systems running systemd" %}
+{% hint style="success" %}
+systemd is the de-facto standard for all Linux distributions supported by MariaDB.
+{% endhint %}
+
+```bash
+# systemctl start garb
+# systemctl status garb
+```
+{% endtab %}
+
 {% tab title="systems using init" %}
+{% hint style="warning" %}
+SysV init is deprecated on modern enterprise Linux distributions (such as RHEL) in favor of systemd
+{% endhint %}
+
 ```bash
 # For Debian/Ubuntu distributions:
 # service garbd start
@@ -183,13 +198,6 @@ Once the configuration file is in place, you can start the `garb` service for th
 # For RHEL/CentOS distributions:
 # service garb start
 # service garb status
-```
-{% endtab %}
-
-{% tab title="systems running systemd" %}
-```bash
-# systemctl start garb
-# systemctl status garb
 ```
 {% endtab %}
 {% endtabs %}
