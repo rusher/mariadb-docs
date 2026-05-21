@@ -658,7 +658,7 @@
   * [Securing MariaDB](security/securing-mariadb/README.md)
     * [Running MariaDB as root](security/securing-mariadb/running-mariadbd-as-root.md)
     * [MariaDB on SELinux](security/securing-mariadb/selinux.md)
-    * [Securing MariaDB Logs](/broken/pages/nJwIETWMnChACgi8riJo)
+    * [Securing MariaDB Logs](security/securing-mariadb/securing-mariadb-logs.md)
   * [Encryption](security/encryption/README.md)
     * [TLS and Cryptography Libraries](security/encryption/tls-and-cryptography-libraries-used-by-mariadb.md)
     * [Data-in-Transit Encryption](security/encryption/data-in-transit-encryption/README.md)
