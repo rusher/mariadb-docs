@@ -1,8 +1,8 @@
 ---
 description: >-
   Upgrade directly from MariaDB Community Server 10.6 to MariaDB Enterprise
-  Server 11.8 — combining a product switch (Community to Enterprise) and a
-  major version jump (10.6 to 11.8) in a single upgrade window.
+  Server 11.8 — combining a product switch (Community to Enterprise) and a major
+  version jump (10.6 to 11.8) in a single upgrade
 ---
 
 # Upgrade from MariaDB Community Server 10.6 to MariaDB Enterprise Server 11.8
@@ -168,7 +168,7 @@ Be sure to check that the wildcard does not unintentionally refer to any of your
 {% step %}
 #### Configure the MariaDB Enterprise Server 11.8 Repository
 
-Download the repository setup script, verify it, and run it with your Customer Download Token to register the 11.8 Enterprise repository. Replace `CUSTOMER_DOWNLOAD_TOKEN` with the token retrieved during [Prerequisites](#environment-compatibility), and substitute `${checksum}` with the latest published checksum from the [Versions](../../../mariadb-package-repository-setup-and-usage.md#versions) section of the [MariaDB Package Repository Setup and Usage](../../../mariadb-package-repository-setup-and-usage.md) page.
+Download the repository setup script, verify it, and run it with your Customer Download Token to register the 11.8 Enterprise repository. Replace `CUSTOMER_DOWNLOAD_TOKEN` with the token retrieved during [Prerequisites](upgrade-from-mariadb-community-server-10.6-to-mariadb-enterprise-server-11.8.md#environment-compatibility), and substitute `${checksum}` with the latest published checksum from the [Versions](../../../mariadb-package-repository-setup-and-usage.md#versions) section of the [MariaDB Package Repository Setup and Usage](../../../mariadb-package-repository-setup-and-usage.md) page.
 
 {% code overflow="wrap" %}
 ```bash
@@ -219,11 +219,11 @@ Installation of additional packages may be required for some plugins. Installati
 #### Implement Version-Specific Configuration Changes
 
 {% hint style="info" %}
-Do not apply 11.8-specific variables while the 10.6 service is active. During the package swap, update `my.cnf` to adopt the 11.8 defaults for the [Optimizer Cost Model](#optimizer-cost-model-variables). These variables replace legacy hardcoded logic and are essential to the new engine's performance.
+Do not apply 11.8-specific variables while the 10.6 service is active. During the package swap, update `my.cnf` to adopt the 11.8 defaults for the [Optimizer Cost Model](upgrade-from-mariadb-community-server-10.6-to-mariadb-enterprise-server-11.8.md#optimizer-cost-model-variables). These variables replace legacy hardcoded logic and are essential to the new engine's performance.
 {% endhint %}
 
-* **Scrub** legacy 10.6 variables (`old_alter_table`, etc.) — see [Removed, Superseded, or Renamed Options](#removed-superseded-or-renamed-options) below.
-* **Adopt** the new [Optimizer Cost Model variables](#optimizer-cost-model-variables) using their 11.8 defaults.
+* **Scrub** legacy 10.6 variables (`old_alter_table`, etc.) — see [Removed, Superseded, or Renamed Options](upgrade-from-mariadb-community-server-10.6-to-mariadb-enterprise-server-11.8.md#removed-superseded-or-renamed-options) below.
+* **Adopt** the new [Optimizer Cost Model variables](upgrade-from-mariadb-community-server-10.6-to-mariadb-enterprise-server-11.8.md#optimizer-cost-model-variables) using their 11.8 defaults.
 * **Stabilize** with `NEW_MODE = OFF` to prevent unpredictable execution-plan changes on day one.
 
 {% hint style="success" %}
@@ -301,7 +301,7 @@ The following variables from version 10.6 have been removed, renamed, or depreca
 ### New Variables Added in 11.8
 
 {% hint style="info" %}
-Once the [11.8 binaries are installed](#install-mariadb-enterprise-server-11.8), update your [`my.cnf`](#implement-version-specific-configuration-changes) to define these new variables.
+Once the [11.8 binaries are installed](upgrade-from-mariadb-community-server-10.6-to-mariadb-enterprise-server-11.8.md#install-mariadb-enterprise-server-11.8), update your [`my.cnf`](upgrade-from-mariadb-community-server-10.6-to-mariadb-enterprise-server-11.8.md#implement-version-specific-configuration-changes) to define these new variables.
 {% endhint %}
 
 #### Optimizer Cost Model Variables
@@ -392,8 +392,8 @@ The final group of changes focuses on renaming legacy variables for industry com
 
 During the maintenance window (after stopping 10.6 and before starting 11.8), you must scrub your `my.cnf` of all removed, superseded, and renamed options.
 
-| Variable Name                                                                | 10.6 Default        | Technical Action / Replacement                               |
-| ---------------------------------------------------------------------------- | ------------------- | ------------------------------------------------------------ |
+| Variable Name                                                                | 10.6 Default        | Technical Action / Replacement                                |
+| ---------------------------------------------------------------------------- | ------------------- | ------------------------------------------------------------- |
 | `DATETIME_FORMAT`<mark style="color:$warning;">²</mark>                      | `%Y-%m-%d %H:%i:%s` | Scrub. 11.8 enforces standard internal format strings.        |
 | `DATE_FORMAT`<mark style="color:$warning;">²</mark>                          | `%Y-%m-%d`          | Scrub. Enforced standard format.                              |
 | `DEBUG_NO_THREAD_ALARM`<mark style="color:$danger;">¹</mark>                 | `OFF`               | Remove. Retired legacy debug code.                            |

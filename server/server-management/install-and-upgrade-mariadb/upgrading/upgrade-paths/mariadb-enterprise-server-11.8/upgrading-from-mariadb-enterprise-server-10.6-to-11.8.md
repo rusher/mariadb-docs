@@ -49,7 +49,7 @@ This ensures the team can maintain 10.6 behavior for applications that aren't re
 
 {% stepper %}
 {% step %}
-#### Perform a Controlled Shutdown of 10.6
+**Perform a Controlled Shutdown of 10.6**
 
 1.  Initiate Fast Shutdown to ensure the InnoDB engine closes cleanly.
 
@@ -64,7 +64,7 @@ This ensures the team can maintain 10.6 behavior for applications that aren't re
 {% endstep %}
 
 {% step %}
-#### Purge Legacy 10.6 Packages
+**Purge Legacy 10.6 Packages**
 
 Remove the old version to prevent package manager conflicts before installing 11.8.
 
@@ -74,7 +74,7 @@ Remove the old version to prevent package manager conflicts before installing 11
 {% endstep %}
 
 {% step %}
-#### Switch to 11.8 Enterprise Repositories
+**Switch to 11.8 Enterprise Repositories**
 
 Download and run the setup script, specifying version `11.8`.
 
@@ -88,7 +88,7 @@ sudo ./mariadb_es_repo_setup --token="CUSTOMER_DOWNLOAD_TOKEN" --apply --mariadb
 {% endstep %}
 
 {% step %}
-#### Install the 11.8 Release Series
+**Install the 11.8 Release Series**
 
 The repository setup only configures the source; you must explicitly install the new binaries.
 
@@ -100,7 +100,7 @@ The repository setup only configures the source; you must explicitly install the
 {% endstep %}
 
 {% step %}
-#### Implement Version-Specific Configuration Changes
+**Implement Version-Specific Configuration Changes**
 
 {% hint style="info" %}
 Do not apply 11.8-specific variables while the 10.6 service is active. During the package swap, update `my.cnf` to adopt the 11.8 defaults for the [Optimizer Cost Model](upgrading-from-mariadb-enterprise-server-10.6-to-11.8.md#optimizer-cost-model-variables). These variables replace legacy hardcoded logic and are essential for the new engine's performance.
@@ -161,7 +161,7 @@ transaction_read_only    = OFF
 {% endstep %}
 
 {% step %}
-#### Bring the Service Online and Finalize Data
+**Bring the Service Online and Finalize Data**
 
 1. Start the New Service: `sudo systemctl start mariadb`.
 2.  Execute the Data Upgrade Utility: This corrects system table structures and marks data files as compatible with version 11.8.
