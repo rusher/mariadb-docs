@@ -867,7 +867,7 @@ The `queryStream()` method solves this by using Node.js's event-driven architect
 
 There are several ways to implement streaming:
 
-**Using for-await-of (Node.js 10+)**
+**Using for-await-of**
 
 The simplest approach using modern JavaScript syntax:
 
@@ -927,7 +927,7 @@ const fileStream = fs.createWriteStream('./query-results.jsonl');
 // Start the query stream
 const queryStream = connection.queryStream('SELECT * FROM mysql.user');
 
-// Using pipeline (Node.js 10+) to handle errors and cleanup
+// Using pipeline to handle errors and cleanup
 stream.pipeline(
   queryStream, 
   transformStream, 

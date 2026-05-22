@@ -33,11 +33,11 @@ npm install mariadb
 ### Choosing a Version
 
 Driver versions are compatible with all MariaDB servers and MySQL 5.x (>= 5.5.3).\
-Tested with all active MariaDB server versions with Node.js 14+ (see [CI tests](https://github.com/mariadb-corporation/mariadb-connector-nodejs/actions) on ubuntu/windows/macOS).
+Tested with all active MariaDB server versions with Node.js 20+ (see [CI tests](https://github.com/mariadb-corporation/mariadb-connector-nodejs/actions) on ubuntu/windows/macOS).
 
 ### Requirements
 
-MariaDB Connector/Node.js requires Node.js 14 or above, since it is based on Promise.
+MariaDB Connector/Node.js requires Node.js 20 or above.
 
 ### License
 
