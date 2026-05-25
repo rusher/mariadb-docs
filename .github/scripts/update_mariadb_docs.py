@@ -21,8 +21,7 @@ MARIADB_ERRMSG_URL = 'https://raw.githubusercontent.com/MariaDB/server/main/sql/
 MYSQL_FALLBACK_URL = 'https://raw.githubusercontent.com/mysql/mysql-server/trunk/share/messages_to_clients.txt'
 
 # --- Regex Patterns ---
-ERROR_DEF_RE = re.compile(r'^(ER_|WARN_)([A-Z0-9_]+)\s*([A-Z0-9]+)?\s*([A-Z0-9]+)?')
-# DYNAMIC FIX: Can now read either MariaDB's 'eng' or MySQL's 'text' message prefix strings
+ERROR_DEF_RE = re.compile(r'^(ER_|WARN_|OBSOLETE_ER_)([A-Z0-9_]+)\s*([A-Z0-9]+)?\s*([A-Z0-9]+)?')
 MSG_TEXT_RE = re.compile(r'(?:eng|text)\s+"(.*)"')
 SUMMARY_SECTION_RE = re.compile(r'^\s*\*\s*\[.*(\d{4,5})\s+to\s+(\d{4,5})\].*')
 
@@ -39,11 +38,11 @@ MD_TEMPLATE = """# Error {error_code}: {desc_title}
 
 {{% include "../../../.gitbook/includes/license-cc-by-sa-gnu-fdl.md" %}}
 
-{{% @marketo/form formId="4316" %}}
+{fallback_comment}{{% @marketo/form formId="4316" %}}
 """
 
 def parse_mysql_fallback(url):
-    """Parses upstream MySQL definitions mapping Error Names to Descriptions supporting 'text' prefixes."""
+    """Maps Error String Tokens (like ER_CANT_SET_VARIABLE...) directly to English descriptions."""
     mysql_dict = {}
     print(f"[INFO] Downloading MySQL fallback descriptions from {url}...")
     try:
@@ -60,10 +59,10 @@ def parse_mysql_fallback(url):
         line = line.strip()
         if not line or line.startswith('#') or line.startswith('//'):
             continue
-        
+            
         tokens = line.split()
-        if tokens and (tokens[0].startswith('ER_') or tokens[0].startswith('WARN_')):
-            current_name = tokens[0]
+        if tokens and (tokens[0].startswith('ER_') or tokens[0].startswith('WARN_') or tokens[0].startswith('OBSOLETE_ER_')):
+            current_name = tokens[0].replace('OBSOLETE_', '')
             eng_match = MSG_TEXT_RE.search(line)
             if eng_match:
                 mysql_dict[current_name] = eng_match.group(1)
@@ -257,11 +256,14 @@ def main():
         # --- HYBRID RECONCILIATION ENGINE ---
         raw_desc = data['description'].replace('"', '').strip()
         err_token = data['name']
+        fallback_comment = ""
         
-        # If MariaDB has no description text, check the MySQL fallback dictionary
-        if not raw_desc and err_token in mysql_fallback:
+        # Check by String Variable Token key name
+        if not raw_desc and err_token in mysql_fallback and mysql_fallback[err_token]:
             raw_desc = mysql_fallback[err_token].replace('"', '').strip()
-            print(f"  -> Reconciled empty gap description for Error {code} via MySQL dictionary.")
+            # --- FEATURE ADDITION: Inject metadata comment tracker ---
+            fallback_comment = "\n\n"
+            print(f"  -> Reconciled empty gap description for Error {code} via Token mapping.")
 
         if not raw_desc:
             if err_token.startswith("ER_MYSQL_"):
@@ -282,7 +284,8 @@ def main():
             sqlstate=data['sqlstate'],
             error_name_escaped=name_escaped,
             description=desc_table,
-            custom_content=custom_text
+            custom_content=custom_text,
+            fallback_comment=fallback_comment
         )
 
         with open(abs_filepath, 'w', encoding='utf-8') as f:
