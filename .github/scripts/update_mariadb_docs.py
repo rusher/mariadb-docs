@@ -16,13 +16,14 @@ DOCS_ROOT = find_repo_root()
 SUMMARY_FILE = os.path.join(DOCS_ROOT, 'server', 'SUMMARY.md')
 ERROR_CODES_DIR = os.path.join(DOCS_ROOT, 'server', 'reference', 'error-codes')
 
-# --- Dual-Source Live URLs (Validated & Working) ---
+# --- Dual-Source Live URLs ---
 MARIADB_ERRMSG_URL = 'https://raw.githubusercontent.com/MariaDB/server/main/sql/share/errmsg-utf8.txt'
 MYSQL_FALLBACK_URL = 'https://raw.githubusercontent.com/mysql/mysql-server/trunk/share/messages_to_clients.txt'
 
 # --- Regex Patterns ---
 ERROR_DEF_RE = re.compile(r'^(ER_|WARN_)([A-Z0-9_]+)\s*([A-Z0-9]+)?\s*([A-Z0-9]+)?')
-ENG_TEXT_RE = re.compile(r'eng\s+"(.*)"')
+# DYNAMIC FIX: Can now read either MariaDB's 'eng' or MySQL's 'text' message prefix strings
+MSG_TEXT_RE = re.compile(r'(?:eng|text)\s+"(.*)"')
 SUMMARY_SECTION_RE = re.compile(r'^\s*\*\s*\[.*(\d{4,5})\s+to\s+(\d{4,5})\].*')
 
 # --- Markdown Template ---
@@ -42,7 +43,7 @@ MD_TEMPLATE = """# Error {error_code}: {desc_title}
 """
 
 def parse_mysql_fallback(url):
-    """Parses upstream MySQL definitions to map Error Names -> Descriptions."""
+    """Parses upstream MySQL definitions mapping Error Names to Descriptions supporting 'text' prefixes."""
     mysql_dict = {}
     print(f"[INFO] Downloading MySQL fallback descriptions from {url}...")
     try:
@@ -57,20 +58,20 @@ def parse_mysql_fallback(url):
     current_name = None
     for line in lines:
         line = line.strip()
-        if not line or line.startswith('#'):
+        if not line or line.startswith('#') or line.startswith('//'):
             continue
         
         tokens = line.split()
         if tokens and (tokens[0].startswith('ER_') or tokens[0].startswith('WARN_')):
             current_name = tokens[0]
-            eng_match = ENG_TEXT_RE.search(line)
+            eng_match = MSG_TEXT_RE.search(line)
             if eng_match:
                 mysql_dict[current_name] = eng_match.group(1)
                 current_name = None
             continue
             
-        if current_name and 'eng "' in line:
-            eng_match = ENG_TEXT_RE.search(line)
+        if current_name and ('eng "' in line or 'text "' in line):
+            eng_match = MSG_TEXT_RE.search(line)
             if eng_match:
                 mysql_dict[current_name] = eng_match.group(1)
                 current_name = None
@@ -121,7 +122,7 @@ def parse_mariadb_file(url):
                     'description': "" 
                 }
                 
-                eng_match = ENG_TEXT_RE.search(line)
+                eng_match = MSG_TEXT_RE.search(line)
                 if eng_match:
                     current_obj['description'] = eng_match.group(1)
                     errors[current_number] = current_obj
@@ -133,7 +134,7 @@ def parse_mariadb_file(url):
                 continue
 
         if current_obj and 'eng "' in line:
-            eng_match = ENG_TEXT_RE.search(line)
+            eng_match = MSG_TEXT_RE.search(line)
             if eng_match:
                 current_obj['description'] = eng_match.group(1)
                 current_obj = None 
