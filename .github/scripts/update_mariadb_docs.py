@@ -2,12 +2,19 @@ import os
 import re
 import urllib.request
 
-# --- Configuration ---
-# In GitHub Actions, the script runs from the root of the repository
-DOCS_ROOT = '.' 
+# --- Robust Path Configuration ---
+def find_repo_root():
+    """Automatically locates the true root of the repository by hunting for server/SUMMARY.md"""
+    current_dir = os.path.abspath(os.path.dirname(__file__))
+    while current_dir != os.path.dirname(current_dir): # Stop at filesystem root
+        if os.path.exists(os.path.join(current_dir, 'server', 'SUMMARY.md')):
+            return current_dir
+        current_dir = os.path.dirname(current_dir)
+    return os.getcwd() # Fallback
+
+DOCS_ROOT = find_repo_root()
 SUMMARY_FILE = os.path.join(DOCS_ROOT, 'server', 'SUMMARY.md')
 ERROR_CODES_DIR = os.path.join(DOCS_ROOT, 'server', 'reference', 'error-codes')
-REFERENCE_FILE = os.path.join(ERROR_CODES_DIR, 'mariadb-error-code-reference.md')
 
 # The live source of truth from the MariaDB server repository
 ERRMSG_URL = 'https://raw.githubusercontent.com/MariaDB/server/refs/heads/main/sql/share/errmsg-utf8.txt'
@@ -16,7 +23,6 @@ ERRMSG_URL = 'https://raw.githubusercontent.com/MariaDB/server/refs/heads/main/s
 ERROR_DEF_RE = re.compile(r'^(ER_|WARN_)([A-Z0-9_]+)\s*([A-Z0-9]+)?\s*([A-Z0-9]+)?')
 ENG_TEXT_RE = re.compile(r'^\s+eng\s+"(.*)"')
 SUMMARY_SECTION_RE = re.compile(r'^\s*\*\s*\[.*(\d{4})\s+to\s+(\d{4})\].*')
-REFERENCE_ROW_RE = re.compile(r'^\|\s*\[?(\d{4,5})\]?')
 
 # --- Markdown Template ---
 MD_TEMPLATE = """# Error {error_code}: {desc_title}
@@ -132,56 +138,10 @@ def update_summary_file(new_pages):
     with open(SUMMARY_FILE, 'w', encoding='utf-8') as f:
         f.writelines(new_lines)
 
-def update_reference_file(new_codes, errors):
-    """Injects new error codes into the master markdown reference table sequentially."""
-    if not os.path.exists(REFERENCE_FILE):
-        print(f"[WARNING] {REFERENCE_FILE} not found. Skipping reference table update.")
-        return
-
-    print(f"[INFO] Updating master reference table in {REFERENCE_FILE}...")
-    with open(REFERENCE_FILE, 'r', encoding='utf-8') as f:
-        lines = f.readlines()
-
-    # Find the very last table row so we know where to dump any remaining codes
-    last_row_idx = -1
-    for i, line in enumerate(lines):
-        if REFERENCE_ROW_RE.match(line):
-            last_row_idx = i
-
-    new_lines = []
-    pending_codes = sorted(new_codes)
-
-    def format_row(code):
-        data = errors[code]
-        folder = get_folder_name(code)
-        rel_path = f"{folder}/e{code}.md"
-        # The reference table leaves SQLSTATE blank if it's HY000
-        sqlstate = data['sqlstate'] if data['sqlstate'] != 'HY000' else ''
-        name_escaped = data['name'].replace('_', r'\_')
-        desc_table = data['description'].replace('"', '').replace('|', r'\|')
-        return f"| [{code}]({rel_path}) | {sqlstate:<8} | {name_escaped:<37} | {desc_table} |\n"
-
-    for i, line in enumerate(lines):
-        match = REFERENCE_ROW_RE.match(line)
-        if match:
-            current_code = int(match.group(1))
-            # Insert any pending codes that belong before this current row
-            while pending_codes and pending_codes[0] < current_code:
-                new_lines.append(format_row(pending_codes.pop(0)))
-                
-        new_lines.append(line)
-        
-        # If this is the last table row, flush any remaining new codes directly underneath it
-        if i == last_row_idx:
-            while pending_codes:
-                new_lines.append(format_row(pending_codes.pop(0)))
-
-    with open(REFERENCE_FILE, 'w', encoding='utf-8') as f:
-        f.writelines(new_lines)
-
 def main():
     print("=" * 70)
     print(" DOCS-5990: MariaDB Error Code Automation (GitHub Actions) ")
+    print(f" Detected Repository Root: {DOCS_ROOT}")
     print("=" * 70)
     
     errors = parse_errmsg_file(ERRMSG_URL)
@@ -189,7 +149,6 @@ def main():
         return
     
     new_pages_for_summary = []
-    new_codes_for_reference = []
 
     for code, data in errors.items():
         folder = get_folder_name(code)
@@ -235,11 +194,9 @@ def main():
             rel_path = f"reference/error-codes/{folder}/{filename}"
             title = f"Error {code}: {data['name']}"
             new_pages_for_summary.append((code, rel_path, title))
-            new_codes_for_reference.append(code)
 
     if new_pages_for_summary:
         update_summary_file(new_pages_for_summary)
-        update_reference_file(new_codes_for_reference, errors)
         print(f"[INFO] Generated {len(new_pages_for_summary)} brand new error pages.")
     else:
         print("[INFO] No new errors found. Documentation is fully up to date.")

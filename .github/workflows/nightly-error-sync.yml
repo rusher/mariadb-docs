@@ -31,11 +31,8 @@ jobs:
             git config --global user.name "github-actions[bot]"
             git config --global user.email "github-actions[bot]@users.noreply.github.com"
             
-            # Stage the new error markdown folders
+            # Stage the new error markdown folders and files
             git add server/reference/error-codes/
-            
-            # Stage the updated master reference table explicitly
-            git add server/reference/error-codes/mariadb-error-code-reference.md
             
             # Stage the updated navigation menu
             git add server/SUMMARY.md
