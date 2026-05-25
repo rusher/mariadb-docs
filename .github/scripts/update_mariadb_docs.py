@@ -21,8 +21,8 @@ ERRMSG_URL = 'https://raw.githubusercontent.com/MariaDB/server/refs/heads/main/s
 
 # --- Regex Patterns ---
 ERROR_DEF_RE = re.compile(r'^(ER_|WARN_)([A-Z0-9_]+)\s*([A-Z0-9]+)?\s*([A-Z0-9]+)?')
-ENG_TEXT_RE = re.compile(r'^\s+eng\s+"(.*)"')
-SUMMARY_SECTION_RE = re.compile(r'^\s*\*\s*\[.*(\d{4})\s+to\s+(\d{4})\].*')
+ENG_TEXT_RE = re.compile(r'eng\s+"(.*)"')
+SUMMARY_SECTION_RE = re.compile(r'^\s*\*\s*\[.*(\d{4,5})\s+to\s+(\d{4,5})\].*')
 
 # --- Markdown Template ---
 MD_TEMPLATE = """# Error {error_code}: {desc_title}
@@ -41,7 +41,7 @@ MD_TEMPLATE = """# Error {error_code}: {desc_title}
 """
 
 def parse_errmsg_file(url):
-    """Downloads and parses the live source txt file."""
+    """Downloads and parses the live source txt file supporting both layout variants."""
     errors = {}
     current_number = 0
     current_obj = None
@@ -82,14 +82,24 @@ def parse_errmsg_file(url):
                     'sqlstate': sqlstate,
                     'description': "" 
                 }
-                errors[current_number] = current_obj
+                
+                # Check if the description is on the same line (Modern Single-Line Layout)
+                eng_match = ENG_TEXT_RE.search(line)
+                if eng_match:
+                    current_obj['description'] = eng_match.group(1)
+                    errors[current_number] = current_obj
+                    current_obj = None 
+                else:
+                    errors[current_number] = current_obj  # Keep open for next line scanning (Legacy Layout)
+                
                 current_number += 1
                 continue
 
+        # Scan subsequent lines if it wasn't on the same line (Legacy Layout Fallback)
         if current_obj and 'eng "' in line:
-            match = ENG_TEXT_RE.search(line)
-            if match:
-                current_obj['description'] = match.group(1)
+            eng_match = ENG_TEXT_RE.search(line)
+            if eng_match:
+                current_obj['description'] = eng_match.group(1)
                 current_obj = None 
 
     return errors
@@ -111,34 +121,61 @@ def preserve_custom_content(file_path):
     return ""
 
 def update_summary_file(new_pages):
+    """Blends and sorts new and existing entries inside SUMMARY.md sequentially."""
     if not os.path.exists(SUMMARY_FILE):
+        print("[ERROR] SUMMARY.md not found.")
         return
 
+    print("[INFO] Line-sorting and updating SUMMARY.md...")
     with open(SUMMARY_FILE, 'r', encoding='utf-8') as f:
         lines = f.readlines()
 
-    new_lines = []
-    pages_by_range = {}
+    new_pages_by_range = {}
     for code, path, title in new_pages:
         range_start = (code // 100) * 100
-        pages_by_range.setdefault(range_start, []).append((code, path, title))
+        new_pages_by_range.setdefault(range_start, []).append((code, path, title))
 
-    for line in lines:
-        new_lines.append(line)
+    new_lines = []
+    i = 0
+    while i < len(lines):
+        line = lines[i]
         match = SUMMARY_SECTION_RE.match(line)
+        
         if match:
             range_start = int(match.group(1))
-            if range_start in pages_by_range:
-                # --- FIX: Match the exact indentation of the folder heading ---
-                indent_match = re.match(r'^(\s*)\*', line)
-                base_indent = indent_match.group(1) if indent_match else "  "
-                # Add exactly two spaces to perfectly nest the page inside the folder
-                child_indent = base_indent + "  " 
+            new_lines.append(line)
+            
+            indent_match = re.match(r'^(\s*)\*', line)
+            base_indent = indent_match.group(1) if indent_match else "  "
+            child_indent = base_indent + "  "
+            
+            block_entries = {}
+            
+            if range_start in new_pages_by_range:
+                for code, path, title in new_pages_by_range[range_start]:
+                    block_entries[code] = f"{child_indent}* [{title}]({path})\n"
+            
+            j = i + 1
+            while j < len(lines):
+                child_line = lines[j]
+                child_match = re.search(r'/e(\d+)\.md', child_line)
+                if child_match:
+                    c_code = int(child_match.group(1))
+                    if range_start <= c_code <= range_start + 99:
+                        if c_code not in block_entries:
+                            block_entries[c_code] = child_line
+                        j += 1
+                        continue
+                break
+            
+            for code in sorted(block_entries.keys()):
+                new_lines.append(block_entries[code])
                 
-                for code, path, title in pages_by_range[range_start]:
-                    path_check = f"/{os.path.basename(path)}"
-                    if not any(path_check in l for l in lines):
-                        new_lines.append(f"{child_indent}* [{title}]({path})\n")
+            i = j  
+            continue
+        else:
+            new_lines.append(line)
+            i += 1
 
     with open(SUMMARY_FILE, 'w', encoding='utf-8') as f:
         f.writelines(new_lines)
@@ -197,7 +234,8 @@ def main():
         
         if not file_exists:
             rel_path = f"reference/error-codes/{folder}/{filename}"
-            title = f"Error {code}: {data['name']}"
+            title_desc = desc_clean if desc_clean.strip() else data['name']
+            title = f"Error {code}: {title_desc}"
             new_pages_for_summary.append((code, rel_path, title))
 
     if new_pages_for_summary:
