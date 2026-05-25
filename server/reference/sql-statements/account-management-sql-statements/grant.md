@@ -108,6 +108,24 @@ Use the [SHOW GRANTS](../administrative-sql-statements/show/show-grants.md) stat
 
 For `GRANT` statements, account names are specified as the `username` argument in the same way as they are for [CREATE USER](create-user.md) statements. See [account names](create-user.md#account-names) from the `CREATE USER` page for details on how account names are specified.
 
+#### Database Name Wildcard Matching Order
+
+When multiple `GRANT` entries match a database name (since database names in `GRANT` can contain `%` and `_` wildcards), MariaDB applies the most specific matching grant. Specificity is determined by how many database names a pattern can match, a pattern matching fewer databases is more specific and takes precedence.
+
+From [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/changelogs/changelogs-mariadb-10-4-series/mariadb-1046-changelog) ([MDEV-14735](https://jira.mariadb.org/browse/MDEV-14735)), this ordering is managed correctly. In previous versions (before 10.4.6), the sort order among wildcard database patterns was determined only by the position of the first wildcard, which could generate insertion-order-dependent results.
+
+**Example**
+
+```sql
+CREATE USER 'jtest'@localhost IDENTIFIED BY 'jtest';
+GRANT SELECT ON `%test`.* TO 'jtest'@localhost;
+GRANT SELECT, INSERT, DELETE ON `j-%`.* TO 'jtest'@localhost;
+```
+
+Starting with [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/changelogs/changelogs-mariadb-10-4-series/mariadb-1046-changelog), `` `%test`.* `` is considered more specific than `` `j-%`.* `` because it matches fewer database names. Since only the first matching grant is applied, the `SELECT`-only grant on `` `%test`.* `` takes precedence, and `INSERT` is not granted for the database `j-test`. &#x20;
+
+> This behavior changed in MariaDB 10.4.6. In earlier versions, `j-%` was incorrectly treated as more specific because sorting considered only the prefix before the first wildcard (`j-` is longer than the empty prefix of `%test`). If you are upgrading from MariaDB 10.3 or earlier, review any `GRANT` statements that use overlapping wildcard database patterns, as privilege resolution may differ.
+
 ### Implicit Account Creation
 
 The `GRANT` statement also allows you to implicitly create accounts in some cases.
