@@ -7,6 +7,7 @@ import urllib.request
 DOCS_ROOT = '.' 
 SUMMARY_FILE = os.path.join(DOCS_ROOT, 'server', 'SUMMARY.md')
 ERROR_CODES_DIR = os.path.join(DOCS_ROOT, 'server', 'reference', 'error-codes')
+REFERENCE_FILE = os.path.join(ERROR_CODES_DIR, 'mariadb-error-code-reference.md')
 
 # The live source of truth from the MariaDB server repository
 ERRMSG_URL = 'https://raw.githubusercontent.com/MariaDB/server/refs/heads/main/sql/share/errmsg-utf8.txt'
@@ -15,6 +16,7 @@ ERRMSG_URL = 'https://raw.githubusercontent.com/MariaDB/server/refs/heads/main/s
 ERROR_DEF_RE = re.compile(r'^(ER_|WARN_)([A-Z0-9_]+)\s*([A-Z0-9]+)?\s*([A-Z0-9]+)?')
 ENG_TEXT_RE = re.compile(r'^\s+eng\s+"(.*)"')
 SUMMARY_SECTION_RE = re.compile(r'^\s*\*\s*\[.*(\d{4})\s+to\s+(\d{4})\].*')
+REFERENCE_ROW_RE = re.compile(r'^\|\s*\[?(\d{4,5})\]?')
 
 # --- Markdown Template ---
 MD_TEMPLATE = """# Error {error_code}: {desc_title}
@@ -43,12 +45,10 @@ def parse_errmsg_file(url):
         with urllib.request.urlopen(url) as response:
             content = response.read().decode('utf-8', errors='replace')
             lines = content.splitlines()
-            print(f"[INFO] Download complete. Found {len(lines)} lines of text.")
     except Exception as e:
         print(f"[ERROR] Failed to fetch the file: {e}")
         return {}
 
-    print("[INFO] Parsing error codes...")
     for line in lines:
         line = line.rstrip()
         
@@ -89,19 +89,13 @@ def parse_errmsg_file(url):
     return errors
 
 def get_folder_name(code):
-    """Calculates the 100-batch folder name for a given error code."""
-    start = (code // 100) * 100
-    end = start + 99
-    return f"mariadb-error-codes-{start}-to-{end}"
+    return f"mariadb-error-codes-{(code // 100) * 100}-to-{(code // 100) * 100 + 99}"
 
 def preserve_custom_content(file_path):
-    """Extracts custom user text to prevent overwriting."""
     if not os.path.exists(file_path):
         return ""
-    
     with open(file_path, 'r', encoding='utf-8') as f:
         content = f.read()
-
     pattern = re.compile(r'## Possible Causes and Solutions\s*\n(.*?)(\n{% include|$)', re.DOTALL)
     match = pattern.search(content)
     if match:
@@ -111,12 +105,9 @@ def preserve_custom_content(file_path):
     return ""
 
 def update_summary_file(new_pages):
-    """Appends new error pages to SUMMARY.md."""
     if not os.path.exists(SUMMARY_FILE):
-        print(f"[WARNING] {SUMMARY_FILE} not found. Skipping GitBook summary update.")
         return
 
-    print(f"[INFO] Updating GitBook SUMMARY.md with {len(new_pages)} new entries...")
     with open(SUMMARY_FILE, 'r', encoding='utf-8') as f:
         lines = f.readlines()
 
@@ -132,16 +123,60 @@ def update_summary_file(new_pages):
         if match:
             range_start = int(match.group(1))
             if range_start in pages_by_range:
-                to_add = pages_by_range[range_start]
-                for code, path, title in to_add:
+                for code, path, title in pages_by_range[range_start]:
                     path_check = f"/{os.path.basename(path)}"
-                    already_exists = any(path_check in l for l in lines)
-                    if not already_exists:
+                    if not any(path_check in l for l in lines):
                         indent = "    " if line.startswith("  *") else "  "
-                        entry = f"{indent}* [{title}]({path})\n"
-                        new_lines.append(entry)
+                        new_lines.append(f"{indent}* [{title}]({path})\n")
 
     with open(SUMMARY_FILE, 'w', encoding='utf-8') as f:
+        f.writelines(new_lines)
+
+def update_reference_file(new_codes, errors):
+    """Injects new error codes into the master markdown reference table sequentially."""
+    if not os.path.exists(REFERENCE_FILE):
+        print(f"[WARNING] {REFERENCE_FILE} not found. Skipping reference table update.")
+        return
+
+    print(f"[INFO] Updating master reference table in {REFERENCE_FILE}...")
+    with open(REFERENCE_FILE, 'r', encoding='utf-8') as f:
+        lines = f.readlines()
+
+    # Find the very last table row so we know where to dump any remaining codes
+    last_row_idx = -1
+    for i, line in enumerate(lines):
+        if REFERENCE_ROW_RE.match(line):
+            last_row_idx = i
+
+    new_lines = []
+    pending_codes = sorted(new_codes)
+
+    def format_row(code):
+        data = errors[code]
+        folder = get_folder_name(code)
+        rel_path = f"{folder}/e{code}.md"
+        # The reference table leaves SQLSTATE blank if it's HY000
+        sqlstate = data['sqlstate'] if data['sqlstate'] != 'HY000' else ''
+        name_escaped = data['name'].replace('_', r'\_')
+        desc_table = data['description'].replace('"', '').replace('|', r'\|')
+        return f"| [{code}]({rel_path}) | {sqlstate:<8} | {name_escaped:<37} | {desc_table} |\n"
+
+    for i, line in enumerate(lines):
+        match = REFERENCE_ROW_RE.match(line)
+        if match:
+            current_code = int(match.group(1))
+            # Insert any pending codes that belong before this current row
+            while pending_codes and pending_codes[0] < current_code:
+                new_lines.append(format_row(pending_codes.pop(0)))
+                
+        new_lines.append(line)
+        
+        # If this is the last table row, flush any remaining new codes directly underneath it
+        if i == last_row_idx:
+            while pending_codes:
+                new_lines.append(format_row(pending_codes.pop(0)))
+
+    with open(REFERENCE_FILE, 'w', encoding='utf-8') as f:
         f.writelines(new_lines)
 
 def main():
@@ -151,12 +186,10 @@ def main():
     
     errors = parse_errmsg_file(ERRMSG_URL)
     if not errors:
-        print("[ERROR] No errors parsed. Exiting script.")
         return
     
-    print(f"[INFO] Successfully fetched and parsed {len(errors)} error codes.")
-    
     new_pages_for_summary = []
+    new_codes_for_reference = []
 
     for code, data in errors.items():
         folder = get_folder_name(code)
@@ -168,7 +201,6 @@ def main():
         is_unused = data['name'].startswith("ER_UNUSED_")
         file_exists = os.path.exists(abs_filepath)
 
-        # Skip logic
         if is_unused and not file_exists:
             continue
         elif is_unused and file_exists:
@@ -176,21 +208,17 @@ def main():
         elif file_exists:
             continue
         else:
-            print(f"[ACTION] CREATE: Missing documentation for Error {code} ({data['name']}).")
+            print(f"[ACTION] CREATE: Missing documentation for Error {code}.")
 
-        # Ensure directory exists
         if not os.path.exists(abs_folder):
             os.makedirs(abs_folder, exist_ok=True)
 
-        # Content preservation
         custom_text = preserve_custom_content(abs_filepath)
         
-        # Format Data
         desc_clean = data['description'].replace('"', '')
         name_escaped = data['name'].replace('_', r'\_')
         desc_table = desc_clean.replace('|', r'\|')
 
-        # Compile Markdown
         content = MD_TEMPLATE.format(
             error_code=code,
             desc_title=desc_clean,
@@ -200,25 +228,21 @@ def main():
             custom_content=custom_text
         )
 
-        # Write to disk
         with open(abs_filepath, 'w', encoding='utf-8') as f:
             f.write(content)
         
-        # Track new files for SUMMARY.md
         if not file_exists:
             rel_path = f"reference/error-codes/{folder}/{filename}"
             title = f"Error {code}: {data['name']}"
             new_pages_for_summary.append((code, rel_path, title))
+            new_codes_for_reference.append(code)
 
     if new_pages_for_summary:
         update_summary_file(new_pages_for_summary)
+        update_reference_file(new_codes_for_reference, errors)
         print(f"[INFO] Generated {len(new_pages_for_summary)} brand new error pages.")
     else:
         print("[INFO] No new errors found. Documentation is fully up to date.")
-
-    print("=" * 70)
-    print(" Automation Complete. ")
-    print("=" * 70)
 
 if __name__ == "__main__":
     main()

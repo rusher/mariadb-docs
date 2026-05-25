@@ -21,7 +21,6 @@ jobs:
         with:
           python-version: '3.10'
 
-      # --- UPDATED PATH HERE ---
       - name: Fetch and Generate Error Pages
         run: python .github/scripts/update_mariadb_docs.py
 
@@ -32,7 +31,13 @@ jobs:
             git config --global user.name "github-actions[bot]"
             git config --global user.email "github-actions[bot]@users.noreply.github.com"
             
+            # Stage the new error markdown folders
             git add server/reference/error-codes/
+            
+            # Stage the updated master reference table explicitly
+            git add server/reference/error-codes/mariadb-error-code-reference.md
+            
+            # Stage the updated navigation menu
             git add server/SUMMARY.md
             
             git commit -m "docs: auto-generate missing error pages (DOCS-5990)"
