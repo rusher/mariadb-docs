@@ -16,8 +16,9 @@ DOCS_ROOT = find_repo_root()
 SUMMARY_FILE = os.path.join(DOCS_ROOT, 'server', 'SUMMARY.md')
 ERROR_CODES_DIR = os.path.join(DOCS_ROOT, 'server', 'reference', 'error-codes')
 
-# The live source of truth from the MariaDB server repository
-ERRMSG_URL = 'https://raw.githubusercontent.com/MariaDB/server/refs/heads/main/sql/share/errmsg-utf8.txt'
+# --- Dual-Source Live URLs (Validated & Working) ---
+MARIADB_ERRMSG_URL = 'https://raw.githubusercontent.com/MariaDB/server/main/sql/share/errmsg-utf8.txt'
+MYSQL_FALLBACK_URL = 'https://raw.githubusercontent.com/mysql/mysql-server/trunk/share/messages_to_clients.txt'
 
 # --- Regex Patterns ---
 ERROR_DEF_RE = re.compile(r'^(ER_|WARN_)([A-Z0-9_]+)\s*([A-Z0-9]+)?\s*([A-Z0-9]+)?')
@@ -40,19 +41,56 @@ MD_TEMPLATE = """# Error {error_code}: {desc_title}
 {{% @marketo/form formId="4316" %}}
 """
 
-def parse_errmsg_file(url):
-    """Downloads and parses the live source txt file supporting both layout variants."""
+def parse_mysql_fallback(url):
+    """Parses upstream MySQL definitions to map Error Names -> Descriptions."""
+    mysql_dict = {}
+    print(f"[INFO] Downloading MySQL fallback descriptions from {url}...")
+    try:
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        with urllib.request.urlopen(req) as response:
+            content = response.read().decode('utf-8', errors='replace')
+            lines = content.splitlines()
+    except Exception as e:
+        print(f"[WARNING] Could not load MySQL fallback data: {e}")
+        return {}
+
+    current_name = None
+    for line in lines:
+        line = line.strip()
+        if not line or line.startswith('#'):
+            continue
+        
+        tokens = line.split()
+        if tokens and (tokens[0].startswith('ER_') or tokens[0].startswith('WARN_')):
+            current_name = tokens[0]
+            eng_match = ENG_TEXT_RE.search(line)
+            if eng_match:
+                mysql_dict[current_name] = eng_match.group(1)
+                current_name = None
+            continue
+            
+        if current_name and 'eng "' in line:
+            eng_match = ENG_TEXT_RE.search(line)
+            if eng_match:
+                mysql_dict[current_name] = eng_match.group(1)
+                current_name = None
+                
+    return mysql_dict
+
+def parse_mariadb_file(url):
+    """Downloads and parses the foundational MariaDB err text file."""
     errors = {}
     current_number = 0
     current_obj = None
 
-    print(f"[INFO] Downloading source file from {url}...")
+    print(f"[INFO] Downloading MariaDB base file from {url}...")
     try:
-        with urllib.request.urlopen(url) as response:
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        with urllib.request.urlopen(req) as response:
             content = response.read().decode('utf-8', errors='replace')
             lines = content.splitlines()
     except Exception as e:
-        print(f"[ERROR] Failed to fetch the file: {e}")
+        print(f"[ERROR] Failed to fetch MariaDB base file: {e}")
         return {}
 
     for line in lines:
@@ -83,19 +121,17 @@ def parse_errmsg_file(url):
                     'description': "" 
                 }
                 
-                # Check if the description is on the same line (Modern Single-Line Layout)
                 eng_match = ENG_TEXT_RE.search(line)
                 if eng_match:
                     current_obj['description'] = eng_match.group(1)
                     errors[current_number] = current_obj
                     current_obj = None 
                 else:
-                    errors[current_number] = current_obj  # Keep open for next line scanning (Legacy Layout)
+                    errors[current_number] = current_obj  
                 
                 current_number += 1
                 continue
 
-        # Scan subsequent lines if it wasn't on the same line (Legacy Layout Fallback)
         if current_obj and 'eng "' in line:
             eng_match = ENG_TEXT_RE.search(line)
             if eng_match:
@@ -121,7 +157,6 @@ def preserve_custom_content(file_path):
     return ""
 
 def update_summary_file(new_pages):
-    """Blends and sorts new and existing entries inside SUMMARY.md sequentially."""
     if not os.path.exists(SUMMARY_FILE):
         print("[ERROR] SUMMARY.md not found.")
         return
@@ -186,9 +221,11 @@ def main():
     print(f" Detected Repository Root: {DOCS_ROOT}")
     print("=" * 70)
     
-    errors = parse_errmsg_file(ERRMSG_URL)
+    errors = parse_mariadb_file(MARIADB_ERRMSG_URL)
     if not errors:
         return
+        
+    mysql_fallback = parse_mysql_fallback(MYSQL_FALLBACK_URL)
     
     new_pages_for_summary = []
 
@@ -209,20 +246,38 @@ def main():
         elif file_exists:
             continue
         else:
-            print(f"[ACTION] CREATE: Missing documentation for Error {code}.")
+            print(f"[ACTION] CREATE: Resolving reference documentation for Error {code}.")
 
         if not os.path.exists(abs_folder):
             os.makedirs(abs_folder, exist_ok=True)
 
         custom_text = preserve_custom_content(abs_filepath)
         
-        desc_clean = data['description'].replace('"', '')
-        name_escaped = data['name'].replace('_', r'\_')
-        desc_table = desc_clean.replace('|', r'\|')
+        # --- HYBRID RECONCILIATION ENGINE ---
+        raw_desc = data['description'].replace('"', '').strip()
+        err_token = data['name']
+        
+        # If MariaDB has no description text, check the MySQL fallback dictionary
+        if not raw_desc and err_token in mysql_fallback:
+            raw_desc = mysql_fallback[err_token].replace('"', '').strip()
+            print(f"  -> Reconciled empty gap description for Error {code} via MySQL dictionary.")
+
+        if not raw_desc:
+            if err_token.startswith("ER_MYSQL_"):
+                desc_title = f"MySQL Compatibility Placeholder ({err_token})"
+                desc_table = "This error code number is reserved for upstream MySQL protocol compatibility."
+            else:
+                desc_title = err_token.replace('ER_', '').replace('WARN_', '').replace('_', ' ').title()
+                desc_table = f"Detailed reference description for {err_token} is currently unmapped."
+        else:
+            desc_title = raw_desc
+            desc_table = raw_desc.replace('|', r'\|')
+
+        name_escaped = err_token.replace('_', r'\_')
 
         content = MD_TEMPLATE.format(
             error_code=code,
-            desc_title=desc_clean,
+            desc_title=desc_title,
             sqlstate=data['sqlstate'],
             error_name_escaped=name_escaped,
             description=desc_table,
@@ -234,8 +289,7 @@ def main():
         
         if not file_exists:
             rel_path = f"reference/error-codes/{folder}/{filename}"
-            title_desc = desc_clean if desc_clean.strip() else data['name']
-            title = f"Error {code}: {title_desc}"
+            title = f"Error {code}: {desc_title}"
             new_pages_for_summary.append((code, rel_path, title))
 
     if new_pages_for_summary:
