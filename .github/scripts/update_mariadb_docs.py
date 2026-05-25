@@ -4,13 +4,13 @@ import urllib.request
 
 # --- Robust Path Configuration ---
 def find_repo_root():
-    """Automatically locates the true root of the repository by hunting for server/SUMMARY.md"""
+    """Automatically locates the true root of the repository"""
     current_dir = os.path.abspath(os.path.dirname(__file__))
-    while current_dir != os.path.dirname(current_dir): # Stop at filesystem root
+    while current_dir != os.path.dirname(current_dir): 
         if os.path.exists(os.path.join(current_dir, 'server', 'SUMMARY.md')):
             return current_dir
         current_dir = os.path.dirname(current_dir)
-    return os.getcwd() # Fallback
+    return os.getcwd() 
 
 DOCS_ROOT = find_repo_root()
 SUMMARY_FILE = os.path.join(DOCS_ROOT, 'server', 'SUMMARY.md')
@@ -129,11 +129,16 @@ def update_summary_file(new_pages):
         if match:
             range_start = int(match.group(1))
             if range_start in pages_by_range:
+                # --- FIX: Match the exact indentation of the folder heading ---
+                indent_match = re.match(r'^(\s*)\*', line)
+                base_indent = indent_match.group(1) if indent_match else "  "
+                # Add exactly two spaces to perfectly nest the page inside the folder
+                child_indent = base_indent + "  " 
+                
                 for code, path, title in pages_by_range[range_start]:
                     path_check = f"/{os.path.basename(path)}"
                     if not any(path_check in l for l in lines):
-                        indent = "    " if line.startswith("  *") else "  "
-                        new_lines.append(f"{indent}* [{title}]({path})\n")
+                        new_lines.append(f"{child_indent}* [{title}]({path})\n")
 
     with open(SUMMARY_FILE, 'w', encoding='utf-8') as f:
         f.writelines(new_lines)
