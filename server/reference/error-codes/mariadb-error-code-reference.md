@@ -1087,105 +1087,6 @@ New error codes are being continually being added as new features are added. For
 
 | Error Code                                        | SQLSTATE | Error                                                    | Description                                                                                                                                                                                      |
 | ------------------------------------------------- | -------- | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [3061](mariadb-error-codes-3000-to-3099/e3061.md) |          | ER\_MYSQL\_3061                       |  |
-| [3062](mariadb-error-codes-3000-to-3099/e3062.md) |          | ER\_MYSQL\_3062                       |  |
-| [3063](mariadb-error-codes-3000-to-3099/e3063.md) |          | ER\_MYSQL\_3063                       |  |
-| [3064](mariadb-error-codes-3000-to-3099/e3064.md) |          | ER\_MYSQL\_3064                       |  |
-| [3065](mariadb-error-codes-3000-to-3099/e3065.md) |          | ER\_MYSQL\_3065                       |  |
-| [3066](mariadb-error-codes-3000-to-3099/e3066.md) |          | ER\_MYSQL\_3066                       |  |
-| [3067](mariadb-error-codes-3000-to-3099/e3067.md) |          | ER\_MYSQL\_3067                       |  |
-| [3068](mariadb-error-codes-3000-to-3099/e3068.md) |          | ER\_MYSQL\_3068                       |  |
-| [3069](mariadb-error-codes-3000-to-3099/e3069.md) |          | ER\_MYSQL\_3069                       |  |
-| [3070](mariadb-error-codes-3000-to-3099/e3070.md) |          | ER\_MYSQL\_3070                       |  |
-| [3071](mariadb-error-codes-3000-to-3099/e3071.md) |          | ER\_MYSQL\_3071                       |  |
-| [3072](mariadb-error-codes-3000-to-3099/e3072.md) |          | ER\_MYSQL\_3072                       |  |
-| [3073](mariadb-error-codes-3000-to-3099/e3073.md) |          | ER\_MYSQL\_3073                       |  |
-| [3074](mariadb-error-codes-3000-to-3099/e3074.md) |          | ER\_MYSQL\_3074                       |  |
-| [3075](mariadb-error-codes-3000-to-3099/e3075.md) |          | ER\_MYSQL\_3075                       |  |
-| [3076](mariadb-error-codes-3000-to-3099/e3076.md) |          | ER\_MYSQL\_3076                       |  |
-| [3077](mariadb-error-codes-3000-to-3099/e3077.md) |          | ER\_MYSQL\_3077                       |  |
-| [3078](mariadb-error-codes-3000-to-3099/e3078.md) |          | ER\_MYSQL\_3078                       |  |
-| [3079](mariadb-error-codes-3000-to-3099/e3079.md) |          | ER\_MYSQL\_3079                       |  |
-| [3080](mariadb-error-codes-3000-to-3099/e3080.md) |          | ER\_MYSQL\_3080                       |  |
-| [3081](mariadb-error-codes-3000-to-3099/e3081.md) |          | ER\_MYSQL\_3081                       |  |
-| [3082](mariadb-error-codes-3000-to-3099/e3082.md) |          | ER\_MYSQL\_3082                       |  |
-| [3083](mariadb-error-codes-3000-to-3099/e3083.md) |          | ER\_MYSQL\_3083                       |  |
-| [3084](mariadb-error-codes-3000-to-3099/e3084.md) |          | ER\_MYSQL\_3084                       |  |
-| [3085](mariadb-error-codes-3000-to-3099/e3085.md) |          | ER\_MYSQL\_3085                       |  |
-| [3086](mariadb-error-codes-3000-to-3099/e3086.md) |          | ER\_MYSQL\_3086                       |  |
-| [3087](mariadb-error-codes-3000-to-3099/e3087.md) |          | ER\_MYSQL\_3087                       |  |
-| [3088](mariadb-error-codes-3000-to-3099/e3088.md) |          | ER\_MYSQL\_3088                       |  |
-| [3089](mariadb-error-codes-3000-to-3099/e3089.md) |          | ER\_MYSQL\_3089                       |  |
-| [3090](mariadb-error-codes-3000-to-3099/e3090.md) |          | ER\_MYSQL\_3090                       |  |
-| [3091](mariadb-error-codes-3000-to-3099/e3091.md) |          | ER\_MYSQL\_3091                       |  |
-| [3092](mariadb-error-codes-3000-to-3099/e3092.md) |          | ER\_MYSQL\_3092                       |  |
-| [3093](mariadb-error-codes-3000-to-3099/e3093.md) |          | ER\_MYSQL\_3093                       |  |
-| [3094](mariadb-error-codes-3000-to-3099/e3094.md) |          | ER\_MYSQL\_3094                       |  |
-| [3095](mariadb-error-codes-3000-to-3099/e3095.md) |          | ER\_MYSQL\_3095                       |  |
-| [3096](mariadb-error-codes-3000-to-3099/e3096.md) |          | ER\_MYSQL\_3096                       |  |
-| [3097](mariadb-error-codes-3000-to-3099/e3097.md) |          | ER\_MYSQL\_3097                       |  |
-| [3098](mariadb-error-codes-3000-to-3099/e3098.md) |          | ER\_MYSQL\_3098                       |  |
-| [3099](mariadb-error-codes-3000-to-3099/e3099.md) |          | ER\_MYSQL\_3099                       |  |
-| [3100](mariadb-error-codes-3100-to-3199/e3100.md) |          | ER\_MYSQL\_3100                       |  |
-| [3101](mariadb-error-codes-3100-to-3199/e3101.md) |          | ER\_MYSQL\_3101                       |  |
-| [3102](mariadb-error-codes-3100-to-3199/e3102.md) |          | ER\_MYSQL\_3102                       |  |
-| [3103](mariadb-error-codes-3100-to-3199/e3103.md) |          | ER\_MYSQL\_3103                       |  |
-| [3104](mariadb-error-codes-3100-to-3199/e3104.md) |          | ER\_MYSQL\_3104                       |  |
-| [3105](mariadb-error-codes-3100-to-3199/e3105.md) |          | ER\_MYSQL\_3105                       |  |
-| [3106](mariadb-error-codes-3100-to-3199/e3106.md) |          | ER\_MYSQL\_3106                       |  |
-| [3107](mariadb-error-codes-3100-to-3199/e3107.md) |          | ER\_MYSQL\_3107                       |  |
-| [3108](mariadb-error-codes-3100-to-3199/e3108.md) |          | ER\_MYSQL\_3108                       |  |
-| [3109](mariadb-error-codes-3100-to-3199/e3109.md) |          | ER\_MYSQL\_3109                       |  |
-| [3110](mariadb-error-codes-3100-to-3199/e3110.md) |          | ER\_MYSQL\_3110                       |  |
-| [3111](mariadb-error-codes-3100-to-3199/e3111.md) |          | ER\_MYSQL\_3111                       |  |
-| [3112](mariadb-error-codes-3100-to-3199/e3112.md) |          | ER\_MYSQL\_3112                       |  |
-| [3113](mariadb-error-codes-3100-to-3199/e3113.md) |          | ER\_MYSQL\_3113                       |  |
-| [3114](mariadb-error-codes-3100-to-3199/e3114.md) |          | ER\_MYSQL\_3114                       |  |
-| [3115](mariadb-error-codes-3100-to-3199/e3115.md) |          | ER\_MYSQL\_3115                       |  |
-| [3116](mariadb-error-codes-3100-to-3199/e3116.md) |          | ER\_MYSQL\_3116                       |  |
-| [3117](mariadb-error-codes-3100-to-3199/e3117.md) |          | ER\_MYSQL\_3117                       |  |
-| [3118](mariadb-error-codes-3100-to-3199/e3118.md) |          | ER\_MYSQL\_3118                       |  |
-| [3119](mariadb-error-codes-3100-to-3199/e3119.md) |          | ER\_MYSQL\_3119                       |  |
-| [3120](mariadb-error-codes-3100-to-3199/e3120.md) |          | ER\_MYSQL\_3120                       |  |
-| [3121](mariadb-error-codes-3100-to-3199/e3121.md) |          | ER\_MYSQL\_3121                       |  |
-| [3122](mariadb-error-codes-3100-to-3199/e3122.md) |          | ER\_MYSQL\_3122                       |  |
-| [3123](mariadb-error-codes-3100-to-3199/e3123.md) |          | ER\_MYSQL\_3123                       |  |
-| [3124](mariadb-error-codes-3100-to-3199/e3124.md) |          | ER\_MYSQL\_3124                       |  |
-| [3125](mariadb-error-codes-3100-to-3199/e3125.md) |          | ER\_MYSQL\_3125                       |  |
-| [3126](mariadb-error-codes-3100-to-3199/e3126.md) |          | ER\_MYSQL\_3126                       |  |
-| [3127](mariadb-error-codes-3100-to-3199/e3127.md) |          | ER\_MYSQL\_3127                       |  |
-| [3128](mariadb-error-codes-3100-to-3199/e3128.md) |          | ER\_MYSQL\_3128                       |  |
-| [3129](mariadb-error-codes-3100-to-3199/e3129.md) |          | ER\_MYSQL\_3129                       |  |
-| [3130](mariadb-error-codes-3100-to-3199/e3130.md) |          | ER\_MYSQL\_3130                       |  |
-| [3131](mariadb-error-codes-3100-to-3199/e3131.md) |          | ER\_MYSQL\_3131                       |  |
-| [3132](mariadb-error-codes-3100-to-3199/e3132.md) |          | ER\_MYSQL\_3132                       |  |
-| [3133](mariadb-error-codes-3100-to-3199/e3133.md) |          | ER\_MYSQL\_3133                       |  |
-| [3134](mariadb-error-codes-3100-to-3199/e3134.md) |          | ER\_MYSQL\_3134                       |  |
-| [3135](mariadb-error-codes-3100-to-3199/e3135.md) |          | ER\_MYSQL\_3135                       |  |
-| [3136](mariadb-error-codes-3100-to-3199/e3136.md) |          | ER\_MYSQL\_3136                       |  |
-| [3137](mariadb-error-codes-3100-to-3199/e3137.md) |          | ER\_MYSQL\_3137                       |  |
-| [3138](mariadb-error-codes-3100-to-3199/e3138.md) |          | ER\_MYSQL\_3138                       |  |
-| [3139](mariadb-error-codes-3100-to-3199/e3139.md) |          | ER\_MYSQL\_3139                       |  |
-| [3140](mariadb-error-codes-3100-to-3199/e3140.md) |          | ER\_MYSQL\_3140                       |  |
-| [3141](mariadb-error-codes-3100-to-3199/e3141.md) |          | ER\_MYSQL\_3141                       |  |
-| [3142](mariadb-error-codes-3100-to-3199/e3142.md) |          | ER\_MYSQL\_3142                       |  |
-| [3143](mariadb-error-codes-3100-to-3199/e3143.md) |          | ER\_MYSQL\_3143                       |  |
-| [3144](mariadb-error-codes-3100-to-3199/e3144.md) |          | ER\_MYSQL\_3144                       |  |
-| [3145](mariadb-error-codes-3100-to-3199/e3145.md) |          | ER\_MYSQL\_3145                       |  |
-| [3146](mariadb-error-codes-3100-to-3199/e3146.md) |          | ER\_MYSQL\_3146                       |  |
-| [3147](mariadb-error-codes-3100-to-3199/e3147.md) |          | ER\_MYSQL\_3147                       |  |
-| [3148](mariadb-error-codes-3100-to-3199/e3148.md) |          | ER\_MYSQL\_3148                       |  |
-| [3149](mariadb-error-codes-3100-to-3199/e3149.md) |          | ER\_MYSQL\_3149                       |  |
-| [3150](mariadb-error-codes-3100-to-3199/e3150.md) |          | ER\_MYSQL\_3150                       |  |
-| [3151](mariadb-error-codes-3100-to-3199/e3151.md) |          | ER\_MYSQL\_3151                       |  |
-| [3152](mariadb-error-codes-3100-to-3199/e3152.md) |          | ER\_MYSQL\_3152                       |  |
-| [3153](mariadb-error-codes-3100-to-3199/e3153.md) |          | ER\_MYSQL\_3153                       |  |
-| [3154](mariadb-error-codes-3100-to-3199/e3154.md) |          | ER\_MYSQL\_3154                       |  |
-| [3155](mariadb-error-codes-3100-to-3199/e3155.md) |          | ER\_MYSQL\_3155                       |  |
-| [3156](mariadb-error-codes-3100-to-3199/e3156.md) |          | ER\_MYSQL\_3156                       |  |
-| [3157](mariadb-error-codes-3100-to-3199/e3157.md) |          | ER\_MYSQL\_3157                       |  |
-| [3158](mariadb-error-codes-3100-to-3199/e3158.md) |          | ER\_MYSQL\_3158                       |  |
-| [3159](mariadb-error-codes-3100-to-3199/e3159.md) | 08004    | ER\_SECURE\_TRANSPORT\_REQUIRED       | Connections using insecure transport are prohibited while --require_secure_transport=ON. |
 | [4000](mariadb-error-codes-4000-to-4099/e4000.md) | 0A000    | ER\_COMMULTI\_BADCONTEXT                                 | COM\_MULTI can't return a result set in the given context                                                                                                                                        |
 | [4001](mariadb-error-codes-4000-to-4099/e4001.md) |          | ER\_BAD\_COMMAND\_IN\_MULTI                              | Command '%s' is not allowed for COM\_MULTI                                                                                                                                                       |
 | [4002](mariadb-error-codes-4000-to-4099/e4002.md) |          | ER\_WITH\_COL\_WRONG\_LIST                               | WITH column list and SELECT field list have different column counts                                                                                                                              |
@@ -1399,63 +1300,12 @@ New error codes are being continually being added as new features are added. For
 | [4204](mariadb-error-codes-4200-to-4299/e4204.md) |          | ER\_VECTOR\_BINARY\_FORMAT\_INVALID                   | Invalid binary vector format. Must use IEEE standard float representation in little-endian format. Use VEC\_FromText() to generate it. |
 | [4205](mariadb-error-codes-4200-to-4299/e4205.md) |          | ER\_VECTOR\_FORMAT\_INVALID                           | Invalid vector format at offset: %d for '%-.100s'. Must be a valid JSON array of numbers.                                              |
 | [4206](mariadb-error-codes-4200-to-4299/e4206.md) |          | ER\_VEC\_DISTANCE\_TYPE                               | Cannot determine distance type for VEC\_DISTANCE, index is not found                                                                   |
-| [4207](mariadb-error-codes-4200-to-4299/e4207.md) |          | WARN\_INDEX\_HINTS\_IGNORED           | Index hints are ignored because they are incompatible with RETURNING clause |
-| [4208](mariadb-error-codes-4200-to-4299/e4208.md) |          | ER\_SIGNAL\_SKIP\_ROW\_FROM\_TRIGGER  | The row is skipped by a trigger implementation |
-| [4209](mariadb-error-codes-4200-to-4299/e4209.md) |          | ER\_TEMPORARY\_TABLES\_PREVENT\_SWITCH\_GTID\_DOMAIN\_ID | Cannot modify @@session.gtid_domain_id while there are open temporary tables being binlogged |
-| [4210](mariadb-error-codes-4200-to-4299/e4210.md) |          | ER\_TOO\_MANY\_OPEN\_CURSORS          | Too many open cursors; max %u cursors allowed |
-| [4211](mariadb-error-codes-4200-to-4299/e4211.md) |          | ER\_INCOMPATIBLE\_EVENT\_FLAG         | Event flag '%s' in the condition expression is not compatible with the trigger event type '%s' |
-| [4212](mariadb-error-codes-4200-to-4299/e4212.md) |          | ER\_NOT\_IMPLEMENTED\_FOR\_GEOGRAPHIC\_SRS | %s has not been implemented for geographic spatial reference systems. |
-| [4213](mariadb-error-codes-4200-to-4299/e4213.md) |          | ER\_LONGITUDE\_OUT\_OF\_RANGE         | Longitude %f is out of range in function %s. It must be within (-180.000000, 180.000000]. |
-| [4214](mariadb-error-codes-4200-to-4299/e4214.md) |          | ER\_LATITUDE\_OUT\_OF\_RANGE          | Latitude %f is out of range in function %s. It must be within [-90.000000, 90.000000]. |
-| [4215](mariadb-error-codes-4200-to-4299/e4215.md) |          | ER\_GIS\_DIFFERENT\_SRIDS\_AGGREGATION | Arguments to function %s contains geometries with different SRIDs: %d and %d. All geometries must have the same SRID. |
-| [4216](mariadb-error-codes-4200-to-4299/e4216.md) |          | ER\_SEQUENCE\_TABLE\_HAS\_TOO\_FEW\_ROWS | Fewer than one row in the table |
-| [4217](mariadb-error-codes-4200-to-4299/e4217.md) |          | ER\_SEQUENCE\_TABLE\_HAS\_TOO\_MANY\_ROWS | More than one row in the table |
-| [4218](mariadb-error-codes-4200-to-4299/e4218.md) |          | ER\_WARN\_OPTIMIZER\_HINT\_SYNTAX\_ERROR | Optimizer hint syntax error |
-| [4219](mariadb-error-codes-4200-to-4299/e4219.md) |          | ER\_WARN\_CONFLICTING\_HINT           | Hint %s is ignored as conflicting/duplicated |
-| [4220](mariadb-error-codes-4200-to-4299/e4220.md) |          | ER\_WARN\_UNKNOWN\_QB\_NAME           | Query block name %s is not found for %s hint |
 | [4221](mariadb-error-codes-4200-to-4299/e4221.md) |          | ER\_UNRESOLVED\_TABLE\_HINT\_NAME                     | Unresolved table name %s for %s hint                                                                                                   |
 | [4222](mariadb-error-codes-4200-to-4299/e4222.md) |          | ER\_UNRESOLVED\_INDEX\_HINT\_NAME                     | Unresolved index name %s for %s hint                                                                                                   |
 | [4223](mariadb-error-codes-4200-to-4299/e4223.md) |          | ER\_HINTS\_INSIDE\_VIEWS\_NOT\_SUPPORTED              | Optimizer hints are not supported inside view definitions                                                                              |
 | [4224](mariadb-error-codes-4200-to-4299/e4224.md) |          | ER\_WARN\_MALFORMED\_HINT                             | Hint %s is ignored as malformed                                                                                                        |
 | [4225](mariadb-error-codes-4200-to-4299/e4225.md) |          | ER\_WARN\_HINTS\_ON\_INSERT\_PART\_OF\_INSERT\_SELECT | Optimizer hints at the INSERT part of a INSERT..SELECT statement are not supported                                                     |
 | [4226](mariadb-error-codes-4200-to-4299/e4226.md) |          | ER\_INIT\_SLAVE\_ERROR                                | Slave SQL thread aborted. Can't execute init\_slave query due to error code                                                            |
-| [4227](mariadb-error-codes-4200-to-4299/e4227.md) |          | ER\_ACTIVE\_CONNECTIONS\_FOR\_USER\_TO\_DROP | Dropped users %s have active connections. Use KILL CONNECTION if they should not be used anymore. |
-| [4228](mariadb-error-codes-4200-to-4299/e4228.md) |          | ER\_ASSOC\_ARRAY\_ELEM\_NOT\_FOUND    | Element not found with key '%s' |
-| [4229](mariadb-error-codes-4200-to-4299/e4229.md) |          | ER\_NULL\_FOR\_ASSOC\_ARRAY\_INDEX    | NULL key used for associative array '%s' |
-| [4230](mariadb-error-codes-4200-to-4299/e4230.md) |          | ER\_NEED\_NAMED\_ASSOCIATION          | Initializing %s requires named association |
-| [4231](mariadb-error-codes-4200-to-4299/e4231.md) |          | ER\_INVALID\_USE\_OF\_ORA\_JOIN       | Invalid usage of (+) operator |
-| [4232](mariadb-error-codes-4200-to-4299/e4232.md) |          | ER\_INVALID\_USE\_OF\_ORA\_JOIN\_CYCLE | Invalid usage of (+) operator: cycle dependencies |
-| [4233](mariadb-error-codes-4200-to-4299/e4233.md) |          | ER\_INVALID\_USE\_OF\_ORA\_JOIN\_OUTER\_REF | Invalid usage of (+) operator with outer reference %s |
-| [4234](mariadb-error-codes-4200-to-4299/e4234.md) |          | ER\_INVALID\_USE\_OF\_ORA\_JOIN\_ONE\_TABLE | Invalid usage of (+) operator: both tables %s and %s are of %s type in the relation |
-| [4235](mariadb-error-codes-4200-to-4299/e4235.md) |          | ER\_INVALID\_USE\_OF\_ORA\_JOIN\_WRONG\_FUNC | Invalid usage of (+) operator: used in OR, IN or ROW operation |
-| [4236](mariadb-error-codes-4200-to-4299/e4236.md) |          | ER\_INVALID\_USE\_OF\_ORA\_JOIN\_MIX  | Invalid usage of (+) operator: mixed with other type of join |
-| [4237](mariadb-error-codes-4200-to-4299/e4237.md) |          | WARN\_ORA\_JOIN\_IGNORED              | Oracle outer join operator (+) ignored in '%-.100s' |
-| [4238](mariadb-error-codes-4200-to-4299/e4238.md) |          | ER\_WARN\_CONFLICTING\_INDEX\_HINT\_FOR\_TABLE | Hint %s is ignored as conflicting/duplicated (an index hint of the same type has already been specified for this table) |
-| [4239](mariadb-error-codes-4200-to-4299/e4239.md) |          | ER\_WARN\_CONFLICTING\_INDEX\_HINT\_FOR\_KEY | Hint %s is ignored as conflicting/duplicated (an index hint of the same type has already been specified for this key) |
-| [4240](mariadb-error-codes-4200-to-4299/e4240.md) |          | ER\_WARN\_CONFLICTING\_COMPOUND\_INDEX\_HINT\_FOR\_TABLE | Hint %s is ignored as conflicting/duplicated (an index hint of the same type or opposite kind has already been specified for this table) |
-| [4241](mariadb-error-codes-4200-to-4299/e4241.md) |          | ER\_WARN\_CONFLICTING\_COMPOUND\_INDEX\_HINT\_FOR\_KEY | Hint %s is ignored as conflicting/duplicated (an index hint of the same type or opposite kind has already been specified for the key) |
-| [4242](mariadb-error-codes-4200-to-4299/e4242.md) |          | ER\_WARN\_NO\_IMPLICIT\_QB\_NAMES\_IN\_VIEW | Implicit query block names are ignored for hints specified within VIEWs |
-| [4243](mariadb-error-codes-4200-to-4299/e4243.md) |          | ER\_BINLOG\_IN\_USE                   | Cannot execute RESET MASTER as the binlog is in use by a connected slave or other RESET MASTER or binlog reader. Check SHOW PROCESSLIST for Binlog Dump commands and use KILL to stop such readers |
-| [4244](mariadb-error-codes-4200-to-4299/e4244.md) |          | ER\_BINLOG\_IN\_USE\_TRX              | Cannot execute RESET MASTER as the binlog is in use by an active transaction |
-| [4245](mariadb-error-codes-4200-to-4299/e4245.md) |          | ER\_CANNOT\_INIT\_ENGINE\_BINLOG\_READER | Cannot initialize binlog reader from storage engine %s |
-| [4246](mariadb-error-codes-4200-to-4299/e4246.md) |          | ER\_ENGINE\_BINLOG\_REQUIRES\_GTID    | GTID starting position is required on master with --binlog-storage-engine enabled |
-| [4247](mariadb-error-codes-4200-to-4299/e4247.md) |          | ER\_NOT\_AVAILABLE\_WITH\_ENGINE\_BINLOG | %s is not available when --binlog-storage-engine is enabled |
-| [4248](mariadb-error-codes-4200-to-4299/e4248.md) |          | ER\_NOT\_YET\_SUPPORTED\_ENGINE\_BINLOG | %s is not yet supported with --binlog-storage-engine |
-| [4249](mariadb-error-codes-4200-to-4299/e4249.md) |          | ER\_ENGINE\_BINLOG\_NO\_DELETE\_DOMAIN | The binlog engine does not support DELETE_DOMAIN_ID |
-| [4250](mariadb-error-codes-4200-to-4299/e4250.md) |          | ER\_BINLOG\_CANNOT\_READ\_STATE       | Error reading GTID state from the binlog |
-| [4251](mariadb-error-codes-4200-to-4299/e4251.md) |          | ER\_BINLOG\_POS\_INVALID              | The binlog offset %llu is invalid |
-| [4252](mariadb-error-codes-4200-to-4299/e4252.md) |          | ER\_READING\_BINLOG\_FILE             | Error reading from page number %u in binlog file (error code: %d) |
-| [4253](mariadb-error-codes-4200-to-4299/e4253.md) |          | ER\_PARTIAL\_ROWS\_LOG\_EVENT\_BAD\_STREAM | Broken Partial_rows_log_event stream. Found %s, expected Partial_rows_log_event %u / %u |
-| [4254](mariadb-error-codes-4200-to-4299/e4254.md) |          | ER\_SLAVE\_INCOMPATIBLE\_TABLE\_DEF   | Table structure for binlog event is not compatible with the table definition on this slave: %s |
-| [4255](mariadb-error-codes-4200-to-4299/e4255.md) |          | ER\_UNSUPPORTED\_DATA\_TYPE\_ATTRIBUTE | Data type '%-.64s' doesn't support %s attribute. |
-| [4256](mariadb-error-codes-4200-to-4299/e4256.md) |          | ER\_CANNOT\_CAST\_ON\_IDENT1\_ASSIGNMENT\_FOR\_OPERATION | Cannot cast '%s' as '%s' in assignment of %sQ for operation %s |
-| [4257](mariadb-error-codes-4200-to-4299/e4257.md) |          | ER\_CANNOT\_CAST\_ON\_IDENT2\_ASSIGNMENT\_FOR\_OPERATION | Cannot cast '%s' as '%s' in assignment of %sQ.%sQ for operation %s |
-| [4258](mariadb-error-codes-4200-to-4299/e4258.md) |          | ER\_WARN\_AMBIGUOUS\_QB\_NAME         | Query block name %s is ambiguous for %s hint |
-| [4259](mariadb-error-codes-4200-to-4299/e4259.md) |          | ER\_WARN\_IMPLICIT\_QB\_NAME\_FOR\_UNION | Implicit query block name %s is not supported for derived tables and views with UNION/EXCEPT/INTERSECT and is ignored for %s hint |
-| [4260](mariadb-error-codes-4200-to-4299/e4260.md) |          | ER\_WARN\_QB\_NAME\_PATH\_INVALID\_SELECT | Hint %s is ignored. Element #%u of the path contains invalid select number (expected: @SEL_1, @SEL_2, ...). |
-| [4261](mariadb-error-codes-4200-to-4299/e4261.md) |          | ER\_WARN\_QB\_NAME\_PATH\_SELECT\_NOT\_FOUND | Hint %s is ignored. SEL_%u required at element #%u of the path is not found in the target query block. |
-| [4262](mariadb-error-codes-4200-to-4299/e4262.md) |          | ER\_WARN\_QB\_NAME\_PATH\_VIEW\_NOT\_FOUND | Hint %s is ignored. `%s` required at element #%u of the path is not found in the target query block. |
-| [4263](mariadb-error-codes-4200-to-4299/e4263.md) |          | ER\_WARN\_QB\_NAME\_PATH\_NOT\_SUPPORTED\_INSIDE\_VIEW | Hint %s is ignored. QB_NAME hints with path are not supported inside view definitions. |
 
 {% include "../../.gitbook/includes/license-cc-by-sa-gnu-fdl.md" %}
 
