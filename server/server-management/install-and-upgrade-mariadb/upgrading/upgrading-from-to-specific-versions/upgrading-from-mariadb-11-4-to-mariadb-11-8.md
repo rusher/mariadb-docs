@@ -90,7 +90,7 @@ DELETE FROM t;
 **Differences in Behavior by Isolation Level**
 
 * **Repeatable Read**\
-  When a transaction tries to modify data based on an outdated snapshot, the server detects conflicts, rolls back the transactions, and returns `ERROR 1020`.
+  When a transaction tries to modify data based on an outdated snapshot, the server detects conflicts, rolls back the transactions, and returns [`ERROR 1020`](../../../../reference/error-codes/mariadb-error-codes-1000-to-1099/e1020.md).
 * **Serializable**\
   Conflicting transactions may be blocked earlier due to stricter locking. Depending on the execution sequence, the error may occur in another transaction or be avoided entirely.
 
