@@ -18,7 +18,7 @@ CREATE [OR REPLACE] [TEMPORARY] SEQUENCE [IF NOT EXISTS] sequence_name
 [ MAXVALUE [=] number | NO MAXVALUE | NOMAXVALUE ]
 [ START [ WITH | = ] number ] 
 [ CACHE [=] number | NOCACHE ] [ CYCLE | NOCYCLE] 
-[table_options](../sql-statements/data-definition/create/create-table.md#table-options)
+[table_options](../../sql-statements/data-definition/create/create-table.md#table-options)
 ```
 {% endtab %}
 
@@ -30,7 +30,7 @@ CREATE [OR REPLACE] [TEMPORARY] SEQUENCE [IF NOT EXISTS] sequence_name
 [ MAXVALUE [=] number | NO MAXVALUE | NOMAXVALUE ]
 [ START [ WITH | = ] number ] 
 [ CACHE [=] number | NOCACHE ] [ CYCLE | NOCYCLE] 
-[table_options](../sql-statements/data-definition/create/create-table.md#table-options)
+[table_options](../../sql-statements/data-definition/create/create-table.md#table-options)
 ```
 {% endtab %}
 {% endtabs %}
