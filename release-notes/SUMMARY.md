@@ -19,6 +19,7 @@
           * [Choosing an Encryption Plugin](enterprise-server/mariadb-enterprise-server-differences/mariadb-enterprise-server-data-at-rest-encryption/encryption-plugins/choosing-an-encryption-plugin.md)
       * [MariaDB Enterprise Server - Data-in-Transit Encryption](enterprise-server/mariadb-enterprise-server-differences/mariadb-enterprise-server-data-in-transit-encryption/README.md)
         * [MariaDB 10.0.4 Release Notes](enterprise-server/mariadb-enterprise-server-differences/mariadb-enterprise-server-data-in-transit-encryption/data-in-transit-encryption-for-mariadb-enterprise-server.md)
+      * [Differences in Available Plugins for Enterprise Server](enterprise-server/about/mariadb-enterprise-server-differences/differences-in-available-plugins-for-enterprise-server.md)
     * [SBOM](enterprise-server/about/sbom.md)
     * [Security Vulnerabilities (CVE) Fixed in MariaDB Enterprise Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/cve/enterprise-server)
   * [MariaDB Enterprise Server 11.8](enterprise-server/11.8/README.md)
