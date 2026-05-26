@@ -498,7 +498,7 @@ Automatic upward dynamic resizing is not yet implemented ([MDEV-36197](https://j
 {% endhint %}
 
 * Description: Maximum `innodb_buffer_pool_size` value. On 64-bit systems other than IBM AIX, the default is 8 TiB, and the minimum 8 MiB. On other systems, the default and minimum are `0`, and the value `0` is replaced with the initial `innodb_buffer_pool_size` rounded up to the allocation unit (2 MiB or 8 MiB). The maximum value is 4GiB-2MiB on 32-bit systems and 16EiB-8MiB on 64-bit systems. This maximum is likely to be limited further by the operating system.\
-  On 64-bit systems, while the default maximum is 8 TiB, the actual available address space may be restricted by operating system limits (such as [`RLIMIT_AS`](#user-content-fn-2)[^2]) or specific hardware architectures. If MariaDB is unable to allocate the default 8 TiB of virtual address space at startup, it  automatically attempts to fall back to a 128 GiB limit to ensure the server can still start. (128 GiB is often chosen as a fallback because it’s a safe value that almost any modern 64-bit Linux kernel/CPU can handle without special configuration, while still being plenty large for the vast majority of database workloads.)
+  On 64-bit systems, while the default maximum is 8 TiB, the actual available address space may be restricted by operating system limits (such as [`RLIMIT_AS`](#user-content-fn-2)[^2]) or specific hardware architectures. If MariaDB is unable to allocate the default 8 TiB of virtual address space at startup, it automatically attempts to fall back to a 128 GiB limit to ensure the server can still start. (128 GiB is often chosen as a fallback because it’s a safe value that almost any modern 64-bit Linux kernel/CPU can handle without special configuration, while still being plenty large for the vast majority of database workloads.)
 * Command line: `--innodb-buffer-pool-size-max=#`
 * Scope: Global
 * Dynamic: No
@@ -1219,7 +1219,7 @@ Automatic upward dynamic resizing is not yet implemented ([MDEV-36197](https://j
 
 {% tabs %}
 {% tab title="Current" %}
-* Description: [InnoDB](./) flushing method. **Deprecated from [MariaDB 11.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/11.0/what-is-mariadb-110).** The variable can still be set, but the preferred way to control flushing behavior is to use `SET GLOBAL` on the four replacement Boolean dynamic parameters, which can be changed while the server is running:
+* Description: [InnoDB](./) flushing method. **Deprecated from** [**MariaDB 11.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/11.0/what-is-mariadb-110)**.** The variable can still be set, but the preferred way to control flushing behavior is to use `SET GLOBAL` on the four replacement Boolean dynamic parameters, which can be changed while the server is running:
   * [innodb\_log\_file\_buffering](innodb-system-variables.md#innodb_log_file_buffering) (enable file system cache on the InnoDB write-ahead log; added in 10.8.4, 10.9.2)
   * [innodb\_data\_file\_buffering](innodb-system-variables.md#innodb_data_file_buffering) (enable file system cache on data files)
   * [innodb\_log\_file\_write\_through](innodb-system-variables.md#innodb_log_file_write_through) (enable write-through on the log)
@@ -1706,7 +1706,7 @@ Automatic upward dynamic resizing is not yet implemented ([MDEV-36197](https://j
   * Encryption: While `innodb_log_archive` is `ON`, the value of [`innodb_encrypt_log`](innodb-system-variables.md#innodb_encrypt_log) and related encryption parameters cannot be changed. To change encryption, set `innodb_log_archive=OFF` and restart the server — this permanently discards the archived log history.
   * Startup: With `innodb_log_archive=ON`, the server refuses to start if `ib_logfile0` exists in the data directory.
   * Data Dictionary: This feature tracks InnoDB changes only. It does not cover `.frm` files or other non-InnoDB metadata.
-  * Backup tooling: No shipped tool yet generates or restores backups in this format. [`mariadb-backup`](../../backup-and-restore/mariadb-backup/README.md) only supports the legacy `ib_logfile0` format and fails when the server is running with `innodb_log_archive=ON`.
+  * Backup tooling: No shipped tool yet generates or restores backups in this format. [`mariadb-backup`](../../backup-and-restore/mariadb-backup/) only supports the legacy `ib_logfile0` format and fails when the server is running with `innodb_log_archive=ON`.
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `OFF`
@@ -2451,7 +2451,7 @@ If you set a target that is unreachable in the other direction (for example, low
 
 * Description: Whether or not to use snapshot isolation (write/write conflict detection within InnoDB).\
   If enabled (set to `ON`), an error `DB_RECORD_CHANGED` (`HA_ERR_RECORD_CHANGED`, [`ER_CHECKREAD`](../../../reference/error-codes/mariadb-error-codes-1000-to-1099/e1020.md)) is raised if an attempt is made to acquire a lock on a record that does not exist in the current read view. This error is treated in the same way as a deadlock, and the transaction is rolled back. This affects the default isolation level, [REPEATABLE READ](../../../reference/sql-statements/transactions/transactions-repeatable-read.md).\
-  In MariaDB 11.8 and later, changes to snapshot handling may affect how conflicts are detected in transactions that use the [Repeatable Read](../../../reference/sql-statements/transactions/transactions-repeatable-read.md) isolation level. Specifically, `DELETE` and `UPDATE` statements can return with [ERROR 1020](../../../reference/error-codes/mariadb-error-codes-1000-to-1099/e1020.md). This occurs when a transaction tries to modify rows using a snapshot that is inconsistent with the database's current state as a result of simultaneous modifications. In other words, this variable is designed to prevent non-repeatable reads and anomalies (like lost updates) by rejecting `UPDATE` or `DELETE` operations on rows that were modified by a concurrent transaction after the current transaction's snapshot was taken.
+  In MariaDB 11.8 and later, changes to snapshot handling may affect how conflicts are detected in transactions that use the [Repeatable Read](../../../reference/sql-statements/transactions/transactions-repeatable-read.md) isolation level. Specifically, `DELETE` and `UPDATE` statements can cause a rollback of the transaction, and return with [ERROR 1020](../../../reference/error-codes/mariadb-error-codes-1000-to-1099/e1020.md). This occurs when a transaction tries to modify rows using a snapshot that is inconsistent with the database's current state as a result of simultaneous modifications. In other words, this variable is designed to prevent non-repeatable reads and anomalies (like lost updates) by rejecting `UPDATE` or `DELETE` operations on rows that were modified by a concurrent transaction after the current transaction's snapshot was taken.
 * Command line: `--innodb-snapshot-isolation={0|1}`
 * Scope: Global, Session
 * Dynamic: Yes

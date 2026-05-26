@@ -89,9 +89,9 @@ DELETE FROM t;
 
 **Differences in Behavior by Isolation Level**
 
-* **Repeatable Read**  \
-  When a transaction tries to modify data based on an outdated snapshot, it detects conflicts and returns `ERROR 1020`.
-* **Serializable**  \
+* **Repeatable Read**\
+  When a transaction tries to modify data based on an outdated snapshot, the server detects conflicts, rolls back the transactions, and returns `ERROR 1020`.
+* **Serializable**\
   Conflicting transactions may be blocked earlier due to stricter locking. Depending on the execution sequence, the error may occur in another transaction or be avoided entirely.
 
 **Impact**
