@@ -35,7 +35,7 @@ CREATE [OR REPLACE] [TEMPORARY] SEQUENCE [IF NOT EXISTS] sequence_name
 {% endtab %}
 {% endtabs %}
 
-The options for `CREATE SEQUENCE` can be given in any order, optionally followed by `table_options`.
+The options for `CREATE SEQUENCE` can be given in any order, optionally followed by [table\_options](../../sql-statements/data-definition/create/create-table.md#table-options).
 
 _`table_options`_ can be any of the normal table options in [CREATE TABLE](../../sql-statements/data-definition/create/create-table.md) — the most used ones are `ENGINE=...` and `COMMENT=`.
 
