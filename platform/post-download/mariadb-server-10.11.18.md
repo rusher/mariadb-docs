@@ -4,8 +4,8 @@
 
 ## About this Release
 
-* MariaDB Server 10.11.17 was released on 18 May 2026
-* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/10.11/10.11.17)
+* MariaDB Server 10.11.18 was released on 27 May 2026
+* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/10.11/10.11.18)
 * MariaDB Server is open source software, the [source code is available](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code)
 * This release is Stable (GA) maturity
 
@@ -17,8 +17,8 @@
 
 ## Release History
 
-* The prior release in this series was [MariaDB 10.11.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/10.11/10.11.16), released on 4 Feb 2026
-* This release ([MariaDB 10.11.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/10.11/10.11.17)) was released on 18 May 2026
+* The prior release in this series was [MariaDB 10.11.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/10.11/10.11.17), released on 18 May 2026
+* This release ([MariaDB 10.11.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/10.11/10.11.18)) was released on 27 May 2026
 
 {% include "../.gitbook/includes/most-recent-10.11.md" %}
 
