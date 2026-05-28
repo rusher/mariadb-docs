@@ -25,8 +25,6 @@ Plugin maturity is not the same as plugin support and maintenance. When a plugin
 
 Currently, the plugins maintained and supported by MariaDB plc for a given release series are the ones included in the corresponding MariaDB Enterprise Server release. Plugins that are not supported by MariaDB plc are either placed in a separate **unsupported repository** (reached by passing the `--include-unsupported` flag to the `mariadb_es_repo_setup` script) or omitted from the build entirely.
 
-For the authoritative statement of plugin support, see the [MariaDB Engineering Policies](https://mariadb.com/engineering-policies/) and the relevant MariaDB Enterprise Server release notes.
-
 ## See Also
 
 * [Plugin Overview](../plugin-overview.md)
