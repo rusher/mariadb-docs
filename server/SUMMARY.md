@@ -3982,6 +3982,7 @@
       * [Error 4261: Hint %s is ignored. SEL\_%u required at element #%u of the path is not found in the targe](reference/error-codes/mariadb-error-codes-4200-to-4299/e4261.md)
       * [Error 4262: Hint %s is ignored. %s required at element #%u of the path is not found in the target qu](reference/error-codes/mariadb-error-codes-4200-to-4299/e4262.md)
       * [Error 4263: Hint %s is ignored. QB\_NAME hints with path are not supported inside view definitions.](reference/error-codes/mariadb-error-codes-4200-to-4299/e4263.md)
+      * [Error 4264: Hint %s is ignored. QB_NAME hints with path are not supported inside view definitions.](reference/error-codes/mariadb-error-codes-4200-to-4299/e4264.md)
   * [Client/Server Protocol](reference/clientserver-protocol/README.md)
     * [Protocol Data Types](reference/clientserver-protocol/protocol-data-types.md)
     * [MariaDB Protocol Differences with MySQL](reference/clientserver-protocol/mariadb-protocol-differences-with-mysql.md)
