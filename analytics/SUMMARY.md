@@ -113,6 +113,7 @@
     * [Optimization & Tuning](mariadb-columnstore/high-availability/optimization-and-tuning/README.md)
       * [Profiling Memory Usage with Heaptrack](mariadb-columnstore/high-availability/optimization-and-tuning/profiling-memory-usage-with-heaptrack.md)
       * [Analyzing Queries in ColumnStore](mariadb-columnstore/high-availability/optimization-and-tuning/analyzing-queries-in-columnstore.md)
+      * [Analyzing Queries in ColumnStore](mariadb-columnstore/high-availability/optimization-and-tuning/analyzing-queries-in-columnstore-1.md)
   * [Clients & Tools](mariadb-columnstore/clients-and-tools/README.md)
     * [StorageManager](mariadb-columnstore/clients-and-tools/storagemanager/README.md)
       * [Certified S3 Object Storage Providers](mariadb-columnstore/clients-and-tools/storagemanager/certified-s3-object-storage-providers.md)
