@@ -10,7 +10,15 @@ Technology buyers and builders increasingly make decisions at the solution and a
 
 ## MariaDB Server Ecosystem Hub
 
+{% columns %}
+{% column %}
 The MariaDB Server Ecosystem Hub is a curated discovery layer for the MariaDB Server ecosystem. Its purpose is to make the ecosystem visible, navigable, and useful for people looking for practical MariaDB-based solutions. The Hub helps users discover the partners, tools, services, applications, and platforms that can support MariaDB Server in real-world deployments. It connects MariaDB Server to the surrounding ecosystem needed to build and deliver complete solutions. For users, the Hub answers a practical question: who and what can help me succeed with MariaDB Server? For partners and sponsors, the Hub creates structured visibility inside the MariaDB Server ecosystem. It helps users identify which companies, tools, services, and platforms are relevant to MariaDB-based projects. The Hub also serves as an entry point for deeper collaboration, including Solution Stacks, joint content, events, technical initiatives, and co-marketing activities.
+{% endcolumn %}
+
+{% column %}
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+{% endcolumn %}
+{% endcolumns %}
 
 ## MariaDB Server Solution Stacks
 
