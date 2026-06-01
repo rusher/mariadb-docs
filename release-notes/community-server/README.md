@@ -20,16 +20,12 @@ This section contains release notes for MariaDB Server releases divided into the
 
 ## Current Releases
 
+{% content-ref url="13.0/" %}
+[13.0](13.0/)
+{% endcontent-ref %}
+
 {% content-ref url="12.3/" %}
 [12.3](12.3/)
-{% endcontent-ref %}
-
-{% content-ref url="12.2/" %}
-[12.2](12.2/)
-{% endcontent-ref %}
-
-{% content-ref url="old-releases/12.1/" %}
-[12.1](old-releases/12.1/)
 {% endcontent-ref %}
 
 {% content-ref url="11.8/" %}
