@@ -61,7 +61,7 @@ SELECT id FROM v
 ```
 
 {% hint style="info" %}
-The vector index is only used for nearest-neighbor search when the query combines `ORDER BY VEC_DISTANCE(...)` with a `LIMIT`. Without `LIMIT`, as in the example above, the distance is computed for every row (a full table scan). See [Vector Overview](../../sql-structure/vectors/vector-overview.md).
+The vector index is only used for nearest-neighbor search when the query combines `ORDER BY VEC_DISTANCE(...)` with a `LIMIT`. Without `LIMIT`, the distance is computed for every row (a full table scan). See [Vector Overview](../../sql-structure/vectors/vector-overview.md).
 {% endhint %}
 
 ## See Also
