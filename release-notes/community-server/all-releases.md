@@ -21,8 +21,8 @@ description: A list of all MariaDB Community Server releases
 
 | Name                     | Release date | Release status |
 | ------------------------ | ------------ | -------------- |
-| [12.2.2](12.2/12.2.2.md) | 2026-02-12   | Stable (GA)    |
-| [12.2.1](12.2/12.2.1.md) | 2025-11-21   | RC             |
+| [12.2.2](old-releases/12.2/12.2.2.md) | 2026-02-12   | Stable (GA)    |
+| [12.2.1](old-releases/12.2/12.2.1.md) | 2025-11-21   | RC             |
 | 12.2.0                   | 2025-09-23   | Preview        |
 
 ## MariaDB Community Server 12.1
