@@ -176,6 +176,9 @@ For a complete list of security vulnerabilities (CVE) fixed across all versions 
 
 | CVE ID (with cve.org link)                                        | CVSS base score                                 | Enterprise Server 10.6 Release |
 | ----------------------------------------------------------------- | ----------------------------------------------- | ------------------------------ |
+| [CVE-2026-49261](https://www.cve.org/CVERecord?id=CVE-2026-49261) | 10.0                                            | [10.6.25-22](10.6.25-22.md)    |
+| [CVE-2026-48165](https://www.cve.org/CVERecord?id=CVE-2026-48165) | 8.0                                             | [10.6.25-22](10.6.25-22.md)    |
+| [CVE-2026-48163](https://www.cve.org/CVERecord?id=CVE-2026-48163) | 8.0                                             | [10.6.25-22](10.6.25-22.md)    |
 | [CVE-2026-21968](https://www.cve.org/CVERecord?id=CVE-2026-21968) | 6.5                                             | [10.6.24-20](10.6.24-20.md)    |
 | [CVE-2025-30693](https://www.cve.org/CVERecord?id=CVE-2025-30693) | 5.5                                             | [10.6.22-18](10.6.22-18.md)    |
 | [CVE-2023-52969](https://www.cve.org/CVERecord?id=CVE-2023-52969) | 4.9                                             | [10.6.22-18](10.6.22-18.md)    |
