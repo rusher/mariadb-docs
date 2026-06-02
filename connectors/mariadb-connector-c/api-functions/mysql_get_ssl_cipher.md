@@ -1,7 +1,7 @@
 ---
 description: >-
-  mysql_get_ssl_cipher returns the name of the TLS cipher in use for a
-  MariaDB Connector/C connection, or NULL for non-TLS connections.
+  mysql_get_ssl_cipher returns the name of the TLS cipher in use for a MariaDB
+  Connector/C connection, or NULL for non-TLS connections.
 ---
 
 # mysql\_get\_ssl\_cipher
@@ -16,7 +16,7 @@ const char *mysql_get_ssl_cipher(MYSQL *mysql)
 
 ## Description
 
-Returns the name of the currently used cipher of the [TLS connection](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/encryption/data-in-transit-encryption/secure-connections-overview), or NULL for non TLS connections.
+Returns the name of the currently used cipher of the [TLS connection](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/encryption/data-in-transit-encryption/secure-connections-overview), or NULL for non TLS connections.
 
 ## See also
 

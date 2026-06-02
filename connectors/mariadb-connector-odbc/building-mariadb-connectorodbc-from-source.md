@@ -1,8 +1,8 @@
 ---
 description: >-
-  Compile MariaDB Connector/ODBC from the GitHub source repository on Linux
-  or Windows, with step-by-step dependency installation for cmake, UnixODBC,
-  and optional OpenSSL TLS support.
+  Compile MariaDB Connector/ODBC from the GitHub source repository on Linux or
+  Windows, with step-by-step dependency installation for cmake, UnixODBC, and
+  optional OpenSSL TLS support.
 ---
 
 # Building MariaDB Connector/ODBC from Source
@@ -22,7 +22,7 @@ On Unix-like platforms, you also need to have the following tools installed:
 * `make`
 * [UnixODBC](https://www.unixodbc.org/) - libraries and development headers
 
-If you want your build to support [TLS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/encryption/data-in-transit-encryption) on Unix-like platforms, then you also need to have the following tools installed:
+If you want your build to support [TLS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/encryption/data-in-transit-encryption) on Unix-like platforms, then you also need to have the following tools installed:
 
 * [OpenSSL](https://www.openssl.org/) - libraries and development headers
 

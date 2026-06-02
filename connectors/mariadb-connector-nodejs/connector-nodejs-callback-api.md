@@ -1,8 +1,8 @@
 ---
 description: >-
-  MariaDB Connector/Node.js Callback API provides MySQL and mysql2
-  compatible callback-style access to MariaDB, with connection, query,
-  batch, and pool methods using familiar patterns.
+  MariaDB Connector/Node.js Callback API provides MySQL and mysql2 compatible
+  callback-style access to MariaDB, with connection, query, batch, and pool
+  methods using familiar patterns.
 ---
 
 # Connector/Node.js Callback API
@@ -772,7 +772,7 @@ escape per type:
 * JSON: Stringification of JSON, or if `permitSetMultiParamEntries` is enable, key escaped as identifier + value
 * String: escaped value, (\u0000, ', ", \b, \n, \r, \t, \u001A, and \ characters are escaped with '')
 
-Escape is done for [sql\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/sql-mode) value without NO\_BACKSLASH\_ESCAPES that disable \ escaping (default); Escaping API are meant to prevent [SQL injection](https://en.wikipedia.org/wiki/SQL_injection). However, privilege the use of [`connection.query(sql [, values][, callback])`](connector-nodejs-callback-api.md#connectionquerysql-values-callback---emitter) and avoid building the command manually.
+Escape is done for [sql\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/sql_mode) value without NO\_BACKSLASH\_ESCAPES that disable \ escaping (default); Escaping API are meant to prevent [SQL injection](https://en.wikipedia.org/wiki/SQL_injection). However, privilege the use of [`connection.query(sql [, values][, callback])`](connector-nodejs-callback-api.md#connectionquerysql-values-callback---emitter) and avoid building the command manually.
 
 ```javascript
 const myColVar = "let'go";
@@ -1072,7 +1072,7 @@ poolCluster(err => {
 
 ### `poolCluster.getConnection([pattern, ][selector, ]callback)`
 
-> * `pattern`: _string_ used to match pool node identifiers. Internally, the value is considered as a  regex. Default: `'*'`  (matches all pools).
+> * `pattern`: _string_ used to match pool node identifiers. Internally, the value is considered as a regex. Default: `'*'` (matches all pools).
 > * `selector`: _string_ pools selector. Can be 'RR' (round-robin), 'RANDOM' or 'ORDER' (use in sequence = always use first pools unless fails). default to the cluster option `defaultSelector` if set, 'RR' if not
 > * `callback`: _function_ Callback function with arguments ([Error](connector-nodejs-callback-api.md#error), [Connection](connector-nodejs-callback-api.md#connection-api)).
 
@@ -1112,7 +1112,7 @@ cluster.on('remove', node => {
 
 ### `poolCluster.of(pattern, selector) → FilteredPoolCluster`
 
-> * `pattern`: _string_ used to match pool node identifiers. Internally, the value is considered as a  regex. Example: `"^slave"`. Default: `'*'`.
+> * `pattern`: _string_ used to match pool node identifiers. Internally, the value is considered as a regex. Example: `"^slave"`. Default: `'*'`.
 > * `selector`: _string_ pools selector. Can be 'RR' (round-robin), 'RANDOM' or 'ORDER' (use in sequence = always use first pools unless fails). default to the
 >
 > Returns :

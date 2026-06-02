@@ -16,7 +16,7 @@ const char * mysql_sqlstate(MYSQL * mysql);
 
 ## Description
 
-Returns a string containing the [SQLSTATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate) error code for the most recently invoked function that can succeed or fail. The error code consists of five characters. '00000' means no error. The values are specified by `ANSI SQL` and `ODBC`
+Returns a string containing the [SQLSTATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate) error code for the most recently invoked function that can succeed or fail. The error code consists of five characters. '00000' means no error. The values are specified by `ANSI SQL` and `ODBC`
 
 {% hint style="info" %}
 Please note that not all client library error codes are mapped to `SQLSTATE` errors. Errors which can't be mapped will be returned as value HY000.

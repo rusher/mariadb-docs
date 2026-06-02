@@ -530,7 +530,7 @@ console.log(mariadb.defaultOptions({ timezone: '+00:00' }));
 
 `connection.threadId`
 
-_number_&#x20;
+_number_
 
 The connection ID is assigned by the MariaDB Server during the initial connection handshake. This identifier can also be retrieved by executing the following on the server:
 
@@ -555,7 +555,7 @@ const conn = await mariadb.createConnection({
   }
 ```
 
-When connecting through [MaxScale](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/), `threadId` does not have a meaningful interpretation, as MaxScale manages connections at the proxy level.&#x20;
+When connecting through [MaxScale](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/), `threadId` does not have a meaningful interpretation, as MaxScale manages connections at the proxy level.
 
 #### `connection.query(sql[, values]) -> Promise`
 

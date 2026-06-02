@@ -1,7 +1,7 @@
 ---
 description: >-
-  mysql_ssl_set configures TLS parameters including key, certificate, CA,
-  and cipher list for a MariaDB connection, and must be called before
+  mysql_ssl_set configures TLS parameters including key, certificate, CA, and
+  cipher list for a MariaDB connection, and must be called before
   mysql_real_connect.
 ---
 
@@ -23,7 +23,7 @@ my_bool mysql_ssl_set(MYSQL *mysql, const char *key, const char *cert,
 
 ## Description
 
-Used for establishing a [secure TLS connection](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/encryption/data-in-transit-encryption). It must be called before attempting to use [mysql\_real\_connect()](mysql_real_connect.md). TLS support must be enabled in the client library in order for the function to have any effect.
+Used for establishing a [secure TLS connection](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/encryption/data-in-transit-encryption). It must be called before attempting to use [mysql\_real\_connect()](mysql_real_connect.md). TLS support must be enabled in the client library in order for the function to have any effect.
 
 NULL can be used for an unused parameter. Always returns zero.
 
