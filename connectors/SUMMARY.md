@@ -18,6 +18,7 @@
   * [Configuring MariaDB Connector/C with Option Files](mariadb-connector-c/configuring-mariadb-connectorc-with-option-files.md)
   * [MariaDB Binlog/Replication API reference](mariadb-connector-c/mariadb-binlogreplication-api-reference/README.md)
     * [Binlog/API Data Structures](mariadb-connector-c/mariadb-binlogreplication-api-reference/binlog-api-data-structures.md)
+    * [Replication API Types and Definitions](mariadb-connector-c/mariadb-binlogreplication-api-reference/replication-api-types-and-definitions.md)
   * [MariaDB Connector/C Data Structures](mariadb-connector-c/mariadb-connectorc-data-structures.md)
   * [MariaDB Connector/C Plugins](mariadb-connector-c/mariadb-connectorc-plugins.md)
   * [MariaDB Connector/C Types and Definitions](mariadb-connector-c/mariadb-connectorc-types-and-definitions.md)

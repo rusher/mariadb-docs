@@ -1,7 +1,7 @@
 ---
 description: >-
   All structures and type definitions for the Binglog/Replication API are
-  defined in source file include/mariadb_rpl.h.
+  defined in include/mariadb_rpl.h.
 ---
 
 # Binlog/API Data Structures
@@ -487,5 +487,5 @@ struct st_mariadb_rpl_xid_event {
 ## See Also
 
 * [MariaDB Binlog/Replication API Reference](./)
-* Replication API Types and Definitions
+* [Replication API Types and Definitions](replication-api-types-and-definitions.md)
 * Replication API Function Reference
