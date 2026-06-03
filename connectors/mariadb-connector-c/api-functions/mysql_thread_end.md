@@ -1,8 +1,8 @@
 ---
 description: >-
-  mysql_thread_end releases thread-local memory allocated by
-  mysql_thread_init and must be called explicitly before a thread exits to
-  avoid memory leaks. Deprecated in Connector/C 3.0.
+  mysql_thread_end releases thread-local memory allocated by mysql_thread_init
+  and must be called explicitly before a thread exits to avoid memory leaks.
+  Deprecated in Connector/C 3.0.
 ---
 
 # mysql\_thread\_end
@@ -15,7 +15,11 @@ void mysql_thread_end(void );
 
 ## Description
 
-The `mysql_thread_end()` function needs to be called before a client thread ends. It will release thread-specific memory, which was allocated by a previous [mysql\_thread\_init()](mysql_thread_init.md) call. Returns void.
+The `mysql_thread_end()` function needs to be called before a client thread ends. It will release thread-specific memory, which was allocated by a previous [mysql\_thread\_init()](mysql_thread_init.md) call.&#x20;
+
+## Return Value
+
+Returns void.
 
 {% hint style="info" %}
 Unlike [mysql\_thread\_init()](mysql_thread_init.md) `mysql_thread_end()` will not be invoked automatically if the thread ends. To avoid memory leaks `mysql_thread_end()` must be called explicitly.

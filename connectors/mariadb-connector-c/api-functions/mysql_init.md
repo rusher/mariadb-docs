@@ -1,8 +1,8 @@
 ---
 description: >-
   mysql_init allocates and initializes a MYSQL structure for use with
-  mysql_real_connect, and also initializes the thread subsystem if not
-  already done.
+  mysql_real_connect, and also initializes the thread subsystem if not already
+  done.
 ---
 
 # mysql\_init
@@ -13,13 +13,19 @@ description: >-
 MYSQL * mysql_init(MYSQL * mysql);
 ```
 
-`mysql` - a pointer to MYSQL or NULL. In case of passing a NULL pointer mysql\_init() will allocate memory and return a pointer to a MYSQL structure.
+## Parameter
+
+* `mysql` - a pointer to `MYSQL` or `NULL`. In case of passing a `NULL` pointer mysql\_init() will allocate memory and return a pointer to a MYSQL structure.
 
 ## Description
 
 Prepares and initializes a MYSQL structure to be used with [mysql\_real\_connect()](mysql_real_connect.md).
 
-If mysql\_thread\_init() was not called before, mysql\_init() will also initialize the thread subsystem for the current thread.
+If `mysql_thread_init()` was not called before, `mysql_init()` will also initialize the thread subsystem for the current thread.
+
+## Return Value
+
+The `mysql_init()` function returns an address of a `MYSQL` structure, or NULL in case of memory allocation error.
 
 {% hint style="info" %}
 Members of the MYSQL structure are not intended for application use.
@@ -35,6 +41,5 @@ Memory allocated by mysql\_init() must be freed with [mysql\_close()](mysql_clos
 * [mysql\_options()](mysql_options.md)
 * [mysql\_thread\_init()](mysql_thread_init.md)
 * [mysql\_close()](mysql_close.md)
-
 
 {% @marketo/form formId="4316" %}

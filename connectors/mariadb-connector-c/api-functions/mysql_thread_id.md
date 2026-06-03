@@ -1,7 +1,7 @@
 ---
 description: >-
-  mysql_thread_id retrieves the thread identifier for an active connection;
-  the value may change after a reconnect if the reconnect option is enabled.
+  mysql_thread_id retrieves the thread identifier for an active connection; the
+  value may change after a reconnect if the reconnect option is enabled.
 ---
 
 # mysql\_thread\_id
@@ -12,6 +12,8 @@ description: >-
 unsigned long mysql_thread_id(MYSQL * mysql);
 ```
 
+## Parameter
+
 * `mysql` - a mysql handle, which was previously allocated by [mysql\_init()](mysql_init.md) or [mysql\_real\_connect()](mysql_real_connect.md).
 
 ## Description
@@ -21,7 +23,6 @@ The `mysql_thread_id()` function returns the thread id for the current connectio
 {% hint style="info" %}
 The current connection can be killed with [mysql\_kill()](mysql_kill.md). If reconnect option is enabled the thread id might change if the client reconnects to the server.
 {% endhint %}
-
 
 ## See also
 

@@ -1,7 +1,7 @@
 ---
 description: >-
-  mysql_stat returns a status string from the MariaDB server covering
-  uptime, active threads, query count, open tables, and queries per second.
+  mysql_stat returns a status string from the MariaDB server covering uptime,
+  active threads, query count, open tables, and queries per second.
 ---
 
 # mysql\_stat
@@ -11,6 +11,8 @@ description: >-
 ```c
 const char * mysql_stat(MYSQL * mysql);
 ```
+
+## Parameter
 
 * `mysql` - a mysql handle, which was previously allocated by [mysql\_init()](mysql_init.md) or [mysql\_real\_connect()](mysql_real_connect.md).
 

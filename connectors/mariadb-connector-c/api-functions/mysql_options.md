@@ -1,8 +1,8 @@
 ---
 description: >-
-  mysql_options sets extra connection options on a MYSQL handle before
-  calling mysql_real_connect. Deprecated since Connector/C 3.0 — use
-  mysql_optionsv instead.
+  mysql_options sets extra connection options on a MYSQL handle before calling
+  mysql_real_connect. Deprecated since Connector/C 3.0 — use mysql_optionsv
+  instead.
 ---
 
 # mysql\_options
@@ -15,6 +15,8 @@ int mysql_options(MYSQL * mysql,
                   const void * arg);
 ```
 
+## Parameters
+
 * `mysql` - a mysql handle, which was previously allocated by [mysql\_init()](mysql_init.md) or [mysql\_real\_connect()](mysql_real_connect.md).
 * `mysql_option` - the option you want to set. See description below.
 * `arg` - the value for the option.
@@ -22,6 +24,8 @@ int mysql_options(MYSQL * mysql,
 ## Description
 
 Used to set extra connect options and affect behavior for a connection. This function may be called multiple times to set several options. mysql\_options() should be called after [mysql\_init()](mysql_init.md) and before [mysql\_real\_connect()](mysql_real_connect.md).
+
+## Return Value
 
 Returns zero on success, non zero if an error occurred (invalid option or value).
 
@@ -38,6 +42,5 @@ See [mysql\_optionsv](mysql_optionsv.md).
 * [mysql\_init()](mysql_init.md)
 * [mysql\_optionsv](mysql_optionsv.md)
 * [mysql\_real\_connect()](mysql_real_connect.md)
-
 
 {% @marketo/form formId="4316" %}

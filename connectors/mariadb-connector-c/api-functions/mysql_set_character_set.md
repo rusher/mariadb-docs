@@ -14,16 +14,24 @@ int mysql_set_character_set(MYSQL * mysql,
                             const char * csname);
 ```
 
+## Parameters
+
 * `mysql` - a mysql handle, which was previously allocated by [mysql\_init()](mysql_init.md) or [mysql\_real\_connect()](mysql_real_connect.md).
 * `csname` - character set name
 
 ## Description
 
-Sets the default [character set](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/character-sets) for the current connection. Returns zero on success, non-zero on failure.
+Sets the default [character set](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/character-sets) for the current connection.&#x20;
+
+## Return Value
+
+Returns zero on success, non-zero on failure.
 
 {% hint style="info" %}
-It's strongly recommended to use `mysql_set_character_set()` instead of SET NAMES ... since [mysql\_real\_escape\_string()](mysql_real_escape_string.md) might fail or deliver unexpected results.
+It is strongly recommended to use `mysql_set_character_set()` instead of SET NAMES ... since [mysql\_real\_escape\_string()](mysql_real_escape_string.md) might fail or deliver unexpected results.
 {% endhint %}
+
+## Supported Character Sets
 
 The client library supports the following character sets:
 
@@ -72,5 +80,6 @@ The client library supports the following character sets:
 ## See also
 
 * [mysql\_real\_escape\_string()](mysql_real_escape_string.md)
+* [mysql\_get\_character\_set\_info()](mysql_get_character_set_info.md)
 
 {% @marketo/form formId="4316" %}

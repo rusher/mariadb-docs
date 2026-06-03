@@ -11,7 +11,7 @@ description: >-
 
 mysql\_set\_local\_infile\_default - Sets local infile callback functions to default
 
-## Synopsis
+## Syntax
 
 ```c
 #include <mysql.h>
