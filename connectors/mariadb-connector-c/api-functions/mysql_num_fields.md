@@ -24,7 +24,7 @@ Returns number of fields in a specified result set.
 
 Returns number of fields.
 
-## See also
+## See Also
 
 * [mysql\_fetch\_field()](mysql_fetch_field.md)
 * [mysql\_field\_count()](mysql_field_count.md)

@@ -31,5 +31,4 @@ If the type of the plugin is not known, -1 needs to be specified for parameter t
 
 ## See Also
 
-* mysql\_load\_plugin()
-* mysql\_load\_pluginv()
+* [mysql\_load\_plugin()](mysql_load_plugin.md)

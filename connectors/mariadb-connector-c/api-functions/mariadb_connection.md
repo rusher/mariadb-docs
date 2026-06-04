@@ -16,6 +16,6 @@ my_bool mariadb_connection(MYSQL * mysql);
 
 Checks if the client is connected to a MariaDB or MySQL database server.
 
-## Return value
+## Return Value
 
 Returns a non zero value if connected to a MariaDB database server, otherwise zero.

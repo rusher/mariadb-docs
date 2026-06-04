@@ -25,7 +25,7 @@ Returns number of rows in a result set.
 The behavior of `mysql_num_rows()` depends on whether buffered or unbuffered result sets are being used. For unbuffered result sets, `mysql_num_rows()` will not return the correct number of rows until all the rows in the result have been retrieved.
 {% endhint %}
 
-## See also
+## See Also
 
 * [mysql\_affected\_rows()](mysql_affected_rows.md)
 * [mysql\_use\_result()](mysql_use_result.md)

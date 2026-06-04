@@ -18,7 +18,7 @@ ulong mysql_net_read_packet(MYSQL *mysql)
 
 `mysql_net_read_packet` reads the next protocol packet from the server into the connection's internal network buffer.
 
-#### Returns
+## Return Value
 
 Returns the length of the received packet.
 
@@ -26,6 +26,6 @@ Returns the length of the received packet.
 This function is part of the low level protocol API.
 {% endhint %}
 
-#### See also
+## See also
 
 * [`mysql_net_field_length()`](mysql_net_field_length.md)

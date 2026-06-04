@@ -42,7 +42,7 @@ This is the same as [`mysql_optionsv(mysql, MYSQL_OPT_SSL_ENFORCE, &yes)`](mysql
 * Even if Connector/C supports TLSv1.3 protocol, it is not possible yet to specify TLSv1.3 cipher suites via `cipher` parameter.
 {% endhint %}
 
-## See also
+## See Also
 
 * [mysql\_get\_ssl\_cipher()](mysql_get_ssl_cipher.md)
 

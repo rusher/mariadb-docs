@@ -24,7 +24,7 @@ Return the offset of the field cursor used for the last [mysql\_fetch\_field()](
 
 Returns the current offset of the field cursor
 
-## See also
+## See Also
 
 * [mysql\_field\_seek()](mysql_field_seek.md)
 

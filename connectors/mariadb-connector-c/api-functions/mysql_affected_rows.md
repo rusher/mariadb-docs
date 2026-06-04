@@ -31,7 +31,7 @@ The [REPLACE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-state
 
 Returns the number of affected rows or -1 on error.
 
-## See also
+## See Also
 
 * [mysql\_num\_rows()](mysql_num_rows.md)
 

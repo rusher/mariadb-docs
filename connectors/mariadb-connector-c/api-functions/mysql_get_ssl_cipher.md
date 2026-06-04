@@ -30,7 +30,7 @@ Returns a zero terminated string containing the cipher suite used for a secure c
 * \`mysql\_get\_ssl\_cipher()' can be used to determine if the client server connection is secure.
 * Depending on the TLS library in use (OpenSSL, GnuTLS or Windows Schannel) the name of the cipher suites may differ. For example the cipher suite 0x002F (`TLS_RSA_WITH_AES_128_CBC_SHA`) has different names: `AES128-SHA` for OpenSSL and Schannel and `TLS_RSA_AES_128_CBC_SHA1` for GnuTLS.
 
-## See also
+## See Also
 
 * [mysql\_ssl\_set()](mysql_ssl_set.md)
 

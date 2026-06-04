@@ -31,7 +31,7 @@ Returns zero on success, nonzero if an error occurred.
 If a reconnect occurred the `thread_id` will change. Also resources bundled to the connection (prepared statements, locks, temporary tables, ...) will be released.
 {% endhint %}
 
-## See also
+## See Also
 
 * [mysql\_options()](mysql_options.md)
 * [mysql\_kill()](mysql_kill.md)

@@ -28,7 +28,7 @@ Returns zero on success, nonzero if an error occurred.
 `mysql_rollback()` will not work as expected if [autocommit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#autocommit) mode was set or the storage engine does not support transactions.
 {% endhint %}
 
-## See also
+## See Also
 
 * [mysql\_commit()](mysql_commit.md)
 * [mysql\_autocommit()](mysql_autocommit.md)

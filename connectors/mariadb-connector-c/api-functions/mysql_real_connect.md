@@ -65,7 +65,7 @@ Returns a connection handle (same as passed for 1st parameter) or `NULL` on erro
     `host=127.0.0.1:3306,`
 {% endhint %}
 
-## See also
+## See Also
 
 * [mariadb\_reconnect](mariadb_reconnect.md)
 * [mysql\_close()](mysql_close.md)

@@ -20,7 +20,7 @@ const char * mysql_get_server_info(MYSQL * mysql);
 
 Returns the server version or `NULL` on failure.
 
-### Return value
+## Return Value
 
 Returns the server version as zero terminated string or `NULL`on failure.
 
@@ -28,7 +28,7 @@ Returns the server version as zero terminated string or `NULL`on failure.
 To obtain the numeric server version please use [mysql\_get\_server\_version()](mysql_get_server_version.md).
 {% endhint %}
 
-## See also
+## See Also
 
 * [mysql\_get\_server\_version()](mysql_get_server_version.md)
 * [mysql\_get\_client\_info()](mysql_get_client_info.md)

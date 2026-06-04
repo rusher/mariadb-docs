@@ -35,7 +35,7 @@ If your statement contains binary data you should use [mysql\_real\_query()](mys
 To determine if a statement returned a result set use the function [mysql\_num\_fields()](mysql_num_fields.md).
 {% endhint %}
 
-## See also
+## See Also
 
 * [mysql\_real\_query()](mysql_real_query.md)
 * [mysql\_num\_fields()](mysql_num_fields.md)

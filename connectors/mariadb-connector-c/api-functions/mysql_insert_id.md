@@ -29,7 +29,7 @@ Returns the value of the modified column with `AUTO_INCREMENT` attribute. If the
 When performing a multi-insert statement, `mysql_insert_id()` will return the value of the first row.
 {% endhint %}
 
-## See also
+## See Also
 
 * [AUTO INCREMENT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/auto_increment)
 * [mysql\_stmt\_insert\_id()](../api-prepared-statement-functions/mysql_stmt_insert_id.md)

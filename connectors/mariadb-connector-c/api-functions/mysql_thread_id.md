@@ -24,7 +24,7 @@ The `mysql_thread_id()` function returns the thread id for the current connectio
 The current connection can be killed with [mysql\_kill()](mysql_kill.md). If reconnect option is enabled the thread id might change if the client reconnects to the server.
 {% endhint %}
 
-## See also
+## See Also
 
 * [mysql\_kill()](mysql_kill.md)
 * [mysql\_options()](mysql_options.md)

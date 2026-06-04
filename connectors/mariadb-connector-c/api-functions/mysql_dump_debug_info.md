@@ -29,7 +29,7 @@ Returns zero on success, nonzero if an error occurred.
 The server status information will be dumped into the [error log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log) file, which can usually be found in the data directory of your server installation.
 {% endhint %}
 
-## See also
+## See Also
 
 * [mysql\_debug()](mysql_debug.md)
 * mysql\_debug\_end()

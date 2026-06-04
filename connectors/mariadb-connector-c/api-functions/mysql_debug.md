@@ -68,7 +68,7 @@ Enabling generation of debug information slows down the overall performance and 
 This function is deprecated and not supported anymore.
 {% endhint %}
 
-## See also
+## See Also
 
 * mysql\_debug\_end()
 * [mysql\_dump\_debug\_info()](mysql_dump_debug_info.md)

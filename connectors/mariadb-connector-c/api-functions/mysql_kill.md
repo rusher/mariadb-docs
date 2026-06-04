@@ -31,7 +31,7 @@ Returns 0 on success, otherwise error on nonzero.
 * The `mysql_kill()` function only kills a connection; it doesn't free any memory - this must be done explicitly by calling [mysql\_close()](mysql_close.md).
 {% endhint %}
 
-## See also
+## See Also
 
 * [mysql\_thread\_id()](mysql_thread_id.md)
 * [mysql\_close()](mysql_close.md)

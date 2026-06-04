@@ -25,7 +25,7 @@ Returns the row offset of a result cursor. The returned offset value can be used
 This function will not work if the result set was obtained by [mysql\_use\_result()](mysql_use_result.md).
 {% endhint %}
 
-## See also
+## See Also
 
 * [mysql\_store\_result()](mysql_store_result.md)
 * [mysql\_row\_seek()](mysql_row_seek.md)

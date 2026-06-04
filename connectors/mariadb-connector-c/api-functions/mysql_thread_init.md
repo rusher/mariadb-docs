@@ -29,7 +29,7 @@ Before a client thread ends the [mysql\_thread\_end()](mysql_thread_end.md) func
 This function has been deprecated since MariaDB Connector/C 3.0.0.
 {% endhint %}
 
-## See also
+## See Also
 
 * [mysql\_thread\_end()](mysql_thread_end.md)
 * [mysql\_thread\_safe()](mysql_thread_safe.md)

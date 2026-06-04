@@ -29,7 +29,7 @@ Returns zero on success, nonzero if an error occurred.
 If a multi query contains errors the return value of [mysql\_errno](mysql_errno.md)/error() might change and there will be no result set available.
 {% endhint %}
 
-## See also
+## See Also
 
 * [mysql\_real\_query()](mysql_real_query.md)
 * [mysql\_store\_result()](mysql_store_result.md)

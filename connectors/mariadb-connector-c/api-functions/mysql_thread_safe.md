@@ -24,7 +24,7 @@ Returns always 1.
 This function exists for compatibility reasons and returns always 1.
 {% endhint %}
 
-## See also
+## See Also
 
 * [mysql\_thread\_init()](mysql_thread_init.md)
 * [mysql\_thread\_end()](mysql_thread_end.md)

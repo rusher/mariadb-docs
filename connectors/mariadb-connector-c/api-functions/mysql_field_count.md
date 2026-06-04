@@ -29,7 +29,7 @@ The number of columns for the most recent statement. The value is zero, if the s
 The mysql\_field\_count() function should be used to determine if there is a result set available.
 {% endhint %}
 
-## See also
+## See Also
 
 * [mysql\_store\_result()](mysql_store_result.md)
 * [mysql\_use\_result()](mysql_use_result.md)

@@ -16,6 +16,6 @@ Retrieves generic or connection related information.
 This function is deprecated. Please use [mariadb\_get\_infov()](mariadb_get_infov.md) instead.
 {% endhint %}
 
-## See also
+## See Also
 
 * [mariadb\_get\_infov()](mariadb_get_infov.md)&#x20;

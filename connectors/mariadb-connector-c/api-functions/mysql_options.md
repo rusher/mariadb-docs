@@ -33,11 +33,11 @@ Returns zero on success, non zero if an error occurred (invalid option or value)
 This function is deprecated as of MariaDB Connector/C 3.0 and will be removed in future releases. It's preferable to use [mysql\_optionsv](mysql_optionsv.md).
 {% endhint %}
 
-### Options
+## Options
 
 See [mysql\_optionsv](mysql_optionsv.md).
 
-## See also
+## See Also
 
 * [mysql\_init()](mysql_init.md)
 * [mysql\_optionsv](mysql_optionsv.md)

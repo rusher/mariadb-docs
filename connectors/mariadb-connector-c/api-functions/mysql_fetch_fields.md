@@ -28,7 +28,7 @@ An array of type `MYSQL_FIELD`.
 The total number of fields can be obtained by [mysql\_field\_count()](mysql_field_count.md).
 {% endhint %}
 
-## See also
+## See Also
 
 * [mysql\_fetch\_field()](mysql_fetch_field.md)
 * [mysql\_fetch\_field\_direct()](mysql_fetch_field_direct.md)

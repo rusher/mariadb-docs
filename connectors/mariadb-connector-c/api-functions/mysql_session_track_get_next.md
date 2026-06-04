@@ -40,6 +40,6 @@ Zero for success, nonzero if an error occurred.
 
 ## See Also
 
-[mysql\_session\_track\_get\_first()](mysql_session_track_get_first.md)
+* [mysql\_session\_track\_get\_first()](mysql_session_track_get_first.md)
 
 {% @marketo/form formId="4316" %}

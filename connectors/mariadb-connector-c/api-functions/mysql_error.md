@@ -25,7 +25,7 @@ Returns the last error message for the most recent function call that can succee
 * Client error messages can be obtained by calling [mariadb\_get\_infov()](https://github.com/mariadb-corporation/mariadb-connector-c/wiki/mariadb_get_infov) and passing the parameter `MARIADB_CLIENT_ERRORS`
 {% endhint %}
 
-## See also
+## See Also
 
 * [mysql\_errno()](mysql_errno.md)
 * [mysql\_sqlstate()](mysql_sqlstate.md).

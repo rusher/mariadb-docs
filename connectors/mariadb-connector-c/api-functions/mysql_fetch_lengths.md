@@ -29,7 +29,7 @@ An array of unsigned long values . The size of the array can be determined by th
 `mysql_fetch_lengths()` is valid only for the current row of the result set. It returns NULL if you call it before calling [mysql\_fetch\_row()](mysql_fetch_row.md) or after retrieving all rows in the result.
 {% endhint %}
 
-## See also
+## See Also
 
 * [mysql\_fetch\_row()](mysql_fetch_row.md)
 * [mysql\_field\_count()](mysql_field_count.md)

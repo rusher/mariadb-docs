@@ -33,7 +33,7 @@ Returns zero on success, otherwise non-zero.
 * To determine if `mysql_real_query` returns a result set, use the [mysql\_num\_fields()](mysql_num_fields.md) function.
 {% endhint %}
 
-## See also
+## See Also
 
 * [mysql\_query()](mysql_query.md)
 * [mysql\_num\_fields()](mysql_num_fields.md)

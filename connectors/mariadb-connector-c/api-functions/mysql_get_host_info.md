@@ -24,7 +24,7 @@ Describes the type of connection in use for the connection, including the server
 
 Returns a string, describing host information or `NULL` if the connection is not valid.
 
-## See also
+## See Also
 
 * [mysql\_get\_server\_version()](mysql_get_server_version.md)
 

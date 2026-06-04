@@ -24,7 +24,7 @@ Returns the last [error code](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ref
 Client error messages are listed in errmsg.h header file, server error messages are listed in mysqld\_error.h header file of the server source distribution.
 {% endhint %}
 
-## See also
+## See Also
 
 * [mysql\_error()](mysql_error.md)
 * [mysql\_sqlstate()](mysql_sqlstate.md)

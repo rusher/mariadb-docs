@@ -67,7 +67,7 @@ int display_extended_field_attribute(MYSQL *mysql)
 
 `mariadb_field_attr` was added in MariaDB Connector/C 3.1.8.
 
-## See also
+## See Also
 
 * [mysql\_store\_result()](mysql_store_result.md)
 * [mysql\_use\_result()](mysql_use_result.md)

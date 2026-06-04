@@ -26,7 +26,7 @@ The timeout value in seconds as an `unsigned int`.
 **This function is deprecated.** Use [`mariadb_get_infov()`](mariadb_get_infov.md) with the `MARIADB_CONNECTION_ASYNC_TIMEOUT` option instead.&#x20;
 {% endhint %}
 
-#### See also
+## See Also
 
-* `mysql_get_timeout_value_ms()`
+* [`mysql_get_timeout_value_ms()`](mysql_get_timeout_value_ms.md)
 * [`mariadb_get_infov()`](mariadb_get_infov.md)

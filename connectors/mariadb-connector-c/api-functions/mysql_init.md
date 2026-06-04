@@ -35,7 +35,7 @@ Any subsequent calls to any mysql function (except mysql\_options()) will fail u
 Memory allocated by mysql\_init() must be freed with [mysql\_close()](mysql_close.md).
 {% endhint %}
 
-## See also
+## See Also
 
 * [mysql\_real\_connect()](mysql_real_connect.md)
 * [mysql\_options()](mysql_options.md)

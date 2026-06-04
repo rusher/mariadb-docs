@@ -24,7 +24,7 @@ Returns a string containing the [SQLSTATE](https://app.gitbook.com/s/SsmexDFPv2x
 Please note that not all client library error codes are mapped to `SQLSTATE` errors. Errors which can't be mapped will be returned as value HY000.
 {% endhint %}
 
-## See also
+## See Also
 
 * [mysql\_error()](mysql_error.md)
 * [mysql\_errno()](mysql_errno.md)

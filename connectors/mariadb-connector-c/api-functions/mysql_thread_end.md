@@ -29,7 +29,7 @@ Unlike [mysql\_thread\_init()](mysql_thread_init.md) `mysql_thread_end()` will n
 This function has been deprecated since MariaDB Connector/C 3.0.0.
 {% endhint %}
 
-## See also
+## See Also
 
 * [mysql\_thread\_init()](mysql_thread_init.md)
 * [mysql\_thread\_safe()](mysql_thread_safe.md)

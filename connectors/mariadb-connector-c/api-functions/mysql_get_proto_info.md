@@ -28,7 +28,7 @@ The protocol version number in use.
 The client library doesn't support protocol version 9 and prior.
 {% endhint %}
 
-## See also
+## See Also
 
 * [mysql\_get\_host\_info()](mysql_get_host_info.md)
 

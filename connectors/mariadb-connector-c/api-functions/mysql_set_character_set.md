@@ -77,7 +77,7 @@ The client library supports the following character sets:
 | utf32         | UTF-32 Unicode                                                           |
 | utf8mb4       | UTF 4-byte Unicode                                                       |
 
-## See also
+## See Also
 
 * [mysql\_real\_escape\_string()](mysql_real_escape_string.md)
 * [mysql\_get\_character\_set\_info()](mysql_get_character_set_info.md)

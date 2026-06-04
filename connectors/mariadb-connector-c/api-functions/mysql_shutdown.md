@@ -26,7 +26,7 @@ Sends a shutdown message to the server. To shut down the database server, the us
 
 Returns zero on success, non-zero on failure.
 
-## See also
+## See Also
 
 * [mysql\_kill()](mysql_kill.md)
 

@@ -28,7 +28,7 @@ Returns zero on success, nonzero if an error occurred.
 Executing mysql\_commit() will not affected the behaviour of [autocommit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#autocommit). This means, any update or insert statements following mysql\_commit() will be rolled back when the connection gets closed.
 {% endhint %}
 
-## See also
+## See Also
 
 * [mysql\_rollback()](mysql_rollback.md)
 * [mysql\_autocommit()](mysql_autocommit.md)

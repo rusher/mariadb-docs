@@ -33,7 +33,7 @@ Returns the length of the encoded string without the trailing null character.
 * The encoded string does not contain a leading X'.
 {% endhint %}
 
-## See also
+## See Also
 
 * [mysql\_real\_escape\_string()](mysql_real_escape_string.md)
 

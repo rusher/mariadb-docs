@@ -30,7 +30,7 @@ Pointer to a `MYSQL_FIELD` structure or `NULL` if an invalid field number was sp
 The total number of fields can be obtained by `mysql_field_count()`.
 {% endhint %}
 
-## See also
+## See Also
 
 * [mysql\_fetch\_field()](mysql_fetch_field.md)
 * [mysql\_field\_count()](mysql_field_count.md)

@@ -31,7 +31,7 @@ Server option, which can be one of the following values:
 
 Returns zero on success, non-zero on failure.
 
-## See also
+## See Also
 
 * [mysql\_real\_connect()](mysql_real_connect.md)
 

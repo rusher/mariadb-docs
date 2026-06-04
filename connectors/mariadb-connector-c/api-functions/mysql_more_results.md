@@ -29,7 +29,7 @@ Returns 1 if more result sets are available, otherwise zero..
 * Multiple result sets can be obtained either by calling a stored procedure or by executing concatenated statements, e.g. `SELECT a FROM t1;SELECT b, c FROM t2`.
 {% endhint %}
 
-## See also
+## See Also
 
 * [mysql\_real\_query()](mysql_real_query.md)
 * [mysql\_use\_result()](mysql_use_result.md)

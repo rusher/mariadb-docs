@@ -93,7 +93,7 @@ const char *user;
 mariadb_get_infov(mysql, MARIADB_CONNECTION_USER, (void *)&user);
 ```
 
-## See also
+## See Also
 
 * [mysql\_get\_optionv()](mysql_get_optionv.md)
 

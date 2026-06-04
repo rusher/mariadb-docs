@@ -32,7 +32,7 @@ mysql\_store\_result() returns NULL in case an error occurred or if the query di
 The memory allocated by `mysql_store_result()` needs to be released by calling the function [mysql\_free\_result()](mysql_free_result.md).
 {% endhint %}
 
-## See also
+## See Also
 
 * [mysql\_free\_result()](mysql_free_result.md)
 * [mysql\_use\_result()](mysql_use_result.md)

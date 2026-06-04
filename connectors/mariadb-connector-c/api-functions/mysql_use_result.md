@@ -31,7 +31,7 @@ The `mysql_use_result()` function does not transfer the entire result set. Hence
 `mysql_use_result()` will block the current connection until all result sets are retrieved, or result set was released by [mysql\_free\_result()](mysql_free_result.md).
 {% endhint %}
 
-## See also
+## See Also
 
 * [mysql\_store\_result()](mysql_store_result.md)
 * [mysql\_free\_result()](mysql_free_result.md)
