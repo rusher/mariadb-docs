@@ -137,7 +137,6 @@
         * [Using CONNECT - General Information](server-usage/storage-engines/connect/using-connect/using-connect-general-information.md)
         * [Using CONNECT - Importing File Data Into MariaDB Tables](server-usage/storage-engines/connect/using-connect/using-connect-importing-file-data-into-mariadb-tables.md)
         * [Using CONNECT - Indexing](server-usage/storage-engines/connect/using-connect/using-connect-indexing.md)
-        * [USING CONNECT - Offline Documentation](server-usage/storage-engines/connect/using-connect/using-connect-offline-documentation.md)
         * [Using CONNECT - Partitioning and Sharding](server-usage/storage-engines/connect/using-connect/using-connect-partitioning-and-sharding.md)
         * [Using CONNECT - Virtual and Special Columns](server-usage/storage-engines/connect/using-connect/using-connect-virtual-and-special-columns.md)
       * [Installing CONNECT](server-usage/storage-engines/connect/installing-the-connect-storage-engine.md)
