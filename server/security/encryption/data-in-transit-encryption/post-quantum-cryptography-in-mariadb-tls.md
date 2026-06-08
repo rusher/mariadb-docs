@@ -16,11 +16,10 @@ MariaDB automatically negotiates ML-KEM for TLS 1.3 key exchange when linked aga
 
 ## Requirements
 
-| Component        | Version Requirement        |
-| ---------------- | -------------------------- |
-| MariaDB Server   | -                          |
-| OpenSSL          | 3.5.0 or later             |
-| Client Connector | Connector/C 3.5.0 or later |
+| Component      | Version Requirement |
+| -------------- | ------------------- |
+| MariaDB Server | -                   |
+| OpenSSL        | 3.5.0 or later      |
 
 ## How It Works
 
