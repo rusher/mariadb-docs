@@ -23,7 +23,7 @@ MariaDB automatically negotiates ML-KEM for TLS 1.3 key exchange when linked aga
 
 ## How It Works
 
-MariaDB assigns the system OpenSSL library to handle TLS operations. As a TLS 1.3 key exchange group, OpenSSL 3.5 included native support for ML-KEM. A MariaDB 13.0 server will automatically publish ML-KEM key exchange groups during the TLS 1.3 handshake if OpenSSL 3.5 or later is installed.
+MariaDB assigns the system OpenSSL library to handle TLS operations. As a TLS 1.3 key exchange group, OpenSSL 3.5 included native support for ML-KEM. A MariaDB server will automatically publish ML-KEM key exchange groups during the TLS 1.3 handshake if OpenSSL 3.5 or later is installed.
 
 There is no need to modify any server system variables. During this time of transition, **hybrid mode** is used. This indicates that ML-KEM and a traditional method like classical Elliptic Curve (X25519) are used for key exchange. This hybrid classical and post-quantum approach is reflected in the negotiated group that can be seen in the handshake output: `X25519MLKEM768`.&#x20;
 
