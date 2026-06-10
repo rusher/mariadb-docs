@@ -1,3 +1,10 @@
+---
+description: >-
+  Rolling upgrade procedure for moving a Galera Cluster from MariaDB 10.11 to
+  MariaDB 11.4, covering pre-upgrade checks, repository changes, drain steps,
+  and per-node restart workflow.
+---
+
 # Upgrading from MariaDB 10.11 to MariaDB 11.4 with Galera Cluster
 
 [Galera Cluster](../../) ships with the MariaDB Server. Upgrading a Galera Cluster node is very similar to upgrading a server from [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/10.11/what-is-mariadb-1011) to [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/11.4/what-is-mariadb-114). For more information on that process as well as incompatibilities between versions, see the [Upgrade Guide](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/mariadb-community-server-upgrade-paths).&#x20;
