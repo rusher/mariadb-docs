@@ -1,21 +1,21 @@
-# Upgrading from MariaDB 10.11 to MariaDB 11.4 with Galera Cluster
+# Upgrading from MariaDB 11.8 to MariaDB 12.3 with Galera Cluster
 
-[Galera Cluster](../../) ships with the MariaDB Server. Upgrading a Galera Cluster node is very similar to upgrading a server from [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/10.11/what-is-mariadb-1011) to [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/11.4/what-is-mariadb-114). For more information on that process as well as incompatibilities between versions, see the [Upgrade Guide](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/mariadb-community-server-upgrade-paths).&#x20;
+[Galera Cluster](../../) ships with the MariaDB Server. Upgrading a Galera Cluster node is very similar to upgrading a server from [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/11.8/what-is-mariadb-118) to [MariaDB 12.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/12.3/mariadb-12.3-changes-and-improvements). For more information on that process as well as incompatibilities between versions, see the [Upgrade Guide](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/mariadb-community-server-upgrade-paths).&#x20;
 
 ## Performing a Rolling Upgrade
 
-The following steps can be used to perform a rolling upgrade from MariaDB 10.11 to MariaDB 11.4 when using Galera Cluster. In a rolling upgrade, each node is upgraded individually, so the cluster is always operational. There is no downtime from the application's perspective\[cite: 5, 6, 7, 8].&#x20;
+The following steps can be used to perform a rolling upgrade from MariaDB 10.11 to MariaDB 11.4 when using Galera Cluster. In a rolling upgrade, each node is upgraded individually, so the cluster is always operational. There is no downtime from the application's perspective.&#x20;
 
 First, before you get started:&#x20;
 
-1. First, take a look at [Upgrading from MariaDB 10.11 to MariaDB 11.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/mariadb-community-server-upgrade-paths/upgrading-from-mariadb-10-11-to-mariadb-11-4) to see what has changed between the major versions.&#x20;
-2. Check whether any system variables or options have been changed or removed. For example, the `old_alter_table` variable has been completely removed in MariaDB 11.x. Make sure that your server's configuration is compatible with the new MariaDB version before upgrading&#x20;
-3. Check whether replication has changed in the new MariaDB version in any way that could cause issues while the cluster contains upgraded and non-upgraded nodes.&#x20;
-4. Check whether any new features have been added to the new MariaDB version. If a new feature in the new MariaDB version cannot be replicated to the old MariaDB version, then do not use that feature until all cluster nodes have been upgraded to the new MariaDB version.&#x20;
-5. Next, make sure that the Galera version numbers are compatible.&#x20;
-6. If you are upgrading from standard releases of [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/10.11/what-is-mariadb-1011) to [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/11.4/what-is-mariadb-114), note your specific maintenance version numbers. Both MariaDB 10.11 and 11.4 initially shipped with Galera 3. However, Galera 4 (wsrep API 26) was introduced in maintenance releases starting with [MariaDB 10.11.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/10.11/10.11.11) and [MariaDB 11.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/11.4/11.4.5). For the purposes of a rolling upgrade, ensure your versions align across these ecosystem baselines.&#x20;
-7. See [What is MariaDB Galera Cluster](../../readme/mariadb-galera-cluster-guide.md)?: Galera wsrep provider Versions for information on which MariaDB releases use which Galera wsrep provider versions.&#x20;
-8. You want to have a large enough gcache to avoid a State Snapshot Transfer (SST) during the rolling upgrade. The gcache size can be configured by setting gcache.size. For example: [wsrep\_provider\_options](../../reference/wsrep-variable-details/wsrep_provider_options.md)="gcache.size=2G".&#x20;
+1. First, take a look at Upgrading from MariaDB 11.8 to MariaDB 12.3 to see what has changed between the major versions.&#x20;
+2. CRITICAL - Package Architecture Changes: The Galera package dependency has been removed from standard server packages, and the Galera package is no longer included in the MariaDB repositories. A new `mariadb-server-galera` package now exists for Debian and RPM packages. You must explicitly install `mariadb-server-galera`. If you only upgrade the standard `mariadb-server` package, your systemd service definitions will not be Galera-capable for bootstrap or SST transfers.
+3. Verify Configuration Files: Check whether any system variables or options have been changed or removed. For example, the use of `MYSQLD_OPTS` as an environment variable for systemd services is deprecated in 12.3. You should place configuration options directly into configuration files.
+4. Assess Replication: Check whether replication behavior has changed in the new version.
+5. Defer New Features: Do not use newly introduced features until all cluster nodes have been successfully upgraded to the new MariaDB version.
+6. Ensure Compatibility: Verify your Galera provider version compatibility. Make sure you are prepared to manually supply `galera-4` if relying on RPMs.
+7. Tune Gcache Size: You want to have a large enough `gcache` to avoid a [State Snapshot Transfer (SST)](../../high-availability/state-snapshot-transfers-ssts-in-galera-cluster/) during the rolling upgrade. Ensure your `wsrep_provider_options="gcache.size=2G"` is adequately sized.
+8. Take a Backup: It is always recommended to take a reliable backup of your database using a tool like [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup/mariadb-backup-overview) before proceeding.
 
 Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend mariadb-backup.&#x20;
 
@@ -23,7 +23,7 @@ Then, for each node, perform the following steps:
 
 {% stepper %}
 {% step %}
-Modify the repository configuration, so the system's package manager installs MariaDB 11.4.
+Modify the repository configuration, so the system's package manager installs [MariaDB 12.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/12.3/mariadb-12.3-changes-and-improvements).
 
 {% tabs %}
 {% tab title="Debian, Ubuntu, ..." %}
