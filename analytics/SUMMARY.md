@@ -57,6 +57,7 @@
       * [Upgrading ColumnStore](mariadb-columnstore/management/deployment/upgrades/README.md)
         * [Upgrade Multi-Node MariaDB ColumnStore from 6 to 23.10](mariadb-columnstore/management/deployment/upgrades/upgrade-multi-node-mariadb-enterprise-columnstore-from-6-to-23.10.md)
         * [Major Release Upgrades for MariaDB ColumnStore](mariadb-columnstore/management/deployment/upgrades/major-release-upgrades-for-mariadb-enterprise-columnstore.md)
+        * [Refined Multi-Node Upgrade Sequencing: 6.x to 23.10](mariadb-columnstore/management/deployment/upgrades/refined-multi-node-upgrade-sequencing-6.x-to-23.10.md)
       * [Building ColumnStore](mariadb-columnstore/management/deployment/building-columnstore-in-mariadb.md)
     * [Managing ColumnStore Database Environment](mariadb-columnstore/management/managing-columnstore-database-environment/README.md)
       * [ColumnStore Partition Management](mariadb-columnstore/management/managing-columnstore-database-environment/columnstore-partition-management.md)
