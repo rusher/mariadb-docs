@@ -42,7 +42,7 @@ Use this if both nodes are on the same major MariaDB version. This offloads RAM 
 1. On the donor node, create the backup directory and take the backup:
 
 ```bash
-$BACKUP_DIR=/mariadb_backup
+BACKUP_DIR=/mariadb_backup
 mkdir -p $BACKUP_DIR
 
 DB_USER=sstuser
@@ -53,17 +53,13 @@ mariadb-backup --backup --galera-info \
    --password=$DB_USER_PASS
 ```
 
-2. On the joiner node, stop MariaDB, create the backup directory, and pull the backup:
+2. On the donor node, stop MariaDB, create the backup directory, and pull the backup:
 
 ```bash
-systemctl status mariadb
+systemctl stop mariadb
 
-BACKUP_DIR=/mysql_backup
+BACKUP_DIR=/mariadb_backup
 mkdir -p $BACKUP_DIR
-
-OS_USER=dba
-JOINER_HOST=dbserver2.mariadb.com
-rsync -av $BACKUP_DIR/* ${OS_USER}@${JOINER_HOST}:${BACKUP_DIR}
 ```
 
 3. From the donor node, transfer the contents of the backup directory to the joiner node. You can use `rsync`, `scp`, or your preferred file transfer method.
@@ -80,7 +76,7 @@ Use this for cross-version upgrades (e.g., 10.6 to 11.4). The donor's native bin
 1\. On the donor node, create the directory, take the backup, and prepare it:
 
 ```bash
-BACKUP_DIR=/mysql_backup
+BACKUP_DIR=/mariadb_backup
 mkdir -p $BACKUP_DIR
 
 DB_USER=sstuser
@@ -93,18 +89,16 @@ mariadb-backup --backup --galera-info \
 mariadb-backup --prepare --target-dir=$BACKUP_DIR
 ```
 
-2\. On the joiner node, verify MariaDB is stopped, create the directory, and pull the prepared backup:
+2\. On the donor node, make sure MariaDB is stopped, create the directory, and pull the prepared backup:
 
 ```bash
-systemctl status mariadb
+systemctl stop mariadb
 
-BACKUP_DIR=/mysql_backup
+BACKUP_DIR=/mariadb_backup
 mkdir -p $BACKUP_DIR
-
-OS_USER=dba
-JOINER_HOST=dbserver2.mariadb.com
-rsync -av $BACKUP_DIR/* ${OS_USER}@${JOINER_HOST}:${BACKUP_DIR}
 ```
+
+3. Copy the prepared backup, transfer the contents of the backup directory from the donor to the joiner node using `rsync`, `scp`, or your preferred file transfer method.
 
 #### **Method C: Streaming Backup (Zero Donor Disk Overhead)**
 
