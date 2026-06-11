@@ -92,6 +92,7 @@
       * [Capturing System-Level Process Dumps (Core Dumps)](mariadb-columnstore/management/monitoring-and-logs/capturing-system-level-process-dumps-core-dumps.md)
       * [Diagnosing Unresponsive Processes and Startup Hangs](mariadb-columnstore/management/monitoring-and-logs/diagnosing-unresponsive-processes-and-startup-hangs.md)
       * [Decoding ColumnStore Stack Traces](mariadb-columnstore/management/monitoring-and-logs/decoding-columnstore-stack-traces.md)
+    * [DBRM Recovery and Journal Management](mariadb-columnstore/management/dbrm-recovery-and-journal-management.md)
   * [Security](mariadb-columnstore/security/README.md)
     * [ColumnStore Security Vulnerabilities](mariadb-columnstore/security/columnstore-security-vulnerabilities.md)
     * [Credentials Management](mariadb-columnstore/security/enterprise-columnstore-credentials-management.md)
