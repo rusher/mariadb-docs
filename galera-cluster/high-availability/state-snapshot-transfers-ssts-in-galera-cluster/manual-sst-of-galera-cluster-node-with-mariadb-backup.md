@@ -35,6 +35,41 @@ mariadb-backup --version
 
 Select the strategy below that best matches your environment's resource constraints and upgrade requirements.
 
+```mermaid
+graph TD
+    classDef donor fill:#e1f5fe,stroke:#0288d1,stroke-width:2px;
+    classDef joiner fill:#e8f5e9,stroke:#388e3c,stroke-width:2px;
+    classDef network fill:#fff3e0,stroke:#f57c00,stroke-width:2px,stroke-dasharray: 5 5;
+
+    %% Root Action
+    Start["Take Backup on Donor 
+    (mariadb-backup --backup)"]:::donor
+
+    %% First Split: Disk vs. Stream
+    Start -->|Methods A & B| Disk["Save Raw Backup to Donor Disk"]:::donor
+    Start -->|Method C| Stream["Stream Backup via SSH 
+    (--stream=mbstream)"]:::network
+
+    %% Method B Path
+    Disk -->|Method B| PrepDonor["Prepare Backup on Donor 
+    (--prepare)"]:::donor
+    PrepDonor --> TransPrep["Transfer Prepared Files to Joiner 
+    (rsync/scp)"]:::network
+
+    %% Method A Path
+    Disk -->|Method A| TransRaw["Transfer Raw Files to Joiner 
+    (rsync/scp)"]:::network
+
+    %% Method C Path
+    Stream --> Extract["Extract Stream on Joiner 
+    (mbstream -x)"]:::joiner
+
+    %% Convergence for Methods A & C
+    TransRaw --> PrepJoiner["Prepare Backup on Joiner 
+    (--prepare)"]:::joiner
+    Extract --> PrepJoiner
+```
+
 #### **Method A: Prepare on the Joiner Node (Standard / Resource-Saving)**
 
 Use this if both nodes are on the same major MariaDB version. This offloads RAM and CPU overhead from the active donor to the joiner.
