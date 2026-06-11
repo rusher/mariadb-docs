@@ -53,7 +53,7 @@ mariadb-backup --backup --galera-info \
    --password=$DB_USER_PASS
 ```
 
-2. On the donor node, stop MariaDB, create the backup directory:
+2. On the joiner node, stop MariaDB, create the backup directory:
 
 ```bash
 systemctl stop mariadb
