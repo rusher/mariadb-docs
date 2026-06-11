@@ -82,6 +82,7 @@
       * [Backup and Restore with Object Storage](mariadb-columnstore/management/column-store-backup-and-restore/mariadb-enterprise-columnstore-backup-and-restore-with-object-storage.md)
       * [Backup and Restore with Shared Local Storage](mariadb-columnstore/management/column-store-backup-and-restore/mariadb-enterprise-columnstore-backup-and-restore-with-shared-local-storage.md)
       * [MCS backup and restore commands](mariadb-columnstore/management/column-store-backup-and-restore/mcs-backup-and-restore-commands.md)
+      * [Emergency S3 Data Reset Procedure](mariadb-columnstore/management/column-store-backup-and-restore/emergency-s3-data-reset-procedure.md)
     * [Extent Map Backup & Recovery](mariadb-columnstore/management/extent-map-backup-recovery.md)
     * [Upgrading MariaDB ColumnStore (Alpha)](mariadb-columnstore/management/upgrades.md)
     * [System Troubleshooting MariaDB ColumnStore](mariadb-columnstore/management/system-troubleshooting-mariadb-columnstore.md)
