@@ -108,7 +108,7 @@ rsync -av $BACKUP_DIR/* ${OS_USER}@${JOINER_HOST}:${BACKUP_DIR}
 
 #### **Method C: Streaming Backup (Zero Donor Disk Overhead)**
 
-Use this to avoid using local staging disk space on the donor node. Data streams directly over SSH.&#x20;
+Use this to avoid using local staging disk space on the donor node, especially when the cluster's `datadir` is very large. A standard manual backup requires enough free disk space on the donor node to hold a complete secondary copy of the data. Streaming avoids this local disk overhead entirely by piping the data directly over SSH
 
 {% hint style="warning" %}
 _Do not use for cross-version upgrades._
