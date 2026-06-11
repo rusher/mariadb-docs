@@ -53,7 +53,7 @@ mariadb-backup --backup --galera-info \
    --password=$DB_USER_PASS
 ```
 
-2. On the donor node, stop MariaDB, create the backup directory, and pull the backup:
+2. On the donor node, stop MariaDB, create the backup directory:
 
 ```bash
 systemctl stop mariadb
@@ -62,7 +62,7 @@ BACKUP_DIR=/mariadb_backup
 mkdir -p $BACKUP_DIR
 ```
 
-3. From the donor node, transfer the contents of the backup directory to the joiner node. You can use `rsync`, `scp`, or your preferred file transfer method.
+3. From the donor node, transfer the contents of the backup directory to the joiner node. You may use `rsync`, `scp`, or your preferred file transfer method.
 4. On the joiner node, prepare the backup:
 
 ```bash
@@ -89,7 +89,7 @@ mariadb-backup --backup --galera-info \
 mariadb-backup --prepare --target-dir=$BACKUP_DIR
 ```
 
-2\. On the donor node, make sure MariaDB is stopped, create the directory, and pull the prepared backup:
+2\. On the joiner node, make sure MariaDB is stopped, create the directory:
 
 ```bash
 systemctl stop mariadb
@@ -98,7 +98,7 @@ BACKUP_DIR=/mariadb_backup
 mkdir -p $BACKUP_DIR
 ```
 
-3. Copy the prepared backup, transfer the contents of the backup directory from the donor to the joiner node using `rsync`, `scp`, or your preferred file transfer method.
+3. From the donor node, transfer the contents of the backup directory to the joiner node. You may use `rsync`, `scp`, or your preferred file transfer method.
 
 #### **Method C: Streaming Backup (Zero Donor Disk Overhead)**
 
