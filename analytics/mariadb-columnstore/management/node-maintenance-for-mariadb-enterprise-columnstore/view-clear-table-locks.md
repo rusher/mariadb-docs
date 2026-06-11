@@ -53,7 +53,7 @@ viewtablelock hq_sales invoices
 
 ## Identifying Failed Transactions
 
-Sometimes, a problem with a rollback transaction can result in the DBRM setting the system to read-only and failing to release the table lock. To identify if there is a stuck or failed rollback of a transaction, you can utilize the `viewallxml` command. This utility helps read the active transaction XML files and pinpoints orphaned or hanging transactions that might be preventing standard lock clearance `[training data]`.
+Sometimes, a problem with a rollback transaction can result in the DBRM setting the system to read-only and failing to release the table lock. To identify if there is a stuck or failed rollback of a transaction, you can utilize the `viewallxml` command. This utility helps read the active transaction XML files and pinpoints orphaned or hanging transactions that might be preventing standard lock clearance.
 
 ## Clearing Table Locks
 
