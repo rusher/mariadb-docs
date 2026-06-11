@@ -1,8 +1,8 @@
 ---
 description: >-
-  Tools for inspecting active MariaDB ColumnStore queries: SHOW PROCESSLIST
-  for the local User Module and the getActiveSQLStatements mcsadmin command
-  for cluster-wide query state.
+  Tools for inspecting active MariaDB ColumnStore queries: SHOW PROCESSLIST for
+  the local User Module and the getActiveSQLStatements mcsadmin command for
+  cluster-wide query state.
 ---
 
 # Analyzing Queries
@@ -76,7 +76,7 @@ The output contains information on:
 
 The output is useful to determine how much physical I/O was required, how much data was cached, and how many partition blocks were eliminated through use of extent map elimination. The system maintains min / max values for each extent and uses these to help implement where clause filters to completely bypass extents where the value is outside of the min/max range. When a column is ordered (or semi-ordered) during load such as a time column this offer very large performance gains as the system can avoid scanning many extents for the column.
 
-For additional details about enabling query statistics, required privileges, and historical analysis, see [Query Statistics for MariaDB Enterprise ColumnStore](columnstore-query-tuning/query-statistics-for-mariadb-enterprise-columnstore.md).&#x20;
+For additional details about enabling query statistics, required privileges, and historical analysis, see [Query Statistics for MariaDB Enterprise ColumnStore](columnstore-query-tuning/query-statistics-for-mariadb-enterprise-columnstore.md).
 
 ## Query Plan / Trace
 
@@ -163,6 +163,17 @@ The columns headings in the output are as follows:
 {% hint style="info" %}
 **Note:** The time recorded is the time from PrimProc[^2] and `ExeMgr`. Execution time from within mysqld is not tracked here. There could be extra processing time in `mysqld` due to a number of factors such as `ORDER BY`.
 {% endhint %}
+
+### Interpreting Trace Statistics
+
+When analyzing the output of `calGetTrace()`, focus on the following key metrics to understand and optimize query performance:
+
+* **PIO (Physical I/O):** The number of physical reads from storage. Physical reads are slow, so the general goal is to use the least PIO possible.
+  * _How to lower PIO:_ Run the query a second time to reuse cached extents in memory, increase RAM so more extents can be stored in memory (which raises LIO but lowers PIO), or increase `NumBlocksPct` to allocate more server memory to cache extents.
+* **LIO (Logical I/O):** The number of logical I/O executed for the query.
+  * _How to raise LIO:_ Increase RAM or increase `NumBlocksPct` so more extents can be stored in memory.
+* **PBE (Partition Blocks Eliminated):** Higher PBE means more extents were eliminated during extent elimination.
+  * _How to raise PBE:_ Optimize `WHERE` clauses to eliminate extents, or order the data before insertion into ColumnStore.
 
 ## Cache Clearing to Enable Cold Testing
 
@@ -279,6 +290,70 @@ order by 1 limit 3) a;
 MariaDB [infinidb_querystats]> select min(endtime-starttime), max(endtime-starttime), avg(endtime-starttime) from querystats 
 where querytype='INSERT SELECT' and starttime >= now() - interval 12 hour;
 ```
+
+## Improving Extent Elimination
+
+If your `WHERE` clause isn't eliminating any extents (PBE is 0) and you know your table has multiple extents, there is a high level of optimization possible. You can improve extent elimination by physically ordering the data.
+
+### 1. Find the Column OID
+
+Find the Object ID (`object_id`) of the column frequently used in your `WHERE` clause.
+
+{% code overflow="wrap" %}
+```sql
+SELECT * FROM information_schema.columnstore_columns WHERE table_name='your_table' AND column_name='your_column';
+```
+{% endcode %}
+
+### 2. View Extent Details
+
+Use the column OID to see the extent maps summary details of each extent.
+
+SQL
+
+```sql
+SELECT * FROM information_schema.columnstore_extents WHERE object_id=[OID];
+```
+
+### 3. Analyze Min/Max Ranges
+
+Notice if the `min` and `max` values are as small of a range as possible or if they cover the entire dataset. If the `min` and `max`values include every possible value, the data is jumbled, and extent elimination cannot happen. If the values are close together, the data is semi-ordered and will benefit from extent elimination.
+
+### 4. Create a New Table
+
+Create a new table matching your original table's schema.
+
+SQL
+
+```sql
+CREATE TABLE your_table_ordered LIKE your_table;
+```
+
+### 5. Insert Data in Order
+
+Insert data into the new table by selecting over the ranges of data iteratively, in order, from the old table.
+
+SQL
+
+```sql
+INSERT INTO your_table_ordered SELECT * FROM your_table WHERE your_column=0;
+INSERT INTO your_table_ordered SELECT * FROM your_table WHERE your_column=1;
+-- Continue iteratively for all ranges
+```
+
+_(Note: Confirm your record counts match after the transfer so you know all data was moved successfully.)_
+
+### 6. Verify New Extent Ranges
+
+Find the OID for the column in your new table and check its extents. You should see tighter `min`/`max` ranges, meaning that when a `WHERE` clause is used, entire extents can be skipped to optimize performance.
+
+### 7. Compare Query Timing and Traces
+
+Run your queries against the newly ordered table. You should observe:
+
+* Faster query execution times for both cached and uncached queries.
+* Lowered Logical I/O (LIO) and Physical I/O (PIO) in the `calGetTrace()` output.
+* Higher Partition Blocks Eliminated (PBE) in the `calGetTrace()` output.
 
 ## See Also
 
