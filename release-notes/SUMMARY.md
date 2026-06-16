@@ -1700,7 +1700,7 @@
   * [All Releases](columnstore/all-releases.md)
 * [Galera Cluster Release Notes](galera-cluster/README.md)
   * [Galera Cluster 26.4 Release Notes](galera-cluster/26.4/README.md)
-    * [Galera 26.4.27 Release Notes](galera-cluster/26.4/galera-26.4.27-release-notes.md)
+    * [Galera 26.4.27 Release Notes](galera-cluster/26.4/26.4.27.md)
     * [Galera 26.4.26 Release Notes](galera-cluster/26.4/26.4.26.md)
     * [Galera 26.4.25 Release Notes](galera-cluster/26.4/26.4.25.md)
     * [Galera 26.4.24 Release Notes](galera-cluster/26.4/26.4.24.md)
