@@ -17,6 +17,10 @@ INSERT [LOW_PRIORITY | DELAYED | HIGH_PRIORITY] [IGNORE]
       [, col=expr] ... ]
 ```
 
+![Railroad diagram of INSERT ... ON DUPLICATE KEY UPDATE — equivalent to the BNF above](../../../../.gitbook/assets/insert-on-duplicate-key-update-railroad.svg)
+
+![Railroad diagram of value_list](../../../../.gitbook/assets/insert-on-duplicate-key-update-value-list-railroad.svg)
+
 Or:
 
 ```sql

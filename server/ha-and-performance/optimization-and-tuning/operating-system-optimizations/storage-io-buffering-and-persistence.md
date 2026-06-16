@@ -2,12 +2,12 @@
 description: >-
   Defines the OS-agnostic terms MariaDB documentation uses for disk I/O —
   unbuffered I/O, write-through, persist — and shows how each one maps to
-  Linux and Windows mechanisms.
+  Unix-like and Windows mechanisms.
 ---
 
 # Storage I/O: Buffering and Persistence
 
-This page defines the I/O behavior terms that other MariaDB documentation pages use — *unbuffered I/O*, *write-through*, *persist to non-volatile storage* — and shows how each one maps to the underlying mechanism on Linux and Windows. Other pages refer here for the OS-level details rather than embedding Linux-specific flag names inline.
+This page defines the I/O behavior terms that other MariaDB documentation pages use — *unbuffered I/O*, *write-through*, *persist to non-volatile storage* — and shows how each one maps to the underlying mechanism on Unix-like systems and Windows. Other pages refer here for the OS-level details rather than embedding system-specific flag names inline.
 
 ## Why This Matters
 
@@ -23,7 +23,7 @@ MariaDB therefore exposes configuration that lets administrators choose between 
 
 | Operating system | Underlying mechanism |
 |------------------|----------------------|
-| Linux            | File opened with `O_DIRECT` |
+| Unix-like        | File opened with `O_DIRECT`. Supported on Linux, FreeBSD, NetBSD, Dragonfly BSD, Illumos / Solaris, and IBM AIX; not supported on OpenBSD or Apple macOS. |
 | Windows          | File opened with `FILE_FLAG_NO_BUFFERING` |
 
 ## Write-Through
@@ -34,7 +34,7 @@ MariaDB therefore exposes configuration that lets administrators choose between 
 
 | Operating system | Underlying mechanism |
 |------------------|----------------------|
-| Linux            | File opened with `O_DSYNC` |
+| Unix-like        | File opened with `O_DSYNC`. Supported on Linux, FreeBSD, NetBSD, Solaris, and IBM AIX; not supported on Dragonfly BSD (which has `O_FSYNC`, not used by MariaDB), OpenBSD, or Apple macOS. |
 | Windows          | File opened with `FILE_FLAG_WRITE_THROUGH` |
 
 ## Persist to Non-Volatile Storage
@@ -43,21 +43,12 @@ MariaDB therefore exposes configuration that lets administrators choose between 
 
 **Trade-off**: Lets the application batch many writes cheaply and persist them with a single explicit call, instead of paying the durability cost on every write (as write-through does). This is the foundation of MariaDB's group-commit and binary-log durability behavior.
 
-| Operating system | Underlying mechanism |
-|------------------|----------------------|
-| Linux            | `fsync()` |
-| Windows          | `FlushFileBuffers()` |
-
-## Persist Data Without Metadata Sync
-
-**Behavior**: Like *persist to non-volatile storage*, but skips synchronization of non-essential file metadata such as the last-modified timestamp. The file contents and any metadata required to read them back are durable; bookkeeping metadata may still be in cache.
-
-**Trade-off**: Cheaper than a full persist on filesystems where metadata updates would otherwise trigger an additional disk write. Used in performance-critical paths where MariaDB does not care about timestamp durability.
+MariaDB does not validate file access or modification timestamps anywhere, so on each platform it prefers the lighter-weight call that omits those metadata updates, falling back to the full-persist call only when the lighter one is not available.
 
 | Operating system | Underlying mechanism |
 |------------------|----------------------|
-| Linux            | `fdatasync()` |
-| Windows          | `NtFlushBuffersFileEx()` with the `FLUSH_FLAGS_FILE_DATA_SYNC_ONLY` flag, with `FlushFileBuffers()` as a fallback on older Windows versions or non-NTFS filesystems |
+| Unix-like        | `fdatasync()` when available (Linux, FreeBSD, Dragonfly BSD, NetBSD, OpenBSD, Solaris, IBM AIX); `fsync()` otherwise (notably Apple macOS). |
+| Windows          | `NtFlushBuffersFileEx()` with the `FLUSH_FLAGS_FILE_DATA_SYNC_ONLY` flag when available — documented for NTFS, and observed to work on ReFS as well. `FlushFileBuffers()` otherwise (older Windows versions, non-NTFS filesystems, or if the lighter call fails at run time). |
 
 ## See Also
 

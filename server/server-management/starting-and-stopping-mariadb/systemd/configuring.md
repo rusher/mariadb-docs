@@ -186,19 +186,18 @@ TimeoutStartSec=infinity
 TimeoutStopSec=infinity
 ```
 
-Note that [systemd 236 added the EXTEND\_TIMEOUT\_USEC environment variable](https://lists.freedesktop.org/archives/systemd-devel/2017-December/039996.html) that allows services to extend the startup timeout during long-running processes. On systems with systemd versions that support it, MariaDB uses this feature to extend the startup timeout during certain startup processes that can run long.
+Note that [systemd 236 added the EXTEND\_TIMEOUT\_USEC environment variable](https://lists.freedesktop.org/archives/systemd-devel/2017-December/039996.html) that allows services to extend the startup timeout during long-running processes. On systems with systemd versions that support it, MariaDB uses this feature to extend the startup timeout during certain startup processes that can run long, like when upgrading MariaDB to a newer main version or recovering after a crash with a very big transaction that needs to roll back.
 
 ### Configuring the Open Files Limit
 
 When using `systemd`, rather than setting the open files limit by setting the [open-files-limit](../mariadbd-safe.md#mariadbd-safe-options) option for `mariadbd-safe` or the [open\_files\_limit](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#open_files_limit) system variable, the limit can be changed by configuring the [LimitNOFILE](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#LimitCPU=) option for the MariaDB `systemd` service. The default is set to `LimitNOFILE=16364` in `mariadb.service`.
 
-For example, you can reconfigure the MariaDB `systemd` service to have a larger limit for open files by executing the following commands:
+For example, you can reconfigure the MariaDB `systemd` service to have a larger limit for open files by executing the following command – then restart the server for the changes to take effect:
 
 ```bash
 sudo systemctl edit mariadb.service
 
 [Service]
-
 LimitNOFILE=infinity
 ```
 

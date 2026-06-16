@@ -7,7 +7,7 @@ hidden: true
 
 # Manual SST of Galera Cluster Node With mariadb-backup
 
-Sometimes it can be helpful to perform a "manual SST" when Galera's [normal SSTs](introduction-to-state-snapshot-transfers-ssts.md) fail. This can be especially useful when the cluster's [`datadir`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#datadir) is very large, since a normal SST can take a long time to fail in that case.
+Sometimes it can be helpful to perform a "manual SST" when Galera's [normal SSTs](introduction-to-state-snapshot-transfers-ssts.md) fail. This can be especially useful when the cluster's [`datadir`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#datadir) is very large, since a normal SST can take a long time, keeping the donor in a not fully synced state for the duration of the transfer.
 
 A manual SST essentially consists of taking a backup of the donor, loading the backup on the joiner, and then manually editing the cluster state on the joiner node. This page will show how to perform this process with [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup).
 
@@ -35,41 +35,73 @@ mariadb-backup --version
 
 Select the strategy below that best matches your environment's resource constraints and upgrade requirements.
 
+```mermaid
+graph TD
+    classDef donor fill:#e1f5fe,stroke:#0288d1,stroke-width:2px;
+    classDef joiner fill:#e8f5e9,stroke:#388e3c,stroke-width:2px;
+    classDef network fill:#fff3e0,stroke:#f57c00,stroke-width:2px,stroke-dasharray: 5 5;
+
+    %% Root Action
+    Start["Take Backup on Donor 
+    (mariadb-backup --backup)"]:::donor
+
+    %% First Split: Disk vs. Stream
+    Start -->|Methods A & B| Disk["Save Raw Backup to Donor Disk"]:::donor
+    Start -->|Method C| Stream["Stream Backup via SSH 
+    (--stream=mbstream)"]:::network
+
+    %% Method B Path
+    Disk -->|Method B| PrepDonor["Prepare Backup on Donor 
+    (--prepare)"]:::donor
+    PrepDonor --> TransPrep["Transfer Prepared Files to Joiner 
+    (rsync/scp)"]:::network
+
+    %% Method A Path
+    Disk -->|Method A| TransRaw["Transfer Raw Files to Joiner 
+    (rsync/scp)"]:::network
+
+    %% Method C Path
+    Stream --> Extract["Extract Stream on Joiner 
+    (mbstream -x)"]:::joiner
+
+    %% Convergence for Methods A & C
+    TransRaw --> PrepJoiner["Prepare Backup on Joiner 
+    (--prepare)"]:::joiner
+    Extract --> PrepJoiner
+```
+
 #### **Method A: Prepare on the Joiner Node (Standard / Resource-Saving)**
 
 Use this if both nodes are on the same major MariaDB version. This offloads RAM and CPU overhead from the active donor to the joiner.
 
-1\. On the donor node, create the backup directory and take the backup:
+1. On the donor node, create the backup directory and take the backup:
 
 ```bash
-MYSQL_BACKUP_DIR=/mysql_backup
-mkdir -p $MYSQL_BACKUP_DIR
+BACKUP_DIR=/mariadb_backup
+mkdir -p $BACKUP_DIR
 
 DB_USER=sstuser
 DB_USER_PASS=password
 mariadb-backup --backup --galera-info \
-   --target-dir=$MYSQL_BACKUP_DIR \
+   --target-dir=$BACKUP_DIR \
    --user=$DB_USER \
    --password=$DB_USER_PASS
 ```
 
-2\. On the joiner node, verify MariaDB is stopped, create the backup directory, and pull the backup:
+2. On the joiner node, stop MariaDB, create the backup directory:
 
 ```bash
-systemctl status mariadb
+systemctl stop mariadb
 
-MYSQL_BACKUP_DIR=/mysql_backup
-mkdir -p $MYSQL_BACKUP_DIR
-
-OS_USER=dba
-JOINER_HOST=dbserver2.mariadb.com
-rsync -av $MYSQL_BACKUP_DIR/* ${OS_USER}@${JOINER_HOST}:${MYSQL_BACKUP_DIR}
+BACKUP_DIR=/mariadb_backup
+mkdir -p $BACKUP_DIR
 ```
 
-3\. On the joiner node, prepare the backup:
+3. From the donor node, transfer the contents of the backup directory to the joiner node. You may use `rsync`, `scp`, or your preferred file transfer method.
+4. On the joiner node, prepare the backup:
 
 ```bash
-mariadb-backup --prepare --target-dir=$MYSQL_BACKUP_DIR
+mariadb-backup --prepare --target-dir=$BACKUP_DIR
 ```
 
 #### **Method B: Prepare on the Donor Node (Required for Major Upgrades)**
@@ -79,43 +111,53 @@ Use this for cross-version upgrades (e.g., 10.6 to 11.4). The donor's native bin
 1\. On the donor node, create the directory, take the backup, and prepare it:
 
 ```bash
-MYSQL_BACKUP_DIR=/mysql_backup
-mkdir -p $MYSQL_BACKUP_DIR
+BACKUP_DIR=/mariadb_backup
+mkdir -p $BACKUP_DIR
 
 DB_USER=sstuser
 DB_USER_PASS=password
 mariadb-backup --backup --galera-info \
-   --target-dir=$MYSQL_BACKUP_DIR \
+   --target-dir=$BACKUP_DIR \
    --user=$DB_USER \
    --password=$DB_USER_PASS
 
-mariadb-backup --prepare --target-dir=$MYSQL_BACKUP_DIR
+mariadb-backup --prepare --target-dir=$BACKUP_DIR
 ```
 
-2\. On the joiner node, verify MariaDB is stopped, create the directory, and pull the prepared backup:
+2\. On the joiner node, make sure MariaDB is stopped, create the directory:
 
 ```bash
-systemctl status mariadb
+systemctl stop mariadb
 
-MYSQL_BACKUP_DIR=/mysql_backup
-mkdir -p $MYSQL_BACKUP_DIR
-
-OS_USER=dba
-JOINER_HOST=dbserver2.mariadb.com
-rsync -av $MYSQL_BACKUP_DIR/* ${OS_USER}@${JOINER_HOST}:${MYSQL_BACKUP_DIR}
+BACKUP_DIR=/mariadb_backup
+mkdir -p $BACKUP_DIR
 ```
+
+3. From the donor node, transfer the contents of the backup directory to the joiner node. You may use `rsync`, `scp`, or your preferred file transfer method.
 
 #### **Method C: Streaming Backup (Zero Donor Disk Overhead)**
 
-Use this to avoid using local staging disk space on the donor node. Data streams directly over SSH. _Warning: Do not use for cross-version upgrades._
+Use this to avoid using local staging disk space on the donor node, especially when the cluster's `datadir` is very large. A standard manual backup requires enough free disk space on the donor node to hold a complete secondary copy of the data. Streaming avoids this local disk overhead entirely by piping the data directly over SSH
 
-1\. On the joiner node, verify MariaDB is stopped and create the target directory:
+{% hint style="warning" %}
+_Do not use for cross-version upgrades._
+{% endhint %}
+
+{% hint style="info" %}
+**Prerequisites for Streaming:**
+
+The streaming command on the donor must be executed by `root` or a user in the `mysql` group to be able to read the data directory.
+
+The `OS_USER` on the joiner node must have the executing user's public SSH key added to their `$HOME/.ssh/authorized_keys` file to allow the stream to pipe without a password prompt.
+{% endhint %}
+
+1. On the joiner node, make sure MariaDB is stopped and create the target directory:
 
 ```bash
-systemctl status mariadb
+systemctl stop mariadb
 
-MYSQL_BACKUP_DIR=/mysql_backup
-mkdir -p $MYSQL_BACKUP_DIR
+BACKUP_DIR=/mariadb_backup
+mkdir -p $BACKUP_DIR
 ```
 
 2\. On the donor node, stream the backup directly to the joiner:
@@ -125,17 +167,17 @@ DB_USER=sstuser
 DB_USER_PASS=password
 OS_USER=dba
 JOINER_HOST=dbserver2.mariadb.com
-MYSQL_BACKUP_DIR=/mysql_backup
+BACKUP_DIR=/mariadb_backup
 
 mariadb-backup --backup --galera-info --stream=mbstream \
    --user=$DB_USER --password=$DB_USER_PASS | \
-   ssh ${OS_USER}@${JOINER_HOST} "mbstream -x -C $MYSQL_BACKUP_DIR"
+   ssh ${OS_USER}@${JOINER_HOST} "mbstream -x -C $BACKUP_DIR"
 ```
 
 3\. On the joiner node, prepare the backup:
 
 ```bash
-mariadb-backup --prepare --target-dir=$MYSQL_BACKUP_DIR
+mariadb-backup --prepare --target-dir=$BACKUP_DIR
 ```
 {% endstep %}
 
@@ -145,8 +187,8 @@ mariadb-backup --prepare --target-dir=$MYSQL_BACKUP_DIR
 Get the Galera Cluster version ID from the donor node's `grastate.dat` file.
 
 ```bash
-MYSQL_DATADIR=/var/lib/mysql
-cat $MYSQL_DATADIR/grastate.dat | grep version
+DATADIR=/var/lib/mysql
+cat $DATADIR/grastate.dat | grep version
 ```
 {% endstep %}
 {% endstepper %}
@@ -167,13 +209,13 @@ The name of this file depends on the MariaDB version:
 For MariaDB 11.4 and later:
 
 ```bash
-cat $MYSQL_BACKUP_DIR/mariadb_backup_galera_info
+cat $BACKUP_DIR/mariadb_backup_galera_info
 ```
 
 For MariaDB 11.3 and earlier:
 
 ```bash
-cat $MYSQL_BACKUP_DIR/xtrabackup_galera_info
+cat $BACKUP_DIR/xtrabackup_galera_info
 ```
 
 The file contains the values of the [wsrep\_local\_state\_uuid](../../reference/galera-cluster-status-variables.md#wsrep_local_state_uuid) and [wsrep\_last\_committed](../../reference/galera-cluster-status-variables.md#wsrep_last_committed) status variables. The values are written in the following format:
@@ -197,7 +239,7 @@ Create the file in the backup directory of the joiner node. The Galera Cluster v
 For example, with the example values from the last two steps, we could do:
 
 ```bash
-sudo tee $MYSQL_BACKUP_DIR/grastate.dat <<EOF
+sudo tee $BACKUP_DIR/grastate.dat <<EOF
 # GALERA saved state
 version: 2.1
 uuid:    d38587ce-246c-11e5-bcce-6bbd0831cc0f
@@ -213,8 +255,8 @@ EOF
 Remove the existing contents of the [`datadir`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#datadir) on the joiner node.
 
 ```bash
-MYSQL_DATADIR=/var/lib/mysql
-rm -Rf $MYSQL_DATADIR/*
+DATADIR=/var/lib/mysql
+rm -Rf $DATADIR/*
 ```
 {% endstep %}
 
@@ -225,7 +267,7 @@ Copy the contents of the backup directory to the [`datadir`](https://app.gitbook
 
 ```bash
 mariadb-backup --copy-back \
-   --target-dir=$MYSQL_BACKUP_DIR
+   --target-dir=$BACKUP_DIR
 ```
 {% endstep %}
 
@@ -235,7 +277,7 @@ mariadb-backup --copy-back \
 Make sure the permissions of the [`datadir`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#datadir) are correct on the joiner node.
 
 ```bash
-chown -R mysql:mysql $MYSQL_DATADIR/
+chown -R mysql:mysql $DATADIR/
 ```
 {% endstep %}
 
