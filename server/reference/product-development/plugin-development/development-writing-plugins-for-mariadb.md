@@ -92,10 +92,12 @@ stateDiagram-v2
 
 ### Plugin Maturity Guidelines
 
-> [!NOTE]
-> New features or sufficiently big code changes to a plugin should lead to:
-> * an increase of the plugin version
-> * knocking the maturity level down.
+{% hint style="info" %}
+New features or sufficiently big code changes to a plugin should lead to:
+
+* an increase of the plugin version
+* knocking the maturity level down.
+{% endhint %}
 
 * First a plugin is Alpha
 * After at least 1.5 months (or more, in 3 month increments, until the quality is deemed acceptable) it becomes Gamma. Meanwhile it can transition through Beta as the maintainer wants (e,g. it can start directly from beta)
