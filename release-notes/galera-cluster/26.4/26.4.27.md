@@ -1,0 +1,23 @@
+# Galera 26.4.27 Release Notes
+
+**Release Date:** 2026-05-12
+
+MariaDB is pleased to announce the release of Galera Replication library 4.27, implementing wsrep API version 26.
+
+The library is available as targeted packages and package repositories for a number of Linux distributions, including Debian 11 (Bullseye), and 12 (Bookworm), 22.04 LTS (Jammy), and 24.04 LTS (Noble), RHEL 8, and 9. Obtaining packages using a package repository removes the need to download individual files and facilitates the deployment and upgrade of Galera nodes.
+
+{% hint style="info" %}
+This and future releases will be available from [https://mariadb.com/galera-downloads/](https://mariadb.com/galera-downloads/)
+{% endhint %}
+
+## Notable changes
+
+* Fixed issue where write set buffers were released too early causing failure on IST with message "IST didn't contain all write sets, expected last : last received: ".
+
+## Known Issues
+
+* In order to install Galera package on RHEL 8, MySQL and MariaDB modules need to be disabled first with `dnf -y module disable mysql mariadb`.
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
+{% @marketo/form formid="4316" formId="4316" %}

@@ -9,11 +9,6 @@ description: >-
 
 ## Overview
 
-From MaxScale version 2.2.11 onwards, the cache filter is no longer considered experimental. The following changes to the default behaviour have also been made:
-
-* The default value of `cached_data` is now `thread_specific` (used to be`shared`).
-* The default value of `selects` is now `assume_cacheable` (used to be`verify_cacheable`).
-
 The cache filter is a simple cache that is capable of caching the result of SELECTs, so that subsequent identical SELECTs are served directly by MaxScale, without the queries being routed to any server.
 
 By _default_ the cache will be used and populated in the following circumstances:
@@ -40,7 +35,7 @@ Resultsets of prepared statements are **not** cached.
 
 ### Multi-statements
 
-Multi-statements are always sent to the backend and their result is**not** cached.
+Multi-statements are always sent to the backend and their result is **not** cached.
 
 ### Security
 
@@ -50,7 +45,7 @@ The implication is that unless the cache has been explicitly configured who the 
 
 Please read the section [Security](maxscale-cache.md#security-1) for more detailed information.
 
-However, from 2.5 onwards it is possible to configure the cache to cache the data of each user separately, which effectively means that there can be no unintended sharing. Please see [users](maxscale-cache.md#users) for how to change the default behaviour.
+However, it is possible to configure the cache to cache the data of each user separately, which effectively means that there can be no unintended sharing. Please see [users](maxscale-cache.md#users) for how to change the default behaviour.
 
 ### `information_schema`
 
@@ -58,9 +53,25 @@ When [invalidation](maxscale-cache.md#invalidation) is enabled, SELECTs targetin
 
 ## Invalidation
 
-Since MaxScale 2.5, the cache is capable of invalidating entries in the cache when a modification (UPDATE, INSERT or DELETE) that may affect those entries is made.
+The cache is capable of invalidating entries in the cache when a
+modification (UPDATE, INSERT or DELETE) that may affect those entries is made. However,
+the invalidation depends upon the used storage also supporting invalidation.
 
-The cache invalidation works on the table-level, that is, a modification made to a particular table will cause all cache entries that refer to that table to be invalidated, irrespective of whether the modification actually has an impact on the cache entries or not. For instance, suppose the result of the following SELECT has been cached
+| Storage                                 | Invalidation |
+| ----------------------------------------| ------------ |
+| [storage_gridgain](#storage_gridgain)   | No           |
+| [storage_inmemory](#storage_inmemory)   | Yes          |
+| [storage_memcached](#storage_memcached) | No           |
+| [storage_redis](#storage_redis)         | Yes          |
+
+The cache invalidation works on the table-level, that is, a modification made
+to a particular table will cause all cache entries that refer to that table to
+be invalidated, irrespective of whether the modification actually has an impact
+on the cache entries or not. In practice this means that updates should occur
+relatively rarely, as otherwise the cache will never have time to become warm,
+before it is made cold again.
+
+For instance, suppose the result of the following SELECT has been cached
 
 ```
 SELECT * FROM t WHERE a=1;
@@ -960,12 +971,16 @@ There are two types of storages that can be used; _local_ and _shared_.
 
 The only _local_ storage implementation is `storage_inmemory` that simply stores the cache values in memory. The storage is not persistent and is destroyed when MaxScale terminates. Since the storage exists in the MaxScale process, it is very fast and provides almost always a performance benefit.
 
-Currently there are two _shared_ storages; `storage_memcached` and`storage_redis` that are implemented using [memcached](https://memcached.org/) and [redis](https://redis.io/) respectively.
+Currently there are three _shared_ storages; `storage_memcached`, `storage_redis` and `storage_gridgain`
+that are implemented using [memcached](https://memcached.org/), [redis](https://redis.io/) and
+[gridgain](https://www.gridgain.com/) respectively.
 
 The shared storages are accessed across the network and consequently it is _not_ self-evident that their use will provide any performance benefit. Namely, irrespective of whether the data is fetched from the cache or from the server there will be a network hop and often that network hop is, as far as the performance goes, what costs the most.
 
-The presence of a shared cache _may_ provide a performance benefit if the network between MaxScale and the storage server (memcached or Redis) is faster than the network between MaxScale and the database server, if the used SELECT statements are heavy (that is, take a significant amount of time) to process for the database server, or
+The presence of a shared cache _may_ provide a performance benefit
 
+* if the network between MaxScale and the storage server (memcached, Redis or GridGain) is faster than the network between MaxScale and the database server,
+* if the used SELECT statements are heavy (that is, take a significant amount of time) to process for the database server, or
 * if the presence of the cache reduces the overall load of an otherwise overloaded database server.
 
 As a general rule a _shared_ storage should not be used without first assessing its value using a realistic workload.
@@ -980,6 +995,128 @@ storage=storage_inmemory
 
 This storage module takes no arguments.
 
+### `storage_gridgain`
+
+Available since MaxScale 25.10.3.
+
+This storage module uses [gridgain](https://www.gridgain.com/) for storing the cache data.
+This storage can only be used with [cached_data](#cached_data) specified as `thread_specific`,
+which is the default, so it need not explicitly be specified.
+
+Multiple MaxScale instances can share the same gridgain server and items cached by one
+MaxScale instance will be used by the other. Note that all MaxScale instances should
+have exactly the same configuration, as otherwise there can be unintended sharing.
+
+```
+storage=storage_gridgain
+```
+
+Storage specific settings are configured using nested parameters.
+```
+[MyCache]
+...
+storage=storage_gridgain
+storage_gridgain.endpoints=127.0.0.1
+```
+
+`storage_gridgain` has the following parameters:
+
+#### `endpoints`
+
+* Type: string
+* Mandatory: No
+* Dynamic: No
+* Default: 127.0.0.1:10800
+
+An endpoint is specified as `<host>[:<port>[..<port_range>]]` and several
+endpoints can be specified, separated by a comma.
+
+#### `user`
+
+* Type: string
+* Mandatory: No
+* Dynamic: No
+* Default: `""`
+
+The user to be used when authenticating with GridGain.
+
+#### `password`
+
+* Type: password
+* Mandatory: No
+* Dynamic: No
+* Default: `""`
+
+The password to be used when authenticating with GridGain.
+
+#### `ssl`
+
+* Type: [boolean](../../maxscale-management/deployment/installation-and-configuration/maxscale-configuration-guide.md#booleans)
+* Mandatory: No
+* Dynamic: No
+* Default: `false`
+
+If `true`, SSL will be used in the communication with GridGain in which case
+the `ssl_` settings should be specified as well.
+
+#### `ssl_cert`
+
+* Type: path
+* Mandatory: No
+* Dynamic: No
+* Default: `""`
+
+The SSL client certificate that MaxScale should use with the GridGain server. The certificate must
+match the key defined in `ssl_key`.
+
+#### `ssl_key`
+
+* Type: path
+* Mandatory: No
+* Dynamic: No
+* Default: `""`
+
+The SSL client private key MaxScale should use with the GridGain server.
+
+#### `ssl_ca`
+
+* Type: path
+* Mandatory: No
+* Dynamic: No
+* Default: `""`
+
+The Certificate Authority (CA) certificate for the CA that signed the certificate
+specified with `ssl_cert`.
+
+#### `max_value_size`
+
+* Type: [size](../../maxscale-management/deployment/installation-and-configuration/maxscale-configuration-guide.md#sizes)
+* Mandatory: No
+* Dynamic: No
+* Default: 1Mi
+
+The default maximum size of a value to be stored in GridGain.
+
+#### `partition_awareness`
+
+* Type: [boolean](../../maxscale-management/deployment/installation-and-configuration/maxscale-configuration-guide.md#booleans)
+* Mandatory: No
+* Dynamic: No
+* Default: `true`
+
+[Partition awareness](https://www.gridgain.com/docs/gridgain8/latest/developers-guide/thin-clients/getting-started-with-thin-clients#partition-awareness)
+allows a thin GridGain client to send query requests directly to the node that
+owns the queried data and should usually be enabled.
+
+#### Limitations
+
+* Invalidation is not supported.
+* Configuration values given to `max_size` and `max_count` are ignored.
+
+#### Security
+
+The data in the GridGain server is _not_ encrypted.
+
 ### `storage_memcached`
 
 This storage module uses [memcached](https://memcached.org/) for storing the cached data.
@@ -990,7 +1127,7 @@ Multiple MaxScale instances can share the same memcached server and items cached
 storage=storage_memcached
 ```
 
-`storage_memcache` has the following parameters:
+`storage_memcached` has the following parameters:
 
 #### `server`
 
