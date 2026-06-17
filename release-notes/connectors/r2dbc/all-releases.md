@@ -15,12 +15,14 @@ description: A list of all MariaDB Connector/R2DBC releases
 
 | Release           | Release Date | Release Status |
 | ----------------- | ------------ | -------------- |
+| [1.3.1](1.3.1.md) | 2026-06-17   | Stable (GA)    |
 | [1.3.0](1.3.0.md) | 2024-10-24   | Stable (GA)    |
 
 ## 1.2
 
 | Release           | Release Date | Release Status |
 | ----------------- | ------------ | -------------- |
+| [1.2.3](1.2.3.md) | 2026-06-17   | Stable (GA)    |
 | [1.2.2](1.2.2.md) | 2024-09-13   | Stable (GA)    |
 | [1.2.1](1.2.1.md) | 2024-06-24   | Stable (GA)    |
 | [1.2.0](1.2.0.md) | 2024-02-23   | Stable (GA)    |
