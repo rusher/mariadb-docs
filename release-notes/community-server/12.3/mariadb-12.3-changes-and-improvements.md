@@ -162,10 +162,6 @@ New [GIS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure
 
 * The Galera package dependency has been removed from server packages ([MDEV-38744](https://jira.mariadb.org/browse/MDEV-38744))
 
-### InnoDB
-
-**Behavioral change:** [innodb\_snapshot\_isolation](https://mariadb.com/docs/server/server-usage/storage-engines/innodb/innodb-system-variables#innodb_snapshot_isolation) system variable now defaults to `ON`, previously was `OFF` ([MDEV-35124](https://jira.mariadb.org/browse/MDEV-35124)). This changes the behavior of [repeatable reads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/set-commands/set-transaction#repeatable-read).
-
 ### Variables
 
 For a list of all new variables added since MariaDB 11.8, see:
@@ -184,10 +180,6 @@ The following keywords are now [reserved words](https://app.gitbook.com/s/SsmexD
 * `CONVERSION`
 * `ST_COLLECT`
 * `TO_DATE`
-
-### System Variables With Changed Default Values
-
-* [innodb\_snapshot\_isolation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_snapshot_isolation) now defaults to `ON`, previously was `OFF` ([MDEV-35124](https://jira.mariadb.org/browse/MDEV-35124)). This changes the behavior of [repeatable reads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/set-commands/set-transaction#repeatable-read): transactions that modify data based on an outdated snapshot may now fail with `ERROR 1020` where they previously succeeded.
 
 ### Removed System Variables
 
