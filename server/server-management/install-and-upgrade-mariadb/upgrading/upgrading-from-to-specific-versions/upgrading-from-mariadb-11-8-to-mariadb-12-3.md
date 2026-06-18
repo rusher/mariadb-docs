@@ -1,8 +1,7 @@
 ---
 description: >-
   Upgrade guide for moving from MariaDB 11.8 to 12.3, covering the upgrade
-  procedure, removed options, the innodb_snapshot_isolation default change, and
-  replication caveats.
+  procedure, removed options, and replication caveats.
 ---
 
 # Upgrading from MariaDB 11.8 to MariaDB 12.3
