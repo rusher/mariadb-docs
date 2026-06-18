@@ -477,6 +477,7 @@
         * [Upgrading MariaDB on Windows](server-management/install-and-upgrade-mariadb/upgrading/upgrading-mariadb-on-windows.md)
         * [Upgrading from MySQL to MariaDB](server-management/install-and-upgrade-mariadb/upgrading/upgrading-mariadb-upgrading-from-mysql-to-mariadb.md)
       * [MariaDB Community Server Upgrade Paths](server-management/install-and-upgrade-mariadb/upgrading/mariadb-community-server-upgrade-paths/README.md)
+        * [Upgrading from MariaDB 11.8 to MariaDB 12.3](server-management/install-and-upgrade-mariadb/upgrading/upgrading-from-to-specific-versions/upgrading-from-mariadb-11-8-to-mariadb-12-3.md)
         * [Upgrading from MariaDB 11.4 to MariaDB 11.8](server-management/install-and-upgrade-mariadb/upgrading/upgrading-from-to-specific-versions/upgrading-from-mariadb-11-4-to-mariadb-11-8.md)
         * [Upgrading from MariaDB 11.3 to MariaDB 11.4](server-management/install-and-upgrade-mariadb/upgrading/upgrading-from-to-specific-versions/upgrading-from-mariadb-11-3-to-mariadb-11-4.md)
         * [Upgrading from MariaDB 10.11 to MariaDB 11.4](server-management/install-and-upgrade-mariadb/upgrading/upgrading-from-to-specific-versions/upgrading-from-mariadb-10-11-to-mariadb-11-4.md)
