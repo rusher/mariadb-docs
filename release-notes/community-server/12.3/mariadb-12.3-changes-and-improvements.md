@@ -173,11 +173,33 @@ For a list of all new variables added since MariaDB 11.8, see:
 * [System Variables Added in MariaDB 12.0](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-12.0)
 * [System Variables Added in MariaDB 12.1](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-12.1)
 
-#### Removed Variables
+## Incompatible Changes
+
+Since MariaDB 12.3 is the first long-term release after [MariaDB 11.8](../11.8/what-is-mariadb-118.md), the following backward-incompatible changes may affect an upgrade. For the full upgrade procedure, see [Upgrading from MariaDB 11.8 to MariaDB 12.3](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-from-to-specific-versions/upgrading-from-mariadb-11-8-to-mariadb-12-3).
+
+### New Reserved Words
+
+The following keywords are now [reserved words](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/sql-language-structure/reserved-words). They can no longer be used as [identifiers](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/sql-language-structure/identifier-names) without being quoted:
+
+* `CONVERSION`
+* `ST_COLLECT`
+* `TO_DATE`
+
+### System Variables With Changed Default Values
+
+* [innodb\_snapshot\_isolation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_snapshot_isolation) now defaults to `ON`, previously was `OFF` ([MDEV-35124](https://jira.mariadb.org/browse/MDEV-35124)). This changes the behavior of [repeatable reads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/set-commands/set-transaction#repeatable-read): transactions that modify data based on an outdated snapshot may now fail with `ERROR 1020` where they previously succeeded.
+
+### Removed System Variables
+
+The following deprecated system variables have been removed:
 
 * [big\_tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#big_tables), deprecated in [MariaDB 10.5.0](../old-releases/10.5/10.5.0.md)
 * [large\_page\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#large_page_size), deprecated in [MariaDB 10.5.3](../old-releases/10.5/10.5.3.md)
-* [storage\_engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#storage_engine), deprecated in [MariaDB 5.5](../old-releases/5.5/changes-improvements-in-mariadb-5-5.md).
+* [storage\_engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#storage_engine), deprecated in [MariaDB 5.5](../old-releases/5.5/changes-improvements-in-mariadb-5-5.md)
+
+### Replication
+
+* When running `mariadb-upgrade`, the `CHANGE MASTER TO ... master_use_gtid` option is not currently carried over and is reset to `DEFAULT` ([MDEV-39788](https://jira.mariadb.org/browse/MDEV-39788)). After upgrading a replica, re-apply `master_use_gtid` if you rely on it. Downgrading is not affected. See [Upgrading from MariaDB 11.8 to MariaDB 12.3](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-from-to-specific-versions/upgrading-from-mariadb-11-8-to-mariadb-12-3) for details.
 
 ## Security Vulnerabilities Fixed in MariaDB 12.3
 
