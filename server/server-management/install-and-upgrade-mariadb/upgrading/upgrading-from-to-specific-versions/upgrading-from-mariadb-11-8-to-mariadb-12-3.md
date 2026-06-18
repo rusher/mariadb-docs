@@ -6,7 +6,7 @@ description: >-
 
 # Upgrading from MariaDB 11.8 to MariaDB 12.3
 
-This page includes details for upgrading from [MariaDB 11.8](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/community-server/11.8/what-is-mariadb-118), the previous long-term maintenance version, to [MariaDB 12.3](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/community-server/12.3/mariadb-12.3-changes-and-improvements).
+This page includes details for upgrading from [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/11.8/what-is-mariadb-118), the previous long-term maintenance version, to [MariaDB 12.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/12.3/mariadb-12.3-changes-and-improvements).
 
 ### How to Upgrade
 
@@ -43,16 +43,17 @@ On most servers upgrading from 11.8 should be painless. However, there are some 
 
 The following options should be removed or renamed if you use them in your [option files](../../configuring-mariadb/configuring-mariadb-with-option-files.md):
 
-| Option                                                                                                                       | Reason                                                                                                                                       |
-| ---------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| [big\_tables](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md)            | Deprecated in MariaDB 10.5.0 and now removed. No longer needed, as the server handles large result sets automatically.                       |
-| [storage\_engine](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md)        | Deprecated alias for `default_storage_engine` since MariaDB 5.5, and now removed. Use [default\_storage\_engine](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) instead. |
-| [large\_page\_size](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md)      | Read-only variable deprecated in MariaDB 10.5.3 and now removed.                                                                             |
+| Option                                                                                                                              | Reason                                                                                                                                                                                                                                                                                                                                                    |
+| ----------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [big\_tables](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md)                   | Deprecated in MariaDB 10.5.0 and now removed. No longer needed, as the server handles large result sets automatically.                                                                                                                                                                                                                                    |
+| [storage\_engine](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md)               | Deprecated alias for `default_storage_engine` since MariaDB 5.5, and now removed. Use [default\_storage\_engine](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) instead.                                                                                                                             |
+| [large\_page\_size](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md)             | Read-only variable deprecated in MariaDB 10.5.3 and now removed.                                                                                                                                                                                                                                                                                          |
+| [innodb\_snapshot\_isolation](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_snapshot_isolation) | Defaults to `ON`. It changed from `OFF` to `ON` in [MariaDB 11.6.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/11.6/11.6.2) ([MDEV-35124](https://jira.mariadb.org/browse/MDEV-35124)) and was already the default in [11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/11.8/what-is-mariadb-118). |
 
 #### Changes in Replication Behavior
 
 {% hint style="warning" %}
-When you run [mariadb-upgrade](../../../../clients-and-utilities/deployment-tools/mariadb-upgrade.md), the [`CHANGE MASTER TO ... master_use_gtid`](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) option is not currently carried over and is reset to `DEFAULT`. After upgrading a replica, check the replication configuration and re-apply `master_use_gtid` if you rely on it. Downgrading is not affected. See [MDEV-39788](https://jira.mariadb.org/browse/MDEV-39788).
+When you run [mariadb-upgrade](../../../../clients-and-utilities/deployment-tools/mariadb-upgrade.md), the [CHANGE MASTER TO ... master\_use\_gtid](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) option is not currently carried over and is reset to `DEFAULT`. After upgrading a replica, check the replication configuration and re-apply `master_use_gtid` if you rely on it. Downgrading is not affected. See [MDEV-39788](https://jira.mariadb.org/browse/MDEV-39788).
 {% endhint %}
 
 #### Deprecated Options
@@ -61,9 +62,9 @@ The `MYSQLD_OPTS` environment variable for the systemd service is deprecated. Pl
 
 ### See Also
 
-* [Features in MariaDB 12.3](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/community-server/12.3/mariadb-12.3-changes-and-improvements)
-* [Features in MariaDB 11.8](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/community-server/11.8/what-is-mariadb-118)
-* [Upgrading from MariaDB 11.8 to MariaDB 12.3 with Galera Cluster](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/galera-management/upgrading-galera-cluster/upgrading-from-mariadb-10.11-to-mariadb-11.4-with-galera-cluster-2)
+* [Features in MariaDB 12.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/12.3/mariadb-12.3-changes-and-improvements)
+* [Features in MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/11.8/what-is-mariadb-118)
+* [Upgrading from MariaDB 11.8 to MariaDB 12.3 with Galera Cluster](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/upgrading-galera-cluster/upgrading-from-mariadb-10.11-to-mariadb-11.4-with-galera-cluster-2)
 * [Upgrading from MariaDB 11.4 to MariaDB 11.8](upgrading-from-mariadb-11-4-to-mariadb-11-8.md)
 * [Upgrading from MariaDB 10.11 to MariaDB 11.4](upgrading-from-mariadb-10-11-to-mariadb-11-4.md)
 
