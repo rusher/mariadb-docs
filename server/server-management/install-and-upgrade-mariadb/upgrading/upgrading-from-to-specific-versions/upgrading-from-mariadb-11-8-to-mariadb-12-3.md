@@ -50,20 +50,6 @@ The following options should be removed or renamed if you use them in your [opti
 | [storage\_engine](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md)        | Deprecated alias for `default_storage_engine` since MariaDB 5.5, and now removed. Use [default\_storage\_engine](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) instead. |
 | [large\_page\_size](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md)      | Read-only variable deprecated in MariaDB 10.5.3 and now removed.                                                                             |
 
-#### Options That Have Changed Default Values
-
-| Option                                                                                                                                   | Old default | New default |
-| ---------------------------------------------------------------------------------------------------------------------------------------- | ----------- | ----------- |
-| [innodb\_snapshot\_isolation](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_snapshot_isolation)      | `OFF`       | `ON`        |
-
-With [innodb\_snapshot\_isolation](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_snapshot_isolation) now enabled by default, InnoDB transactions under the Repeatable Read isolation level enforce snapshot isolation more strictly. A transaction that reads a table and then modifies data based on an outdated snapshot may now fail with [`ERROR 1020`](../../../../reference/error-codes/mariadb-error-codes-1000-to-1099/e1020.md) where it previously succeeded:
-
-```sql
-ERROR 1020 (HY000): Record has changed since last read in table 't'
-```
-
-After upgrading, applications that rely on Repeatable Read transactions may see additional `ERROR 1020` failures, particularly for bulk `DELETE` or `UPDATE` operations and workloads with concurrent changes. To restore the previous behavior, set `innodb_snapshot_isolation=OFF`. For more details, see [innodb\_snapshot\_isolation](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_snapshot_isolation).
-
 #### Changes in Replication Behavior
 
 {% hint style="warning" %}
