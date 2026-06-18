@@ -1,14 +1,12 @@
 ---
 description: >-
   MariaDB Exa deployment options and the production install order: configure
-  MariaDB Server, install Exasol (local storage or AWS S3), then connect
-  MariaDB MaxScale with CDC.
+  MariaDB Server, install Exasol (local storage or AWS S3), then connect MariaDB
+  MaxScale with CDC.
 icon: wrench
 ---
 
 # Deployment
-
-## Clustered MPP Deployment
 
 In production, MariaDB Exa is deployed as a Massively Parallel Processing (MPP) cluster of nodes.
 
@@ -204,24 +202,24 @@ CCC_HOST_CLEANUP=false
 
 You must update the following values:
 
-1. `CCC_HOST_ADDRS` — your private IP address (a static public address is required):
+1.  `CCC_HOST_ADDRS` — your private IP address (a static public address is required):
 
     ```bash
     hostname -i
     ```
-2. `CCC_HOST_EXTERNAL_ADDRS` — your public IP address:
+2.  `CCC_HOST_EXTERNAL_ADDRS` — your public IP address:
 
     ```bash
     ifconfig -a
     # or
     curl 'https://api.ipify.org?format=json'
     ```
-3. `CCC_HOST_DATADISK` — find the data disk with:
+3.  `CCC_HOST_DATADISK` — find the data disk with:
 
     ```bash
     lsblk
     ```
-4. `CCC_HOST_IMAGE_USER` — usually `ubuntu` or another default user that exists on both the jump host and the Exasol node:
+4.  `CCC_HOST_IMAGE_USER` — usually `ubuntu` or another default user that exists on both the jump host and the Exasol node:
 
     ```bash
     whoami
@@ -321,7 +319,7 @@ tail -f .ccc/play/local/*/main/11/data/logs/cored/exainit.log
 
 * `-N 5` — five nodes total. With `CCC_PLAY_RESERVE_NODES=1`, this gives four active nodes plus one standby.
 * For a single node, set `CCC_PLAY_RESERVE_NODES=0` and use `-N 1`.
-* For instance types that exist only in certain availability zones, add the applicable zone to the command:
+*   For instance types that exist only in certain availability zones, add the applicable zone to the command:
 
     ```bash
     --enable-availability-zones "us-west-2b" --availability-zone us-west-2b
