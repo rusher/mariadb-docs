@@ -199,7 +199,7 @@ The following deprecated system variables have been removed:
 
 ### Replication
 
-* When running `mariadb-upgrade`, the `CHANGE MASTER TO ... master_use_gtid` option is not currently carried over and is reset to `DEFAULT` ([MDEV-39788](https://jira.mariadb.org/browse/MDEV-39788)). After upgrading a replica, re-apply `master_use_gtid` if you rely on it. Downgrading is not affected. See [Upgrading from MariaDB 11.8 to MariaDB 12.3](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-from-to-specific-versions/upgrading-from-mariadb-11-8-to-mariadb-12-3) for details.
+* When running `mariadb-upgrade`, the `CHANGE MASTER TO ... master_use_gtid` option is not currently carried over and is reset to `DEFAULT` ([MDEV-39788](https://jira.mariadb.org/browse/MDEV-39788)). After upgrading a replica, re-apply `master_use_gtid` if you rely on it. Downgrading is not affected. See [Upgrading from MariaDB 11.8 to MariaDB 12.3](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/mariadb-community-server-upgrade-paths/upgrading-from-mariadb-11-8-to-mariadb-12-3) for details.
 
 ## Security Vulnerabilities Fixed in MariaDB 12.3
 
