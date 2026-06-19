@@ -38,8 +38,19 @@ fi
 rc=0
 
 # --- codespell — mirrors codespell.yml (--check-filenames, ignore_words_file -> -I) ---------
+# Every SUMMARY.md (in any space/folder, at any depth) is excluded from codespell — mirrors
+# codespell.yml's files_ignore. GitBook truncates SUMMARY.md link labels to 100 chars, often
+# mid-word, producing false positives; real misspellings still surface in the page titles
+# codespell checks. SUMMARY.md files are still link-checked by lychee below.
+spell_files=()
+for f in "${files[@]}"; do
+  case "$(basename "$f")" in
+    SUMMARY.md) ;;
+    *) spell_files+=("$f") ;;
+  esac
+done
 if command -v codespell >/dev/null 2>&1; then
-  if ! out="$(codespell --check-filenames -I .codespellignore "${files[@]}" 2>&1)"; then
+  if [ "${#spell_files[@]}" -gt 0 ] && ! out="$(codespell --check-filenames -I .codespellignore "${spell_files[@]}" 2>&1)"; then
     echo "codespell found possible misspellings:" >&2
     printf '%s\n' "$out" >&2
     rc=1

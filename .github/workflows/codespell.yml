@@ -20,6 +20,13 @@ jobs:
           files: |
             **.md
             **.html
+          # SUMMARY.md files are excluded from spell check: GitBook truncates link
+          # labels to 100 chars (often mid-word), producing false positives. Real
+          # misspellings still surface in the page titles codespell checks
+          # elsewhere. See DOCS-6272.
+          files_ignore: |
+            **/SUMMARY.md
+            SUMMARY.md
 
       - name: Scan for for common misspellings in text files
         if: steps.changes.outputs.any_changed == 'true'
