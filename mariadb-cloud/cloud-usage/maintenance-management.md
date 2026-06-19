@@ -6,16 +6,11 @@ description: >-
 icon: wrench
 ---
 
-<!--
-EDITORIAL NOTE — screenshots PENDING. The images for this page (maintenance-window
-selector at launch, Maintenance pane, Service Card banner, Maintenance tab,
-Notifications page) are not yet added; their spots are marked inline with
-"TODO image" comments below. Screenshots were requested from the UAT team in
-#sky-uat: https://mariadb.slack.com/archives/C09KSSXT6LR/p1781864288893319
-Remove this note once the images are inserted.
--->
-
 # Maintenance Management
+
+{% hint style="warning" %}
+**Editorial note — screenshots pending.** The images for this page (maintenance-window selector at launch, Maintenance pane, Service Card banner, Maintenance tab, Notifications page) are not yet added; their spots are marked inline with `TODO image` comments below. Screenshots were requested from the UAT team in [#sky-uat](https://mariadb.slack.com/archives/C09KSSXT6LR/p1781864288893319). Remove this note once the images are inserted.
+{% endhint %}
 
 MariaDB Cloud uses a comprehensive, policy-driven maintenance management framework to ensure your managed database services remain secure, reliable, and performant. This framework provides predictability, transparency, and control, allowing you to view upcoming maintenance, understand its scope, and schedule activities to minimize impact on your operations.
 
