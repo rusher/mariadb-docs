@@ -2,7 +2,7 @@
 description: >-
   MariaDB Cloud maintenance management — schedule infrastructure and database
   security upgrades in weekly maintenance windows, defer or apply updates, and
-  track maintenance through its lifecycle in the Portal or via the API.
+  track maintenance through its lifecycle in the
 icon: wrench
 ---
 
@@ -20,7 +20,7 @@ By staying current with these upgrades, you ensure continued access to the lates
 
 Maintenance activities are categorized into two primary types to clearly indicate the nature of the update:
 
-* **Infrastructure Maintenance**: Updates to the underlying infrastructure layers that host your database. This includes Kubernetes version upgrades (cluster and node levels), container runtimes, and cloud-provider storage configuration changes.
+* **Infrastructure Maintenance**: Updates to the underlying infrastructure layers that host your database.
   * **Why it's required**: Cloud providers (AWS, GCP, Azure) enforce strict upgrade schedules. Outdated infrastructure versions may not receive critical security updates, and cloud providers eventually discontinue support for older versions.
 * **Database Security Maintenance**: Updates focused on the MariaDB database software itself. This encompasses minor version upgrades, engine patches, critical CVE remediation, and security hardening configurations.
 
@@ -30,7 +30,10 @@ Each maintenance activity is assigned a priority level that dictates its schedul
 
 * **Recommended**: Updates that improve system stability or address lower-risk issues. These remain in the _Available_ state until you act. You may schedule or defer these within allowed limits.
 * **Required**: Updates necessary to maintain system security, cloud provider compliance, or platform reliability. These feature a **target completion date**. You can defer required maintenance temporarily, but it will be automatically and forcibly applied in your last available maintenance window prior to the target completion date.
-  * **Note**: Updates addressing immediate, severe security vulnerabilities cannot be deferred and will be scheduled in the first available window.
+
+{% hint style="info" %}
+Updates addressing immediate, severe security vulnerabilities cannot be deferred and will be scheduled in the first available window.
+{% endhint %}
 
 ## Maintenance Lifecycle
 
@@ -63,25 +66,17 @@ You can manage all infrastructure and database maintenance directly from the Mar
 
 You can select your preferred 1-hour weekly maintenance window (in UTC) when launching a new service:
 
-<!-- TODO image (UAT comment): "maintenance window selector at service launch" — refresh screenshot to show local time alongside UTC; use a neutral service name. Expected asset: ../.gitbook/assets/maintenance-window-launch.png -->
-
 {% hint style="info" %}
 Every service is assigned a default maintenance window automatically, scheduled during off-peak hours for your region. You can override it at launch — or at any time afterward — to match your preferred low-traffic period. Existing services already have a default window assigned. For the full policy, see [Maintenance Windows](../reference/maintenance-windows.md).
 {% endhint %}
 
 To view or modify your assigned window after launch, check the **Maintenance** pane on your Service detail page:
 
-<!-- TODO image: "Maintenance pane on the Service detail page" (Date and Time + Change). Expected asset: ../.gitbook/assets/maintenance-window-pane.png -->
-
 ### Viewing and Applying Maintenance
 
 Services with pending maintenance will prominently display an alerting banner on their Service Card:
 
-<!-- TODO image: "Service Card with pending-maintenance banner". Expected asset: ../.gitbook/assets/maintenance-service-card.png -->
-
 To take action, navigate to your Service detail page and click the **Maintenance** tab:
-
-<!-- TODO image (UAT comment): replace — current screenshot shows the Details page, not the Maintenance tab. Capture the actual Maintenance tab with the lifecycle table populated. Expected asset: ../.gitbook/assets/maintenance-tab.png -->
 
 1. Here, you can view the lifecycle state of all activities: **Available**, **Scheduled**, **Deferred**, **In Progress**, and **Completed**.
 2. For **Available** items, review the upgrade details and expected impact. You can choose to **Apply Now** for immediate execution, or **Schedule** it for an upcoming 1-hour weekly maintenance window.
@@ -94,7 +89,7 @@ MariaDB Cloud sends advance reminders **1 week**, **1 day**, and **1 hour** befo
 
 ## Managing Maintenance via the API
 
-Maintenance can also be managed programmatically for enterprise workflows. The maintenance and maintenance-window endpoints are published in the [MariaDB Cloud API Reference Guide](../reference/mariadb-cloud-api-reference-guide/README.md), generated from the MariaDB Cloud OpenAPI specification. At a high level, the available operations let you:
+Maintenance can also be managed programmatically for enterprise workflows. The maintenance and maintenance-window endpoints are published in the [MariaDB Cloud API Reference Guide](../reference/mariadb-cloud-api-reference-guide/), generated from the MariaDB Cloud OpenAPI specification. At a high level, the available operations let you:
 
 * **Retrieve maintenance lists**: Fetch the list of maintenance activities for a service, including upcoming, pending, in-progress, and completed items.
 * **Apply maintenance**: Immediately execute one or more _Available_ activities ("apply now").
@@ -105,20 +100,14 @@ API responses include the key attributes of each item, such as priority, classif
 
 ## Frequently Asked Questions
 
-**Q: When is the best time to upgrade?**
-A: Plan according to your configured 1-hour weekly maintenance windows, typically during periods of low traffic for your application.
+**Q: When is the best time to upgrade?** A: Plan according to your configured 1-hour weekly maintenance windows, typically during periods of low traffic for your application.
 
-**Q: Can I schedule an upgrade for later?**
-A: Yes. Unlike the previous legacy system, you can now schedule available maintenance for an upcoming eligible window, or reschedule scheduled maintenance up to your allowed limits.
+**Q: Can I schedule an upgrade for later?** A: Yes. Unlike the previous legacy system, you can now schedule available maintenance for an upcoming eligible window, or reschedule scheduled maintenance up to your allowed limits.
 
-**Q: How will I be notified about upcoming maintenance?**
-A: You receive advance reminders at 1 week, 1 day, and 1 hour before a scheduled activity, plus notifications when an activity is scheduled, changed, or completed. Notifications are delivered in-product and through your configured notification channels.
+**Q: How will I be notified about upcoming maintenance?** A: You receive advance reminders at 1 week, 1 day, and 1 hour before a scheduled activity, plus notifications when an activity is scheduled, changed, or completed. Notifications are delivered in-product and through your configured notification channels.
 
-**Q: What happens if I don't apply a "Required" upgrade by the deadline?**
-A: To maintain cloud provider compliance, MariaDB's security compliance SLA, and platform stability, MariaDB Cloud will automatically perform the upgrade in the final maintenance window prior to the target completion date.
+**Q: What happens if I don't apply a "Required" upgrade by the deadline?** A: To maintain cloud provider compliance, MariaDB's security compliance SLA, and platform stability, MariaDB Cloud will automatically perform the upgrade in the final maintenance window prior to the target completion date.
 
-**Q: Will my data be affected during the upgrade?**
-A: No. Maintenance activities only update the infrastructure or database engine software — your data remains intact and unchanged. Database upgrades additionally run compatibility and integrity checks, and automatically roll back if an upgrade fails.
+**Q: Will my data be affected during the upgrade?** A: No. Maintenance activities only update the infrastructure or database engine software — your data remains intact and unchanged. Database upgrades additionally run compatibility and integrity checks, and automatically roll back if an upgrade fails.
 
-**Q: Can I opt out of infrastructure or security upgrades entirely?**
-A: No, these upgrades are mandatory to maintain SOC 2 compliance, security standards, and cloud provider support.
+**Q: Can I opt out of infrastructure or security upgrades entirely?** A: No, these upgrades are mandatory to maintain SOC 2 compliance, security standards, and cloud provider support.
