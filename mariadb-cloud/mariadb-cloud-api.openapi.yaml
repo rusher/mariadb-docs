@@ -2664,7 +2664,7 @@ paths:
         - BearerAuth: []
       description: Retrieve a list of available maintenance windows
       tags:
-        - Offering
+        - Maintenance and Upgrade
       summary: Read Maintenance Windows
       responses:
         '200':
@@ -4968,7 +4968,7 @@ paths:
         - BearerAuth: []
       description: Set the maintenance window the service.
       tags:
-        - Services
+        - Maintenance and Upgrade
       summary: Set Service Maintenance Window
       parameters:
         - schema:
@@ -5040,7 +5040,7 @@ paths:
         - BearerAuth: []
       description: Retrieve the list of maintenance activities for a specific service.
       tags:
-        - Services
+        - Maintenance and Upgrade
       summary: List Maintenance Activities
       parameters:
         - schema:
@@ -5106,7 +5106,7 @@ paths:
         then security, then database). If the service is not ready, activities
         are rescheduled to the next maintenance window.
       tags:
-        - Services
+        - Maintenance and Upgrade
       summary: Apply Maintenance Activities
       parameters:
         - schema:
@@ -5170,7 +5170,7 @@ paths:
         Rejected if any active activity for the service is past its
         forced_apply_by deadline.
       tags:
-        - Services
+        - Maintenance and Upgrade
       summary: Schedule Maintenance Activities
       parameters:
         - schema:
@@ -6709,7 +6709,7 @@ paths:
         - BearerAuth: []
       description: Upgrade Database Version
       tags:
-        - Services
+        - Maintenance and Upgrade
       summary: Upgrade Database Version
       parameters:
         - schema:
@@ -6766,7 +6766,7 @@ paths:
         - BearerAuth: []
       description: Upgrade Kubernetes Version
       tags:
-        - Services
+        - Maintenance and Upgrade
       summary: Upgrade Kubernetes Version
       parameters:
         - schema:
