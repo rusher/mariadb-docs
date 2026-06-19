@@ -49,7 +49,7 @@
   * [Launch Page](cloud-usage/launch-page.md)
   * [Manage Your Service](cloud-usage/manage-your-service.md)
   * [Service Details Page](cloud-usage/service-details-page.md)
-  * [Infrastructure Upgrades](cloud-usage/infrastructure-upgrades.md)
+  * [Maintenance Management](cloud-usage/maintenance-management.md)
   * [Notifications](cloud-usage/notifications.md)
   * [Service Monitoring Panels](cloud-usage/service-monitoring-panels.md)
   * [Billing](cloud-usage/billing.md)
