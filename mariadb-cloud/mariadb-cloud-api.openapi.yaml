@@ -12055,6 +12055,28 @@ paths:
         - Observability
       operationId: get-metrics-2
       summary: Returns client metrics presented according to the Prometheus data model
+tags:
+  - name: Offering
+  - name: Services
+  - name: Maintenance and Upgrade
+    description: >-
+      Manage scheduled maintenance and version upgrades for a service. View and
+      set maintenance windows, list maintenance activities, apply or schedule
+      (reschedule) them, and trigger database and Kubernetes version upgrades.
+  - name: Copilot
+  - name: Backups
+  - name: Restores
+  - name: Config
+  - name: Users
+  - name: Roles
+  - name: Invites
+  - name: Organizations
+  - name: Billing
+  - name: Notifications
+  - name: Serverless
+  - name: Progress
+  - name: Projects
+  - name: Observability
 openapi: 3.1.1
 servers:
   - url: https://api.skysql.com/
