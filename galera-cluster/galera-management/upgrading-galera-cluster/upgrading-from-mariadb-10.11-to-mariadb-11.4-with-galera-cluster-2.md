@@ -114,7 +114,15 @@ see [Installing MariaDB Packages with YUM](https://app.gitbook.com/o/diTpXxF5Wsb
 {% endtab %}
 
 {% tab title="SLES, OpenSUSE, ..." %}
-see [Installing MariaDB Packages with ZYpp](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/installing-mariadb-with-zypper) for more information.
+Install both the server and the Galera package:
+
+{% code overflow="wrap" expandable="true" %}
+```bash
+sudo zypper install MariaDB-server MariaDB-server-galera
+```
+{% endcode %}
+
+see [Installing MariaDB Packages with ZYpp](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/installing-mariadb-with-zypper) for more information.
 {% endtab %}
 {% endtabs %}
 {% endstep %}
