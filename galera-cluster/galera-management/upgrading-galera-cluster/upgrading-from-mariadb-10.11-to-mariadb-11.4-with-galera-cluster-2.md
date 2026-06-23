@@ -7,11 +7,11 @@ description: >-
 
 # Upgrading from MariaDB 11.8 to MariaDB 12.3 with Galera Cluster
 
-[Galera Cluster](../../) ships with the MariaDB Server. Upgrading a Galera Cluster node is very similar to upgrading a server from [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/11.8/what-is-mariadb-118) to [MariaDB 12.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/12.3/mariadb-12.3-changes-and-improvements). For more information on that process as well as incompatibilities between versions, see the [Upgrade Guide](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/mariadb-community-server-upgrade-paths).&#x20;
+[Galera Cluster](../../) ships with the MariaDB Server. Upgrading a Galera Cluster node is very similar to upgrading a server from [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/11.8/what-is-mariadb-118) to [MariaDB 12.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/12.3/mariadb-12.3-changes-and-improvements). For more information on that process as well as incompatibilities between versions, see the [Upgrade Guide](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/mariadb-community-server-upgrade-paths).&#x20;
 
 ## Performing a Rolling Upgrade
 
-The following steps can be used to perform a rolling upgrade from MariaDB 10.11 to MariaDB 11.4 when using Galera Cluster. In a rolling upgrade, each node is upgraded individually, so the cluster is always operational. There is no downtime from the application's perspective.&#x20;
+The following steps can be used to perform a rolling upgrade from MariaDB 11.8 to MariaDB 12.3 when using Galera Cluster. In a rolling upgrade, each node is upgraded individually, so the cluster is always operational. There is no downtime from the application's perspective.&#x20;
 
 First, before you get started:&#x20;
 
@@ -42,7 +42,7 @@ see [Updating the MariaDB YUM repository to a New Major Release](https://app.git
 {% endtab %}
 
 {% tab title="SLES, OpenSUSE, ..." %}
-see [Updating the MariaDB ZYpp repository to a New Major Release](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/installing-mariadb-with-zypper) for more information.ser
+see [Updating the MariaDB ZYpp repository to a New Major Release](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/installing-mariadb-with-zypper) for more information.
 {% endtab %}
 {% endtabs %}
 {% endstep %}
@@ -62,7 +62,7 @@ Uninstall the old version of MariaDB and the Galera wsrep provider.
 {% tab title="Debian, Ubuntu, ..." %}
 {% code overflow="wrap" expandable="true" %}
 ```bash
-sudo apt-get remove mariadb-server galera
+sudo apt-get remove mariadb-server galera-4
 ```
 {% endcode %}
 {% endtab %}
@@ -70,7 +70,7 @@ sudo apt-get remove mariadb-server galera
 {% tab title="RHEL, CentOS, Fedora, ..." %}
 {% code overflow="wrap" expandable="true" %}
 ```bash
-sudo yum remove MariaDB-server galera
+sudo yum remove MariaDB-server galera-4
 ```
 {% endcode %}
 {% endtab %}
@@ -78,7 +78,7 @@ sudo yum remove MariaDB-server galera
 {% tab title="SLES, OpenSUSE, ..." %}
 {% code overflow="wrap" expandable="true" %}
 ```bash
-sudo zypper remove MariaDB-server galera
+sudo zypper remove MariaDB-server galera-4
 ```
 {% endcode %}
 {% endtab %}
@@ -86,15 +86,31 @@ sudo zypper remove MariaDB-server galera
 {% endstep %}
 
 {% step %}
-Install the new version of MariaDB and the Galera wsrep provider\[cite: 5, 6, 7, 8].
+Install the new version of MariaDB and the Galera wsrep provider. As of MariaDB 12.3, the Galera files are no longer part of the standard `mariadb-server` package, so you must explicitly install the new Galera package (`mariadb-server-galera` on Debian/Ubuntu, `MariaDB-server-galera` on RHEL/SLES) alongside the server.
 
 {% tabs %}
 {% tab title="Debian, Ubuntu, ..." %}
+Install both the server and the Galera package:
+
+{% code overflow="wrap" expandable="true" %}
+```bash
+sudo apt-get install mariadb-server mariadb-server-galera
+```
+{% endcode %}
+
 see Installing MariaDB Packages with APT for more information.
 {% endtab %}
 
 {% tab title="RHEL, CentOS, Fedora, ..." %}
-see [Installing MariaDB Packages with YUM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/yum) for more information\[cite: 5, 6, 7, 8].
+Install both the server and the Galera package:
+
+{% code overflow="wrap" expandable="true" %}
+```bash
+sudo yum install MariaDB-server MariaDB-server-galera
+```
+{% endcode %}
+
+see [Installing MariaDB Packages with YUM](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/yum) for more information.
 {% endtab %}
 
 {% tab title="SLES, OpenSUSE, ..." %}
