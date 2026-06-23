@@ -171,7 +171,7 @@ For a list of all new variables added since MariaDB 11.8, see:
 
 ## Incompatible Changes
 
-Since MariaDB 12.3 is the first long-term release after [MariaDB 11.8](../11.8/what-is-mariadb-118.md), the following backward-incompatible changes may affect an upgrade. For the full upgrade procedure, see [Upgrading from MariaDB 11.8 to MariaDB 12.3](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-from-to-specific-versions/upgrading-from-mariadb-11-8-to-mariadb-12-3).
+Since MariaDB 12.3 is the first long-term release after [MariaDB 11.8](../11.8/what-is-mariadb-118.md), the following backward-incompatible changes may affect an upgrade. For the full upgrade procedure, see [Upgrading from MariaDB 11.8 to MariaDB 12.3](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-from-to-specific-versions/upgrading-from-mariadb-11-8-to-mariadb-12-3).
 
 ### New Reserved Words
 
@@ -191,7 +191,7 @@ The following deprecated system variables have been removed:
 
 ### Replication
 
-* When upgrading a replica from a pre-12.3 release to MariaDB 12.3, the `CHANGE MASTER TO ... master_use_gtid` setting is not currently carried over and is reset to `DEFAULT` ([MDEV-39788](https://jira.mariadb.org/browse/MDEV-39788)). After upgrading, re-apply `master_use_gtid` if you rely on it. Downgrading is not affected. See [Upgrading from MariaDB 11.8 to MariaDB 12.3](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/mariadb-community-server-upgrade-paths/upgrading-from-mariadb-11-8-to-mariadb-12-3) for details.
+* When upgrading a replica from a pre-12.3 release to MariaDB 12.3, the `CHANGE MASTER TO ... master_use_gtid` setting is not currently carried over and is reset to `DEFAULT` ([MDEV-39788](https://jira.mariadb.org/browse/MDEV-39788)). After upgrading, re-apply `master_use_gtid` if you rely on it. Downgrading is not affected. See [Upgrading from MariaDB 11.8 to MariaDB 12.3](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-from-to-specific-versions/upgrading-from-mariadb-11-8-to-mariadb-12-3) for details.
 
 ## Security Vulnerabilities Fixed in MariaDB 12.3
 
