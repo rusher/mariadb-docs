@@ -5,7 +5,6 @@
   * [Quickstart Guides](mariadb-columnstore/columnstore-quickstart-guides/README.md)
     * [MariaDB ColumnStore Guide](mariadb-columnstore/columnstore-quickstart-guides/mariadb-columnstore-guide.md)
     * [MariaDB ColumnStore Hardware Guide](mariadb-columnstore/columnstore-quickstart-guides/mariadb-columnstore-hardware-guide.md)
-    * [MariaDB ColumnStore System Usage](mariadb-columnstore/columnstore-quickstart-guides/mariadb-columnstore-usage-guide.md)
   * [Architecture](mariadb-columnstore/architecture/README.md)
     * [Topologies Overview](mariadb-columnstore/architecture/topologies-overview.md)
     * [ColumnStore Architectural Overview](mariadb-columnstore/architecture/columnstore-architectural-overview.md)
