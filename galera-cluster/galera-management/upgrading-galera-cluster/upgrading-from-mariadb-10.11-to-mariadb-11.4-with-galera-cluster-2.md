@@ -9,6 +9,25 @@ description: >-
 
 [Galera Cluster](../../) ships with the MariaDB Server. Upgrading a Galera Cluster node is very similar to upgrading a server from [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/11.8/what-is-mariadb-118) to [MariaDB 12.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/12.3/mariadb-12.3-changes-and-improvements). For more information on that process as well as incompatibilities between versions, see the [Upgrade Guide](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/mariadb-community-server-upgrade-paths).&#x20;
 
+## Galera Packaging Changes in MariaDB 12.3
+
+As of MariaDB 12.3, Galera is no longer a dependency of the standard server packages ([MDEV-30953](https://jira.mariadb.org/browse/MDEV-30953)):
+
+* **Up to MariaDB 11.8**, the standard server package (`mariadb-server` on Debian/Ubuntu, `MariaDB-server` on RHEL/SLES) depended directly on `galera-4`.
+* **From MariaDB 12.3**, Galera is no longer a server dependency. A new package — `mariadb-server-galera` (Debian/Ubuntu) / `MariaDB-server-galera` (RHEL/SLES) — must be installed explicitly.
+
+{% hint style="info" %}
+`galera-4` did not *become* `mariadb-server-galera`. `galera-4` is the wsrep provider library and still exists in MariaDB 12.3 — `mariadb-server-galera` depends on it. What moved is the dependency, not the package identity: Galera is still shipped in the MariaDB repositories, but it is no longer installed automatically with `mariadb-server`.
+{% endhint %}
+
+The packages to remove (old 11.8) and install (new 12.3) per platform:
+
+| Platform      | Remove (old 11.8)             | Install (new 12.3)                          |
+| ------------- | ----------------------------- | ------------------------------------------- |
+| Debian/Ubuntu | `mariadb-server galera-4`     | `mariadb-server mariadb-server-galera`      |
+| RHEL/yum      | `MariaDB-server galera-4`     | `MariaDB-server MariaDB-server-galera`      |
+| SLES/zypper   | `MariaDB-server galera-4`     | `MariaDB-server MariaDB-server-galera`      |
+
 ## Performing a Rolling Upgrade
 
 The following steps can be used to perform a rolling upgrade from MariaDB 11.8 to MariaDB 12.3 when using Galera Cluster. In a rolling upgrade, each node is upgraded individually, so the cluster is always operational. There is no downtime from the application's perspective.&#x20;
