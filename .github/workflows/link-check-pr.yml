@@ -39,6 +39,10 @@ jobs:
             --exclude 'https://localhost:[0-9]+.*'
             ${{ steps.changes.outputs.all_changed_files }}
           fail: true
+          # Don't error when the changed files contain no links to check. lychee
+          # otherwise exits non-zero with "No links were found", which is a false
+          # failure for link-free pages (e.g. nav stubs). See DOCS-6272.
+          failIfEmpty: false
 
       - name: 📖 Help & Documentation
         if: failure()
