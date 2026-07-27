@@ -86,6 +86,42 @@ Many status variables are differential and reset after each `FLUSH STATUS` comma
 | `wsrep_local_send_queue_avg` | Average size of the queue of write-sets waiting to be sent to other nodes. Values much greater than `0.0` can indicate network throughput issues.                                                                                                                 |
 | `wsrep_cert_deps_distance`   | Represents the node’s potential for parallel transaction application, helping to optimally tune the `wsrep_slave_threads` [parameter](../reference/galera-cluster-system-variables.md#wsrep_slave_threads).                                                       |
 
+## Testing Your Monitoring by Simulating a Failure
+
+When validating alerts and health checks, it is often useful to force a node into a failed or disconnected state on purpose. The following methods each break a single node without touching its data, and are fully reversible.
+
+{% hint style="warning" %}
+Do these only in a test cluster. Each method removes the node from the Primary Component, so writes to that node stop until it rejoins.
+{% endhint %}
+
+**Isolate a node from the cluster (recommended for testing)**
+
+```sql
+SET GLOBAL wsrep_provider_options = 'gmcast.isolate=1';
+```
+
+The node leaves the Primary Component: `wsrep_connected` and `wsrep_ready` go `OFF` and `wsrep_cluster_status` becomes `non-Primary`. Reconnect it with:
+
+```sql
+SET GLOBAL wsrep_provider_options = 'gmcast.isolate=0';
+```
+
+**Point a node at an invalid cluster address**
+
+```sql
+SET GLOBAL wsrep_cluster_address = 'gcomm://192.0.2.1';
+```
+
+`192.0.2.1` is a reserved, unroutable documentation address (RFC 5737), so the node cannot reach a cluster. It reports `wsrep_cluster_status=Disconnected`, `wsrep_ready=OFF`, and `wsrep_cluster_size=0`. Restore it by setting `wsrep_cluster_address` back to the real cluster address.
+
+**Block the Galera port**
+
+Block TCP port `4567` (the [Galera replication port](../galera-management/configuration/galera-cluster-address.md)) with a host firewall such as `iptables` or `nftables`. Take care not to lock yourself out of the node — leave SSH and the SQL port reachable.
+
+{% hint style="info" %}
+**Run monitoring connections with `wsrep_sync_wait=0`.** With the default causality checks active (`wsrep_sync_wait` set non-zero, e.g. `1`), a `SELECT` issued on a node that has lost its connection to the Primary Component blocks and can fail with `ERROR 1205 (HY000): Lock wait timeout exceeded`. Set [`wsrep_sync_wait=0`](../reference/galera-cluster-system-variables.md#wsrep_sync_wait) (or [`wsrep_dirty_reads=1`](../reference/galera-cluster-system-variables.md#wsrep_dirty_reads)) on health-check sessions so their queries return promptly instead of hanging.
+{% endhint %}
+
 ## Recovering a Cluster After a Full Outage
 
 If the entire cluster shuts down or [loses Quorum](resetting-the-quorum-cluster-bootstrap.md#procedure-for-selecting-the-right-node), you must manually re-establish a Primary Component by bootstrapping from the most advanced node.

@@ -160,6 +160,10 @@ This variable is documented in detail here:
 * Data Type: Boolean
 * Default Value: `OFF`
 
+{% hint style="info" %}
+Desyncing affects cluster availability: if **all** nodes are desynced the cluster no longer processes writes and only read-only queries can succeed; while **at least one** node is synced, writes are accepted there but replicate only among synced nodes. Replication therefore requires **two or more** synced nodes. A desynced node still applies incoming write-sets — it stops participating in Flow Control, not in replication.
+{% endhint %}
+
 #### `wsrep_dirty_reads`
 
 * Description: By default, when not synchronized with the group ([wsrep\_ready](galera-cluster-status-variables.md#wsrep_ready)=`OFF`), a node rejects all queries other than `SET` and `SHOW`. If `wsrep_dirty_reads` is set to `1`, queries which do not change data, like `SELECT` queries (dirty reads), creating of prepare statement, and so forth will be accepted by the node.
@@ -634,6 +638,8 @@ Setting `wsrep_sync_wait=1` (or a relevant bitmask) is the primary mechanism to 
 {% hint style="warning" %}
 While `wsrep_sync_wait` provides real-time visibility for reads, it does not prevent Lost Update (P4)anomalies. Even with synchronization enabled, read-modify-write patterns remain unsafe unless explicit locking (e.g., `SELECT ... FOR UPDATE`) is used.
 {% endhint %}
+
+When a node loses its connection to the Primary Component, causality checks cannot complete, so reads issued with `wsrep_sync_wait` non-zero block and may fail with `ERROR 1205 (HY000): Lock wait timeout exceeded`. Monitoring and health-check connections should therefore run with `SET SESSION wsrep_sync_wait=0` (or [wsrep\_dirty\_reads=1](galera-cluster-system-variables.md#wsrep_dirty_reads)).
 
 * Description: Setting this variable ensures causality checks will take place before executing an operation of the type specified by the value, ensuring that the statement is executed on a fully synced node. While the check is taking place, new queries are blocked on the node to allow the server to catch up with all updates made in the cluster up to the point where the check was begun. Once reached, the original query is executed on the node. This can result in higher latency. Note that when [wsrep\_dirty\_reads](galera-cluster-system-variables.md#wsrep_dirty_reads) is ON, values of wsrep\_sync\_wait become irrelevant. Sample usage (for a critical read that must have the most up-to-date data) `SET SESSION wsrep_sync_wait=1; SELECT ...; SET SESSION wsrep_sync_wait=0;`
   * `0` - Disabled (default)

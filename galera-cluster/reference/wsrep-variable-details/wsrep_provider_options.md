@@ -312,6 +312,12 @@ Note that before Galera 3, the `repl` tag was named `replicator`.
 * Dynamic: No
 * Default: `no`
 
+#### `gmcast.isolate`
+
+* Description: Isolates the node from the rest of the cluster, mainly for testing failover and monitoring. `gmcast.isolate=1` makes the node drop its connections and leave the Primary Component; `gmcast.isolate=0` lets it reconnect and rejoin. (A value of `2` shuts the group-communication backend down entirely.) For example: `SET GLOBAL wsrep_provider_options = 'gmcast.isolate=1';`
+* Dynamic: Yes
+* Default: `0`
+
 #### `gmcast.listen_addr`
 
 * Description: Address Galera listens for connections from other nodes. Can be used to override the default port to listen, which is obtained from the connection address.
