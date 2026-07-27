@@ -18,7 +18,7 @@ The MariaDB Server Ecosystem Hub is a curated discovery layer for the MariaDB Se
 {% endcolumn %}
 
 {% column %}
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 {% endcolumn %}
 {% endcolumns %}
 

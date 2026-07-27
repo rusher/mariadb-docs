@@ -16,6 +16,10 @@ layout:
     visible: false
   metadata:
     visible: true
+  tags:
+    visible: true
+  actions:
+    visible: true
 ---
 
 # MariaDB Documentation
@@ -26,7 +30,7 @@ New to MariaDB? Start here to set up your environment, connect to your first dat
 
 * [Installation Guides](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/mariadb-quickstart-guides/installing-mariadb-server-guide)
 * [Basic Concepts](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/mariadb-quickstart-guides/basics-guide)
-* [Connecting to MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/connecting/mariadb-connecting-guide-1)
+* [Connecting to MariaDB](/broken/spaces/SsmexDFPv2xG2OTyO5yV/pages/aUF70dDKMyaR6xBiNmrt)
 * [First SQL Queries](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/mariadb-quickstart-guides/mariadb-advanced-sql-guide)
 
 ### Product Documentation
