@@ -139,7 +139,7 @@ flowchart LR
     class M merge;
 ```
 
-For the full configuration procedure, see the [MariaDB MaxScale Exasolrouter Tutorial](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-tutorials/mariadb-maxscale-exasolrouter). Pipeline tuning parameters are covered in [Performance & Benchmarking](performance-and-benchmarking.md).
+For the full configuration procedure, see the [MariaDB MaxScale Exasolrouter Tutorial](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-tutorials/mariadb-maxscale-exasolrouter). Pipeline tuning parameters are covered in [Performance & Benchmarking](performance-and-benchmarking.md).
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

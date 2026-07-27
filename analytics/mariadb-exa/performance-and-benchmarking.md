@@ -23,7 +23,7 @@ MariaDB Exa keeps Exasol in sync through MaxScale CDC, which reads the MariaDB b
 | Network | 10 Gbps+ recommended | — | Ensures low-latency data transfer between MaxScale and Exasol. |
 
 {% hint style="info" %}
-These parameters are set on the `binlogrouter` CDC service. For the full CDC setup, see the [MariaDB MaxScale Exasolrouter Tutorial](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-tutorials/mariadb-maxscale-exasolrouter).
+These parameters are set on the `binlogrouter` CDC service. For the full CDC setup, see the [MariaDB MaxScale Exasolrouter Tutorial](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-tutorials/mariadb-maxscale-exasolrouter).
 {% endhint %}
 
 ## Benchmarking

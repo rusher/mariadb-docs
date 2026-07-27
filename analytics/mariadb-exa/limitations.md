@@ -29,9 +29,9 @@ The MariaDB Exa environment utilizes a Hybrid Transactional and Analytical Proce
 
 ## II. Schema & Replication Management
 
-### Primary Key Requirement
+### Primary Key
 
-Every table being captured by CDC must define a primary key. Tables without primary keys are not supported by the CDC pipeline's `MERGE`-based upsert into Exasol.
+A primary key is strongly recommended for every table captured by CDC. Tables without one are still replicated, but MaxScale CDC synthesizes a key from all columns for its `MERGE`-based upsert into Exasol — which is slower and can behave incorrectly when rows are not unique.
 
 ### Unsupported Schema Features
 
@@ -330,6 +330,6 @@ MariaDB represents `NULL` values as `\N` in export files. Exasol `TIMESTAMP` col
 * Case Sensitivity: The SQLglot preprocessor typically uppercases identifiers to match standard Exasol behavior.
 * Load Data: `LOAD DATA LOCAL INFILE` is not supported in the analytical pathway.
 
-\{% include "[https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/\~/reusable/pNHZQXPP5OEz2TgvhFva/](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/)" %\}
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
-\{% @marketo/form formId="4316" %\}
+{% @marketo/form formId="4316" %}
