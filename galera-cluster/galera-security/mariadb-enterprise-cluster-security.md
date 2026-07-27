@@ -183,16 +183,23 @@ new ssl configuration options (ssl-ca, ssl-cert and ssl-key) are ignored by SST 
 {% endcode %}
 
 {% hint style="info" %}
-**`VERIFY_IDENTITY` binds to host identity.** In `VERIFY_IDENTITY` mode the peer certificate's Common Name or `subjectAltName` must match the hostname or IP address used for the connection (for the Rsync method this is enforced through the stunnel `checkHost`/`checkIP` checks). In clusters where addresses change — cloud auto-scaling, NAT, or container restarts — or where there is no reliable internal DNS, certificates would have to be reissued on every address change. Where that is impractical, use `VERIFY_CA`, which verifies the certificate chain without binding to a specific host identity.
+**`VERIFY_CA` and `VERIFY_IDENTITY` behave differently only for the Rsync SST method.**
+
+For the **Rsync** method (`wsrep_sst_method = rsync`), the two values differ: `VERIFY_CA` verifies the peer's certificate chain against the CA (stunnel `verifyChain`), while `VERIFY_IDENTITY` additionally requires the peer certificate's Common Name or `subjectAltName` to match the connection's hostname or IP address (stunnel `verifyPeer`, with `checkHost`/`checkIP`).
+
+For the **MariaDB Enterprise Backup** method (`wsrep_sst_method = mariabackup`), `VERIFY_CA` and `VERIFY_IDENTITY` are handled **identically**. The SST script only tests whether `ssl-mode` starts with `VERIFY` to decide whether to enable X.509 certificate verification; it does not distinguish the two values. Setting `VERIFY_IDENTITY` with `mariabackup` therefore does not add the host-identity binding that it does with Rsync.
+
+Because host-identity binding applies only under Rsync, clusters whose node addresses change — cloud auto-scaling, NAT, or container restarts — or that lack reliable internal DNS would, under Rsync `VERIFY_IDENTITY`, need certificates reissued on every address change. Where that is impractical, use `VERIFY_CA`.
 {% endhint %}
 
-Identity verification differs by SST method:
+The following table summarizes how each SST method handles the `VERIFY_*` values:
 
-| SST Method    | Peer Identity Check          | Identifier Type                            |
-| ------------- | ---------------------------- | ------------------------------------------ |
-| `mariabackup` | `VERIFY_IDENTITY` (ssl-mode) | hostname / IP                              |
-| `rsync`       | `VERIFY_IDENTITY` (ssl-mode) | hostname / IP (stunnel checkHost/checkIP)  |
-| `mysqldump`   | none by default              | relies on client `ssl-verify-server-cert`  |
+| SST Method                                | `VERIFY_CA`                    | `VERIFY_IDENTITY`                                                                       |
+| ----------------------------------------- | ------------------------------ | -------------------------------------------------------------------------------------- |
+| MariaDB Enterprise Backup (`mariabackup`) | Certificate chain verification | Same as `VERIFY_CA` — no separate host-identity check                                   |
+| Rsync (`rsync`)                           | Certificate chain verification | Chain **plus** hostname/IP identity check (stunnel `verifyPeer`, `checkHost`/`checkIP`) |
+
+The `mysqldump` SST method ignores the `[sst]` `ssl-mode` option entirely. It connects with the ordinary MariaDB client, so its TLS behavior — including whether the server certificate is verified — is governed by the client's own configuration (`ssl-verify-server-cert` or the client `ssl-mode`), not by the `VERIFY_*` values above.
 
 ## Cluster Name Verification
 
