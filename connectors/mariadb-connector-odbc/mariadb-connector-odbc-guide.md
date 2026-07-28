@@ -17,10 +17,35 @@ description: >-
 * It supports both Unicode and ANSI modes.
 * It uses the MariaDB/MySQL binary protocol (server-side [prepared statements](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/prepared-statements)) for `SQLPrepare`. One-shot `SQLExecDirect` queries default to the client-side text protocol unless the `SQL_ATTR_EXECDIRECT_ON_SERVER` attribute (or the `EDSERVER` connection option) is set.
 
-The current release series are:
+## Supported Versions
 
-* MariaDB Connector/ODBC 3.2 is the current stable release series
-* MariaDB Connector/ODBC 3.1, 3.0, and 2.0 are all previous stable release series
+### Server Compatibility
+
+MariaDB Connector/ODBC connects to MariaDB and MySQL database servers, and can be used as a drop-in replacement for MySQL Connector/ODBC.
+
+### Supported Release Series
+
+The following MariaDB Connector/ODBC release series are currently supported:
+
+| Release Series | Stable (GA) Date |
+| -------------- | ---------------- |
+| 3.2            | June 2024        |
+| 3.1            | May 2019         |
+
+3.2 is the current stable release series. The 3.1 series has passed End of Standard Support and remains available under extended support only. The 3.0 and 2.0 series are no longer supported.
+
+For End of Standard Support and End of Life dates, along with the supported operating systems for each series, see the [MariaDB Engineering Policy](https://mariadb.com/engineering-policies/).
+
+### Checking Your Installed Version
+
+An application can retrieve the driver version at runtime by calling `SQLGetInfo()` with `SQL_DRIVER_VER`:
+
+```c
+SQLCHAR     version[32];
+SQLSMALLINT length;
+
+SQLGetInfo(connection, SQL_DRIVER_VER, version, sizeof(version), &length);
+```
 
 ## Recent Releases
 
