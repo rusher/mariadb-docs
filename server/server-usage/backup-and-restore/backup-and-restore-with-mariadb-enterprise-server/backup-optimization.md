@@ -8,7 +8,7 @@ description: >-
 
 ## Overview
 
-Backup and restore implementations can help overcome specific technical challenges that would otherwise pose a barrier to meeting business requirements.
+Backup and restore implementations can help overcome specific technical challenges that would otherwise pose a barrier to meeting business requirements. 
 
 Each of these practices represents a trade-off. Understand risks before implementing any of these practices.
 
