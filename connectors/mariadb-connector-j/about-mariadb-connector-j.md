@@ -542,6 +542,20 @@ See the [pool documentation](pool-datasource-implementation.md) for pool configu
 * Default Value: `null`
 * Introduced: 1.1.7
 
+#### **maxAllowedColumns**
+
+* Description: Maximum number of columns the driver accepts in result-set or prepare metadata sent by the server. Reading column metadata allocates memory in proportion to the announced column count, so a malicious proxy that announces a huge count could exhaust client memory. When the server announces more columns than this limit, the command is interrupted with an error.
+* Data Type: `integer`
+* Default Value: `65535`
+* Introduced: 2.7.15, 3.3.6, 3.4.4, 3.5.10
+
+#### **maxAllowedPacket**
+
+* Description: Maximum size, in bytes, of a packet the driver sends or receives. The value is advertised to the server during the handshake (capped to 16MB for the connection phase), lets the driver reject a command that is too big to send — throwing an error instead of having the server drop the connection — and rejects an oversized packet received from the server. When unset, no send-side limit applies, and the receive side falls back to a server-independent heap-relative ceiling: a quarter of the JVM maximum heap, clamped between 16MB and 1GB.
+* Data Type: `integer`
+* Default Value: `null`
+* Introduced: 3.5.10
+
 #### **maxQuerySizeToLog**
 
 * Description: Only the first characters corresponding to this options size will be displayed in logs
