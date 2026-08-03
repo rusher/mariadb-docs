@@ -22,6 +22,8 @@ jobs:
           echo "Expanding GitBook aliases while excluding protected files..."
 
           find . -type f -name "*.md" \
+            ! -path "./dev-docs/*" \
+            ! -path "./.claude/*" \ 
             ! -name "README.md" \
             ! -name "CONTRIBUTING.md" \
             ! -path "*/general-resources/about/readme/about-links.md" \
