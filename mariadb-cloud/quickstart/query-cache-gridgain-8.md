@@ -3,6 +3,7 @@ description: >-
   Query Cache adds a GridGain 8 in-memory query result cache alongside your
   transactional MariaDB Cloud workload, serving repeated reads from memory
   behind MaxScale with no application changes.
+hidden: true
 icon: bolt
 ---
 
@@ -66,7 +67,7 @@ A single-node, in-memory query result store. It holds cached `SELECT` results on
 
 #### **TTL-Bounded Freshness**
 
-Cached results are **time-bounded**, not invalidated on every write. Each cached result lives for at most the configured hard TTL (`gg8_mxs_hard_ttl`, see [Configuration Reference](#configuration-reference)), after which it is refreshed from the database on the next read.
+Cached results are **time-bounded**, not invalidated on every write. Each cached result lives for at most the configured hard TTL (`gg8_mxs_hard_ttl`, see [Configuration Reference](query-cache-gridgain-8.md#configuration-reference)), after which it is refreshed from the database on the next read.
 
 #### **No Read-Your-Own-Writes From Cache**
 
@@ -98,7 +99,7 @@ _Launch - Enable Query Cache_
 
 For **API keys**, client IP **allow list**, checking service **`ready`** status, and fetching **credentials**, follow [Launch DB using the REST API](launch-db-using-the-rest-api.md). The [MariaDB Cloud REST API reference](../reference/rest-api-reference.md) and [API docs](https://apidocs.skysql.com/) cover the full request model.
 
-**Query Cache fields** — On `POST /provisioning/v1/services`, set **`"cache_backend": "GridGain8QueryResultCache"`** to provision the cache on top of the replicated **es-replica** (Semi-Sync HA) topology. Use **`amd64`** for `architecture` and a supported cache size, consistent with the portal. Optionally set `gg8_size`, `gg8_replicas`, and `gg8_mxs_hard_ttl` (see [Configuration Reference](#configuration-reference)).
+**Query Cache fields** — On `POST /provisioning/v1/services`, set **`"cache_backend": "GridGain8QueryResultCache"`** to provision the cache on top of the replicated **es-replica** (Semi-Sync HA) topology. Use **`amd64`** for `architecture` and a supported cache size, consistent with the portal. Optionally set `gg8_size`, `gg8_replicas`, and `gg8_mxs_hard_ttl` (see [Configuration Reference](query-cache-gridgain-8.md#configuration-reference)).
 
 Example (adjust `tier`, `region`, `availability_zone`, `size`, `version`, and add **`allow_list`** or other required keys per the launch guide):
 
@@ -187,17 +188,17 @@ You can manage the cache from the service's **MANAGE** menu → **Manage Query C
 
 _Manage Query Cache_
 
-The same operations are available through the REST API. See [Via MariaDB Cloud REST API](#via-mariadb-cloud-rest-api) above.
+The same operations are available through the REST API. See [Via MariaDB Cloud REST API](query-cache-gridgain-8.md#via-mariadb-cloud-rest-api) above.
 
 ## Configuration Reference
 
-| Field | Meaning | Values |
-| --- | --- | --- |
-| `cache_backend` | Enables the Query Cache | `GridGain8QueryResultCache` |
-| `gg8_size` | Cache node size (its own catalog, `type=gg8cache`) | `sky-4x16`, `sky-4x32`, `sky-8x32`, `sky-8x64`, `sky-16x64`, `sky-16x128` |
-| `gg8_replicas` | Number of cache nodes | Must be `1` (locked in Tech Preview) |
-| `gg8_mxs_hard_ttl` | Cache freshness bound, in seconds | 5–600, default 120 |
-| `gg8_instance_type` | Cloud instance type (read-only, derived from size) | — |
+| Field               | Meaning                                            | Values                                                                    |
+| ------------------- | -------------------------------------------------- | ------------------------------------------------------------------------- |
+| `cache_backend`     | Enables the Query Cache                            | `GridGain8QueryResultCache`                                               |
+| `gg8_size`          | Cache node size (its own catalog, `type=gg8cache`) | `sky-4x16`, `sky-4x32`, `sky-8x32`, `sky-8x64`, `sky-16x64`, `sky-16x128` |
+| `gg8_replicas`      | Number of cache nodes                              | Must be `1` (locked in Tech Preview)                                      |
+| `gg8_mxs_hard_ttl`  | Cache freshness bound, in seconds                  | 5–600, default 120                                                        |
+| `gg8_instance_type` | Cloud instance type (read-only, derived from size) | —                                                                         |
 
 {% hint style="info" %}
 Cache sizes are **not** server sizes. For example, `sky-2x8` is a valid server size but not a valid `gg8_size`. When you add the cache without specifying `gg8_size`, it defaults from the server size.
@@ -205,14 +206,14 @@ Cache sizes are **not** server sizes. For example, `sky-2x8` is a valid server s
 
 ### Common API Errors
 
-| Case | Response |
-| --- | --- |
-| Modify or remove while the service is not `ready` | `409 Conflict` |
-| Empty request body / no effective change | `400` "gg8 cache configuration is unchanged" |
-| `gg8_replicas` other than `1` | `400` "gg8_replicas must be 1" |
-| Invalid `gg8_size` (including server-size names) | `400` "invalid gg8_size" |
-| TTL out of range | `400` "gg8_mxs_hard_ttl must be between 5 and 600" |
-| Remove when the cache is not enabled | `409` "gridgain8 cache is not enabled on this service" |
+| Case                                              | Response                                               |
+| ------------------------------------------------- | ------------------------------------------------------ |
+| Modify or remove while the service is not `ready` | `409 Conflict`                                         |
+| Empty request body / no effective change          | `400` "gg8 cache configuration is unchanged"           |
+| `gg8_replicas` other than `1`                     | `400` "gg8\_replicas must be 1"                        |
+| Invalid `gg8_size` (including server-size names)  | `400` "invalid gg8\_size"                              |
+| TTL out of range                                  | `400` "gg8\_mxs\_hard\_ttl must be between 5 and 600"  |
+| Remove when the cache is not enabled              | `409` "gridgain8 cache is not enabled on this service" |
 
 ## Observability
 
@@ -222,14 +223,14 @@ When the cache is enabled, the service's **Monitoring** view gains a **Cache** d
 
 _Monitoring - Cache_
 
-| Panel | What it shows |
-| --- | --- |
-| Cache Hit Ratio | Ratio of cache hits to total lookups (gets); the main measure of cache effectiveness |
-| Cache Throughput | Cache gets, hits, and misses per second |
-| Cache Entries | Number of entries currently held in the cache |
-| Off-Heap Used | Percentage of the cache node's off-heap memory in use |
-| Data Region Memory | Memory allocated to the cache against its maximum size |
-| Evictions / sec, Eviction Rate | Cache entries evicted per second (an indicator of memory pressure) |
+| Panel                          | What it shows                                                                        |
+| ------------------------------ | ------------------------------------------------------------------------------------ |
+| Cache Hit Ratio                | Ratio of cache hits to total lookups (gets); the main measure of cache effectiveness |
+| Cache Throughput               | Cache gets, hits, and misses per second                                              |
+| Cache Entries                  | Number of entries currently held in the cache                                        |
+| Off-Heap Used                  | Percentage of the cache node's off-heap memory in use                                |
+| Data Region Memory             | Memory allocated to the cache against its maximum size                               |
+| Evictions / sec, Eviction Rate | Cache entries evicted per second (an indicator of memory pressure)                   |
 
 For the full list of panels, see [Service Monitoring Panels](../cloud-usage/service-monitoring-panels.md). The same metrics are also available through the [Observability](../cloud-management/observability.md) API.
 
