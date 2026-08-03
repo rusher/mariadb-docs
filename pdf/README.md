@@ -200,9 +200,11 @@ them.
 
 Two findings from this that are **source** bugs, not PDF bugs:
 
-- `expand-gitbook-aliases.yml` maps both `{skysql}` and `{release-notes}` to
+- ~~`expand-gitbook-aliases.yml` maps both `{skysql}` and `{release-notes}` to
   `aEnK0ZXmUbJzqQrTjFyb`. Every path under that ID resolves under
-  `release-notes/`, so `{skysql}` links land in the wrong space.
+  `release-notes/`, so `{skysql}` links land in the wrong space.~~ Fixed in
+  DOCS-6371: `{skysql}` now resolves to the MariaDB Cloud space, since SkySQL
+  was renamed MariaDB Cloud and has no space of its own.
 - 669 distinct cross-space targets (6,063 of 37,601 references) do not exist at
   the linked path in the checkout — for example error-code pages that moved out
   of `reference/mariadb-internals/using-mariadb-with-your-programs-api/`. Most
