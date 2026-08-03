@@ -31,7 +31,7 @@ jobs:
             -e 's|{maxscale}|https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX|g' \
             -e 's|{analytics}|https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/rBEU9juWLfTDcdwF3Q14|g' \
             -e 's|{columnstore}|https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/2I4jZ8pGq8bT4w5n3q6r|g' \
-            -e 's|{skysql}|https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb|g' \
+            -e 's|{skysql}|https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/vPz15Lz0Iw3P3yKR3Prd' \
             -e 's|{home}|https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/gmXC0YXB3rRhXvpg5mb1|g' \
             -e 's|{platform}|https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/JqgUabdZsoY5EiaJmqgn|g' \
             -e 's|{connectors}|https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/CjGYMsT2MVP4nd3IyW2L|g' \
