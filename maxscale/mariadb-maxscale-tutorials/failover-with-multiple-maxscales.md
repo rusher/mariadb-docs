@@ -440,7 +440,7 @@ When connectivity returns, MaxScale A sees the master lock on _server2_ and star
 That leaves one question. If writes were briefly allowed on _server1_, and _server2_ was promoted without those writes ever reaching it, how is consistency preserved?
 
 {% hint style="danger" %}
-It is preserved only if the cluster uses semisynchronous replication with an effectively infinite timeout, so that no transaction ever commits without an acknowledgment from at least one other server. Without that, the short window before MaxScale A notices it has lost majority can still lose transactions. Set up semisynchronous replication before relying on `majority_of_all` — see [Failure-tolerant replication and failover](failure-tolerant-replication-and-failover.md).
+It is preserved only if the cluster uses semisynchronous replication configured so that the primary never falls back to asynchronous replication — no transaction may commit without an acknowledgment from at least one other server. There is no infinite setting for `rpl_semi_sync_master_timeout`, so set it to its maximum value. At lower values (the default is 10 seconds), the primary reverts to asynchronous replication when the timeout expires, and transactions can then commit on the minority partition and are lost when the partition heals. Set up semisynchronous replication before relying on `majority_of_all` — see [Failure-tolerant replication and failover](failure-tolerant-replication-and-failover.md).
 {% endhint %}
 
 ## Choosing a Mode
