@@ -189,7 +189,7 @@ The available conditions are:
 5. primary\_monitor\_master : If this MaxScale is [cooperating](mariadb-monitor.md#cooperative-monitoring) with another MaxScale and this is the secondary MaxScale, requiring that the candidate primary is selected also by the primary MaxScale.
 6. disk\_space\_ok : The candidate primary must not be low on disk space. This option only takes effect if [disk space check](common-monitor-parameters.md#disk_space_threshold) is enabled. Added in MaxScale 23.08.5.
 
-The default value of this setting is `master_requirements=primary_monitor_master,disk_space_ok` to ensure that both monitors use the same primary server when cooperating and that the primary is not out of disk space.
+The default value of this setting is `master_conditions=primary_monitor_master,disk_space_ok` to ensure that both monitors use the same primary server when cooperating and that the primary is not out of disk space.
 
 For example, to require that the primary must have a replica which is both connected and running, set
 
@@ -238,8 +238,10 @@ If automatic failover is not possible, the monitor will try to search for anothe
 The worst-case delay between the primary failure and the start of the failover can be estimated by summing up the timeout values and `monitor_interval` and multiplying that by `failcount`:
 
 ```
-(monitor_interval + backend_connect_timeout) * failcount
+(monitor_interval + backend_timeout) * failcount
 ```
+
+If [cooperative monitoring](mariadb-monitor.md#cooperative-monitoring) is enabled, `failcount` also has a smallest safe value, so that stale locks left behind by a network outage expire before a failover begins. See [Failover With Multiple MaxScales](../../mariadb-maxscale-tutorials/failover-with-multiple-maxscales.md).
 
 ### `enforce_writable_master`
 
@@ -1083,7 +1085,7 @@ flowchart TD
 ```
 _Split brain: a broken heartbeat between datacenters lets both MaxScale A and MaxScale B act as primary at once, each locking its own read-write server._
 
-The recommended strategy depends on which failure scenario is more likely and/or more destructive. If it's unlikely that multiple servers are ever down simultaneously, then _majority\_of\_all_ is likely the safer choice. On the other hand, if split-brain is unlikely but multiple servers may be down simultaneously, then _majority\_of\_running_ would keep the cluster operational.
+The recommended strategy depends on which failure scenario is more likely and/or more destructive. If it's unlikely that multiple servers are ever down simultaneously, then _majority\_of\_all_ is likely the safer choice. On the other hand, if split-brain is unlikely but multiple servers may be down simultaneously, then _majority\_of\_running_ would keep the cluster operational. For step-by-step walkthroughs of each mode during a failover and during a network partition, and for how they compare with an active/passive pair, see [Failover With Multiple MaxScales](../../mariadb-maxscale-tutorials/failover-with-multiple-maxscales.md).
 
 To check if a monitor is primary, fetch monitor diagnostics with `maxctrl show monitors` or the REST API. The boolean field **primary** indicates whether the monitor has lock majority on the cluster. If cooperative monitoring is disabled, the field value is _null_. Lock information for individual servers is listed in the server-specific field **lock\_held**. Again, _null_ indicates that locks are not in use or the lock status is unknown.
 
