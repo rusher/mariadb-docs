@@ -32,7 +32,7 @@ that follow-up commit to appear shortly after opening or pushing to a PR.
 | `https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/rBEU9juWLfTDcdwF3Q14` | Analytics (ColumnStore) |
 | `https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/2I4jZ8pGq8bT4w5n3q6r` | ColumnStore |
 | `https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/CjGYMsT2MVP4nd3IyW2L` | Connectors (Java, ODBC, etc.) |
-| `https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb` | SkySQL |
+| `https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/vPz15Lz0Iw3P3yKR3Prd` | MariaDB Cloud (also the target of the legacy `skysql` alias — SkySQL was renamed MariaDB Cloud) |
 | `https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/JqgUabdZsoY5EiaJmqgn` | MariaDB Enterprise Platform |
 | `https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/vPz15Lz0Iw3P3yKR3Prd` | MariaDB Cloud |
 | `https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/kuTXWg0NDbRx6XUeYpGD` | Tools |
