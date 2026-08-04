@@ -6,7 +6,9 @@
     1. Release date (YYYY.MM.DD) — from Zhanna / Cloud UAT calendar.
     2. `enable-portal-provisioning-v2` enabled in prod (currently OFF).
   When both land: set the date + filename, add the SUMMARY.md nav entry, and
-  expand {alias} links (direct-main commits are not auto-expanded).
+  convert the cross-links back to {mariadb-cloud} aliases (they are currently
+  GitHub blob URLs so they are clickable during review; direct-main commits are
+  not auto-expanded).
 
   Tickets: DOCS-6320 (BYOA) + DOCS-6340 (provisioning UI) · MCDEV-2374, MCDEV-3304
 -->
@@ -55,7 +57,7 @@ The new page includes:
 * **Live cost estimate** — a sticky footer shows the estimated hourly and
   monthly cost as you configure the service.
 
-For details, see [Launch Page]({mariadb-cloud}/cloud-usage/launch-page.md).
+For details, see [Launch Page](https://github.com/mariadb-corporation/mariadb-docs/blob/main/mariadb-cloud/cloud-usage/launch-page.md).
 
 ### Bring Your Own Account (BYOA) on Google Cloud (Tech Preview)
 
@@ -72,7 +74,7 @@ remains in MariaDB Cloud. This extends BYOA to Google Cloud.
   Service Connect.
 * Regions are enabled per account based on your requirements rather than a fixed
   list. See the available regions on the service launch page in the Cloud
-  Portal, or [MariaDB Cloud Region Choices]({mariadb-cloud}/reference/region-choices.md).
+  Portal, or [MariaDB Cloud Region Choices](https://github.com/mariadb-corporation/mariadb-docs/blob/main/mariadb-cloud/reference/region-choices.md).
 * BYOA requires the **Power** or **Power Plus** service tier.
 
-For details, see [Bring Your Own Account (BYOA)]({mariadb-cloud}/quickstart/bring-your-own-account-byoa.md).
+For details, see [Bring Your Own Account (BYOA)](https://github.com/mariadb-corporation/mariadb-docs/blob/main/mariadb-cloud/quickstart/bring-your-own-account-byoa.md).
