@@ -112,9 +112,10 @@ BYOC is an enterprise-grade feature with specific commercial and technical prere
 * Service Tier: Your organization must be on the Power or PowerPlus tier.
 * Support Plan: You must have Standard Support with the Remote DBA add-on enabled.
 * Contract: Available to customers with annual contracts or minimum spend commitments.
+* Approval: MariaDB must enable BYOC for your organization. See [Get started](#get-started).
 
 {% hint style="info" %}
-BYOC is a Tech Preview, currently available on Amazon Web Services and Microsoft Azure. Google Cloud support is coming soon.
+BYOC is in Public Preview and is available on Amazon Web Services, Google Cloud, and Microsoft Azure. Features and behavior may change before general availability.
 {% endhint %}
 
 ### BYOC Pricing and Billing
@@ -157,12 +158,61 @@ flowchart LR
 1. MariaDB Cloud Invoice: You receive a bill from MariaDB for the management fee, software licensing, and support.
 2. Cloud Provider Invoice: You receive a bill directly from your cloud provider for the consumed infrastructure resources (Compute, Storage, Network).
 
-### Get Started
+### Get started
 
-For the Tech Preview, onboarding is a guided process.
+BYOC is enabled for each organization. To start, request access, link your cloud account, and verify the link.
 
-1. Contact Sales: Submit a request via the MariaDB Cloud Portal or contact your account representative to validate eligibility.
-2. Onboarding: Our support team will provide the necessary IAM/Service Principal templates and guide you through the account linking process.
-3. Deploy: Once linked, "Bring Your Own Cloud" will appear as a deployment target in your Create Service wizard.
+#### Request BYOC
+
+1. In the Cloud Portal, select **BYOC** in the left menu, and then select **Request BYOC**.
+2. MariaDB Sales contacts you to confirm that your organization is eligible. After MariaDB approves the request, **BYOC** in the left menu opens the account linking flow.
+
+#### Link your cloud account
+
+1. Select **BYOC** in the left menu, and then select **Link your Cloud account**.
+2. Select your cloud provider: **AWS**, **Google Cloud**, or **Azure**. You can link one account for each cloud. A cloud that already has a linked account is marked **Already Linked**.
+3. Enter the account details for your provider. See the table that follows these steps.
+4. Select the regions to enable. The list matches the regions offered on standard MariaDB Cloud. Optionally, enter an account label to help identify the account.
+5. Select **Link account**. The portal shows the template link and the values to use with it. Each value has a copy button.
+6. Select **Open console**, and run the template in your own cloud console. See the table that follows these steps.
+
+| Cloud | Account details you enter | What you run |
+| ----- | ------------------------- | ------------ |
+| Amazon Web Services | The 12-digit AWS account ID, and a stack region. The stack region is only where the setup stack runs, and it defaults to `us-east-1`. | **Open console** opens the AWS CloudFormation quick-create page with the template and its parameters filled in. Review the stack, and then create it. |
+| Google Cloud | The project ID. Use the project ID, not the project number. | **Open console** opens Cloud Shell with a guided tutorial that runs Terraform in your project. The tutorial asks for `project_id`, `allowed_regions`, `orchestration_project_id`, and `org_id`. The portal shows these values so that you can copy them. The setup takes about 20 minutes and requires the Owner role on the project. |
+| Microsoft Azure | The tenant ID and the subscription ID. | First, create the MariaDB Cloud service principal in your tenant by using Azure Cloud Shell or the Azure CLI (commands follow the table). Then **Open console** opens the Azure portal custom deployment page. Enter the object ID that the second command returns, and complete the deployment. |
+
+For Azure, replace `<service_principal_id>` with the service principal ID that the portal shows:
+
+```bash
+az ad sp create --id <service_principal_id>
+az ad sp show --id <service_principal_id> --query id -o tsv
+```
+
+<!-- TODO: confirm against the mariadb-byoc-onboarding tutorial and README: the 20-minute estimate and the Owner role for Google Cloud, and the Owner or User Access Administrator role for Azure. Taken from the Oct 6 demo recording, not from source. -->
+
+The template creates only the orchestration resources that MariaDB Cloud needs: an IAM role or service principal with scoped permissions. It does not grant access to your database data.
+
+<!-- TODO: confirm with Security/SRE that the template statement matches the shipped templates. The wording comes from the portal copy (linkAccount.templateSubtitle, linkAccount.whatGetsCreated). -->
+
+#### Verify the link
+
+After the template finishes, select **Verify**. MariaDB Cloud checks that it can use your account, and the check runs in the background. The page updates by itself. The status is **Pending** until you select **Verify**, and then it changes to **Verification: Running**, **Verification: Passed**, and **Ready**.
+
+If verification fails, the page shows the reason. Fix the problem, and then select **Retry Verification**.
+
+When the status is **Ready**, create services as usual. A service that you create on a linked cloud deploys into your account, in one of the regions that you enabled.
+
+### Manage linked accounts
+
+Select **Settings** → **BYOC** to see your linked accounts. The table lists each account's provider, account ID, label, status, enabled regions, template version, and when it was linked. Use the actions menu on a row to open the cloud console, view details, verify the account again, edit regions, or unlink the account.
+
+* **Edit regions:** You can change the enabled regions for AWS accounts only. For Azure and Google Cloud, adding a region requires running the template again. You can't remove a region that still has services.
+* **Unlink:** MariaDB Cloud refuses to unlink an account while services still run in it. Unlinking removes the account from MariaDB Cloud, but it does not delete the resources that the template created in your cloud account. Remove those resources in your cloud account yourself. You can link the same cloud again later.
+
+### Limitations
+
+* You can link one account for each cloud.
+* BYOC supports Provisioned services only. Serverless is not available with BYOC.
 
 <sub>_This page is: Copyright © 2026 MariaDB. All rights reserved._</sub>
