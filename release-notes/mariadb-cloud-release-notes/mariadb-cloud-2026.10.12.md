@@ -24,7 +24,7 @@ Bring Your Own Cloud (BYOC) deploys the MariaDB Cloud data plane inside your own
 
 After MariaDB approves your BYOC request, you select a cloud, enter your account details and regions, run a MariaDB-provided template in your own cloud console, and verify the link.
 
-* The template is CloudFormation for AWS, a custom ARM deployment for Azure, and a guided Cloud Shell tutorial that runs Terraform for Google Cloud.
+* The templates are in the public `mariadb-byoc-onboarding` repository: CloudFormation or Terraform for AWS, an ARM template or Terraform for Azure, and a guided Cloud Shell tutorial that runs Terraform for Google Cloud.
 * After you select **Verify**, the account status changes from **Pending** to **Verification: Running**, **Verification: Passed**, and **Ready**. If verification fails, the page shows the reason, and you can retry.
 * **Settings** → **BYOC** lists your linked accounts, with each account's provider, account ID, label, status, enabled regions, template version, and link date. Each row has an actions menu.
 * You can edit the enabled regions of an AWS account, and unlink an account.
