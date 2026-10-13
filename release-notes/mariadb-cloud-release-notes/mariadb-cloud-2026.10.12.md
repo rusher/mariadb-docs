@@ -4,6 +4,7 @@ description: >-
   2026-10-12. It adds self-service account linking for Bring Your Own Cloud
   (BYOC) on AWS, Google Cloud, and Microsoft Azure.
 icon: rocket-launch
+hidden: true
 ---
 
 # MariaDB Cloud 2026.10.12 Release Notes: BYOC Onboarding

@@ -3,6 +3,7 @@ description: >-
   Bring Your Own Cloud (BYOC) deploys MariaDB Cloud's data plane in your own
   AWS, GCP, or Azure account while the control plane (Portal, API, monitoring)
   stays in MariaDB Cloud.
+hidden: true
 ---
 
 # Bring Your Own Cloud (BYOC)
