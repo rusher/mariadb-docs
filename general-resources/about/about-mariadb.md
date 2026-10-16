@@ -17,7 +17,7 @@ For more information, visit [mariadb.com](http://mariadb.com).&#x20;
 The MariaDB Foundation is a non-profit organization that acts as the global contact point for collaboration on MariaDB Server. The MariaDB Foundation’s mission is around Openness, Adoption and Continuity.
 
 * Ensuring the MariaDB Server code base remains open for usage and contributions on technical merits.
-* Stiving to increase adoption by users and across use cases, platforms and means of deployment.
+* Striving to increase adoption by users and across use cases, platforms and means of deployment.
 * Providing continuity to the MariaDB Server ecosystem, independent of any commercial entities.
 
 For more information, visit [mariadb.org](http://mariadb.org).\
