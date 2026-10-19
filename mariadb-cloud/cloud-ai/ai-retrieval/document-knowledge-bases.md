@@ -9,7 +9,7 @@ hidden: true
 
 <!-- DRAFT for DOCS-6592. Hidden until the Public Preview launch. Open items are marked TODO. -->
 
-<!-- TODO: recapture the screenshots with the portal labels of 2026-10-19: Generation Model, Base, reranker on by default, JSON in the supported formats, the Reranker and Rerank Top K test options, and the chunk size fields. -->
+<!-- TODO: screenshots were recaptured on 2026-10-20 in the test environment. Recapture ai-retrieval-upload-processing.png and ai-retrieval-chunk-size-fields.png once the environment shows "Base" instead of "Basic" (MCDEV-1484, comment 1143338). -->
 
 # Document Knowledge Bases
 
@@ -27,7 +27,7 @@ A document knowledge base indexes files so that applications can retrieve passag
 6. Optionally, open **Advanced Options** to change the models and the reranker.
 7. Select **Create Knowledge Base**.
 
-<figure><img src="../../.gitbook/assets/ai-retrieval-create-kb.png" alt="The Create Knowledge Base page with a document knowledge base, AWS in Frankfurt, an auto-provisioned vector store, and the Advanced Options expanded."><figcaption><p>The Create Knowledge Base page</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/ai-retrieval-create-kb.png" alt="The Create Knowledge Base page with a document knowledge base, AWS in Frankfurt, an existing vector store service, and the Advanced Options expanded showing the embedding model, the generation model, and the reranker turned on."><figcaption><p>The Create Knowledge Base page</p></figcaption></figure>
 
 <!-- TODO: recapture this screenshot. It shows the reranker off, but the reranker is on by default in portal 4.13.13. The model names can also change. -->
 
@@ -130,7 +130,9 @@ A parsing strategy controls how AI Retrieval reads a file. A chunking strategy c
 
 Every strategy except Structure-aware shows a **Chunk size (tokens)** field. Fixed-sized and Sentence-based also show a **Chunk overlap (tokens)** field. The default chunk size is 350 tokens and the default overlap is 100 tokens. A chunk size must be at least 128 tokens, and an overlap must be smaller than the chunk size. Cohere embedding models accept chunk sizes up to 350 tokens. When the reranker is on, it reads only the first 512 tokens of each chunk, so the portal warns about larger chunk sizes.
 
-<!-- TODO: capture the chunk size and overlap fields. Source: skysql-ui-client ChunkingFields.vue and src/utils/chunking.ts @ 5356829b; ai-retrieval-cloud chunk_rules.py @ 5393bced. -->
+<figure><img src="../../.gitbook/assets/ai-retrieval-chunk-size-fields.png" alt="The Processing step of the Upload Files dialog with the Fixed-sized chunking strategy selected, showing the Chunk size (tokens) field with a default of 350 and the Chunk overlap (tokens) field with a default of 100."><figcaption><p>The chunk size and overlap fields</p></figcaption></figure>
+
+<!-- Source: skysql-ui-client ChunkingFields.vue and src/utils/chunking.ts @ 5356829b; ai-retrieval-cloud chunk_rules.py @ 5393bced. -->
 
 <figure><img src="../../.gitbook/assets/ai-retrieval-chunking-strategies.png" alt="The chunking strategy list showing the Structure-aware, Fixed-sized, Sentence-based, Recursive, and Semantic options."><figcaption><p>The chunking strategies</p></figcaption></figure>
 
@@ -161,9 +163,9 @@ Open **Advanced Options** to change how a test runs.
 
 The Retrieve & Generate tab also has a **Generation Model** list. Temperature, Top P, Max Tokens, and the model apply only to generated answers.
 
-<!-- TODO: recapture this screenshot. Portal 4.13.13 adds the Reranker and Rerank Top K options. -->
+<figure><img src="../../.gitbook/assets/ai-retrieval-test-options.png" alt="The Test Knowledge Base drawer on the Retrieve and Generate tab, showing the Generation Model list and the expanded Advanced Options: Top K Results, Retrieval Method, Documents, the Reranker toggle turned on, Rerank Top K, Temperature, and Top P."><figcaption><p>Advanced Options of the Retrieve & Generate tab</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/ai-retrieval-test-options.png" alt="The Advanced Options of the Retrieve and Generate tab showing Top K, Retrieval Method, Documents, Temperature, Top P, and Max Tokens."><figcaption><p>Advanced Options of the Retrieve & Generate tab</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/ai-retrieval-test-options-more.png" alt="The Test Knowledge Base drawer scrolled down to the end of the Advanced Options, showing Rerank Top K, Temperature, Top P, and Max Tokens, followed by the query box and the Test Query button."><figcaption><p>The remaining Advanced Options</p></figcaption></figure>
 
 ## Connect Your Application
 
