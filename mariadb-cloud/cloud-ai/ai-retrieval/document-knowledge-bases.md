@@ -41,7 +41,7 @@ The knowledge base shows the status **Provisioning**, which usually takes a few 
 | --- | --- |
 | Embedding Model | Converts text into the vectors that semantic search uses. |
 | Generation Model | The default model that generates answers for Retrieve & Generate requests. A request can select a different model. |
-| Reranker | Re-scores the retrieved chunks to improve their order, at the cost of slightly higher latency. It is on by default. When it is on, reranking applies to every retrieval. When it is off, a request can still turn it on. The reranker is billed per 1,000 queries. |
+| Reranker | Re-scores the retrieved chunks with a reranking model, at the cost of slightly higher latency. It is on by default. When it is on, reranking applies to every retrieval. When it is off, a request can still turn it on. The reranker is billed per 1,000 queries. |
 
 {% hint style="warning" %}
 After you create a knowledge base, you can edit only its name and description. To use a different embedding model, generation model, or reranker setting for all requests, create a new knowledge base. A single request can still select a different generation model or turn reranking on or off.
