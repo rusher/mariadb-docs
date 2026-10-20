@@ -9,8 +9,8 @@ hidden: true
 
 <!-- DRAFT for DOCS-6500 (epic MCDEV-3354, fixVersion MariaDB Cloud Oct. 2026). HIDDEN until release is confirmed.
 Reveal checklist: set date -> rename to mariadb-cloud-YYYY.MM.DD.md -> update SUMMARY + README content-ref -> drop hidden: true -> expand {alias} links (direct-main commit).
-Open items before reveal: (1) release date (planned ~2026-10-30, critical bugs open); (2) access model: request-only or open to all (product decision pending as of 2026-10-19);
-(3) Exasol Monitoring tab MCDEV-1820 was In Testing 2026-10-15; (4) confirm each Limitation below with Kalin; (5) drop limitations fixed before release (MCDEV-5338/5403/5412/5387). Evidence: research/DOCS-6500.md -->
+Open items before reveal: (1) release date: Oct 30 if UAT passes and no more delays (Allen, 2026-10-20), not confirmed; (2) access model: request-only or open to all, to be decided after a week of UAT fixes;
+(3) 50 MB transaction limit is a new setting stated in Slack only (not yet in source); recheck at release; (4) drop limitations fixed before release (MCDEV-5338/5403/5412/5387). Monitoring tab confirmed in the release (Allen, 2026-10-20). Evidence: research/DOCS-6500.md -->
 
 # MariaDB Cloud YYYY.MM.DD Release Notes: MariaDB Exa
 
@@ -50,9 +50,9 @@ For details, see [HTAP using MariaDB Exa](https://app.gitbook.com/o/diTpXxF5WsbH
 
 * Each service has one Exasol node. Multi-node Exasol and node-count selection are not available.
 * The Exa storage type cannot be changed, and Exa storage cannot be reduced.
-* The Exa port (3311) is not read-only: write statements sent to it succeed in Exasol only and are not replicated back to MariaDB.
+* The Exa port (3311) is not read-only. It accepts write statements, but they are not supported and can break replication. Do not send writes to port 3311.
 * The `pymysql` client cannot run queries on port 3311. Use the MariaDB Connector/Python or another MariaDB connector.
-* A single transaction larger than about 10 MB can exhaust the memory of the CDC pod and stop replication to Exa until it is recovered.
+* A single transaction larger than about 50 MB can exhaust the memory of the CDC pod and stop replication to Exa until it is recovered.
 * The portal does not show replication failures between MariaDB and Exa.
 * You cannot turn off Exa on its own on an existing service.
 
