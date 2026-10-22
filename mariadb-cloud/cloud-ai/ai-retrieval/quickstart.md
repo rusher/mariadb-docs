@@ -54,9 +54,10 @@ The document appears in the **Documents** list. Wait until its status is **Inges
 
 The answer cites the chunks of your document that it uses. The **Retrieve** tab shows the matching chunks without a generated answer.
 
+<figure><img src="../../.gitbook/assets/ai-retrieval-quickstart-answer.png" alt="The Test Knowledge Base drawer on the Retrieve and Generate tab with the question How do I create my first widget and a generated answer that ends with the citation marker 1."><figcaption><p>A generated answer with a citation</p></figcaption></figure>
+
 To call the knowledge base from an application, see [Connect Your Application](document-knowledge-bases.md#connect-your-application).
 
-<!-- TODO: still to capture in the test environment, with neutral names: a generated answer in the Test drawer. Frames of Egor's recording show these steps but include his account name and cannot be used. -->
 
 ## Create a Database Knowledge Base
 
