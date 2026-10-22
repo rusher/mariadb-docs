@@ -14,9 +14,16 @@ This page explains who can use AI Retrieval, how your applications authenticate,
 
 ## Roles and Permissions
 
-Users with the Viewer role can view knowledge bases but cannot create or change them.
+Your MariaDB Cloud role decides what you can do with knowledge bases:
 
-<!-- TODO: list the other roles and what each can do. Verify against the portal role checks in skysql-ui-client. -->
+| Role | Access |
+| --- | --- |
+| Viewer | Can view knowledge bases. Cannot create or change them. |
+| Member | Can create, change, and delete knowledge bases. |
+| Administrator | Can create, change, and delete knowledge bases. |
+| Billing | No access to knowledge bases. |
+
+<!-- TODO: the role table comes from the product requirements (NFR-SEC-04) as summarized in Egor's layout document of 2026-10-20, not from code. The portal code in skysql-ui-client has no role check in the knowledge base pages that I found. Verify with Vijay or Ryan. The same source says that MariaDB staff roles that impersonate a user cannot call the data plane endpoints; that is not for customers. -->
 
 ## API Keys and Authentication
 
