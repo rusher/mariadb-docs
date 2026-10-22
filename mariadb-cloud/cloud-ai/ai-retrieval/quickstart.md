@@ -28,7 +28,9 @@ This quickstart creates a knowledge base with the default settings and runs a fi
 
 <figure><img src="../../.gitbook/assets/ai-retrieval-quickstart-create.png" alt="The Create Knowledge Base form with Document Knowledge Base, the name quickstart-docs, AWS in Frankfurt, and Auto-provision new service selected."><figcaption><p>The Create Knowledge Base form with the default settings</p></figcaption></figure>
 
-The knowledge base shows the status **Provisioning**. This usually takes a few minutes. When the status is **Ready**, the knowledge base is ready for documents.
+The knowledge base shows the status **Provisioning**. This usually takes a few minutes.
+
+<figure><img src="../../.gitbook/assets/ai-retrieval-quickstart-provisioning.png" alt="The page of the knowledge base quickstart-docs with the Provisioning status and the banner that says that the knowledge base is being provisioned."><figcaption><p>A knowledge base that is being provisioned</p></figcaption></figure> When the status is **Ready**, the knowledge base is ready for documents.
 
 <figure><img src="../../.gitbook/assets/ai-retrieval-kb-ready.png" alt="The page of a knowledge base with the Ready status, its configuration, and an empty Documents list."><figcaption><p>A knowledge base that is ready for documents</p></figcaption></figure>
 
@@ -53,7 +55,7 @@ The answer cites the chunks of your document that it uses. The **Retrieve** tab 
 
 To call the knowledge base from an application, see [Connect Your Application](document-knowledge-bases.md#connect-your-application).
 
-<!-- TODO: still to capture in the test environment, with neutral names: the Provisioning banner, the Documents list with the Ingested status, and a generated answer in the Test drawer. Frames of Egor's recording show these steps but include his account name and cannot be used. -->
+<!-- TODO: still to capture in the test environment, with neutral names: the Documents list with the Ingested status, and a generated answer in the Test drawer. Frames of Egor's recording show these steps but include his account name and cannot be used. -->
 
 ## Create a Database Knowledge Base
 
