@@ -26,6 +26,8 @@ This quickstart creates a knowledge base with the default settings and runs a fi
 5. Under **Vector Store Configuration**, select **Auto-provision new service**. MariaDB Cloud creates a MariaDB Serverless service to store the vectors.
 6. Select **Create Knowledge Base**.
 
+<figure><img src="../../.gitbook/assets/ai-retrieval-quickstart-create.png" alt="The Create Knowledge Base form with Document Knowledge Base, the name quickstart-docs, AWS in Frankfurt, and Auto-provision new service selected."><figcaption><p>The Create Knowledge Base form with the default settings</p></figcaption></figure>
+
 The knowledge base shows the status **Provisioning**. This usually takes a few minutes. When the status is **Ready**, the knowledge base is ready for documents.
 
 <figure><img src="../../.gitbook/assets/ai-retrieval-kb-ready.png" alt="The page of a knowledge base with the Ready status, its configuration, and an empty Documents list."><figcaption><p>A knowledge base that is ready for documents</p></figcaption></figure>
@@ -51,7 +53,7 @@ The answer cites the chunks of your document that it uses. The **Retrieve** tab 
 
 To call the knowledge base from an application, see [Connect Your Application](document-knowledge-bases.md#connect-your-application).
 
-<!-- TODO: still to capture in the test environment, with neutral names: the create form with Auto-provision selected (the guide image shows an existing service), the Provisioning banner, the Documents list with the Ingested status, and a generated answer in the Test drawer. Frames of Egor's recording show these steps but include his account name and cannot be used. -->
+<!-- TODO: still to capture in the test environment, with neutral names: the Provisioning banner, the Documents list with the Ingested status, and a generated answer in the Test drawer. Frames of Egor's recording show these steps but include his account name and cannot be used. -->
 
 ## Create a Database Knowledge Base
 
