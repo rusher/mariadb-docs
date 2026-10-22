@@ -45,7 +45,7 @@ You do not supply credentials for a document knowledge base, and the portal does
 Do not delete or change these objects, and do not change the password of the database user. A knowledge base cannot ingest or retrieve documents without them.
 {% endhint %}
 
-<!-- TODO: Egor said on 2026-10-20 that AI Retrieval connects with the service user shown in the Connect dialog and stops working when its password changes. The code (ai-retrieval-cloud packages/skysql-common dbprovision/user_provisioner.py, commit 5124e49a of 2026-09-15) provisions a dedicated mdb_ai_rag_<suffix> user per knowledge base with privileges on its own schema only, and customer_db.py ensures it on first ingestion. Ask Egor which is right before unhiding, then fix the table and the hint. -->
+<!-- TODO: Egor said on 2026-10-20 that AI Retrieval connects with the service user shown in the Connect dialog and stops working when its password changes. That matches the database knowledge base form, which pre-fills the default service user (recording frame; MCDEV-3813 added a default read-only user and a custom-user override), but not the document knowledge base code. The code (ai-retrieval-cloud packages/skysql-common dbprovision/user_provisioner.py, commit 5124e49a of 2026-09-15) provisions a dedicated mdb_ai_rag_<suffix> user per knowledge base with privileges on its own schema only, and customer_db.py ensures it on first ingestion. Ask Egor which is right before unhiding, then fix the table and the hint. -->
 
 <!-- TODO: confirm that deleting the schema breaks the knowledge base and whether a service restored from a backup needs the objects recreated. See Known Limitations in the overview. -->
 
@@ -53,11 +53,13 @@ Do not delete or change these objects, and do not change the password of the dat
 
 AI Retrieval connects to the vector store service over a private network inside MariaDB Cloud. You do not need to add AI Retrieval to the IP allowlist of the service.
 
-<!-- TODO: Egor confirmed this for document knowledge bases on the 2026-10-20 call (the open allowlist requirement from MCDEV-2653 is fixed). Not verified in code. -->
+<!-- Egor confirmed this on the 2026-10-20 call (the open allowlist requirement from MCDEV-2653 is fixed; MCDEV-2653 itself is still In Progress). Code check: ai-retrieval-cloud rewrites the public host of the service to a cluster-internal service and probes that endpoint (services/ingestion/infrastructure/customer_db.py, commit c72ab65c of 2026-10-20 @ a66a013d). -->
+
+<!-- Conflict: the early Slack thread of 2026-10-02 (jeet, Vijay, Nachiket) still discusses subnets and firewall rules. Egor's later statement and the code win. -->
 
 ## Database Knowledge Bases
 
-A database knowledge base reads from a MariaDB service that already holds your data. You enter the user name and password of the account that AI Retrieval uses. AI Retrieval builds its description of the database, called the semantic map, from the tables and columns that this account can see.
+A database knowledge base reads from a MariaDB service that already holds your data. The create form pre-fills the default user of the service, and you can enter a different user name and password instead. AI Retrieval builds its description of the database, called the semantic map, from the tables and columns that the account can see.
 
 To control what a database knowledge base can read, create a dedicated user:
 
