@@ -87,6 +87,7 @@
   * [AI Agents API User Guide](cloud-ai/ai-api-guide.md)
   * [AI Retrieval](cloud-ai/ai-retrieval/README.md)
     * [Document Knowledge Bases](cloud-ai/ai-retrieval/document-knowledge-bases.md)
+    * [Access and Security](cloud-ai/ai-retrieval/access-and-security.md)
   * [MariaDB Cloud MCP Server](cloud-ai/mcp-server.md)
 * [HA & DR](high-availability-dr/README.md)
   * [HA & Replicated Topology](high-availability-dr/ha-and-replicated-topology.md)
