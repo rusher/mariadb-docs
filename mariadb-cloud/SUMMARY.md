@@ -86,6 +86,7 @@
   * [AI Agents](cloud-ai/copilot-guide.md)
   * [AI Agents API User Guide](cloud-ai/ai-api-guide.md)
   * [AI Retrieval](cloud-ai/ai-retrieval/README.md)
+    * [Quickstart](cloud-ai/ai-retrieval/quickstart.md)
     * [Document Knowledge Bases](cloud-ai/ai-retrieval/document-knowledge-bases.md)
     * [Parsing and Chunking](cloud-ai/ai-retrieval/parsing-and-chunking.md)
     * [Access and Security](cloud-ai/ai-retrieval/access-and-security.md)
