@@ -32,7 +32,6 @@ The knowledge base shows the status **Provisioning**. This usually takes a few m
 
 <figure><img src="../../.gitbook/assets/ai-retrieval-quickstart-provisioning.png" alt="The page of the knowledge base quickstart-docs with the Provisioning status and the banner that says that the knowledge base is being provisioned."><figcaption><p>A knowledge base that is being provisioned</p></figcaption></figure> When the status is **Ready**, the knowledge base is ready for documents.
 
-<figure><img src="../../.gitbook/assets/ai-retrieval-kb-ready.png" alt="The page of a knowledge base with the Ready status, its configuration, and an empty Documents list."><figcaption><p>A knowledge base that is ready for documents</p></figcaption></figure>
 
 The knowledge base uses the default embedding model and generation model, and the reranker is on. You do not need to change them to continue.
 
@@ -46,6 +45,8 @@ The knowledge base uses the default embedding model and generation model, and th
 
 The document appears in the **Documents** list. Wait until its status is **Ingested**. The **Chunks** column then shows how many chunks the document produced.
 
+<figure><img src="../../.gitbook/assets/ai-retrieval-quickstart-ingested.png" alt="The page of the Ready knowledge base quickstart-docs, with the vector store quickstart-docs-vs and a Documents list that shows the file getting-started.md with the status Ingested and 4 chunks."><figcaption><p>A document with the status Ingested</p></figcaption></figure>
+
 ### Run a Query
 
 1. Select **Test**.
@@ -55,7 +56,7 @@ The answer cites the chunks of your document that it uses. The **Retrieve** tab 
 
 To call the knowledge base from an application, see [Connect Your Application](document-knowledge-bases.md#connect-your-application).
 
-<!-- TODO: still to capture in the test environment, with neutral names: the Documents list with the Ingested status, and a generated answer in the Test drawer. Frames of Egor's recording show these steps but include his account name and cannot be used. -->
+<!-- TODO: still to capture in the test environment, with neutral names: a generated answer in the Test drawer. Frames of Egor's recording show these steps but include his account name and cannot be used. -->
 
 ## Create a Database Knowledge Base
 
