@@ -28,6 +28,8 @@ This quickstart creates a knowledge base with the default settings and runs a fi
 
 The knowledge base shows the status **Provisioning**. This usually takes a few minutes. When the status is **Ready**, the knowledge base is ready for documents.
 
+<figure><img src="../../.gitbook/assets/ai-retrieval-kb-ready.png" alt="The page of a knowledge base with the Ready status, its configuration, and an empty Documents list."><figcaption><p>A knowledge base that is ready for documents</p></figcaption></figure>
+
 The knowledge base uses the default embedding model and generation model, and the reranker is on. You do not need to change them to continue.
 
 ### Upload a Document
@@ -35,6 +37,8 @@ The knowledge base uses the default embedding model and generation model, and th
 1. On the knowledge base page, select **Upload Documents**.
 2. Select a file, such as a PDF, a Word document, or a Markdown file, and select **Next**. A file can be up to 50 MB.
 3. Leave the parsing and chunking options as they are, and select **Upload**.
+
+<figure><img src="../../.gitbook/assets/ai-retrieval-upload-files.png" alt="The Files step of the Upload Files dialog with three files selected."><figcaption><p>The Files step of the Upload Files dialog</p></figcaption></figure>
 
 The document appears in the **Documents** list. Wait until its status is **Ingested**. The **Chunks** column then shows how many chunks the document produced.
 
@@ -47,7 +51,7 @@ The answer cites the chunks of your document that it uses. The **Retrieve** tab 
 
 To call the knowledge base from an application, see [Connect Your Application](document-knowledge-bases.md#connect-your-application).
 
-<!-- TODO: add screenshots of the create form with Auto-provision selected, the provisioning banner, and the Upload Files dialog. Egor's recording shows these steps in the test environment. Use neutral names. -->
+<!-- TODO: still to capture in the test environment, with neutral names: the create form with Auto-provision selected (the guide image shows an existing service), the Provisioning banner, the Documents list with the Ingested status, and a generated answer in the Test drawer. Frames of Egor's recording show these steps but include his account name and cannot be used. -->
 
 ## Create a Database Knowledge Base
 
