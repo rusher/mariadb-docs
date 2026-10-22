@@ -53,7 +53,7 @@ Do not delete or change these objects, and do not change the password of the dat
 
 AI Retrieval connects to the vector store service over a private network inside MariaDB Cloud. You do not need to add AI Retrieval to the IP allowlist of the service.
 
-<!-- TODO: Egor confirmed this for document knowledge bases on 2026-10-20 (the 0.0.0.0/0 allowlist requirement from MCDEV-2653 is fixed). He will check database knowledge bases. Not verified in code. -->
+<!-- TODO: Egor confirmed this for document knowledge bases on the 2026-10-20 call (the open allowlist requirement from MCDEV-2653 is fixed). Not verified in code. -->
 
 ## Database Knowledge Bases
 
@@ -65,7 +65,13 @@ To control what a database knowledge base can read, create a dedicated user:
 2. Create a user that has privileges on the view only.
 3. Enter that user when you create the knowledge base.
 
-<!-- TODO: Database knowledge bases are not documented yet. The source is on the unmerged branch feature/MCDEV-3646-DBKB of skysql-gen-ai and in skysql-microservices ai-service. Confirm this section against the merged code and the final create form, and ask about the IP allowlist (Egor will check). -->
+### Network Access for Database Knowledge Bases
+
+A database knowledge base connects to your service from outside the service network. Add the IP address of AI Retrieval to the IP allowlist of the service, or the connection fails.
+
+<!-- TODO: Egor said in a Slack DM on 2026-10-20 that the user must add the AI Retrieval IP address to the allowlist for a database knowledge base, and gave a test environment address. Ask Egor for the production address and for where the portal shows it, then state it here. The addresses are in research/DOCS-6592.md. Do not publish the test address. -->
+
+<!-- TODO: Database knowledge bases are not documented yet. The source is on the unmerged branch feature/MCDEV-3646-DBKB of skysql-gen-ai and in skysql-microservices ai-service. Confirm this section against the merged code and the final create form. -->
 
 ## Data Residency
 
